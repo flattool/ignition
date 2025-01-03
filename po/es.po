@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-19 23:27-0500\n"
-"PO-Revision-Date: 2024-12-22 03:41+0000\n"
-"Last-Translator: Tameno <tamenorias@gmail.com>\n"
+"PO-Revision-Date: 2025-01-04 15:45+0000\n"
+"Last-Translator: Robotta <chriserizo@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/es/>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.8.1\n"
+"X-Generator: Weblate 5.9.2\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:3
 msgid "ignition"
@@ -33,7 +33,7 @@ msgstr "Ignition"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:8
 msgid "Create and edit startup apps and scripts"
-msgstr "Administra apps y scrips de startup"
+msgstr "Administra aplicaciones y scripts de arranque"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:10
 msgid "No description"
@@ -73,7 +73,7 @@ msgstr "No se han encontrado resultados"
 
 #: src/gtk/app-chooser-page.blp:49 src/gtk/window.blp:75
 msgid "Try a different search."
-msgstr ""
+msgstr "Prueba a buscar algo diferente."
 
 #: src/gtk/details-page.blp:5
 msgid "Edit Details"
@@ -93,7 +93,7 @@ msgstr "Detalles"
 
 #: src/gtk/details-page.blp:48
 msgid "Edit details about this entry."
-msgstr ""
+msgstr "Modificar los detalles de este artículo."
 
 #: src/gtk/details-page.blp:53
 msgid "Enable"
@@ -101,166 +101,173 @@ msgstr "Activar"
 
 #: src/gtk/details-page.blp:54
 msgid "Enable this entry to be started when you log in."
-msgstr ""
+msgstr "Autoarrancar este artículo al iniciar sesión."
 
 #: src/gtk/details-page.blp:62
 msgid "Name"
 msgstr "Nombre"
 
 #: src/gtk/details-page.blp:66
+#, fuzzy
 msgid "Comment"
-msgstr ""
+msgstr "Acerca de"
 
 #: src/gtk/details-page.blp:70
 msgid "Command or Script"
-msgstr ""
+msgstr "Comando o Script"
 
 #: src/gtk/details-page.blp:75
 msgid "Choose a Script"
-msgstr ""
+msgstr "Elige un Script"
 
 #: src/gtk/details-page.blp:81
 msgid "Show Terminal"
-msgstr ""
+msgstr "Mostrar ventana del Terminal"
 
 #: src/gtk/details-page.blp:82
+#, fuzzy
 msgid "Show a terminal for this process to run in."
-msgstr ""
+msgstr "Mostrar un terminal para correr este proceso."
 
 #: src/gtk/details-page.blp:89
 msgid "Create"
-msgstr ""
+msgstr "Crear"
 
 #: src/gtk/details-page.blp:95
 msgid "Move to Trash"
-msgstr ""
+msgstr "Mover a la Papelera"
 
 #: src/gtk/properties-dialog.blp:10 src/gtk/window.blp:68
 #: src/details_page.js:52
 msgid "New Entry"
-msgstr ""
+msgstr "Nueva Entrada"
 
 #: src/gtk/properties-dialog.blp:18
 msgid "Create a New Entry"
-msgstr ""
+msgstr "Crear una Nueva Entrada"
 
 #: src/gtk/properties-dialog.blp:19
 msgid "Add any installed app or select any script to be ran at startup."
 msgstr ""
+"Añade una aplicación instalada o seleccione cualquier script para correr "
+"automáticamente al iniciar sesión."
 
 #: src/gtk/properties-dialog.blp:29
 msgid "Add an App"
-msgstr ""
+msgstr "Añadir una Aplicación"
 
 #: src/gtk/properties-dialog.blp:36
 msgid "Add a Command or Script"
-msgstr ""
+msgstr "Añadir un Comando o un Script"
 
 #: src/gtk/window.blp:35
 msgid "Search entries"
-msgstr ""
+msgstr "Buscar entradas"
 
 #: src/gtk/window.blp:46
 msgid "Preparing"
-msgstr ""
+msgstr "Preparando"
 
 #: src/gtk/window.blp:47
 msgid "This should only take a moment."
-msgstr ""
+msgstr "Será solo un momento."
 
 #: src/gtk/window.blp:51
 msgid "Welcome to Ignition!"
-msgstr ""
+msgstr "Bienvenido/a sea a Ignition!"
 
 #: src/gtk/window.blp:52
 msgid ""
 "Ignition lets you start any app or script when you log in to your computer."
 msgstr ""
+"Ignition te permite iniciar cualquier aplicación o script cuando inicias "
+"sesión en tu ordenador o portátil."
 
 #: src/gtk/window.blp:56
 msgid "Get Started"
-msgstr ""
+msgstr "Empezar"
 
 #: src/gtk/window.blp:61
 msgid "No Entries Found"
-msgstr ""
+msgstr "No hay ninguna entrada"
 
 #: src/gtk/window.blp:62
 msgid "Add an app or script to run it at login."
-msgstr ""
+msgstr "Añadir una aplicación o script para correr al iniciar sesión."
 
 #: src/gtk/window.blp:86
 msgid "Startup Applications and Scripts"
-msgstr ""
+msgstr "Aplicaciones y Scripts al inicio"
 
 #: src/gtk/window.blp:87
 msgid "Startup apps and scripts are automatically started when you log in."
 msgstr ""
+"Las aplicaciones y los scripts se inician automáticamente al iniciar sesión."
 
 #: src/gtk/window.blp:93
 msgid "New"
-msgstr ""
+msgstr "Nuevo"
 
 #: src/details_page.js:43 src/entry_row.js:28
 msgid "No Name Set"
-msgstr ""
+msgstr "Sin Nombre"
 
 #: src/details_page.js:109
 msgid "Open"
-msgstr ""
+msgstr "Abrir"
 
 #: src/details_page.js:113
 msgid "Executable Files"
-msgstr ""
+msgstr "Archivos Ejecutables"
 
 #: src/entry_row.js:29
 msgid "No comment set."
-msgstr ""
+msgstr "No hay ningún comentario."
 
 #: src/entry_row.js:31
 msgid "Enabled"
-msgstr ""
+msgstr "Activado"
 
 #: src/entry_row.js:35
 msgid "Disabled"
-msgstr ""
+msgstr "Anulado"
 
 #: src/error_toast.js:16
 msgid "Copy"
-msgstr ""
+msgstr "Copiar"
 
 #: src/error_toast.js:17
 msgid "OK"
-msgstr ""
+msgstr "De acuerdo"
 
 #: src/main.js:61
 msgid "Opened folder"
-msgstr ""
+msgstr "Carpeta abierta"
 
 #: src/main.js:68
 msgid "Could not open folder"
-msgstr ""
+msgstr "No se puede abrir la carpeta"
 
 #: src/main.js:82
 msgid "Donate"
-msgstr ""
+msgstr "Donar"
 
 #: src/properties_dialog.js:32
 msgid "Error loading details"
-msgstr ""
+msgstr "No se pueden cargar los detalles"
 
 #: src/properties_dialog.js:80
 msgid "Could not save file"
-msgstr ""
+msgstr "No se pudo guardar el archivo"
 
 #: src/properties_dialog.js:81
 msgid "Could not trash file"
-msgstr ""
+msgstr "No se pudo enviar a la papelera"
 
 #: src/window.js:89
 msgid "Saved Details"
-msgstr ""
+msgstr "Detalles Guardados"
 
 #: src/window.js:90
 msgid "Trashed Entry"
-msgstr ""
+msgstr "Artículos en la papelera"
