@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-19 23:27-0500\n"
-"PO-Revision-Date: 2024-12-26 20:45+0000\n"
-"Last-Translator: Kaelian Baudelet <aconique@gmail.com>\n"
+"PO-Revision-Date: 2025-01-04 15:45+0000\n"
+"Last-Translator: rene-coty <irenee.thirion@e.email>\n"
 "Language-Team: French <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/fr/>\n"
 "Language: fr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.8.1\n"
+"X-Generator: Weblate 5.9.2\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:3
 msgid "ignition"
@@ -45,7 +45,7 @@ msgstr "Voir tous vos éléments de démarrage."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:64
 msgid "View and edit entry details."
-msgstr "Visualiser et modifier les détails de l'entrée."
+msgstr "Visualiser et modifier les détails de l’entrée."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:68
 msgid "Create a new startup entry."
@@ -65,7 +65,7 @@ msgstr "Recherche"
 
 #: src/gtk/app-chooser-page.blp:26
 msgid "Search apps"
-msgstr "Recherche d'applications"
+msgstr "Recherche d’applications"
 
 #: src/gtk/app-chooser-page.blp:48 src/gtk/window.blp:74
 msgid "No Results Found"
@@ -102,7 +102,7 @@ msgstr "Activer"
 #: src/gtk/details-page.blp:54
 msgid "Enable this entry to be started when you log in."
 msgstr ""
-"Activer cette entrée pour qu'elle soit lancée lorsque vous vous connectez."
+"Activer cette entrée pour qu’elle soit lancée lorsque vous vous connectez."
 
 #: src/gtk/details-page.blp:62
 msgid "Name"
@@ -126,7 +126,7 @@ msgstr "Afficher le terminal"
 
 #: src/gtk/details-page.blp:82
 msgid "Show a terminal for this process to run in."
-msgstr "Affichez un terminal dans lequel ce processus doit s'exécuter."
+msgstr "Affichez un terminal dans lequel ce processus doit s’exécuter."
 
 #: src/gtk/details-page.blp:89
 msgid "Create"
@@ -148,7 +148,7 @@ msgstr "Créer une nouvelle entrée"
 #: src/gtk/properties-dialog.blp:19
 msgid "Add any installed app or select any script to be ran at startup."
 msgstr ""
-"Ajoutez n'importe quelle application installée ou sélectionnez n'importe "
+"Ajoutez n’importe quelle application installée ou sélectionnez n’importe "
 "quel script à exécuter au démarrage."
 
 #: src/gtk/properties-dialog.blp:29
@@ -161,7 +161,7 @@ msgstr "Ajouter une commande ou un script"
 
 #: src/gtk/window.blp:35
 msgid "Search entries"
-msgstr "Recherche d'entrées"
+msgstr "Recherche d’entrées"
 
 #: src/gtk/window.blp:46
 msgid "Preparing"
@@ -169,17 +169,17 @@ msgstr "Préparation"
 
 #: src/gtk/window.blp:47
 msgid "This should only take a moment."
-msgstr "Cela ne devrait prendre qu'un instant."
+msgstr "Cela ne devrait prendre qu’un instant."
 
 #: src/gtk/window.blp:51
 msgid "Welcome to Ignition!"
-msgstr "Bienvenue sur Amorçage !"
+msgstr "Bienvenue sur Amorçage !"
 
 #: src/gtk/window.blp:52
 msgid ""
 "Ignition lets you start any app or script when you log in to your computer."
 msgstr ""
-"Amorçage vous permet de lancer n'importe quelle application ou script "
+"Amorçage vous permet de lancer n’importe quelle application ou script "
 "lorsque vous vous connectez à votre ordinateur."
 
 #: src/gtk/window.blp:56
@@ -192,7 +192,7 @@ msgstr "Aucune entrée trouvée"
 
 #: src/gtk/window.blp:62
 msgid "Add an app or script to run it at login."
-msgstr "Ajoutez une application ou un script pour l'exécuter à la connexion."
+msgstr "Ajoutez une application ou un script pour l’exécuter à la connexion."
 
 #: src/gtk/window.blp:86
 msgid "Startup Applications and Scripts"
@@ -222,7 +222,7 @@ msgstr "Fichiers exécutables"
 
 #: src/entry_row.js:29
 msgid "No comment set."
-msgstr "Aucun commentaire n'a été formulé."
+msgstr "Aucun commentaire n’a été formulé."
 
 #: src/entry_row.js:31
 msgid "Enabled"
@@ -258,7 +258,7 @@ msgstr "Erreur de chargement des détails"
 
 #: src/properties_dialog.js:80
 msgid "Could not save file"
-msgstr "Impossible d'enregistrer le fichier"
+msgstr "Impossible d’enregistrer le fichier"
 
 #: src/properties_dialog.js:81
 msgid "Could not trash file"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-19 23:27-0500\n"
-"PO-Revision-Date: 2024-12-25 20:28+0000\n"
+"PO-Revision-Date: 2025-01-14 22:45+0000\n"
 "Last-Translator: dadaxer <dadaxer@mailbox.org>\n"
 "Language-Team: German <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/de/>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.8.1\n"
+"X-Generator: Weblate 5.9.2\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:3
 msgid "ignition"
-msgstr "Ignition"
+msgstr "ignition"
 
 #: data/io.github.flattool.Ignition.desktop.in:9
 msgid "GTK;"
