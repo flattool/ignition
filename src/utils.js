@@ -2,6 +2,7 @@ import GLib from 'gi://GLib';
 import Gio from 'gi://Gio';
 import Gtk from 'gi://Gtk';
 
+import { Config } from './const.js';
 
 
 const keyfile_tryer = (func) => {
@@ -37,6 +38,7 @@ const home_path = GLib.get_home_dir();
 const home_dir = Gio.File.new_for_path(home_path);
 const autostart_path = (GLib.getenv("HOST_XDG_CONFIG_HOME") || `${home_path}/.config`) + "/autostart/";
 const autostart_dir = Gio.File.new_for_path(autostart_path);
+const is_sandboxed = GLib.getenv("FLATPAK_ID") === Config.APP_ID;
 export class SharedVars {
 	static get autostart_path() {
 		return autostart_path;
@@ -54,6 +56,9 @@ export class SharedVars {
 		return home_dir ;
 	}
 
+	static get is_sandboxed() {
+		return is_sandboxed;
+	}
 	static main_window = null; // set in main
 }
 

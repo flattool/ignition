@@ -4,18 +4,22 @@ import Gio from 'gi://Gio';
 import Gtk from 'gi://Gtk';
 import Adw from 'gi://Adw';
 
-import { IconUtils, KeyFileUtils, run_async, SharedVars, Signal } from './utils.js';
+import { KeyFileUtils, run_async, SharedVars, Signal } from './utils.js';
 import { EntryRow } from './entry_row.js';
 import { AutostartEntry } from './autostart_entry.js';
 
 const host_app_dirs = [
-	Gio.File.new_for_path( // distro apps 1
-		"/run/host/usr/local/share/applications"
-	),
-	Gio.File.new_for_path( // distro apps 2
-		"/run/host/usr/share/applications",
-	),
-	Gio.File.new_for_path( //snaps
+	Gio.File.new_for_path(( // distro apps 1
+		SharedVars.is_sandboxed
+		? "/run/host"
+		: ""
+	) + "/usr/local/share/applications"),
+	Gio.File.new_for_path(( // distro apps 2
+		SharedVars.is_sandboxed
+		? "/run/host"
+		: ""
+	) + "/usr/share/applications"),
+	Gio.File.new_for_path( // snaps
 		"/var/lib/snapd/desktop/applications"
 	),
 	Gio.File.new_for_path( // system flatpaks
@@ -23,8 +27,12 @@ const host_app_dirs = [
 	),
 	Gio.File.new_for_path(( // user flatpaks
 		GLib.getenv("HOST_XDG_DATA_HOME")
-		|| SharedVars.home_path
-	) + "/.local/share/flatpak/exports/share/applications"),
+		|| SharedVars.home_path + "/.local/share"
+	) + "/flatpak/exports/share/applications"),
+	Gio.File.new_for_path(( // user apps
+		GLib.getenv("HOST_XDG_DATA_HOME")
+		|| SharedVars.home_path + "/.local/share"
+	) + "/applications"),
 ];
 
 const dirs_with_enumerators = [];
