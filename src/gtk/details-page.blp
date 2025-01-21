@@ -70,10 +70,11 @@ template $DetailsPage : Adw.NavigationPage {
                             title: _("Command or Script");
                             text: "placeholder";
                             [suffix]
-                            Button choose_button {
-                                icon-name: "ignition:folder-open-symbolic";
-                                tooltip-text: _("Choose a Script");
+                            MenuButton path_info_button {
+                                icon-name: "ignition:info-outline-symbolic";
+                                tooltip-text: _("More Information");
                                 valign: center;
+                                popover: path_info_popover;
                                 styles ["flat"]
                             }
                         }
@@ -100,5 +101,18 @@ template $DetailsPage : Adw.NavigationPage {
                 }
             }
         }
+    }
+}
+
+Popover path_info_popover {
+    Label label {
+        label: _("To run a script at login, paste its file path here. You can copy the script's path from your file manager. Make sure your script is executable.");
+        wrap: true;
+        wrap-mode: word;
+        max-width-chars: 52;
+        margin-start:  6;
+        margin-end:    6;
+        margin-top:    6;
+        margin-bottom: 6;
     }
 }
