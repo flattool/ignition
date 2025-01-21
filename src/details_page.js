@@ -21,7 +21,7 @@ export const DetailsPage = GObject.registerClass({
 			"name_row",
 			"comment_row",
 			"exec_row",
-				"choose_button",
+				"path_info_button",
 			"terminal_row",
 		"action_group",
 			"create_row",
@@ -105,40 +105,6 @@ export const DetailsPage = GObject.registerClass({
 		this.auto_entry.trash();
 	}
 
-	on_choose() {
-		const accept_button = new Gtk.Button({ label: _("Open") });
-		accept_button.add_css_class("suggested-action");
-		const cancel_button = new Gtk.Button({ label: _("Cancel") });
-		const filter = new Gtk.FileFilter({
-			name: _("Executable Files"),
-			mime_types: ['application/x-executable'],
-		});
-		const fcd = new Gtk.FileChooserDialog({
-			select_multiple: false,
-			modal: true,
-			transient_for: SharedVars.main_window,
-		});
-		fcd.set_current_folder(SharedVars.home_dir);
-		fcd.add_filter(filter);
-		fcd.add_action_widget(accept_button, Gtk.ResponseType.ACCEPT);
-		fcd.add_action_widget(cancel_button, Gtk.ResponseType.CANCEL);
-		fcd.connect("response", (dialog, response) => {
-			fcd.close();
-			if (response === Gtk.ResponseType.ACCEPT) {
-				const file = fcd.get_file();
-				if (!file.query_info(
-					"standard::is-executable",
-					Gio.FileQueryInfoFlags.NONE,
-					null,
-				)) {
-					return;
-				}
-				this._exec_row.text = file.get_path();
-			}
-		});
-		fcd.present();
-	}
-
 	// These must be arrow functions for signal disconnect to work
 	save_failed = (error) => this.signals.save_failed.emit(error);
 	trash_failed = (error) => this.signals.trash_failed.emit(error);
@@ -168,7 +134,6 @@ export const DetailsPage = GObject.registerClass({
 		this._exec_row.connect("entry-activated", this.on_apply.bind(this));
 		this._create_row.connect("activated", this.on_apply.bind(this));
 		this._trash_row.connect("activated", this.on_trash.bind(this));
-		this._choose_button.connect("clicked", this.on_choose.bind(this));
 		// Allow pressing Escape to close the dialog, when we are
 		//   presented as the first page, instead of a subpage
 		event_controller.connect("key-pressed", (__, keyval) => {
