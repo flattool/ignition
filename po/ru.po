@@ -8,256 +8,264 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-12-19 23:27-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-01-23 15:41+0000\n"
+"Last-Translator: Alexmelman88 <alexmelman88@gmail.com>\n"
+"Language-Team: Russian <https://weblate.fyralabs.com/projects/flattool/"
+"ignition/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.9.2\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:3
 msgid "ignition"
-msgstr ""
+msgstr "ignition"
 
 #: data/io.github.flattool.Ignition.desktop.in:9
 msgid "GTK;"
-msgstr ""
+msgstr "GTK;ГТК;"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:7
 msgid "Ignition"
-msgstr ""
+msgstr "Ignition"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:8
 msgid "Create and edit startup apps and scripts"
-msgstr ""
+msgstr "Создание и редактирование приложений и сценариев запуска"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:10
 msgid "No description"
-msgstr ""
+msgstr "Нет описания"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:60
 msgid "See all your startup items."
-msgstr ""
+msgstr "Просмотр всех элементов запуска."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:64
 msgid "View and edit entry details."
-msgstr ""
+msgstr "Просмотр и редактирование сведений о записи."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:68
 msgid "Create a new startup entry."
-msgstr ""
+msgstr "Создание новой записи запуска."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:72
 msgid "See all your startup items, in dark mode."
-msgstr ""
+msgstr "Просмотр всех элементов запуска в темном режиме."
 
 #: src/gtk/app-chooser-page.blp:5
 msgid "Choose an App"
-msgstr ""
+msgstr "Выберите приложение"
 
 #: src/gtk/app-chooser-page.blp:15 src/gtk/window.blp:15
 msgid "Search"
-msgstr ""
+msgstr "Поиск"
 
 #: src/gtk/app-chooser-page.blp:26
 msgid "Search apps"
-msgstr ""
+msgstr "Поиск приложений"
 
 #: src/gtk/app-chooser-page.blp:48 src/gtk/window.blp:74
 msgid "No Results Found"
-msgstr ""
+msgstr "Результаты не найдены"
 
 #: src/gtk/app-chooser-page.blp:49 src/gtk/window.blp:75
 msgid "Try a different search."
-msgstr ""
+msgstr "Попробуйте другой поисковый запрос."
 
 #: src/gtk/details-page.blp:5
 msgid "Edit Details"
-msgstr ""
+msgstr "Редактировать сведения"
 
 #: src/gtk/details-page.blp:14 src/details_page.js:111
 msgid "Cancel"
-msgstr ""
+msgstr "Отменить"
 
 #: src/gtk/details-page.blp:20
 msgid "Apply"
-msgstr ""
+msgstr "Применить"
 
 #: src/gtk/details-page.blp:47 src/error_toast.js:27
 msgid "Details"
-msgstr ""
+msgstr "Сведения"
 
 #: src/gtk/details-page.blp:48
 msgid "Edit details about this entry."
-msgstr ""
+msgstr "Редактировать сведения этой записи."
 
 #: src/gtk/details-page.blp:53
 msgid "Enable"
-msgstr ""
+msgstr "Включить"
 
 #: src/gtk/details-page.blp:54
 msgid "Enable this entry to be started when you log in."
-msgstr ""
+msgstr "Включить запуск этой записи при входе в систему."
 
 #: src/gtk/details-page.blp:62
 msgid "Name"
-msgstr ""
+msgstr "Имя"
 
 #: src/gtk/details-page.blp:66
 msgid "Comment"
-msgstr ""
+msgstr "Комментарий"
 
 #: src/gtk/details-page.blp:70
 msgid "Command or Script"
-msgstr ""
+msgstr "Команда или сценарий"
 
 #: src/gtk/details-page.blp:75
 msgid "Choose a Script"
-msgstr ""
+msgstr "Выберите сценарий"
 
 #: src/gtk/details-page.blp:81
 msgid "Show Terminal"
-msgstr ""
+msgstr "Показать терминал"
 
 #: src/gtk/details-page.blp:82
 msgid "Show a terminal for this process to run in."
-msgstr ""
+msgstr "Показать терминал, в котором будет запущен этот процесс."
 
 #: src/gtk/details-page.blp:89
 msgid "Create"
-msgstr ""
+msgstr "Создать"
 
 #: src/gtk/details-page.blp:95
 msgid "Move to Trash"
-msgstr ""
+msgstr "Отправить в корзину"
 
 #: src/gtk/properties-dialog.blp:10 src/gtk/window.blp:68
 #: src/details_page.js:52
 msgid "New Entry"
-msgstr ""
+msgstr "Новая запись"
 
 #: src/gtk/properties-dialog.blp:18
 msgid "Create a New Entry"
-msgstr ""
+msgstr "Создать новую запись"
 
 #: src/gtk/properties-dialog.blp:19
 msgid "Add any installed app or select any script to be ran at startup."
 msgstr ""
+"Добавьте любое установленное приложение или выберите сценарий, который будет "
+"запускаться при запуске."
 
 #: src/gtk/properties-dialog.blp:29
 msgid "Add an App"
-msgstr ""
+msgstr "Добавить приложение"
 
 #: src/gtk/properties-dialog.blp:36
 msgid "Add a Command or Script"
-msgstr ""
+msgstr "Добавить команду или сценарий"
 
 #: src/gtk/window.blp:35
 msgid "Search entries"
-msgstr ""
+msgstr "Поиск записей"
 
 #: src/gtk/window.blp:46
 msgid "Preparing"
-msgstr ""
+msgstr "Подготовка"
 
 #: src/gtk/window.blp:47
 msgid "This should only take a moment."
-msgstr ""
+msgstr "Это займет совсем немного времени."
 
 #: src/gtk/window.blp:51
 msgid "Welcome to Ignition!"
-msgstr ""
+msgstr "Добро пожаловать в Ignition!"
 
 #: src/gtk/window.blp:52
 msgid ""
 "Ignition lets you start any app or script when you log in to your computer."
 msgstr ""
+"Ignition позволяет запускать любое приложение или сценарий при входе в "
+"систему."
 
 #: src/gtk/window.blp:56
 msgid "Get Started"
-msgstr ""
+msgstr "Начать"
 
 #: src/gtk/window.blp:61
 msgid "No Entries Found"
-msgstr ""
+msgstr "Записи не найдены"
 
 #: src/gtk/window.blp:62
 msgid "Add an app or script to run it at login."
-msgstr ""
+msgstr "Добавьте приложение или сценарий для запуска при входе в систему."
 
 #: src/gtk/window.blp:86
 msgid "Startup Applications and Scripts"
-msgstr ""
+msgstr "Приложения и сценарии для запуска"
 
 #: src/gtk/window.blp:87
 msgid "Startup apps and scripts are automatically started when you log in."
-msgstr ""
+msgstr "Приложения и сценарии автоматически запускаются при входе в систему."
 
 #: src/gtk/window.blp:93
 msgid "New"
-msgstr ""
+msgstr "Новая"
 
 #: src/details_page.js:43 src/entry_row.js:28
 msgid "No Name Set"
-msgstr ""
+msgstr "Нет имени"
 
 #: src/details_page.js:109
 msgid "Open"
-msgstr ""
+msgstr "Открыть"
 
 #: src/details_page.js:113
 msgid "Executable Files"
-msgstr ""
+msgstr "Исполняемые файлы"
 
 #: src/entry_row.js:29
 msgid "No comment set."
-msgstr ""
+msgstr "Нет комментария."
 
 #: src/entry_row.js:31
 msgid "Enabled"
-msgstr ""
+msgstr "Включено"
 
 #: src/entry_row.js:35
 msgid "Disabled"
-msgstr ""
+msgstr "Отключено"
 
 #: src/error_toast.js:16
 msgid "Copy"
-msgstr ""
+msgstr "Копировать"
 
 #: src/error_toast.js:17
 msgid "OK"
-msgstr ""
+msgstr "Хорошо"
 
 #: src/main.js:61
 msgid "Opened folder"
-msgstr ""
+msgstr "Открытая папка"
 
 #: src/main.js:68
 msgid "Could not open folder"
-msgstr ""
+msgstr "Не удалось открыть папку"
 
 #: src/main.js:82
 msgid "Donate"
-msgstr ""
+msgstr "Пожертвовать"
 
 #: src/properties_dialog.js:32
 msgid "Error loading details"
-msgstr ""
+msgstr "Ошибка при загрузке сведений"
 
 #: src/properties_dialog.js:80
 msgid "Could not save file"
-msgstr ""
+msgstr "Не удалось сохранить файл"
 
 #: src/properties_dialog.js:81
 msgid "Could not trash file"
-msgstr ""
+msgstr "Не удалось отправить файл в корзину"
 
 #: src/window.js:89
 msgid "Saved Details"
-msgstr ""
+msgstr "Сохраненные сведения"
 
 #: src/window.js:90
 msgid "Trashed Entry"
-msgstr ""
+msgstr "Отправленная в корзину запись"
