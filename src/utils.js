@@ -45,6 +45,16 @@ export class SharedVars {
 	}
 
 	static get autostart_dir() {
+		// Create the autostart directory if it doesn't exist. Needed for non-flatpak packages
+		if (!autostart_dir.query_exists(null)) {
+			try {
+				autostart_dir.make_directory(null);
+			} catch (error) {
+				console.error(`FATAL: Failed to make autostart directory at: ${autostart_path}`);
+				console.error(error);
+				SharedVars.application.quit();
+			}
+		}
 		return autostart_dir;
 	}
 
@@ -60,6 +70,7 @@ export class SharedVars {
 		return is_sandboxed;
 	}
 	static main_window = null; // set in main
+	static application = null; // set in main
 }
 
 

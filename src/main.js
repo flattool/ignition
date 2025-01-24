@@ -37,6 +37,8 @@ export const IgnitionApplication = GObject.registerClass(
 		constructor() {
 			super({application_id: 'io.github.flattool.Ignition', flags: Gio.ApplicationFlags.DEFAULT_FLAGS});
 
+			SharedVars.application = this;
+
 			const gtk_version = `${Gtk.MAJOR_VERSION}.${Gtk.MINOR_VERSION}.${Gtk.MICRO_VERSION}`;
 			const adw_version = `${Adw.MAJOR_VERSION}.${Adw.MINOR_VERSION}.${Adw.MICRO_VERSION}`;
 			const os_string = `${GLib.get_os_info("NAME")} ${GLib.get_os_info("VERSION")}`;
