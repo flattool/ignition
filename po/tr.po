@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-19 23:27-0500\n"
+"POT-Creation-Date: 2025-01-24 00:07-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -17,38 +17,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:3
-msgid "ignition"
-msgstr ""
-
-#: data/io.github.flattool.Ignition.desktop.in:9
-msgid "GTK;"
-msgstr ""
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:7
+#: data/io.github.flattool.Ignition.metainfo.xml.in:14
 msgid "Ignition"
 msgstr ""
 
-#: data/io.github.flattool.Ignition.metainfo.xml.in:8
-msgid "Create and edit startup apps and scripts"
+#: data/io.github.flattool.Ignition.desktop.in:4
+#: data/io.github.flattool.Ignition.metainfo.xml.in:15
+msgid "Manage startup apps and scripts"
 msgstr ""
 
-#: data/io.github.flattool.Ignition.metainfo.xml.in:10
-msgid "No description"
+#: data/io.github.flattool.Ignition.desktop.in:10
+msgid "GTK;startup;autostart;login;"
 msgstr ""
 
-#: data/io.github.flattool.Ignition.metainfo.xml.in:60
+#: data/io.github.flattool.Ignition.metainfo.xml.in:11
+msgid "Heliguy"
+msgstr ""
+
+#: data/io.github.flattool.Ignition.metainfo.xml.in:17
+msgid ""
+"Ignition provides a simple UI to add, remove, and modify startup entries on "
+"your computer. Ignition can add apps, scripts, and arbitrary commands to run "
+"at login."
+msgstr ""
+
+#: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
 msgstr ""
 
-#: data/io.github.flattool.Ignition.metainfo.xml.in:64
+#: data/io.github.flattool.Ignition.metainfo.xml.in:39
 msgid "View and edit entry details."
 msgstr ""
 
-#: data/io.github.flattool.Ignition.metainfo.xml.in:68
+#: data/io.github.flattool.Ignition.metainfo.xml.in:43
 msgid "Create a new startup entry."
 msgstr ""
 
-#: data/io.github.flattool.Ignition.metainfo.xml.in:72
+#: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
 msgstr ""
 
@@ -76,7 +81,7 @@ msgstr ""
 msgid "Edit Details"
 msgstr ""
 
-#: src/gtk/details-page.blp:14 src/details_page.js:111
+#: src/gtk/details-page.blp:14
 msgid "Cancel"
 msgstr ""
 
@@ -113,23 +118,29 @@ msgid "Command or Script"
 msgstr ""
 
 #: src/gtk/details-page.blp:75
-msgid "Choose a Script"
-msgstr ""
-
-#: src/gtk/details-page.blp:81
-msgid "Show Terminal"
+msgid "More Information"
 msgstr ""
 
 #: src/gtk/details-page.blp:82
+msgid "Show Terminal"
+msgstr ""
+
+#: src/gtk/details-page.blp:83
 msgid "Show a terminal for this process to run in."
 msgstr ""
 
-#: src/gtk/details-page.blp:89
+#: src/gtk/details-page.blp:90
 msgid "Create"
 msgstr ""
 
-#: src/gtk/details-page.blp:95
+#: src/gtk/details-page.blp:96
 msgid "Move to Trash"
+msgstr ""
+
+#: src/gtk/details-page.blp:109
+msgid ""
+"To run a script at login, paste its file path here. You can copy the "
+"script's path from your file manager. Make sure your script is executable."
 msgstr ""
 
 #: src/gtk/properties-dialog.blp:10 src/gtk/window.blp:68
@@ -202,14 +213,6 @@ msgstr ""
 msgid "No Name Set"
 msgstr ""
 
-#: src/details_page.js:109
-msgid "Open"
-msgstr ""
-
-#: src/details_page.js:113
-msgid "Executable Files"
-msgstr ""
-
 #: src/entry_row.js:29
 msgid "No comment set."
 msgstr ""
@@ -230,15 +233,19 @@ msgstr ""
 msgid "OK"
 msgstr ""
 
-#: src/main.js:61
+#: src/main.js:73
 msgid "Opened folder"
 msgstr ""
 
-#: src/main.js:68
+#: src/main.js:80
 msgid "Could not open folder"
 msgstr ""
 
-#: src/main.js:82
+#: src/main.js:95
+msgid "Translate"
+msgstr ""
+
+#: src/main.js:96
 msgid "Donate"
 msgstr ""
 
@@ -246,18 +253,26 @@ msgstr ""
 msgid "Error loading details"
 msgstr ""
 
-#: src/properties_dialog.js:80
+#: src/properties_dialog.js:77
+msgid "No installed apps found"
+msgstr ""
+
+#: src/properties_dialog.js:99
 msgid "Could not save file"
 msgstr ""
 
-#: src/properties_dialog.js:81
+#: src/properties_dialog.js:100
 msgid "Could not trash file"
 msgstr ""
 
-#: src/window.js:89
+#: src/window.js:90
 msgid "Saved Details"
 msgstr ""
 
-#: src/window.js:90
+#: src/window.js:91
 msgid "Trashed Entry"
+msgstr ""
+
+#: src/window.js:198
+msgid "Could not load some apps"
 msgstr ""

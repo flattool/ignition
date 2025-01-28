@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-19 23:27-0500\n"
+"POT-Creation-Date: 2025-01-24 00:07-0500\n"
 "PO-Revision-Date: 2025-01-23 15:41+0000\n"
 "Last-Translator: Alexmelman88 <alexmelman88@gmail.com>\n"
 "Language-Team: Russian <https://weblate.fyralabs.com/projects/flattool/"
@@ -21,38 +21,45 @@ msgstr ""
 "X-Generator: Weblate 5.9.2\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:3
-msgid "ignition"
-msgstr "ignition"
-
-#: data/io.github.flattool.Ignition.desktop.in:9
-msgid "GTK;"
-msgstr "GTK;ГТК;"
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:7
+#: data/io.github.flattool.Ignition.metainfo.xml.in:14
 msgid "Ignition"
 msgstr "Ignition"
 
-#: data/io.github.flattool.Ignition.metainfo.xml.in:8
-msgid "Create and edit startup apps and scripts"
+#: data/io.github.flattool.Ignition.desktop.in:4
+#: data/io.github.flattool.Ignition.metainfo.xml.in:15
+#, fuzzy
+#| msgid "Create and edit startup apps and scripts"
+msgid "Manage startup apps and scripts"
 msgstr "Создание и редактирование приложений и сценариев запуска"
 
-#: data/io.github.flattool.Ignition.metainfo.xml.in:10
-msgid "No description"
-msgstr "Нет описания"
+#: data/io.github.flattool.Ignition.desktop.in:10
+msgid "GTK;startup;autostart;login;"
+msgstr ""
 
-#: data/io.github.flattool.Ignition.metainfo.xml.in:60
+#: data/io.github.flattool.Ignition.metainfo.xml.in:11
+msgid "Heliguy"
+msgstr ""
+
+#: data/io.github.flattool.Ignition.metainfo.xml.in:17
+msgid ""
+"Ignition provides a simple UI to add, remove, and modify startup entries on "
+"your computer. Ignition can add apps, scripts, and arbitrary commands to run "
+"at login."
+msgstr ""
+
+#: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
 msgstr "Просмотр всех элементов запуска."
 
-#: data/io.github.flattool.Ignition.metainfo.xml.in:64
+#: data/io.github.flattool.Ignition.metainfo.xml.in:39
 msgid "View and edit entry details."
 msgstr "Просмотр и редактирование сведений о записи."
 
-#: data/io.github.flattool.Ignition.metainfo.xml.in:68
+#: data/io.github.flattool.Ignition.metainfo.xml.in:43
 msgid "Create a new startup entry."
 msgstr "Создание новой записи запуска."
 
-#: data/io.github.flattool.Ignition.metainfo.xml.in:72
+#: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
 msgstr "Просмотр всех элементов запуска в темном режиме."
 
@@ -80,7 +87,7 @@ msgstr "Попробуйте другой поисковый запрос."
 msgid "Edit Details"
 msgstr "Редактировать сведения"
 
-#: src/gtk/details-page.blp:14 src/details_page.js:111
+#: src/gtk/details-page.blp:14
 msgid "Cancel"
 msgstr "Отменить"
 
@@ -117,24 +124,30 @@ msgid "Command or Script"
 msgstr "Команда или сценарий"
 
 #: src/gtk/details-page.blp:75
-msgid "Choose a Script"
-msgstr "Выберите сценарий"
+msgid "More Information"
+msgstr ""
 
-#: src/gtk/details-page.blp:81
+#: src/gtk/details-page.blp:82
 msgid "Show Terminal"
 msgstr "Показать терминал"
 
-#: src/gtk/details-page.blp:82
+#: src/gtk/details-page.blp:83
 msgid "Show a terminal for this process to run in."
 msgstr "Показать терминал, в котором будет запущен этот процесс."
 
-#: src/gtk/details-page.blp:89
+#: src/gtk/details-page.blp:90
 msgid "Create"
 msgstr "Создать"
 
-#: src/gtk/details-page.blp:95
+#: src/gtk/details-page.blp:96
 msgid "Move to Trash"
 msgstr "Отправить в корзину"
+
+#: src/gtk/details-page.blp:109
+msgid ""
+"To run a script at login, paste its file path here. You can copy the "
+"script's path from your file manager. Make sure your script is executable."
+msgstr ""
 
 #: src/gtk/properties-dialog.blp:10 src/gtk/window.blp:68
 #: src/details_page.js:52
@@ -210,14 +223,6 @@ msgstr "Новая"
 msgid "No Name Set"
 msgstr "Нет имени"
 
-#: src/details_page.js:109
-msgid "Open"
-msgstr "Открыть"
-
-#: src/details_page.js:113
-msgid "Executable Files"
-msgstr "Исполняемые файлы"
-
 #: src/entry_row.js:29
 msgid "No comment set."
 msgstr "Нет комментария."
@@ -238,15 +243,19 @@ msgstr "Копировать"
 msgid "OK"
 msgstr "Хорошо"
 
-#: src/main.js:61
+#: src/main.js:73
 msgid "Opened folder"
 msgstr "Открытая папка"
 
-#: src/main.js:68
+#: src/main.js:80
 msgid "Could not open folder"
 msgstr "Не удалось открыть папку"
 
-#: src/main.js:82
+#: src/main.js:95
+msgid "Translate"
+msgstr ""
+
+#: src/main.js:96
 msgid "Donate"
 msgstr "Пожертвовать"
 
@@ -254,18 +263,48 @@ msgstr "Пожертвовать"
 msgid "Error loading details"
 msgstr "Ошибка при загрузке сведений"
 
-#: src/properties_dialog.js:80
+#: src/properties_dialog.js:77
+#, fuzzy
+#| msgid "No Entries Found"
+msgid "No installed apps found"
+msgstr "Записи не найдены"
+
+#: src/properties_dialog.js:99
 msgid "Could not save file"
 msgstr "Не удалось сохранить файл"
 
-#: src/properties_dialog.js:81
+#: src/properties_dialog.js:100
 msgid "Could not trash file"
 msgstr "Не удалось отправить файл в корзину"
 
-#: src/window.js:89
+#: src/window.js:90
 msgid "Saved Details"
 msgstr "Сохраненные сведения"
 
-#: src/window.js:90
+#: src/window.js:91
 msgid "Trashed Entry"
 msgstr "Отправленная в корзину запись"
+
+#: src/window.js:198
+#, fuzzy
+#| msgid "Could not open folder"
+msgid "Could not load some apps"
+msgstr "Не удалось открыть папку"
+
+#~ msgid "ignition"
+#~ msgstr "ignition"
+
+#~ msgid "GTK;"
+#~ msgstr "GTK;ГТК;"
+
+#~ msgid "No description"
+#~ msgstr "Нет описания"
+
+#~ msgid "Choose a Script"
+#~ msgstr "Выберите сценарий"
+
+#~ msgid "Open"
+#~ msgstr "Открыть"
+
+#~ msgid "Executable Files"
+#~ msgstr "Исполняемые файлы"
