@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-24 00:07-0500\n"
-"PO-Revision-Date: 2025-01-21 12:41+0000\n"
+"PO-Revision-Date: 2025-01-29 14:45+0000\n"
 "Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/it/>\n"
@@ -26,18 +26,16 @@ msgstr "Ignition"
 
 #: data/io.github.flattool.Ignition.desktop.in:4
 #: data/io.github.flattool.Ignition.metainfo.xml.in:15
-#, fuzzy
-#| msgid "Create and edit startup apps and scripts"
 msgid "Manage startup apps and scripts"
-msgstr "Crea e modifica app e script di avvio"
+msgstr "Gestire app e script di avvio"
 
 #: data/io.github.flattool.Ignition.desktop.in:10
 msgid "GTK;startup;autostart;login;"
-msgstr ""
+msgstr "GTK;avvio;avvio automatico;login;"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
 msgid "Heliguy"
-msgstr ""
+msgstr "Heliguy"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:17
 msgid ""
@@ -45,6 +43,9 @@ msgid ""
 "your computer. Ignition can add apps, scripts, and arbitrary commands to run "
 "at login."
 msgstr ""
+"Ignition fornisce una semplice interfaccia utente per aggiungere, rimuovere "
+"e modificare le voci di avvio sul computer. Ignition può aggiungere app, "
+"script e comandi arbitrari da eseguire al login."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
@@ -124,7 +125,7 @@ msgstr "Comando o script"
 
 #: src/gtk/details-page.blp:75
 msgid "More Information"
-msgstr ""
+msgstr "Ulteriori informazioni"
 
 #: src/gtk/details-page.blp:82
 msgid "Show Terminal"
@@ -147,6 +148,9 @@ msgid ""
 "To run a script at login, paste its file path here. You can copy the "
 "script's path from your file manager. Make sure your script is executable."
 msgstr ""
+"Per eseguire uno script al login, incolla qui il suo percorso file. Puoi "
+"copiare il percorso dello script dal tuo file manager. Assicurati che lo "
+"script sia eseguibile."
 
 #: src/gtk/properties-dialog.blp:10 src/gtk/window.blp:68
 #: src/details_page.js:52
@@ -254,7 +258,7 @@ msgstr "Impossibile aprire la cartella"
 
 #: src/main.js:95
 msgid "Translate"
-msgstr ""
+msgstr "Traduzione"
 
 #: src/main.js:96
 msgid "Donate"
@@ -265,10 +269,8 @@ msgid "Error loading details"
 msgstr "Errore durante il caricamento dei dettagli"
 
 #: src/properties_dialog.js:77
-#, fuzzy
-#| msgid "No Entries Found"
 msgid "No installed apps found"
-msgstr "Nessuna voce trovata"
+msgstr "Nessuna app installata trovata"
 
 #: src/properties_dialog.js:99
 msgid "Could not save file"
@@ -287,10 +289,8 @@ msgid "Trashed Entry"
 msgstr "Voce cestinata"
 
 #: src/window.js:198
-#, fuzzy
-#| msgid "Could not open folder"
 msgid "Could not load some apps"
-msgstr "Impossibile aprire la cartella"
+msgstr "Impossibile caricare alcune app"
 
 #~ msgid "ignition"
 #~ msgstr "ignition"
