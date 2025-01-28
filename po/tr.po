@@ -8,28 +8,23 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-24 00:07-0500\n"
-"PO-Revision-Date: 2025-01-14 22:45+0000\n"
-"Last-Translator: dadaxer <dadaxer@mailbox.org>\n"
-"Language-Team: German <https://weblate.fyralabs.com/projects/flattool/"
-"ignition/de/>\n"
-"Language: de\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.9.2\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:3
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14
 msgid "Ignition"
-msgstr "Ignition"
+msgstr ""
 
 #: data/io.github.flattool.Ignition.desktop.in:4
 #: data/io.github.flattool.Ignition.metainfo.xml.in:15
-#, fuzzy
-#| msgid "Create and edit startup apps and scripts"
 msgid "Manage startup apps and scripts"
-msgstr "Erstellen und Bearbeiten von Startanwendungen und Skripten"
+msgstr ""
 
 #: data/io.github.flattool.Ignition.desktop.in:10
 msgid "GTK;startup;autostart;login;"
@@ -48,79 +43,79 @@ msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
-msgstr "Alle Start-Einträge anzeigen."
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:39
 msgid "View and edit entry details."
-msgstr "Anzeigen und bearbeiten von Einträgen."
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:43
 msgid "Create a new startup entry."
-msgstr "Neuen Starteintrag erstellen."
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
-msgstr "Alle Starteinträge im Dark-Mode anzeigen."
+msgstr ""
 
 #: src/gtk/app-chooser-page.blp:5
 msgid "Choose an App"
-msgstr "Wähle eine Anwendung"
+msgstr ""
 
 #: src/gtk/app-chooser-page.blp:15 src/gtk/window.blp:15
 msgid "Search"
-msgstr "Suchen"
+msgstr ""
 
 #: src/gtk/app-chooser-page.blp:26
 msgid "Search apps"
-msgstr "Anwendungen durchsuchen"
+msgstr ""
 
 #: src/gtk/app-chooser-page.blp:48 src/gtk/window.blp:74
 msgid "No Results Found"
-msgstr "Keine Ergebnisse gefunden"
+msgstr ""
 
 #: src/gtk/app-chooser-page.blp:49 src/gtk/window.blp:75
 msgid "Try a different search."
-msgstr "Versuche eine andere Suche."
+msgstr ""
 
 #: src/gtk/details-page.blp:5
 msgid "Edit Details"
-msgstr "Editiere Details"
+msgstr ""
 
 #: src/gtk/details-page.blp:14
 msgid "Cancel"
-msgstr "Abbrechen"
+msgstr ""
 
 #: src/gtk/details-page.blp:20
 msgid "Apply"
-msgstr "Anwenden"
+msgstr ""
 
 #: src/gtk/details-page.blp:47 src/error_toast.js:27
 msgid "Details"
-msgstr "Details"
+msgstr ""
 
 #: src/gtk/details-page.blp:48
 msgid "Edit details about this entry."
-msgstr "Details zu diesem Eintrag bearbeiten."
+msgstr ""
 
 #: src/gtk/details-page.blp:53
 msgid "Enable"
-msgstr "Aktivieren"
+msgstr ""
 
 #: src/gtk/details-page.blp:54
 msgid "Enable this entry to be started when you log in."
-msgstr "Aktiviere diesen Eintrag, damit er beim Einloggen gestartet wird."
+msgstr ""
 
 #: src/gtk/details-page.blp:62
 msgid "Name"
-msgstr "Name"
+msgstr ""
 
 #: src/gtk/details-page.blp:66
 msgid "Comment"
-msgstr "Kommentar"
+msgstr ""
 
 #: src/gtk/details-page.blp:70
 msgid "Command or Script"
-msgstr "Befehl oder Skript"
+msgstr ""
 
 #: src/gtk/details-page.blp:75
 msgid "More Information"
@@ -128,19 +123,19 @@ msgstr ""
 
 #: src/gtk/details-page.blp:82
 msgid "Show Terminal"
-msgstr "Zeige Terminal"
+msgstr ""
 
 #: src/gtk/details-page.blp:83
 msgid "Show a terminal for this process to run in."
-msgstr "Zeige ein Terminal an, in dem dieser Prozess ausgeführt werden soll."
+msgstr ""
 
 #: src/gtk/details-page.blp:90
 msgid "Create"
-msgstr "Erstellen"
+msgstr ""
 
 #: src/gtk/details-page.blp:96
 msgid "Move to Trash"
-msgstr "In den Papierkorb verschieben"
+msgstr ""
 
 #: src/gtk/details-page.blp:109
 msgid ""
@@ -151,105 +146,100 @@ msgstr ""
 #: src/gtk/properties-dialog.blp:10 src/gtk/window.blp:68
 #: src/details_page.js:52
 msgid "New Entry"
-msgstr "Neuer Eintrag"
+msgstr ""
 
 #: src/gtk/properties-dialog.blp:18
 msgid "Create a New Entry"
-msgstr "Einen neuen Eintrag erstellen"
+msgstr ""
 
 #: src/gtk/properties-dialog.blp:19
 msgid "Add any installed app or select any script to be ran at startup."
 msgstr ""
-"Füge eine beliebige installierte Anwendung hinzu oder wähle ein Skript aus, "
-"dass beim Start ausgeführt werden soll."
 
 #: src/gtk/properties-dialog.blp:29
 msgid "Add an App"
-msgstr "Eine App hinzufügen"
+msgstr ""
 
 #: src/gtk/properties-dialog.blp:36
 msgid "Add a Command or Script"
-msgstr "Einen Befehl oder ein Skript hinzufügen"
+msgstr ""
 
 #: src/gtk/window.blp:35
 msgid "Search entries"
-msgstr "Einträge suchen"
+msgstr ""
 
 #: src/gtk/window.blp:46
 msgid "Preparing"
-msgstr "Vorbereiten"
+msgstr ""
 
 #: src/gtk/window.blp:47
 msgid "This should only take a moment."
-msgstr "Dies sollte nur einen Augenblick dauern."
+msgstr ""
 
 #: src/gtk/window.blp:51
 msgid "Welcome to Ignition!"
-msgstr "Willkommen bei Ignition!"
+msgstr ""
 
 #: src/gtk/window.blp:52
 msgid ""
 "Ignition lets you start any app or script when you log in to your computer."
 msgstr ""
-"Mit Ignition können Sie jede beliebige Anwendung oder jedes Skript starten, "
-"wenn Sie sich bei Ihrem Computer einloggen."
 
 #: src/gtk/window.blp:56
 msgid "Get Started"
-msgstr "Los geht's"
+msgstr ""
 
 #: src/gtk/window.blp:61
 msgid "No Entries Found"
-msgstr "Keine Einträge gefunden"
+msgstr ""
 
 #: src/gtk/window.blp:62
 msgid "Add an app or script to run it at login."
-msgstr "Füge eine App oder Skript hinzu um es beim Login auszuführen."
+msgstr ""
 
 #: src/gtk/window.blp:86
 msgid "Startup Applications and Scripts"
-msgstr "Startup-Anwendungen und Skripte"
+msgstr ""
 
 #: src/gtk/window.blp:87
 msgid "Startup apps and scripts are automatically started when you log in."
 msgstr ""
-"Anwendungen und Skripte werden automatisch gestartet, wenn Sie sich anmelden."
 
 #: src/gtk/window.blp:93
 msgid "New"
-msgstr "Neu"
+msgstr ""
 
 #: src/details_page.js:43 src/entry_row.js:28
 msgid "No Name Set"
-msgstr "Kein Name eingegeben"
+msgstr ""
 
 #: src/entry_row.js:29
 msgid "No comment set."
-msgstr "Kein Kommentar festgelegt."
+msgstr ""
 
 #: src/entry_row.js:31
 msgid "Enabled"
-msgstr "Aktiviert"
+msgstr ""
 
 #: src/entry_row.js:35
 msgid "Disabled"
-msgstr "Deaktiviert"
+msgstr ""
 
 #: src/error_toast.js:16
 msgid "Copy"
-msgstr "Kopieren"
+msgstr ""
 
 #: src/error_toast.js:17
 msgid "OK"
-msgstr "Okay"
+msgstr ""
 
 #: src/main.js:73
 msgid "Opened folder"
-msgstr "Geöffneter Ordner"
+msgstr ""
 
 #: src/main.js:80
 msgid "Could not open folder"
-msgstr "Verzeichnis konnte nicht geöffnet werden"
+msgstr ""
 
 #: src/main.js:95
 msgid "Translate"
@@ -257,54 +247,32 @@ msgstr ""
 
 #: src/main.js:96
 msgid "Donate"
-msgstr "Spenden"
+msgstr ""
 
 #: src/properties_dialog.js:32
 msgid "Error loading details"
-msgstr "Fehler beim Laden von Details"
+msgstr ""
 
 #: src/properties_dialog.js:77
-#, fuzzy
-#| msgid "No Entries Found"
 msgid "No installed apps found"
-msgstr "Keine Einträge gefunden"
+msgstr ""
 
 #: src/properties_dialog.js:99
 msgid "Could not save file"
-msgstr "Datei konnte nicht gespeichert werden"
+msgstr ""
 
 #: src/properties_dialog.js:100
 msgid "Could not trash file"
-msgstr "Datei konnte nicht gelöscht werden"
+msgstr ""
 
 #: src/window.js:90
 msgid "Saved Details"
-msgstr "Gespeicherte Details"
+msgstr ""
 
 #: src/window.js:91
 msgid "Trashed Entry"
-msgstr "Gelöschter Eintrag"
+msgstr ""
 
 #: src/window.js:198
-#, fuzzy
-#| msgid "Could not open folder"
 msgid "Could not load some apps"
-msgstr "Verzeichnis konnte nicht geöffnet werden"
-
-#~ msgid "ignition"
-#~ msgstr "ignition"
-
-#~ msgid "GTK;"
-#~ msgstr "GTK;"
-
-#~ msgid "No description"
-#~ msgstr "Keine Beschreibung"
-
-#~ msgid "Choose a Script"
-#~ msgstr "Wähle ein Skript"
-
-#~ msgid "Open"
-#~ msgstr "Öffnen"
-
-#~ msgid "Executable Files"
-#~ msgstr "Ausführbare Dateien"
+msgstr ""

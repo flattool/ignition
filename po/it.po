@@ -8,11 +8,11 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-24 00:07-0500\n"
-"PO-Revision-Date: 2025-01-14 22:45+0000\n"
-"Last-Translator: dadaxer <dadaxer@mailbox.org>\n"
-"Language-Team: German <https://weblate.fyralabs.com/projects/flattool/"
-"ignition/de/>\n"
-"Language: de\n"
+"PO-Revision-Date: 2025-01-21 12:41+0000\n"
+"Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
+"Language-Team: Italian <https://weblate.fyralabs.com/projects/flattool/"
+"ignition/it/>\n"
+"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,7 +29,7 @@ msgstr "Ignition"
 #, fuzzy
 #| msgid "Create and edit startup apps and scripts"
 msgid "Manage startup apps and scripts"
-msgstr "Erstellen und Bearbeiten von Startanwendungen und Skripten"
+msgstr "Crea e modifica app e script di avvio"
 
 #: data/io.github.flattool.Ignition.desktop.in:10
 msgid "GTK;startup;autostart;login;"
@@ -48,79 +48,79 @@ msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
-msgstr "Alle Start-Einträge anzeigen."
+msgstr "Visualizza tutti gli elementi di avvio."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:39
 msgid "View and edit entry details."
-msgstr "Anzeigen und bearbeiten von Einträgen."
+msgstr "Visualizza e modifica i dettagli della voce."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:43
 msgid "Create a new startup entry."
-msgstr "Neuen Starteintrag erstellen."
+msgstr "Crea una nuova voce di avvio."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
-msgstr "Alle Starteinträge im Dark-Mode anzeigen."
+msgstr "Visualizza tutti gli elementi di avvio in modalità scura."
 
 #: src/gtk/app-chooser-page.blp:5
 msgid "Choose an App"
-msgstr "Wähle eine Anwendung"
+msgstr "Scegli un'app"
 
 #: src/gtk/app-chooser-page.blp:15 src/gtk/window.blp:15
 msgid "Search"
-msgstr "Suchen"
+msgstr "Cerca"
 
 #: src/gtk/app-chooser-page.blp:26
 msgid "Search apps"
-msgstr "Anwendungen durchsuchen"
+msgstr "Cerca app"
 
 #: src/gtk/app-chooser-page.blp:48 src/gtk/window.blp:74
 msgid "No Results Found"
-msgstr "Keine Ergebnisse gefunden"
+msgstr "Nessun risultato trovato"
 
 #: src/gtk/app-chooser-page.blp:49 src/gtk/window.blp:75
 msgid "Try a different search."
-msgstr "Versuche eine andere Suche."
+msgstr "Prova una ricerca diversa."
 
 #: src/gtk/details-page.blp:5
 msgid "Edit Details"
-msgstr "Editiere Details"
+msgstr "Modifica dettagli"
 
 #: src/gtk/details-page.blp:14
 msgid "Cancel"
-msgstr "Abbrechen"
+msgstr "Annulla"
 
 #: src/gtk/details-page.blp:20
 msgid "Apply"
-msgstr "Anwenden"
+msgstr "Applica"
 
 #: src/gtk/details-page.blp:47 src/error_toast.js:27
 msgid "Details"
-msgstr "Details"
+msgstr "Dettagli"
 
 #: src/gtk/details-page.blp:48
 msgid "Edit details about this entry."
-msgstr "Details zu diesem Eintrag bearbeiten."
+msgstr "Modifica i dettagli di questa voce."
 
 #: src/gtk/details-page.blp:53
 msgid "Enable"
-msgstr "Aktivieren"
+msgstr "Abilita"
 
 #: src/gtk/details-page.blp:54
 msgid "Enable this entry to be started when you log in."
-msgstr "Aktiviere diesen Eintrag, damit er beim Einloggen gestartet wird."
+msgstr "Abilita questa voce affinché venga avviata quando accedi."
 
 #: src/gtk/details-page.blp:62
 msgid "Name"
-msgstr "Name"
+msgstr "Nome"
 
 #: src/gtk/details-page.blp:66
 msgid "Comment"
-msgstr "Kommentar"
+msgstr "Commento"
 
 #: src/gtk/details-page.blp:70
 msgid "Command or Script"
-msgstr "Befehl oder Skript"
+msgstr "Comando o script"
 
 #: src/gtk/details-page.blp:75
 msgid "More Information"
@@ -128,19 +128,19 @@ msgstr ""
 
 #: src/gtk/details-page.blp:82
 msgid "Show Terminal"
-msgstr "Zeige Terminal"
+msgstr "Mostra terminale"
 
 #: src/gtk/details-page.blp:83
 msgid "Show a terminal for this process to run in."
-msgstr "Zeige ein Terminal an, in dem dieser Prozess ausgeführt werden soll."
+msgstr "Mostra un terminale in cui eseguire questo processo."
 
 #: src/gtk/details-page.blp:90
 msgid "Create"
-msgstr "Erstellen"
+msgstr "Crea"
 
 #: src/gtk/details-page.blp:96
 msgid "Move to Trash"
-msgstr "In den Papierkorb verschieben"
+msgstr "Sposta nel cestino"
 
 #: src/gtk/details-page.blp:109
 msgid ""
@@ -151,105 +151,106 @@ msgstr ""
 #: src/gtk/properties-dialog.blp:10 src/gtk/window.blp:68
 #: src/details_page.js:52
 msgid "New Entry"
-msgstr "Neuer Eintrag"
+msgstr "Nuova voce"
 
 #: src/gtk/properties-dialog.blp:18
 msgid "Create a New Entry"
-msgstr "Einen neuen Eintrag erstellen"
+msgstr "Crea una nuova voce"
 
 #: src/gtk/properties-dialog.blp:19
 msgid "Add any installed app or select any script to be ran at startup."
 msgstr ""
-"Füge eine beliebige installierte Anwendung hinzu oder wähle ein Skript aus, "
-"dass beim Start ausgeführt werden soll."
+"Aggiungi qualsiasi app installata o seleziona uno script da eseguire "
+"all'avvio."
 
 #: src/gtk/properties-dialog.blp:29
 msgid "Add an App"
-msgstr "Eine App hinzufügen"
+msgstr "Aggiungi un'app"
 
 #: src/gtk/properties-dialog.blp:36
 msgid "Add a Command or Script"
-msgstr "Einen Befehl oder ein Skript hinzufügen"
+msgstr "Aggiungi un comando o uno script"
 
 #: src/gtk/window.blp:35
 msgid "Search entries"
-msgstr "Einträge suchen"
+msgstr "Cerca voci"
 
 #: src/gtk/window.blp:46
 msgid "Preparing"
-msgstr "Vorbereiten"
+msgstr "Preparazione"
 
 #: src/gtk/window.blp:47
 msgid "This should only take a moment."
-msgstr "Dies sollte nur einen Augenblick dauern."
+msgstr "Ci vorrà solo un momento."
 
 #: src/gtk/window.blp:51
 msgid "Welcome to Ignition!"
-msgstr "Willkommen bei Ignition!"
+msgstr "Benvenuti su Ignition!"
 
 #: src/gtk/window.blp:52
 msgid ""
 "Ignition lets you start any app or script when you log in to your computer."
 msgstr ""
-"Mit Ignition können Sie jede beliebige Anwendung oder jedes Skript starten, "
-"wenn Sie sich bei Ihrem Computer einloggen."
+"Ignition ti consente di avviare qualsiasi app o script quando accedi al "
+"computer."
 
 #: src/gtk/window.blp:56
 msgid "Get Started"
-msgstr "Los geht's"
+msgstr "Iniziamo"
 
 #: src/gtk/window.blp:61
 msgid "No Entries Found"
-msgstr "Keine Einträge gefunden"
+msgstr "Nessuna voce trovata"
 
 #: src/gtk/window.blp:62
 msgid "Add an app or script to run it at login."
-msgstr "Füge eine App oder Skript hinzu um es beim Login auszuführen."
+msgstr "Aggiungi un'app o uno script da eseguire all'accesso."
 
 #: src/gtk/window.blp:86
 msgid "Startup Applications and Scripts"
-msgstr "Startup-Anwendungen und Skripte"
+msgstr "Applicazioni e script di avvio"
 
 #: src/gtk/window.blp:87
 msgid "Startup apps and scripts are automatically started when you log in."
 msgstr ""
-"Anwendungen und Skripte werden automatisch gestartet, wenn Sie sich anmelden."
+"Le app e gli script di avvio vengono avviati automaticamente quando si "
+"effettua l'accesso."
 
 #: src/gtk/window.blp:93
 msgid "New"
-msgstr "Neu"
+msgstr "Nuovo"
 
 #: src/details_page.js:43 src/entry_row.js:28
 msgid "No Name Set"
-msgstr "Kein Name eingegeben"
+msgstr "Nessun nome impostato"
 
 #: src/entry_row.js:29
 msgid "No comment set."
-msgstr "Kein Kommentar festgelegt."
+msgstr "Nessun commento impostato."
 
 #: src/entry_row.js:31
 msgid "Enabled"
-msgstr "Aktiviert"
+msgstr "Abilitato"
 
 #: src/entry_row.js:35
 msgid "Disabled"
-msgstr "Deaktiviert"
+msgstr "Disabilitato"
 
 #: src/error_toast.js:16
 msgid "Copy"
-msgstr "Kopieren"
+msgstr "Copia"
 
 #: src/error_toast.js:17
 msgid "OK"
-msgstr "Okay"
+msgstr "OK"
 
 #: src/main.js:73
 msgid "Opened folder"
-msgstr "Geöffneter Ordner"
+msgstr "Cartella aperta"
 
 #: src/main.js:80
 msgid "Could not open folder"
-msgstr "Verzeichnis konnte nicht geöffnet werden"
+msgstr "Impossibile aprire la cartella"
 
 #: src/main.js:95
 msgid "Translate"
@@ -257,39 +258,39 @@ msgstr ""
 
 #: src/main.js:96
 msgid "Donate"
-msgstr "Spenden"
+msgstr "Donazione"
 
 #: src/properties_dialog.js:32
 msgid "Error loading details"
-msgstr "Fehler beim Laden von Details"
+msgstr "Errore durante il caricamento dei dettagli"
 
 #: src/properties_dialog.js:77
 #, fuzzy
 #| msgid "No Entries Found"
 msgid "No installed apps found"
-msgstr "Keine Einträge gefunden"
+msgstr "Nessuna voce trovata"
 
 #: src/properties_dialog.js:99
 msgid "Could not save file"
-msgstr "Datei konnte nicht gespeichert werden"
+msgstr "Impossibile salvare il file"
 
 #: src/properties_dialog.js:100
 msgid "Could not trash file"
-msgstr "Datei konnte nicht gelöscht werden"
+msgstr "Impossibile eliminare il file"
 
 #: src/window.js:90
 msgid "Saved Details"
-msgstr "Gespeicherte Details"
+msgstr "Dettagli salvati"
 
 #: src/window.js:91
 msgid "Trashed Entry"
-msgstr "Gelöschter Eintrag"
+msgstr "Voce cestinata"
 
 #: src/window.js:198
 #, fuzzy
 #| msgid "Could not open folder"
 msgid "Could not load some apps"
-msgstr "Verzeichnis konnte nicht geöffnet werden"
+msgstr "Impossibile aprire la cartella"
 
 #~ msgid "ignition"
 #~ msgstr "ignition"
@@ -298,13 +299,13 @@ msgstr "Verzeichnis konnte nicht geöffnet werden"
 #~ msgstr "GTK;"
 
 #~ msgid "No description"
-#~ msgstr "Keine Beschreibung"
+#~ msgstr "Nessuna descrizione"
 
 #~ msgid "Choose a Script"
-#~ msgstr "Wähle ein Skript"
+#~ msgstr "Scegli uno script"
 
 #~ msgid "Open"
-#~ msgstr "Öffnen"
+#~ msgstr "Apri"
 
 #~ msgid "Executable Files"
-#~ msgstr "Ausführbare Dateien"
+#~ msgstr "File eseguibili"
