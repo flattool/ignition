@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-24 00:07-0500\n"
-"PO-Revision-Date: 2025-01-23 15:41+0000\n"
+"PO-Revision-Date: 2025-01-29 14:45+0000\n"
 "Last-Translator: Alexmelman88 <alexmelman88@gmail.com>\n"
 "Language-Team: Russian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/ru/>\n"
@@ -27,18 +27,16 @@ msgstr "Ignition"
 
 #: data/io.github.flattool.Ignition.desktop.in:4
 #: data/io.github.flattool.Ignition.metainfo.xml.in:15
-#, fuzzy
-#| msgid "Create and edit startup apps and scripts"
 msgid "Manage startup apps and scripts"
-msgstr "Создание и редактирование приложений и сценариев запуска"
+msgstr "Управление приложениями и сценариями запуска"
 
 #: data/io.github.flattool.Ignition.desktop.in:10
 msgid "GTK;startup;autostart;login;"
-msgstr ""
+msgstr "GTK;startup;autostart;login;запуск;автозапуск;вход в систему;"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
 msgid "Heliguy"
-msgstr ""
+msgstr "Heliguy"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:17
 msgid ""
@@ -46,6 +44,10 @@ msgid ""
 "your computer. Ignition can add apps, scripts, and arbitrary commands to run "
 "at login."
 msgstr ""
+"Ignition предоставляет простой пользовательский интерфейс для добавления, "
+"удаления и изменения записей запуска на вашем компьютере. Ignition может "
+"добавлять приложения, сценарии и произвольные команды для запуска при входе "
+"в систему."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
@@ -125,7 +127,7 @@ msgstr "Команда или сценарий"
 
 #: src/gtk/details-page.blp:75
 msgid "More Information"
-msgstr ""
+msgstr "Больше информации"
 
 #: src/gtk/details-page.blp:82
 msgid "Show Terminal"
@@ -148,6 +150,9 @@ msgid ""
 "To run a script at login, paste its file path here. You can copy the "
 "script's path from your file manager. Make sure your script is executable."
 msgstr ""
+"Чтобы запустить сценарий при входе в систему, вставьте сюда путь к его "
+"файлу. Вы можете скопировать путь к сценарию из файлового менеджера. "
+"Убедитесь, что ваш сценарий является исполняемым."
 
 #: src/gtk/properties-dialog.blp:10 src/gtk/window.blp:68
 #: src/details_page.js:52
@@ -253,7 +258,7 @@ msgstr "Не удалось открыть папку"
 
 #: src/main.js:95
 msgid "Translate"
-msgstr ""
+msgstr "Перевести"
 
 #: src/main.js:96
 msgid "Donate"
@@ -264,10 +269,8 @@ msgid "Error loading details"
 msgstr "Ошибка при загрузке сведений"
 
 #: src/properties_dialog.js:77
-#, fuzzy
-#| msgid "No Entries Found"
 msgid "No installed apps found"
-msgstr "Записи не найдены"
+msgstr "Установленные приложения не найдены"
 
 #: src/properties_dialog.js:99
 msgid "Could not save file"
@@ -286,10 +289,8 @@ msgid "Trashed Entry"
 msgstr "Отправленная в корзину запись"
 
 #: src/window.js:198
-#, fuzzy
-#| msgid "Could not open folder"
 msgid "Could not load some apps"
-msgstr "Не удалось открыть папку"
+msgstr "Не удалось загрузить некоторые приложения"
 
 #~ msgid "ignition"
 #~ msgstr "ignition"
