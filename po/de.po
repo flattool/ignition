@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-24 00:07-0500\n"
-"PO-Revision-Date: 2025-01-14 22:45+0000\n"
-"Last-Translator: dadaxer <dadaxer@mailbox.org>\n"
+"PO-Revision-Date: 2025-01-31 23:45+0000\n"
+"Last-Translator: chrizdeluxe <christoph.wetzel.85@icloud.com>\n"
 "Language-Team: German <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/de/>\n"
 "Language: de\n"
@@ -29,15 +29,16 @@ msgstr "Ignition"
 #, fuzzy
 #| msgid "Create and edit startup apps and scripts"
 msgid "Manage startup apps and scripts"
-msgstr "Erstellen und Bearbeiten von Startanwendungen und Skripten"
+msgstr "Verwalten von Startanwendungen und Skripten"
 
 #: data/io.github.flattool.Ignition.desktop.in:10
 msgid "GTK;startup;autostart;login;"
 msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
+#, fuzzy
 msgid "Heliguy"
-msgstr ""
+msgstr "Heliguy"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:17
 msgid ""
@@ -45,6 +46,10 @@ msgid ""
 "your computer. Ignition can add apps, scripts, and arbitrary commands to run "
 "at login."
 msgstr ""
+"Ignition bietet eine einfache Benutzeroberfläche zum Hinzufügen, Entfernen "
+"und Ändern von Starteinträgen auf Ihrem Computer. Ignition kann Anwendungen, "
+"Skripte und beliebige Befehle hinzufügen, die bei der Anmeldung ausgeführt "
+"werden."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
@@ -124,7 +129,7 @@ msgstr "Befehl oder Skript"
 
 #: src/gtk/details-page.blp:75
 msgid "More Information"
-msgstr ""
+msgstr "Mehr Informationen"
 
 #: src/gtk/details-page.blp:82
 msgid "Show Terminal"
@@ -147,6 +152,9 @@ msgid ""
 "To run a script at login, paste its file path here. You can copy the "
 "script's path from your file manager. Make sure your script is executable."
 msgstr ""
+"Um ein Skript bei der Anmeldung auszuführen, fügen Sie dessen Dateipfad hier "
+"ein. Sie können den Pfad des Skripts aus Ihrem Dateimanager kopieren. "
+"Stellen Sie sicher, dass Ihr Skript ausführbar ist."
 
 #: src/gtk/properties-dialog.blp:10 src/gtk/window.blp:68
 #: src/details_page.js:52
@@ -253,7 +261,7 @@ msgstr "Verzeichnis konnte nicht geöffnet werden"
 
 #: src/main.js:95
 msgid "Translate"
-msgstr ""
+msgstr "Übersetzen"
 
 #: src/main.js:96
 msgid "Donate"
@@ -267,7 +275,7 @@ msgstr "Fehler beim Laden von Details"
 #, fuzzy
 #| msgid "No Entries Found"
 msgid "No installed apps found"
-msgstr "Keine Einträge gefunden"
+msgstr "Keine installierten Anwendungen gefunden"
 
 #: src/properties_dialog.js:99
 msgid "Could not save file"
@@ -286,10 +294,8 @@ msgid "Trashed Entry"
 msgstr "Gelöschter Eintrag"
 
 #: src/window.js:198
-#, fuzzy
-#| msgid "Could not open folder"
 msgid "Could not load some apps"
-msgstr "Verzeichnis konnte nicht geöffnet werden"
+msgstr "Einige Anwendungen konnten nicht geladen werden"
 
 #~ msgid "ignition"
 #~ msgstr "ignition"
