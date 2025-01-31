@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-24 00:07-0500\n"
-"PO-Revision-Date: 2025-01-09 19:45+0000\n"
-"Last-Translator: John Peter Sa <johnppetersa@gmail.com>\n"
+"PO-Revision-Date: 2025-01-31 23:45+0000\n"
+"Last-Translator: Tiago Lucas Flach <tiagolucas9830@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.fyralabs.com/projects/"
 "flattool/ignition/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -32,12 +32,13 @@ msgid "Manage startup apps and scripts"
 msgstr "Crie e edite aplicativos e scripts de inicialização"
 
 #: data/io.github.flattool.Ignition.desktop.in:10
+#, fuzzy
 msgid "GTK;startup;autostart;login;"
-msgstr ""
+msgstr "GTK;inicialização;início_automático;login;"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
 msgid "Heliguy"
-msgstr ""
+msgstr "Heliguy"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:17
 msgid ""
@@ -45,6 +46,9 @@ msgid ""
 "your computer. Ignition can add apps, scripts, and arbitrary commands to run "
 "at login."
 msgstr ""
+"O Ignition fornece uma UI simples para adicionar, remover e modificar "
+"entradas de inicialização no seu computador. O Ignition pode adicionar apps, "
+"scripts e comandos arbitrários para executar no login."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
@@ -124,7 +128,7 @@ msgstr "Comando ou Script"
 
 #: src/gtk/details-page.blp:75
 msgid "More Information"
-msgstr ""
+msgstr "Mais informações"
 
 #: src/gtk/details-page.blp:82
 msgid "Show Terminal"
@@ -147,6 +151,9 @@ msgid ""
 "To run a script at login, paste its file path here. You can copy the "
 "script's path from your file manager. Make sure your script is executable."
 msgstr ""
+"Para executar um script no login, cole o caminho do arquivo aqui. Você pode "
+"copiar o caminho do script do seu gerenciador de arquivos. Certifique-se de "
+"que seu script seja executável."
 
 #: src/gtk/properties-dialog.blp:10 src/gtk/window.blp:68
 #: src/details_page.js:52
@@ -254,7 +261,7 @@ msgstr "Não foi possível abrir a pasta"
 
 #: src/main.js:95
 msgid "Translate"
-msgstr ""
+msgstr "Tradução"
 
 #: src/main.js:96
 msgid "Donate"
