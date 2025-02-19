@@ -1,24 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the ignition package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# SPDX-FileCopyrightText: 2025 Alevtina <karashokovaaa@basealt.ru>
 msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-24 00:07-0500\n"
-"PO-Revision-Date: 2025-01-23 15:41+0000\n"
-"Last-Translator: Alexmelman88 <alexmelman88@gmail.com>\n"
-"Language-Team: Russian <https://weblate.fyralabs.com/projects/flattool/"
-"ignition/ru/>\n"
+"PO-Revision-Date: 2025-02-19 14:31+0300\n"
+"Last-Translator: Alevtina <karashokovaaa@basealt.ru>\n"
+"Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.9.2\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
+"=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:3
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14
@@ -27,18 +25,17 @@ msgstr "Ignition"
 
 #: data/io.github.flattool.Ignition.desktop.in:4
 #: data/io.github.flattool.Ignition.metainfo.xml.in:15
-#, fuzzy
 #| msgid "Create and edit startup apps and scripts"
 msgid "Manage startup apps and scripts"
-msgstr "Создание и редактирование приложений и сценариев запуска"
+msgstr "Управление приложениями и сценариями запуска"
 
 #: data/io.github.flattool.Ignition.desktop.in:10
 msgid "GTK;startup;autostart;login;"
-msgstr ""
+msgstr "GTK;startup;autostart;login;запуск;автозапуск;вход;"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
 msgid "Heliguy"
-msgstr ""
+msgstr "Heliguy"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:17
 msgid ""
@@ -46,6 +43,11 @@ msgid ""
 "your computer. Ignition can add apps, scripts, and arbitrary commands to run "
 "at login."
 msgstr ""
+"Ignition предоставляет простой пользовательский интерфейс для добавления,"
+" удаления и изменения записей "
+"запуска на вашем компьютере. Ignition может добавлять приложения, сценарии и"
+" произвольные команды "
+"для запуска при входе в систему."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
@@ -61,7 +63,7 @@ msgstr "Создание новой записи запуска."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
-msgstr "Просмотр всех элементов запуска в темном режиме."
+msgstr "Просмотр всех элементов запуска в тёмном режиме."
 
 #: src/gtk/app-chooser-page.blp:5
 msgid "Choose an App"
@@ -125,7 +127,7 @@ msgstr "Команда или сценарий"
 
 #: src/gtk/details-page.blp:75
 msgid "More Information"
-msgstr ""
+msgstr "Дополнительная информация"
 
 #: src/gtk/details-page.blp:82
 msgid "Show Terminal"
@@ -148,6 +150,10 @@ msgid ""
 "To run a script at login, paste its file path here. You can copy the "
 "script's path from your file manager. Make sure your script is executable."
 msgstr ""
+"Чтобы запустить сценарий при входе в систему, укажите здесь путь к его файлу."
+" Вы можете скопировать "
+"путь к сценарию из менеджера файлов. Убедитесь, что ваш сценарий является"
+" исполняемым."
 
 #: src/gtk/properties-dialog.blp:10 src/gtk/window.blp:68
 #: src/details_page.js:52
@@ -182,7 +188,7 @@ msgstr "Подготовка"
 
 #: src/gtk/window.blp:47
 msgid "This should only take a moment."
-msgstr "Это займет совсем немного времени."
+msgstr "Это займёт совсем немного времени."
 
 #: src/gtk/window.blp:51
 msgid "Welcome to Ignition!"
@@ -253,7 +259,7 @@ msgstr "Не удалось открыть папку"
 
 #: src/main.js:95
 msgid "Translate"
-msgstr ""
+msgstr "Перевести"
 
 #: src/main.js:96
 msgid "Donate"
@@ -264,10 +270,9 @@ msgid "Error loading details"
 msgstr "Ошибка при загрузке сведений"
 
 #: src/properties_dialog.js:77
-#, fuzzy
 #| msgid "No Entries Found"
 msgid "No installed apps found"
-msgstr "Записи не найдены"
+msgstr "Установленные приложения не найдены"
 
 #: src/properties_dialog.js:99
 msgid "Could not save file"
@@ -279,17 +284,16 @@ msgstr "Не удалось отправить файл в корзину"
 
 #: src/window.js:90
 msgid "Saved Details"
-msgstr "Сохраненные сведения"
+msgstr "Сохранённые сведения"
 
 #: src/window.js:91
 msgid "Trashed Entry"
 msgstr "Отправленная в корзину запись"
 
 #: src/window.js:198
-#, fuzzy
 #| msgid "Could not open folder"
 msgid "Could not load some apps"
-msgstr "Не удалось открыть папку"
+msgstr "Не удалось загрузить некоторые приложения"
 
 #~ msgid "ignition"
 #~ msgstr "ignition"
@@ -308,3 +312,4 @@ msgstr "Не удалось открыть папку"
 
 #~ msgid "Executable Files"
 #~ msgstr "Исполняемые файлы"
+
