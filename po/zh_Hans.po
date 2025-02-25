@@ -8,27 +8,30 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-24 00:07-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-02-26 07:18+0000\n"
+"Last-Translator: Sense T <tonychee1989@gmail.com>\n"
+"Language-Team: Chinese (Simplified Han script) <https://weblate.fyralabs.com/"
+"projects/flattool/ignition/zh_Hans/>\n"
 "Language: zh_Hans\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.9.2\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:3
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14
 msgid "Ignition"
-msgstr ""
+msgstr "Ignition"
 
 #: data/io.github.flattool.Ignition.desktop.in:4
 #: data/io.github.flattool.Ignition.metainfo.xml.in:15
 msgid "Manage startup apps and scripts"
-msgstr ""
+msgstr "管理启动应用程序和脚本"
 
 #: data/io.github.flattool.Ignition.desktop.in:10
 msgid "GTK;startup;autostart;login;"
-msgstr ""
+msgstr "GTK;startup;autostart;login;"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
 msgid "Heliguy"
@@ -40,239 +43,242 @@ msgid ""
 "your computer. Ignition can add apps, scripts, and arbitrary commands to run "
 "at login."
 msgstr ""
+"Ignition 提供了一个简单的用户界面，用于在您的计算机上添加、移除和修改启动项。"
+"Ignition 可以添加应用程序、脚本以及在登录时运行的任意命令。"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
-msgstr ""
+msgstr "查看所有启动项。"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:39
 msgid "View and edit entry details."
-msgstr ""
+msgstr "查看并编辑条目详细信息。"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:43
 msgid "Create a new startup entry."
-msgstr ""
+msgstr "创建一个新的启动项。"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
-msgstr ""
+msgstr "在深色模式下查看所有启动项。"
 
 #: src/gtk/app-chooser-page.blp:5
 msgid "Choose an App"
-msgstr ""
+msgstr "选择一个应用程序"
 
 #: src/gtk/app-chooser-page.blp:15 src/gtk/window.blp:15
 msgid "Search"
-msgstr ""
+msgstr "搜索"
 
 #: src/gtk/app-chooser-page.blp:26
 msgid "Search apps"
-msgstr ""
+msgstr "搜索应用程序"
 
 #: src/gtk/app-chooser-page.blp:48 src/gtk/window.blp:74
 msgid "No Results Found"
-msgstr ""
+msgstr "没有找到结果"
 
 #: src/gtk/app-chooser-page.blp:49 src/gtk/window.blp:75
 msgid "Try a different search."
-msgstr ""
+msgstr "尝试不同的搜索。"
 
 #: src/gtk/details-page.blp:5
 msgid "Edit Details"
-msgstr ""
+msgstr "编辑详情"
 
 #: src/gtk/details-page.blp:14
 msgid "Cancel"
-msgstr ""
+msgstr "关闭"
 
 #: src/gtk/details-page.blp:20
 msgid "Apply"
-msgstr ""
+msgstr "应用"
 
 #: src/gtk/details-page.blp:47 src/error_toast.js:27
 msgid "Details"
-msgstr ""
+msgstr "详情"
 
 #: src/gtk/details-page.blp:48
 msgid "Edit details about this entry."
-msgstr ""
+msgstr "编辑此条目的详细信息。"
 
 #: src/gtk/details-page.blp:53
 msgid "Enable"
-msgstr ""
+msgstr "启用"
 
 #: src/gtk/details-page.blp:54
 msgid "Enable this entry to be started when you log in."
-msgstr ""
+msgstr "启用此条目，以便在您登录时启动。"
 
 #: src/gtk/details-page.blp:62
 msgid "Name"
-msgstr ""
+msgstr "名称"
 
 #: src/gtk/details-page.blp:66
 msgid "Comment"
-msgstr ""
+msgstr "注释"
 
 #: src/gtk/details-page.blp:70
 msgid "Command or Script"
-msgstr ""
+msgstr "命令或脚本"
 
 #: src/gtk/details-page.blp:75
 msgid "More Information"
-msgstr ""
+msgstr "更多信息"
 
 #: src/gtk/details-page.blp:82
 msgid "Show Terminal"
-msgstr ""
+msgstr "显示终端"
 
 #: src/gtk/details-page.blp:83
 msgid "Show a terminal for this process to run in."
-msgstr ""
+msgstr "为该进程显示一个终端窗口以运行。"
 
 #: src/gtk/details-page.blp:90
 msgid "Create"
-msgstr ""
+msgstr "创建"
 
 #: src/gtk/details-page.blp:96
 msgid "Move to Trash"
-msgstr ""
+msgstr "移动到回收站"
 
 #: src/gtk/details-page.blp:109
 msgid ""
 "To run a script at login, paste its file path here. You can copy the "
 "script's path from your file manager. Make sure your script is executable."
-msgstr ""
+msgstr "要运行登录时的脚本，请在此处粘贴其文件路径。您可以从文件管理器中复制脚本的路"
+"径。请确保您的脚本具有可执行权限。"
 
 #: src/gtk/properties-dialog.blp:10 src/gtk/window.blp:68
 #: src/details_page.js:52
 msgid "New Entry"
-msgstr ""
+msgstr "新条目"
 
 #: src/gtk/properties-dialog.blp:18
 msgid "Create a New Entry"
-msgstr ""
+msgstr "创建一个新条目"
 
 #: src/gtk/properties-dialog.blp:19
 msgid "Add any installed app or select any script to be ran at startup."
-msgstr ""
+msgstr "添加任何已安装的应用程序，或选择任何脚本以在启动时运行。"
 
 #: src/gtk/properties-dialog.blp:29
 msgid "Add an App"
-msgstr ""
+msgstr "添加一个应用程序"
 
 #: src/gtk/properties-dialog.blp:36
 msgid "Add a Command or Script"
-msgstr ""
+msgstr "添加一个命令或者脚本"
 
 #: src/gtk/window.blp:35
 msgid "Search entries"
-msgstr ""
+msgstr "搜索条目"
 
 #: src/gtk/window.blp:46
 msgid "Preparing"
-msgstr ""
+msgstr "正在准备"
 
 #: src/gtk/window.blp:47
 msgid "This should only take a moment."
-msgstr ""
+msgstr "这应该只需要片刻时间。"
 
 #: src/gtk/window.blp:51
 msgid "Welcome to Ignition!"
-msgstr ""
+msgstr "欢迎使用 Ignition！"
 
 #: src/gtk/window.blp:52
 msgid ""
 "Ignition lets you start any app or script when you log in to your computer."
-msgstr ""
+msgstr "Ignition 允许您在登录计算机时启动任何应用程序或脚本。"
 
 #: src/gtk/window.blp:56
 msgid "Get Started"
-msgstr ""
+msgstr "开始使用"
 
 #: src/gtk/window.blp:61
 msgid "No Entries Found"
-msgstr ""
+msgstr "未找到条目"
 
 #: src/gtk/window.blp:62
 msgid "Add an app or script to run it at login."
-msgstr ""
+msgstr "添加一个应用程序或脚本，以便在登录时运行。"
 
 #: src/gtk/window.blp:86
 msgid "Startup Applications and Scripts"
-msgstr ""
+msgstr "启动应用程序和脚本"
 
 #: src/gtk/window.blp:87
 msgid "Startup apps and scripts are automatically started when you log in."
-msgstr ""
+msgstr "启动应用程序和脚本会在您登录时自动启动。"
 
 #: src/gtk/window.blp:93
 msgid "New"
-msgstr ""
+msgstr "新建"
 
 #: src/details_page.js:43 src/entry_row.js:28
 msgid "No Name Set"
-msgstr ""
+msgstr "未设置名称"
 
 #: src/entry_row.js:29
 msgid "No comment set."
-msgstr ""
+msgstr "未设置注释。"
 
 #: src/entry_row.js:31
 msgid "Enabled"
-msgstr ""
+msgstr "已启用"
 
 #: src/entry_row.js:35
 msgid "Disabled"
-msgstr ""
+msgstr "已禁用"
 
 #: src/error_toast.js:16
 msgid "Copy"
-msgstr ""
+msgstr "复制"
 
 #: src/error_toast.js:17
 msgid "OK"
-msgstr ""
+msgstr "确定"
 
 #: src/main.js:73
 msgid "Opened folder"
-msgstr ""
+msgstr "已打开的目录"
 
 #: src/main.js:80
 msgid "Could not open folder"
-msgstr ""
+msgstr "无法打开目录"
 
 #: src/main.js:95
 msgid "Translate"
-msgstr ""
+msgstr "翻译"
 
 #: src/main.js:96
 msgid "Donate"
-msgstr ""
+msgstr "捐助"
 
 #: src/properties_dialog.js:32
 msgid "Error loading details"
-msgstr ""
+msgstr "加载详细信息时出错"
 
 #: src/properties_dialog.js:77
 msgid "No installed apps found"
-msgstr ""
+msgstr "未找到已安装的应用程序"
 
 #: src/properties_dialog.js:99
 msgid "Could not save file"
-msgstr ""
+msgstr "无法保存文件"
 
 #: src/properties_dialog.js:100
 msgid "Could not trash file"
-msgstr ""
+msgstr "无法回收文件"
 
 #: src/window.js:90
 msgid "Saved Details"
-msgstr ""
+msgstr "已保存的详细信息"
 
 #: src/window.js:91
 msgid "Trashed Entry"
-msgstr ""
+msgstr "已回收的条目"
 
 #: src/window.js:198
 msgid "Could not load some apps"
-msgstr ""
+msgstr "无法加载某些应用程序"
