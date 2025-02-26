@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-24 00:07-0500\n"
+"POT-Creation-Date: 2025-02-25 21:18-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:3
-#: data/io.github.flattool.Ignition.metainfo.xml.in:14
+#: data/io.github.flattool.Ignition.metainfo.xml.in:14 src/gtk/window.blp:5
 msgid "Ignition"
 msgstr ""
 
@@ -144,6 +144,56 @@ msgid ""
 "script's path from your file manager. Make sure your script is executable."
 msgstr ""
 
+#: src/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "Entries List"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "New Entry"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:19
+msgctxt "shortcut window"
+msgid "Search Entries"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:24
+msgctxt "shortcut window"
+msgid "Details Dialog"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:27
+msgctxt "shortcut window"
+msgid "Save Edits"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:32
+msgctxt "shortcut window"
+msgid "Search Apps"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:39
+msgctxt "shortcut window"
+msgid "General"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:42
+msgctxt "shortcut window"
+msgid "Open Autostart Folder"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:47
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:52
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr ""
+
 #: src/gtk/properties-dialog.blp:10 src/gtk/window.blp:68
 #: src/details_page.js:52
 msgid "New Entry"
@@ -163,6 +213,10 @@ msgstr ""
 
 #: src/gtk/properties-dialog.blp:36
 msgid "Add a Command or Script"
+msgstr ""
+
+#: src/gtk/window.blp:22
+msgid "Main Menu"
 msgstr ""
 
 #: src/gtk/window.blp:35
@@ -208,6 +262,18 @@ msgstr ""
 
 #: src/gtk/window.blp:93
 msgid "New"
+msgstr ""
+
+#: src/gtk/window.blp:113
+msgid "_Open Autostart Folder"
+msgstr ""
+
+#: src/gtk/window.blp:125
+msgid "_Keyboard Shortcuts"
+msgstr ""
+
+#: src/gtk/window.blp:130
+msgid "_About Ignition"
 msgstr ""
 
 #: src/details_page.js:43 src/entry_row.js:28
