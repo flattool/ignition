@@ -2,7 +2,7 @@ using Gtk 4.0;
 using Adw 1;
 
 template $IgnitionWindow: Adw.ApplicationWindow {
-	title: _('Ignition');
+	title: _("Ignition");
 	default-width: 600;
 	default-height: 525;
 
@@ -18,8 +18,8 @@ template $IgnitionWindow: Adw.ApplicationWindow {
 			[end]
 			MenuButton {
 				primary: true;
-				icon-name: 'open-menu-symbolic';
-				tooltip-text: _('Main Menu');
+				icon-name: "open-menu-symbolic";
+				tooltip-text: _("Main Menu");
 				menu-model: primary_menu;
 			}
 		}
@@ -110,25 +110,25 @@ template $IgnitionWindow: Adw.ApplicationWindow {
 menu primary_menu {
 	section {
 		item {
-			label: _('_Open Autostart Folder');
-			action: 'app.open-folder';
+			label: _("_Open Autostart Folder");
+			action: "app.open-folder";
 		}
 	}
 
 	section {
 		// item {
-		// 	label: _('_Preferences');
-		// 	action: 'app.preferences';
+		// 	label: _("_Preferences");
+		// 	action: "app.preferences";
 		// }
 
 		item {
-			label: _('_Keyboard Shortcuts');
-			action: 'win.show-help-overlay';
+			label: _("_Keyboard Shortcuts");
+			action: "win.show-help-overlay";
 		}
 
 		item {
-			label: _('_About Ignition');
-			action: 'app.about';
+			label: _("_About Ignition");
+			action: "app.about";
 		}
 	}
 }
