@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-24 00:07-0500\n"
-"PO-Revision-Date: 2025-01-14 22:45+0000\n"
-"Last-Translator: dadaxer <dadaxer@mailbox.org>\n"
+"POT-Creation-Date: 2025-02-26 02:17-0500\n"
+"PO-Revision-Date: 2025-01-31 23:45+0000\n"
+"Last-Translator: chrizdeluxe <christoph.wetzel.85@icloud.com>\n"
 "Language-Team: German <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/de/>\n"
 "Language: de\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Weblate 5.9.2\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:3
-#: data/io.github.flattool.Ignition.metainfo.xml.in:14
+#: data/io.github.flattool.Ignition.metainfo.xml.in:14 src/gtk/window.blp:5
 msgid "Ignition"
 msgstr "Ignition"
 
@@ -29,15 +29,16 @@ msgstr "Ignition"
 #, fuzzy
 #| msgid "Create and edit startup apps and scripts"
 msgid "Manage startup apps and scripts"
-msgstr "Erstellen und Bearbeiten von Startanwendungen und Skripten"
+msgstr "Verwalten von Startanwendungen und Skripten"
 
 #: data/io.github.flattool.Ignition.desktop.in:10
 msgid "GTK;startup;autostart;login;"
 msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
+#, fuzzy
 msgid "Heliguy"
-msgstr ""
+msgstr "Heliguy"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:17
 msgid ""
@@ -45,6 +46,10 @@ msgid ""
 "your computer. Ignition can add apps, scripts, and arbitrary commands to run "
 "at login."
 msgstr ""
+"Ignition bietet eine einfache Benutzeroberfläche zum Hinzufügen, Entfernen "
+"und Ändern von Starteinträgen auf Ihrem Computer. Ignition kann Anwendungen, "
+"Skripte und beliebige Befehle hinzufügen, die bei der Anmeldung ausgeführt "
+"werden."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
@@ -61,6 +66,39 @@ msgstr "Neuen Starteintrag erstellen."
 #: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
 msgstr "Alle Starteinträge im Dark-Mode anzeigen."
+
+#: src/details_page.js:43 src/entry_row.js:28
+msgid "No Name Set"
+msgstr "Kein Name eingegeben"
+
+#: src/details_page.js:52 src/gtk/properties-dialog.blp:10
+#: src/gtk/window.blp:68
+msgid "New Entry"
+msgstr "Neuer Eintrag"
+
+#: src/entry_row.js:29
+msgid "No comment set."
+msgstr "Kein Kommentar festgelegt."
+
+#: src/entry_row.js:31
+msgid "Enabled"
+msgstr "Aktiviert"
+
+#: src/entry_row.js:35
+msgid "Disabled"
+msgstr "Deaktiviert"
+
+#: src/error_toast.js:16
+msgid "Copy"
+msgstr "Kopieren"
+
+#: src/error_toast.js:17
+msgid "OK"
+msgstr "Okay"
+
+#: src/error_toast.js:27 src/gtk/details-page.blp:47
+msgid "Details"
+msgstr "Details"
 
 #: src/gtk/app-chooser-page.blp:5
 msgid "Choose an App"
@@ -94,10 +132,6 @@ msgstr "Abbrechen"
 msgid "Apply"
 msgstr "Anwenden"
 
-#: src/gtk/details-page.blp:47 src/error_toast.js:27
-msgid "Details"
-msgstr "Details"
-
 #: src/gtk/details-page.blp:48
 msgid "Edit details about this entry."
 msgstr "Details zu diesem Eintrag bearbeiten."
@@ -124,7 +158,7 @@ msgstr "Befehl oder Skript"
 
 #: src/gtk/details-page.blp:75
 msgid "More Information"
-msgstr ""
+msgstr "Mehr Informationen"
 
 #: src/gtk/details-page.blp:82
 msgid "Show Terminal"
@@ -147,11 +181,69 @@ msgid ""
 "To run a script at login, paste its file path here. You can copy the "
 "script's path from your file manager. Make sure your script is executable."
 msgstr ""
+"Um ein Skript bei der Anmeldung auszuführen, fügen Sie dessen Dateipfad hier "
+"ein. Sie können den Pfad des Skripts aus Ihrem Dateimanager kopieren. "
+"Stellen Sie sicher, dass Ihr Skript ausführbar ist."
 
-#: src/gtk/properties-dialog.blp:10 src/gtk/window.blp:68
-#: src/details_page.js:52
+#: src/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "Entries List"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:14
+#, fuzzy
+#| msgid "New Entry"
+msgctxt "shortcut window"
 msgid "New Entry"
 msgstr "Neuer Eintrag"
+
+#: src/gtk/help-overlay.blp:19
+#, fuzzy
+#| msgid "Search entries"
+msgctxt "shortcut window"
+msgid "Search Entries"
+msgstr "Einträge suchen"
+
+#: src/gtk/help-overlay.blp:24
+#, fuzzy
+#| msgid "Details"
+msgctxt "shortcut window"
+msgid "Details Dialog"
+msgstr "Details"
+
+#: src/gtk/help-overlay.blp:27
+#, fuzzy
+#| msgid "Saved Details"
+msgctxt "shortcut window"
+msgid "Save Edits"
+msgstr "Gespeicherte Details"
+
+#: src/gtk/help-overlay.blp:32
+#, fuzzy
+#| msgid "Search apps"
+msgctxt "shortcut window"
+msgid "Search Apps"
+msgstr "Anwendungen durchsuchen"
+
+#: src/gtk/help-overlay.blp:39
+msgctxt "shortcut window"
+msgid "General"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:42
+msgctxt "shortcut window"
+msgid "Open Autostart Folder"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:47
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:52
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr ""
 
 #: src/gtk/properties-dialog.blp:18
 msgid "Create a New Entry"
@@ -170,6 +262,10 @@ msgstr "Eine App hinzufügen"
 #: src/gtk/properties-dialog.blp:36
 msgid "Add a Command or Script"
 msgstr "Einen Befehl oder ein Skript hinzufügen"
+
+#: src/gtk/window.blp:22
+msgid "Main Menu"
+msgstr ""
 
 #: src/gtk/window.blp:35
 msgid "Search entries"
@@ -219,29 +315,19 @@ msgstr ""
 msgid "New"
 msgstr "Neu"
 
-#: src/details_page.js:43 src/entry_row.js:28
-msgid "No Name Set"
-msgstr "Kein Name eingegeben"
+#: src/gtk/window.blp:113
+msgid "_Open Autostart Folder"
+msgstr ""
 
-#: src/entry_row.js:29
-msgid "No comment set."
-msgstr "Kein Kommentar festgelegt."
+#: src/gtk/window.blp:125
+msgid "_Keyboard Shortcuts"
+msgstr ""
 
-#: src/entry_row.js:31
-msgid "Enabled"
-msgstr "Aktiviert"
-
-#: src/entry_row.js:35
-msgid "Disabled"
-msgstr "Deaktiviert"
-
-#: src/error_toast.js:16
-msgid "Copy"
-msgstr "Kopieren"
-
-#: src/error_toast.js:17
-msgid "OK"
-msgstr "Okay"
+#: src/gtk/window.blp:130
+#, fuzzy
+#| msgid "Ignition"
+msgid "_About Ignition"
+msgstr "Ignition"
 
 #: src/main.js:73
 msgid "Opened folder"
@@ -253,7 +339,7 @@ msgstr "Verzeichnis konnte nicht geöffnet werden"
 
 #: src/main.js:95
 msgid "Translate"
-msgstr ""
+msgstr "Übersetzen"
 
 #: src/main.js:96
 msgid "Donate"
@@ -267,7 +353,7 @@ msgstr "Fehler beim Laden von Details"
 #, fuzzy
 #| msgid "No Entries Found"
 msgid "No installed apps found"
-msgstr "Keine Einträge gefunden"
+msgstr "Keine installierten Anwendungen gefunden"
 
 #: src/properties_dialog.js:99
 msgid "Could not save file"
@@ -286,10 +372,8 @@ msgid "Trashed Entry"
 msgstr "Gelöschter Eintrag"
 
 #: src/window.js:198
-#, fuzzy
-#| msgid "Could not open folder"
 msgid "Could not load some apps"
-msgstr "Verzeichnis konnte nicht geöffnet werden"
+msgstr "Einige Anwendungen konnten nicht geladen werden"
 
 #~ msgid "ignition"
 #~ msgstr "ignition"
