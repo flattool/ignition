@@ -13,7 +13,3 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - uses: flatpak/flatpak-github-actions/flatpak-builder@v6.1
-      with:
-        bundle: io.github.flattool.Ignition.flatpak
-        manifest-path: build-aux/io.github.flattool.Ignition.json
-        cache-key: flatpak-builder-${{ github.sha }}
