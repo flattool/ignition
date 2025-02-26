@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-24 00:07-0500\n"
+"POT-Creation-Date: 2025-02-26 02:17-0500\n"
 "PO-Revision-Date: 2025-02-26 07:18+0000\n"
 "Last-Translator: Sense T <tonychee1989@gmail.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://weblate.fyralabs.com/"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Weblate 5.9.2\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:3
-#: data/io.github.flattool.Ignition.metainfo.xml.in:14
+#: data/io.github.flattool.Ignition.metainfo.xml.in:14 src/gtk/window.blp:5
 msgid "Ignition"
 msgstr "Ignition"
 
@@ -62,6 +62,39 @@ msgstr "创建一个新的启动项。"
 msgid "See all your startup items, in dark mode."
 msgstr "在深色模式下查看所有启动项。"
 
+#: src/details_page.js:43 src/entry_row.js:28
+msgid "No Name Set"
+msgstr "未设置名称"
+
+#: src/details_page.js:52 src/gtk/properties-dialog.blp:10
+#: src/gtk/window.blp:68
+msgid "New Entry"
+msgstr "新条目"
+
+#: src/entry_row.js:29
+msgid "No comment set."
+msgstr "未设置注释。"
+
+#: src/entry_row.js:31
+msgid "Enabled"
+msgstr "已启用"
+
+#: src/entry_row.js:35
+msgid "Disabled"
+msgstr "已禁用"
+
+#: src/error_toast.js:16
+msgid "Copy"
+msgstr "复制"
+
+#: src/error_toast.js:17
+msgid "OK"
+msgstr "确定"
+
+#: src/error_toast.js:27 src/gtk/details-page.blp:47
+msgid "Details"
+msgstr "详情"
+
 #: src/gtk/app-chooser-page.blp:5
 msgid "Choose an App"
 msgstr "选择一个应用程序"
@@ -93,10 +126,6 @@ msgstr "关闭"
 #: src/gtk/details-page.blp:20
 msgid "Apply"
 msgstr "应用"
-
-#: src/gtk/details-page.blp:47 src/error_toast.js:27
-msgid "Details"
-msgstr "详情"
 
 #: src/gtk/details-page.blp:48
 msgid "Edit details about this entry."
@@ -146,13 +175,69 @@ msgstr "移动到回收站"
 msgid ""
 "To run a script at login, paste its file path here. You can copy the "
 "script's path from your file manager. Make sure your script is executable."
-msgstr "要运行登录时的脚本，请在此处粘贴其文件路径。您可以从文件管理器中复制脚本的路"
+msgstr ""
+"要运行登录时的脚本，请在此处粘贴其文件路径。您可以从文件管理器中复制脚本的路"
 "径。请确保您的脚本具有可执行权限。"
 
-#: src/gtk/properties-dialog.blp:10 src/gtk/window.blp:68
-#: src/details_page.js:52
+#: src/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "Entries List"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:14
+#, fuzzy
+#| msgid "New Entry"
+msgctxt "shortcut window"
 msgid "New Entry"
 msgstr "新条目"
+
+#: src/gtk/help-overlay.blp:19
+#, fuzzy
+#| msgid "Search entries"
+msgctxt "shortcut window"
+msgid "Search Entries"
+msgstr "搜索条目"
+
+#: src/gtk/help-overlay.blp:24
+#, fuzzy
+#| msgid "Details"
+msgctxt "shortcut window"
+msgid "Details Dialog"
+msgstr "详情"
+
+#: src/gtk/help-overlay.blp:27
+#, fuzzy
+#| msgid "Saved Details"
+msgctxt "shortcut window"
+msgid "Save Edits"
+msgstr "已保存的详细信息"
+
+#: src/gtk/help-overlay.blp:32
+#, fuzzy
+#| msgid "Search apps"
+msgctxt "shortcut window"
+msgid "Search Apps"
+msgstr "搜索应用程序"
+
+#: src/gtk/help-overlay.blp:39
+msgctxt "shortcut window"
+msgid "General"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:42
+msgctxt "shortcut window"
+msgid "Open Autostart Folder"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:47
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:52
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr ""
 
 #: src/gtk/properties-dialog.blp:18
 msgid "Create a New Entry"
@@ -169,6 +254,10 @@ msgstr "添加一个应用程序"
 #: src/gtk/properties-dialog.blp:36
 msgid "Add a Command or Script"
 msgstr "添加一个命令或者脚本"
+
+#: src/gtk/window.blp:22
+msgid "Main Menu"
+msgstr ""
 
 #: src/gtk/window.blp:35
 msgid "Search entries"
@@ -215,29 +304,19 @@ msgstr "启动应用程序和脚本会在您登录时自动启动。"
 msgid "New"
 msgstr "新建"
 
-#: src/details_page.js:43 src/entry_row.js:28
-msgid "No Name Set"
-msgstr "未设置名称"
+#: src/gtk/window.blp:113
+msgid "_Open Autostart Folder"
+msgstr ""
 
-#: src/entry_row.js:29
-msgid "No comment set."
-msgstr "未设置注释。"
+#: src/gtk/window.blp:125
+msgid "_Keyboard Shortcuts"
+msgstr ""
 
-#: src/entry_row.js:31
-msgid "Enabled"
-msgstr "已启用"
-
-#: src/entry_row.js:35
-msgid "Disabled"
-msgstr "已禁用"
-
-#: src/error_toast.js:16
-msgid "Copy"
-msgstr "复制"
-
-#: src/error_toast.js:17
-msgid "OK"
-msgstr "确定"
+#: src/gtk/window.blp:130
+#, fuzzy
+#| msgid "Ignition"
+msgid "_About Ignition"
+msgstr "Ignition"
 
 #: src/main.js:73
 msgid "Opened folder"

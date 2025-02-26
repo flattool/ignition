@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-24 00:07-0500\n"
+"POT-Creation-Date: 2025-02-26 02:17-0500\n"
 "PO-Revision-Date: 2025-01-05 17:45+0000\n"
 "Last-Translator: Robotta <chriserizo@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.fyralabs.com/projects/flattool/"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Weblate 5.9.2\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:3
-#: data/io.github.flattool.Ignition.metainfo.xml.in:14
+#: data/io.github.flattool.Ignition.metainfo.xml.in:14 src/gtk/window.blp:5
 msgid "Ignition"
 msgstr "Ignition"
 
@@ -62,6 +62,39 @@ msgstr "Crea un nuevo artículo de startup."
 msgid "See all your startup items, in dark mode."
 msgstr "Ve todos tus artículos de startup, en modo oscuro."
 
+#: src/details_page.js:43 src/entry_row.js:28
+msgid "No Name Set"
+msgstr "Sin Nombre"
+
+#: src/details_page.js:52 src/gtk/properties-dialog.blp:10
+#: src/gtk/window.blp:68
+msgid "New Entry"
+msgstr "Nueva Entrada"
+
+#: src/entry_row.js:29
+msgid "No comment set."
+msgstr "No hay ningún comentario."
+
+#: src/entry_row.js:31
+msgid "Enabled"
+msgstr "Activado"
+
+#: src/entry_row.js:35
+msgid "Disabled"
+msgstr "Anulado"
+
+#: src/error_toast.js:16
+msgid "Copy"
+msgstr "Copiar"
+
+#: src/error_toast.js:17
+msgid "OK"
+msgstr "De acuerdo"
+
+#: src/error_toast.js:27 src/gtk/details-page.blp:47
+msgid "Details"
+msgstr "Detalles"
+
 #: src/gtk/app-chooser-page.blp:5
 msgid "Choose an App"
 msgstr "Elige una aplicación"
@@ -93,10 +126,6 @@ msgstr "Cancelar"
 #: src/gtk/details-page.blp:20
 msgid "Apply"
 msgstr "Aplicar"
-
-#: src/gtk/details-page.blp:47 src/error_toast.js:27
-msgid "Details"
-msgstr "Detalles"
 
 #: src/gtk/details-page.blp:48
 msgid "Edit details about this entry."
@@ -148,10 +177,65 @@ msgid ""
 "script's path from your file manager. Make sure your script is executable."
 msgstr ""
 
-#: src/gtk/properties-dialog.blp:10 src/gtk/window.blp:68
-#: src/details_page.js:52
+#: src/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "Entries List"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:14
+#, fuzzy
+#| msgid "New Entry"
+msgctxt "shortcut window"
 msgid "New Entry"
 msgstr "Nueva Entrada"
+
+#: src/gtk/help-overlay.blp:19
+#, fuzzy
+#| msgid "Search entries"
+msgctxt "shortcut window"
+msgid "Search Entries"
+msgstr "Buscar entradas"
+
+#: src/gtk/help-overlay.blp:24
+#, fuzzy
+#| msgid "Details"
+msgctxt "shortcut window"
+msgid "Details Dialog"
+msgstr "Detalles"
+
+#: src/gtk/help-overlay.blp:27
+#, fuzzy
+#| msgid "Saved Details"
+msgctxt "shortcut window"
+msgid "Save Edits"
+msgstr "Detalles Guardados"
+
+#: src/gtk/help-overlay.blp:32
+#, fuzzy
+#| msgid "Search apps"
+msgctxt "shortcut window"
+msgid "Search Apps"
+msgstr "Buscar aplicaciones"
+
+#: src/gtk/help-overlay.blp:39
+msgctxt "shortcut window"
+msgid "General"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:42
+msgctxt "shortcut window"
+msgid "Open Autostart Folder"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:47
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:52
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr ""
 
 #: src/gtk/properties-dialog.blp:18
 msgid "Create a New Entry"
@@ -170,6 +254,10 @@ msgstr "Añadir una Aplicación"
 #: src/gtk/properties-dialog.blp:36
 msgid "Add a Command or Script"
 msgstr "Añadir un Comando o un Script"
+
+#: src/gtk/window.blp:22
+msgid "Main Menu"
+msgstr ""
 
 #: src/gtk/window.blp:35
 msgid "Search entries"
@@ -219,29 +307,19 @@ msgstr ""
 msgid "New"
 msgstr "Nuevo"
 
-#: src/details_page.js:43 src/entry_row.js:28
-msgid "No Name Set"
-msgstr "Sin Nombre"
+#: src/gtk/window.blp:113
+msgid "_Open Autostart Folder"
+msgstr ""
 
-#: src/entry_row.js:29
-msgid "No comment set."
-msgstr "No hay ningún comentario."
+#: src/gtk/window.blp:125
+msgid "_Keyboard Shortcuts"
+msgstr ""
 
-#: src/entry_row.js:31
-msgid "Enabled"
-msgstr "Activado"
-
-#: src/entry_row.js:35
-msgid "Disabled"
-msgstr "Anulado"
-
-#: src/error_toast.js:16
-msgid "Copy"
-msgstr "Copiar"
-
-#: src/error_toast.js:17
-msgid "OK"
-msgstr "De acuerdo"
+#: src/gtk/window.blp:130
+#, fuzzy
+#| msgid "Ignition"
+msgid "_About Ignition"
+msgstr "Ignition"
 
 #: src/main.js:73
 msgid "Opened folder"
