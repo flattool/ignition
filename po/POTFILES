@@ -1,20 +1,18 @@
-# List of source files containing translatable strings.
-# Please keep this file sorted alphabetically.
 data/io.github.flattool.Ignition.desktop.in
 data/io.github.flattool.Ignition.metainfo.xml.in
 data/io.github.flattool.Ignition.gschema.xml
-src/gtk/app-chooser-page.blp
-src/gtk/details-page.blp
-src/gtk/entry-row.blp
-src/gtk/help-overlay.blp
-src/gtk/properties-dialog.blp
-src/gtk/window.blp
 src/app_chooser_page.js
 src/autostart_entry.js
 src/details_page.js
 src/entry_row.js
 src/error_toast.js
 src/file_watcher.js
+src/gtk/app-chooser-page.blp
+src/gtk/details-page.blp
+src/gtk/entry-row.blp
+src/gtk/help-overlay.blp
+src/gtk/properties-dialog.blp
+src/gtk/window.blp
 src/main.js
 src/properties_dialog.js
 src/utils.js

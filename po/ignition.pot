@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-25 21:18-0500\n"
+"POT-Creation-Date: 2025-02-26 02:17-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -58,6 +58,39 @@ msgstr ""
 msgid "See all your startup items, in dark mode."
 msgstr ""
 
+#: src/details_page.js:43 src/entry_row.js:28
+msgid "No Name Set"
+msgstr ""
+
+#: src/details_page.js:52 src/gtk/properties-dialog.blp:10
+#: src/gtk/window.blp:68
+msgid "New Entry"
+msgstr ""
+
+#: src/entry_row.js:29
+msgid "No comment set."
+msgstr ""
+
+#: src/entry_row.js:31
+msgid "Enabled"
+msgstr ""
+
+#: src/entry_row.js:35
+msgid "Disabled"
+msgstr ""
+
+#: src/error_toast.js:16
+msgid "Copy"
+msgstr ""
+
+#: src/error_toast.js:17
+msgid "OK"
+msgstr ""
+
+#: src/error_toast.js:27 src/gtk/details-page.blp:47
+msgid "Details"
+msgstr ""
+
 #: src/gtk/app-chooser-page.blp:5
 msgid "Choose an App"
 msgstr ""
@@ -88,10 +121,6 @@ msgstr ""
 
 #: src/gtk/details-page.blp:20
 msgid "Apply"
-msgstr ""
-
-#: src/gtk/details-page.blp:47 src/error_toast.js:27
-msgid "Details"
 msgstr ""
 
 #: src/gtk/details-page.blp:48
@@ -194,11 +223,6 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr ""
 
-#: src/gtk/properties-dialog.blp:10 src/gtk/window.blp:68
-#: src/details_page.js:52
-msgid "New Entry"
-msgstr ""
-
 #: src/gtk/properties-dialog.blp:18
 msgid "Create a New Entry"
 msgstr ""
@@ -274,30 +298,6 @@ msgstr ""
 
 #: src/gtk/window.blp:130
 msgid "_About Ignition"
-msgstr ""
-
-#: src/details_page.js:43 src/entry_row.js:28
-msgid "No Name Set"
-msgstr ""
-
-#: src/entry_row.js:29
-msgid "No comment set."
-msgstr ""
-
-#: src/entry_row.js:31
-msgid "Enabled"
-msgstr ""
-
-#: src/entry_row.js:35
-msgid "Disabled"
-msgstr ""
-
-#: src/error_toast.js:16
-msgid "Copy"
-msgstr ""
-
-#: src/error_toast.js:17
-msgid "OK"
 msgstr ""
 
 #: src/main.js:73
