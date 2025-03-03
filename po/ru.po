@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-26 02:17-0500\n"
-"PO-Revision-Date: 2025-02-28 07:21+0000\n"
-"Last-Translator: alevtina-karashokova <karashokovaaa@basealt.ru>\n"
+"PO-Revision-Date: 2025-03-04 11:46+0000\n"
+"Last-Translator: Alexmelman88 <alexmelman88@gmail.com>\n"
 "Language-Team: Russian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/ru/>\n"
 "Language: ru\n"
@@ -312,7 +312,7 @@ msgstr "_Комбинации клавиш"
 
 #: src/gtk/window.blp:130
 msgid "_About Ignition"
-msgstr "_О программе Ignition"
+msgstr "_О приложении"
 
 #: src/main.js:73
 msgid "Opened folder"
