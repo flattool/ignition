@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-02-26 02:17-0500\n"
-"PO-Revision-Date: 2025-01-29 14:45+0000\n"
-"Last-Translator: Alexmelman88 <alexmelman88@gmail.com>\n"
+"PO-Revision-Date: 2025-02-28 07:21+0000\n"
+"Last-Translator: alevtina-karashokova <karashokovaaa@basealt.ru>\n"
 "Language-Team: Russian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/ru/>\n"
 "Language: ru\n"
@@ -63,7 +63,7 @@ msgstr "Создание новой записи запуска."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
-msgstr "Просмотр всех элементов запуска в темном режиме."
+msgstr "Просмотр всех элементов запуска в тёмном режиме."
 
 #: src/details_page.js:43 src/entry_row.js:28
 msgid "No Name Set"
@@ -186,39 +186,29 @@ msgstr ""
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "Entries List"
-msgstr ""
+msgstr "Список записей"
 
 #: src/gtk/help-overlay.blp:14
-#, fuzzy
-#| msgid "New Entry"
 msgctxt "shortcut window"
 msgid "New Entry"
 msgstr "Новая запись"
 
 #: src/gtk/help-overlay.blp:19
-#, fuzzy
-#| msgid "Search entries"
 msgctxt "shortcut window"
 msgid "Search Entries"
 msgstr "Поиск записей"
 
 #: src/gtk/help-overlay.blp:24
-#, fuzzy
-#| msgid "Details"
 msgctxt "shortcut window"
 msgid "Details Dialog"
-msgstr "Сведения"
+msgstr "Диалоговое окно сведений"
 
 #: src/gtk/help-overlay.blp:27
-#, fuzzy
-#| msgid "Saved Details"
 msgctxt "shortcut window"
 msgid "Save Edits"
-msgstr "Сохраненные сведения"
+msgstr "Сохранить изменения"
 
 #: src/gtk/help-overlay.blp:32
-#, fuzzy
-#| msgid "Search apps"
 msgctxt "shortcut window"
 msgid "Search Apps"
 msgstr "Поиск приложений"
@@ -226,22 +216,22 @@ msgstr "Поиск приложений"
 #: src/gtk/help-overlay.blp:39
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Общие"
 
 #: src/gtk/help-overlay.blp:42
 msgctxt "shortcut window"
 msgid "Open Autostart Folder"
-msgstr ""
+msgstr "Открыть папку автозапуска"
 
 #: src/gtk/help-overlay.blp:47
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Показать комбинации клавиш"
 
 #: src/gtk/help-overlay.blp:52
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Выйти"
 
 #: src/gtk/properties-dialog.blp:18
 msgid "Create a New Entry"
@@ -263,7 +253,7 @@ msgstr "Добавить команду или сценарий"
 
 #: src/gtk/window.blp:22
 msgid "Main Menu"
-msgstr ""
+msgstr "Главное меню"
 
 #: src/gtk/window.blp:35
 msgid "Search entries"
@@ -275,7 +265,7 @@ msgstr "Подготовка"
 
 #: src/gtk/window.blp:47
 msgid "This should only take a moment."
-msgstr "Это займет совсем немного времени."
+msgstr "Это займёт совсем немного времени."
 
 #: src/gtk/window.blp:51
 msgid "Welcome to Ignition!"
@@ -314,17 +304,15 @@ msgstr "Новая"
 
 #: src/gtk/window.blp:113
 msgid "_Open Autostart Folder"
-msgstr ""
+msgstr "_Открыть папку автозапуска"
 
 #: src/gtk/window.blp:125
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "_Комбинации клавиш"
 
 #: src/gtk/window.blp:130
-#, fuzzy
-#| msgid "Ignition"
 msgid "_About Ignition"
-msgstr "Ignition"
+msgstr "_О программе Ignition"
 
 #: src/main.js:73
 msgid "Opened folder"
@@ -360,7 +348,7 @@ msgstr "Не удалось отправить файл в корзину"
 
 #: src/window.js:90
 msgid "Saved Details"
-msgstr "Сохраненные сведения"
+msgstr "Сохранённые сведения"
 
 #: src/window.js:91
 msgid "Trashed Entry"
