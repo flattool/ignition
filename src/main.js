@@ -102,9 +102,11 @@ export const IgnitionApplication = GObject.registerClass(
 			search_action.connect('activate', action => {
 				const dialog = this.active_window.properties_dialog
 				if (dialog.is_showing && dialog._app_chooser_page._search_button.sensitive) {
-					dialog._app_chooser_page._search_button.active = !dialog._app_chooser_page._search_button.active;
+					dialog._app_chooser_page._search_button.active = true;
+					dialog._app_chooser_page._search_entry.grab_focus();
 				} else if (!dialog.is_showing && this.active_window._search_button.sensitive) {
-					this.active_window._search_button.active = !this.active_window._search_button.active;
+					this.active_window._search_button.active = true;
+					this.active_window._search_entry.grab_focus();
 				}
 			});
 			this.add_action(search_action);
