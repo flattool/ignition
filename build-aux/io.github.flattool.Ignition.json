@@ -37,7 +37,7 @@
             "name": "ignition",
             "builddir": true,
             "buildsystem": "meson",
-            "config-opts": ["-Dprofile=default"],
+            "config-opts": ["-Dprofile=development"],
             "sources": [
                 {
                     "type": "dir",
