@@ -48,6 +48,7 @@ export const PropertiesDialog = GObject.registerClass({
 			this._navigation_view.animate_transitions = true;
 		}
 		super.present(...args);
+		this.grab_focus();
 		this.is_showing = true;
 	}
 

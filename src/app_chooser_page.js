@@ -168,5 +168,10 @@ export const AppChooserPage = GObject.registerClass({
 				: this._no_results_status
 			);
 		});
+		this._search_button.connect("toggled", () => {
+			if (!this._search_button.active) {
+				this._scrolled_window.grab_focus();
+			}
+		});
 	}
 });
