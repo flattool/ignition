@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-26 02:17-0500\n"
+"POT-Creation-Date: 2025-03-13 00:58-0400\n"
 "PO-Revision-Date: 2025-01-31 23:45+0000\n"
 "Last-Translator: chrizdeluxe <christoph.wetzel.85@icloud.com>\n"
 "Language-Team: German <https://weblate.fyralabs.com/projects/flattool/"
@@ -349,17 +349,17 @@ msgstr "Spenden"
 msgid "Error loading details"
 msgstr "Fehler beim Laden von Details"
 
-#: src/properties_dialog.js:77
+#: src/properties_dialog.js:78
 #, fuzzy
 #| msgid "No Entries Found"
 msgid "No installed apps found"
 msgstr "Keine installierten Anwendungen gefunden"
 
-#: src/properties_dialog.js:99
+#: src/properties_dialog.js:100
 msgid "Could not save file"
 msgstr "Datei konnte nicht gespeichert werden"
 
-#: src/properties_dialog.js:100
+#: src/properties_dialog.js:101
 msgid "Could not trash file"
 msgstr "Datei konnte nicht gelöscht werden"
 

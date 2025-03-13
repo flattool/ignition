@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-26 02:17-0500\n"
+"POT-Creation-Date: 2025-03-13 00:58-0400\n"
 "PO-Revision-Date: 2025-02-26 07:18+0000\n"
 "Last-Translator: Sense T <tonychee1989@gmail.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://weblate.fyralabs.com/"
@@ -338,15 +338,15 @@ msgstr "捐助"
 msgid "Error loading details"
 msgstr "加载详细信息时出错"
 
-#: src/properties_dialog.js:77
+#: src/properties_dialog.js:78
 msgid "No installed apps found"
 msgstr "未找到已安装的应用程序"
 
-#: src/properties_dialog.js:99
+#: src/properties_dialog.js:100
 msgid "Could not save file"
 msgstr "无法保存文件"
 
-#: src/properties_dialog.js:100
+#: src/properties_dialog.js:101
 msgid "Could not trash file"
 msgstr "无法回收文件"
 
