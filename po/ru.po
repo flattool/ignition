@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-26 02:17-0500\n"
-"PO-Revision-Date: 2025-02-28 07:21+0000\n"
-"Last-Translator: alevtina-karashokova <karashokovaaa@basealt.ru>\n"
+"POT-Creation-Date: 2025-03-13 00:58-0400\n"
+"PO-Revision-Date: 2025-03-04 11:46+0000\n"
+"Last-Translator: Alexmelman88 <alexmelman88@gmail.com>\n"
 "Language-Team: Russian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/ru/>\n"
 "Language: ru\n"
@@ -312,7 +312,7 @@ msgstr "_Комбинации клавиш"
 
 #: src/gtk/window.blp:130
 msgid "_About Ignition"
-msgstr "_О программе Ignition"
+msgstr "_О приложении"
 
 #: src/main.js:73
 msgid "Opened folder"
@@ -334,15 +334,15 @@ msgstr "Пожертвовать"
 msgid "Error loading details"
 msgstr "Ошибка при загрузке сведений"
 
-#: src/properties_dialog.js:77
+#: src/properties_dialog.js:78
 msgid "No installed apps found"
 msgstr "Установленные приложения не найдены"
 
-#: src/properties_dialog.js:99
+#: src/properties_dialog.js:100
 msgid "Could not save file"
 msgstr "Не удалось сохранить файл"
 
-#: src/properties_dialog.js:100
+#: src/properties_dialog.js:101
 msgid "Could not trash file"
 msgstr "Не удалось отправить файл в корзину"
 
