@@ -1,7 +1,7 @@
 {
     "id": "io.github.flattool.Ignition",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "47",
+    "runtime-version": "48",
     "sdk": "org.gnome.Sdk",
     "sdk-extensions": ["org.freedesktop.Sdk.Extension.node20"],
     "command": "io.github.flattool.Ignition",
@@ -28,7 +28,7 @@
                 {
                     "type": "git",
                     "url": "https://gitlab.gnome.org/jwestman/blueprint-compiler",
-                    "tag": "v0.14.0"
+                    "tag": "v0.16.0"
                 }
             ],
             "cleanup": ["*"]
