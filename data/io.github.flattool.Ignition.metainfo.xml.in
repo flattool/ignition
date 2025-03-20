@@ -53,6 +53,7 @@
 			<description translate="no">
 				<p>Changes</p>
 				<ul>
+					<li>Updated to GNOME 48 technologies</li>
 					<li>Using the Search keyboard shortcut while the entry is open no longer closes them, and instead, refocuses them</li>
 					<li>Pressing Escape no longer fails to close the current dialog or page view</li>
 					<li>Updated translations</li>
