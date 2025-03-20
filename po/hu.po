@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 00:58-0400\n"
-"PO-Revision-Date: 2024-12-25 20:28+0000\n"
+"PO-Revision-Date: 2025-03-21 04:40+0000\n"
 "Last-Translator: Benedek Dévényi <rdbende@proton.me>\n"
 "Language-Team: Hungarian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/hu/>\n"
@@ -17,27 +17,25 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.8.1\n"
+"X-Generator: Weblate 5.9.2\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:3
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14 src/gtk/window.blp:5
 msgid "Ignition"
-msgstr "Ignition"
+msgstr "Önindító"
 
 #: data/io.github.flattool.Ignition.desktop.in:4
 #: data/io.github.flattool.Ignition.metainfo.xml.in:15
-#, fuzzy
-#| msgid "Startup Applications and Scripts"
 msgid "Manage startup apps and scripts"
-msgstr "Indítási alkalmazások és szkriptek"
+msgstr "Indítási alkalmazások és szkriptek kezelése"
 
 #: data/io.github.flattool.Ignition.desktop.in:10
 msgid "GTK;startup;autostart;login;"
-msgstr ""
+msgstr "GTK;startup;autostart;login;bejelentkezés;automatikus;indítás;"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
 msgid "Heliguy"
-msgstr ""
+msgstr "Heliguy"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:17
 msgid ""
@@ -45,26 +43,30 @@ msgid ""
 "your computer. Ignition can add apps, scripts, and arbitrary commands to run "
 "at login."
 msgstr ""
+"Az Önindító egy egyszerű grafikus eszköz indítási bejegyzések "
+"létrehozásához, eltávolításához és módosításához. Segítségével "
+"alkalmazásokat, szkripteket és tetszőleges parancsokat lehet hozzáadni az "
+"automatikusan induló programokhoz."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
-msgstr ""
+msgstr "Indítási alkalmazások megjelenítése."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:39
 msgid "View and edit entry details."
-msgstr ""
+msgstr "Bejegyzések részleteinek szerkesztése."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:43
 msgid "Create a new startup entry."
-msgstr ""
+msgstr "Új indítási bejegyzés létrehozása."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
-msgstr ""
+msgstr "Indítási alkalmazások megjelenítése, sötét módban."
 
 #: src/details_page.js:43 src/entry_row.js:28
 msgid "No Name Set"
-msgstr ""
+msgstr "Nincs név beállítva"
 
 #: src/details_page.js:52 src/gtk/properties-dialog.blp:10
 #: src/gtk/window.blp:68
@@ -73,23 +75,23 @@ msgstr "Új bejegyzés"
 
 #: src/entry_row.js:29
 msgid "No comment set."
-msgstr ""
+msgstr "Nincs leírás."
 
 #: src/entry_row.js:31
 msgid "Enabled"
-msgstr ""
+msgstr "Engedélyezve"
 
 #: src/entry_row.js:35
 msgid "Disabled"
-msgstr ""
+msgstr "Letiltva"
 
 #: src/error_toast.js:16
 msgid "Copy"
-msgstr ""
+msgstr "Másolás"
 
 #: src/error_toast.js:17
 msgid "OK"
-msgstr ""
+msgstr "Ok"
 
 #: src/error_toast.js:27 src/gtk/details-page.blp:47
 msgid "Details"
@@ -97,7 +99,7 @@ msgstr "Részletek"
 
 #: src/gtk/app-chooser-page.blp:5
 msgid "Choose an App"
-msgstr "Válasszon egy alkalmazást"
+msgstr "Alkalmazás választása"
 
 #: src/gtk/app-chooser-page.blp:15 src/gtk/window.blp:15
 msgid "Search"
@@ -125,7 +127,7 @@ msgstr "Mégse"
 
 #: src/gtk/details-page.blp:20
 msgid "Apply"
-msgstr "Alkalmaz"
+msgstr "Alkalmazás"
 
 #: src/gtk/details-page.blp:48
 msgid "Edit details about this entry."
@@ -136,9 +138,8 @@ msgid "Enable"
 msgstr "Engedélyezés"
 
 #: src/gtk/details-page.blp:54
-#, fuzzy
 msgid "Enable this entry to be started when you log in."
-msgstr "Engedélyezze, hogy ez a bejegyzés elinduljon bejelentkezéskor."
+msgstr "Bejegyzés indulásának engedélyezése bejelentkezéskor."
 
 #: src/gtk/details-page.blp:62
 msgid "Name"
@@ -146,7 +147,7 @@ msgstr "Név"
 
 #: src/gtk/details-page.blp:66
 msgid "Comment"
-msgstr "Megjegyzés"
+msgstr "Leírás"
 
 #: src/gtk/details-page.blp:70
 msgid "Command or Script"
@@ -154,15 +155,15 @@ msgstr "Parancs vagy szkript"
 
 #: src/gtk/details-page.blp:75
 msgid "More Information"
-msgstr ""
+msgstr "További információ"
 
 #: src/gtk/details-page.blp:82
 msgid "Show Terminal"
-msgstr "Terminál megjelenítése"
+msgstr "Futtatás terminálban"
 
 #: src/gtk/details-page.blp:83
 msgid "Show a terminal for this process to run in."
-msgstr "Nyisson meg egy terminált a folyamat futtatásához."
+msgstr "Terminálablakot megnyitása a folyamat futtatásához."
 
 #: src/gtk/details-page.blp:90
 msgid "Create"
@@ -181,37 +182,29 @@ msgstr ""
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "Entries List"
-msgstr ""
+msgstr "Bejegyzések"
 
 #: src/gtk/help-overlay.blp:14
-#, fuzzy
-#| msgid "New Entry"
 msgctxt "shortcut window"
 msgid "New Entry"
 msgstr "Új bejegyzés"
 
 #: src/gtk/help-overlay.blp:19
-#, fuzzy
-#| msgid "Search entries"
 msgctxt "shortcut window"
 msgid "Search Entries"
 msgstr "Bejegyzések keresése"
 
 #: src/gtk/help-overlay.blp:24
-#, fuzzy
-#| msgid "Details"
 msgctxt "shortcut window"
 msgid "Details Dialog"
-msgstr "Részletek"
+msgstr "Szerkesztőablak"
 
 #: src/gtk/help-overlay.blp:27
 msgctxt "shortcut window"
 msgid "Save Edits"
-msgstr ""
+msgstr "Mentés"
 
 #: src/gtk/help-overlay.blp:32
-#, fuzzy
-#| msgid "Search apps"
 msgctxt "shortcut window"
 msgid "Search Apps"
 msgstr "Alkalmazások keresése"
@@ -219,22 +212,22 @@ msgstr "Alkalmazások keresése"
 #: src/gtk/help-overlay.blp:39
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Általános"
 
 #: src/gtk/help-overlay.blp:42
 msgctxt "shortcut window"
 msgid "Open Autostart Folder"
-msgstr ""
+msgstr "Indítási alkalmazások mappa megnyitása"
 
 #: src/gtk/help-overlay.blp:47
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Gyorsbillentyűk"
 
 #: src/gtk/help-overlay.blp:52
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Kilépés"
 
 #: src/gtk/properties-dialog.blp:18
 msgid "Create a New Entry"
@@ -243,8 +236,8 @@ msgstr "Bejegyzés létrehozása"
 #: src/gtk/properties-dialog.blp:19
 msgid "Add any installed app or select any script to be ran at startup."
 msgstr ""
-"Adjon hozzá egy telepített alkalmazást vagy bármilyen szkriptet, hogy "
-"bejelentkezéskor elinduljon."
+"Válasszon ki egy telepített alkalmazást vagy tetszőleges szkriptet a "
+"hozzáadáshoz."
 
 #: src/gtk/properties-dialog.blp:29
 msgid "Add an App"
@@ -256,7 +249,7 @@ msgstr "Parancs vagy szkript hozzáadása"
 
 #: src/gtk/window.blp:22
 msgid "Main Menu"
-msgstr ""
+msgstr "Főmenü"
 
 #: src/gtk/window.blp:35
 msgid "Search entries"
@@ -272,7 +265,7 @@ msgstr "Egy szempillantás, és kész is van."
 
 #: src/gtk/window.blp:51
 msgid "Welcome to Ignition!"
-msgstr ""
+msgstr "Üdv az Önindítóban!"
 
 #: src/gtk/window.blp:52
 msgid ""
@@ -281,7 +274,7 @@ msgstr ""
 
 #: src/gtk/window.blp:56
 msgid "Get Started"
-msgstr ""
+msgstr "Kezdjünk hozzá!"
 
 #: src/gtk/window.blp:61
 msgid "No Entries Found"
