@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 00:58-0400\n"
-"PO-Revision-Date: 2025-03-21 04:40+0000\n"
+"PO-Revision-Date: 2025-03-22 21:46+0000\n"
 "Last-Translator: Benedek Dévényi <rdbende@proton.me>\n"
 "Language-Team: Hungarian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/hu/>\n"
@@ -31,7 +31,7 @@ msgstr "Indítási alkalmazások és szkriptek kezelése"
 
 #: data/io.github.flattool.Ignition.desktop.in:10
 msgid "GTK;startup;autostart;login;"
-msgstr "GTK;startup;autostart;login;bejelentkezés;automatikus;indítás;"
+msgstr "GTK;startup;autostart;login;bejelentkezés;automatikus;indítási;"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
 msgid "Heliguy"
@@ -50,7 +50,7 @@ msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
-msgstr "Indítási alkalmazások megjelenítése."
+msgstr "Indítási alkalmazások listázása."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:39
 msgid "View and edit entry details."
@@ -91,7 +91,7 @@ msgstr "Másolás"
 
 #: src/error_toast.js:17
 msgid "OK"
-msgstr "Ok"
+msgstr "Rendben"
 
 #: src/error_toast.js:27 src/gtk/details-page.blp:47
 msgid "Details"
@@ -178,6 +178,8 @@ msgid ""
 "To run a script at login, paste its file path here. You can copy the "
 "script's path from your file manager. Make sure your script is executable."
 msgstr ""
+"Illessze be ide egy szkriptfájl elérési útját. Az elérési utat a "
+"fájlkezelőből is átmásolhatja. Győződjön meg róla, hogy a fájl végrehajtható."
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
@@ -217,7 +219,7 @@ msgstr "Általános"
 #: src/gtk/help-overlay.blp:42
 msgctxt "shortcut window"
 msgid "Open Autostart Folder"
-msgstr "Indítási alkalmazások mappa megnyitása"
+msgstr "Autostart mappa megnyitása"
 
 #: src/gtk/help-overlay.blp:47
 msgctxt "shortcut window"
@@ -271,6 +273,8 @@ msgstr "Üdv az Önindítóban!"
 msgid ""
 "Ignition lets you start any app or script when you log in to your computer."
 msgstr ""
+"Az Önindító segítségével bármilyen alkalmazást vagy szkriptet futtathat "
+"bejelentkezéskor."
 
 #: src/gtk/window.blp:56
 msgid "Get Started"
@@ -282,7 +286,7 @@ msgstr "Nem találhatók bejegyzések"
 
 #: src/gtk/window.blp:62
 msgid "Add an app or script to run it at login."
-msgstr ""
+msgstr "Adjon hozzá egy automatikusan elindítandó programot."
 
 #: src/gtk/window.blp:86
 msgid "Startup Applications and Scripts"
@@ -290,7 +294,7 @@ msgstr "Indítási alkalmazások és szkriptek"
 
 #: src/gtk/window.blp:87
 msgid "Startup apps and scripts are automatically started when you log in."
-msgstr ""
+msgstr "Az indítási alkalmazások bejelentkezéskor automatikusan elindulnak."
 
 #: src/gtk/window.blp:93
 msgid "New"
@@ -298,63 +302,59 @@ msgstr "Új"
 
 #: src/gtk/window.blp:113
 msgid "_Open Autostart Folder"
-msgstr ""
+msgstr "Autostart mappa _megnyitása"
 
 #: src/gtk/window.blp:125
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "_Gyorsbillentyűk"
 
 #: src/gtk/window.blp:130
-#, fuzzy
-#| msgid "Ignition"
 msgid "_About Ignition"
-msgstr "Ignition"
+msgstr "Az Önindító _névjegye"
 
 #: src/main.js:73
 msgid "Opened folder"
-msgstr ""
+msgstr "Mappa megnyitva"
 
 #: src/main.js:80
 msgid "Could not open folder"
-msgstr ""
+msgstr "Nem lehet megnyitni a mappát"
 
 #: src/main.js:95
 msgid "Translate"
-msgstr ""
+msgstr "Segítség a fordításban"
 
 #: src/main.js:96
 msgid "Donate"
-msgstr ""
+msgstr "Adományozás"
 
 #: src/properties_dialog.js:32
 msgid "Error loading details"
-msgstr ""
+msgstr "A részletek betöltése sikertelen"
 
 #: src/properties_dialog.js:78
-#, fuzzy
-#| msgid "No Entries Found"
 msgid "No installed apps found"
-msgstr "Nem találhatók bejegyzések"
+msgstr "Nincsenek alkalmazások telepítve"
 
 #: src/properties_dialog.js:100
 msgid "Could not save file"
-msgstr ""
+msgstr "A fájlt nem sikerült menteni"
 
 #: src/properties_dialog.js:101
 msgid "Could not trash file"
-msgstr ""
+msgstr "A fájlt nem sikerült törölni"
 
 #: src/window.js:90
 msgid "Saved Details"
-msgstr ""
+msgstr "Részletek mentve"
 
 #: src/window.js:91
 msgid "Trashed Entry"
-msgstr ""
+msgstr "Bejegyzés törölve"
 
 #: src/window.js:198
 msgid "Could not load some apps"
-msgstr ""
+msgstr "Néhány alkalmazás betöltése sikertelen"
 
 #~ msgid "ignition"
 #~ msgstr "ignition"
