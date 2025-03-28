@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-03-13 00:58-0400\n"
-"PO-Revision-Date: 2024-12-25 01:23+0000\n"
-"Last-Translator: Vovkiv <generalvolkov2@gmail.com>\n"
+"PO-Revision-Date: 2025-03-29 16:46+0000\n"
+"Last-Translator: Simon <orisim@proton.me>\n"
 "Language-Team: Ukrainian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/uk/>\n"
 "Language: uk\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.8.1\n"
+"X-Generator: Weblate 5.9.2\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:3
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14 src/gtk/window.blp:5
@@ -27,18 +27,16 @@ msgstr "Запалювання"
 
 #: data/io.github.flattool.Ignition.desktop.in:4
 #: data/io.github.flattool.Ignition.metainfo.xml.in:15
-#, fuzzy
-#| msgid "Create and edit startup apps and scripts"
 msgid "Manage startup apps and scripts"
-msgstr "Керуйте автозапуском додатків і скриптів"
+msgstr "Керування додатками та скриптами автозавантаження"
 
 #: data/io.github.flattool.Ignition.desktop.in:10
 msgid "GTK;startup;autostart;login;"
-msgstr ""
+msgstr "GTK; запуск; автозапуск; вхід;"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
 msgid "Heliguy"
-msgstr ""
+msgstr "Heliguy"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:17
 msgid ""
@@ -46,6 +44,10 @@ msgid ""
 "your computer. Ignition can add apps, scripts, and arbitrary commands to run "
 "at login."
 msgstr ""
+"Ignition забезпечує простий інтерфейс користувача для додавання, видалення "
+"та зміни записів автозапуску на вашому комп’ютері. Ignition дозволяє "
+"додавати додатки, скрипти та довільні команди для виконання під час входу в "
+"систему."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
@@ -154,7 +156,7 @@ msgstr "Команда або скрипт"
 
 #: src/gtk/details-page.blp:75
 msgid "More Information"
-msgstr ""
+msgstr "Додаткова інформація"
 
 #: src/gtk/details-page.blp:82
 msgid "Show Terminal"
@@ -177,43 +179,36 @@ msgid ""
 "To run a script at login, paste its file path here. You can copy the "
 "script's path from your file manager. Make sure your script is executable."
 msgstr ""
+"Щоб запустити скрипт під час входу в систему, вставте тут його шлях. Ви "
+"можете скопіювати шлях до скрипту у файловому менеджері. Переконайтеся, що "
+"ваш скрипт є виконуваним."
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "Entries List"
-msgstr ""
+msgstr "Список записів"
 
 #: src/gtk/help-overlay.blp:14
-#, fuzzy
-#| msgid "New Entry"
 msgctxt "shortcut window"
 msgid "New Entry"
 msgstr "Новий запис"
 
 #: src/gtk/help-overlay.blp:19
-#, fuzzy
-#| msgid "Search entries"
 msgctxt "shortcut window"
 msgid "Search Entries"
 msgstr "Пошук записів"
 
 #: src/gtk/help-overlay.blp:24
-#, fuzzy
-#| msgid "Details"
 msgctxt "shortcut window"
 msgid "Details Dialog"
-msgstr "Подробиці"
+msgstr "Діалог деталей"
 
 #: src/gtk/help-overlay.blp:27
-#, fuzzy
-#| msgid "Saved Details"
 msgctxt "shortcut window"
 msgid "Save Edits"
-msgstr "Збережено подробиці"
+msgstr "Зберегти зміни"
 
 #: src/gtk/help-overlay.blp:32
-#, fuzzy
-#| msgid "Search apps"
 msgctxt "shortcut window"
 msgid "Search Apps"
 msgstr "Шукати додатки"
@@ -221,22 +216,22 @@ msgstr "Шукати додатки"
 #: src/gtk/help-overlay.blp:39
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "Загальні"
 
 #: src/gtk/help-overlay.blp:42
 msgctxt "shortcut window"
 msgid "Open Autostart Folder"
-msgstr ""
+msgstr "Відкрити папку автозапуску"
 
 #: src/gtk/help-overlay.blp:47
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Показати комбінації клавіш"
 
 #: src/gtk/help-overlay.blp:52
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "Вийти"
 
 #: src/gtk/properties-dialog.blp:18
 msgid "Create a New Entry"
@@ -258,7 +253,7 @@ msgstr "Додати команду або скрипт"
 
 #: src/gtk/window.blp:22
 msgid "Main Menu"
-msgstr ""
+msgstr "Головне меню"
 
 #: src/gtk/window.blp:35
 msgid "Search entries"
@@ -311,17 +306,15 @@ msgstr "Новий"
 
 #: src/gtk/window.blp:113
 msgid "_Open Autostart Folder"
-msgstr ""
+msgstr "_Відкрити папку автозапуску"
 
 #: src/gtk/window.blp:125
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "_Комбінації клавіш"
 
 #: src/gtk/window.blp:130
-#, fuzzy
-#| msgid "Ignition"
 msgid "_About Ignition"
-msgstr "Запалювання"
+msgstr "_Про Ignition"
 
 #: src/main.js:73
 msgid "Opened folder"
@@ -333,7 +326,7 @@ msgstr "Не вдалося відкрити теку"
 
 #: src/main.js:95
 msgid "Translate"
-msgstr ""
+msgstr "Перекласти"
 
 #: src/main.js:96
 msgid "Donate"
@@ -344,10 +337,8 @@ msgid "Error loading details"
 msgstr "Помилка при завантаженні подробиць"
 
 #: src/properties_dialog.js:78
-#, fuzzy
-#| msgid "No Entries Found"
 msgid "No installed apps found"
-msgstr "Не знайдено записів"
+msgstr "Не знайдено встановлених додатків"
 
 #: src/properties_dialog.js:100
 msgid "Could not save file"
@@ -366,10 +357,8 @@ msgid "Trashed Entry"
 msgstr "Видалені записи"
 
 #: src/window.js:198
-#, fuzzy
-#| msgid "Could not open folder"
 msgid "Could not load some apps"
-msgstr "Не вдалося відкрити теку"
+msgstr "Не вдалося завантажити деякі додатки"
 
 #~ msgid "ignition"
 #~ msgstr "запалювання"
