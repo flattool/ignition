@@ -54,7 +54,7 @@ git clone https://github.com/flattool/ignition
 cd ignition
 
 # Install build dependencies
-flatpak install org.flatpak.Builder org.gnome.Sdk//47 org.gnome.Platform//47 org.freedesktop.Sdk.Extension.node20//24.08 -y
+flatpak install org.flatpak.Builder org.gnome.Sdk//48 org.gnome.Platform//48 org.freedesktop.Sdk.Extension.node20//24.08 -y
 
 # Build and install Ignition
 flatpak run org.flatpak.Builder _build ./build-aux/io.github.flattool.Ignition.json --install --user --force-clean
