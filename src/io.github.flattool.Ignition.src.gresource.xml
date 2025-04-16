@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/io/github/flattool/Ignition/js">
+    <file>first_run_page/first_run_page.js</file>
+    <file>gtk/entry_group.js</file>
+    <file>gtk/entry_row.js</file>
+    <file>main_view/entries_page.js</file>
+    <file>main_view/main_view.js</file>
+    <file>utils/dir_watcher.js</file>
+    <file>utils/helper_funcs.js</file>
+    <file>utils/icon_helper.js</file>
+    <file>utils/key_file_helper.js</file>
+    <file>utils/shared_vars.js</file>
+    <file>utils/signal.js</file>
+    <file>utils/autostart_entry.js</file>
+    <file>window/window.js</file>
+    <file>config.js</file>
     <file>main.js</file>
-    <file>window.js</file>
-    <file>autostart_entry.js</file>
-    <file>entry_row.js</file>
-    <file>utils.js</file>
-    <file>properties_dialog.js</file>
-    <file>app_chooser_page.js</file>
-    <file>details_page.js</file>
-    <file>error_toast.js</file>
-    <file>file_watcher.js</file>
-    <file>const.js</file>
   </gresource>
 </gresources>

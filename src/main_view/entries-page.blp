@@ -1,0 +1,35 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $EntriesPage : Adw.NavigationPage {
+	title: _("Entries");
+
+	ScrolledWindow {
+		Adw.Clamp {
+			Box {
+				orientation: vertical;
+				margin-start: 12;
+				margin-end:   12;
+				margin-top:   12;
+				margin-bottom: 24;
+				spacing: 22;
+
+				$EntryGroup home_group {}
+				$EntryGroup overrides_group {}
+				$EntryGroup root_group {}
+			}
+		}
+	}
+}
+
+Button add_button {
+	valign: center;
+	action-name: "app.new-entry";
+
+	styles ["flat"]
+
+	Adw.ButtonContent {
+		icon-name: "ignition:list-add-symbolic";
+		label: _("New");
+	}
+}

@@ -1,10 +1,5 @@
-import GObject from 'gi://GObject';
-import GLib from 'gi://GLib';
-import Gio from 'gi://Gio';
-import Gtk from 'gi://Gtk';
-import Adw from 'gi://Adw';
-
-import { IconUtils } from './utils.js';
+const { GObject, GLib, Adw } = imports.gi;
+import { IconHelper } from '../utils/icon_helper.js';
 
 export const EntryRow = GObject.registerClass({
 	GTypeName: 'EntryRow',
@@ -15,13 +10,24 @@ export const EntryRow = GObject.registerClass({
 		"suffix_icon",
 	],
 }, class EntryRow extends Adw.ActionRow {
+	entry; // Autostart Entry
+
+	constructor(entry, show_enabled_label, ...args) {
+		super(...args);
+
+		entry.signals.file_saved.connect(this.load_details.bind(this));
+		this.entry = entry;
+		this._enabled_label.visible = show_enabled_label;
+		this.load_details(entry)
+	}
+
 	load_details(entry) {
 		this.entry = entry;
 		const icon_key = entry.icon
 		// This handles desktop entries that set their icon from a path
 		//   Snap applications do this, so it's quite needed
 		GLib.idle_add(GLib.PRIORITY_DEFAULT_IDLE, () => {
-			IconUtils.set_icon(this._prefix_icon, icon_key)
+			IconHelper.set_icon(this._prefix_icon, icon_key)
 			return GLib.SOURCE_REMOVE;
 		})
 
@@ -36,16 +42,5 @@ export const EntryRow = GObject.registerClass({
 			this._enabled_label.add_css_class("warning");
 			this._prefix_icon.opacity = 0.4;
 		}
-	}
-
-	entry; // Autostart Entry
-
-	constructor(entry, show_enabled_label, ...args) {
-		super(...args);
-
-		entry.signals.file_saved.connect(this.load_details.bind(this));
-		this.entry = entry;
-		this._enabled_label.visible = show_enabled_label;
-		this.load_details(entry)
 	}
 });

@@ -24,10 +24,10 @@ import Gio from 'gi://Gio';
 import Gtk from 'gi://Gtk?version=4.0';
 import Adw from 'gi://Adw?version=1';
 
-import { IgnitionWindow } from './window.js';
-import { SharedVars } from './utils.js';
-import { new_error_toast } from './error_toast.js';
-import { Config } from './const.js';
+import { IgnitionWindow } from './window/window.js';
+import { SharedVars } from './utils/shared_vars.js';
+import { add_error_toast } from './utils/helper_funcs.js';
+import { Config } from './config.js';
 
 pkg.initGettext();
 pkg.initFormat();
@@ -63,7 +63,7 @@ export const IgnitionApplication = GObject.registerClass(
 			const open_folder_action = new Gio.SimpleAction({name: 'open-folder'});
 			open_folder_action.connect('activate', action => {
 				const launcher = new Gtk.FileLauncher({
-					file: SharedVars.autostart_dir,
+					file: SharedVars.home_autostart_dir,
 				});
 				launcher.launch(this.active_window, null, (lnch, result) => {
 					try {
@@ -75,10 +75,10 @@ export const IgnitionApplication = GObject.registerClass(
 						);
 					} catch (error) {
 						this.active_window._toast_overlay.add_toast(
-							new_error_toast(
+							add_error_toast(
 								this.active_window,
 								_("Could not open folder"),
-								`Path: ${SharedVars.autostart_dir}\n${error}`,
+								`Path: ${SharedVars.home_autostart_dir}\n${error}`,
 							),
 						);
 					}
