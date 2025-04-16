@@ -43,5 +43,6 @@ export const EntryGroup = GObject.registerClass({
 		this._list_box.remove_all();
 		list.forEach(entry => this._list_box.append(new EntryRow(entry, true)));
 		this.visible = list.length > 0;
+		this.any_results = this.visible;
 	}
 });
