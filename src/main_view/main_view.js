@@ -26,8 +26,12 @@ export const MainView = GObject.registerClass({
 	constructor() {
 		super(...arguments);
 
+		this._search_entry.connect('search-changed', () => this.on_search_changed());
 		this._stack.connect('notify::visible_child', () => {
-			const are_entries_showing = this._stack.visible_child === this._navigation_view;
+			const are_entries_showing = (
+				this._stack.visible_child === this._navigation_view
+				|| this._stack.visible_child === this._no_results_status
+			);
 			if (!are_entries_showing) {
 				this._search_button.active = false;
 			}
@@ -35,6 +39,12 @@ export const MainView = GObject.registerClass({
 		});
 
 		this._stack.visible_child = this._navigation_view;
+	}
+
+	on_search_changed() {
+		const text = this._search_entry.text.toLowerCase();
+		this._entries_page.search_changed(text);
+		this._stack.visible_child = this._entries_page.any_results ? this._navigation_view : this._no_results_status;
 	}
 
 	load_entries() {

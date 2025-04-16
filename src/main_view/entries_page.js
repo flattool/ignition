@@ -12,9 +12,9 @@ export const EntriesPage = GObject.registerClass({
 }, class EntriesPage extends Adw.NavigationPage {
 	get any_results() {
 		return (
-			this._home_group.any_visible
-			&& this._overrides_group.any_visible
-			&& this._root_group.any_visible
+			this._home_group.any_results
+			|| this._overrides_group.any_results
+			|| this._root_group.any_results
 		)
 	}
 
@@ -33,7 +33,6 @@ export const EntriesPage = GObject.registerClass({
 	}
 
 	search_changed(value) {
-		value = value.toLowerCase();
 		this._home_group.search_changed(value);
 		this._overrides_group.search_changed(value);
 		this._root_group.search_changed(value);

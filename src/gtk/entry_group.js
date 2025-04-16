@@ -10,34 +10,33 @@ export const EntryGroup = GObject.registerClass({
 		'list_box',
 	],
 }, class EntryGroup extends Gtk.Box {
-	#search_text = "";
-
+	any_results = true;
 	signals = {
 		row_clicked: new Signal(),
 	};
-
-	get any_visible() {
-		for (const row of this._list_box) {
-			if (row.visible) return true;
-		}
-		return false;
-	}
 
 	constructor() {
 		super(...arguments);
 
 		this._list_box.connect('row-activated', row => this.signals.row_clicked.emit(row));
-		this._list_box.set_sort_func((row1, row2) => row1.title.toLowerCase() > row2.title.toLowerCase());
-		this._list_box.set_filter_func(row => (
-			row.title.toLowerCase().includes(this.#search_text)
-			|| row.subtitle.toLowerCase().includes(this.#search_text)
+		this._list_box.set_sort_func((row1, row2) => (
+			row1.entry.enabled === row2.entry.enabled
+			? row1.title.toLowerCase() > row2.title.toLowerCase()
+			: row2.entry.enabled
 		));
 	}
 
 	search_changed(value) {
-		this.#search_text = value;
-		this._list_box.invalidate_filter();
-		this.visible = this.any_visible;
+		this.any_results = false;
+		for (const row of this._list_box) {
+			const is_match = (
+				row.title.toLowerCase().includes(value)
+				|| row.subtitle.toLowerCase().includes(value)
+			);
+			row.visible = is_match;
+			if (is_match) this.any_results = true;
+		}
+		this.visible = this.any_results;
 	}
 
 	load_entries(list) {
