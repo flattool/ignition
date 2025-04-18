@@ -59,51 +59,6 @@ export const MainView = GObject.registerClass({
 
 	load_entries() {
 		this._stack.visible_child = this._loading_status;
-		const root_map = new Map();
-		const home_entries = [];
-		const fails = [];
-		const root_enumerator = SharedVars.root_autostart_dir.enumerate_children(
-			'standard::*',
-			Gio.FileQueryInfoFlags.NOFOLLOW_SYMLINKS,
-			null,
-		);
-		const home_enumerator = SharedVars.home_autostart_dir.enumerate_children(
-			'standard::*',
-			Gio.FileQueryInfoFlags.NOFOLLOW_SYMLINKS,
-			null,
-		);
-		Async.run_pipe(
-			[
-				() => entry_iteration(
-					SharedVars.root_autostart_dir,
-					root_enumerator,
-					entry => root_map.set(entry.file_name, entry),
-					path => fails.push(path),
-				),
-				() => entry_iteration(
-					SharedVars.home_autostart_dir,
-					home_enumerator,
-					entry => {
-						if (root_map.has(entry.file_name)) {
-							root_map.get(entry.file_name).overridden = AutostartEntry.Overrides.OVERRIDDEN;
-							entry.overridden = AutostartEntry.Overrides.OVERIDES;
-						}
-						home_entries.push(entry);
-					},
-					path => fails.push(path),
-				),
-			],
-			() => {
-				// When done
-				if (fails.length > 0) {
-					add_error_toast(
-						SharedVars.main_window,
-						_("Could not load some entries"),
-						fails.join('\n'),
-					);
-				}
-				this._entries_page.load_entries([...root_map.values()], home_entries);
-			}
-		)
+		this._entries_page.load_entries();
 	}
 });
