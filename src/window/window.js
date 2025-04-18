@@ -10,9 +10,10 @@ export const IgnitionWindow = GObject.registerClass({
 	GTypeName: 'IgnitionWindow',
 	Template: 'resource:///io/github/flattool/Ignition/window/window.ui',
 	InternalChildren: [
-		'stack',
-		'first_run_page',
-		'main_view',
+		'toast_overlay',
+			'stack',
+				'first_run_page',
+				'main_view',
 	],
 }, class IgnitionWindow extends Adw.ApplicationWindow {
 	settings;
@@ -74,6 +75,6 @@ export const IgnitionWindow = GObject.registerClass({
 				};
 			})
 		;
-		Async.run_pipe(tasks);
+		Async.run_pipe(tasks, () => this._main_view.load_entries());
 	}
 });
