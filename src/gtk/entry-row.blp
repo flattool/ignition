@@ -10,7 +10,7 @@ template $EntryRow: Adw.ActionRow {
 		icon-size: large;
 	}
 	[suffix]
-	Label enabled_label {
+	Label suffix_label {
 		margin-end: 9;
 		label: "Not known";
 		styles ["subtitle"]
@@ -30,8 +30,7 @@ template $EntryRow: Adw.ActionRow {
 }
 
 Popover info_popover {
-	Label {
-		label: _("This entry overwrites a system entry.");
+	Label info_label {
 		wrap: true;
 		wrap-mode: word_char;
 		margin-start:  6;
