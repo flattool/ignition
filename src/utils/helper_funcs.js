@@ -1,4 +1,4 @@
-const { GLib, Gio, Gdk, Gtk, Adw } = imports.gi;
+const { GLib, Gio, Gdk, Gtk, Adw, Pango } = imports.gi;
 import { AutostartEntry } from "./autostart_entry.js";
 import { Async } from "./async.js";
 
@@ -6,6 +6,7 @@ export const add_error_toast = (window, title, message) => {
 	const label = new Gtk.Label({
 		selectable: true,
 		wrap: true,
+		wrap_mode: Pango.WrapMode.WORD_CHAR,
 	});
 	label.set_markup(`<tt>${GLib.markup_escape_text(`${message}`, -1)}</tt>`)
 	const error_dialog = new Adw.AlertDialog({
@@ -27,6 +28,10 @@ export const add_error_toast = (window, title, message) => {
 	});
 	toast.connect('button-clicked', () => error_dialog.present(window));
 	window._toast_overlay.add_toast(toast);
+	print("==== Error Toast ====");
+	print(title);
+	print(message);
+	print("=====================");
 };
 
 // Run me as async!
@@ -46,7 +51,7 @@ export const entry_iteration = (dir, enumerator, on_found, on_error) => {
 		const entry = new AutostartEntry(path);
 		on_found(entry);
 	} catch (error) {
-		on_error(path);
+		on_error(error, path);
 	}
 	// Continue to next async iteration
 	return Async.CONTINUE;
