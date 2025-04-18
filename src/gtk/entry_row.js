@@ -1,6 +1,6 @@
 const { GObject, GLib, Adw } = imports.gi;
 import { IconHelper } from '../utils/icon_helper.js';
-import { run_async } from '../utils/helper_funcs.js';
+import { Async } from '../utils/async.js';
 
 export const EntryRow = GObject.registerClass({
 	GTypeName: 'EntryRow',
@@ -27,9 +27,9 @@ export const EntryRow = GObject.registerClass({
 		const icon_key = entry.icon
 		// This handles desktop entries that set their icon from a path
 		//   Snap applications do this, so it's quite needed
-		run_async(() => {
+		Async.run(() => {
 			IconHelper.set_icon(this._prefix_icon, icon_key);
-			return false;
+			return Async.BREAK;
 		});
 
 		this.title = GLib.markup_escape_text(entry.name || _("No Name Set"), -1);

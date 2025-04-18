@@ -1,31 +1,6 @@
 const { GLib, Gio, Gdk, Gtk, Adw } = imports.gi;
 import { AutostartEntry } from "./autostart_entry.js";
-
-export const run_async = (to_run, when_done = () => { }) => {
-	GLib.idle_add(GLib.PRIORITY_DEFAULT_IDLE, () => {
-		const should_continue = to_run();
-		if (should_continue) {
-			return GLib.SOURCE_CONTINUE;
-		}
-
-		when_done();
-		return GLib.SOURCE_REMOVE;
-	});
-};
-
-export const run_async_pipe = (tasks = [], when_done = () => { }) => {
-	if (tasks.length < 1) {
-		when_done();
-		return;
-	}
-
-	const [first_task, ...remaining] = tasks;
-
-	run_async(
-		first_task,
-		() => run_async_pipe(remaining, when_done),
-	);
-};
+import { Async } from "./async.js";
 
 export const add_error_toast = (window, title, message) => {
 	const label = new Gtk.Label({
@@ -59,13 +34,13 @@ export const entry_iteration = (dir, enumerator, on_found, on_error) => {
 	const file = enumerator.next_file(null);
 	if (file === null) {
 		// Stop the loop when there are no more files
-		return false;
+		return Async.BREAK;
 	}
 	const name = file.get_name();
 	const path = `${dir.get_path()}/${name}`;
 	if (!path.endsWith('.desktop')) {
 		// Skip this iteration if a file that isn't a desktop entry is found
-		return true;
+		return Async.CONTINUE;
 	}
 	try {
 		const entry = new AutostartEntry(path);
@@ -74,5 +49,5 @@ export const entry_iteration = (dir, enumerator, on_found, on_error) => {
 		on_error(path);
 	}
 	// Continue to next async iteration
-	return true;
+	return Async.CONTINUE;
 };

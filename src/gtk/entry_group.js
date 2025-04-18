@@ -1,5 +1,5 @@
 const { GObject, Gtk, Adw } = imports.gi;
-import { run_async } from "../utils/helper_funcs.js";
+import { Async } from "../utils/async.js";
 import { Signal } from "../utils/signal.js";
 import { EntryRow } from "./entry_row.js";
 
@@ -51,13 +51,12 @@ export const EntryGroup = GObject.registerClass({
 		const iteration = () => {
 			const [entry, ...rest] = list;
 			if (entry === undefined) {
-				// Stop the loop when all entries have been added
-				return false;
+				return Async.BREAK;
 			}
 			list = rest;
 			this._list_box.append(new EntryRow(entry, true));
-			return true;
+			return Async.CONTINUE;
 		}
-		run_async(iteration, () => this.signals.finished_loading.emit(this));
+		Async.run(iteration, () => this.signals.finished_loading.emit(this));
 	}
 });

@@ -1,9 +1,10 @@
 const { GObject, Gio, Adw } = imports.gi;
-import { add_error_toast, entry_iteration, run_async_pipe } from "../utils/helper_funcs.js";
+import { add_error_toast, entry_iteration } from "../utils/helper_funcs.js";
 import { SharedVars } from "../utils/shared_vars.js";
 import { EntriesPage } from "./entries_page.js";
 import { EntryGroup } from "../gtk/entry_group.js";
 import { AutostartEntry } from "../utils/autostart_entry.js";
+import { Async } from "../utils/async.js";
 
 export const MainView = GObject.registerClass({
 	GTypeName: 'MainView',
@@ -40,7 +41,7 @@ export const MainView = GObject.registerClass({
 		});
 		this._entries_page.signals.finished_loading.connect(() => this.show_entries_if_any());
 
-		this._stack.visible_child = this._navigation_view;
+		this._stack.visible_child = this._loading_status;
 	}
 
 	show_entries_if_any() {
@@ -71,7 +72,7 @@ export const MainView = GObject.registerClass({
 			Gio.FileQueryInfoFlags.NOFOLLOW_SYMLINKS,
 			null,
 		);
-		run_async_pipe(
+		Async.run_pipe(
 			[
 				() => entry_iteration(
 					SharedVars.root_autostart_dir,

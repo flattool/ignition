@@ -14,6 +14,7 @@
     <file>utils/signal.js</file>
     <file>utils/autostart_entry.js</file>
     <file>utils/enum.js</file>
+    <file>utils/async.js</file>
     <file>window/window.js</file>
     <file>config.js</file>
     <file>main.js</file>
