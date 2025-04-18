@@ -22,9 +22,9 @@ export const EntryGroup = GObject.registerClass({
 
 		this._list_box.connect('row-activated', row => this.signals.row_clicked.emit(row));
 		this._list_box.set_sort_func((row1, row2) => (
-			row1.entry.enabled === row2.entry.enabled
+			row1.sort_last === row2.sort_last
 			? row1.title.toLowerCase() > row2.title.toLowerCase()
-			: row2.entry.enabled
+			: row1.sort_last
 		));
 	}
 
