@@ -1,7 +1,7 @@
 const { GLib, Gio, Gdk, Gtk, Adw } = imports.gi;
 import { AutostartEntry } from "./autostart_entry.js";
 
-export const run_async = (to_run, when_done) => {
+export const run_async = (to_run, when_done = () => { }) => {
 	GLib.idle_add(GLib.PRIORITY_DEFAULT_IDLE, () => {
 		const should_continue = to_run();
 		if (should_continue) {
@@ -11,6 +11,20 @@ export const run_async = (to_run, when_done) => {
 		when_done();
 		return GLib.SOURCE_REMOVE;
 	});
+};
+
+export const run_async_pipe = (tasks = [], when_done = () => { }) => {
+	if (tasks.length < 1) {
+		when_done();
+		return;
+	}
+
+	const [first_task, ...remaining] = tasks;
+
+	run_async(
+		first_task,
+		() => run_async_pipe(remaining, when_done),
+	);
 };
 
 export const add_error_toast = (window, title, message) => {
@@ -38,7 +52,7 @@ export const add_error_toast = (window, title, message) => {
 	});
 	toast.connect('button-clicked', () => error_dialog.present(window));
 	window._toast_overlay.add_toast(toast);
-}
+};
 
 export const get_entries_in = (dir, for_entry = () => true) => {
 	// for_dir will run for each entry, and if it returns false, will skip that entry
@@ -73,4 +87,27 @@ export const get_entries_in = (dir, for_entry = () => true) => {
 		}
 	}
 	return [entries, failed_loads];
-}
+};
+
+// Run me as async!
+export const entry_iteration = (dir, enumerator, on_found, on_error) => {
+	const file = enumerator.next_file(null);
+	if (file === null) {
+		// Stop the loop when there are no more files
+		return false;
+	}
+	const name = file.get_name();
+	const path = `${dir.get_path()}/${name}`;
+	if (!path.endsWith('.desktop')) {
+		// Skip this iteration if a file that isn't a desktop entry is found
+		return true;
+	}
+	try {
+		const entry = new AutostartEntry(path);
+		on_found(entry);
+	} catch (error) {
+		on_error(path);
+	}
+	// Continue to next async iteration
+	return true;
+};

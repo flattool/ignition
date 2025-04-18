@@ -1,4 +1,5 @@
 const { GObject, Gtk, Adw } = imports.gi;
+import { run_async } from "../utils/helper_funcs.js";
 import { Signal } from "../utils/signal.js";
 import { EntryRow } from "./entry_row.js";
 
@@ -13,6 +14,7 @@ export const EntryGroup = GObject.registerClass({
 	any_results = true;
 	signals = {
 		row_clicked: new Signal(),
+		finished_loading: new Signal(),
 	};
 
 	constructor() {
@@ -41,8 +43,21 @@ export const EntryGroup = GObject.registerClass({
 
 	load_entries(list) {
 		this._list_box.remove_all();
-		list.forEach(entry => this._list_box.append(new EntryRow(entry, true)));
-		this.visible = list.length > 0;
-		this.any_results = this.visible;
+		this.any_results = list.length > 0;
+		this.visible = this.any_results;
+		if (!this.any_results) {
+			return;
+		}
+		const iteration = () => {
+			const [entry, ...rest] = list;
+			if (entry === undefined) {
+				// Stop the loop when all entries have been added
+				return false;
+			}
+			list = rest;
+			this._list_box.append(new EntryRow(entry, true));
+			return true;
+		}
+		run_async(iteration, () => this.signals.finished_loading.emit(this));
 	}
 });

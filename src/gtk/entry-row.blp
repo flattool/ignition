@@ -16,7 +16,27 @@ template $EntryRow: Adw.ActionRow {
 		styles ["subtitle"]
 	}
 	[suffix]
+	MenuButton info_button {
+		icon-name: "ignition:info-outline-symbolic";
+		tooltip-text: _("More Information");
+		popover: info_popover;
+		valign: center;
+		styles ["flat"]
+	}
+	[suffix]
 	Image suffix_icon {
 		icon-name: "ignition:right-large-symbolic";
+	}
+}
+
+Popover info_popover {
+	Label {
+		label: _("This entry overwrites a system entry.");
+		wrap: true;
+		wrap-mode: word_char;
+		margin-start:  6;
+		margin-end:    6;
+		margin-top:    6;
+		margin-bottom: 6;
 	}
 }

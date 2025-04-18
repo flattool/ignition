@@ -2,11 +2,20 @@ const { GLib, Gio } = imports.gi;
 import { KeyFileHelper } from './key_file_helper.js';
 import { Signal } from './signal.js';
 import { SharedVars } from './shared_vars.js';
+import { Enum } from './enum.js';
 
 export class AutostartEntry {
+	static Overrides = class Overrides extends Enum {
+		static OVERRIDDEN = new Enum('overridden');
+		static OVERIDES = new Enum('overrides');
+		static NONE = new Enum('none');
+		static DEFAULT = Overrides.NONE;
+	};
+
 	file;
-	keyfile = new GLib.KeyFile({});
 	locale;
+	overridden = AutostartEntry.Overrides.NONE;
+	keyfile = new GLib.KeyFile({});
 	signals = {
 		file_saved: new Signal(),
 		file_save_failed: new Signal(),
