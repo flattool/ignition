@@ -76,7 +76,7 @@ export const EntryRow = GObject.registerClass({
 		if (this.entry.overridden === AutostartEntry.Overrides.OVERRIDDEN) {
 			this._info_label.label = _("This entry is overridden by a user entry.");
 		} else if (this.entry.overridden === AutostartEntry.Overrides.OVERIDES) {
-			this._info_label.label = _("This entry overwrites a system entry.");
+			this._info_label.label = _("This entry overrides a system entry.");
 		}
 	}
 });
