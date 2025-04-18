@@ -54,41 +54,6 @@ export const add_error_toast = (window, title, message) => {
 	window._toast_overlay.add_toast(toast);
 };
 
-export const get_entries_in = (dir, for_entry = () => true) => {
-	// for_dir will run for each entry, and if it returns false, will skip that entry
-	const entries = [];
-	const failed_loads = [];
-
-	const enumerator = dir.enumerate_children(
-		'standard::*',
-		Gio.FileQueryInfoFlags.NOFOLLOW_SYMLINKS,
-		null,
-	);
-	const base_path = dir.get_path();
-	if (!base_path) {
-		return [entries, failed_loads];
-	}
-
-	for (const file_info of enumerator) {
-		const name = file_info.get_name();
-		if (!name.endsWith('.desktop')) {
-			continue;
-		}
-
-		const path = `${base_path}/${name}`;
-		try {
-			const entry = new AutostartEntry(path);
-			if (for_entry(entry)) {
-				entries.push(entry);
-			}
-		} catch (error) {
-			failed_loads.push(path);
-			logError(error, `Failed to load autostart entry: ${path}`);
-		}
-	}
-	return [entries, failed_loads];
-};
-
 // Run me as async!
 export const entry_iteration = (dir, enumerator, on_found, on_error) => {
 	const file = enumerator.next_file(null);

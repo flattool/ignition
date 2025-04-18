@@ -1,5 +1,5 @@
 const { GObject, Gio, Adw } = imports.gi;
-import { add_error_toast, entry_iteration, get_entries_in, run_async, run_async_pipe } from "../utils/helper_funcs.js";
+import { add_error_toast, entry_iteration, run_async_pipe } from "../utils/helper_funcs.js";
 import { SharedVars } from "../utils/shared_vars.js";
 import { EntriesPage } from "./entries_page.js";
 import { EntryGroup } from "../gtk/entry_group.js";
@@ -101,8 +101,6 @@ export const MainView = GObject.registerClass({
 						fails.join('\n'),
 					);
 				}
-				// print("Root:\n" + [...root_map.keys()].map(e => '- ' + e).join('\n'));
-				// print("Home:\n" + home_entries.map(e => '- ' + e.file_name).join('\n'));
 				this._entries_page.load_entries([...root_map.values()], home_entries);
 			}
 		)
