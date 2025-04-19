@@ -12,6 +12,10 @@ export const EntryGroup = GObject.registerClass({
 	],
 }, class EntryGroup extends Gtk.Box {
 	any_results = true;
+	on_results = (has_any) => {
+		// I exist to be overwritten outside
+		this.visible = has_any;
+	};
 	signals = {
 		row_clicked: new Signal(),
 		finished_loading: new Signal(),
@@ -44,7 +48,7 @@ export const EntryGroup = GObject.registerClass({
 	load_entries(list) {
 		this._list_box.remove_all();
 		this.any_results = list.length > 0;
-		this.visible = this.any_results;
+		this.on_results(this.any_results);
 		if (!this.any_results) {
 			this.signals.finished_loading.emit(this);
 			return;

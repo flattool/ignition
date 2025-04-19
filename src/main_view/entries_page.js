@@ -3,6 +3,7 @@ import { Signal } from "../utils/signal.js";
 import { SharedVars } from "../utils/shared_vars.js";
 import { Async } from "../utils/async.js";
 import { AutostartEntry } from "../utils/autostart_entry.js";
+import { EntryGroup } from "../gtk/entry_group.js";
 import { entry_iteration, add_error_toast } from "../utils/helper_funcs.js";
 
 export const EntriesPage = GObject.registerClass({
@@ -14,12 +15,12 @@ export const EntriesPage = GObject.registerClass({
 			'search_entry',
 		'stack',
 			'loading_status',
-			'no_entries_status',
 			'no_results_status',
 			'scrolled_window',
 				'home_group',
 				'root_group',
 		'add_button',
+		'empty_row',
 	],
 }, class EntriesPage extends Adw.NavigationPage {
 	#loaded_groups = [];
@@ -45,15 +46,16 @@ export const EntriesPage = GObject.registerClass({
 			this._search_button.sensitive = are_entries_showing;
 		});
 
+		this._home_group.signals.finished_loading.connect(group => this.#on_group_finished_loading(group));
 		this._home_group._group.title = _("User Startup Entries");
 		this._home_group._group.description = _("Entries that run only for you.");
 		this._home_group._group.header_suffix = this._add_button;
+		this._home_group._group.add(this._empty_row);
+		this._home_group.on_results = (has_any) => this._empty_row.visible = !has_any;
 
+		this._root_group.signals.finished_loading.connect(group => this.#on_group_finished_loading(group));
 		this._root_group._group.title = _("System Startup Entries");
 		this._root_group._group.description = _("Entries that run for everyone.");
-
-		this._home_group.signals.finished_loading.connect(group => this.#on_group_finished_loading(group));
-		this._root_group.signals.finished_loading.connect(group => this.#on_group_finished_loading(group));
 
 		this._search_entry.connect('search-changed', () => this.on_search_changed());
 	}
@@ -64,10 +66,7 @@ export const EntriesPage = GObject.registerClass({
 			this.#loaded_groups.includes(this._root_group)
 			&& this.#loaded_groups.includes(this._home_group)
 		) {
-			this._stack.visible_child = (this.any_results
-				? this._scrolled_window
-				: this._no_entries_status
-			);
+			this._stack.visible_child = this._scrolled_window;
 		}
 	}
 
@@ -82,6 +81,11 @@ export const EntriesPage = GObject.registerClass({
 		const text = this._search_entry.text.toLowerCase();
 		this._home_group.search_changed(text);
 		this._root_group.search_changed(text);
+		if (text === "") {
+			// This is needed to combat the home_group hiding itself when there are no entries in the home at all
+			this._home_group.any_results = true;
+			this._home_group.visible = true;
+		}
 		this.show_entries_if_any();
 	}
 
