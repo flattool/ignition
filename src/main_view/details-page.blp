@@ -1,0 +1,155 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $DetailsPage : Adw.NavigationPage {
+	title: _("Details");
+
+	Adw.ToolbarView {
+		[top]
+		Adw.HeaderBar {
+			// show-title: false;
+		}
+
+		[top]
+		Adw.Banner root_banner {
+			title: _("Override entry to change settings");
+			button-label: _("Override");
+		}
+
+		[bottom]
+		ActionBar {
+			[start]
+			Button trash_button {
+				styles ["destructive-action"]
+
+				Adw.ButtonContent {
+					icon-name: "ignition:user-trash-symbolic";
+					label: _("Trash");
+				}
+			}
+
+			[end]
+			Button save_button {
+				styles ["suggested-action"]
+
+				Adw.ButtonContent {
+					icon-name: "ignition:checkmark-symbolic";
+					label: _("Save");
+				}
+			}
+
+			[end]
+			Button create_button {
+				styles ["suggested-action"]
+
+				Adw.ButtonContent {
+					icon-name: "ignition:list-add-symbolic";
+					label: _("Create");
+				}
+			}
+		}
+
+		ScrolledWindow {
+			Adw.Clamp {
+				margin-start: 12;
+				margin-end:   12;
+				margin-top: 6;
+				margin-bottom: 2;
+
+				Box {
+					spacing: 12;
+					orientation: vertical;
+
+					Box {
+						spacing: 12;
+						margin-start: 6;
+
+						Image icon {
+							valign: center;
+							pixel-size: 45;
+
+							styles ["icon-dropshadow"]
+						}
+
+						Adw.PreferencesGroup title_group {
+							margin-top: 10;
+							margin-bottom: 0;
+							valign: center;
+							description: _("Edit details about this entry.");
+						}
+					}
+
+					Adw.PreferencesGroup {
+						Adw.SwitchRow enabled_row {
+							title: _("Enable");
+							subtitle: _("Enable this entry to be started when you log in.");
+						}
+					}
+
+					Adw.PreferencesGroup {
+						Adw.EntryRow name_row {
+							title: _("Name");
+							text: "placeholder";
+						}
+
+						Adw.EntryRow comment_row {
+							title: _("Comment");
+							text: "placeholder";
+						}
+
+						Adw.EntryRow exec_row {
+							title: _("Command or Script");
+							text: "placeholder";
+
+							[suffix]
+							MenuButton path_info_button {
+								icon-name: "ignition:info-outline-symbolic";
+								tooltip-text: _("More Information");
+								valign: center;
+								popover: path_info_popover;
+
+								styles ["flat"]
+							}
+						}
+
+						Adw.SwitchRow terminal_row {
+							title: _("Show Terminal");
+							subtitle: _("Show a terminal for this process to run in.");
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+Popover path_info_popover {
+	Label label {
+		label: _("To run a script at login, paste its file path here. You can copy the script's path from your file manager. Make sure your script is executable.");
+		wrap: true;
+		wrap-mode: word;
+		max-width-chars: 52;
+		margin-start:  6;
+		margin-end:    6;
+		margin-top:    6;
+		margin-bottom: 6;
+	}
+}
+
+Adw.AlertDialog override_dialog {
+	heading: _("Override Entry?");
+	body: _("Be careful, overriding system entries can lead to system breakage. This will make a copy of the entry for you to edit.");
+	responses [
+		override_cancel: _("Cancel"),
+		override_continue: _("Override") destructive,
+	]
+}
+
+Adw.AlertDialog discard_dialog {
+	heading: _("Discard Changes?");
+	responses [
+		discard_cancel: _("Cancel"),
+		discard_continue: _("Discard") destructive,
+		discard_save: _("Save") suggested,
+	]
+}

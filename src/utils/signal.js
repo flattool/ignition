@@ -1,9 +1,9 @@
 export class Signal {
 	connections = [];
 
-	emit(argument) {
+	emit() {
 		for (const func of this.connections) {
-			func(argument);
+			func(...arguments);
 		}
 	}
 

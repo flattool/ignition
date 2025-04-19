@@ -75,6 +75,7 @@ export const EntryRow = GObject.registerClass({
 
 	update_info() {
 		this._info_button.visible = this.entry.overridden !== AutostartEntry.Overrides.NONE;
+		this.sensitive = this.entry.overridden !== AutostartEntry.Overrides.OVERRIDDEN;
 		if (this.entry.overridden === AutostartEntry.Overrides.OVERRIDDEN) {
 			this._info_label.label = _("This entry is overridden by a user entry.");
 		} else if (this.entry.overridden === AutostartEntry.Overrides.OVERIDES) {

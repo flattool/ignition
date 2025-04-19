@@ -24,7 +24,6 @@ export const EntryGroup = GObject.registerClass({
 	constructor() {
 		super(...arguments);
 
-		this._list_box.connect('row-activated', row => this.signals.row_clicked.emit(row));
 		this._list_box.set_sort_func((row1, row2) => (
 			row1.sort_last === row2.sort_last
 			? row1.title.toLowerCase() > row2.title.toLowerCase()
@@ -59,7 +58,9 @@ export const EntryGroup = GObject.registerClass({
 				return Async.BREAK;
 			}
 			list = rest;
-			this._list_box.append(new EntryRow(entry, true));
+			const row = new EntryRow(entry, true);
+			row.connect('activated', () => this.signals.row_clicked.emit(row));
+			this._list_box.append(row);
 			return Async.CONTINUE;
 		}
 		Async.run(iteration, () => this.signals.finished_loading.emit(this));

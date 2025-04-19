@@ -73,6 +73,7 @@ export const AppListPage = GObject.registerClass({
 				dir,
 				(entry) => {
 					const row = new EntryRow(entry, false);
+					row.connect('activated', () => this.signals.app_chosen.emit(entry));
 					if (!this._show_hidden_switch.active && this.is_entry_hidden(entry)) {
 						row.visible = false;
 					}

@@ -28,6 +28,9 @@ export const EntriesPage = GObject.registerClass({
 
 	home_watcher;
 	root_watcher;
+	signals = {
+		row_clicked: new Signal(),
+	};
 
 	get any_results() {
 		return (
@@ -51,6 +54,7 @@ export const EntriesPage = GObject.registerClass({
 		});
 
 		this._home_group.signals.finished_loading.connect(group => this.#on_group_finished_loading(group));
+		this._home_group.signals.row_clicked.connect(row => this.signals.row_clicked.emit(row, false));
 		this._home_group._group.title = _("User Startup Entries");
 		this._home_group._group.description = _("Entries that run only for you.");
 		this._home_group._group.header_suffix = this._add_button;
@@ -58,6 +62,7 @@ export const EntriesPage = GObject.registerClass({
 		this._home_group.on_results = (has_any) => this._empty_row.visible = !has_any;
 
 		this._root_group.signals.finished_loading.connect(group => this.#on_group_finished_loading(group));
+		this._root_group.signals.row_clicked.connect(row => this.signals.row_clicked.emit(row, true));
 		this._root_group._group.title = _("System Startup Entries");
 		this._root_group._group.description = _("Entries that run for everyone.");
 
