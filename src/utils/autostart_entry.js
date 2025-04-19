@@ -16,18 +16,15 @@ export class AutostartEntry {
 	locale;
 	overridden = AutostartEntry.Overrides.NONE;
 	keyfile = new GLib.KeyFile({});
-	signals = {
-		file_saved: new Signal(),
-		file_save_failed: new Signal(),
-		file_trashed: new Signal(),
-		file_trash_failed: new Signal(),
-	};
 
 	get path() {
 		return this.file.get_path();
 	}
 
 	get file_name() {
+		if (this.path.includes("add")) {
+			print(this.file.get_basename());
+		}
 		return this.file.get_basename();
 	}
 
@@ -111,28 +108,25 @@ export class AutostartEntry {
 		}
 	}
 
-	save() {
-		if (!this.file.query_exists(null)) {
-			this.path = `${SharedVars.home_dir.get_path()}/${this.name}.desktop`;
-		}
+	save(on_finish) {
 		try {
 			// Add key values that might be missing, but won't be edited
 			this.keyfile.set_string("Desktop Entry", "Type", "Application");
 
 			this.keyfile.save_to_file(this.path);
-			this.signals.file_saved.emit(this);
+			on_finish(this, null);
 		} catch (error) {
-			this.signals.file_save_failed.emit(error);
+			on_finish(this, error);
 		}
 	}
 
-	trash() {
+	trash(on_finish) {
 		const callback = (file, result) => {
 			try {
 				file.trash_finish(result);
-				this.signals.file_trashed.emit(this);
+				on_finish(this, null);
 			} catch (error) {
-				this.signals.file_trash_failed.emit(error);
+				on_finish(this, error);
 			}
 		};
 		this.file.trash_async(

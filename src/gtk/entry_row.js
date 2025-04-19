@@ -21,7 +21,6 @@ export const EntryRow = GObject.registerClass({
 	constructor(entry, show_suffix_label, ...args) {
 		super(...args);
 
-		entry.signals.file_saved.connect(this.load_details.bind(this));
 		this.entry = entry;
 		this._suffix_label.visible = show_suffix_label;
 		this.load_details(entry, show_suffix_label);
@@ -75,7 +74,7 @@ export const EntryRow = GObject.registerClass({
 
 	update_info() {
 		this._info_button.visible = this.entry.overridden !== AutostartEntry.Overrides.NONE;
-		this.sensitive = this.entry.overridden !== AutostartEntry.Overrides.OVERRIDDEN;
+		this.activatable = this.entry.overridden !== AutostartEntry.Overrides.OVERRIDDEN;
 		if (this.entry.overridden === AutostartEntry.Overrides.OVERRIDDEN) {
 			this._info_label.label = _("This entry is overridden by a user entry.");
 		} else if (this.entry.overridden === AutostartEntry.Overrides.OVERIDES) {

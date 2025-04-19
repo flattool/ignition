@@ -8,24 +8,11 @@ template $DetailsPage : Adw.NavigationPage {
 		[top]
 		Adw.HeaderBar {
 			// show-title: false;
-		}
 
-		[top]
-		Adw.Banner root_banner {
-			title: _("Override entry to change settings");
-			button-label: _("Override");
-		}
-
-		[bottom]
-		ActionBar {
 			[start]
 			Button trash_button {
-				styles ["destructive-action"]
-
-				Adw.ButtonContent {
-					icon-name: "ignition:user-trash-symbolic";
-					label: _("Trash");
-				}
+				icon-name: "ignition:user-trash-symbolic";
+				tooltip-text: _("Trash");
 			}
 
 			[end]
@@ -40,6 +27,7 @@ template $DetailsPage : Adw.NavigationPage {
 
 			[end]
 			Button create_button {
+				visible: false;
 				styles ["suggested-action"]
 
 				Adw.ButtonContent {
@@ -49,6 +37,12 @@ template $DetailsPage : Adw.NavigationPage {
 			}
 		}
 
+		[top]
+		Adw.Banner root_banner {
+			title: _("Override entry to change settings");
+			button-label: _("Override");
+		}
+
 		ScrolledWindow {
 			Adw.Clamp {
 				margin-start: 12;
@@ -56,7 +50,7 @@ template $DetailsPage : Adw.NavigationPage {
 				margin-top: 6;
 				margin-bottom: 2;
 
-				Box {
+				Box content_box {
 					spacing: 12;
 					orientation: vertical;
 
@@ -151,5 +145,14 @@ Adw.AlertDialog discard_dialog {
 		discard_cancel: _("Cancel"),
 		discard_continue: _("Discard") destructive,
 		discard_save: _("Save") suggested,
+	]
+}
+
+Adw.AlertDialog trash_dialog {
+	heading: _("Trach Entry?");
+	body: _("This entry will be moved to the trash, and will no longer start when you log in.");
+	responses [
+		trash_cancel: _("Cancel"),
+		trash_continue: _("Trash") destructive,
 	]
 }
