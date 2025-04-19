@@ -46,6 +46,7 @@ export const EntryGroup = GObject.registerClass({
 		this.any_results = list.length > 0;
 		this.visible = this.any_results;
 		if (!this.any_results) {
+			this.signals.finished_loading.emit(this);
 			return;
 		}
 		const iteration = () => {

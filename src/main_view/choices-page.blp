@@ -1,0 +1,54 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $ChoicesPage : Adw.NavigationPage {
+	title: _("New Entry");
+	Adw.ToolbarView {
+		[top]
+		Adw.HeaderBar {}
+
+		Adw.BreakpointBin {
+			width-request: 1;
+			height-request: 1;
+
+			Adw.Breakpoint {
+				condition ("max-width: 700")
+				setters {
+					box.orientation: vertical;
+					box.spacing: 12;
+				}
+			}
+
+			Adw.StatusPage {
+				icon-name: "ignition:list-add-symbolic";
+				title: _("Create a New Entry");
+				description: _("Add any installed app or select any script to be ran at startup.");
+
+				Box box {
+					homogeneous: true;
+					orientation: horizontal;
+					spacing: 24;
+					halign: center;
+					Button new_app_button {
+						styles ["pill", "suggested-action"]
+
+						Adw.ButtonContent {
+							can-shrink: true;
+							icon-name: "ignition:grid-large-symbolic";
+							label: _("Add an App");
+						}
+					}
+					Button new_script_button {
+						styles ["pill"]
+
+						Adw.ButtonContent {
+							can-shrink: true;
+							icon-name: "ignition:terminal-symbolic";
+							label: _("Add a Command or Script");
+						}
+					}
+				}
+			}
+		}
+	}
+}

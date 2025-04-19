@@ -4,6 +4,7 @@
     <file>first_run_page/first_run_page.js</file>
     <file>gtk/entry_group.js</file>
     <file>gtk/entry_row.js</file>
+    <file>main_view/choices_page.js</file>
     <file>main_view/entries_page.js</file>
     <file>main_view/main_view.js</file>
     <file>utils/dir_watcher.js</file>

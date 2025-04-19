@@ -41,6 +41,10 @@ export const IgnitionWindow = GObject.registerClass({
 		});
 	}
 
+	on_new_entry() {
+		this._main_view.on_new_entry();
+	}
+
 	startup() {
 		this._stack.visible_child = this._main_view;
 
@@ -75,6 +79,7 @@ export const IgnitionWindow = GObject.registerClass({
 				};
 			})
 		;
-		Async.run_pipe(tasks, () => this._main_view.load_entries());
+		// Async.run_pipe(tasks, () => this._main_view.load_entries());
+		this._main_view.load_entries();
 	}
 });

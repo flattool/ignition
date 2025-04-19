@@ -9,16 +9,20 @@ export const EntriesPage = GObject.registerClass({
 	GTypeName: 'EntriesPage',
 	Template: 'resource:///io/github/flattool/Ignition/main_view/entries-page.ui',
 	InternalChildren: [
-		'home_group',
-			'add_button',
-		'root_group',
+		'search_button',
+		'search_bar',
+			'search_entry',
+		'stack',
+			'loading_status',
+			'no_entries_status',
+			'no_results_status',
+			'scrolled_window',
+				'home_group',
+				'root_group',
+		'add_button',
 	],
 }, class EntriesPage extends Adw.NavigationPage {
 	#loaded_groups = [];
-
-	signals = {
-		finished_loading: new Signal(),
-	}
 
 	get any_results() {
 		return (
@@ -30,6 +34,17 @@ export const EntriesPage = GObject.registerClass({
 	constructor() {
 		super(...arguments);
 
+		this._stack.connect('notify::visible-child', () => {
+			const are_entries_showing = (
+				this._stack.visible_child === this._scrolled_window
+				|| this._stack.visible_child === this._no_results_status
+			);
+			if (!are_entries_showing) {
+				this._search_button.active = false;
+			}
+			this._search_button.sensitive = are_entries_showing;
+		});
+
 		this._home_group._group.title = _("User Startup Entries");
 		this._home_group._group.description = _("Entries that run only for you.");
 		this._home_group._group.header_suffix = this._add_button;
@@ -39,6 +54,8 @@ export const EntriesPage = GObject.registerClass({
 
 		this._home_group.signals.finished_loading.connect(group => this.#on_group_finished_loading(group));
 		this._root_group.signals.finished_loading.connect(group => this.#on_group_finished_loading(group));
+
+		this._search_entry.connect('search-changed', () => this.on_search_changed());
 	}
 
 	#on_group_finished_loading(group) {
@@ -47,13 +64,25 @@ export const EntriesPage = GObject.registerClass({
 			this.#loaded_groups.includes(this._root_group)
 			&& this.#loaded_groups.includes(this._home_group)
 		) {
-			this.signals.finished_loading.emit(this);
+			this._stack.visible_child = (this.any_results
+				? this._scrolled_window
+				: this._no_entries_status
+			);
 		}
 	}
 
-	search_changed(value) {
-		this._home_group.search_changed(value);
-		this._root_group.search_changed(value);
+	show_entries_if_any() {
+		this._stack.visible_child = (this.any_results
+			? this._scrolled_window
+			: this._no_results_status
+		);
+	}
+
+	on_search_changed() {
+		const text = this._search_entry.text.toLowerCase();
+		this._home_group.search_changed(text);
+		this._root_group.search_changed(text);
+		this.show_entries_if_any();
 	}
 
 	load_entries() {
