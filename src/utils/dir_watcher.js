@@ -17,7 +17,7 @@ export class DirWatcher {
 
 	on_change() {
 		const now = Date.now();
-		if (now - this.last_event > rate_limit_ms) {
+		if (now - this.last_event > this.rate_limit_ms) {
 			this.last_event = now;
 			this.event.emit();
 		}

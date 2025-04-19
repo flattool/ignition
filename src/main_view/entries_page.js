@@ -4,6 +4,7 @@ import { SharedVars } from "../utils/shared_vars.js";
 import { Async } from "../utils/async.js";
 import { AutostartEntry } from "../utils/autostart_entry.js";
 import { EntryGroup } from "../gtk/entry_group.js";
+import { DirWatcher } from "../utils/dir_watcher.js";
 import { entry_iteration, add_error_toast } from "../utils/helper_funcs.js";
 
 export const EntriesPage = GObject.registerClass({
@@ -58,6 +59,12 @@ export const EntriesPage = GObject.registerClass({
 		this._root_group._group.description = _("Entries that run for everyone.");
 
 		this._search_entry.connect('search-changed', () => this.on_search_changed());
+
+		const home_watcher = new DirWatcher(SharedVars.home_autostart_dir, 500);
+		home_watcher.event.connect(() => Async.run_pipe(this.load_entries()));
+
+		const root_watcher = new DirWatcher(SharedVars.root_autostart_dir, 500);
+		root_watcher.event.connect(() => Async.run_pipe(this.load_entries()));
 	}
 
 	#on_group_finished_loading(group) {
