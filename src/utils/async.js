@@ -29,4 +29,11 @@ export class Async {
 			() => Async.run_pipe(rest, when_done),
 		);
 	}
+
+	static timeout_ms(duration, callback = () => { }) {
+		GLib.timeout_add(GLib.PRIORITY_DEFAULT, duration, () => {
+			callback();
+			return Async.BREAK;
+		});
+	}
 }
