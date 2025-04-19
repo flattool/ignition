@@ -103,27 +103,25 @@ export const EntriesPage = GObject.registerClass({
 			Gio.FileQueryInfoFlags.NOFOLLOW_SYMLINKS,
 			null,
 		);
-		Async.run_pipe(
-			[
-				() => entry_iteration(
-					SharedVars.root_autostart_dir,
-					root_enumerator,
-					entry => root_map.set(entry.file_name, entry),
-					path => fails.push(path),
-				),
-				() => entry_iteration(
-					SharedVars.home_autostart_dir,
-					home_enumerator,
-					entry => {
-						if (root_map.has(entry.file_name)) {
-							root_map.get(entry.file_name).overridden = AutostartEntry.Overrides.OVERRIDDEN;
-							entry.overridden = AutostartEntry.Overrides.OVERIDES;
-						}
-						home_entries.push(entry);
-					},
-					(err, path) => fails.push(`${err}:\n${path}`),
-				),
-			],
+		return [
+			() => entry_iteration(
+				SharedVars.root_autostart_dir,
+				root_enumerator,
+				entry => root_map.set(entry.file_name, entry),
+				path => fails.push(path),
+			),
+			() => entry_iteration(
+				SharedVars.home_autostart_dir,
+				home_enumerator,
+				entry => {
+					if (root_map.has(entry.file_name)) {
+						root_map.get(entry.file_name).overridden = AutostartEntry.Overrides.OVERRIDDEN;
+						entry.overridden = AutostartEntry.Overrides.OVERIDES;
+					}
+					home_entries.push(entry);
+				},
+				(err, path) => fails.push(`${err}:\n${path}`),
+			),
 			() => {
 				// When done
 				if (fails.length > 0) {
@@ -135,7 +133,8 @@ export const EntriesPage = GObject.registerClass({
 				}
 				this._root_group.load_entries([...root_map.values()]);
 				this._home_group.load_entries(home_entries);
-			}
-		);
+				return Async.BREAK;
+			},
+		];
 	}
 });

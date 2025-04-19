@@ -5,7 +5,9 @@ template $ChoicesPage : Adw.NavigationPage {
 	title: _("New Entry");
 	Adw.ToolbarView {
 		[top]
-		Adw.HeaderBar {}
+		Adw.HeaderBar {
+			show-title: false;
+		}
 
 		Adw.BreakpointBin {
 			width-request: 1;

@@ -48,38 +48,9 @@ export const IgnitionWindow = GObject.registerClass({
 	startup() {
 		this._stack.visible_child = this._main_view;
 
-		const tasks = SharedVars.host_app_entry_dirs
-			.filter(file => file.query_exists(null))
-			.map(dir => {
-				let enumerator = null;
-				const dir_path = dir.get_path();
-				return () => {
-					// Lazy load the enumerator to avoid high memory usage
-					if (enumerator === null) {
-						enumerator = dir.enumerate_children(
-							'standard::*',
-							Gio.FileQueryInfoFlags.NOFOLLOW_SYMLINKS,
-							null
-						);
-					}
-					const info = enumerator.next_file(null);
-					if (info === null) {
-						return Async.BREAK;
-					}
-					const name = info.get_name();
-					if (!name.endsWith('.desktop')) return true;
-					const path = `${dir_path}/${name}`;
-					try {
-						const entry = new AutostartEntry(path);
-						print(entry.path);
-					} catch (error) {
-						print("Error:", path);
-					}
-					return Async.CONTINUE;
-				};
-			})
-		;
-		// Async.run_pipe(tasks, () => this._main_view.load_entries());
-		this._main_view.load_entries();
+		Async.run_pipe([
+			...this._main_view.load_host_apps(),
+			...this._main_view.load_entries()
+		]);
 	}
 });

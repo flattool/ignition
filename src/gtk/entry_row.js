@@ -24,10 +24,10 @@ export const EntryRow = GObject.registerClass({
 		entry.signals.file_saved.connect(this.load_details.bind(this));
 		this.entry = entry;
 		this._suffix_label.visible = show_suffix_label;
-		this.load_details(entry);
+		this.load_details(entry, show_suffix_label);
 	}
 
-	load_details(entry) {
+	load_details(entry, should_update_suffix_and_info) {
 		this.entry = entry;
 		const icon_key = entry.icon
 
@@ -41,8 +41,10 @@ export const EntryRow = GObject.registerClass({
 		this.title = GLib.markup_escape_text(entry.name || _("No Name Set"), -1);
 		this.subtitle = GLib.markup_escape_text(entry.comment || _("No comment set."), -1);
 
-		this.update_suffix();
-		this.update_info();
+		if (should_update_suffix_and_info) {
+			this.update_suffix();
+			this.update_info();
+		}
 	}
 
 	update_suffix() {

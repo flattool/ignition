@@ -35,7 +35,7 @@ export const add_error_toast = (window, title, message) => {
 };
 
 // Run me as async!
-export const entry_iteration = (dir, enumerator, on_found, on_error) => {
+export const entry_iteration = (dir, enumerator, on_found, on_error = () => { }) => {
 	const file = enumerator.next_file(null);
 	if (file === null) {
 		// Stop the loop when there are no more files
@@ -56,3 +56,33 @@ export const entry_iteration = (dir, enumerator, on_found, on_error) => {
 	// Continue to next async iteration
 	return Async.CONTINUE;
 };
+
+// Run me as async!
+export const host_app_iteration = (dir, on_found, on_error = () => { }) => {
+	let enumerator = null;
+	const dir_path = dir.get_path();
+	return () => {
+		// Lazy load the enumerator to avoid high memory usage
+		if (enumerator === null) {
+			enumerator = dir.enumerate_children(
+				'standard::*',
+				Gio.FileQueryInfoFlags.NOFOLLOW_SYMLINKS,
+				null
+			);
+		}
+		const info = enumerator.next_file(null);
+		if (info === null) {
+			return Async.BREAK;
+		}
+		const name = info.get_name();
+		if (!name.endsWith('.desktop')) return true;
+		const path = `${dir_path}/${name}`;
+		try {
+			const entry = new AutostartEntry(path);
+			on_found(entry);
+		} catch (error) {
+			on_error(error, path);
+		}
+		return Async.CONTINUE;
+	};
+}

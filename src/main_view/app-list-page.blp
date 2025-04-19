@@ -5,6 +5,65 @@ template $AppListPage : Adw.NavigationPage {
 	title: _("Choose an App");
 	Adw.ToolbarView {
 		[top]
-		Adw.HeaderBar {}
+		Adw.HeaderBar {
+			show-title: false;
+
+			[start]
+			ToggleButton search_button {
+				icon-name: "ignition:system-search-symbolic";
+				tooltip-text: _("Search");
+			}
+		}
+
+		[top]
+		Adw.Clamp {
+			SearchBar search_bar {
+				key-capture-widget: template;
+				search-mode-enabled: bind search_button.active bidirectional;
+				sensitive: bind search_button.sensitive bidirectional;
+
+				SearchEntry search_entry {
+					hexpand: true;
+					placeholder-text: _("Search entries");
+				}
+			}
+		}
+
+		Stack stack {
+			ScrolledWindow scrolled_window {
+				Adw.Clamp {
+					Box {
+						orientation: vertical;
+						margin-start: 12;
+						margin-end:   12;
+						margin-top:   12;
+						margin-bottom: 24;
+						spacing: 18;
+
+						Adw.PreferencesGroup apps_group {
+							title: _("Choose an App");
+							description: _("Choose any installed app to run when you log in.");
+
+							Adw.SwitchRow show_hidden_switch {
+								title: _("Show Hidden Apps");
+								subtitle: _("Show apps that are hidden from the app menu");
+							}
+						}
+
+						ListBox list_box {
+							selection-mode: none;
+
+							styles ["boxed-list"]
+						}
+					}
+				}
+			}
+
+			Adw.StatusPage no_results_status {
+				icon-name: "ignition:system-search-symbolic";
+				title: _("No Results Found");
+				description: _("Try a different search.");
+			}
+		}
 	}
 }
