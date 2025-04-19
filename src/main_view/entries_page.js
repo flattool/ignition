@@ -26,6 +26,9 @@ export const EntriesPage = GObject.registerClass({
 }, class EntriesPage extends Adw.NavigationPage {
 	#loaded_groups = [];
 
+	home_watcher;
+	root_watcher;
+
 	get any_results() {
 		return (
 			this._home_group.any_results
@@ -60,11 +63,11 @@ export const EntriesPage = GObject.registerClass({
 
 		this._search_entry.connect('search-changed', () => this.on_search_changed());
 
-		const home_watcher = new DirWatcher(SharedVars.home_autostart_dir, 500);
-		home_watcher.event.connect(() => Async.run_pipe(this.load_entries()));
+		this.home_watcher = new DirWatcher(SharedVars.home_autostart_dir, 120);
+		this.home_watcher.event.connect(() => Async.run_pipe(this.load_entries()));
 
-		const root_watcher = new DirWatcher(SharedVars.root_autostart_dir, 500);
-		root_watcher.event.connect(() => Async.run_pipe(this.load_entries()));
+		this.root_watcher = new DirWatcher(SharedVars.root_autostart_dir, 120);
+		this.root_watcher.event.connect(() => Async.run_pipe(this.load_entries()));
 	}
 
 	#on_group_finished_loading(group) {

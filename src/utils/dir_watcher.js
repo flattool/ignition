@@ -1,5 +1,6 @@
 const { Gio } = imports.gi;
 import { Signal } from './signal.js';
+import { Async } from './async.js';
 
 // This class exists purely because the regular FileMonitor sends many events when
 //   a file's contents are changed, instead of just one.
@@ -19,7 +20,8 @@ export class DirWatcher {
 		const now = Date.now();
 		if (now - this.last_event > this.rate_limit_ms) {
 			this.last_event = now;
-			this.event.emit();
+			// This delay exists to allow time for the file system to finish its changes
+			Async.timeout_ms(20, () => this.event.emit());
 		}
 	}
 }
