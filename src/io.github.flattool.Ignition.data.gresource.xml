@@ -6,6 +6,7 @@
     <file preprocess="xml-stripblanks">gtk/entry-group.ui</file>
     <file preprocess="xml-stripblanks">gtk/entry-row.ui</file>
     <file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
+    <file preprocess="xml-stripblanks">main_view/app-list-page.ui</file>
     <file preprocess="xml-stripblanks">main_view/choices-page.ui</file>
     <file preprocess="xml-stripblanks">main_view/entries-page.ui</file>
     <file preprocess="xml-stripblanks">main_view/main-view.ui</file>

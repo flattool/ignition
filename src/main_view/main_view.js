@@ -1,6 +1,7 @@
 const { GObject, Adw } = imports.gi;
 import { EntriesPage } from "./entries_page.js";
 import { ChoicesPage } from "./choices_page.js";
+import { AppListPage } from "./app_list_page.js";
 
 export const MainView = GObject.registerClass({
 	GTypeName: 'MainView',
