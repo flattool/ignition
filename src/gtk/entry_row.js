@@ -1,7 +1,8 @@
-const { GObject, GLib, Adw } = imports.gi;
-import { IconHelper } from '../utils/icon_helper.js';
 import { Async } from '../utils/async.js';
 import { AutostartEntry } from '../utils/autostart_entry.js';
+import { IconHelper } from '../utils/icon_helper.js';
+
+const { GObject, GLib, Adw } = imports.gi;
 
 export const EntryRow = GObject.registerClass({
 	GTypeName: 'EntryRow',

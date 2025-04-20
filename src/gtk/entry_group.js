@@ -1,7 +1,8 @@
-const { GObject, Gtk, Adw } = imports.gi;
+import { EntryRow } from "./entry_row.js";
 import { Async } from "../utils/async.js";
 import { Signal } from "../utils/signal.js";
-import { EntryRow } from "./entry_row.js";
+
+const { GObject, Gtk } = imports.gi;
 
 export const EntryGroup = GObject.registerClass({
 	GTypeName: 'EntryGroup',

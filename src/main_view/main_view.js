@@ -1,9 +1,10 @@
-const { GObject, Adw } = imports.gi;
-import { EntriesPage } from "./entries_page.js";
-import { ChoicesPage } from "./choices_page.js";
 import { AppListPage } from "./app_list_page.js";
+import { ChoicesPage } from "./choices_page.js";
 import { DetailsPage } from "./details_page.js";
+import { EntriesPage } from "./entries_page.js";
 import { AutostartEntry } from "../utils/autostart_entry.js";
+
+const { GObject, Adw } = imports.gi;
 
 export const MainView = GObject.registerClass({
 	GTypeName: 'MainView',

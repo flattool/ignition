@@ -1,5 +1,6 @@
-const { GObject, Gio, Adw } = imports.gi;
 import { Signal } from "../utils/signal.js";
+
+const { GObject, Adw } = imports.gi;
 
 export const ChoicesPage = GObject.registerClass({
 	GTypeName: "ChoicesPage",

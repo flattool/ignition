@@ -1,10 +1,11 @@
-const { GObject, Gio, Adw } = imports.gi;
-import { Signal } from "../utils/signal.js";
 import { EntryRow } from "../gtk/entry_row.js";
-import { SharedVars } from "../utils/shared_vars.js";
 import { Async } from "../utils/async.js";
 import { KeyFileHelper } from "../utils/key_file_helper.js";
-import { host_app_iteration, add_error_toast } from "../utils/helper_funcs.js";
+import { SharedVars } from "../utils/shared_vars.js";
+import { Signal } from "../utils/signal.js";
+import { add_error_toast, host_app_iteration } from "../utils/helper_funcs.js";
+
+const { GObject, Adw } = imports.gi;
 
 export const AppListPage = GObject.registerClass({
 	GTypeName: "AppListPage",

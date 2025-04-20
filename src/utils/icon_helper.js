@@ -1,5 +1,6 @@
-const { GLib, Gio, Gdk, Gtk } = imports.gi;
 import { SharedVars } from "./shared_vars.js";
+
+const { GLib, Gio, Gdk, Gtk } = imports.gi;
 
 export class IconHelper {
 	static #icon_theme = null;

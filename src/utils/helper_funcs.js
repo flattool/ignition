@@ -1,7 +1,8 @@
-const { GLib, Gio, Gdk, Gtk, Adw, Pango } = imports.gi;
+import { Async } from "./async.js";
 import { AutostartEntry } from "./autostart_entry.js";
 import { SharedVars } from "./shared_vars.js";
-import { Async } from "./async.js";
+
+const { GLib, Gio, Gdk, Gtk, Adw, Pango } = imports.gi;
 
 export const add_toast = (title, window = SharedVars.main_window) => {
 	window._toast_overlay.add_toast(Adw.Toast.new(title));

@@ -1,11 +1,12 @@
-const { GObject, Gio, Adw } = imports.gi;
-import { Signal } from "../utils/signal.js";
-import { SharedVars } from "../utils/shared_vars.js";
+import { EntryGroup } from "../gtk/entry_group.js";
 import { Async } from "../utils/async.js";
 import { AutostartEntry } from "../utils/autostart_entry.js";
-import { EntryGroup } from "../gtk/entry_group.js";
 import { DirWatcher } from "../utils/dir_watcher.js";
-import { entry_iteration, add_error_toast } from "../utils/helper_funcs.js";
+import { SharedVars } from "../utils/shared_vars.js";
+import { Signal } from "../utils/signal.js";
+import { add_error_toast, entry_iteration } from "../utils/helper_funcs.js";
+
+const { GObject, Gio, Adw } = imports.gi;
 
 export const EntriesPage = GObject.registerClass({
 	GTypeName: 'EntriesPage',

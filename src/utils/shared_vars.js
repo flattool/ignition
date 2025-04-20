@@ -1,5 +1,6 @@
-const { GLib, Gio } = imports.gi;
 import { Config } from "../config.js";
+
+const { GLib, Gio } = imports.gi;
 
 export class SharedVars {
 	static main_window; // Set in main.js

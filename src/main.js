@@ -18,16 +18,12 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-import GObject from 'gi://GObject';
-import GLib from 'gi://GLib';
-import Gio from 'gi://Gio';
-import Gtk from 'gi://Gtk?version=4.0';
-import Adw from 'gi://Adw?version=1';
-
 import { IgnitionWindow } from './window/window.js';
-import { SharedVars } from './utils/shared_vars.js';
 import { Config } from './config.js';
-import { add_toast, add_error_toast } from './utils/helper_funcs.js';
+import { SharedVars } from './utils/shared_vars.js';
+import { add_error_toast, add_toast } from './utils/helper_funcs.js';
+
+const { GObject, GLib, Gio, Gtk, Adw } = imports.gi;
 
 pkg.initGettext();
 pkg.initFormat();

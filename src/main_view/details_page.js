@@ -1,11 +1,11 @@
-const { GObject, GLib, Gio, Adw } = imports.gi;
-import { Signal } from "../utils/signal.js";
-import { SharedVars } from "../utils/shared_vars.js";
-import { KeyFileHelper } from "../utils/key_file_helper.js";
 import { Async } from "../utils/async.js";
-import { IconHelper } from "../utils/icon_helper.js";
 import { Enum } from "../utils/enum.js";
-import { add_toast, add_error_toast } from "../utils/helper_funcs.js";
+import { IconHelper } from "../utils/icon_helper.js";
+import { SharedVars } from "../utils/shared_vars.js";
+import { Signal } from "../utils/signal.js";
+import { add_error_toast, add_toast } from "../utils/helper_funcs.js";
+
+const { GObject, GLib, Adw } = imports.gi;
 
 export const DetailsPage = GObject.registerClass({
 	GTypeName: "DetailsPage",

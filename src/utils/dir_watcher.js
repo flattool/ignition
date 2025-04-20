@@ -1,6 +1,7 @@
-const { Gio } = imports.gi;
-import { Signal } from './signal.js';
 import { Async } from './async.js';
+import { Signal } from './signal.js';
+
+const { Gio } = imports.gi;
 
 // This class exists purely because the regular FileMonitor sends many events when
 //   a file's contents are changed, instead of just one.

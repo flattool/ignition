@@ -1,8 +1,7 @@
-const { GLib, Gio } = imports.gi;
-import { KeyFileHelper } from './key_file_helper.js';
-import { Signal } from './signal.js';
-import { SharedVars } from './shared_vars.js';
 import { Enum } from './enum.js';
+import { KeyFileHelper } from './key_file_helper.js';
+
+const { GLib, Gio } = imports.gi;
 
 export class AutostartEntry {
 	static Overrides = class Overrides extends Enum {
