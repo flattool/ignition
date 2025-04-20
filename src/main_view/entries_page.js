@@ -141,7 +141,6 @@ export const EntriesPage = GObject.registerClass({
 				// When done
 				if (fails.length > 0) {
 					add_error_toast(
-						SharedVars.main_window,
 						_("Could not load some entries"),
 						fails.join("\n\n"),
 					);

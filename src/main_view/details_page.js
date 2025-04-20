@@ -5,7 +5,7 @@ import { KeyFileHelper } from "../utils/key_file_helper.js";
 import { Async } from "../utils/async.js";
 import { IconHelper } from "../utils/icon_helper.js";
 import { Enum } from "../utils/enum.js";
-import { add_error_toast } from "../utils/helper_funcs.js";
+import { add_toast, add_error_toast } from "../utils/helper_funcs.js";
 
 export const DetailsPage = GObject.registerClass({
 	GTypeName: "DetailsPage",
@@ -102,7 +102,6 @@ export const DetailsPage = GObject.registerClass({
 	on_save() {
 		if (!this.entry.file.query_exists(null) || this.origin !== DetailsPage.Origins.HOME) {
 			add_error_toast(
-				SharedVars.main_window,
 				_("Could not save file"),
 				"details_page.on_save called with an empty file or incorrect origin",
 			);
@@ -112,13 +111,12 @@ export const DetailsPage = GObject.registerClass({
 		this.entry.save((__, err) => {
 			if (err != null) {
 				add_error_toast(
-					SharedVars.main_window,
 					_("Could not save file"),
 					err,
 				);
 				return;
 			}
-			SharedVars.main_window._toast_overlay.add_toast(Adw.Toast.new(_("Saved Details")));
+			add_toast(_("Saved Details"));
 			this.signals.pop_request.emit();
 		});
 	}
@@ -134,7 +132,6 @@ export const DetailsPage = GObject.registerClass({
 			}.desktop`;
 		} else {
 			add_error_toast(
-				SharedVars.main_window,
 				_("Could not create file"),
 				"details_page.on_create called with an incorrect origin",
 			);
@@ -144,13 +141,12 @@ export const DetailsPage = GObject.registerClass({
 		this.entry.save((__, err) => {
 			if (err != null) {
 				add_error_toast(
-					SharedVars.main_window,
 					_("Could not create file"),
 					err,
 				);
 				return;
 			}
-			SharedVars.main_window._toast_overlay.add_toast(Adw.Toast.new(_("Created Entry")));
+			add_toast(_("Created Entry"));
 			this.signals.pop_request.emit();
 		});
 	}
@@ -162,7 +158,6 @@ export const DetailsPage = GObject.registerClass({
 
 		if (!this.entry.file.query_exists(null) || this.origin !== DetailsPage.Origins.HOME) {
 			add_error_toast(
-				SharedVars.main_window,
 				_("Could not trash file"),
 				"details_page.on_trash called with an empty file or incorrect origin",
 			);
@@ -172,13 +167,12 @@ export const DetailsPage = GObject.registerClass({
 		this.entry.trash((__, err) => {
 			if (err != null) {
 				add_error_toast(
-					SharedVars.main_window,
 					_("Could not trash file"),
 					err,
 				);
 				return;
 			}
-			SharedVars.main_window._toast_overlay.add_toast(Adw.Toast.new(_("Trashed Entry")));
+			add_toast(_("Trashed Entry"));
 			this.signals.pop_request.emit();
 		});
 	}
@@ -190,7 +184,6 @@ export const DetailsPage = GObject.registerClass({
 
 		if (this.origin !== DetailsPage.Origins.ROOT) {
 			add_error_toast(
-				SharedVars.main_window,
 				_("Could not override file"),
 				"details_page.on_override called with an incorrect origin",
 			);
@@ -200,13 +193,12 @@ export const DetailsPage = GObject.registerClass({
 		this.entry.save((__, err) => {
 			if (err != null) {
 				add_error_toast(
-					SharedVars.main_window,
 					_("Could not create file"),
 					err,
 				);
 				return;
 			}
-			SharedVars.main_window._toast_overlay.add_toast(Adw.Toast.new(_("Created Entry")));
+			add_toast(_("Created Entry"));
 			this.signals.pop_request.emit();
 		});
 	}

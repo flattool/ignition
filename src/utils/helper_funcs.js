@@ -1,8 +1,13 @@
 const { GLib, Gio, Gdk, Gtk, Adw, Pango } = imports.gi;
 import { AutostartEntry } from "./autostart_entry.js";
+import { SharedVars } from "./shared_vars.js";
 import { Async } from "./async.js";
 
-export const add_error_toast = (window, title, message) => {
+export const add_toast = (title, window = SharedVars.main_window) => {
+	window._toast_overlay.add_toast(Adw.Toast.new(title));
+};
+
+export const add_error_toast = (title, message, window = SharedVars.main_window) => {
 	const label = new Gtk.Label({
 		selectable: true,
 		wrap: true,
