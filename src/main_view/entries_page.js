@@ -132,7 +132,7 @@ export const EntriesPage = GObject.registerClass({
 				entry => {
 					if (root_map.has(entry.file_name)) {
 						root_map.get(entry.file_name).overridden = AutostartEntry.Overrides.OVERRIDDEN;
-						entry.overridden = AutostartEntry.Overrides.OVERIDES;
+						entry.overridden = AutostartEntry.Overrides.OVERRIDES;
 					}
 					home_entries.push(entry);
 				},

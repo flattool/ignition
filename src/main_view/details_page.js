@@ -88,7 +88,7 @@ export const DetailsPage = GObject.registerClass({
 		this._title_group.title = GLib.markup_escape_text(entry.name || _("No Name Set"), -1);
 		this._enabled_row.active = entry.enabled;
 		this._name_row.text = GLib.markup_escape_text(entry.name || _("No Name Set"), -1);
-		this._comment_row.text = GLib.markup_escape_text(entry.coment || _("No comment set."), -1);
+		this._comment_row.text = GLib.markup_escape_text(entry.comment || _("No comment set."), -1);
 		this._exec_row.text = entry.exec;
 		this._terminal_row.active = entry.terminal;
 

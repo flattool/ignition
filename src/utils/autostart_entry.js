@@ -6,7 +6,7 @@ const { GLib, Gio } = imports.gi;
 export class AutostartEntry {
 	static Overrides = class Overrides extends Enum {
 		static OVERRIDDEN = new Enum('overridden');
-		static OVERIDES = new Enum('overrides');
+		static OVERRIDES = new Enum('overrides');
 		static NONE = new Enum('none');
 		static DEFAULT = Overrides.NONE;
 	};
