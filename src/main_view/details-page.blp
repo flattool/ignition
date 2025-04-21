@@ -6,8 +6,8 @@ template $DetailsPage : Adw.NavigationPage {
 
 	Adw.ToolbarView {
 		[top]
-		Adw.HeaderBar {
-			// show-title: false;
+		Adw.HeaderBar header_bar {
+			show-title: false;
 
 			[start]
 			Button trash_button {
@@ -37,78 +37,83 @@ template $DetailsPage : Adw.NavigationPage {
 			}
 		}
 
-		[top]
-		Adw.Banner root_banner {
-			title: _("Override entry to change details");
-			button-label: _("Override");
-		}
+		Box {
+			orientation: vertical;
 
-		ScrolledWindow {
-			Adw.Clamp {
-				margin-start: 12;
-				margin-end:   12;
-				margin-top: 6;
-				margin-bottom: 2;
+			Adw.Banner root_banner {
+				title: _("Override entry to change details");
+				button-label: _("Override");
+			}
 
-				Box content_box {
-					spacing: 12;
-					orientation: vertical;
+			ScrolledWindow scrolled_window {
+				vexpand: true;
 
-					Box {
+				Adw.Clamp {
+					margin-start: 12;
+					margin-end:   12;
+					margin-top: 6;
+					margin-bottom: 12;
+
+					Box content_box {
 						spacing: 12;
-						margin-start: 6;
+						orientation: vertical;
 
-						Image icon {
-							valign: center;
-							pixel-size: 45;
+						Box {
+							spacing: 12;
+							margin-start: 6;
 
-							styles ["icon-dropshadow"]
-						}
-
-						Adw.PreferencesGroup title_group {
-							margin-top: 10;
-							margin-bottom: 0;
-							valign: center;
-							description: _("Edit details about this entry.");
-						}
-					}
-
-					Adw.PreferencesGroup {
-						Adw.SwitchRow enabled_row {
-							title: _("Enable");
-							subtitle: _("Enable this entry to be started when you log in.");
-						}
-					}
-
-					Adw.PreferencesGroup {
-						Adw.EntryRow name_row {
-							title: _("Name");
-							text: "placeholder";
-						}
-
-						Adw.EntryRow comment_row {
-							title: _("Comment");
-							text: "placeholder";
-						}
-
-						Adw.EntryRow exec_row {
-							title: _("Command or Script");
-							text: "placeholder";
-
-							[suffix]
-							MenuButton path_info_button {
-								icon-name: "ignition:info-outline-symbolic";
-								tooltip-text: _("More Information");
+							Image icon {
 								valign: center;
-								popover: path_info_popover;
+								pixel-size: 45;
 
-								styles ["flat"]
+								styles ["icon-dropshadow"]
+							}
+
+							Adw.PreferencesGroup title_group {
+								margin-top: 10;
+								margin-bottom: 0;
+								valign: center;
+								description: _("Edit details about this entry.");
 							}
 						}
 
-						Adw.SwitchRow terminal_row {
-							title: _("Show Terminal");
-							subtitle: _("Show a terminal for this process to run in.");
+						Adw.PreferencesGroup {
+							Adw.SwitchRow enabled_row {
+								title: _("Enable");
+								subtitle: _("Enable this entry to be started when you log in.");
+							}
+						}
+
+						Adw.PreferencesGroup {
+							Adw.EntryRow name_row {
+								title: _("Name");
+								text: "placeholder";
+							}
+
+							Adw.EntryRow comment_row {
+								title: _("Comment");
+								text: "placeholder";
+							}
+
+							Adw.EntryRow exec_row {
+								title: _("Command or Script");
+								text: "placeholder";
+
+								[suffix]
+								MenuButton path_info_button {
+									icon-name: "ignition:info-outline-symbolic";
+									tooltip-text: _("More Information");
+									valign: center;
+									popover: path_info_popover;
+
+									styles ["flat"]
+								}
+							}
+
+							Adw.SwitchRow terminal_row {
+								title: _("Show Terminal");
+								subtitle: _("Show a terminal for this process to run in.");
+							}
 						}
 					}
 				}
@@ -136,15 +141,6 @@ Adw.AlertDialog override_dialog {
 	responses [
 		override_cancel: _("Cancel"),
 		override_continue: _("Override") destructive,
-	]
-}
-
-Adw.AlertDialog discard_dialog {
-	heading: _("Discard Changes?");
-	responses [
-		discard_cancel: _("Cancel"),
-		discard_continue: _("Discard") destructive,
-		discard_save: _("Save") suggested,
 	]
 }
 

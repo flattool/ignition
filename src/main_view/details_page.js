@@ -13,22 +13,23 @@ export const DetailsPage = GObject.registerClass(
 		Template:
 			"resource:///io/github/flattool/Ignition/main_view/details-page.ui",
 		InternalChildren: [
-			"trash_button",
-			"create_button",
-			"save_button",
+			'header_bar',
+				"trash_button",
+				"save_button",
+				"create_button",
 			"root_banner",
-			"content_box",
-			"icon",
-			"title_group",
-			"enabled_row",
-			"name_row",
-			"comment_row",
-			"exec_row",
-			"path_info_button",
+				'scrolled_window',
+					"content_box",
+						"icon",
+						"title_group",
+						"enabled_row",
+						"name_row",
+						"comment_row",
+						"exec_row",
+							"path_info_button",
+						"terminal_row",
 			"path_info_popover",
-			"terminal_row",
 			"override_dialog",
-			"discard_dialog",
 			"trash_dialog",
 		],
 	},
@@ -88,6 +89,19 @@ export const DetailsPage = GObject.registerClass(
 			});
 			this._exec_row.connect('changed', () => this.set_details('exec', this._exec_row.text));
 			this._terminal_row.connect('notify::active', () => this.set_details('terminal', this._terminal_row.active));
+
+			this._save_button.connect('clicked', () => this.on_save());
+			this._create_button.connect('clicked', () => this.on_create());
+			this._root_banner.connect('button-clicked', () => this.can_override && this.on_override());
+			this._trash_button.connect('clicked', () => this.can_trash && this.on_trash());
+
+			this._override_dialog.connect('response', this.on_override_dialog_response.bind(this));
+			this._trash_dialog.connect('response', this.on_trash_dialog_response.bind(this));
+
+			this._scrolled_window.get_vadjustment().connect(
+				'value-changed',
+				adj => this._header_bar.show_title = adj.value > 0,
+			);
 		}
 
 		validate_input() {
@@ -134,10 +148,10 @@ export const DetailsPage = GObject.registerClass(
 				: this.entry.comment || _("No comment set.")
 			));
 
-			if (origin === DetailsPage.Origins.HOST_APP) {
-				entry.path = `${SharedVars.home_autostart_dir.path}/${entry.file_name}`;
+			if (origin === DetailsPage.Origins.HOST_APP || origin === DetailsPage.Origins.ROOT) {
+				entry.path = `${SharedVars.home_autostart_dir.get_path()}/${entry.file_name}`;
 			} else if (origin === DetailsPage.Origins.NEW) {
-				entry.path = `${SharedVars.home_autostart_dir.path}/${Date.now()}.desktop`;
+				entry.path = `${SharedVars.home_autostart_dir.get_path()}/${Date.now()}.desktop`;
 			}
 
 			this.sync_details_to_ui();
@@ -155,7 +169,15 @@ export const DetailsPage = GObject.registerClass(
 			this._exec_row.text = this.gui_details.get('exec') ?? "";
 			this._terminal_row.active = this.gui_details.get('terminal') ?? false;
 
-			this._title_group.title = this.gui_details.get('name') ?? _("No Name Set");
+			this._title_group.title = GLib.markup_escape_text(this.gui_details.get('name') ?? _("No Name Set"), -1);
+		}
+
+		sync_details_to_file() {
+			this.entry.enabled = this.gui_details.get('enabled');
+			this.entry.name = this.gui_details.get('name');
+			this.entry.comment = this.gui_details.get('comment');
+			this.entry.exec = this.gui_details.get('exec');
+			this.entry.terminal = this.gui_details.get('terminal');
 		}
 
 		update_action_buttons() {
@@ -192,12 +214,77 @@ export const DetailsPage = GObject.registerClass(
 			return false;
 		}
 
-		on_save() { }
+		on_save() {
+			if (!this.can_save) {
+				return;
+			}
+			this.sync_details_to_file();
+			this.entry.save((file, err) => {
+				if (err === null) {
+					add_toast(_("Saved details"));
+				} else {
+					add_error_toast(_("Could not save file"), err);
+				}
+				this.signals.pop_request.emit();
+			});
+		}
 
-		on_create() { }
+		on_create() {
+			if (!this.can_create) {
+				return;
+			}
+			this.sync_details_to_file();
+			this.entry.save((file, err) => {
+				if (err === null) {
+					add_toast(_("Created entry"));
+				} else {
+					add_error_toast(_("Could not create file"), err);
+				}
+				this.signals.pop_request.emit();
+			});
+		}
 
-		on_override() { }
+		on_override() {
+			if (!this.can_override) {
+				return;
+			}
+			this._override_dialog.present(SharedVars.main_window);
+		}
 
-		on_trash() { }
+		on_override_dialog_response(dialog, response) {
+			if (!this.can_override || response !== 'override_continue') {
+				return;
+			}
+			this.sync_details_to_file();
+			this.entry.save((file, err) => {
+				if (err === null) {
+					add_toast(_("Overrode entry"));
+				} else {
+					add_error_toast(_("Could not create file"), err);
+				}
+				this.signals.pop_request.emit();
+			});
+		}
+
+		on_trash() {
+			if (!this.can_trash) {
+				return;
+			}
+			this._trash_dialog.present(SharedVars.main_window);
+		}
+
+		on_trash_dialog_response(dialog, response) {
+			if (!this.can_trash || response !== 'trash_continue') {
+				return;
+			}
+			this.entry.trash((file, err) => {
+				if (err === null) {
+					add_toast(_("Trashed entry"));
+				} else {
+					add_error_toast(_("Could not trash file", err));
+				}
+				this.signals.pop_request.emit();
+			});
+		}
 	},
 );
