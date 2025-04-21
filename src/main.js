@@ -83,6 +83,7 @@ export const IgnitionApplication = GObject.registerClass(
 				aboutDialog.debug_info = troubleshooting;
 				aboutDialog.add_link(_("Translate"), "https://weblate.fyralabs.com/projects/flattool/ignition/");
 				aboutDialog.add_link(_("Donate"), "https://ko-fi.com/heliguy");
+				aboutDialog.add_other_app('io.github.flattool.Warehouse', "Warehouse", "Manage all things Flatpak");
 				aboutDialog.present(this.active_window);
 			});
 			this.add_action(show_about_action);
