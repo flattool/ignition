@@ -31,15 +31,11 @@ export const HelpDialog = GObject.registerClass({
 			const scrolled_window = this._status_page.get_first_child();
 			scrolled_window.get_vadjustment().connect(
 				'value-changed',
-				(adj) => this._header_bar.show_title = adj.value > 0,
+				adj => this._header_bar.show_title = adj.value > 0,
 			);
 		} catch (error) {
 			print("getting ScrolledWindow from Adw.StatusPage failed");
 			print(error);
 		}
-	}
-
-	on_scroll() {
-
 	}
 });
