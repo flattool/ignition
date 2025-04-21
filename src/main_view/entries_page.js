@@ -1,4 +1,5 @@
 import { EntryGroup } from "../gtk/entry_group.js";
+import { HelpDialog } from "../gtk/help_dialog.js";
 import { Async } from "../utils/async.js";
 import { AutostartEntry } from "../utils/autostart_entry.js";
 import { DirWatcher } from "../utils/dir_watcher.js";
@@ -12,6 +13,7 @@ export const EntriesPage = GObject.registerClass({
 	GTypeName: 'EntriesPage',
 	Template: 'resource:///io/github/flattool/Ignition/main_view/entries-page.ui',
 	InternalChildren: [
+		'help_button',
 		'search_button',
 		'search_bar',
 			'search_entry',
@@ -23,6 +25,7 @@ export const EntriesPage = GObject.registerClass({
 				'root_group',
 		'add_button',
 		'empty_row',
+		'help_dialog',
 	],
 }, class EntriesPage extends Adw.NavigationPage {
 	#loaded_groups = [];
@@ -74,6 +77,8 @@ export const EntriesPage = GObject.registerClass({
 
 		this.root_watcher = new DirWatcher(SharedVars.root_autostart_dir, 120);
 		this.root_watcher.event.connect(() => Async.run_pipe(this.load_entries()));
+
+		this._help_button.connect('clicked', () => this._help_dialog.present(SharedVars.main_window));
 	}
 
 	#on_group_finished_loading(group) {

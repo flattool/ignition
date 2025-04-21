@@ -12,12 +12,19 @@ template $EntriesPage : Adw.NavigationPage {
 				icon-name: "ignition:system-search-symbolic";
 				tooltip-text: _("Search");
 			}
+
 			[end]
 			MenuButton {
 				primary: true;
 				icon-name: "open-menu-symbolic";
 				tooltip-text: _("Main Menu");
 				menu-model: primary_menu;
+			}
+
+			[end]
+			Button help_button {
+				icon-name: "ignition:question-round-outline-symbolic";
+				tooltip-text: _("Help and information");
 			}
 		}
 
@@ -140,3 +147,5 @@ menu primary_menu {
 		}
 	}
 }
+
+$HelpDialog help_dialog {}
