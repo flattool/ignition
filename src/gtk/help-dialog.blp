@@ -66,6 +66,38 @@ template $HelpDialog : Adw.Dialog {
 			Adw.ToolbarView {
 				[top]
 				Adw.HeaderBar {}
+
+				ScrolledWindow {
+					Adw.Clamp {
+						margin-start:  12;
+						margin-end:    12;
+						margin-top:    12;
+						margin-bottom: 12;
+
+						Box {
+							orientation: vertical;
+							spacing: 12;
+
+							Label {
+								wrap: true;
+								halign: start;
+								label: _("Some apps store their entries outside of the places that Ignition is allowed to read. This means that these apps won't show up in the list of apps on your system, when making a new entry.");
+							}
+
+							Label {
+								wrap: true;
+								halign: start;
+								label: _("To fix this, you can allow Ignition to see more home locations, or more root locations, in your file system.");
+							}
+
+							Label {
+								wrap: true;
+								halign: start;
+								label: _("We reccomend the app \"Flatseal\" to manage these permissions. Enable \"All user files\" or \"All system files\" to be able to find these apps.");
+							}
+						}
+					}
+				}
 			}
 		}
 
@@ -75,6 +107,32 @@ template $HelpDialog : Adw.Dialog {
 			Adw.ToolbarView {
 				[top]
 				Adw.HeaderBar {}
+
+				ScrolledWindow {
+					Adw.Clamp {
+						margin-start:  12;
+						margin-end:    12;
+						margin-top:    12;
+						margin-bottom: 12;
+
+						Box {
+							orientation: vertical;
+							spacing: 12;
+
+							Label {
+								wrap: true;
+								halign: start;
+								label: _("System Entries are for apps or commands that are ran on log in for everybody. These are usually present to allow certain features, programs, or other important actions run properly.");
+							}
+
+							Label {
+								wrap: true;
+								halign: start;
+								label: _("You can override these, but please use caution when doing so, as you may break some existing app or feature of your desktop.");
+							}
+						}
+					}
+				}
 			}
 		}
 
@@ -84,6 +142,45 @@ template $HelpDialog : Adw.Dialog {
 			Adw.ToolbarView {
 				[top]
 				Adw.HeaderBar {}
+
+				ScrolledWindow {
+					Adw.Clamp {
+						margin-start:  12;
+						margin-end:    12;
+						margin-top:    12;
+						margin-bottom: 12;
+
+						Box {
+							orientation: vertical;
+							spacing: 12;
+
+							Label {
+								wrap: true;
+								halign: start;
+								label: _("Unfortunately, adding a delay is not something easily done according to the specifications. Ignition offers no graphical solution to this, because we don't want to make entries that fail to start when Ignition is not installed.");
+							}
+
+							Label {
+								wrap: true;
+								halign: start;
+								label: _("You can add a delay yourself by surrounding the command or script in quotes, and telling the computer to sleep before running it. Below is an example of what you could put in the Command or Script section of the entry's details.");
+							}
+
+							Label {
+								wrap: true;
+								halign: start;
+								use-markup: true;
+								label: "<tt>sleep 10 &amp;&amp; sh -c \"steam\"</tt>";
+							}
+
+							Label {
+								wrap: true;
+								halign: start;
+								label: _("This will run the command \"steam\" after 10 seconds of waiting. You can change 10 to any other number of seconds of delay you want.");
+							}
+						}
+					}
+				}
 			}
 		}
 	}
