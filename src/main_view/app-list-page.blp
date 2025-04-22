@@ -2,7 +2,7 @@ using Gtk 4.0;
 using Adw 1;
 
 template $AppListPage : Adw.NavigationPage {
-	title: _("Add a Script, Command, or Choose an App");
+	title: _("New Entry");
 	Adw.ToolbarView {
 		[top]
 		Adw.HeaderBar header_bar {
@@ -44,6 +44,7 @@ template $AppListPage : Adw.NavigationPage {
 							title: _("Commands and Scripts");
 							description: _("Run a command or script when you log in.");
 							margin-bottom: 12;
+							visible: bind search_bar.search-mode-enabled inverted;
 
 							Adw.ActionRow script_row {
 								title: _("Add a Command or Script");
