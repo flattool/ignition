@@ -52,22 +52,22 @@ export const DetailsPage = GObject.registerClass(
 			pop_request: new Signal(),
 		};
 
-		get can_save() {
+		get is_saving_allowed() {
 			return (
 				this.origin === DetailsPage.Origins.HOME
 				&& this.entry.file.query_exists(null)
 			);
 		}
-		get can_trash() {
-			return this.can_save
+		get is_trashing_allowed() {
+			return this.is_saving_allowed
 		}
-		get can_create() {
+		get is_creating_allowed() {
 			return (
 				this.origin === DetailsPage.Origins.HOST_APP
 				|| this.origin === DetailsPage.Origins.NEW
 			) && !this.entry.file.query_exists(null);
 		}
-		get can_override() {
+		get is_overriding_allowed() {
 			return (
 				this.origin === DetailsPage.Origins.ROOT
 				&& !this.entry.file.query_exists(null)
@@ -87,13 +87,16 @@ export const DetailsPage = GObject.registerClass(
 				this.validate_input();
 				this.set_details('comment', this._comment_row.text);
 			});
-			this._exec_row.connect('changed', () => this.set_details('exec', this._exec_row.text));
+			this._exec_row.connect('changed', () => {
+				this.validate_input();
+				this.set_details('exec', this._exec_row.text);
+			});
 			this._terminal_row.connect('notify::active', () => this.set_details('terminal', this._terminal_row.active));
 
 			this._save_button.connect('clicked', () => this.on_save());
 			this._create_button.connect('clicked', () => this.on_create());
-			this._root_banner.connect('button-clicked', () => this.can_override && this.on_override());
-			this._trash_button.connect('clicked', () => this.can_trash && this.on_trash());
+			this._root_banner.connect('button-clicked', () => this.is_overriding_allowed && this.on_override());
+			this._trash_button.connect('clicked', () => this.is_trashing_allowed && this.on_trash());
 
 			this._override_dialog.connect('response', this.on_override_dialog_response.bind(this));
 			this._trash_dialog.connect('response', this.on_trash_dialog_response.bind(this));
@@ -102,30 +105,6 @@ export const DetailsPage = GObject.registerClass(
 				'value-changed',
 				adj => this._header_bar.show_title = adj.value > 0,
 			);
-		}
-
-		validate_input() {
-			const name = this._name_row.text;
-			const exec = this._exec_row.text;
-			const file_name_regex = /^(?! )[^\0\/"'.\\]+(?: [^\0\/"'.\\]+)*(?<! )$/;
-
-			let validicty = true;
-
-			if (name.length < 0 || !file_name_regex.test(name)) {
-				this._name_row.add_css_class('error');
-				validicty = false;
-			} else {
-				this._name_row.remove_css_class('error');
-			}
-
-			if (exec.length < 0) {
-				this._exec_row.add_css_class('error');
-				validicty = false;
-			} else {
-				this._exec_row.remove_css_class('error');
-			}
-
-			this.are_details_valid = validicty;
 		}
 
 		load_details(entry, origin) {
@@ -158,6 +137,30 @@ export const DetailsPage = GObject.registerClass(
 			this.update_action_buttons();
 		}
 
+		validate_input() {
+			const name = this._name_row.text;
+			const exec = this._exec_row.text;
+			const file_name_regex = /^(?! )[^\0\/"'.\\]+(?: [^\0\/"'.\\]+)*(?<! )$/;
+
+			let validicty = true;
+
+			if (name.length < 0 || !file_name_regex.test(name)) {
+				this._name_row.add_css_class('error');
+				validicty = false;
+			} else {
+				this._name_row.remove_css_class('error');
+			}
+
+			if (exec.length < 1) {
+				this._exec_row.add_css_class('error');
+				validicty = false;
+			} else {
+				this._exec_row.remove_css_class('error');
+			}
+
+			this.are_details_valid = validicty;
+		}
+
 		sync_details_to_ui() {
 			Async.run(() => IconHelper.set_icon(this._icon, this.entry.icon));
 
@@ -181,12 +184,12 @@ export const DetailsPage = GObject.registerClass(
 		}
 
 		update_action_buttons() {
-			this._save_button.visible = this.can_save;
-			this._save_button.sensitive = false;
-			this._create_button.visible = this.can_create;
-			this._create_button.sensitive = this.can_create;
-			this._trash_button.visible = this.can_trash;
-			this._trash_button.sensitive = this.can_trash;
+			this._save_button.visible = this.is_saving_allowed;
+			this._save_button.sensitive = this.is_saving_allowed && this.are_details_valid && this.is_edited();
+			this._create_button.visible = this.is_creating_allowed;
+			this._create_button.sensitive = this.is_creating_allowed && this.are_details_valid;
+			this._trash_button.visible = this.is_trashing_allowed;
+			this._trash_button.sensitive = this.is_trashing_allowed;
 			this._root_banner.revealed = this.origin === DetailsPage.Origins.ROOT;
 			this._content_box.sensitive = this.origin !== DetailsPage.Origins.ROOT;
 		}
@@ -196,12 +199,12 @@ export const DetailsPage = GObject.registerClass(
 
 			this._save_button.sensitive = (
 				this.are_details_valid
-				&& this.can_save
+				&& this.is_saving_allowed
 				&& this.is_edited()
 			);
 			this._create_button.sensitive = (
 				this.are_details_valid
-				&& this.can_create
+				&& this.is_creating_allowed
 			);
 		}
 
@@ -215,7 +218,7 @@ export const DetailsPage = GObject.registerClass(
 		}
 
 		on_save() {
-			if (!this.can_save) {
+			if (!this.is_saving_allowed) {
 				return;
 			}
 			this.sync_details_to_file();
@@ -230,7 +233,7 @@ export const DetailsPage = GObject.registerClass(
 		}
 
 		on_create() {
-			if (!this.can_create) {
+			if (!this.is_creating_allowed) {
 				return;
 			}
 			this.sync_details_to_file();
@@ -245,14 +248,15 @@ export const DetailsPage = GObject.registerClass(
 		}
 
 		on_override() {
-			if (!this.can_override) {
+			if (!this.is_overriding_allowed) {
 				return;
 			}
 			this._override_dialog.present(SharedVars.main_window);
+			this._override_dialog.grab_focus();
 		}
 
 		on_override_dialog_response(dialog, response) {
-			if (!this.can_override || response !== 'override_continue') {
+			if (!this.is_overriding_allowed || response !== 'override_continue') {
 				return;
 			}
 			this.sync_details_to_file();
@@ -267,14 +271,15 @@ export const DetailsPage = GObject.registerClass(
 		}
 
 		on_trash() {
-			if (!this.can_trash) {
+			if (!this.is_trashing_allowed) {
 				return;
 			}
 			this._trash_dialog.present(SharedVars.main_window);
+			this._trash_dialog.grab_focus();
 		}
 
 		on_trash_dialog_response(dialog, response) {
-			if (!this.can_trash || response !== 'trash_continue') {
+			if (!this.is_trashing_allowed || response !== 'trash_continue') {
 				return;
 			}
 			this.entry.trash((file, err) => {

@@ -2,10 +2,10 @@ using Gtk 4.0;
 using Adw 1;
 
 template $AppListPage : Adw.NavigationPage {
-	title: _("Choose an App");
+	title: _("Add a Script, Command, or Choose an App");
 	Adw.ToolbarView {
 		[top]
-		Adw.HeaderBar {
+		Adw.HeaderBar header_bar {
 			show-title: false;
 
 			[start]
@@ -41,19 +41,19 @@ template $AppListPage : Adw.NavigationPage {
 						spacing: 12;
 
 						Adw.PreferencesGroup {
-							title: _("Add a Script or Command");
-							description: _("Run a script or command when you log in.");
+							title: _("Commands and Scripts");
+							description: _("Run a command or script when you log in.");
 							margin-bottom: 12;
 
-							Adw.ActionRow {
-								title: _("Add a Script or Command");
+							Adw.ActionRow script_row {
+								title: _("Add a Command or Script");
 								subtitle: _("Enter the command to run or path to your script");
 								activatable: true;
 
 								[prefix]
 								Image {
 									icon-size: large;
-									icon-name: "ignition:terminal-symbolic";
+									icon-name: "ignition:application-x-executable-symbolic";
 
 									styles ["icon-dropshadow"]
 								}
@@ -66,7 +66,7 @@ template $AppListPage : Adw.NavigationPage {
 						}
 
 						Adw.PreferencesGroup apps_group {
-							title: _("Choose an App");
+							title: _("Installed Apps");
 							description: _("Choose any installed app to run when you log in.");
 
 							Adw.SwitchRow show_hidden_switch {

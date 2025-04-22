@@ -11,10 +11,12 @@ export const AppListPage = GObject.registerClass({
 	GTypeName: "AppListPage",
 	Template: "resource:///io/github/flattool/Ignition/main_view/app-list-page.ui",
 	InternalChildren: [
+		'header_bar',
 		'search_bar',
 			'search_entry',
 		'stack',
 			'scrolled_window',
+				'script_row',
 				'apps_group',
 					'show_hidden_switch',
 				'list_box',
@@ -22,6 +24,7 @@ export const AppListPage = GObject.registerClass({
 	],
 }, class AppListPage extends Adw.NavigationPage {
 	signals = {
+		script_chosen: new Signal(),
 		app_chosen: new Signal(),
 	};
 
@@ -36,6 +39,15 @@ export const AppListPage = GObject.registerClass({
 
 		this._search_entry.connect('search-changed', () => this.on_search_changed());
 		this._show_hidden_switch.connect('notify::active', () => this.on_search_changed());
+		this._script_row.connect('activated', () => this.signals.script_chosen.emit());
+		this._scrolled_window.get_vadjustment().connect(
+			'value-changed',
+			adj => this._header_bar.show_title = adj.value > 0,
+		);
+	}
+
+	scroll_to_top() {
+		this._scrolled_window.get_vadjustment().value = 0;
 	}
 
 	is_entry_hidden(entry) {

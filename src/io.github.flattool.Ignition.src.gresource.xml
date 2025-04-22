@@ -6,7 +6,6 @@
     <file>gtk/entry_row.js</file>
     <file>gtk/help_dialog.js</file>
     <file>main_view/app_list_page.js</file>
-    <file>main_view/choices_page.js</file>
     <file>main_view/details_page.js</file>
     <file>main_view/entries_page.js</file>
     <file>main_view/main_view.js</file>
