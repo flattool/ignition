@@ -43,7 +43,6 @@ export const DetailsPage = GObject.registerClass(
 		};
 
 		entry = null; // Autostart Entry
-		are_details_valid = true;
 		origin = DetailsPage.Origins.DEFAULT;
 		details_on_disks = new Map();
 		gui_details = new Map();
@@ -51,6 +50,11 @@ export const DetailsPage = GObject.registerClass(
 		signals = {
 			pop_request: new Signal(),
 		};
+
+		invalid_rows = new Set();
+
+		file_name_regex = /^(?! )[^\0\/"'.\\]+(?: [^\0\/"'.\\]+)*(?<! )$/;
+		exec_regex = /^\S(?:.*\S)?$/;
 
 		get is_saving_allowed() {
 			return (
@@ -78,25 +82,24 @@ export const DetailsPage = GObject.registerClass(
 			super(...arguments);
 
 			// Connections
-			this._enabled_row.connect('notify::active', () => this.set_details('enabled', this._enabled_row.active));
+			this._enabled_row.connect('notify::active', () => this.set_gui_detail('enabled', this._enabled_row.active));
 			this._name_row.connect('changed', () => {
-				this.validate_input();
-				this.set_details('name', this._name_row.text);
+				const text = this._name_row.text;
+				this.validate_input(this._name_row, text.length > 0 && this.file_name_regex.test(text));
+				this.set_gui_detail('name', text);
 			});
-			this._comment_row.connect('changed', () => {
-				this.validate_input();
-				this.set_details('comment', this._comment_row.text);
-			});
+			this._comment_row.connect('changed', () => this.set_gui_detail('comment', this._comment_row.text));
 			this._exec_row.connect('changed', () => {
-				this.validate_input();
-				this.set_details('exec', this._exec_row.text);
+				const text = this._exec_row.text;
+				this.validate_input(this._exec_row, text.length > 0 && this.exec_regex.test(text));
+				this.set_gui_detail('exec', text);
 			});
-			this._terminal_row.connect('notify::active', () => this.set_details('terminal', this._terminal_row.active));
+			this._terminal_row.connect('notify::active', () => this.set_gui_detail('terminal', this._terminal_row.active));
 
 			this._save_button.connect('clicked', () => this.on_save());
 			this._create_button.connect('clicked', () => this.on_create());
-			this._root_banner.connect('button-clicked', () => this.is_overriding_allowed && this.on_override());
-			this._trash_button.connect('clicked', () => this.is_trashing_allowed && this.on_trash());
+			this._root_banner.connect('button-clicked', () => this.on_override());
+			this._trash_button.connect('clicked', () => this.on_trash());
 
 			this._override_dialog.connect('response', this.on_override_dialog_response.bind(this));
 			this._trash_dialog.connect('response', this.on_trash_dialog_response.bind(this));
@@ -111,21 +114,14 @@ export const DetailsPage = GObject.registerClass(
 			this.entry = entry;
 			this.origin = origin;
 
+			const is_new = origin === DetailsPage.Origins.NEW;
 			this.details_on_disks = new Map([
 				['enabled', this.entry.enabled],
+				['name', is_new ? _("New Entry") : (this.entry.name || SharedVars.default_name)],
+				['comment', is_new ? SharedVars.default_comment : (this.entry.comment || SharedVars.default_comment)],
 				['exec', this.entry.exec],
 				['terminal', this.entry.terminal],
 			]);
-			this.details_on_disks.set('name', (
-				origin === DetailsPage.Origins.NEW
-				? _("New Entry")
-				: this.entry.name || _("No Name Set")
-			));
-			this.details_on_disks.set('comment', (
-				origin === DetailsPage.Origins.NEW
-				? ""
-				: this.entry.comment || _("No comment set.")
-			));
 
 			if (origin === DetailsPage.Origins.HOST_APP || origin === DetailsPage.Origins.ROOT) {
 				entry.path = `${SharedVars.home_autostart_dir.get_path()}/${entry.file_name}`;
@@ -133,32 +129,22 @@ export const DetailsPage = GObject.registerClass(
 				entry.path = `${SharedVars.home_autostart_dir.get_path()}/${Date.now()}.desktop`;
 			}
 
+			this._save_button.visible = this.is_saving_allowed;
+			this._create_button.visible = this.is_creating_allowed;
+			this._root_banner.revealed = this.is_overriding_allowed;
+			this._trash_button.visible = this.is_trashing_allowed;
+
 			this.sync_details_to_ui();
-			this.update_action_buttons();
 		}
 
-		validate_input() {
-			const name = this._name_row.text;
-			const exec = this._exec_row.text;
-			const file_name_regex = /^(?! )[^\0\/"'.\\]+(?: [^\0\/"'.\\]+)*(?<! )$/;
-
-			let validicty = true;
-
-			if (name.length < 0 || !file_name_regex.test(name)) {
-				this._name_row.add_css_class('error');
-				validicty = false;
+		validate_input(row, test) {
+			if (test) {
+				row.remove_css_class('error');
+				this.invalid_rows.delete(row);
 			} else {
-				this._name_row.remove_css_class('error');
+				row.add_css_class('error');
+				this.invalid_rows.add(row);
 			}
-
-			if (exec.length < 1) {
-				this._exec_row.add_css_class('error');
-				validicty = false;
-			} else {
-				this._exec_row.remove_css_class('error');
-			}
-
-			this.are_details_valid = validicty;
 		}
 
 		sync_details_to_ui() {
@@ -167,45 +153,34 @@ export const DetailsPage = GObject.registerClass(
 			this.gui_details = new Map(this.details_on_disks);
 
 			this._enabled_row.active = this.gui_details.get('enabled') ?? true;
-			this._name_row.text = this.gui_details.get('name') ?? _("No Name Set");
-			this._comment_row.text = this.gui_details.get('comment') ?? _("No comment set.");
+			this._name_row.text = this.gui_details.get('name') ?? SharedVars.default_name;
+			this._comment_row.text = this.gui_details.get('comment') ?? SharedVars.default_comment;
 			this._exec_row.text = this.gui_details.get('exec') ?? "";
 			this._terminal_row.active = this.gui_details.get('terminal') ?? false;
 
-			this._title_group.title = GLib.markup_escape_text(this.gui_details.get('name') ?? _("No Name Set"), -1);
+			this._title_group.title = GLib.markup_escape_text(
+				this.gui_details.get('name') ?? SharedVars.default_name,
+				-1,
+			);
 		}
 
-		sync_details_to_file() {
-			this.entry.enabled = this.gui_details.get('enabled');
-			this.entry.name = this.gui_details.get('name');
-			this.entry.comment = this.gui_details.get('comment');
-			this.entry.exec = this.gui_details.get('exec');
-			this.entry.terminal = this.gui_details.get('terminal');
-		}
-
-		update_action_buttons() {
-			this._save_button.visible = this.is_saving_allowed;
-			this._save_button.sensitive = this.is_saving_allowed && this.are_details_valid && this.is_edited();
-			this._create_button.visible = this.is_creating_allowed;
-			this._create_button.sensitive = this.is_creating_allowed && this.are_details_valid;
-			this._trash_button.visible = this.is_trashing_allowed;
-			this._trash_button.sensitive = this.is_trashing_allowed;
-			this._root_banner.revealed = this.origin === DetailsPage.Origins.ROOT;
-			this._content_box.sensitive = this.origin !== DetailsPage.Origins.ROOT;
-		}
-
-		set_details(key, value) {
+		set_gui_detail(key, value) {
 			this.gui_details.set(key, value);
 
 			this._save_button.sensitive = (
-				this.are_details_valid
+				this.invalid_rows.size == 0
 				&& this.is_saving_allowed
 				&& this.is_edited()
 			);
 			this._create_button.sensitive = (
-				this.are_details_valid
+				this.invalid_rows.size == 0
 				&& this.is_creating_allowed
 			);
+
+			print('invalid size', this.invalid_rows.size);
+			print('is edited', this.is_edited());
+			print('is saving allowed', this.is_saving_allowed);
+			print('is creating allowed', this.is_creating_allowed);
 		}
 
 		is_edited() {
@@ -217,34 +192,38 @@ export const DetailsPage = GObject.registerClass(
 			return false;
 		}
 
+		sync_details_to_file() {
+			this.entry.enabled = this.gui_details.get('enabled');
+			this.entry.name = this.gui_details.get('name');
+			this.entry.comment = this.gui_details.get('comment');
+			this.entry.exec = this.gui_details.get('exec');
+			this.entry.terminal = this.gui_details.get('terminal');
+		}
+
+		do_save(success_message, error_message) {
+			this.sync_details_to_file();
+			this.entry.save((file, err) => {
+				if (err === null) {
+					add_toast(success_message);
+				} else {
+					add_error_toast(error_message, err);
+				}
+				this.signals.pop_request.emit();
+			});
+		}
+
 		on_save() {
 			if (!this.is_saving_allowed) {
 				return;
 			}
-			this.sync_details_to_file();
-			this.entry.save((file, err) => {
-				if (err === null) {
-					add_toast(_("Saved details"));
-				} else {
-					add_error_toast(_("Could not save file"), err);
-				}
-				this.signals.pop_request.emit();
-			});
+			this.do_save(_("Saved details"), _("Could not save file"));
 		}
 
 		on_create() {
 			if (!this.is_creating_allowed) {
 				return;
 			}
-			this.sync_details_to_file();
-			this.entry.save((file, err) => {
-				if (err === null) {
-					add_toast(_("Created entry"));
-				} else {
-					add_error_toast(_("Could not create file"), err);
-				}
-				this.signals.pop_request.emit();
-			});
+			this.do_save(_("Created entry"), _("Could not create file"));
 		}
 
 		on_override() {
@@ -259,15 +238,7 @@ export const DetailsPage = GObject.registerClass(
 			if (!this.is_overriding_allowed || response !== 'override_continue') {
 				return;
 			}
-			this.sync_details_to_file();
-			this.entry.save((file, err) => {
-				if (err === null) {
-					add_toast(_("Overrode entry"));
-				} else {
-					add_error_toast(_("Could not create file"), err);
-				}
-				this.signals.pop_request.emit();
-			});
+			this.do_save(_("Overrode entry"), _("Could not create file"));
 		}
 
 		on_trash() {
