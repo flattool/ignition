@@ -211,30 +211,34 @@ export const DetailsPage = GObject.registerClass(
 			this.entry.terminal = this.gui_details.get('terminal');
 		}
 
-		do_save(success_message, error_message) {
-			this.sync_to_entry();
-			this.entry.save((file, err) => {
-				if (err === null) {
-					add_toast(success_message);
-				} else {
-					add_error_toast(error_message, err);
-				}
-				this.signals.pop_request.emit();
-			});
-		}
-
 		on_save() {
 			if (!this.is_saving_allowed || !this._save_button.sensitive) {
 				return;
 			}
-			this.do_save(_("Saved details"), _("Could not save file"));
+			this.sync_to_entry();
+			this.entry.save((file, err) => {
+				if (err === null) {
+					add_toast(_("Saved details"));
+				} else {
+					add_error_toast(_("Could not save file"), err);
+				}
+				this.signals.pop_request.emit();
+			});
 		}
 
 		on_create() {
 			if (!this.is_creating_allowed || !this._create_button.sensitive) {
 				return;
 			}
-			this.do_save(_("Created entry"), _("Could not create file"));
+			this.sync_to_entry();
+			this.entry.save((file, err) => {
+				if (err === null) {
+					add_toast(_("Created entry"));
+				} else {
+					add_error_toast(_("Could not create file"), err);
+				}
+				this.signals.pop_request.emit();
+			});
 		}
 
 		on_override() {
@@ -249,7 +253,15 @@ export const DetailsPage = GObject.registerClass(
 			if (!this.is_overriding_allowed || response !== 'override_continue') {
 				return;
 			}
-			this.do_save(_("Overrode entry"), _("Could not create file"));
+			this.sync_to_entry();
+			this.entry.save((file, err) => {
+				if (err === null) {
+					add_toast(_("Overrode entry"));
+					this.load_details(this.entry, DetailsPage.Origins.HOME);
+				} else {
+					add_error_toast(_("Could not create file"), err);
+				}
+			});
 		}
 
 		on_trash() {
