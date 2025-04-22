@@ -49,6 +49,19 @@ export const IgnitionApplication = GObject.registerClass(
 				+ `Language: ${lang}`
 			);
 
+			const show_about_action = new Gio.SimpleAction({name: 'about'});
+			show_about_action.connect('activate', action => {
+				const aboutDialog = Adw.AboutDialog.new_from_appdata("/io/github/flattool/Ignition/appdata", null);
+				aboutDialog.version = Config.VERSION;
+				aboutDialog.debug_info = troubleshooting;
+				aboutDialog.add_link(_("Translate"), "https://weblate.fyralabs.com/projects/flattool/ignition/");
+				aboutDialog.add_link(_("Donate"), "https://ko-fi.com/heliguy");
+				aboutDialog.add_other_app('io.github.flattool.Warehouse', "Warehouse", "Manage all things Flatpak");
+				aboutDialog.present(this.active_window);
+			});
+			this.add_action(show_about_action);
+
+
 			const quit_action = new Gio.SimpleAction({name: 'quit'});
 			quit_action.connect('activate', action => {
 				this.quit();
@@ -56,11 +69,15 @@ export const IgnitionApplication = GObject.registerClass(
 			this.add_action(quit_action);
 			this.set_accels_for_action('app.quit', ['<primary>q']);
 
+
+			const new_entry_action = new Gio.SimpleAction({name: 'new-entry'});
+			this.add_action(new_entry_action);
+			this.set_accels_for_action('app.new-entry', ['<primary>n']);
+
+
 			const open_folder_action = new Gio.SimpleAction({name: 'open-folder'});
 			open_folder_action.connect('activate', action => {
-				const launcher = new Gtk.FileLauncher({
-					file: SharedVars.home_autostart_dir,
-				});
+				const launcher = new Gtk.FileLauncher({ file: SharedVars.home_autostart_dir });
 				launcher.launch(this.active_window, null, (lnch, result) => {
 					try {
 						const did_open = launcher.launch_finish(result);
@@ -76,45 +93,15 @@ export const IgnitionApplication = GObject.registerClass(
 			this.add_action(open_folder_action);
 			this.set_accels_for_action('app.open-folder', ['<primary><shift>o']);
 
-			const show_about_action = new Gio.SimpleAction({name: 'about'});
-			show_about_action.connect('activate', action => {
-				const aboutDialog = Adw.AboutDialog.new_from_appdata("/io/github/flattool/Ignition/appdata", null);
-				aboutDialog.version = Config.VERSION;
-				aboutDialog.debug_info = troubleshooting;
-				aboutDialog.add_link(_("Translate"), "https://weblate.fyralabs.com/projects/flattool/ignition/");
-				aboutDialog.add_link(_("Donate"), "https://ko-fi.com/heliguy");
-				aboutDialog.add_other_app('io.github.flattool.Warehouse', "Warehouse", "Manage all things Flatpak");
-				aboutDialog.present(this.active_window);
-			});
-			this.add_action(show_about_action);
 
-			// const search_action = new Gio.SimpleAction({name: 'search'});
-			// search_action.connect('activate', action => {
-			// 	const dialog = this.active_window.properties_dialog
-			// 	if (dialog.is_showing && dialog._app_chooser_page._search_button.sensitive) {
-			// 		dialog._app_chooser_page._search_button.active = true;
-			// 		dialog._app_chooser_page._search_entry.grab_focus();
-			// 	} else if (!dialog.is_showing && this.active_window._search_button.sensitive) {
-			// 		this.active_window._search_button.active = true;
-			// 		this.active_window._search_entry.grab_focus();
-			// 	}
-			// });
-			// this.add_action(search_action);
-			// this.set_accels_for_action('app.search', ['<primary>f']);
+			const save_action = new Gio.SimpleAction({name: 'save-edits'});
+			this.add_action(save_action);
+			this.set_accels_for_action('app.save-edits', ['<primary>s']);
 
-			// const save_action = new Gio.SimpleAction({name: 'save-edits'});
-			// save_action.connect('activate', action => {
-			// 	this.active_window.properties_dialog.save_action();
-			// });
-			// this.add_action(save_action);
-			// this.set_accels_for_action('app.save-edits', ['<primary>s']);
 
-			const new_entry_action = new Gio.SimpleAction({name: 'new-entry'});
-			new_entry_action.connect('activate', action => {
-				this.active_window.on_new_entry();
-			});
-			this.add_action(new_entry_action);
-			this.set_accels_for_action('app.new-entry', ['<primary>n']);
+			const search_action = new Gio.SimpleAction({name: 'search'});
+			this.add_action(search_action);
+			this.set_accels_for_action('app.search', ['<primary>f']);
 		}
 
 		vfunc_activate() {

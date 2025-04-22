@@ -96,6 +96,19 @@ export const DetailsPage = GObject.registerClass(
 			});
 			this._terminal_row.connect('notify::active', () => this.set_gui_detail('terminal', this._terminal_row.active));
 
+			this._name_row.connect('entry-activated', () => {
+				this.on_create();
+				this.on_save();
+			});
+			this._comment_row.connect('entry-activated', () => {
+				this.on_create();
+				this.on_save();
+			});
+			this._exec_row.connect('entry-activated', () => {
+				this.on_create();
+				this.on_save();
+			});
+
 			this._save_button.connect('clicked', () => this.on_save());
 			this._create_button.connect('clicked', () => this.on_create());
 			this._root_banner.connect('button-clicked', () => this.on_override());
@@ -108,6 +121,9 @@ export const DetailsPage = GObject.registerClass(
 				'value-changed',
 				adj => this._header_bar.show_title = adj.value > 0,
 			);
+
+			const save_action = SharedVars.application.lookup_action('save-edits');
+			if (save_action) save_action.connect('activate', () => this.on_save());
 		}
 
 		load_details(entry, origin) {
@@ -176,11 +192,6 @@ export const DetailsPage = GObject.registerClass(
 				this.invalid_rows.size == 0
 				&& this.is_creating_allowed
 			);
-
-			print('invalid size', this.invalid_rows.size);
-			print('is edited', this.is_edited());
-			print('is saving allowed', this.is_saving_allowed);
-			print('is creating allowed', this.is_creating_allowed);
 		}
 
 		is_edited() {
@@ -213,14 +224,14 @@ export const DetailsPage = GObject.registerClass(
 		}
 
 		on_save() {
-			if (!this.is_saving_allowed) {
+			if (!this.is_saving_allowed || !this._save_button.sensitive) {
 				return;
 			}
 			this.do_save(_("Saved details"), _("Could not save file"));
 		}
 
 		on_create() {
-			if (!this.is_creating_allowed) {
+			if (!this.is_creating_allowed || !this._create_button.sensitive) {
 				return;
 			}
 			this.do_save(_("Created entry"), _("Could not create file"));
@@ -242,7 +253,7 @@ export const DetailsPage = GObject.registerClass(
 		}
 
 		on_trash() {
-			if (!this.is_trashing_allowed) {
+			if (!this.is_trashing_allowed || !this._trash_button.sensitive) {
 				return;
 			}
 			this._trash_dialog.present(SharedVars.main_window);

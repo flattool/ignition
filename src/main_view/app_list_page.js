@@ -12,6 +12,7 @@ export const AppListPage = GObject.registerClass({
 	Template: "resource:///io/github/flattool/Ignition/main_view/app-list-page.ui",
 	InternalChildren: [
 		'header_bar',
+			'search_button',
 		'search_bar',
 			'search_entry',
 		'stack',

@@ -2,6 +2,7 @@ import { AppListPage } from "./app_list_page.js";
 import { DetailsPage } from "./details_page.js";
 import { EntriesPage } from "./entries_page.js";
 import { AutostartEntry } from "../utils/autostart_entry.js";
+import { SharedVars } from "../utils/shared_vars.js";
 
 const { GObject, Adw } = imports.gi;
 
@@ -33,10 +34,22 @@ export const MainView = GObject.registerClass({
 			this._details_page.load_details(entry, DetailsPage.Origins.HOST_APP);
 			this.#push_page(this._details_page);
 		});
-		this._details_page.signals.pop_request.connect(() => {
-			const top_page = this._navigation_view.get_visible_page();
-			this._navigation_view.pop_to_page(this._entries_page);
+		this._details_page.signals.pop_request.connect(() => this._navigation_view.pop_to_page(this._entries_page));
+
+		const search_action = SharedVars.application.lookup_action('search');
+		if (search_action) search_action.connect('activate', () => {
+			const current_page = this._navigation_view.get_visible_page();
+			if (
+				(current_page === this._entries_page || current_page === this._app_list_page)
+				&& current_page._search_button.sensitive
+			) {
+				current_page._search_bar.search_mode_enabled = true;
+				current_page._search_entry.grab_focus();
+			}
 		});
+
+		const new_action = SharedVars.application.lookup_action('new-entry');
+		if (new_action) new_action.connect('activate', () => this.on_new_entry());
 	}
 
 	#push_page(push_page) {
