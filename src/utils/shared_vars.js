@@ -9,6 +9,10 @@ export class SharedVars {
 	static is_flatpak = GLib.getenv("FLATPAK_ID") === Config.APP_ID;
 	static home_dir = Gio.File.new_for_path(GLib.get_home_dir());
 
+	// These need to be getters for the _() translation function to work
+	static get default_name() { return _("No Name Set"); }
+	static get default_comment() { return _("No comment set."); }
+
 	// main.js will make this dir if it does not exist
 	static home_autostart_dir = Gio.File.new_for_path((
 		GLib.getenv("HOST_XDG_CONFIG_HOME")

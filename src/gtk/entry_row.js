@@ -1,6 +1,7 @@
 import { Async } from '../utils/async.js';
 import { AutostartEntry } from '../utils/autostart_entry.js';
 import { IconHelper } from '../utils/icon_helper.js';
+import { SharedVars } from '../utils/shared_vars.js';
 
 const { GObject, GLib, Adw } = imports.gi;
 
@@ -38,8 +39,8 @@ export const EntryRow = GObject.registerClass({
 			return Async.BREAK;
 		});
 
-		this.title = GLib.markup_escape_text(entry.name || _("No Name Set"), -1);
-		this.subtitle = GLib.markup_escape_text(entry.comment || _("No comment set."), -1);
+		this.title = GLib.markup_escape_text(entry.name || SharedVars.default_name, -1);
+		this.subtitle = GLib.markup_escape_text(entry.comment || SharedVars.default_comment, -1);
 
 		if (should_update_suffix_and_info) {
 			this.update_suffix();
