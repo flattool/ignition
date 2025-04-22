@@ -57,14 +57,14 @@ export class AutostartEntry {
 
 	set name(value) {
 		this.keyfile.set_string("Desktop Entry", "Name", value);
-		if (this.locale !== null) {
+		if (this.locale) {
 			this.keyfile.set_locale_string("Desktop Entry", "Name", this.locale, value);
 		}
 	}
 
 	set comment(value) {
 		this.keyfile.set_string("Desktop Entry", "Comment", value);
-		if (this.locale !== null) {
+		if (this.locale) {
 			this.keyfile.set_locale_string("Desktop Entry", "Comment", this.locale, value);
 		}
 	}
