@@ -203,7 +203,7 @@ export const DetailsPage = GObject.registerClass(
 			return false;
 		}
 
-		sync_details_to_file() {
+		sync_to_entry() {
 			this.entry.enabled = this.gui_details.get('enabled');
 			this.entry.name = this.gui_details.get('name');
 			this.entry.comment = this.gui_details.get('comment');
@@ -212,7 +212,7 @@ export const DetailsPage = GObject.registerClass(
 		}
 
 		do_save(success_message, error_message) {
-			this.sync_details_to_file();
+			this.sync_to_entry();
 			this.entry.save((file, err) => {
 				if (err === null) {
 					add_toast(success_message);
