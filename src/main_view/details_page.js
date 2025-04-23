@@ -248,7 +248,13 @@ export const DetailsPage = GObject.registerClass(
 				} else {
 					final_exec = delay_path;
 				}
-			} else if (delay_file.query_exists(null)) {
+			} else if (
+				delay_file.query_exists(null)
+				&& delay_file.query_file_type(
+					Gio.FileQueryInfoFlags.NOFOLLOW_SYMLINKS,
+					null,
+				) === Gio.FileType.REGULAR
+			) {
 				try {
 					delay_file.trash(null);
 				} catch (error) {
@@ -324,6 +330,25 @@ export const DetailsPage = GObject.registerClass(
 			if (!this.is_trashing_allowed || response !== 'trash_continue') {
 				return;
 			}
+
+			// Trash delay file, if any
+			const delay_name = this.entry.file_name.replace(".desktop", ".ignition_delay.sh");
+			const delay_path = `${SharedVars.home_autostart_dir.get_path()}/${delay_name || Date.now()}`;
+			const delay_file = Gio.File.new_for_path(delay_path);
+			if (
+				delay_file.query_exists(null)
+				&& delay_file.query_file_type(
+					Gio.FileQueryInfoFlags.NOFOLLOW_SYMLINKS,
+					null,
+				) === Gio.FileType.REGULAR
+			) {
+				try {
+					delay_file.trash(null);
+				} catch (error) {
+					print(error);
+				}
+			}
+
 			this.entry.trash((file, err) => {
 				if (err === null) {
 					add_toast(_("Trashed entry"));
