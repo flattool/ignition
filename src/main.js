@@ -102,11 +102,6 @@ export const IgnitionApplication = GObject.registerClass(
 			const search_action = new Gio.SimpleAction({name: 'search'});
 			this.add_action(search_action);
 			this.set_accels_for_action('app.search', ['<primary>f']);
-
-
-			const trash_action = new Gio.SimpleAction({name: 'trash-entry'});
-			this.add_action(trash_action);
-			this.set_accels_for_action('app.trash-entry', ['<primary>Delete', '<primary>BackSpace']);
 		}
 
 		vfunc_activate() {

@@ -50,14 +50,6 @@ export const MainView = GObject.registerClass({
 
 		const new_action = SharedVars.application.lookup_action('new-entry');
 		if (new_action) new_action.connect('activate', () => this.on_new_entry());
-
-		const trash_action = SharedVars.application.lookup_action('trash-entry');
-		if (trash_action) trash_action.connect('activate', () => {
-			const current_page = this._navigation_view.get_visible_page();
-			if (current_page === this._details_page) {
-				this._details_page.on_trash();
-			}
-		});
 	}
 
 	#push_page(push_page) {
