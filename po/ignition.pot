@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-22 01:08-0400\n"
+"POT-Creation-Date: 2025-04-23 00:07-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -123,126 +123,104 @@ msgstr ""
 msgid "Learn more about system startup entries, and how editing them works"
 msgstr ""
 
-#: src/gtk/help-dialog.blp:49
-msgid "Want to add a delay?"
-msgstr ""
-
-#: src/gtk/help-dialog.blp:50
-msgid "Learn how to delay apps and scripts' running after you log in"
-msgstr ""
-
-#: src/gtk/help-dialog.blp:64
+#: src/gtk/help-dialog.blp:53
 msgid "Can't Find an App?"
 msgstr ""
 
-#: src/gtk/help-dialog.blp:84
+#: src/gtk/help-dialog.blp:73
 msgid ""
 "Some apps store their entries outside of the places that Ignition is allowed "
 "to read. This means that these apps won't show up in the list of apps on "
 "your system, when making a new entry."
 msgstr ""
 
-#: src/gtk/help-dialog.blp:90
+#: src/gtk/help-dialog.blp:79
 msgid ""
 "To fix this, you can allow Ignition to see more home locations, or more root "
 "locations, in your file system."
 msgstr ""
 
-#: src/gtk/help-dialog.blp:96
+#: src/gtk/help-dialog.blp:85
 msgid ""
 "We recommend the app \"Flatseal\" to manage these permissions. Enable \"All "
 "user files\" or \"All system files\" to be able to find these apps."
 msgstr ""
 
-#: src/gtk/help-dialog.blp:105
+#: src/gtk/help-dialog.blp:94
 msgid "What is a System Entry?"
 msgstr ""
 
-#: src/gtk/help-dialog.blp:125
+#: src/gtk/help-dialog.blp:114
 msgid ""
 "System Entries are for apps or commands that are ran on log in for "
 "everybody. These are usually present to allow certain features, programs, or "
 "other important actions run properly."
 msgstr ""
 
-#: src/gtk/help-dialog.blp:131
+#: src/gtk/help-dialog.blp:120
 msgid ""
 "You can override these, but please use caution when doing so, as you may "
 "break some existing app or feature of your desktop."
 msgstr ""
 
-#: src/gtk/help-dialog.blp:140
-msgid "Adding a Delay"
-msgstr ""
-
-#: src/gtk/help-dialog.blp:160
-msgid ""
-"Unfortunately, adding a delay is not something easily done according to the "
-"specifications. Ignition offers no graphical solution to this, because we "
-"don't want to make entries that fail to start when Ignition is not installed."
-msgstr ""
-
-#: src/gtk/help-dialog.blp:166
-msgid ""
-"You can add a delay yourself by surrounding the command or script in quotes, "
-"and telling the computer to sleep before running it. Below is an example of "
-"what you could put in the Command or Script section of the entry's details."
-msgstr ""
-
-#: src/gtk/help-dialog.blp:179
-msgid ""
-"This will run the command \"steam\" after 10 seconds of waiting. You can "
-"change 10 to any other number of seconds of delay you want."
-msgstr ""
-
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
-msgid "Entries List"
+msgid "General"
 msgstr ""
 
 #: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
-msgid "New Entry"
+msgid "Open Autostart Folder"
 msgstr ""
 
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
-msgid "Search Entries"
+msgid "Show Shortcuts"
 msgstr ""
 
 #: src/gtk/help-overlay.blp:24
 msgctxt "shortcut window"
-msgid "Details Dialog"
+msgid "Quit"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:27
+#: src/gtk/help-overlay.blp:30
 msgctxt "shortcut window"
-msgid "Save Edits"
+msgid "Apps List"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:32
+#: src/gtk/help-overlay.blp:33
 msgctxt "shortcut window"
 msgid "Search Apps"
 msgstr ""
 
 #: src/gtk/help-overlay.blp:39
 msgctxt "shortcut window"
-msgid "General"
+msgid "Entries List"
 msgstr ""
 
 #: src/gtk/help-overlay.blp:42
 msgctxt "shortcut window"
-msgid "Open Autostart Folder"
+msgid "New Entry"
 msgstr ""
 
 #: src/gtk/help-overlay.blp:47
 msgctxt "shortcut window"
-msgid "Show Shortcuts"
+msgid "Search Entries"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:52
+#: src/gtk/help-overlay.blp:53
 msgctxt "shortcut window"
-msgid "Quit"
+msgid "Details Page"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:56
+msgctxt "shortcut window"
+msgid "Save Edits"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:61
+msgctxt "shortcut window"
+msgid "Trash Entry"
 msgstr ""
 
 #: src/main.js:57
@@ -261,7 +239,7 @@ msgstr ""
 msgid "Could not open folder"
 msgstr ""
 
-#: src/main_view/app-list-page.blp:5 src/main_view/details_page.js:136
+#: src/main_view/app-list-page.blp:5
 msgid "New Entry"
 msgstr ""
 
@@ -337,7 +315,7 @@ msgstr ""
 msgid "Override entry to change details"
 msgstr ""
 
-#: src/main_view/details-page.blp:44 src/main_view/details-page.blp:143
+#: src/main_view/details-page.blp:44 src/main_view/details-page.blp:157
 msgid "Override"
 msgstr ""
 
@@ -373,65 +351,73 @@ msgstr ""
 msgid "Show a terminal for this process to run in."
 msgstr ""
 
-#: src/main_view/details-page.blp:127
+#: src/main_view/details-page.blp:121
+msgid "Seconds of Delay"
+msgstr ""
+
+#: src/main_view/details-page.blp:122
+msgid "Amount of seconds to wait after logging in to run the command or script"
+msgstr ""
+
+#: src/main_view/details-page.blp:141
 msgid ""
 "To run a script at login, paste its file path here. You can copy the "
 "script's path from your file manager. Make sure your script is executable."
 msgstr ""
 
-#: src/main_view/details-page.blp:139
+#: src/main_view/details-page.blp:153
 msgid "Override Entry?"
 msgstr ""
 
-#: src/main_view/details-page.blp:140
+#: src/main_view/details-page.blp:154
 msgid ""
 "Be careful, overriding system entries can lead to system breakage. This will "
 "make a copy of the entry for you to edit."
 msgstr ""
 
-#: src/main_view/details-page.blp:142 src/main_view/details-page.blp:151
+#: src/main_view/details-page.blp:156 src/main_view/details-page.blp:165
 msgid "Cancel"
 msgstr ""
 
-#: src/main_view/details-page.blp:148
+#: src/main_view/details-page.blp:162
 msgid "Trach Entry?"
 msgstr ""
 
-#: src/main_view/details-page.blp:149
+#: src/main_view/details-page.blp:163
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
 msgstr ""
 
-#: src/main_view/details-page.blp:152
+#: src/main_view/details-page.blp:166
 msgid "Trash"
 msgstr ""
 
-#: src/main_view/details_page.js:221
+#: src/main_view/details_page.js:275
 msgid "Saved details"
 msgstr ""
 
-#: src/main_view/details_page.js:223
+#: src/main_view/details_page.js:277
 msgid "Could not save file"
 msgstr ""
 
-#: src/main_view/details_page.js:236
+#: src/main_view/details_page.js:290
 msgid "Created entry"
 msgstr ""
 
-#: src/main_view/details_page.js:238 src/main_view/details_page.js:262
+#: src/main_view/details_page.js:292 src/main_view/details_page.js:316
 msgid "Could not create file"
 msgstr ""
 
-#: src/main_view/details_page.js:259
+#: src/main_view/details_page.js:313
 msgid "Overrode entry"
 msgstr ""
 
-#: src/main_view/details_page.js:281
+#: src/main_view/details_page.js:354
 msgid "Trashed entry"
 msgstr ""
 
-#: src/main_view/details_page.js:283
+#: src/main_view/details_page.js:356
 msgid "Could not trash file"
 msgstr ""
 
