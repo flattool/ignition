@@ -151,8 +151,8 @@ export const DetailsPage = GObject.registerClass(
 
 			this.details_on_disks = new Map([
 				['enabled', this.entry.enabled],
-				['name', is_new ? _("New Entry") : (this.entry.name || SharedVars.default_name)],
-				['comment', is_new ? SharedVars.default_comment : (this.entry.comment || SharedVars.default_comment)],
+				['name', is_new ? "" : (this.entry.name || SharedVars.default_name)],
+				['comment', this.entry.comment || ""],
 				['exec', display_exec],
 				['terminal', this.entry.terminal],
 				['delay', delay],
@@ -160,8 +160,6 @@ export const DetailsPage = GObject.registerClass(
 
 			if (origin === DetailsPage.Origins.HOST_APP || origin === DetailsPage.Origins.ROOT) {
 				entry.path = `${SharedVars.home_autostart_dir.get_path()}/${entry.file_name}`;
-			} else if (origin === DetailsPage.Origins.NEW) {
-				entry.path = `${SharedVars.home_autostart_dir.get_path()}/${Date.now()}.desktop`;
 			}
 
 			this._save_button.visible = this.is_saving_allowed;
@@ -188,14 +186,14 @@ export const DetailsPage = GObject.registerClass(
 			this.gui_details = new Map(this.details_on_disks);
 
 			this._enabled_row.active = this.gui_details.get('enabled') ?? true;
-			this._name_row.text = this.gui_details.get('name') ?? SharedVars.default_name;
-			this._comment_row.text = this.gui_details.get('comment') ?? SharedVars.default_comment;
+			this._name_row.text = this.gui_details.get('name') ?? "";
+			this._comment_row.text = this.gui_details.get('comment') ?? "";
 			this._exec_row.text = this.gui_details.get('exec') ?? "";
 			this._terminal_row.active = this.gui_details.get('terminal') ?? false;
 			this._delay_adjustment.value = this.gui_details.get('delay') ?? 0;
 
 			this._title_group.title = GLib.markup_escape_text(
-				this.gui_details.get('name') ?? SharedVars.default_name,
+				this.gui_details.get('name') || SharedVars.default_name,
 				-1,
 			);
 		}
@@ -228,6 +226,10 @@ export const DetailsPage = GObject.registerClass(
 			this.entry.name = this.gui_details.get('name');
 			this.entry.comment = this.gui_details.get('comment');
 			this.entry.terminal = this.gui_details.get('terminal');
+
+			if (this.origin === DetailsPage.Origins.NEW) {
+				this.entry.path = `${SharedVars.home_autostart_dir.get_path()}/${this.gui_details.get('name')}.desktop`;
+			}
 
 			// Setting the exec value with its sleep delay, if any
 			const delay = this.gui_details.get('delay');
