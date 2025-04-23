@@ -149,6 +149,15 @@ Popover path_info_popover {
 	}
 }
 
+Adw.AlertDialog create_dialog {
+	heading: _("Create and Replace?");
+	body: _("A file already exists for this entry. Are you sure you want to replace it?");
+	responses [
+		create_cancel: _("Cancel"),
+		create_continue: _("Create and Replace") destructive,
+	]
+}
+
 Adw.AlertDialog override_dialog {
 	heading: _("Override Entry?");
 	body: _("Be careful, overriding system entries can lead to system breakage. This will make a copy of the entry for you to edit.");

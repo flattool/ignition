@@ -5,7 +5,7 @@ import { SharedVars } from "../utils/shared_vars.js";
 import { Signal } from "../utils/signal.js";
 import { add_error_toast, host_app_iteration } from "../utils/helper_funcs.js";
 
-const { GObject, Adw } = imports.gi;
+const { GObject, Gio, Adw } = imports.gi;
 
 export const AppListPage = GObject.registerClass({
 	GTypeName: "AppListPage",
@@ -86,6 +86,10 @@ export const AppListPage = GObject.registerClass({
 			.map(dir => host_app_iteration(
 				dir,
 				(entry) => {
+					const home_path = `${SharedVars.home_autostart_dir.get_path()}/${entry.file_name}`;
+					if (Gio.File.new_for_path(home_path).query_exists(null)) {
+						return;
+					}
 					const row = new EntryRow(entry, false);
 					row.connect('activated', () => this.signals.app_chosen.emit(entry));
 					if (!this._show_hidden_switch.active && this.is_entry_hidden(entry)) {

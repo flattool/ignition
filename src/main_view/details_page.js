@@ -31,6 +31,7 @@ export const DetailsPage = GObject.registerClass(
 						"terminal_row",
 						"delay_adjustment",
 			"path_info_popover",
+			"create_dialog",
 			"override_dialog",
 			"trash_dialog",
 		],
@@ -118,6 +119,7 @@ export const DetailsPage = GObject.registerClass(
 			this._root_banner.connect('button-clicked', () => this.on_override());
 			this._trash_button.connect('clicked', () => this.on_trash());
 
+			this._create_dialog.connect('response', this.on_create_dialog_response.bind(this));
 			this._override_dialog.connect('response', this.on_override_dialog_response.bind(this));
 			this._trash_dialog.connect('response', this.on_trash_dialog_response.bind(this));
 
@@ -129,7 +131,10 @@ export const DetailsPage = GObject.registerClass(
 			this._delay_adjustment.connect('value-changed', adj => this.set_gui_detail('delay', adj.value));
 
 			const save_action = SharedVars.application.lookup_action('save-edits');
-			if (save_action) save_action.connect('activate', () => this.on_save());
+			if (save_action) save_action.connect('activate', () => {
+				this.on_save();
+				this.on_create();
+			});
 		}
 
 		load_details(entry, origin) {
@@ -285,6 +290,18 @@ export const DetailsPage = GObject.registerClass(
 				return;
 			}
 			this.sync_details_to_entry();
+			if (this.entry.file.query_exists(null)) {
+				this._create_dialog.present(SharedVars.main_window);
+				this._create_dialog.grab_focus();
+			} else {
+				this.on_create_dialog_response(null, 'create_continue');
+			}
+		}
+
+		on_create_dialog_response(dialog, response) {
+			if (!this.is_creating_allowed || response !== 'create_continue') {
+				return;
+			}
 			this.entry.save((file, err) => {
 				if (err === null) {
 					add_toast(_("Created entry"));
