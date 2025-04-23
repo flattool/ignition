@@ -9,6 +9,7 @@
     <file>main_view/details_page.js</file>
     <file>main_view/entries_page.js</file>
     <file>main_view/main_view.js</file>
+    <file>utils/delay_helper.js</file>
     <file>utils/dir_watcher.js</file>
     <file>utils/helper_funcs.js</file>
     <file>utils/icon_helper.js</file>

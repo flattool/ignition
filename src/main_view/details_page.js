@@ -1,11 +1,12 @@
 import { Async } from "../utils/async.js";
+import { DelayHelper } from "../utils/delay_helper.js";
 import { Enum } from "../utils/enum.js";
 import { IconHelper } from "../utils/icon_helper.js";
 import { SharedVars } from "../utils/shared_vars.js";
 import { Signal } from "../utils/signal.js";
 import { add_error_toast, add_toast } from "../utils/helper_funcs.js";
 
-const { GObject, GLib, Adw } = imports.gi;
+const { GObject, GLib, Gio, Adw } = imports.gi;
 
 export const DetailsPage = GObject.registerClass(
 	{
@@ -28,6 +29,7 @@ export const DetailsPage = GObject.registerClass(
 						"exec_row",
 							"path_info_button",
 						"terminal_row",
+						"delay_adjustment",
 			"path_info_popover",
 			"override_dialog",
 			"trash_dialog",
@@ -94,7 +96,9 @@ export const DetailsPage = GObject.registerClass(
 				this.validate_input(this._exec_row, text.length > 0 && this.exec_regex.test(text));
 				this.set_gui_detail('exec', text);
 			});
-			this._terminal_row.connect('notify::active', () => this.set_gui_detail('terminal', this._terminal_row.active));
+			this._terminal_row.connect(
+				'notify::active', () => this.set_gui_detail('terminal', this._terminal_row.active)
+			);
 
 			this._name_row.connect('entry-activated', () => {
 				this.on_create();
@@ -122,6 +126,8 @@ export const DetailsPage = GObject.registerClass(
 				adj => this._header_bar.show_title = adj.value > 0,
 			);
 
+			this._delay_adjustment.connect('value-changed', adj => this.set_gui_detail('delay', adj.value));
+
 			const save_action = SharedVars.application.lookup_action('save-edits');
 			if (save_action) save_action.connect('activate', () => this.on_save());
 		}
@@ -131,12 +137,25 @@ export const DetailsPage = GObject.registerClass(
 			this.origin = origin;
 
 			const is_new = origin === DetailsPage.Origins.NEW;
+
+			// Get the startup delay, if any
+			const raw_exec = this.entry.exec;
+			const [delay, display_exec, load_error] = (raw_exec.endsWith('.ignition_delay.sh')
+				? DelayHelper.load_delay(Gio.File.new_for_path(raw_exec))
+				: [0, raw_exec, null]
+			);
+
+			if (load_error) {
+				print(load_error);
+			}
+
 			this.details_on_disks = new Map([
 				['enabled', this.entry.enabled],
 				['name', is_new ? _("New Entry") : (this.entry.name || SharedVars.default_name)],
 				['comment', is_new ? SharedVars.default_comment : (this.entry.comment || SharedVars.default_comment)],
-				['exec', this.entry.exec],
+				['exec', display_exec],
 				['terminal', this.entry.terminal],
+				['delay', delay],
 			]);
 
 			if (origin === DetailsPage.Origins.HOST_APP || origin === DetailsPage.Origins.ROOT) {
@@ -173,6 +192,7 @@ export const DetailsPage = GObject.registerClass(
 			this._comment_row.text = this.gui_details.get('comment') ?? SharedVars.default_comment;
 			this._exec_row.text = this.gui_details.get('exec') ?? "";
 			this._terminal_row.active = this.gui_details.get('terminal') ?? false;
+			this._delay_adjustment.value = this.gui_details.get('delay') ?? 0;
 
 			this._title_group.title = GLib.markup_escape_text(
 				this.gui_details.get('name') ?? SharedVars.default_name,
@@ -203,19 +223,45 @@ export const DetailsPage = GObject.registerClass(
 			return false;
 		}
 
-		sync_to_entry() {
+		sync_details_to_entry() {
 			this.entry.enabled = this.gui_details.get('enabled');
 			this.entry.name = this.gui_details.get('name');
 			this.entry.comment = this.gui_details.get('comment');
-			this.entry.exec = this.gui_details.get('exec');
 			this.entry.terminal = this.gui_details.get('terminal');
+
+			// Setting the exec value with its sleep delay, if any
+			const delay = this.gui_details.get('delay');
+			const raw_exec = this.gui_details.get('exec');
+
+			const delay_name = this.entry.file_name.replace(".desktop", ".ignition_delay.sh");
+			const delay_path = `${SharedVars.home_autostart_dir.get_path()}/${delay_name}`;
+			const delay_file = Gio.File.new_for_path(delay_path);
+
+			let final_exec = raw_exec;
+
+			if (delay > 0) {
+				const delay_error = DelayHelper.save_delay(delay_file, delay, raw_exec);
+				if (delay_error) {
+					print(delay_error);
+				} else {
+					final_exec = delay_path;
+				}
+			} else if (delay_file.query_exists(null)) {
+				try {
+					delay_file.trash(null);
+				} catch (error) {
+					print(`failed to trash delay file at path: ${delay_path}`);
+				}
+			}
+
+			this.entry.exec = final_exec;
 		}
 
 		on_save() {
 			if (!this.is_saving_allowed || !this._save_button.sensitive) {
 				return;
 			}
-			this.sync_to_entry();
+			this.sync_details_to_entry();
 			this.entry.save((file, err) => {
 				if (err === null) {
 					add_toast(_("Saved details"));
@@ -230,7 +276,7 @@ export const DetailsPage = GObject.registerClass(
 			if (!this.is_creating_allowed || !this._create_button.sensitive) {
 				return;
 			}
-			this.sync_to_entry();
+			this.sync_details_to_entry();
 			this.entry.save((file, err) => {
 				if (err === null) {
 					add_toast(_("Created entry"));
@@ -253,7 +299,7 @@ export const DetailsPage = GObject.registerClass(
 			if (!this.is_overriding_allowed || response !== 'override_continue') {
 				return;
 			}
-			this.sync_to_entry();
+			this.sync_details_to_entry();
 			this.entry.save((file, err) => {
 				if (err === null) {
 					add_toast(_("Overrode entry"));

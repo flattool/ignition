@@ -115,6 +115,20 @@ template $DetailsPage : Adw.NavigationPage {
 								subtitle: _("Show a terminal for this process to run in.");
 							}
 						}
+
+						Adw.PreferencesGroup {
+							Adw.SpinRow delay_row {
+								title: _("Seconds of Delay");
+								subtitle: _("Amount of seconds to wait after loggin in to run the command or script");
+
+								adjustment: Adjustment delay_adjustment {
+									lower: 0;
+									upper: 86400;
+									step-increment: 1.0;
+									page-increment: 10.0;
+								};
+							}
+						}
 					}
 				}
 			}
