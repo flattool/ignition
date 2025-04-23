@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-23 00:07-0400\n"
+"POT-Creation-Date: 2025-04-23 00:44-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -165,62 +165,57 @@ msgstr ""
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
-msgid "General"
+msgid "Entries List"
 msgstr ""
 
 #: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
-msgid "Open Autostart Folder"
+msgid "New Entry"
 msgstr ""
 
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
-msgid "Show Shortcuts"
+msgid "Search Entries"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:24
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:30
+#: src/gtk/help-overlay.blp:25
 msgctxt "shortcut window"
 msgid "Apps List"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:33
+#: src/gtk/help-overlay.blp:28
 msgctxt "shortcut window"
 msgid "Search Apps"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:39
-msgctxt "shortcut window"
-msgid "Entries List"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:42
-msgctxt "shortcut window"
-msgid "New Entry"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:47
-msgctxt "shortcut window"
-msgid "Search Entries"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:53
+#: src/gtk/help-overlay.blp:34
 msgctxt "shortcut window"
 msgid "Details Page"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:56
+#: src/gtk/help-overlay.blp:37
 msgctxt "shortcut window"
 msgid "Save Edits"
 msgstr ""
 
-#: src/gtk/help-overlay.blp:61
+#: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
-msgid "Trash Entry"
+msgid "General"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:46
+msgctxt "shortcut window"
+msgid "Open Autostart Folder"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:51
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:56
+msgctxt "shortcut window"
+msgid "Quit"
 msgstr ""
 
 #: src/main.js:57
@@ -291,7 +286,7 @@ msgstr ""
 msgid "Try a different search."
 msgstr ""
 
-#: src/main_view/app_list_page.js:105
+#: src/main_view/app_list_page.js:109
 msgid "Could not load some apps"
 msgstr ""
 
@@ -315,7 +310,7 @@ msgstr ""
 msgid "Override entry to change details"
 msgstr ""
 
-#: src/main_view/details-page.blp:44 src/main_view/details-page.blp:157
+#: src/main_view/details-page.blp:44 src/main_view/details-page.blp:166
 msgid "Override"
 msgstr ""
 
@@ -366,58 +361,72 @@ msgid ""
 msgstr ""
 
 #: src/main_view/details-page.blp:153
-msgid "Override Entry?"
+msgid "Create and Replace?"
 msgstr ""
 
 #: src/main_view/details-page.blp:154
+msgid ""
+"A file already exists for this entry. Are you sure you want to replace it?"
+msgstr ""
+
+#: src/main_view/details-page.blp:156 src/main_view/details-page.blp:165
+#: src/main_view/details-page.blp:174
+msgid "Cancel"
+msgstr ""
+
+#: src/main_view/details-page.blp:157
+msgid "Create and Replace"
+msgstr ""
+
+#: src/main_view/details-page.blp:162
+msgid "Override Entry?"
+msgstr ""
+
+#: src/main_view/details-page.blp:163
 msgid ""
 "Be careful, overriding system entries can lead to system breakage. This will "
 "make a copy of the entry for you to edit."
 msgstr ""
 
-#: src/main_view/details-page.blp:156 src/main_view/details-page.blp:165
-msgid "Cancel"
-msgstr ""
-
-#: src/main_view/details-page.blp:162
+#: src/main_view/details-page.blp:171
 msgid "Trach Entry?"
 msgstr ""
 
-#: src/main_view/details-page.blp:163
+#: src/main_view/details-page.blp:172
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
 msgstr ""
 
-#: src/main_view/details-page.blp:166
+#: src/main_view/details-page.blp:175
 msgid "Trash"
 msgstr ""
 
-#: src/main_view/details_page.js:275
+#: src/main_view/details_page.js:280
 msgid "Saved details"
 msgstr ""
 
-#: src/main_view/details_page.js:277
+#: src/main_view/details_page.js:282
 msgid "Could not save file"
 msgstr ""
 
-#: src/main_view/details_page.js:290
+#: src/main_view/details_page.js:307
 msgid "Created entry"
 msgstr ""
 
-#: src/main_view/details_page.js:292 src/main_view/details_page.js:316
+#: src/main_view/details_page.js:309 src/main_view/details_page.js:333
 msgid "Could not create file"
 msgstr ""
 
-#: src/main_view/details_page.js:313
+#: src/main_view/details_page.js:330
 msgid "Overrode entry"
 msgstr ""
 
-#: src/main_view/details_page.js:354
+#: src/main_view/details_page.js:371
 msgid "Trashed entry"
 msgstr ""
 
-#: src/main_view/details_page.js:356
+#: src/main_view/details_page.js:373
 msgid "Could not trash file"
 msgstr ""
 
