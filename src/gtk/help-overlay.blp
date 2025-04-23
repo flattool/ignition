@@ -5,35 +5,7 @@ ShortcutsWindow help_overlay {
 
 	ShortcutsSection {
 		section-name: "shortcuts";
-		max-height: 10;
-
-		ShortcutsGroup {
-			title: C_("shortcut window", "Entries List");
-
-			ShortcutsShortcut {
-				title: C_("shortcut window", "New Entry");
-				action-name: "app.new-entry";
-			}
-
-			ShortcutsShortcut {
-				title: C_("shortcut window", "Search Entries");
-				action-name: "app.search";
-			}
-		}
-		ShortcutsGroup {
-			title: C_("shortcut window", "Details Dialog");
-
-			ShortcutsShortcut {
-				title: C_("shortcut window", "Save Edits");
-				action-name: "app.save-edits";
-			}
-
-			ShortcutsShortcut {
-				title: C_("shortcut window", "Search Apps");
-				action-name: "app.search";
-			}
-		}
-
+		max-height: 6;
 
 		ShortcutsGroup {
 			title: C_("shortcut window", "General");
@@ -51,6 +23,43 @@ ShortcutsWindow help_overlay {
 			ShortcutsShortcut {
 				title: C_("shortcut window", "Quit");
 				action-name: "app.quit";
+			}
+		}
+
+		ShortcutsGroup {
+			title: C_("shortcut window", "Apps List");
+
+			ShortcutsShortcut {
+				title: C_("shortcut window", "Search Apps");
+				action-name: "app.search";
+			}
+		}
+
+		ShortcutsGroup {
+			title: C_("shortcut window", "Entries List");
+
+			ShortcutsShortcut {
+				title: C_("shortcut window", "New Entry");
+				action-name: "app.new-entry";
+			}
+
+			ShortcutsShortcut {
+				title: C_("shortcut window", "Search Entries");
+				action-name: "app.search";
+			}
+		}
+
+		ShortcutsGroup {
+			title: C_("shortcut window", "Details Page");
+
+			ShortcutsShortcut {
+				title: C_("shortcut window", "Save Edits");
+				action-name: "app.save-edits";
+			}
+
+			ShortcutsShortcut {
+				title: C_("shortcut window", "Trash Entry");
+				action-name: "app.trash-entry";
 			}
 		}
 	}
