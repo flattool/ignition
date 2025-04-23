@@ -12,10 +12,8 @@ export const HelpDialog = GObject.registerClass({
 			'status_page',
 				'find_app_row',
 				'system_entry_row',
-				'delay_row',
 		'find_app_page',
 		'system_entry_page',
-		'delay_page',
 	],
 }, class HelpDialog extends Adw.Dialog {
 	constructor() {
@@ -23,7 +21,6 @@ export const HelpDialog = GObject.registerClass({
 
 		this._find_app_row.connect('activated', () => this._navigation_view.push(this._find_app_page));
 		this._system_entry_row.connect('activated', () => this._navigation_view.push(this._system_entry_page));
-		this._delay_row.connect('activated', () => this._navigation_view.push(this._delay_page));
 
 		this._find_app_row.visible = SharedVars.is_flatpak;
 

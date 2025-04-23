@@ -44,17 +44,6 @@ template $HelpDialog : Adw.Dialog {
 								icon-name: "ignition:right-large-symbolic";
 							}
 						}
-
-						Adw.ActionRow delay_row {
-							title: _("Want to add a delay?");
-							subtitle: _("Learn how to delay apps and scripts' running after you log in");
-							activatable: true;
-
-							[suffix]
-							Image {
-								icon-name: "ignition:right-large-symbolic";
-							}
-						}
 					}
 				}
 			}
@@ -129,54 +118,6 @@ template $HelpDialog : Adw.Dialog {
 								wrap: true;
 								halign: start;
 								label: _("You can override these, but please use caution when doing so, as you may break some existing app or feature of your desktop.");
-							}
-						}
-					}
-				}
-			}
-		}
-
-		Adw.NavigationPage delay_page {
-			title: _("Adding a Delay");
-
-			Adw.ToolbarView {
-				[top]
-				Adw.HeaderBar {}
-
-				ScrolledWindow {
-					Adw.Clamp {
-						margin-start:  12;
-						margin-end:    12;
-						margin-top:    12;
-						margin-bottom: 12;
-
-						Box {
-							orientation: vertical;
-							spacing: 12;
-
-							Label {
-								wrap: true;
-								halign: start;
-								label: _("Unfortunately, adding a delay is not something easily done according to the specifications. Ignition offers no graphical solution to this, because we don't want to make entries that fail to start when Ignition is not installed.");
-							}
-
-							Label {
-								wrap: true;
-								halign: start;
-								label: _("You can add a delay yourself by surrounding the command or script in quotes, and telling the computer to sleep before running it. Below is an example of what you could put in the Command or Script section of the entry's details.");
-							}
-
-							Label {
-								wrap: true;
-								halign: start;
-								use-markup: true;
-								label: "<tt>sleep 10 &amp;&amp; sh -c \"steam\"</tt>";
-							}
-
-							Label {
-								wrap: true;
-								halign: start;
-								label: _("This will run the command \"steam\" after 10 seconds of waiting. You can change 10 to any other number of seconds of delay you want.");
 							}
 						}
 					}
