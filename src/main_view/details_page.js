@@ -197,9 +197,9 @@ export const DetailsPage = GObject.registerClass(
 			this._terminal_row.active = this.gui_details.get('terminal') ?? false;
 			this._delay_adjustment.value = this.gui_details.get('delay') ?? 0;
 
-			this._title_group.title = GLib.markup_escape_text(
-				this.gui_details.get('name') || SharedVars.default_name,
-				-1,
+			this._title_group.title = (this.origin === DetailsPage.Origins.NEW
+				? _("New Entry")
+				: GLib.markup_escape_text(this.gui_details.get('name') || SharedVars.default_name, -1)
 			);
 		}
 
