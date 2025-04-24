@@ -42,10 +42,6 @@ export const AppListPage = GObject.registerClass({
 		this._search_entry.connect('search-changed', () => this.on_search_changed());
 		this._show_hidden_switch.connect('notify::active', () => this.on_search_changed());
 		this._script_row.connect('activated', () => this.signals.script_chosen.emit());
-		this._scrolled_window.get_vadjustment().connect(
-			'value-changed',
-			adj => this._header_bar.show_title = adj.value > 0,
-		);
 
 		this._search_bar.connect('notify::search-mode-enabled', () => {
 			const is_enabled = this._search_bar.search_mode_enabled;

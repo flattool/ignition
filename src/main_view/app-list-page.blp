@@ -2,12 +2,10 @@ using Gtk 4.0;
 using Adw 1;
 
 template $AppListPage : Adw.NavigationPage {
-	title: _("New Entry");
+	title: _("Add or Create an Entry");
 	Adw.ToolbarView {
 		[top]
 		Adw.HeaderBar header_bar {
-			show-title: false;
-
 			[start]
 			ToggleButton search_button {
 				icon-name: "ignition:system-search-symbolic";

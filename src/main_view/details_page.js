@@ -123,11 +123,6 @@ export const DetailsPage = GObject.registerClass(
 			this._override_dialog.connect('response', this.on_override_dialog_response.bind(this));
 			this._trash_dialog.connect('response', this.on_trash_dialog_response.bind(this));
 
-			this._scrolled_window.get_vadjustment().connect(
-				'value-changed',
-				adj => this._header_bar.show_title = adj.value > 0,
-			);
-
 			this._delay_adjustment.connect('value-changed', adj => this.set_gui_detail('delay', adj.value));
 
 			const save_action = SharedVars.application.lookup_action('save-edits');
