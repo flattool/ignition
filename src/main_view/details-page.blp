@@ -9,12 +9,6 @@ template $DetailsPage : Adw.NavigationPage {
 		Adw.HeaderBar header_bar {
 			show-title: false;
 
-			[start]
-			Button trash_button {
-				icon-name: "ignition:user-trash-symbolic";
-				tooltip-text: _("Move to trash");
-			}
-
 			[end]
 			Button save_button {
 				styles ["suggested-action"]
@@ -33,6 +27,12 @@ template $DetailsPage : Adw.NavigationPage {
 					icon-name: "ignition:list-add-symbolic";
 					label: _("Create");
 				}
+			}
+
+			[end]
+			Button trash_button {
+				icon-name: "ignition:user-trash-symbolic";
+				tooltip-text: _("Move to Trash");
 			}
 		}
 
