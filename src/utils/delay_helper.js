@@ -3,7 +3,7 @@ const { GLib, Gio } = imports.gi;
 export class DelayHelper {
 	static save_delay(file, delay, command) {
 		const path = file.get_path();
-		const contents = `!#/usr/bin/env sh\nsleep ${delay} && ${command}\n`;
+		const contents = `#!/usr/bin/env sh\nsleep ${delay} && ${command}\n`;
 
 		try {
 			GLib.file_set_contents(path, contents);
