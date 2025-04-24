@@ -34,41 +34,49 @@ template $AppListPage : Adw.NavigationPage {
 				Adw.Clamp {
 					Box {
 						orientation: vertical;
-						margin-start: 12;
-						margin-end:   12;
+						// margin-start: 12;
+						// margin-end:   12;
 						margin-top:   12;
 						margin-bottom: 24;
-						spacing: 12;
 
-						Adw.PreferencesGroup {
-							title: _("Commands and Scripts");
-							description: _("Run a command or script when you log in.");
-							margin-bottom: 12;
-							visible: bind search_bar.search-mode-enabled inverted;
+						Revealer revealer {
+							transition-type: slide_up;
+							reveal-child: bind search_bar.search-mode-enabled inverted;
 
-							Adw.ActionRow script_row {
-								title: _("Add a Command or Script");
-								subtitle: _("Enter the command to run or path to your script");
-								activatable: true;
+							Adw.PreferencesGroup script_group {
+								title: _("Commands and Scripts");
+								description: _("Run a command or script when you log in.");
+								margin-bottom: 24;
+								margin-start: 12;
+								margin-end:   12;
 
-								[prefix]
-								Image {
-									icon-size: large;
-									icon-name: "ignition:application-x-executable-symbolic";
+								Adw.ActionRow script_row {
+									title: _("Add a Command or Script");
+									subtitle: _("Enter the command to run or path to your script");
+									activatable: true;
 
-									styles ["icon-dropshadow"]
-								}
+									[prefix]
+									Image {
+										icon-size: large;
+										icon-name: "ignition:application-x-executable-symbolic";
 
-								[suffix]
-								Image {
-									icon-name: "ignition:right-large-symbolic";
+										styles ["icon-dropshadow"]
+									}
+
+									[suffix]
+									Image {
+										icon-name: "ignition:right-large-symbolic";
+									}
 								}
 							}
 						}
 
 						Adw.PreferencesGroup apps_group {
+							margin-start: 12;
+							margin-end:   12;
 							title: _("Installed Apps");
 							description: _("Choose any installed app to run when you log in.");
+							margin-bottom: 12;
 
 							Adw.SwitchRow show_hidden_switch {
 								title: _("Show Hidden Apps");
@@ -77,6 +85,8 @@ template $AppListPage : Adw.NavigationPage {
 						}
 
 						ListBox list_box {
+							margin-start: 12;
+							margin-end:   12;
 							selection-mode: none;
 
 							styles ["boxed-list"]

@@ -17,7 +17,8 @@ export const AppListPage = GObject.registerClass({
 			'search_entry',
 		'stack',
 			'scrolled_window',
-				'script_row',
+				'script_group',
+					'script_row',
 				'apps_group',
 					'show_hidden_switch',
 				'list_box',
@@ -45,6 +46,11 @@ export const AppListPage = GObject.registerClass({
 			'value-changed',
 			adj => this._header_bar.show_title = adj.value > 0,
 		);
+
+		this._search_bar.connect('notify::search-mode-enabled', () => {
+			const is_enabled = this._search_bar.search_mode_enabled;
+			this._script_group.opacity = is_enabled ? 0 : 1;
+		});
 	}
 
 	scroll_to_top() {
