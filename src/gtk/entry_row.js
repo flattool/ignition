@@ -18,7 +18,10 @@ export const EntryRow = GObject.registerClass({
 	],
 }, class EntryRow extends Adw.ActionRow {
 	entry; // Autostart Entry
-	sort_last = false;
+
+	// Effects how rows are sorted in the UI. Higher number -> higher in the list
+	//   Rows with equal priority are sorted by their names: lower-case-alphabetically
+	sort_priority = 0;
 
 	constructor(entry, show_suffix_label, ...args) {
 		super(...args);
@@ -52,15 +55,15 @@ export const EntryRow = GObject.registerClass({
 		if (!this.entry.enabled) {
 			this._suffix_label.label = _("Disabled");
 			this.make_row_dim(true);
-			this.sort_last = true;
+			this.sort_priority = 1; // sort middle
 		} else if (this.entry.overridden === AutostartEntry.Overrides.OVERRIDDEN) {
 			this._suffix_label.label = _("Overridden");
 			this.make_row_dim(true);
-			this.sort_last = true;
+			this.sort_priority = 0; // sort last
 		} else {
 			this._suffix_label.label = _("Enabled");
 			this.make_row_dim(false);
-			this.sort_last = false;
+			this.sort_priority = 2; // sort first
 		}
 	}
 

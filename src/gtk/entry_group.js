@@ -26,9 +26,9 @@ export const EntryGroup = GObject.registerClass({
 		super(...arguments);
 
 		this._list_box.set_sort_func((row1, row2) => (
-			row1.sort_last === row2.sort_last
+			row1.sort_priority === row2.sort_priority
 			? row1.title.toLowerCase() > row2.title.toLowerCase()
-			: row1.sort_last
+			: row1.sort_priority > row2.sort_priority
 		));
 	}
 
