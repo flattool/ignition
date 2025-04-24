@@ -129,7 +129,7 @@ export const EntriesPage = GObject.registerClass({
 				SharedVars.root_autostart_dir,
 				root_enumerator,
 				entry => root_map.set(entry.file_name, entry),
-				path => fails.push(path),
+				(err, path) => fails.push(`${err}:\n${path}`),
 			),
 			() => entry_iteration(
 				SharedVars.home_autostart_dir,
