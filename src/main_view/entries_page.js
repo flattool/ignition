@@ -32,6 +32,7 @@ export const EntriesPage = GObject.registerClass({
 
 	home_watcher;
 	root_watcher;
+	loaded_once = false;
 	signals = {
 		row_clicked: new Signal(),
 	};
@@ -145,12 +146,13 @@ export const EntriesPage = GObject.registerClass({
 			),
 			() => {
 				// When done
-				if (fails.length > 0) {
+				if (fails.length > 0 && !this.loaded_once) {
 					add_error_toast(
 						_("Could not load some entries"),
 						fails.join("\n\n"),
 					);
 				}
+				this.loaded_once = true;
 				this._root_group.load_entries([...root_map.values()]);
 				this._home_group.load_entries(home_entries);
 				return Async.BREAK;
