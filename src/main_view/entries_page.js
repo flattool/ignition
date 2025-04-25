@@ -64,7 +64,24 @@ export const EntriesPage = GObject.registerClass({
 		this._home_group._group.description = _("Entries that run only for you.");
 		this._home_group._group.header_suffix = this._add_button;
 		this._home_group._group.add(this._empty_row);
-		this._home_group.on_results = (has_any) => this._empty_row.visible = !has_any;
+		this._home_group._group.seperate_rows = true;
+
+		let empty_row_is_in_ui = true;
+		this._home_group.on_results = (has_any) => {
+			this._home_group._list_box.visible = has_any;
+			// I can't just set empty_row's visibility, because it being added to the
+			//   preference group would produce a double shadow when set invisible
+			//   so we must remove and re-add it instead
+			// The empty_row_is_in_ui check needs to happen because GTK complains when
+			//   you try to remove a widget that has already been remove
+			if (has_any && empty_row_is_in_ui) {
+				this._home_group._group.remove(this._empty_row);
+				empty_row_is_in_ui = false;
+			} else if (!has_any && !empty_row_is_in_ui) {
+				this._home_group._group.add(this._empty_row);
+				empty_row_is_in_ui = true;
+			}
+		};
 
 		this._root_group.signals.finished_loading.connect(group => this.#on_group_finished_loading(group));
 		this._root_group.signals.row_clicked.connect(row => this.signals.row_clicked.emit(row, true));
