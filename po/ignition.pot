@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-25 00:37-0400\n"
+"POT-Creation-Date: 2025-04-25 16:22-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -482,15 +482,15 @@ msgstr ""
 msgid "Entries that run only for you."
 msgstr ""
 
-#: src/main_view/entries_page.js:71
+#: src/main_view/entries_page.js:88
 msgid "System Startup Entries"
 msgstr ""
 
-#: src/main_view/entries_page.js:72
+#: src/main_view/entries_page.js:89
 msgid "Entries that run for everyone."
 msgstr ""
 
-#: src/main_view/entries_page.js:151
+#: src/main_view/entries_page.js:168
 msgid "Could not load some entries"
 msgstr ""
 
