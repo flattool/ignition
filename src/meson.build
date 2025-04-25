@@ -3,12 +3,16 @@ gnome = import('gnome')
 
 blueprints = custom_target('blueprints',
   input: files(
-    'gtk/help-overlay.blp',
-    'gtk/window.blp',
+    'first_run_page/first-run-page.blp',
+    'gtk/entry-group.blp',
     'gtk/entry-row.blp',
-    'gtk/properties-dialog.blp',
-    'gtk/details-page.blp',
-    'gtk/app-chooser-page.blp',
+    'gtk/help-dialog.blp',
+    'gtk/help-overlay.blp',
+    'main_view/app-list-page.blp',
+    'main_view/details-page.blp',
+    'main_view/entries-page.blp',
+    'main_view/main-view.blp',
+    'window/window.blp',
   ),
   output: '.',
   command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
@@ -41,8 +45,8 @@ else
 endif
 
 const_js = configure_file(
-  input: 'const.js.in',
-  output: 'const.js',
+  input: 'config.js',
+  output: 'config.js',
   configuration: bin_conf,
 )
 

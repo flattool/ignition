@@ -2,12 +2,16 @@
 <gresources>
   <gresource prefix="/io/github/flattool/Ignition">
     <file preprocess="xml-stripblanks" alias="appdata">../data/io.github.flattool.Ignition.metainfo.xml</file>
-    <file preprocess="xml-stripblanks">gtk/window.ui</file>
-    <file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
+    <file preprocess="xml-stripblanks">first_run_page/first-run-page.ui</file>
+    <file preprocess="xml-stripblanks">gtk/entry-group.ui</file>
     <file preprocess="xml-stripblanks">gtk/entry-row.ui</file>
-    <file preprocess="xml-stripblanks">gtk/properties-dialog.ui</file>
-    <file preprocess="xml-stripblanks">gtk/app-chooser-page.ui</file>
-    <file preprocess="xml-stripblanks">gtk/details-page.ui</file>
+    <file preprocess="xml-stripblanks">gtk/help-dialog.ui</file>
+    <file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
+    <file preprocess="xml-stripblanks">main_view/app-list-page.ui</file>
+    <file preprocess="xml-stripblanks">main_view/details-page.ui</file>
+    <file preprocess="xml-stripblanks">main_view/entries-page.ui</file>
+    <file preprocess="xml-stripblanks">main_view/main-view.ui</file>
+    <file preprocess="xml-stripblanks">window/window.ui</file>
   </gresource>
   <gresource prefix="/io/github/flattool/Ignition/icons/scalable/actions/">
     <file preprocess="xml-stripblanks" alias="ignition:paper-symbolic.svg">../data/icons/paper-symbolic.svg</file>
@@ -22,5 +26,7 @@
     <file preprocess="xml-stripblanks" alias="ignition:terminal-symbolic.svg">../data/icons/terminal-symbolic.svg</file>
     <file preprocess="xml-stripblanks" alias="ignition:grid-large-symbolic.svg">../data/icons/grid-large-symbolic.svg</file>
     <file preprocess="xml-stripblanks" alias="ignition:checkmark-symbolic.svg">../data/icons/checkmark-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="ignition:arrow-hook-left-horizontal2-symbolic.svg">../data/icons/arrow-hook-left-horizontal2-symbolic.svg</file>
+    <file preprocess="xml-stripblanks" alias="ignition:question-round-outline-symbolic.svg">../data/icons/question-round-outline-symbolic.svg</file>
   </gresource>
 </gresources>

@@ -5,7 +5,7 @@ ShortcutsWindow help_overlay {
 
 	ShortcutsSection {
 		section-name: "shortcuts";
-		max-height: 10;
+		max-height: 7;
 
 		ShortcutsGroup {
 			title: C_("shortcut window", "Entries List");
@@ -20,13 +20,9 @@ ShortcutsWindow help_overlay {
 				action-name: "app.search";
 			}
 		}
-		ShortcutsGroup {
-			title: C_("shortcut window", "Details Dialog");
 
-			ShortcutsShortcut {
-				title: C_("shortcut window", "Save Edits");
-				action-name: "app.save-edits";
-			}
+		ShortcutsGroup {
+			title: C_("shortcut window", "Apps List");
 
 			ShortcutsShortcut {
 				title: C_("shortcut window", "Search Apps");
@@ -34,6 +30,14 @@ ShortcutsWindow help_overlay {
 			}
 		}
 
+		ShortcutsGroup {
+			title: C_("shortcut window", "Details Page");
+
+			ShortcutsShortcut {
+				title: C_("shortcut window", "Save Edits");
+				action-name: "app.save-edits";
+			}
+		}
 
 		ShortcutsGroup {
 			title: C_("shortcut window", "General");

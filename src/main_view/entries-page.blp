@@ -1,0 +1,151 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $EntriesPage : Adw.NavigationPage {
+	title: "Ignition";
+
+	Adw.ToolbarView {
+		[top]
+		Adw.HeaderBar {
+			[start]
+			ToggleButton search_button {
+				icon-name: "ignition:system-search-symbolic";
+				tooltip-text: _("Search");
+			}
+
+			[end]
+			MenuButton {
+				primary: true;
+				icon-name: "open-menu-symbolic";
+				tooltip-text: _("Main Menu");
+				menu-model: primary_menu;
+			}
+
+			[end]
+			Button help_button {
+				icon-name: "ignition:question-round-outline-symbolic";
+				tooltip-text: _("Help and information");
+			}
+		}
+
+		[top]
+		Adw.Clamp {
+			SearchBar search_bar {
+				key-capture-widget: template;
+				search-mode-enabled: bind search_button.active bidirectional;
+				sensitive: bind search_button.sensitive bidirectional;
+
+				SearchEntry search_entry {
+					hexpand: true;
+					placeholder-text: _("Search entries");
+				}
+			}
+		}
+
+		Stack stack {
+			Adw.StatusPage loading_status {
+				title: _("Loading Entries");
+				description: _("This should only take a moment.");
+
+				paintable: Adw.SpinnerPaintable {
+					widget: loading_status;
+				};
+			}
+
+			Adw.StatusPage no_results_status {
+				icon-name: "ignition:system-search-symbolic";
+				title: _("No Results Found");
+				description: _("Try a different search.");
+			}
+
+			ScrolledWindow scrolled_window {
+				Adw.Clamp {
+					Box {
+						orientation: vertical;
+						margin-start: 12;
+						margin-end:   12;
+						margin-top:   12;
+						margin-bottom: 24;
+						spacing: 22;
+
+						$EntryGroup home_group {}
+						$EntryGroup root_group {}
+					}
+				}
+			}
+		}
+	}
+}
+
+Button add_button {
+	valign: center;
+	action-name: "app.new-entry";
+
+	styles ["flat"]
+
+	Adw.ButtonContent {
+		icon-name: "ignition:list-add-symbolic";
+		label: _("New");
+	}
+}
+
+Adw.ActionRow empty_row {
+	[child]
+	Box {
+		spacing: 6;
+		margin-start: 16;
+		margin-end:   16;
+		margin-top:    30;
+		margin-bottom: 30;
+		orientation: vertical;
+
+		Image {
+			icon-name: "ignition:info-outline-symbolic";
+			pixel-size: 54;
+			margin-bottom: 6;
+		}
+
+		Label {
+			label: _("No Entries Found");
+			wrap: true;
+			halign: center;
+
+			styles ["heading"]
+		}
+
+		Label {
+			label: _("Add an app or script to run it when you log in");
+			justify: center;
+			halign: center;
+			wrap: true;
+		}
+	}
+}
+
+menu primary_menu {
+	section {
+		item {
+			label: _("_Open Autostart Folder");
+			action: "app.open-folder";
+		}
+	}
+
+	section {
+		// item {
+		// 	label: _("_Preferences");
+		// 	action: "app.preferences";
+		// }
+
+		item {
+			label: _("_Keyboard Shortcuts");
+			action: "win.show-help-overlay";
+		}
+
+		item {
+			label: _("_About Ignition");
+			action: "app.about";
+		}
+	}
+}
+
+$HelpDialog help_dialog {}

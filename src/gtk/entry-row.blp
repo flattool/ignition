@@ -10,13 +10,34 @@ template $EntryRow: Adw.ActionRow {
 		icon-size: large;
 	}
 	[suffix]
-	Label enabled_label {
+	Label suffix_label {
 		margin-end: 9;
 		label: "Not known";
 		styles ["subtitle"]
 	}
 	[suffix]
+	MenuButton info_button {
+		visible: false;
+		icon-name: "ignition:info-outline-symbolic";
+		tooltip-text: _("More Information");
+		popover: info_popover;
+		valign: center;
+		styles ["flat"]
+	}
+	[suffix]
 	Image suffix_icon {
+		visible: bind template.activatable;
 		icon-name: "ignition:right-large-symbolic";
+	}
+}
+
+Popover info_popover {
+	Label info_label {
+		wrap: true;
+		wrap-mode: word_char;
+		margin-start:  6;
+		margin-end:    6;
+		margin-top:    6;
+		margin-bottom: 6;
 	}
 }
