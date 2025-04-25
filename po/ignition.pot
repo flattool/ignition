@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-23 00:53-0400\n"
+"POT-Creation-Date: 2025-04-25 00:35-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -79,27 +79,27 @@ msgstr ""
 msgid "Get Started"
 msgstr ""
 
-#: src/gtk/entry-row.blp:22 src/main_view/details-page.blp:105
+#: src/gtk/entry-row.blp:22 src/main_view/details-page.blp:103
 msgid "More Information"
 msgstr ""
 
-#: src/gtk/entry_row.js:53
+#: src/gtk/entry_row.js:56
 msgid "Disabled"
 msgstr ""
 
-#: src/gtk/entry_row.js:57
+#: src/gtk/entry_row.js:60
 msgid "Overridden"
 msgstr ""
 
-#: src/gtk/entry_row.js:61
+#: src/gtk/entry_row.js:64
 msgid "Enabled"
 msgstr ""
 
-#: src/gtk/entry_row.js:81
+#: src/gtk/entry_row.js:84
 msgid "This entry is overridden by a user entry."
 msgstr ""
 
-#: src/gtk/entry_row.js:83
+#: src/gtk/entry_row.js:86
 msgid "This entry overrides a system entry."
 msgstr ""
 
@@ -235,58 +235,58 @@ msgid "Could not open folder"
 msgstr ""
 
 #: src/main_view/app-list-page.blp:5
-msgid "New Entry"
+msgid "Add or Create an Entry"
 msgstr ""
 
-#: src/main_view/app-list-page.blp:14 src/main_view/entries-page.blp:13
+#: src/main_view/app-list-page.blp:12 src/main_view/entries-page.blp:13
 msgid "Search"
 msgstr ""
 
-#: src/main_view/app-list-page.blp:27 src/main_view/entries-page.blp:40
+#: src/main_view/app-list-page.blp:25 src/main_view/entries-page.blp:40
 msgid "Search entries"
 msgstr ""
 
-#: src/main_view/app-list-page.blp:44
+#: src/main_view/app-list-page.blp:45
 msgid "Commands and Scripts"
 msgstr ""
 
-#: src/main_view/app-list-page.blp:45
+#: src/main_view/app-list-page.blp:46
 msgid "Run a command or script when you log in."
 msgstr ""
 
-#: src/main_view/app-list-page.blp:50
+#: src/main_view/app-list-page.blp:52
 msgid "Add a Command or Script"
 msgstr ""
 
-#: src/main_view/app-list-page.blp:51
+#: src/main_view/app-list-page.blp:53
 msgid "Enter the command to run or path to your script"
 msgstr ""
 
-#: src/main_view/app-list-page.blp:70
+#: src/main_view/app-list-page.blp:75
 msgid "Installed Apps"
 msgstr ""
 
-#: src/main_view/app-list-page.blp:71
+#: src/main_view/app-list-page.blp:76
 msgid "Choose any installed app to run when you log in."
 msgstr ""
 
-#: src/main_view/app-list-page.blp:74
+#: src/main_view/app-list-page.blp:80
 msgid "Show Hidden Apps"
 msgstr ""
 
-#: src/main_view/app-list-page.blp:75
+#: src/main_view/app-list-page.blp:81
 msgid "Show apps that are hidden from the app menu"
 msgstr ""
 
-#: src/main_view/app-list-page.blp:90 src/main_view/entries-page.blp:57
+#: src/main_view/app-list-page.blp:98 src/main_view/entries-page.blp:57
 msgid "No Results Found"
 msgstr ""
 
-#: src/main_view/app-list-page.blp:91 src/main_view/entries-page.blp:58
+#: src/main_view/app-list-page.blp:99 src/main_view/entries-page.blp:58
 msgid "Try a different search."
 msgstr ""
 
-#: src/main_view/app_list_page.js:109
+#: src/main_view/app_list_page.js:111
 msgid "Could not load some apps"
 msgstr ""
 
@@ -294,139 +294,143 @@ msgstr ""
 msgid "Edit Details"
 msgstr ""
 
-#: src/main_view/details-page.blp:15
-msgid "Move to trash"
-msgstr ""
-
-#: src/main_view/details-page.blp:24
+#: src/main_view/details-page.blp:16
 msgid "Save"
 msgstr ""
 
-#: src/main_view/details-page.blp:34
+#: src/main_view/details-page.blp:26
 msgid "Create"
 msgstr ""
 
-#: src/main_view/details-page.blp:43
-msgid "Override entry to change details"
+#: src/main_view/details-page.blp:33
+msgid "Move to Trash"
 msgstr ""
 
-#: src/main_view/details-page.blp:44 src/main_view/details-page.blp:166
+#: src/main_view/details-page.blp:41
+msgid "Override entry to edit details"
+msgstr ""
+
+#: src/main_view/details-page.blp:42 src/main_view/details-page.blp:164
 msgid "Override"
 msgstr ""
 
-#: src/main_view/details-page.blp:76
+#: src/main_view/details-page.blp:74
 msgid "Edit details about this entry."
 msgstr ""
 
-#: src/main_view/details-page.blp:82
+#: src/main_view/details-page.blp:80
 msgid "Enable"
 msgstr ""
 
-#: src/main_view/details-page.blp:83
+#: src/main_view/details-page.blp:81
 msgid "Enable this entry to be started when you log in."
 msgstr ""
 
-#: src/main_view/details-page.blp:89
+#: src/main_view/details-page.blp:87
 msgid "Name"
 msgstr ""
 
-#: src/main_view/details-page.blp:94
+#: src/main_view/details-page.blp:92
 msgid "Comment"
 msgstr ""
 
-#: src/main_view/details-page.blp:99
+#: src/main_view/details-page.blp:97
 msgid "Command or Script"
 msgstr ""
 
-#: src/main_view/details-page.blp:114
+#: src/main_view/details-page.blp:112
 msgid "Show Terminal"
 msgstr ""
 
-#: src/main_view/details-page.blp:115
+#: src/main_view/details-page.blp:113
 msgid "Show a terminal for this process to run in."
 msgstr ""
 
-#: src/main_view/details-page.blp:121
+#: src/main_view/details-page.blp:119
 msgid "Seconds of Delay"
 msgstr ""
 
-#: src/main_view/details-page.blp:122
+#: src/main_view/details-page.blp:120
 msgid "Amount of seconds to wait after logging in to run the command or script"
 msgstr ""
 
-#: src/main_view/details-page.blp:141
+#: src/main_view/details-page.blp:139
 msgid ""
 "To run a script at login, paste its file path here. You can copy the "
 "script's path from your file manager. Make sure your script is executable."
 msgstr ""
 
-#: src/main_view/details-page.blp:153
+#: src/main_view/details-page.blp:151
 msgid "Create and Replace?"
 msgstr ""
 
-#: src/main_view/details-page.blp:154
+#: src/main_view/details-page.blp:152
 msgid ""
 "A file already exists for this entry. Are you sure you want to replace it?"
 msgstr ""
 
-#: src/main_view/details-page.blp:156 src/main_view/details-page.blp:165
-#: src/main_view/details-page.blp:174
+#: src/main_view/details-page.blp:154 src/main_view/details-page.blp:163
+#: src/main_view/details-page.blp:172
 msgid "Cancel"
 msgstr ""
 
-#: src/main_view/details-page.blp:157
+#: src/main_view/details-page.blp:155
 msgid "Create and Replace"
 msgstr ""
 
-#: src/main_view/details-page.blp:162
+#: src/main_view/details-page.blp:160
 msgid "Override Entry?"
 msgstr ""
 
-#: src/main_view/details-page.blp:163
+#: src/main_view/details-page.blp:161
 msgid ""
 "Be careful, overriding system entries can lead to system breakage. This will "
 "make a copy of the entry for you to edit."
 msgstr ""
 
-#: src/main_view/details-page.blp:171
+#: src/main_view/details-page.blp:169
 msgid "Trach Entry?"
 msgstr ""
 
-#: src/main_view/details-page.blp:172
+#: src/main_view/details-page.blp:170
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
 msgstr ""
 
-#: src/main_view/details-page.blp:175
+#: src/main_view/details-page.blp:173
 msgid "Trash"
 msgstr ""
 
-#: src/main_view/details_page.js:280
+#: src/main_view/details_page.js:196
+msgid "New Entry"
+msgstr ""
+
+#: src/main_view/details_page.js:275
 msgid "Saved details"
 msgstr ""
 
-#: src/main_view/details_page.js:282
+#: src/main_view/details_page.js:277
 msgid "Could not save file"
 msgstr ""
 
-#: src/main_view/details_page.js:307
+#: src/main_view/details_page.js:302
 msgid "Created entry"
 msgstr ""
 
-#: src/main_view/details_page.js:309 src/main_view/details_page.js:333
+#: src/main_view/details_page.js:304 src/main_view/details_page.js:328
 msgid "Could not create file"
 msgstr ""
 
-#: src/main_view/details_page.js:330
+#: src/main_view/details_page.js:325
 msgid "Overrode entry"
 msgstr ""
 
-#: src/main_view/details_page.js:371
+#: src/main_view/details_page.js:366
 msgid "Trashed entry"
 msgstr ""
 
-#: src/main_view/details_page.js:373
+#: src/main_view/details_page.js:368
 msgid "Could not trash file"
 msgstr ""
 
@@ -470,23 +474,23 @@ msgstr ""
 msgid "_About Ignition"
 msgstr ""
 
-#: src/main_view/entries_page.js:62
+#: src/main_view/entries_page.js:63
 msgid "User Startup Entries"
 msgstr ""
 
-#: src/main_view/entries_page.js:63
+#: src/main_view/entries_page.js:64
 msgid "Entries that run only for you."
 msgstr ""
 
-#: src/main_view/entries_page.js:70
+#: src/main_view/entries_page.js:71
 msgid "System Startup Entries"
 msgstr ""
 
-#: src/main_view/entries_page.js:71
+#: src/main_view/entries_page.js:72
 msgid "Entries that run for everyone."
 msgstr ""
 
-#: src/main_view/entries_page.js:150
+#: src/main_view/entries_page.js:151
 msgid "Could not load some entries"
 msgstr ""
 
