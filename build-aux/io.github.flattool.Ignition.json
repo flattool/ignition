@@ -3,7 +3,9 @@
 	"runtime": "org.gnome.Platform",
 	"runtime-version": "48",
 	"sdk": "org.gnome.Sdk",
-	"sdk-extensions": ["org.freedesktop.Sdk.Extension.node20"],
+	"sdk-extensions": [
+		"org.freedesktop.Sdk.Extension.node20"
+	],
 	"command": "io.github.flattool.Ignition",
 	"finish-args": [
 		"--share=ipc",
@@ -42,13 +44,17 @@
 					"tag": "v0.16.0"
 				}
 			],
-			"cleanup": ["*"]
+			"cleanup": [
+				"*"
+			]
 		},
 		{
 			"name": "ignition",
 			"builddir": true,
 			"buildsystem": "meson",
-			"config-opts": ["-Dprofile=development"],
+			"config-opts": [
+				"-Dprofile=development"
+			],
 			"sources": [
 				{
 					"type": "dir",
