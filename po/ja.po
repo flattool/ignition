@@ -8,34 +8,31 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-04-25 16:22-0400\n"
-"PO-Revision-Date: 2025-01-29 14:45+0000\n"
-"Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
-"Language-Team: Italian <https://weblate.fyralabs.com/projects/flattool/"
-"ignition/it/>\n"
-"Language: it\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.9.2\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:2
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14
 msgid "Ignition"
-msgstr "Ignition"
+msgstr ""
 
 #: data/io.github.flattool.Ignition.desktop.in:3
 #: data/io.github.flattool.Ignition.metainfo.xml.in:15
 msgid "Manage startup apps and scripts"
-msgstr "Gestire app e script di avvio"
+msgstr ""
 
 #: data/io.github.flattool.Ignition.desktop.in:9
 msgid "GTK;startup;autostart;login;"
-msgstr "GTK;avvio;avvio automatico;login;"
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
 msgid "Heliguy"
-msgstr "Heliguy"
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:17
 msgid ""
@@ -43,58 +40,51 @@ msgid ""
 "your computer. Ignition can add apps, scripts, and arbitrary commands to run "
 "at login."
 msgstr ""
-"Ignition fornisce una semplice interfaccia utente per aggiungere, rimuovere "
-"e modificare le voci di avvio sul computer. Ignition può aggiungere app, "
-"script e comandi arbitrari da eseguire al login."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
-msgstr "Visualizza tutti gli elementi di avvio."
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:39
 msgid "View and edit entry details."
-msgstr "Visualizza e modifica i dettagli della voce."
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:43
 msgid "Create a new startup entry."
-msgstr "Crea una nuova voce di avvio."
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
-msgstr "Visualizza tutti gli elementi di avvio in modalità scura."
+msgstr ""
 
 #: src/first_run_page/first-run-page.blp:5
 msgid "Welcome"
 msgstr ""
 
 #: src/first_run_page/first-run-page.blp:13
-#, fuzzy
-#| msgid "Ignition"
 msgid "About Ignition"
-msgstr "Ignition"
+msgstr ""
 
 #: src/first_run_page/first-run-page.blp:20
 msgid "Welcome to Ignition!"
-msgstr "Benvenuti su Ignition!"
+msgstr ""
 
 #: src/first_run_page/first-run-page.blp:21
 msgid ""
 "Ignition lets you start any app or script when you log in to your computer."
 msgstr ""
-"Ignition ti consente di avviare qualsiasi app o script quando accedi al "
-"computer."
 
 #: src/first_run_page/first-run-page.blp:25
 msgid "Get Started"
-msgstr "Iniziamo"
+msgstr ""
 
 #: src/gtk/entry-row.blp:22 src/main_view/details-page.blp:103
 msgid "More Information"
-msgstr "Ulteriori informazioni"
+msgstr ""
 
 #: src/gtk/entry_row.js:56
 msgid "Disabled"
-msgstr "Disabilitato"
+msgstr ""
 
 #: src/gtk/entry_row.js:60
 msgid "Overridden"
@@ -102,7 +92,7 @@ msgstr ""
 
 #: src/gtk/entry_row.js:64
 msgid "Enabled"
-msgstr "Abilitato"
+msgstr ""
 
 #: src/gtk/entry_row.js:84
 msgid "This entry is overridden by a user entry."
@@ -113,10 +103,8 @@ msgid "This entry overrides a system entry."
 msgstr ""
 
 #: src/gtk/help-dialog.blp:5
-#, fuzzy
-#| msgid "More Information"
 msgid "Help and Information"
-msgstr "Ulteriori informazioni"
+msgstr ""
 
 #: src/gtk/help-dialog.blp:27
 msgid "Can't find an application?"
@@ -180,18 +168,14 @@ msgid "Entries List"
 msgstr ""
 
 #: src/gtk/help-overlay.blp:14
-#, fuzzy
-#| msgid "New Entry"
 msgctxt "shortcut window"
 msgid "New Entry"
-msgstr "Nuova voce"
+msgstr ""
 
 #: src/gtk/help-overlay.blp:19
-#, fuzzy
-#| msgid "Search entries"
 msgctxt "shortcut window"
 msgid "Search Entries"
-msgstr "Cerca voci"
+msgstr ""
 
 #: src/gtk/help-overlay.blp:25
 msgctxt "shortcut window"
@@ -199,25 +183,19 @@ msgid "Apps List"
 msgstr ""
 
 #: src/gtk/help-overlay.blp:28
-#, fuzzy
-#| msgid "Search apps"
 msgctxt "shortcut window"
 msgid "Search Apps"
-msgstr "Cerca app"
+msgstr ""
 
 #: src/gtk/help-overlay.blp:34
-#, fuzzy
-#| msgid "Details"
 msgctxt "shortcut window"
 msgid "Details Page"
-msgstr "Dettagli"
+msgstr ""
 
 #: src/gtk/help-overlay.blp:37
-#, fuzzy
-#| msgid "Saved Details"
 msgctxt "shortcut window"
 msgid "Save Edits"
-msgstr "Dettagli salvati"
+msgstr ""
 
 #: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
@@ -241,59 +219,51 @@ msgstr ""
 
 #: src/main.js:57
 msgid "Translate"
-msgstr "Traduzione"
+msgstr ""
 
 #: src/main.js:58
 msgid "Donate"
-msgstr "Donazione"
+msgstr ""
 
 #: src/main.js:84
 msgid "Opened folder"
-msgstr "Cartella aperta"
+msgstr ""
 
 #: src/main.js:87
 msgid "Could not open folder"
-msgstr "Impossibile aprire la cartella"
+msgstr ""
 
 #: src/main_view/app-list-page.blp:5
-#, fuzzy
-#| msgid "Create a New Entry"
 msgid "Add or Create an Entry"
-msgstr "Crea una nuova voce"
+msgstr ""
 
 #: src/main_view/app-list-page.blp:12 src/main_view/entries-page.blp:13
 msgid "Search"
-msgstr "Cerca"
+msgstr ""
 
 #: src/main_view/app-list-page.blp:25 src/main_view/entries-page.blp:40
 msgid "Search entries"
-msgstr "Cerca voci"
+msgstr ""
 
 #: src/main_view/app-list-page.blp:45
-#, fuzzy
-#| msgid "Command or Script"
 msgid "Commands and Scripts"
-msgstr "Comando o script"
+msgstr ""
 
 #: src/main_view/app-list-page.blp:46
-#, fuzzy
-#| msgid "Enable this entry to be started when you log in."
 msgid "Run a command or script when you log in."
-msgstr "Abilita questa voce affinché venga avviata quando accedi."
+msgstr ""
 
 #: src/main_view/app-list-page.blp:52
 msgid "Add a Command or Script"
-msgstr "Aggiungi un comando o uno script"
+msgstr ""
 
 #: src/main_view/app-list-page.blp:53
 msgid "Enter the command to run or path to your script"
 msgstr ""
 
 #: src/main_view/app-list-page.blp:75
-#, fuzzy
-#| msgid "No installed apps found"
 msgid "Installed Apps"
-msgstr "Nessuna app installata trovata"
+msgstr ""
 
 #: src/main_view/app-list-page.blp:76
 msgid "Choose any installed app to run when you log in."
@@ -309,19 +279,19 @@ msgstr ""
 
 #: src/main_view/app-list-page.blp:98 src/main_view/entries-page.blp:57
 msgid "No Results Found"
-msgstr "Nessun risultato trovato"
+msgstr ""
 
 #: src/main_view/app-list-page.blp:99 src/main_view/entries-page.blp:58
 msgid "Try a different search."
-msgstr "Prova una ricerca diversa."
+msgstr ""
 
 #: src/main_view/app_list_page.js:111
 msgid "Could not load some apps"
-msgstr "Impossibile caricare alcune app"
+msgstr ""
 
 #: src/main_view/details-page.blp:5
 msgid "Edit Details"
-msgstr "Modifica dettagli"
+msgstr ""
 
 #: src/main_view/details-page.blp:16
 msgid "Save"
@@ -329,11 +299,11 @@ msgstr ""
 
 #: src/main_view/details-page.blp:26
 msgid "Create"
-msgstr "Crea"
+msgstr ""
 
 #: src/main_view/details-page.blp:33
 msgid "Move to Trash"
-msgstr "Sposta nel cestino"
+msgstr ""
 
 #: src/main_view/details-page.blp:41
 msgid "Override entry to edit details"
@@ -345,35 +315,35 @@ msgstr ""
 
 #: src/main_view/details-page.blp:74
 msgid "Edit details about this entry."
-msgstr "Modifica i dettagli di questa voce."
+msgstr ""
 
 #: src/main_view/details-page.blp:80
 msgid "Enable"
-msgstr "Abilita"
+msgstr ""
 
 #: src/main_view/details-page.blp:81
 msgid "Enable this entry to be started when you log in."
-msgstr "Abilita questa voce affinché venga avviata quando accedi."
+msgstr ""
 
 #: src/main_view/details-page.blp:87
 msgid "Name"
-msgstr "Nome"
+msgstr ""
 
 #: src/main_view/details-page.blp:92
 msgid "Comment"
-msgstr "Commento"
+msgstr ""
 
 #: src/main_view/details-page.blp:97
 msgid "Command or Script"
-msgstr "Comando o script"
+msgstr ""
 
 #: src/main_view/details-page.blp:112
 msgid "Show Terminal"
-msgstr "Mostra terminale"
+msgstr ""
 
 #: src/main_view/details-page.blp:113
 msgid "Show a terminal for this process to run in."
-msgstr "Mostra un terminale in cui eseguire questo processo."
+msgstr ""
 
 #: src/main_view/details-page.blp:119
 msgid "Seconds of Delay"
@@ -388,9 +358,6 @@ msgid ""
 "To run a script at login, paste its file path here. You can copy the "
 "script's path from your file manager. Make sure your script is executable."
 msgstr ""
-"Per eseguire uno script al login, incolla qui il suo percorso file. Puoi "
-"copiare il percorso dello script dal tuo file manager. Assicurati che lo "
-"script sia eseguibile."
 
 #: src/main_view/details-page.blp:151
 msgid "Create and Replace?"
@@ -404,7 +371,7 @@ msgstr ""
 #: src/main_view/details-page.blp:154 src/main_view/details-page.blp:163
 #: src/main_view/details-page.blp:172
 msgid "Cancel"
-msgstr "Annulla"
+msgstr ""
 
 #: src/main_view/details-page.blp:155
 msgid "Create and Replace"
@@ -421,10 +388,8 @@ msgid ""
 msgstr ""
 
 #: src/main_view/details-page.blp:169
-#, fuzzy
-#| msgid "Trashed Entry"
 msgid "Trach Entry?"
-msgstr "Voce cestinata"
+msgstr ""
 
 #: src/main_view/details-page.blp:170
 msgid ""
@@ -438,77 +403,63 @@ msgstr ""
 
 #: src/main_view/details_page.js:196
 msgid "New Entry"
-msgstr "Nuova voce"
+msgstr ""
 
 #: src/main_view/details_page.js:275
-#, fuzzy
-#| msgid "Saved Details"
 msgid "Saved details"
-msgstr "Dettagli salvati"
+msgstr ""
 
 #: src/main_view/details_page.js:277
 msgid "Could not save file"
-msgstr "Impossibile salvare il file"
+msgstr ""
 
 #: src/main_view/details_page.js:302
-#, fuzzy
-#| msgid "Create a New Entry"
 msgid "Created entry"
-msgstr "Crea una nuova voce"
+msgstr ""
 
 #: src/main_view/details_page.js:304 src/main_view/details_page.js:328
-#, fuzzy
-#| msgid "Could not save file"
 msgid "Could not create file"
-msgstr "Impossibile salvare il file"
+msgstr ""
 
 #: src/main_view/details_page.js:325
 msgid "Overrode entry"
 msgstr ""
 
 #: src/main_view/details_page.js:366
-#, fuzzy
-#| msgid "Trashed Entry"
 msgid "Trashed entry"
-msgstr "Voce cestinata"
+msgstr ""
 
 #: src/main_view/details_page.js:368
 msgid "Could not trash file"
-msgstr "Impossibile eliminare il file"
+msgstr ""
 
 #: src/main_view/entries-page.blp:20
 msgid "Main Menu"
 msgstr ""
 
 #: src/main_view/entries-page.blp:27
-#, fuzzy
-#| msgid "More Information"
 msgid "Help and information"
-msgstr "Ulteriori informazioni"
+msgstr ""
 
 #: src/main_view/entries-page.blp:47
-#, fuzzy
-#| msgid "Search entries"
 msgid "Loading Entries"
-msgstr "Cerca voci"
+msgstr ""
 
 #: src/main_view/entries-page.blp:48
 msgid "This should only take a moment."
-msgstr "Ci vorrà solo un momento."
+msgstr ""
 
 #: src/main_view/entries-page.blp:88
 msgid "New"
-msgstr "Nuovo"
+msgstr ""
 
 #: src/main_view/entries-page.blp:109
 msgid "No Entries Found"
-msgstr "Nessuna voce trovata"
+msgstr ""
 
 #: src/main_view/entries-page.blp:117
-#, fuzzy
-#| msgid "Add an app or script to run it at login."
 msgid "Add an app or script to run it when you log in"
-msgstr "Aggiungi un'app o uno script da eseguire all'accesso."
+msgstr ""
 
 #: src/main_view/entries-page.blp:128
 msgid "_Open Autostart Folder"
@@ -519,103 +470,46 @@ msgid "_Keyboard Shortcuts"
 msgstr ""
 
 #: src/main_view/entries-page.blp:145
-#, fuzzy
-#| msgid "Ignition"
 msgid "_About Ignition"
-msgstr "Ignition"
+msgstr ""
 
 #: src/main_view/entries_page.js:63
-#, fuzzy
-#| msgid "Search entries"
 msgid "User Startup Entries"
-msgstr "Cerca voci"
+msgstr ""
 
 #: src/main_view/entries_page.js:64
 msgid "Entries that run only for you."
 msgstr ""
 
 #: src/main_view/entries_page.js:88
-#, fuzzy
-#| msgid "Search entries"
 msgid "System Startup Entries"
-msgstr "Cerca voci"
+msgstr ""
 
 #: src/main_view/entries_page.js:89
 msgid "Entries that run for everyone."
 msgstr ""
 
 #: src/main_view/entries_page.js:168
-#, fuzzy
-#| msgid "Could not load some apps"
 msgid "Could not load some entries"
-msgstr "Impossibile caricare alcune app"
+msgstr ""
 
 #: src/utils/helper_funcs.js:22
 msgid "Copy"
-msgstr "Copia"
+msgstr ""
 
 #: src/utils/helper_funcs.js:23
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 #: src/utils/helper_funcs.js:33
 msgid "Details"
-msgstr "Dettagli"
+msgstr ""
 
 #. These need to be getters for the _() translation function to work
 #: src/utils/shared_vars.js:13
 msgid "No Name Set"
-msgstr "Nessun nome impostato"
+msgstr ""
 
 #: src/utils/shared_vars.js:14
 msgid "No comment set."
-msgstr "Nessun commento impostato."
-
-#~ msgid "Choose an App"
-#~ msgstr "Scegli un'app"
-
-#~ msgid "Search apps"
-#~ msgstr "Cerca app"
-
-#~ msgid "Apply"
-#~ msgstr "Applica"
-
-#~ msgid "Add any installed app or select any script to be ran at startup."
-#~ msgstr ""
-#~ "Aggiungi qualsiasi app installata o seleziona uno script da eseguire "
-#~ "all'avvio."
-
-#~ msgid "Add an App"
-#~ msgstr "Aggiungi un'app"
-
-#~ msgid "Preparing"
-#~ msgstr "Preparazione"
-
-#~ msgid "Startup Applications and Scripts"
-#~ msgstr "Applicazioni e script di avvio"
-
-#~ msgid "Startup apps and scripts are automatically started when you log in."
-#~ msgstr ""
-#~ "Le app e gli script di avvio vengono avviati automaticamente quando si "
-#~ "effettua l'accesso."
-
-#~ msgid "Error loading details"
-#~ msgstr "Errore durante il caricamento dei dettagli"
-
-#~ msgid "ignition"
-#~ msgstr "ignition"
-
-#~ msgid "GTK;"
-#~ msgstr "GTK;"
-
-#~ msgid "No description"
-#~ msgstr "Nessuna descrizione"
-
-#~ msgid "Choose a Script"
-#~ msgstr "Scegli uno script"
-
-#~ msgid "Open"
-#~ msgstr "Apri"
-
-#~ msgid "Executable Files"
-#~ msgstr "File eseguibili"
+msgstr ""

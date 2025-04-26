@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-13 00:58-0400\n"
-"PO-Revision-Date: 2024-12-25 01:23+0000\n"
-"Last-Translator: Vovkiv <generalvolkov2@gmail.com>\n"
+"POT-Creation-Date: 2025-04-25 16:22-0400\n"
+"PO-Revision-Date: 2025-03-29 16:46+0000\n"
+"Last-Translator: Simon <orisim@proton.me>\n"
 "Language-Team: Ukrainian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/uk/>\n"
 "Language: uk\n"
@@ -18,27 +18,25 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.8.1\n"
+"X-Generator: Weblate 5.9.2\n"
 
-#: data/io.github.flattool.Ignition.desktop.in:3
-#: data/io.github.flattool.Ignition.metainfo.xml.in:14 src/gtk/window.blp:5
+#: data/io.github.flattool.Ignition.desktop.in:2
+#: data/io.github.flattool.Ignition.metainfo.xml.in:14
 msgid "Ignition"
 msgstr "Запалювання"
 
-#: data/io.github.flattool.Ignition.desktop.in:4
+#: data/io.github.flattool.Ignition.desktop.in:3
 #: data/io.github.flattool.Ignition.metainfo.xml.in:15
-#, fuzzy
-#| msgid "Create and edit startup apps and scripts"
 msgid "Manage startup apps and scripts"
-msgstr "Керуйте автозапуском додатків і скриптів"
+msgstr "Керування додатками та скриптами автозавантаження"
 
-#: data/io.github.flattool.Ignition.desktop.in:10
+#: data/io.github.flattool.Ignition.desktop.in:9
 msgid "GTK;startup;autostart;login;"
-msgstr ""
+msgstr "GTK; запуск; автозапуск; вхід;"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
 msgid "Heliguy"
-msgstr ""
+msgstr "Heliguy"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:17
 msgid ""
@@ -46,6 +44,10 @@ msgid ""
 "your computer. Ignition can add apps, scripts, and arbitrary commands to run "
 "at login."
 msgstr ""
+"Ignition забезпечує простий інтерфейс користувача для додавання, видалення "
+"та зміни записів автозапуску на вашому комп’ютері. Ignition дозволяє "
+"додавати додатки, скрипти та довільні команди для виконання під час входу в "
+"систему."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
@@ -63,313 +65,538 @@ msgstr "Створення записів автозапуску."
 msgid "See all your startup items, in dark mode."
 msgstr "Перегляд усіх ваших об'єктів автозапуску, у темному стилі."
 
-#: src/details_page.js:43 src/entry_row.js:28
-msgid "No Name Set"
-msgstr "Назва не встановлена"
-
-#: src/details_page.js:52 src/gtk/properties-dialog.blp:10
-#: src/gtk/window.blp:68
-msgid "New Entry"
-msgstr "Новий запис"
-
-#: src/entry_row.js:29
-msgid "No comment set."
-msgstr "Без коментаря."
-
-#: src/entry_row.js:31
-msgid "Enabled"
-msgstr "Увімкнено"
-
-#: src/entry_row.js:35
-msgid "Disabled"
-msgstr "Вимкнено"
-
-#: src/error_toast.js:16
-msgid "Copy"
-msgstr "Скопіювати"
-
-#: src/error_toast.js:17
-msgid "OK"
-msgstr "Добре"
-
-#: src/error_toast.js:27 src/gtk/details-page.blp:47
-msgid "Details"
-msgstr "Подробиці"
-
-#: src/gtk/app-chooser-page.blp:5
-msgid "Choose an App"
-msgstr "Обрати додаток"
-
-#: src/gtk/app-chooser-page.blp:15 src/gtk/window.blp:15
-msgid "Search"
-msgstr "Пошук"
-
-#: src/gtk/app-chooser-page.blp:26
-msgid "Search apps"
-msgstr "Шукати додатки"
-
-#: src/gtk/app-chooser-page.blp:48 src/gtk/window.blp:74
-msgid "No Results Found"
-msgstr "Не знайдено жодного результату"
-
-#: src/gtk/app-chooser-page.blp:49 src/gtk/window.blp:75
-msgid "Try a different search."
-msgstr "Спробуйте інший пошуковий запит."
-
-#: src/gtk/details-page.blp:5
-msgid "Edit Details"
-msgstr "Редагувати подробиці"
-
-#: src/gtk/details-page.blp:14
-msgid "Cancel"
-msgstr "Скасувати"
-
-#: src/gtk/details-page.blp:20
-msgid "Apply"
-msgstr "Застосувати"
-
-#: src/gtk/details-page.blp:48
-msgid "Edit details about this entry."
-msgstr "Редагування подробиць цього запису."
-
-#: src/gtk/details-page.blp:53
-msgid "Enable"
-msgstr "Ввімкнути"
-
-#: src/gtk/details-page.blp:54
-msgid "Enable this entry to be started when you log in."
-msgstr "Ввімкнути цей запис, щоб він запускався при завантаженні системи."
-
-#: src/gtk/details-page.blp:62
-msgid "Name"
-msgstr "Назва"
-
-#: src/gtk/details-page.blp:66
-msgid "Comment"
-msgstr "Коментар"
-
-#: src/gtk/details-page.blp:70
-msgid "Command or Script"
-msgstr "Команда або скрипт"
-
-#: src/gtk/details-page.blp:75
-msgid "More Information"
+#: src/first_run_page/first-run-page.blp:5
+msgid "Welcome"
 msgstr ""
 
-#: src/gtk/details-page.blp:82
-msgid "Show Terminal"
-msgstr "Показати термінал"
-
-#: src/gtk/details-page.blp:83
-msgid "Show a terminal for this process to run in."
-msgstr "Запустити цей процес у терміналі і показати його."
-
-#: src/gtk/details-page.blp:90
-msgid "Create"
-msgstr "Створити"
-
-#: src/gtk/details-page.blp:96
-msgid "Move to Trash"
-msgstr "Перемістити у смітник"
-
-#: src/gtk/details-page.blp:109
-msgid ""
-"To run a script at login, paste its file path here. You can copy the "
-"script's path from your file manager. Make sure your script is executable."
-msgstr ""
-
-#: src/gtk/help-overlay.blp:11
-msgctxt "shortcut window"
-msgid "Entries List"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:14
+#: src/first_run_page/first-run-page.blp:13
 #, fuzzy
-#| msgid "New Entry"
-msgctxt "shortcut window"
-msgid "New Entry"
-msgstr "Новий запис"
+#| msgid "_About Ignition"
+msgid "About Ignition"
+msgstr "_Про Ignition"
 
-#: src/gtk/help-overlay.blp:19
-#, fuzzy
-#| msgid "Search entries"
-msgctxt "shortcut window"
-msgid "Search Entries"
-msgstr "Пошук записів"
-
-#: src/gtk/help-overlay.blp:24
-#, fuzzy
-#| msgid "Details"
-msgctxt "shortcut window"
-msgid "Details Dialog"
-msgstr "Подробиці"
-
-#: src/gtk/help-overlay.blp:27
-#, fuzzy
-#| msgid "Saved Details"
-msgctxt "shortcut window"
-msgid "Save Edits"
-msgstr "Збережено подробиці"
-
-#: src/gtk/help-overlay.blp:32
-#, fuzzy
-#| msgid "Search apps"
-msgctxt "shortcut window"
-msgid "Search Apps"
-msgstr "Шукати додатки"
-
-#: src/gtk/help-overlay.blp:39
-msgctxt "shortcut window"
-msgid "General"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:42
-msgctxt "shortcut window"
-msgid "Open Autostart Folder"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:47
-msgctxt "shortcut window"
-msgid "Show Shortcuts"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:52
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr ""
-
-#: src/gtk/properties-dialog.blp:18
-msgid "Create a New Entry"
-msgstr "Створити новий запис"
-
-#: src/gtk/properties-dialog.blp:19
-msgid "Add any installed app or select any script to be ran at startup."
-msgstr ""
-"Додайте будь-який встановлений додаток або оберіть будь-який скрипт, який "
-"буде запущено при завантаженні системи."
-
-#: src/gtk/properties-dialog.blp:29
-msgid "Add an App"
-msgstr "Додати додаток"
-
-#: src/gtk/properties-dialog.blp:36
-msgid "Add a Command or Script"
-msgstr "Додати команду або скрипт"
-
-#: src/gtk/window.blp:22
-msgid "Main Menu"
-msgstr ""
-
-#: src/gtk/window.blp:35
-msgid "Search entries"
-msgstr "Пошук записів"
-
-#: src/gtk/window.blp:46
-msgid "Preparing"
-msgstr "Підготовка"
-
-#: src/gtk/window.blp:47
-msgid "This should only take a moment."
-msgstr "Це повинно зайняти лише момент."
-
-#: src/gtk/window.blp:51
+#: src/first_run_page/first-run-page.blp:20
 msgid "Welcome to Ignition!"
 msgstr "Вітаємо у Запалювання!"
 
-#: src/gtk/window.blp:52
+#: src/first_run_page/first-run-page.blp:21
 msgid ""
 "Ignition lets you start any app or script when you log in to your computer."
 msgstr ""
 "Запалювання дозволяє вам запускати додатки або скрипти при завантаженні "
 "системи вашого пристрою."
 
-#: src/gtk/window.blp:56
+#: src/first_run_page/first-run-page.blp:25
 msgid "Get Started"
 msgstr "Розпочати"
 
-#: src/gtk/window.blp:61
-msgid "No Entries Found"
-msgstr "Не знайдено записів"
+#: src/gtk/entry-row.blp:22 src/main_view/details-page.blp:103
+msgid "More Information"
+msgstr "Додаткова інформація"
 
-#: src/gtk/window.blp:62
-msgid "Add an app or script to run it at login."
-msgstr "Додати додаток або скрипт для запуску при завантаженні системи."
+#: src/gtk/entry_row.js:56
+msgid "Disabled"
+msgstr "Вимкнено"
 
-#: src/gtk/window.blp:86
-msgid "Startup Applications and Scripts"
-msgstr "Додатки та скрипти з автозапуском"
-
-#: src/gtk/window.blp:87
-msgid "Startup apps and scripts are automatically started when you log in."
-msgstr ""
-"Додатки та скрипти, які будуть автоматично запускатися при завантаженні "
-"системи."
-
-#: src/gtk/window.blp:93
-msgid "New"
-msgstr "Новий"
-
-#: src/gtk/window.blp:113
-msgid "_Open Autostart Folder"
+#: src/gtk/entry_row.js:60
+msgid "Overridden"
 msgstr ""
 
-#: src/gtk/window.blp:125
-msgid "_Keyboard Shortcuts"
+#: src/gtk/entry_row.js:64
+msgid "Enabled"
+msgstr "Увімкнено"
+
+#: src/gtk/entry_row.js:84
+msgid "This entry is overridden by a user entry."
 msgstr ""
 
-#: src/gtk/window.blp:130
+#: src/gtk/entry_row.js:86
+msgid "This entry overrides a system entry."
+msgstr ""
+
+#: src/gtk/help-dialog.blp:5
 #, fuzzy
-#| msgid "Ignition"
-msgid "_About Ignition"
-msgstr "Запалювання"
+#| msgid "More Information"
+msgid "Help and Information"
+msgstr "Додаткова інформація"
 
-#: src/main.js:73
-msgid "Opened folder"
-msgstr "Відкрита тека"
-
-#: src/main.js:80
-msgid "Could not open folder"
-msgstr "Не вдалося відкрити теку"
-
-#: src/main.js:95
-msgid "Translate"
+#: src/gtk/help-dialog.blp:27
+msgid "Can't find an application?"
 msgstr ""
 
-#: src/main.js:96
+#: src/gtk/help-dialog.blp:28
+msgid "Ignition might not be able to see some applications on your system"
+msgstr ""
+
+#: src/gtk/help-dialog.blp:38
+msgid "What is a 'System Entry'?"
+msgstr ""
+
+#: src/gtk/help-dialog.blp:39
+msgid "Learn more about system startup entries, and how editing them works"
+msgstr ""
+
+#: src/gtk/help-dialog.blp:53
+msgid "Can't Find an App?"
+msgstr ""
+
+#: src/gtk/help-dialog.blp:73
+msgid ""
+"Some apps store their entries outside of the places that Ignition is allowed "
+"to read. This means that these apps won't show up in the list of apps on "
+"your system, when making a new entry."
+msgstr ""
+
+#: src/gtk/help-dialog.blp:79
+msgid ""
+"To fix this, you can allow Ignition to see more home locations, or more root "
+"locations, in your file system."
+msgstr ""
+
+#: src/gtk/help-dialog.blp:85
+msgid ""
+"We recommend the app \"Flatseal\" to manage these permissions. Enable \"All "
+"user files\" or \"All system files\" to be able to find these apps."
+msgstr ""
+
+#: src/gtk/help-dialog.blp:94
+msgid "What is a System Entry?"
+msgstr ""
+
+#: src/gtk/help-dialog.blp:114
+msgid ""
+"System Entries are for apps or commands that are ran on log in for "
+"everybody. These are usually present to allow certain features, programs, or "
+"other important actions run properly."
+msgstr ""
+
+#: src/gtk/help-dialog.blp:120
+msgid ""
+"You can override these, but please use caution when doing so, as you may "
+"break some existing app or feature of your desktop."
+msgstr ""
+
+#: src/gtk/help-overlay.blp:11
+msgctxt "shortcut window"
+msgid "Entries List"
+msgstr "Список записів"
+
+#: src/gtk/help-overlay.blp:14
+msgctxt "shortcut window"
+msgid "New Entry"
+msgstr "Новий запис"
+
+#: src/gtk/help-overlay.blp:19
+msgctxt "shortcut window"
+msgid "Search Entries"
+msgstr "Пошук записів"
+
+#: src/gtk/help-overlay.blp:25
+msgctxt "shortcut window"
+msgid "Apps List"
+msgstr ""
+
+#: src/gtk/help-overlay.blp:28
+msgctxt "shortcut window"
+msgid "Search Apps"
+msgstr "Шукати додатки"
+
+#: src/gtk/help-overlay.blp:34
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Details Dialog"
+msgctxt "shortcut window"
+msgid "Details Page"
+msgstr "Діалог деталей"
+
+#: src/gtk/help-overlay.blp:37
+msgctxt "shortcut window"
+msgid "Save Edits"
+msgstr "Зберегти зміни"
+
+#: src/gtk/help-overlay.blp:43
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Загальні"
+
+#: src/gtk/help-overlay.blp:46
+msgctxt "shortcut window"
+msgid "Open Autostart Folder"
+msgstr "Відкрити папку автозапуску"
+
+#: src/gtk/help-overlay.blp:51
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr "Показати комбінації клавіш"
+
+#: src/gtk/help-overlay.blp:56
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "Вийти"
+
+#: src/main.js:57
+msgid "Translate"
+msgstr "Перекласти"
+
+#: src/main.js:58
 msgid "Donate"
 msgstr "Зробити пожертвування"
 
-#: src/properties_dialog.js:32
-msgid "Error loading details"
-msgstr "Помилка при завантаженні подробиць"
+#: src/main.js:84
+msgid "Opened folder"
+msgstr "Відкрита тека"
 
-#: src/properties_dialog.js:78
+#: src/main.js:87
+msgid "Could not open folder"
+msgstr "Не вдалося відкрити теку"
+
+#: src/main_view/app-list-page.blp:5
 #, fuzzy
-#| msgid "No Entries Found"
-msgid "No installed apps found"
-msgstr "Не знайдено записів"
+#| msgid "Create a New Entry"
+msgid "Add or Create an Entry"
+msgstr "Створити новий запис"
 
-#: src/properties_dialog.js:100
+#: src/main_view/app-list-page.blp:12 src/main_view/entries-page.blp:13
+msgid "Search"
+msgstr "Пошук"
+
+#: src/main_view/app-list-page.blp:25 src/main_view/entries-page.blp:40
+msgid "Search entries"
+msgstr "Пошук записів"
+
+#: src/main_view/app-list-page.blp:45
+#, fuzzy
+#| msgid "Command or Script"
+msgid "Commands and Scripts"
+msgstr "Команда або скрипт"
+
+#: src/main_view/app-list-page.blp:46
+#, fuzzy
+#| msgid "Enable this entry to be started when you log in."
+msgid "Run a command or script when you log in."
+msgstr "Ввімкнути цей запис, щоб він запускався при завантаженні системи."
+
+#: src/main_view/app-list-page.blp:52
+msgid "Add a Command or Script"
+msgstr "Додати команду або скрипт"
+
+#: src/main_view/app-list-page.blp:53
+msgid "Enter the command to run or path to your script"
+msgstr ""
+
+#: src/main_view/app-list-page.blp:75
+#, fuzzy
+#| msgid "No installed apps found"
+msgid "Installed Apps"
+msgstr "Не знайдено встановлених додатків"
+
+#: src/main_view/app-list-page.blp:76
+msgid "Choose any installed app to run when you log in."
+msgstr ""
+
+#: src/main_view/app-list-page.blp:80
+msgid "Show Hidden Apps"
+msgstr ""
+
+#: src/main_view/app-list-page.blp:81
+msgid "Show apps that are hidden from the app menu"
+msgstr ""
+
+#: src/main_view/app-list-page.blp:98 src/main_view/entries-page.blp:57
+msgid "No Results Found"
+msgstr "Не знайдено жодного результату"
+
+#: src/main_view/app-list-page.blp:99 src/main_view/entries-page.blp:58
+msgid "Try a different search."
+msgstr "Спробуйте інший пошуковий запит."
+
+#: src/main_view/app_list_page.js:111
+msgid "Could not load some apps"
+msgstr "Не вдалося завантажити деякі додатки"
+
+#: src/main_view/details-page.blp:5
+msgid "Edit Details"
+msgstr "Редагувати подробиці"
+
+#: src/main_view/details-page.blp:16
+msgid "Save"
+msgstr ""
+
+#: src/main_view/details-page.blp:26
+msgid "Create"
+msgstr "Створити"
+
+#: src/main_view/details-page.blp:33
+msgid "Move to Trash"
+msgstr "Перемістити у смітник"
+
+#: src/main_view/details-page.blp:41
+msgid "Override entry to edit details"
+msgstr ""
+
+#: src/main_view/details-page.blp:42 src/main_view/details-page.blp:164
+msgid "Override"
+msgstr ""
+
+#: src/main_view/details-page.blp:74
+msgid "Edit details about this entry."
+msgstr "Редагування подробиць цього запису."
+
+#: src/main_view/details-page.blp:80
+msgid "Enable"
+msgstr "Ввімкнути"
+
+#: src/main_view/details-page.blp:81
+msgid "Enable this entry to be started when you log in."
+msgstr "Ввімкнути цей запис, щоб він запускався при завантаженні системи."
+
+#: src/main_view/details-page.blp:87
+msgid "Name"
+msgstr "Назва"
+
+#: src/main_view/details-page.blp:92
+msgid "Comment"
+msgstr "Коментар"
+
+#: src/main_view/details-page.blp:97
+msgid "Command or Script"
+msgstr "Команда або скрипт"
+
+#: src/main_view/details-page.blp:112
+msgid "Show Terminal"
+msgstr "Показати термінал"
+
+#: src/main_view/details-page.blp:113
+msgid "Show a terminal for this process to run in."
+msgstr "Запустити цей процес у терміналі і показати його."
+
+#: src/main_view/details-page.blp:119
+msgid "Seconds of Delay"
+msgstr ""
+
+#: src/main_view/details-page.blp:120
+msgid "Amount of seconds to wait after logging in to run the command or script"
+msgstr ""
+
+#: src/main_view/details-page.blp:139
+msgid ""
+"To run a script at login, paste its file path here. You can copy the "
+"script's path from your file manager. Make sure your script is executable."
+msgstr ""
+"Щоб запустити скрипт під час входу в систему, вставте тут його шлях. Ви "
+"можете скопіювати шлях до скрипту у файловому менеджері. Переконайтеся, що "
+"ваш скрипт є виконуваним."
+
+#: src/main_view/details-page.blp:151
+msgid "Create and Replace?"
+msgstr ""
+
+#: src/main_view/details-page.blp:152
+msgid ""
+"A file already exists for this entry. Are you sure you want to replace it?"
+msgstr ""
+
+#: src/main_view/details-page.blp:154 src/main_view/details-page.blp:163
+#: src/main_view/details-page.blp:172
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: src/main_view/details-page.blp:155
+msgid "Create and Replace"
+msgstr ""
+
+#: src/main_view/details-page.blp:160
+msgid "Override Entry?"
+msgstr ""
+
+#: src/main_view/details-page.blp:161
+msgid ""
+"Be careful, overriding system entries can lead to system breakage. This will "
+"make a copy of the entry for you to edit."
+msgstr ""
+
+#: src/main_view/details-page.blp:169
+#, fuzzy
+#| msgid "Trashed Entry"
+msgid "Trach Entry?"
+msgstr "Видалені записи"
+
+#: src/main_view/details-page.blp:170
+msgid ""
+"This entry will be moved to the trash, and will no longer start when you log "
+"in."
+msgstr ""
+
+#: src/main_view/details-page.blp:173
+msgid "Trash"
+msgstr ""
+
+#: src/main_view/details_page.js:196
+msgid "New Entry"
+msgstr "Новий запис"
+
+#: src/main_view/details_page.js:275
+#, fuzzy
+#| msgid "Saved Details"
+msgid "Saved details"
+msgstr "Збережено подробиці"
+
+#: src/main_view/details_page.js:277
 msgid "Could not save file"
 msgstr "Не вдалося зберегти файл"
 
-#: src/properties_dialog.js:101
+#: src/main_view/details_page.js:302
+#, fuzzy
+#| msgid "Create a New Entry"
+msgid "Created entry"
+msgstr "Створити новий запис"
+
+#: src/main_view/details_page.js:304 src/main_view/details_page.js:328
+#, fuzzy
+#| msgid "Could not save file"
+msgid "Could not create file"
+msgstr "Не вдалося зберегти файл"
+
+#: src/main_view/details_page.js:325
+msgid "Overrode entry"
+msgstr ""
+
+#: src/main_view/details_page.js:366
+#, fuzzy
+#| msgid "Trashed Entry"
+msgid "Trashed entry"
+msgstr "Видалені записи"
+
+#: src/main_view/details_page.js:368
 msgid "Could not trash file"
 msgstr "Не вдалося перемістити у смітник"
 
-#: src/window.js:90
-msgid "Saved Details"
-msgstr "Збережено подробиці"
+#: src/main_view/entries-page.blp:20
+msgid "Main Menu"
+msgstr "Головне меню"
 
-#: src/window.js:91
-msgid "Trashed Entry"
-msgstr "Видалені записи"
-
-#: src/window.js:198
+#: src/main_view/entries-page.blp:27
 #, fuzzy
-#| msgid "Could not open folder"
-msgid "Could not load some apps"
-msgstr "Не вдалося відкрити теку"
+#| msgid "More Information"
+msgid "Help and information"
+msgstr "Додаткова інформація"
+
+#: src/main_view/entries-page.blp:47
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Search Entries"
+msgid "Loading Entries"
+msgstr "Пошук записів"
+
+#: src/main_view/entries-page.blp:48
+msgid "This should only take a moment."
+msgstr "Це повинно зайняти лише момент."
+
+#: src/main_view/entries-page.blp:88
+msgid "New"
+msgstr "Новий"
+
+#: src/main_view/entries-page.blp:109
+msgid "No Entries Found"
+msgstr "Не знайдено записів"
+
+#: src/main_view/entries-page.blp:117
+#, fuzzy
+#| msgid "Add an app or script to run it at login."
+msgid "Add an app or script to run it when you log in"
+msgstr "Додати додаток або скрипт для запуску при завантаженні системи."
+
+#: src/main_view/entries-page.blp:128
+msgid "_Open Autostart Folder"
+msgstr "_Відкрити папку автозапуску"
+
+#: src/main_view/entries-page.blp:140
+msgid "_Keyboard Shortcuts"
+msgstr "_Комбінації клавіш"
+
+#: src/main_view/entries-page.blp:145
+msgid "_About Ignition"
+msgstr "_Про Ignition"
+
+#: src/main_view/entries_page.js:63
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Search Entries"
+msgid "User Startup Entries"
+msgstr "Пошук записів"
+
+#: src/main_view/entries_page.js:64
+msgid "Entries that run only for you."
+msgstr ""
+
+#: src/main_view/entries_page.js:88
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Search Entries"
+msgid "System Startup Entries"
+msgstr "Пошук записів"
+
+#: src/main_view/entries_page.js:89
+msgid "Entries that run for everyone."
+msgstr ""
+
+#: src/main_view/entries_page.js:168
+#, fuzzy
+#| msgid "Could not load some apps"
+msgid "Could not load some entries"
+msgstr "Не вдалося завантажити деякі додатки"
+
+#: src/utils/helper_funcs.js:22
+msgid "Copy"
+msgstr "Скопіювати"
+
+#: src/utils/helper_funcs.js:23
+msgid "OK"
+msgstr "Добре"
+
+#: src/utils/helper_funcs.js:33
+msgid "Details"
+msgstr "Подробиці"
+
+#. These need to be getters for the _() translation function to work
+#: src/utils/shared_vars.js:13
+msgid "No Name Set"
+msgstr "Назва не встановлена"
+
+#: src/utils/shared_vars.js:14
+msgid "No comment set."
+msgstr "Без коментаря."
+
+#~ msgid "Choose an App"
+#~ msgstr "Обрати додаток"
+
+#~ msgid "Search apps"
+#~ msgstr "Шукати додатки"
+
+#~ msgid "Apply"
+#~ msgstr "Застосувати"
+
+#~ msgid "Add any installed app or select any script to be ran at startup."
+#~ msgstr ""
+#~ "Додайте будь-який встановлений додаток або оберіть будь-який скрипт, який "
+#~ "буде запущено при завантаженні системи."
+
+#~ msgid "Add an App"
+#~ msgstr "Додати додаток"
+
+#~ msgid "Preparing"
+#~ msgstr "Підготовка"
+
+#~ msgid "Startup Applications and Scripts"
+#~ msgstr "Додатки та скрипти з автозапуском"
+
+#~ msgid "Startup apps and scripts are automatically started when you log in."
+#~ msgstr ""
+#~ "Додатки та скрипти, які будуть автоматично запускатися при завантаженні "
+#~ "системи."
+
+#~ msgid "Error loading details"
+#~ msgstr "Помилка при завантаженні подробиць"
 
 #~ msgid "ignition"
 #~ msgstr "запалювання"
