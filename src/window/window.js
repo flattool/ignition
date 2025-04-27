@@ -2,7 +2,6 @@ import { FirstRunPage } from '../first_run_page/first_run_page.js';
 import { MainView } from '../main_view/main_view.js';
 import { Async } from '../utils/async.js';
 import { Config } from '../config.js';
-import { say_hi } from '../test.js';
 
 const { GObject, Gio, Gtk, Adw } = imports.gi;
 
@@ -28,7 +27,6 @@ export const IgnitionWindow = GObject.registerClass({
 		print(Config.VERSION);
 
 		this.settings = Gio.Settings.new("io.github.flattool.Ignition");
-		say_hi();
 		if (this.settings.get_boolean("first-run")) {
 			this.on_first_run();
 		} else {
