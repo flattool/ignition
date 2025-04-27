@@ -24,6 +24,8 @@ export const IgnitionWindow = GObject.registerClass({
 		if (Config.PROFILE === "development") {
 			this.add_css_class("devel");
 		}
+		print(Config.PROFILE);
+		print(Config.VERSION);
 
 		this.settings = Gio.Settings.new("io.github.flattool.Ignition");
 		say_hi();

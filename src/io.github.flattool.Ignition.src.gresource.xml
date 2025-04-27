@@ -23,5 +23,6 @@
     <file>config.js</file>
     <file>main.js</file>
     <file>test.js</file>
+    <file>config.json</file>
   </gresource>
 </gresources>

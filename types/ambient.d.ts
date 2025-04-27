@@ -1,7 +1,7 @@
 declare function _(id: string): string;
 declare function print(args: string): void;
 declare function log(obj: object, others?: object[]): void;
-declare function log(msg: string, subsitutions?: any[]): void;
+declare function log(msg: string, substitutions?: any[]): void;
 
 declare const pkg: {
   version: string;
@@ -10,7 +10,7 @@ declare const pkg: {
 
 declare module console {
   export function error(obj: object, others?: object[]): void;
-  export function error(msg: string, subsitutions?: any[]): void;
+  export function error(msg: string, substitutions?: any[]): void;
 }
 
 declare interface String {
@@ -19,4 +19,10 @@ declare interface String {
 }
 declare interface Number {
   toFixed(digits: number): number;
+}
+
+declare const TextDecoder: {
+	new(encoding?: string, options?: { fatal?: boolean; ignoreBOM?: boolean }): {
+		decode(input?: ArrayBuffer | ArrayBufferView, options?: { stream?: boolean }): string;
+	};
 }
