@@ -9,7 +9,7 @@ gnome = import('gnome')
 
 profile = get_option('profile')
 
-
+tsc = find_program('tsc', required: true)
 
 subdir('data')
 subdir('src')

@@ -22,5 +22,6 @@
     <file>window/window.js</file>
     <file>config.js</file>
     <file>main.js</file>
+    <file>test.js</file>
   </gresource>
 </gresources>

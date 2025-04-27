@@ -18,6 +18,17 @@ blueprints = custom_target('blueprints',
   command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
 )
 
+tsc_out = meson.project_build_root() / 'tsc-out'
+
+typescript = custom_target(
+	'typescript-compile',
+	# input: ts_sources,
+	build_by_default: true,
+	build_always_stale: true,
+	command: [ tsc, '--outDir', tsc_out ],
+	output: ['tsc-output'],
+)
+
 data_res = gnome.compile_resources('io.github.flattool.Ignition.data',
   'io.github.flattool.Ignition.data.gresource.xml',
   gresource_bundle: true,
@@ -55,8 +66,10 @@ src_res = gnome.compile_resources('io.github.flattool.Ignition.src',
   gresource_bundle: true,
   install: true,
   install_dir: pkgdatadir,
+  source_dir: tsc_out,
   dependencies: [
-    const_js
+    const_js,
+    typescript,
   ],
 )
 

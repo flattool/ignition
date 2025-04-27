@@ -25,9 +25,6 @@ import { add_error_toast, add_toast } from './utils/helper_funcs.js';
 
 const { GObject, GLib, Gio, Gtk, Adw } = imports.gi;
 
-pkg.initGettext();
-pkg.initFormat();
-
 export const IgnitionApplication = GObject.registerClass(
 	class IgnitionApplication extends Adw.Application {
 		constructor() {
