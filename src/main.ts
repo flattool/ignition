@@ -23,7 +23,13 @@ import { Config } from './config.js';
 import { SharedVars } from './utils/shared_vars.js';
 import { add_error_toast, add_toast } from './utils/helper_funcs.js';
 
-const { GObject, GLib, Gio, Gtk, Adw } = imports.gi;
+import GObject from 'gi://GObject?version=2.0';
+import GLib from 'gi://GLib?version=2.0';
+import Gio from 'gi://Gio?version=2.0';
+import Gtk from 'gi://Gtk?version=4.0';
+import Adw from 'gi://Adw?version=1';
+
+// const { GObject, GLib, Gio, Gtk, Adw } = imports.gi;
 
 export const IgnitionApplication = GObject.registerClass(
 	class IgnitionApplication extends Adw.Application {
@@ -113,7 +119,8 @@ export const IgnitionApplication = GObject.registerClass(
 	}
 );
 
-export function main(argv) {
+export function main(argv: string[]): Promise<number> {
 	const application = new IgnitionApplication();
+	// eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return
 	return application.runAsync(argv);
 }
