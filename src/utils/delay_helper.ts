@@ -1,8 +1,9 @@
-const { GLib, Gio } = imports.gi;
+import GLib from "gi://GLib?version=2.0";
+import Gio from "gi://Gio?version=2.0";
 
 export class DelayHelper {
-	static save_delay(file, delay, command) {
-		const path = file.get_path();
+	static save_delay(file: Gio.File, delay: number, command: string) {
+		const path = file.get_path() ?? "";
 		const contents = `#!/usr/bin/env sh\nsleep ${delay} && ${command}\n`;
 
 		try {
@@ -15,8 +16,8 @@ export class DelayHelper {
 		return null;
 	}
 
-	static load_delay(file) {
-		const path = file.get_path();
+	static load_delay(file: Gio.File) {
+		const path = file.get_path() ?? "";
 		if (!file.query_exists(null)) {
 			return [0, "", `no file at path: ${path}`];
 		}
@@ -28,7 +29,11 @@ export class DelayHelper {
 		try {
 			const [data,] = file.load_bytes(null);
 			const decoder = new TextDecoder('utf-8');
-			const contents = decoder.decode(data).split('\n');
+			const array = data.get_data() ?? 0;
+			if (array === 0) {
+				throw new Error("data.get_data returned null");
+			}
+			const contents = decoder.decode(array).split('\n');
 			if (contents.length < 2) {
 				return [0, "", `improperly constructed delay file\n[total lines under 2]\npath: ${path}`];
 			}
@@ -50,8 +55,8 @@ export class DelayHelper {
 		}
 	}
 
-	static remove_delay(file) {
-		const path = file.get_path();
+	static remove_delay(file: Gio.File) {
+		const path = file.get_path() ?? "";
 		if (!file.query_exists(null)) {
 			return ["", `no file at path: ${path}`];
 		}
@@ -62,8 +67,12 @@ export class DelayHelper {
 
 		try {
 			const [data,] = file.load_bytes(null);
+			const array = data.get_data() ?? 0;
+			if (array === 0) {
+				throw new Error("data.get_data returned null");
+			}
 			const decoder = new TextDecoder('utf-8');
-			const contents = decoder.decode(data).split('\n');
+			const contents = decoder.decode(array).split('\n');
 
 			if (contents.length < 2) {
 				return ["", `improperly constructed delay file\n[total lines under 2]\npath: ${path}`];
