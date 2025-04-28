@@ -1,17 +1,20 @@
 import { Config } from "../config.js";
 
-const { GLib, Gio } = imports.gi;
+import GLib from "gi://GLib?version=2.0";
+import Gio from "gi://Gio?version=2.0";
+import Gtk from "gi://Gtk?version=4.0";
+import Adw from "gi://Adw?version=1";
 
 export class SharedVars {
-	static main_window; // Set in main.js
-	static application; // Set in main.js
+	static main_window?: Gtk.Window; // Set in main.js
+	static application?: Adw.Application; // Set in main.js
 
 	static is_flatpak = GLib.getenv("FLATPAK_ID") === Config.APP_ID;
 	static home_dir = Gio.File.new_for_path(GLib.get_home_dir());
 
 	// These need to be getters for the _() translation function to work
-	static get default_name() { return _("No Name Set"); }
-	static get default_comment() { return _("No comment set."); }
+	static get default_name(): string { return _("No Name Set"); }
+	static get default_comment(): string { return _("No comment set."); }
 
 	// main.js will make this dir if it does not exist
 	static home_autostart_dir = Gio.File.new_for_path((
