@@ -13,7 +13,7 @@ export class FirstRunPage extends Adw.NavigationPage {
 		}, FirstRunPage);
 	}
 
-	private readonly _get_started_button!: Gtk.Button;
+	readonly _get_started_button!: Gtk.Button;
 	private readonly signals = {
 		button_clicked: new Signal(),
 	} as const;
