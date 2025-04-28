@@ -1,16 +1,19 @@
 import { SharedVars } from "./shared_vars.js";
 
-const { GLib, Gio, Gdk, Gtk } = imports.gi;
+import GLib from "gi://GLib?version=2.0";
+import Gio from "gi://Gio?version=2.0";
+import Gdk from "gi://Gdk?version=4.0";
+import Gtk from "gi://Gtk?version=4.0";
 
 export class IconHelper {
-	static #icon_theme = null;
+	static #icon_theme?: Gtk.IconTheme = undefined;
 
-	static get icon_theme() {
-		if (this.#icon_theme !== null) {
+	static get icon_theme(): Gtk.IconTheme {
+		if (this.#icon_theme !== undefined) {
 			return this.#icon_theme;
 		}
 		// SharedVars.main_window.get_display()
-		const theme = Gtk.IconTheme.get_for_display(Gdk.Display.get_default());
+		const theme = Gtk.IconTheme.get_for_display(Gdk.Display.get_default() ?? new Gdk.Display);
 		theme.add_search_path("/run/host/usr/share/icons");
 		theme.add_search_path("/run/host/usr/share/pixmaps");
 		theme.add_search_path("/var/lib/flatpak/exports/share/applications");
@@ -23,11 +26,11 @@ export class IconHelper {
 			GLib.getenv("HOST_XDG_DATA_HOME")
 			|| SharedVars.home_dir.get_path()
 		) + "/.local/share/flatpak/exports/share/icons");
-		IconHelper.#icon_theme = theme;
+		IconHelper.#icon_theme = theme ?? new Gtk.IconTheme();
 		return IconHelper.#icon_theme;
 	}
 
-	static set_icon(image, icon_string="") {
+	static set_icon(image: Gtk.Image, icon_string=""): void {
 		if (icon_string === "") {
 			image.icon_name = "ignition:application-x-executable-symbolic";
 		} else if (IconHelper.icon_theme.has_icon(icon_string)) {
