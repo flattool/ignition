@@ -5,16 +5,20 @@ import { Config } from '../config.js';
 
 const { GObject, Gio, Gtk, Adw } = imports.gi;
 
-export const IgnitionWindow = GObject.registerClass({
-	GTypeName: 'IgnitionWindow',
-	Template: 'resource:///io/github/flattool/Ignition/window/window.ui',
-	InternalChildren: [
-		'toast_overlay',
-			'stack',
+export class IgnitionWindow extends Adw.ApplicationWindow {
+	static {
+		GObject.registerClass({
+			GTypeName: 'IgnitionWindow',
+			Template: 'resource:///io/github/flattool/Ignition/window/window.ui',
+			InternalChildren: [
+				'toast_overlay',
+				'stack',
 				'first_run_page',
 				'main_view',
-	],
-}, class IgnitionWindow extends Adw.ApplicationWindow {
+			],
+		}, this);
+	}
+
 	settings;
 
 	constructor(application) {
@@ -54,4 +58,4 @@ export const IgnitionWindow = GObject.registerClass({
 			...this._main_view.load_entries()
 		]);
 	}
-});
+}

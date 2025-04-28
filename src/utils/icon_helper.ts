@@ -12,7 +12,6 @@ export class IconHelper {
 		if (this.#icon_theme !== undefined) {
 			return this.#icon_theme;
 		}
-		// SharedVars.main_window.get_display()
 		const theme = Gtk.IconTheme.get_for_display(Gdk.Display.get_default() ?? new Gdk.Display);
 		theme.add_search_path("/run/host/usr/share/icons");
 		theme.add_search_path("/run/host/usr/share/pixmaps");

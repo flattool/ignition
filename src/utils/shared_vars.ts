@@ -1,3 +1,4 @@
+import { IgnitionWindow } from "../window/window.js";
 import { Config } from "../config.js";
 
 import GLib from "gi://GLib?version=2.0";
@@ -6,7 +7,7 @@ import Gtk from "gi://Gtk?version=4.0";
 import Adw from "gi://Adw?version=1";
 
 export class SharedVars {
-	static main_window?: Gtk.Window; // Set in main.js
+	static main_window?: IgnitionWindow; // Set in main.js
 	static application?: Adw.Application; // Set in main.js
 
 	static is_flatpak = GLib.getenv("FLATPAK_ID") === Config.APP_ID;

@@ -108,12 +108,14 @@ export const IgnitionApplication = GObject.registerClass(
 		}
 
 		vfunc_activate() {
-			let {active_window} = this;
+			let { active_window } = this;
 
+			// TODO: clean this up
 			if (!active_window)
-				active_window = new IgnitionWindow(this);
+				active_window = ((new IgnitionWindow(this)) as unknown) as Adw.ApplicationWindow;
 
-			SharedVars.main_window = active_window;
+			// TODO: clean this up
+			SharedVars.main_window = (active_window as unknown) as IgnitionWindow;
 			active_window.present();
 		}
 	}
