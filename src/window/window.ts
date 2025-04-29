@@ -3,7 +3,10 @@ import { MainView } from '../main_view/main_view.js';
 import { Async } from '../utils/async.js';
 import { Config } from '../config.js';
 
-const { GObject, Gio, Gtk, Adw } = imports.gi;
+import GObject from 'gi://GObject?version=2.0';
+import Gio from 'gi://Gio?version=2.0';
+import Gtk from 'gi://Gtk?version=4.0';
+import Adw from 'gi://Adw?version=1';
 
 export class IgnitionWindow extends Adw.ApplicationWindow {
 	static {
@@ -12,17 +15,22 @@ export class IgnitionWindow extends Adw.ApplicationWindow {
 			Template: 'resource:///io/github/flattool/Ignition/window/window.ui',
 			InternalChildren: [
 				'toast_overlay',
-				'stack',
-				'first_run_page',
-				'main_view',
+					'stack',
+						'first_run_page',
+						'main_view',
 			],
 		}, this);
 	}
 
-	settings;
+	readonly _toast_overlay!: Adw.ToastOverlay;
+	readonly _stack!: Gtk.Stack;
+	readonly _first_run_page!: FirstRunPage;
+	readonly _main_view!: MainView;
 
-	constructor(application) {
-		super({ application });
+	settings: Gio.Settings;
+
+	constructor(params?: Partial<Adw.ApplicationWindow.ConstructorProps>) {
+		super(params);
 
 		if (Config.PROFILE === "development") {
 			this.add_css_class("devel");
@@ -38,7 +46,7 @@ export class IgnitionWindow extends Adw.ApplicationWindow {
 		}
 	}
 
-	on_first_run() {
+	on_first_run(): void {
 		this._stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT;
 		this._first_run_page.signals.button_clicked.connect(() => {
 			this.settings.set_boolean("first-run", false);
@@ -46,11 +54,11 @@ export class IgnitionWindow extends Adw.ApplicationWindow {
 		});
 	}
 
-	on_new_entry() {
+	on_new_entry(): void {
 		this._main_view.on_new_entry();
 	}
 
-	startup() {
+	startup(): void {
 		this._stack.visible_child = this._main_view;
 
 		Async.run_pipe([

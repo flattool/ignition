@@ -18,14 +18,14 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
+import "./first_run_page/first_run_page.js"
 import "./gtk/entry_group.js";
-// import "./gtk/entry_row.js";
+import "./gtk/entry_row.js";
 import "./gtk/help_dialog.js";
 import "./main_view/app_list_page.js";
-// import "./main_view/details_page.js";
+import "./main_view/details_page.js";
 import "./main_view/entries_page.js";
-// import "./main_view/main_view.js";
-// import "./window/window.js";
+import "./main_view/main_view.js";
 
 import { IgnitionWindow } from './window/window.js';
 import { Config } from './config.js';
@@ -37,8 +37,6 @@ import GLib from 'gi://GLib?version=2.0';
 import Gio from 'gi://Gio?version=2.0';
 import Gtk from 'gi://Gtk?version=4.0';
 import Adw from 'gi://Adw?version=1';
-
-// const { GObject, GLib, Gio, Gtk, Adw } = imports.gi;
 
 export const IgnitionApplication = GObject.registerClass(
 	class IgnitionApplication extends Adw.Application {
@@ -119,12 +117,10 @@ export const IgnitionApplication = GObject.registerClass(
 		vfunc_activate() {
 			let { active_window } = this;
 
-			// TODO: clean this up
 			if (!active_window)
-				active_window = ((new IgnitionWindow(this)) as unknown) as Adw.ApplicationWindow;
+				active_window = new IgnitionWindow({ application: this });
 
-			// TODO: clean this up
-			SharedVars.main_window = (active_window as unknown) as IgnitionWindow;
+			SharedVars.main_window = active_window as IgnitionWindow;
 			active_window.present();
 		}
 	}
@@ -132,6 +128,5 @@ export const IgnitionApplication = GObject.registerClass(
 
 export function main(argv: string[]): Promise<number> {
 	const application = new IgnitionApplication();
-	// eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return
 	return application.runAsync(argv);
 }
