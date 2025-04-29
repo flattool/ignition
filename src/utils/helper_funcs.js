@@ -41,7 +41,7 @@ export const add_error_toast = (title, message, window = SharedVars.main_window)
 };
 
 // Run me as async!
-export const entry_iteration = (dir, enumerator, on_found, on_error = () => { }) => {
+export const entry_iteration = (dir, enumerator, on_found, on_error = (err, path) => { }) => {
 	const file = enumerator.next_file(null);
 	if (file === null) {
 		// Stop the loop when there are no more files
