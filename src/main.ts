@@ -21,9 +21,9 @@
 import "./gtk/entry_group.js";
 // import "./gtk/entry_row.js";
 import "./gtk/help_dialog.js";
-// import "./main_view/app_list_page.js";
+import "./main_view/app_list_page.js";
 // import "./main_view/details_page.js";
-// import "./main_view/entries_page.js";
+import "./main_view/entries_page.js";
 // import "./main_view/main_view.js";
 // import "./window/window.js";
 
