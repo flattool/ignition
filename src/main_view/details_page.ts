@@ -355,8 +355,7 @@ export class DetailsPage extends Adw.NavigationPage {
 		}
 		this.sync_details_to_entry();
 		if (this.entry.file.query_exists(null)) {
-			// TODO: clean this up
-			this._create_dialog.present(SharedVars.main_window as unknown as Gtk.Window);
+			this._create_dialog.present(SharedVars.main_window);
 			this._create_dialog.grab_focus();
 		} else {
 			this.on_create_dialog_response(this._create_dialog, 'create_continue');
@@ -381,8 +380,7 @@ export class DetailsPage extends Adw.NavigationPage {
 		if (!this.is_overriding_allowed) {
 			return;
 		}
-		// TODO: clean this up
-		this._override_dialog.present(SharedVars.main_window as unknown as Gtk.Window);
+		this._override_dialog.present(SharedVars.main_window);
 		this._override_dialog.grab_focus();
 	}
 
@@ -405,8 +403,7 @@ export class DetailsPage extends Adw.NavigationPage {
 		if (!this.is_trashing_allowed || !this._trash_button.sensitive) {
 			return;
 		}
-		// TODO: clean this up
-		this._trash_dialog.present(SharedVars.main_window as unknown as Gtk.Window);
+		this._trash_dialog.present(SharedVars.main_window);
 		this._trash_dialog.grab_focus();
 	}
 

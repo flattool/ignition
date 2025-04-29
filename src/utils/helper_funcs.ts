@@ -9,12 +9,8 @@ import Gtk from "gi://Gtk?version=4.0";
 import Adw from "gi://Adw?version=1";
 import Pango from "gi://Pango?version=1.0";
 
-// TODO: clean this up
-type windy = {_toast_overlay: Adw.ToastOverlay}
-
 export const add_toast = (title: string, window = SharedVars.main_window): void => {
-	const window_windy = window as unknown as windy;
-	window_windy?._toast_overlay.add_toast(Adw.Toast.new(title));
+	window?._toast_overlay.add_toast(Adw.Toast.new(title));
 };
 
 export const add_error_toast = (title: string, message: string, window = SharedVars.main_window): void => {
@@ -41,9 +37,8 @@ export const add_error_toast = (title: string, message: string, window = SharedV
 		button_label: _("Details"),
 	});
 	// TODO: clean this up
-	toast.connect('button-clicked', () => error_dialog.present(window as unknown as Gtk.Window));
-	const window_windy = window as unknown as windy;
-	window_windy._toast_overlay.add_toast(toast);
+	toast.connect('button-clicked', () => error_dialog.present(window));
+	window?._toast_overlay.add_toast(toast);
 	print("==== Error Toast ====");
 	print(title);
 	print(message);
