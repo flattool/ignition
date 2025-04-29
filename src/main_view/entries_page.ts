@@ -118,7 +118,7 @@ export class EntriesPage extends Adw.NavigationPage {
 		this.root_watcher = new DirWatcher(SharedVars.root_autostart_dir, 120);
 		this.root_watcher.event.connect(() => Async.run_pipe(this.load_entries()));
 
-		// this._help_button.connect('clicked', () => this._help_dialog.present(SharedVars.main_window));
+		this._help_button.connect('clicked', () => this._help_dialog.present(SharedVars.main_window));
 	}
 
 	#on_group_finished_loading(group: EntryGroup): void {

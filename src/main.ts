@@ -18,7 +18,7 @@
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
-import "./first_run_page/first_run_page.js"
+import "./first_run_page/first_run_page.js";
 import "./gtk/entry_group.js";
 import "./gtk/entry_row.js";
 import "./gtk/help_dialog.js";
