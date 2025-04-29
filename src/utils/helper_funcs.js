@@ -64,7 +64,7 @@ export const entry_iteration = (dir, enumerator, on_found, on_error = () => { })
 };
 
 // Run me as async!
-export const host_app_iteration = (dir, on_found, on_error = () => { }) => {
+export const host_app_iteration = (dir, on_found, on_error = (err, path) => { }) => {
 	let enumerator = null;
 	const dir_path = dir.get_path();
 	return () => {

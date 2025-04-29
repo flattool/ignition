@@ -1,6 +1,6 @@
 import GLib from "gi://GLib?version=2.0";
 
-type AsyncResult = typeof GLib.SOURCE_CONTINUE | typeof GLib.SOURCE_REMOVE;
+export type AsyncResult = typeof GLib.SOURCE_CONTINUE | typeof GLib.SOURCE_REMOVE;
 
 export class Async {
 	static readonly CONTINUE: AsyncResult = GLib.SOURCE_CONTINUE;
