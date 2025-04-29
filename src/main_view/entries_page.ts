@@ -1,7 +1,7 @@
 import { EntryGroup } from "../gtk/entry_group.js";
 import { EntryRow } from "../gtk/entry_row.js";
 import { HelpDialog } from "../gtk/help_dialog.js";
-import { Async } from "../utils/async.js";
+import { Async, AsyncResult } from "../utils/async.js";
 import { AutostartEntry } from "../utils/autostart_entry.js";
 import { DirWatcher } from "../utils/dir_watcher.js";
 import { SharedVars } from "../utils/shared_vars.js";
@@ -121,7 +121,7 @@ export class EntriesPage extends Adw.NavigationPage {
 		// this._help_button.connect('clicked', () => this._help_dialog.present(SharedVars.main_window));
 	}
 
-	#on_group_finished_loading(group: EntryGroup) {
+	#on_group_finished_loading(group: EntryGroup): void {
 		this.#loaded_groups.push(group);
 		if (
 			this.#loaded_groups.includes(this._root_group)
@@ -131,14 +131,14 @@ export class EntriesPage extends Adw.NavigationPage {
 		}
 	}
 
-	show_entries_if_any() {
+	show_entries_if_any(): void {
 		this._stack.visible_child = (this.any_results
 			? this._scrolled_window
 			: this._no_results_status
 		);
 	}
 
-	on_search_changed() {
+	on_search_changed(): void {
 		const text = this._search_entry.text.toLowerCase();
 		this._home_group.search_changed(text);
 		this._root_group.search_changed(text);
@@ -150,7 +150,7 @@ export class EntriesPage extends Adw.NavigationPage {
 		this.show_entries_if_any();
 	}
 
-	load_entries() {
+	load_entries(): (() => AsyncResult)[] {
 		const root_map = new Map<string, AutostartEntry>(); // File name -> entry object
 		const home_entries: AutostartEntry[] = [];
 		const fails: string[] = [];
@@ -169,7 +169,7 @@ export class EntriesPage extends Adw.NavigationPage {
 				SharedVars.root_autostart_dir,
 				root_enumerator,
 				(entry: AutostartEntry) => root_map.set(entry.file_name, entry),
-				(err, path) => fails.push(`${err}:\n${path}`),
+				(err: unknown, path: string) => fails.push(`${err}:\n${path}`),
 			),
 			() => entry_iteration(
 				SharedVars.home_autostart_dir,
@@ -182,7 +182,7 @@ export class EntriesPage extends Adw.NavigationPage {
 					}
 					home_entries.push(entry);
 				},
-				(err, path) => fails.push(`${err}:\n${path}`),
+				(err: unknown, path: string) => fails.push(`${err}:\n${path}`),
 			),
 			() => {
 				// When done
