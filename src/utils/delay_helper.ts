@@ -16,7 +16,7 @@ export class DelayHelper {
 		return null;
 	}
 
-	static load_delay(file: Gio.File) {
+	static load_delay(file: Gio.File): [number, string, string | null] {
 		const path = file.get_path() ?? "";
 		if (!file.query_exists(null)) {
 			return [0, "", `no file at path: ${path}`];
