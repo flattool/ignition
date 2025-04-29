@@ -239,6 +239,8 @@ export class DetailsPage extends Adw.NavigationPage {
 		this._trash_button.visible = this.is_trashing_allowed;
 
 		this.sync_details_to_ui();
+
+		this._scrolled_window.vadjustment.value = 0;
 	}
 
 	validate_input(row: Adw.EntryRow, test: boolean): void {
