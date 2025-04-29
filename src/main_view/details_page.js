@@ -274,7 +274,7 @@ export const DetailsPage = GObject.registerClass(
 				if (err === null) {
 					add_toast(_("Saved details"));
 				} else {
-					add_error_toast(_("Could not save file"), err);
+					add_error_toast(_("Could not save file"), `${err}`);
 				}
 				this.signals.pop_request.emit();
 			});
@@ -301,7 +301,7 @@ export const DetailsPage = GObject.registerClass(
 				if (err === null) {
 					add_toast(_("Created entry"));
 				} else {
-					add_error_toast(_("Could not create file"), err);
+					add_error_toast(_("Could not create file"), `${err}`);
 				}
 				this.signals.pop_request.emit();
 			});
@@ -325,7 +325,7 @@ export const DetailsPage = GObject.registerClass(
 					add_toast(_("Overrode entry"));
 					this.load_details(this.entry, DetailsPage.Origins.HOME);
 				} else {
-					add_error_toast(_("Could not create file"), err);
+					add_error_toast(_("Could not create file"), `${err}`);
 				}
 			});
 		}
@@ -365,7 +365,7 @@ export const DetailsPage = GObject.registerClass(
 				if (err === null) {
 					add_toast(_("Trashed entry"));
 				} else {
-					add_error_toast(_("Could not trash file", err));
+					add_error_toast(_("Could not trash file", `${err}`));
 				}
 				this.signals.pop_request.emit();
 			});
