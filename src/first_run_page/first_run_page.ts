@@ -14,7 +14,7 @@ export class FirstRunPage extends Adw.NavigationPage {
 	}
 
 	readonly _get_started_button!: Gtk.Button;
-	private readonly signals = {
+	readonly signals = {
 		button_clicked: new Signal(),
 	} as const;
 
