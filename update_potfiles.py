@@ -48,7 +48,7 @@ if __name__ == "__main__":
 
     if not os.path.exists(SRC_DIR):
         print("SRC_DIR path is not found, path:", SRC_DIR)
-        sys.exist(1)
+        sys.exit(1)
 
     translation_files = find_translation_files()
     write_to_file(translation_files)
