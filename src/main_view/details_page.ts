@@ -2,6 +2,7 @@ import { Async } from "../utils/async.js";
 import { AutostartEntry } from "../utils/autostart_entry.js";
 import { DelayHelper } from "../utils/delay_helper.js";
 import { IconHelper } from "../utils/icon_helper.js";
+import { KeyFileHelper } from "../utils/key_file_helper.js";
 import { SharedVars } from "../utils/shared_vars.js";
 import { Signal } from "../utils/signal.js";
 import { add_error_toast, add_toast } from "../utils/helper_funcs.js";
@@ -19,15 +20,6 @@ enum Origins {
 	NEW,
 	DEFAULT = Origins.NEW,
 }
-
-// this.details_on_disks = new Map<string,>([
-// 	['enabled', this.entry.enabled],
-// 	['name', is_new ? "" : (this.entry.name || SharedVars.default_name)],
-// 	['comment', this.entry.comment || ""],
-// 	['exec', display_exec],
-// 	['terminal', this.entry.terminal],
-// 	['delay', delay],
-// ]);
 
 class Details {
 	enabled: boolean;
@@ -300,6 +292,11 @@ export class DetailsPage extends Adw.NavigationPage {
 
 		if (this.origin === DetailsPage.Origins.NEW) {
 			this.entry.path = `${SharedVars.home_autostart_dir.get_path()}/${this.gui_details.name}.desktop`;
+		}
+
+		// Removing values that interfier with expected startup behavior
+		if (KeyFileHelper.get_boolean_safe(this.entry.keyfile, "Desktop Entry", "DBusActivatable", false)) {
+			this.entry.keyfile.set_boolean("Desktop Entry", "DBusActivatable", false);
 		}
 
 		// Setting the exec value with its sleep delay, if any
