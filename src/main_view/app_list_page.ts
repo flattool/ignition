@@ -89,6 +89,13 @@ export class AppListPage extends Adw.NavigationPage {
 		let any_visible = false;
 		for (const row of this._list_box) {
 			const entry_row = row as EntryRow;
+			if (Gio.File
+				.new_for_path(`${SharedVars.home_autostart_dir.get_path()}/${entry_row.entry.file_name}`)
+				.query_exists(null)
+			) {
+				row.visible = false;
+				continue;
+			}
 			if (this.is_entry_hidden(entry_row.entry) && !this._show_hidden_switch.active) {
 				row.visible = false;
 				continue;
@@ -114,9 +121,6 @@ export class AppListPage extends Adw.NavigationPage {
 				dir,
 				(entry: AutostartEntry) => {
 					const home_path = `${SharedVars.home_autostart_dir.get_path()}/${entry.file_name}`;
-					if (Gio.File.new_for_path(home_path).query_exists(null)) {
-						return;
-					}
 					const row = new EntryRow(entry, false);
 					row.connect('activated', () => this.signals.app_chosen.emit(entry));
 					if (!this._show_hidden_switch.active && this.is_entry_hidden(entry)) {

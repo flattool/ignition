@@ -78,6 +78,7 @@ export class MainView extends Adw.Bin {
 
 	on_new_entry(): void {
 		this._app_list_page.scroll_to_top();
+		this._app_list_page.on_search_changed();
 		this.#push_page(this._app_list_page);
 	}
 
