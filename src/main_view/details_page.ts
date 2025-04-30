@@ -291,7 +291,8 @@ export class DetailsPage extends Adw.NavigationPage {
 		this.entry.terminal = this.gui_details.terminal;
 
 		if (this.origin === DetailsPage.Origins.NEW) {
-			this.entry.path = `${SharedVars.home_autostart_dir.get_path()}/${this.gui_details.name}.desktop`;
+			const new_name = this.gui_details.name.replace(/\s+/g, '_');
+			this.entry.path = `${SharedVars.home_autostart_dir.get_path()}/${new_name}.desktop`;
 		}
 
 		// Removing values that interfier with expected startup behavior
