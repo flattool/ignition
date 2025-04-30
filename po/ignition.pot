@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-29 02:16-0400\n"
+"POT-Creation-Date: 2025-04-30 17:20-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -286,7 +286,7 @@ msgstr ""
 msgid "Try a different search."
 msgstr ""
 
-#: src/main_view/app_list_page.ts:136
+#: src/main_view/app_list_page.ts:140
 msgid "Could not load some apps"
 msgstr ""
 
@@ -402,7 +402,7 @@ msgstr ""
 msgid "Trash"
 msgstr ""
 
-#: src/main_view/details_page.ts:270
+#: src/main_view/details_page.ts:264
 msgid "New Entry"
 msgstr ""
 
