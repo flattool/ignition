@@ -35,8 +35,6 @@ export class IgnitionWindow extends Adw.ApplicationWindow {
 		if (Config.PROFILE === "development") {
 			this.add_css_class("devel");
 		}
-		print(Config.PROFILE);
-		print(Config.VERSION);
 
 		this.settings = Gio.Settings.new("io.github.flattool.Ignition");
 		if (this.settings.get_boolean("first-run")) {
