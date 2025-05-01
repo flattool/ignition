@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-30 23:31-0400\n"
+"POT-Creation-Date: 2025-05-01 00:53-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -218,19 +218,19 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr ""
 
-#: src/main.ts:67
+#: src/main.ts:70
 msgid "Translate"
 msgstr ""
 
-#: src/main.ts:68
+#: src/main.ts:71
 msgid "Donate"
 msgstr ""
 
-#: src/main.ts:94
+#: src/main.ts:97
 msgid "Opened folder"
 msgstr ""
 
-#: src/main.ts:97
+#: src/main.ts:100
 msgid "Could not open folder"
 msgstr ""
 
