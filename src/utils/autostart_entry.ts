@@ -1,91 +1,90 @@
-import { Enum } from './enum.js';
 import { KeyFileHelper } from './key_file_helper.js';
 
-const { GLib, Gio } = imports.gi;
+import GLib from 'gi://GLib?version=2.0';
+import Gio from 'gi://Gio?version=2.0';
+
+enum Overrides {
+	OVERRIDDEN,
+	OVERRIDES,
+	NONE,
+	DEFAULT = Overrides.NONE,
+}
 
 export class AutostartEntry {
-	static Overrides = class Overrides extends Enum {
-		static OVERRIDDEN = new Enum('overridden');
-		static OVERRIDES = new Enum('overrides');
-		static NONE = new Enum('none');
-		static DEFAULT = Overrides.NONE;
-	};
+	static Overrides = Overrides;
 
-	file;
-	locale;
+	file = Gio.File.new_for_path("");
+	locale: string | null = null;
 	overridden = AutostartEntry.Overrides.NONE;
 	keyfile = new GLib.KeyFile({});
 
-	get path() {
-		return this.file.get_path();
+	get path(): string {
+		return this.file.get_path() ?? "";
 	}
 
-	get file_name() {
-		if (this.path.includes("add")) {
-			print(this.file.get_basename());
-		}
-		return this.file.get_basename();
+	get file_name(): string {
+		return this.file.get_basename() ?? "";
 	}
 
-	get name() {
+	get name(): string {
 		return KeyFileHelper.get_string_safe(this.keyfile, true, "Desktop Entry", "Name", "");
 	}
 
-	get comment() {
+	get comment(): string {
 		return KeyFileHelper.get_string_safe(this.keyfile, true, "Desktop Entry", "Comment", "");
 	}
 
-	get exec() {
+	get exec(): string {
 		return KeyFileHelper.get_string_safe(this.keyfile, false, "Desktop Entry", "Exec", "");
 	}
 
-	get terminal() {
+	get terminal(): boolean {
 		return KeyFileHelper.get_boolean_safe(this.keyfile, "Desktop Entry", "Terminal", false);
 	}
 
-	get enabled() {
+	get enabled(): boolean {
 		return ! KeyFileHelper.get_boolean_safe(this.keyfile, "Desktop Entry", "Hidden", false);
 	}
 
-	get icon() {
+	get icon(): string {
 		return KeyFileHelper.get_string_safe(this.keyfile, false, "Desktop Entry", "Icon", "");
 	}
 
-	set path(value) {
+	set path(value: string) {
 		this.file = Gio.File.new_for_path(value);
 	}
 
-	set name(value) {
+	set name(value: string) {
 		this.keyfile.set_string("Desktop Entry", "Name", value);
 		if (this.locale) {
 			this.keyfile.set_locale_string("Desktop Entry", "Name", this.locale, value);
 		}
 	}
 
-	set comment(value) {
+	set comment(value: string) {
 		this.keyfile.set_string("Desktop Entry", "Comment", value);
 		if (this.locale) {
 			this.keyfile.set_locale_string("Desktop Entry", "Comment", this.locale, value);
 		}
 	}
 
-	set exec(value) {
+	set exec(value: string) {
 		this.keyfile.set_string("Desktop Entry", "Exec", value);
 	}
 
-	set terminal(value) {
+	set terminal(value: boolean) {
 		this.keyfile.set_boolean("Desktop Entry", "Terminal", value);
 	}
 
-	set enabled(value) {
+	set enabled(value: boolean) {
 		this.keyfile.set_boolean("Desktop Entry", "Hidden", ! value);
 	}
 
-	set icon(value) {
+	set icon(value: string) {
 		this.keyfile.set_string("Desktop Entry", "Icon", value);
 	}
 
-	constructor(path) {
+	constructor(path: string) {
 		this.path = path;
 		if (!this.file.query_exists(null)) {
 			return;
@@ -107,7 +106,7 @@ export class AutostartEntry {
 		}
 	}
 
-	save(on_finish) {
+	save(on_finish: (arg0: AutostartEntry, arg1: unknown | null) => void) {
 		try {
 			// Add key values that might be missing, but won't be edited
 			this.keyfile.set_string("Desktop Entry", "Type", "Application");
@@ -119,9 +118,10 @@ export class AutostartEntry {
 		}
 	}
 
-	trash(on_finish) {
-		const callback = (file, result) => {
+	trash(on_finish: (arg0: AutostartEntry, arg1: unknown | null) => void) {
+		const callback: Gio.AsyncReadyCallback = (source, result) => {
 			try {
+				const file = source as Gio.File;
 				file.trash_finish(result);
 				on_finish(this, null);
 			} catch (error) {

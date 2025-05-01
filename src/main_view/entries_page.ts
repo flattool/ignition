@@ -1,40 +1,62 @@
 import { EntryGroup } from "../gtk/entry_group.js";
+import { EntryRow } from "../gtk/entry_row.js";
 import { HelpDialog } from "../gtk/help_dialog.js";
-import { Async } from "../utils/async.js";
+import { Async, AsyncResult } from "../utils/async.js";
 import { AutostartEntry } from "../utils/autostart_entry.js";
 import { DirWatcher } from "../utils/dir_watcher.js";
 import { SharedVars } from "../utils/shared_vars.js";
 import { Signal } from "../utils/signal.js";
 import { add_error_toast, entry_iteration } from "../utils/helper_funcs.js";
 
-const { GObject, Gio, Adw } = imports.gi;
+import GObject from "gi://GObject?version=2.0";
+import Gio from "gi://Gio?version=2.0";
+import Gtk from "gi://Gtk?version=4.0";
+import Adw from "gi://Adw?version=1";
 
-export const EntriesPage = GObject.registerClass({
-	GTypeName: 'EntriesPage',
-	Template: 'resource:///io/github/flattool/Ignition/main_view/entries-page.ui',
-	InternalChildren: [
-		'help_button',
-		'search_button',
-		'search_bar',
-			'search_entry',
-		'stack',
-			'loading_status',
-			'no_results_status',
-			'scrolled_window',
-				'home_group',
-				'root_group',
-		'add_button',
-		'empty_row',
-		'help_dialog',
-	],
-}, class EntriesPage extends Adw.NavigationPage {
-	#loaded_groups = [];
+export class EntriesPage extends Adw.NavigationPage {
+	static {
+		GObject.registerClass({
+			GTypeName: 'EntriesPage',
+			Template: 'resource:///io/github/flattool/Ignition/main_view/entries-page.ui',
+			InternalChildren: [
+				'help_button',
+				'search_button',
+				'search_bar',
+					'search_entry',
+				'stack',
+					'loading_status',
+					'no_results_status',
+					'scrolled_window',
+						'home_group',
+						'root_group',
+				'add_button',
+				'empty_row',
+				'help_dialog',
+			],
+		}, this);
+	}
+
+	readonly _help_button!: Gtk.Button;
+	readonly _search_button!: Gtk.ToggleButton;
+	readonly _search_bar!: Gtk.SearchBar;
+	readonly _search_entry!: Gtk.SearchEntry;
+	readonly _stack!: Gtk.Stack;
+	readonly _loading_status!: Adw.StatusPage;
+	readonly _no_results_status!: Adw.StatusPage;
+	readonly _scrolled_window!: Gtk.ScrolledWindow;
+	readonly _home_group!: EntryGroup;
+	readonly _root_group!: EntryGroup;
+	readonly _add_button!: Gtk.Button;
+	readonly _empty_row!: Adw.ActionRow;
+	readonly _help_dialog!: Adw.Dialog;
+
+	#loaded_groups: EntryGroup[] = [];
 
 	home_watcher;
 	root_watcher;
 	loaded_once = false;
 	signals = {
-		row_clicked: new Signal(),
+		row_clicked: new Signal<[EntryRow, Boolean]>(),
 	};
 
 	get any_results() {
@@ -64,7 +86,7 @@ export const EntriesPage = GObject.registerClass({
 		this._home_group._group.description = _("Entries that run only for you.");
 		this._home_group._group.header_suffix = this._add_button;
 		this._home_group._group.add(this._empty_row);
-		this._home_group._group.seperate_rows = true;
+		this._home_group._group.separate_rows = true;
 
 		let empty_row_is_in_ui = true;
 		this._home_group.on_results = (has_any) => {
@@ -99,7 +121,7 @@ export const EntriesPage = GObject.registerClass({
 		this._help_button.connect('clicked', () => this._help_dialog.present(SharedVars.main_window));
 	}
 
-	#on_group_finished_loading(group) {
+	#on_group_finished_loading(group: EntryGroup): void {
 		this.#loaded_groups.push(group);
 		if (
 			this.#loaded_groups.includes(this._root_group)
@@ -109,14 +131,14 @@ export const EntriesPage = GObject.registerClass({
 		}
 	}
 
-	show_entries_if_any() {
+	show_entries_if_any(): void {
 		this._stack.visible_child = (this.any_results
 			? this._scrolled_window
 			: this._no_results_status
 		);
 	}
 
-	on_search_changed() {
+	on_search_changed(): void {
 		const text = this._search_entry.text.toLowerCase();
 		this._home_group.search_changed(text);
 		this._root_group.search_changed(text);
@@ -128,10 +150,10 @@ export const EntriesPage = GObject.registerClass({
 		this.show_entries_if_any();
 	}
 
-	load_entries() {
-		const root_map = new Map(); // File name -> entry object
-		const home_entries = [];
-		const fails = [];
+	load_entries(): (() => AsyncResult)[] {
+		const root_map = new Map<string, AutostartEntry>(); // File name -> entry object
+		const home_entries: AutostartEntry[] = [];
+		const fails: string[] = [];
 		const root_enumerator = SharedVars.root_autostart_dir.enumerate_children(
 			'standard::*',
 			Gio.FileQueryInfoFlags.NOFOLLOW_SYMLINKS,
@@ -146,20 +168,21 @@ export const EntriesPage = GObject.registerClass({
 			() => entry_iteration(
 				SharedVars.root_autostart_dir,
 				root_enumerator,
-				entry => root_map.set(entry.file_name, entry),
-				(err, path) => fails.push(`${err}:\n${path}`),
+				(entry: AutostartEntry) => root_map.set(entry.file_name, entry),
+				(err: unknown, path: string) => fails.push(`${err}:\n${path}`),
 			),
 			() => entry_iteration(
 				SharedVars.home_autostart_dir,
 				home_enumerator,
-				entry => {
-					if (root_map.has(entry.file_name)) {
-						root_map.get(entry.file_name).overridden = AutostartEntry.Overrides.OVERRIDDEN;
+				(entry: AutostartEntry) => {
+					const found = root_map.get(entry.file_name);
+					if (found) {
+						found.overridden = AutostartEntry.Overrides.OVERRIDDEN;
 						entry.overridden = AutostartEntry.Overrides.OVERRIDES;
 					}
 					home_entries.push(entry);
 				},
-				(err, path) => fails.push(`${err}:\n${path}`),
+				(err: unknown, path: string) => fails.push(`${err}:\n${path}`),
 			),
 			() => {
 				// When done
@@ -176,4 +199,4 @@ export const EntriesPage = GObject.registerClass({
 			},
 		];
 	}
-});
+}

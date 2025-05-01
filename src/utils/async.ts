@@ -1,10 +1,12 @@
-const { GLib } = imports.gi;
+import GLib from "gi://GLib?version=2.0";
+
+export type AsyncResult = typeof GLib.SOURCE_CONTINUE | typeof GLib.SOURCE_REMOVE;
 
 export class Async {
-	static CONTINUE = GLib.SOURCE_CONTINUE;
-	static BREAK = GLib.SOURCE_REMOVE;
+	static readonly CONTINUE: AsyncResult = GLib.SOURCE_CONTINUE;
+	static readonly BREAK: AsyncResult = GLib.SOURCE_REMOVE;
 
-	static run(to_run, when_done = () => { }) {
+	static run(to_run: () => AsyncResult, when_done = () => { }): void {
 		GLib.idle_add(GLib.PRIORITY_DEFAULT_IDLE, () => {
 			const response = to_run();
 			if (response === Async.CONTINUE) {
@@ -16,7 +18,7 @@ export class Async {
 		});
 	}
 
-	static run_pipe(tasks = [], when_done = () => { }) {
+	static run_pipe(tasks: (() => AsyncResult)[], when_done = () => { }): void {
 		if (tasks.length < 1) {
 			when_done();
 			return;
@@ -30,7 +32,7 @@ export class Async {
 		);
 	}
 
-	static timeout_ms(duration, callback = () => { }) {
+	static timeout_ms(duration: number, callback = () => { }): void {
 		GLib.timeout_add(GLib.PRIORITY_DEFAULT, duration, () => {
 			callback();
 			return Async.BREAK;

@@ -1,7 +1,7 @@
 import { Async } from './async.js';
 import { Signal } from './signal.js';
 
-const { Gio } = imports.gi;
+import Gio from 'gi://Gio?version=2.0';
 
 // This class exists purely because the regular FileMonitor sends many events when
 //   a file's contents are changed, instead of just one.
@@ -11,7 +11,7 @@ export class DirWatcher {
 	event = new Signal();
 	last_event = 0; // This will become the new Date.now upon event
 
-	constructor(file, rate_limit_ms) {
+	constructor(file: Gio.File, rate_limit_ms: number) {
 		this.rate_limit_ms = rate_limit_ms;
 		this.monitor = file.monitor_directory(Gio.FileMonitorFlags.NONE, null);
 		this.monitor.connect("changed", () => this.on_change());

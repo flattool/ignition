@@ -3,22 +3,34 @@ import { MainView } from '../main_view/main_view.js';
 import { Async } from '../utils/async.js';
 import { Config } from '../config.js';
 
-const { GObject, Gio, Gtk, Adw } = imports.gi;
+import GObject from 'gi://GObject?version=2.0';
+import Gio from 'gi://Gio?version=2.0';
+import Gtk from 'gi://Gtk?version=4.0';
+import Adw from 'gi://Adw?version=1';
 
-export const IgnitionWindow = GObject.registerClass({
-	GTypeName: 'IgnitionWindow',
-	Template: 'resource:///io/github/flattool/Ignition/window/window.ui',
-	InternalChildren: [
-		'toast_overlay',
-			'stack',
-				'first_run_page',
-				'main_view',
-	],
-}, class IgnitionWindow extends Adw.ApplicationWindow {
-	settings;
+export class IgnitionWindow extends Adw.ApplicationWindow {
+	static {
+		GObject.registerClass({
+			GTypeName: 'IgnitionWindow',
+			Template: 'resource:///io/github/flattool/Ignition/window/window.ui',
+			InternalChildren: [
+				'toast_overlay',
+					'stack',
+						'first_run_page',
+						'main_view',
+			],
+		}, this);
+	}
 
-	constructor(application) {
-		super({ application });
+	readonly _toast_overlay!: Adw.ToastOverlay;
+	readonly _stack!: Gtk.Stack;
+	readonly _first_run_page!: FirstRunPage;
+	readonly _main_view!: MainView;
+
+	settings: Gio.Settings;
+
+	constructor(params?: Partial<Adw.ApplicationWindow.ConstructorProps>) {
+		super(params);
 
 		if (Config.PROFILE === "development") {
 			this.add_css_class("devel");
@@ -32,7 +44,7 @@ export const IgnitionWindow = GObject.registerClass({
 		}
 	}
 
-	on_first_run() {
+	on_first_run(): void {
 		this._stack.transition_type = Gtk.StackTransitionType.SLIDE_LEFT;
 		this._first_run_page.signals.button_clicked.connect(() => {
 			this.settings.set_boolean("first-run", false);
@@ -40,11 +52,11 @@ export const IgnitionWindow = GObject.registerClass({
 		});
 	}
 
-	on_new_entry() {
+	on_new_entry(): void {
 		this._main_view.on_new_entry();
 	}
 
-	startup() {
+	startup(): void {
 		this._stack.visible_child = this._main_view;
 
 		Async.run_pipe([
@@ -52,4 +64,4 @@ export const IgnitionWindow = GObject.registerClass({
 			...this._main_view.load_entries()
 		]);
 	}
-});
+}

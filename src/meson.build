@@ -18,12 +18,15 @@ blueprints = custom_target('blueprints',
   command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
 )
 
-data_res = gnome.compile_resources('io.github.flattool.Ignition.data',
-  'io.github.flattool.Ignition.data.gresource.xml',
-  gresource_bundle: true,
-  install: true,
-  install_dir: pkgdatadir,
-  dependencies: blueprints,
+tsc_out = meson.project_build_root() / 'tsc-out'
+
+typescript = custom_target(
+	'typescript-compile',
+	# input: ts_sources,
+	build_by_default: true,
+	build_always_stale: true,
+	command: [ tsc, '-p', meson.project_source_root() / 'tsconfig.json', '--outDir', tsc_out ],
+	output: ['tsc-output'],
 )
 
 bin_conf = configuration_data()
@@ -44,20 +47,18 @@ else
   bin_conf.set('VERSION', meson.project_version())
 endif
 
-const_js = configure_file(
-  input: 'config.js',
-  output: 'config.js',
+config_vars = configure_file(
+  input: 'config.json.in',
+  output: 'config.json',
   configuration: bin_conf,
 )
 
-src_res = gnome.compile_resources('io.github.flattool.Ignition.src',
-  'io.github.flattool.Ignition.src.gresource.xml',
+data_res = gnome.compile_resources('io.github.flattool.Ignition.data',
+  'io.github.flattool.Ignition.data.gresource.xml',
   gresource_bundle: true,
   install: true,
   install_dir: pkgdatadir,
-  dependencies: [
-    const_js
-  ],
+  dependencies: [blueprints, config_vars],
 )
 
 configure_file(
@@ -66,4 +67,16 @@ configure_file(
   configuration: bin_conf,
   install: true,
   install_dir: get_option('bindir')
+)
+
+src_res = gnome.compile_resources('io.github.flattool.Ignition.src',
+  'io.github.flattool.Ignition.src.gresource.xml',
+  gresource_bundle: true,
+  install: true,
+  install_dir: pkgdatadir,
+  source_dir: tsc_out,
+  dependencies: [
+    config_vars,
+    typescript,
+  ],
 )
