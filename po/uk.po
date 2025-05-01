@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-25 16:22-0400\n"
+"POT-Creation-Date: 2025-05-01 00:53-0400\n"
 "PO-Revision-Date: 2025-03-29 16:46+0000\n"
 "Last-Translator: Simon <orisim@proton.me>\n"
 "Language-Team: Ukrainian <https://weblate.fyralabs.com/projects/flattool/"
@@ -94,23 +94,23 @@ msgstr "Розпочати"
 msgid "More Information"
 msgstr "Додаткова інформація"
 
-#: src/gtk/entry_row.js:56
+#: src/gtk/entry_row.ts:67
 msgid "Disabled"
 msgstr "Вимкнено"
 
-#: src/gtk/entry_row.js:60
+#: src/gtk/entry_row.ts:71
 msgid "Overridden"
 msgstr ""
 
-#: src/gtk/entry_row.js:64
+#: src/gtk/entry_row.ts:75
 msgid "Enabled"
 msgstr "Увімкнено"
 
-#: src/gtk/entry_row.js:84
+#: src/gtk/entry_row.ts:95
 msgid "This entry is overridden by a user entry."
 msgstr ""
 
-#: src/gtk/entry_row.js:86
+#: src/gtk/entry_row.ts:97
 msgid "This entry overrides a system entry."
 msgstr ""
 
@@ -234,19 +234,19 @@ msgctxt "shortcut window"
 msgid "Quit"
 msgstr "Вийти"
 
-#: src/main.js:57
+#: src/main.ts:70
 msgid "Translate"
 msgstr "Перекласти"
 
-#: src/main.js:58
+#: src/main.ts:71
 msgid "Donate"
 msgstr "Зробити пожертвування"
 
-#: src/main.js:84
+#: src/main.ts:97
 msgid "Opened folder"
 msgstr "Відкрита тека"
 
-#: src/main.js:87
+#: src/main.ts:100
 msgid "Could not open folder"
 msgstr "Не вдалося відкрити теку"
 
@@ -264,53 +264,53 @@ msgstr "Пошук"
 msgid "Search entries"
 msgstr "Пошук записів"
 
-#: src/main_view/app-list-page.blp:45
+#: src/main_view/app-list-page.blp:49
 #, fuzzy
 #| msgid "Command or Script"
 msgid "Commands and Scripts"
 msgstr "Команда або скрипт"
 
-#: src/main_view/app-list-page.blp:46
+#: src/main_view/app-list-page.blp:50
 #, fuzzy
 #| msgid "Enable this entry to be started when you log in."
 msgid "Run a command or script when you log in."
 msgstr "Ввімкнути цей запис, щоб він запускався при завантаженні системи."
 
-#: src/main_view/app-list-page.blp:52
+#: src/main_view/app-list-page.blp:56
 msgid "Add a Command or Script"
 msgstr "Додати команду або скрипт"
 
-#: src/main_view/app-list-page.blp:53
+#: src/main_view/app-list-page.blp:57
 msgid "Enter the command to run or path to your script"
 msgstr ""
 
-#: src/main_view/app-list-page.blp:75
+#: src/main_view/app-list-page.blp:80
 #, fuzzy
 #| msgid "No installed apps found"
 msgid "Installed Apps"
 msgstr "Не знайдено встановлених додатків"
 
-#: src/main_view/app-list-page.blp:76
+#: src/main_view/app-list-page.blp:81
 msgid "Choose any installed app to run when you log in."
 msgstr ""
 
-#: src/main_view/app-list-page.blp:80
+#: src/main_view/app-list-page.blp:85
 msgid "Show Hidden Apps"
 msgstr ""
 
-#: src/main_view/app-list-page.blp:81
+#: src/main_view/app-list-page.blp:86
 msgid "Show apps that are hidden from the app menu"
 msgstr ""
 
-#: src/main_view/app-list-page.blp:98 src/main_view/entries-page.blp:57
+#: src/main_view/app-list-page.blp:103 src/main_view/entries-page.blp:57
 msgid "No Results Found"
 msgstr "Не знайдено жодного результату"
 
-#: src/main_view/app-list-page.blp:99 src/main_view/entries-page.blp:58
+#: src/main_view/app-list-page.blp:104 src/main_view/entries-page.blp:58
 msgid "Try a different search."
 msgstr "Спробуйте інший пошуковий запит."
 
-#: src/main_view/app_list_page.js:111
+#: src/main_view/app_list_page.ts:135
 msgid "Could not load some apps"
 msgstr "Не вдалося завантажити деякі додатки"
 
@@ -431,43 +431,43 @@ msgstr ""
 msgid "Trash"
 msgstr ""
 
-#: src/main_view/details_page.js:196
+#: src/main_view/details_page.ts:264
 msgid "New Entry"
 msgstr "Новий запис"
 
-#: src/main_view/details_page.js:275
+#: src/main_view/details_page.ts:344
 #, fuzzy
 #| msgid "Saved Details"
 msgid "Saved details"
 msgstr "Збережено подробиці"
 
-#: src/main_view/details_page.js:277
+#: src/main_view/details_page.ts:346
 msgid "Could not save file"
 msgstr "Не вдалося зберегти файл"
 
-#: src/main_view/details_page.js:302
+#: src/main_view/details_page.ts:371
 #, fuzzy
 #| msgid "Create a New Entry"
 msgid "Created entry"
 msgstr "Створити новий запис"
 
-#: src/main_view/details_page.js:304 src/main_view/details_page.js:328
+#: src/main_view/details_page.ts:373 src/main_view/details_page.ts:397
 #, fuzzy
 #| msgid "Could not save file"
 msgid "Could not create file"
 msgstr "Не вдалося зберегти файл"
 
-#: src/main_view/details_page.js:325
+#: src/main_view/details_page.ts:394
 msgid "Overrode entry"
 msgstr ""
 
-#: src/main_view/details_page.js:366
+#: src/main_view/details_page.ts:435
 #, fuzzy
 #| msgid "Trashed Entry"
 msgid "Trashed entry"
 msgstr "Видалені записи"
 
-#: src/main_view/details_page.js:368
+#: src/main_view/details_page.ts:437
 msgid "Could not trash file"
 msgstr "Не вдалося перемістити у смітник"
 
@@ -518,52 +518,52 @@ msgstr "_Комбінації клавіш"
 msgid "_About Ignition"
 msgstr "_Про Ignition"
 
-#: src/main_view/entries_page.js:63
+#: src/main_view/entries_page.ts:85
 #, fuzzy
 #| msgctxt "shortcut window"
 #| msgid "Search Entries"
 msgid "User Startup Entries"
 msgstr "Пошук записів"
 
-#: src/main_view/entries_page.js:64
+#: src/main_view/entries_page.ts:86
 msgid "Entries that run only for you."
 msgstr ""
 
-#: src/main_view/entries_page.js:88
+#: src/main_view/entries_page.ts:110
 #, fuzzy
 #| msgctxt "shortcut window"
 #| msgid "Search Entries"
 msgid "System Startup Entries"
 msgstr "Пошук записів"
 
-#: src/main_view/entries_page.js:89
+#: src/main_view/entries_page.ts:111
 msgid "Entries that run for everyone."
 msgstr ""
 
-#: src/main_view/entries_page.js:168
+#: src/main_view/entries_page.ts:191
 #, fuzzy
 #| msgid "Could not load some apps"
 msgid "Could not load some entries"
 msgstr "Не вдалося завантажити деякі додатки"
 
-#: src/utils/helper_funcs.js:22
+#: src/utils/helper_funcs.ts:27
 msgid "Copy"
 msgstr "Скопіювати"
 
-#: src/utils/helper_funcs.js:23
+#: src/utils/helper_funcs.ts:28
 msgid "OK"
 msgstr "Добре"
 
-#: src/utils/helper_funcs.js:33
+#: src/utils/helper_funcs.ts:37
 msgid "Details"
 msgstr "Подробиці"
 
 #. These need to be getters for the _() translation function to work
-#: src/utils/shared_vars.js:13
+#: src/utils/shared_vars.ts:17
 msgid "No Name Set"
 msgstr "Назва не встановлена"
 
-#: src/utils/shared_vars.js:14
+#: src/utils/shared_vars.ts:18
 msgid "No comment set."
 msgstr "Без коментаря."
 
