@@ -66,11 +66,6 @@ export class AppListPage extends Adw.NavigationPage {
 		this._search_entry.connect('search-changed', () => this.on_search_changed());
 		this._show_hidden_switch.connect('notify::active', () => this.on_search_changed());
 		this._script_row.connect('activated', () => this.signals.script_chosen.emit());
-
-		this._search_bar.connect('notify::search-mode-enabled', () => {
-			const is_enabled = this._search_bar.search_mode_enabled;
-			this._script_group.opacity = is_enabled ? 0 : 1;
-		});
 	}
 
 	scroll_to_top(): void {
