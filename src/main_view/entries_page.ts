@@ -22,13 +22,13 @@ export class EntriesPage extends Adw.NavigationPage {
 				'help_button',
 				'search_button',
 				'search_bar',
-					'search_entry',
+				'search_entry',
 				'stack',
-					'loading_status',
-					'no_results_status',
-					'scrolled_window',
-						'home_group',
-						'root_group',
+				'loading_status',
+				'no_results_status',
+				'scrolled_window',
+				'home_group',
+				'root_group',
 				'add_button',
 				'empty_row',
 				'help_dialog',
@@ -154,23 +154,12 @@ export class EntriesPage extends Adw.NavigationPage {
 		const root_map = new Map<string, AutostartEntry>(); // File name -> entry object
 		const home_entries: AutostartEntry[] = [];
 		const fails: string[] = [];
-		const root_enumerator = SharedVars.root_autostart_dir.enumerate_children(
-			'standard::*',
-			Gio.FileQueryInfoFlags.NOFOLLOW_SYMLINKS,
-			null,
-		);
 		const home_enumerator = SharedVars.home_autostart_dir.enumerate_children(
 			'standard::*',
 			Gio.FileQueryInfoFlags.NOFOLLOW_SYMLINKS,
 			null,
 		);
-		return [
-			() => entry_iteration(
-				SharedVars.root_autostart_dir,
-				root_enumerator,
-				(entry: AutostartEntry) => root_map.set(entry.file_name, entry),
-				(err: unknown, path: string) => fails.push(`${err}:\n${path}`),
-			),
+		const to_return: (() => AsyncResult)[] = [
 			() => entry_iteration(
 				SharedVars.home_autostart_dir,
 				home_enumerator,
@@ -197,6 +186,23 @@ export class EntriesPage extends Adw.NavigationPage {
 				this._home_group.load_entries(home_entries);
 				return Async.BREAK;
 			},
+		];
+		if (!SharedVars.root_autostart_dir.query_exists(null)) {
+			return to_return;
+		}
+		const root_enumerator = SharedVars.root_autostart_dir.enumerate_children(
+			'standard::*',
+			Gio.FileQueryInfoFlags.NOFOLLOW_SYMLINKS,
+			null,
+		);
+		return [
+			() => entry_iteration(
+				SharedVars.root_autostart_dir,
+				root_enumerator,
+				(entry: AutostartEntry) => root_map.set(entry.file_name, entry),
+				(err: unknown, path: string) => fails.push(`${err}:\n${path}`),
+			),
+			...to_return,
 		];
 	}
 }
