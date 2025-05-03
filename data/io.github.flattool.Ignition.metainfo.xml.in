@@ -49,6 +49,23 @@
 	</screenshots>
 
 	<releases>
+		<release version="2.1.0" date="2025-5-2">
+			<description translate="no">
+				<p>Changes</p>
+				<ul>
+					<li>Improve the app list's search animation</li>
+					<li>Updated translations</li>
+				</ul>
+				<p>Bug Fixes</p>
+				<ul>
+					<li>The app no longer crashes when the root autostart directory is not found</li>
+					<li>New script entries now replaces whitespace in their filenames with underscores</li>
+					<li>Fix some entries not being able to be delayed, due to their special DBus settings</li>
+					<li>Startup entries added by your system can now be viewed and overridden</li>
+					<li>The app list no longer continues hiding apps that match entries you trashed</li>
+				</ul>
+			</description>
+		</release>
 		<release version="2.0.0" date="2025-4-26">
 			<description translate="no">
 				<p>New Features</p>
