@@ -2,6 +2,7 @@ import { FirstRunPage } from '../first_run_page/first_run_page.js';
 import { MainView } from '../main_view/main_view.js';
 import { Async } from '../utils/async.js';
 import { Config } from '../config.js';
+import { SharedVars } from '../utils/shared_vars.js';
 
 import GObject from 'gi://GObject?version=2.0';
 import Gio from 'gi://Gio?version=2.0';
@@ -31,6 +32,7 @@ export class IgnitionWindow extends Adw.ApplicationWindow {
 
 	constructor(params?: Partial<Adw.ApplicationWindow.ConstructorProps>) {
 		super(params);
+		SharedVars.main_window = this;
 
 		if (Config.PROFILE === "development") {
 			this.add_css_class("devel");

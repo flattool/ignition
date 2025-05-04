@@ -98,7 +98,7 @@ class IgnitionApplication extends Adw.Application {
 				} catch (error) {
 					add_error_toast(
 						_("Could not open folder"),
-						`Path: ${SharedVars.home_autostart_dir}\n${error}`,
+						`Path: ${SharedVars.home_autostart_dir.get_path()}\n${error}`,
 					);
 				}
 			});
@@ -123,7 +123,6 @@ class IgnitionApplication extends Adw.Application {
 		if (!active_window)
 			active_window = new IgnitionWindow({ application: this });
 
-		SharedVars.main_window = active_window as IgnitionWindow;
 		active_window.present();
 	}
 }
