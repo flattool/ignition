@@ -3,6 +3,7 @@ import { MainView } from '../main_view/main_view.js';
 import { Async } from '../utils/async.js';
 import { Config } from '../config.js';
 import { SharedVars } from '../utils/shared_vars.js';
+import { add_error_toast } from '../utils/helper_funcs.js';
 
 import GObject from 'gi://GObject?version=2.0';
 import Gio from 'gi://Gio?version=2.0';
@@ -60,6 +61,18 @@ export class IgnitionWindow extends Adw.ApplicationWindow {
 
 	startup(): void {
 		this._stack.visible_child = this._main_view;
+
+		try {
+			if (!SharedVars.is_flatpak && !SharedVars.home_autostart_dir.query_exists(null)) {
+				SharedVars.home_autostart_dir.make_directory_with_parents(null);
+			}
+			if (!SharedVars.home_autostart_dir.query_exists(null)) {
+				throw new Error("Failed to initialize Autostart Directory");
+			}
+		} catch (error: unknown) {
+			add_error_toast(_("Failed to start properly"), `${error}`);
+			return;
+		}
 
 		Async.run_pipe([
 			...this._main_view.load_host_apps(),
