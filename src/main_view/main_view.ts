@@ -16,9 +16,9 @@ export class MainView extends Adw.Bin {
 			Template: "resource:///io/github/flattool/Ignition/main_view/main-view.ui",
 			InternalChildren: [
 				"navigation_view",
-				"entries_page",
-				"app_list_page",
-				"details_page",
+					"entries_page",
+					"app_list_page",
+					"details_page",
 			],
 		}, this);
 	}
