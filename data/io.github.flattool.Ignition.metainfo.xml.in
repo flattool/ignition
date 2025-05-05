@@ -49,6 +49,15 @@
 	</screenshots>
 
 	<releases>
+		<release version="2.1.1" date="2025-5-5">
+			<description translate="no">
+				<p>Bug Fixes and Changes</p>
+				<ul>
+					<li>Ensure the home autostart directory exists before any entries can be added</li>
+					<li>Updated translations</li>
+				</ul>
+			</description>
+		</release>
 		<release version="2.1.0" date="2025-5-2">
 			<description translate="no">
 				<p>Changes</p>
@@ -61,7 +70,6 @@
 					<li>The app no longer crashes when the root autostart directory is not found</li>
 					<li>New script entries now replaces whitespace in their filenames with underscores</li>
 					<li>Fix some entries not being able to be delayed, due to their special DBus settings</li>
-					<li>Startup entries added by your system can now be viewed and overridden</li>
 					<li>The app list no longer continues hiding apps that match entries you trashed</li>
 				</ul>
 			</description>
