@@ -19,7 +19,7 @@ export const add_error_toast = (title: string, message: string, window = SharedV
 		wrap: true,
 		wrap_mode: Pango.WrapMode.WORD_CHAR,
 	});
-	label.set_markup(`<tt>${GLib.markup_escape_text(message, -1)}</tt>`)
+	label.set_markup(`<tt>${GLib.markup_escape_text(message, -1)}</tt>`);
 	const error_dialog = new Adw.AlertDialog({
 		heading: title,
 		extra_child: label,
@@ -36,7 +36,6 @@ export const add_error_toast = (title: string, message: string, window = SharedV
 		title: title,
 		button_label: _("Details"),
 	});
-	// TODO: clean this up
 	toast.connect("button-clicked", () => error_dialog.present(window));
 	window?._toast_overlay.add_toast(toast);
 	print("==== Error Toast ====");
