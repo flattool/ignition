@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-02 02:54-0400\n"
-"PO-Revision-Date: 2025-03-04 11:46+0000\n"
-"Last-Translator: Alexmelman88 <alexmelman88@gmail.com>\n"
+"POT-Creation-Date: 2025-05-04 20:46-0400\n"
+"PO-Revision-Date: 2025-05-04 11:46+0000\n"
+"Last-Translator: rorshek <sergeyxmen1992@yandex.ru>\n"
 "Language-Team: Russian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/ru/>\n"
 "Language: ru\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.9.2\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:2
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14
@@ -67,13 +67,11 @@ msgstr "Просмотр всех элементов запуска в тёмн�
 
 #: src/first_run_page/first-run-page.blp:5
 msgid "Welcome"
-msgstr ""
+msgstr "Добро пожаловать"
 
 #: src/first_run_page/first-run-page.blp:13
-#, fuzzy
-#| msgid "_About Ignition"
 msgid "About Ignition"
-msgstr "_О приложении"
+msgstr "О приложении"
 
 #: src/first_run_page/first-run-page.blp:20
 msgid "Welcome to Ignition!"
@@ -100,7 +98,7 @@ msgstr "Отключено"
 
 #: src/gtk/entry_row.ts:71
 msgid "Overridden"
-msgstr ""
+msgstr "Переопределено"
 
 #: src/gtk/entry_row.ts:75
 msgid "Enabled"
@@ -108,7 +106,7 @@ msgstr "Включено"
 
 #: src/gtk/entry_row.ts:95
 msgid "This entry is overridden by a user entry."
-msgstr ""
+msgstr "Эта запись переопределена пользовательской записью."
 
 #: src/gtk/entry_row.ts:97
 msgid "This entry overrides a system entry."
@@ -122,7 +120,7 @@ msgstr "Больше информации"
 
 #: src/gtk/help-dialog.blp:27
 msgid "Can't find an application?"
-msgstr ""
+msgstr "Не можешь найти приложение?"
 
 #: src/gtk/help-dialog.blp:28
 msgid "Ignition might not be able to see some applications on your system"
@@ -138,7 +136,7 @@ msgstr ""
 
 #: src/gtk/help-dialog.blp:53
 msgid "Can't Find an App?"
-msgstr ""
+msgstr "Не можешь найти приложение?"
 
 #: src/gtk/help-dialog.blp:73
 msgid ""
@@ -194,7 +192,7 @@ msgstr "Поиск записей"
 #: src/gtk/help-overlay.blp:25
 msgctxt "shortcut window"
 msgid "Apps List"
-msgstr ""
+msgstr "Список приложений"
 
 #: src/gtk/help-overlay.blp:28
 msgctxt "shortcut window"
@@ -264,49 +262,46 @@ msgstr "Поиск"
 msgid "Search entries"
 msgstr "Поиск записей"
 
-#: src/main_view/app-list-page.blp:49
+#: src/main_view/app-list-page.blp:47
 #, fuzzy
 #| msgid "Command or Script"
 msgid "Commands and Scripts"
 msgstr "Команда или сценарий"
 
-#: src/main_view/app-list-page.blp:50
-#, fuzzy
-#| msgid "Enable this entry to be started when you log in."
+#: src/main_view/app-list-page.blp:48
 msgid "Run a command or script when you log in."
-msgstr "Включить запуск этой записи при входе в систему."
+msgstr "Запустить команду или скрипт при входе в систему."
 
-#: src/main_view/app-list-page.blp:56
+#: src/main_view/app-list-page.blp:54
 msgid "Add a Command or Script"
 msgstr "Добавить команду или сценарий"
 
-#: src/main_view/app-list-page.blp:57
+#: src/main_view/app-list-page.blp:55
 msgid "Enter the command to run or path to your script"
 msgstr ""
 
-#: src/main_view/app-list-page.blp:80
-#, fuzzy
-#| msgid "No installed apps found"
+#: src/main_view/app-list-page.blp:78
 msgid "Installed Apps"
-msgstr "Установленные приложения не найдены"
+msgstr "Установленные приложения"
 
-#: src/main_view/app-list-page.blp:81
+#: src/main_view/app-list-page.blp:79
 msgid "Choose any installed app to run when you log in."
 msgstr ""
+"Выбирите любое установленное приложение для запуска при входе в систему."
 
-#: src/main_view/app-list-page.blp:85
+#: src/main_view/app-list-page.blp:83
 msgid "Show Hidden Apps"
-msgstr ""
+msgstr "Показать скрытые приложения"
 
-#: src/main_view/app-list-page.blp:86
+#: src/main_view/app-list-page.blp:84
 msgid "Show apps that are hidden from the app menu"
 msgstr ""
 
-#: src/main_view/app-list-page.blp:103 src/main_view/entries-page.blp:57
+#: src/main_view/app-list-page.blp:101 src/main_view/entries-page.blp:57
 msgid "No Results Found"
 msgstr "Результаты не найдены"
 
-#: src/main_view/app-list-page.blp:104 src/main_view/entries-page.blp:58
+#: src/main_view/app-list-page.blp:102 src/main_view/entries-page.blp:58
 msgid "Try a different search."
 msgstr "Попробуйте другой поисковый запрос."
 
@@ -566,6 +561,10 @@ msgstr "Нет имени"
 #: src/utils/shared_vars.ts:18
 msgid "No comment set."
 msgstr "Нет комментария."
+
+#: src/window/window.ts:73
+msgid "Failed to start properly"
+msgstr ""
 
 #~ msgid "Choose an App"
 #~ msgstr "Выберите приложение"

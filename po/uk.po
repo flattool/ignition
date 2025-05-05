@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-02 02:54-0400\n"
-"PO-Revision-Date: 2025-03-29 16:46+0000\n"
-"Last-Translator: Simon <orisim@proton.me>\n"
+"POT-Creation-Date: 2025-05-04 20:46-0400\n"
+"PO-Revision-Date: 2025-05-04 11:46+0000\n"
+"Last-Translator: Andrii Serbovets <serbovets.translation@gmail.com>\n"
 "Language-Team: Ukrainian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/uk/>\n"
 "Language: uk\n"
@@ -18,21 +18,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.9.2\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:2
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14
 msgid "Ignition"
-msgstr "Запалювання"
+msgstr "Ignition"
 
 #: data/io.github.flattool.Ignition.desktop.in:3
 #: data/io.github.flattool.Ignition.metainfo.xml.in:15
 msgid "Manage startup apps and scripts"
-msgstr "Керування додатками та скриптами автозавантаження"
+msgstr "Налаштовуйте автозапуск застосунків і сценаріїв"
 
 #: data/io.github.flattool.Ignition.desktop.in:9
 msgid "GTK;startup;autostart;login;"
-msgstr "GTK; запуск; автозапуск; вхід;"
+msgstr "GTK; автозапуск; вхід;"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
 msgid "Heliguy"
@@ -264,49 +264,49 @@ msgstr "Пошук"
 msgid "Search entries"
 msgstr "Пошук записів"
 
-#: src/main_view/app-list-page.blp:49
+#: src/main_view/app-list-page.blp:47
 #, fuzzy
 #| msgid "Command or Script"
 msgid "Commands and Scripts"
 msgstr "Команда або скрипт"
 
-#: src/main_view/app-list-page.blp:50
+#: src/main_view/app-list-page.blp:48
 #, fuzzy
 #| msgid "Enable this entry to be started when you log in."
 msgid "Run a command or script when you log in."
 msgstr "Ввімкнути цей запис, щоб він запускався при завантаженні системи."
 
-#: src/main_view/app-list-page.blp:56
+#: src/main_view/app-list-page.blp:54
 msgid "Add a Command or Script"
 msgstr "Додати команду або скрипт"
 
-#: src/main_view/app-list-page.blp:57
+#: src/main_view/app-list-page.blp:55
 msgid "Enter the command to run or path to your script"
 msgstr ""
 
-#: src/main_view/app-list-page.blp:80
+#: src/main_view/app-list-page.blp:78
 #, fuzzy
 #| msgid "No installed apps found"
 msgid "Installed Apps"
 msgstr "Не знайдено встановлених додатків"
 
-#: src/main_view/app-list-page.blp:81
+#: src/main_view/app-list-page.blp:79
 msgid "Choose any installed app to run when you log in."
 msgstr ""
 
-#: src/main_view/app-list-page.blp:85
+#: src/main_view/app-list-page.blp:83
 msgid "Show Hidden Apps"
 msgstr ""
 
-#: src/main_view/app-list-page.blp:86
+#: src/main_view/app-list-page.blp:84
 msgid "Show apps that are hidden from the app menu"
 msgstr ""
 
-#: src/main_view/app-list-page.blp:103 src/main_view/entries-page.blp:57
+#: src/main_view/app-list-page.blp:101 src/main_view/entries-page.blp:57
 msgid "No Results Found"
 msgstr "Не знайдено жодного результату"
 
-#: src/main_view/app-list-page.blp:104 src/main_view/entries-page.blp:58
+#: src/main_view/app-list-page.blp:102 src/main_view/entries-page.blp:58
 msgid "Try a different search."
 msgstr "Спробуйте інший пошуковий запит."
 
@@ -566,6 +566,10 @@ msgstr "Назва не встановлена"
 #: src/utils/shared_vars.ts:18
 msgid "No comment set."
 msgstr "Без коментаря."
+
+#: src/window/window.ts:73
+msgid "Failed to start properly"
+msgstr ""
 
 #~ msgid "Choose an App"
 #~ msgstr "Обрати додаток"
