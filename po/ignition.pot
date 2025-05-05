@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-02 02:54-0400\n"
+"POT-Creation-Date: 2025-05-04 20:00-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -513,4 +513,8 @@ msgstr ""
 
 #: src/utils/shared_vars.ts:18
 msgid "No comment set."
+msgstr ""
+
+#: src/window/window.ts:73
+msgid "Failed to start properly"
 msgstr ""

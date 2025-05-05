@@ -15,3 +15,4 @@ src/main_view/entries-page.blp
 src/main_view/entries_page.ts
 src/utils/helper_funcs.ts
 src/utils/shared_vars.ts
+src/window/window.ts
