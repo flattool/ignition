@@ -29,7 +29,7 @@ class Details {
 	terminal: boolean;
 	delay: number;
 
-	constructor(enabled = true, name = '', comment = '', exec = '', terminal = false, delay = 0) {
+	constructor(enabled = true, name = "", comment = "", exec = "", terminal = false, delay = 0) {
 		this.enabled = enabled;
 		this.name = name;
 		this.comment = comment;
@@ -61,12 +61,12 @@ export class DetailsPage extends Adw.NavigationPage {
 			Template:
 				"resource:///io/github/flattool/Ignition/main_view/details-page.ui",
 			InternalChildren: [
-				'header_bar',
+				"header_bar",
 					"trash_button",
 					"save_button",
 					"create_button",
 				"root_banner",
-					'scrolled_window',
+					"scrolled_window",
 						"content_box",
 							"icon",
 							"title_group",
@@ -148,48 +148,48 @@ export class DetailsPage extends Adw.NavigationPage {
 		super(params);
 
 		// Connections
-		this._enabled_row.connect('notify::active', () => this.set_gui_detail('enabled', this._enabled_row.active));
-		this._name_row.connect('changed', () => {
+		this._enabled_row.connect("notify::active", () => this.set_gui_detail("enabled", this._enabled_row.active));
+		this._name_row.connect("changed", () => {
 			const text = this._name_row.text;
 			this.validate_input(this._name_row, text.length > 0 && this.file_name_regex.test(text));
-			this.set_gui_detail('name', text);
+			this.set_gui_detail("name", text);
 		});
-		this._comment_row.connect('changed', () => this.set_gui_detail('comment', this._comment_row.text));
-		this._exec_row.connect('changed', () => {
+		this._comment_row.connect("changed", () => this.set_gui_detail("comment", this._comment_row.text));
+		this._exec_row.connect("changed", () => {
 			const text = this._exec_row.text;
 			this.validate_input(this._exec_row, text.length > 0 && this.exec_regex.test(text));
-			this.set_gui_detail('exec', text);
+			this.set_gui_detail("exec", text);
 		});
 		this._terminal_row.connect(
-			'notify::active', () => this.set_gui_detail('terminal', this._terminal_row.active)
+			"notify::active", () => this.set_gui_detail("terminal", this._terminal_row.active)
 		);
 
-		this._name_row.connect('entry-activated', () => {
+		this._name_row.connect("entry-activated", () => {
 			this.on_create();
 			this.on_save();
 		});
-		this._comment_row.connect('entry-activated', () => {
+		this._comment_row.connect("entry-activated", () => {
 			this.on_create();
 			this.on_save();
 		});
-		this._exec_row.connect('entry-activated', () => {
+		this._exec_row.connect("entry-activated", () => {
 			this.on_create();
 			this.on_save();
 		});
 
-		this._save_button.connect('clicked', () => this.on_save());
-		this._create_button.connect('clicked', () => this.on_create());
-		this._root_banner.connect('button-clicked', () => this.on_override());
-		this._trash_button.connect('clicked', () => this.on_trash());
+		this._save_button.connect("clicked", () => this.on_save());
+		this._create_button.connect("clicked", () => this.on_create());
+		this._root_banner.connect("button-clicked", () => this.on_override());
+		this._trash_button.connect("clicked", () => this.on_trash());
 
-		this._create_dialog.connect('response', this.on_create_dialog_response.bind(this));
-		this._override_dialog.connect('response', this.on_override_dialog_response.bind(this));
-		this._trash_dialog.connect('response', this.on_trash_dialog_response.bind(this));
+		this._create_dialog.connect("response", this.on_create_dialog_response.bind(this));
+		this._override_dialog.connect("response", this.on_override_dialog_response.bind(this));
+		this._trash_dialog.connect("response", this.on_trash_dialog_response.bind(this));
 
-		this._delay_adjustment.connect('value-changed', adj => this.set_gui_detail('delay', adj.value));
+		this._delay_adjustment.connect("value-changed", adj => this.set_gui_detail("delay", adj.value));
 
-		const save_action = SharedVars.application?.lookup_action('save-edits');
-		if (save_action) save_action.connect('activate', () => {
+		const save_action = SharedVars.application?.lookup_action("save-edits");
+		if (save_action) save_action.connect("activate", () => {
 			this.on_save();
 			this.on_create();
 		});
@@ -203,7 +203,7 @@ export class DetailsPage extends Adw.NavigationPage {
 
 		// Get the startup delay, if any
 		const raw_exec = this.entry.exec;
-		let [delay, display_exec, load_error] = (raw_exec.endsWith('.ignition_delay.sh')
+		let [delay, display_exec, load_error] = (raw_exec.endsWith(".ignition_delay.sh")
 			? DelayHelper.load_delay(Gio.File.new_for_path(raw_exec))
 			: [0, raw_exec, null]
 		);
@@ -237,10 +237,10 @@ export class DetailsPage extends Adw.NavigationPage {
 
 	validate_input(row: Adw.EntryRow, test: boolean): void {
 		if (test) {
-			row.remove_css_class('error');
+			row.remove_css_class("error");
 			this.invalid_rows.delete(row);
 		} else {
-			row.add_css_class('error');
+			row.add_css_class("error");
 			this.invalid_rows.add(row);
 		}
 	}
@@ -291,7 +291,7 @@ export class DetailsPage extends Adw.NavigationPage {
 		this.entry.terminal = this.gui_details.terminal;
 
 		if (this.origin === DetailsPage.Origins.NEW) {
-			const new_name = this.gui_details.name.replace(/\s+/g, '_');
+			const new_name = this.gui_details.name.replace(/\s+/g, "_");
 			this.entry.path = `${SharedVars.home_autostart_dir.get_path()}/${new_name}.desktop`;
 		}
 
@@ -358,12 +358,12 @@ export class DetailsPage extends Adw.NavigationPage {
 			this._create_dialog.present(SharedVars.main_window);
 			this._create_dialog.grab_focus();
 		} else {
-			this.on_create_dialog_response(this._create_dialog, 'create_continue');
+			this.on_create_dialog_response(this._create_dialog, "create_continue");
 		}
 	}
 
 	on_create_dialog_response(dialog: Adw.Dialog, response: string): void {
-		if (!this.is_creating_allowed || response !== 'create_continue') {
+		if (!this.is_creating_allowed || response !== "create_continue") {
 			return;
 		}
 		this.entry.save((file, err) => {
@@ -385,7 +385,7 @@ export class DetailsPage extends Adw.NavigationPage {
 	}
 
 	on_override_dialog_response(dialog: Adw.Dialog, response: string): void {
-		if (!this.is_overriding_allowed || response !== 'override_continue') {
+		if (!this.is_overriding_allowed || response !== "override_continue") {
 			return;
 		}
 		this.sync_details_to_entry();
@@ -408,7 +408,7 @@ export class DetailsPage extends Adw.NavigationPage {
 	}
 
 	on_trash_dialog_response(dialog: Adw.Dialog, response: string): void {
-		if (!this.is_trashing_allowed || response !== 'trash_continue') {
+		if (!this.is_trashing_allowed || response !== "trash_continue") {
 			return;
 		}
 

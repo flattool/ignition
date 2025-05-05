@@ -28,12 +28,12 @@ export class DelayHelper {
 
 		try {
 			const [data,] = file.load_bytes(null);
-			const decoder = new TextDecoder('utf-8');
+			const decoder = new TextDecoder("utf-8");
 			const array = data.get_data() ?? 0;
 			if (array === 0) {
 				throw new Error("data.get_data returned null");
 			}
-			const contents = decoder.decode(array).split('\n');
+			const contents = decoder.decode(array).split("\n");
 			if (contents.length < 2) {
 				return [0, "", `improperly constructed delay file\n[total lines under 2]\npath: ${path}`];
 			}
@@ -49,7 +49,7 @@ export class DelayHelper {
 				return [0, "", `improperly constructed delay file\n[delay item is not a number]\npath: ${path}`];
 			}
 
-			return [delay, rest.join(' '), null];
+			return [delay, rest.join(" "), null];
 		} catch (error) {
 			return [0, "", `DelayHelper.load_delay encountered and unexpected error:\n${error}\nfor path: ${path}`];
 		}
@@ -71,8 +71,8 @@ export class DelayHelper {
 			if (array === 0) {
 				throw new Error("data.get_data returned null");
 			}
-			const decoder = new TextDecoder('utf-8');
-			const contents = decoder.decode(array).split('\n');
+			const decoder = new TextDecoder("utf-8");
+			const contents = decoder.decode(array).split("\n");
 
 			if (contents.length < 2) {
 				return ["", `improperly constructed delay file\n[total lines under 2]\npath: ${path}`];
@@ -96,7 +96,7 @@ export class DelayHelper {
 				return ["", `error while deleting delay file at path: ${path}\n${deleteError}`];
 			}
 
-			return [rest.join(' '), ""];
+			return [rest.join(" "), ""];
 		} catch (error) {
 			return ["", `DelayHelper.remove_delay encountered an unexpected error:\n${error}\nfor path: ${path}`];
 		}

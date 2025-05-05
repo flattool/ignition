@@ -1,18 +1,18 @@
-import { Async } from '../utils/async.js';
-import { AutostartEntry } from '../utils/autostart_entry.js';
-import { IconHelper } from '../utils/icon_helper.js';
-import { SharedVars } from '../utils/shared_vars.js';
+import { Async } from "../utils/async.js";
+import { AutostartEntry } from "../utils/autostart_entry.js";
+import { IconHelper } from "../utils/icon_helper.js";
+import { SharedVars } from "../utils/shared_vars.js";
 
-import GObject from 'gi://GObject?version=2.0';
-import GLib from 'gi://GLib?version=2.0';
-import Gtk from 'gi://Gtk?version=4.0';
-import Adw from 'gi://Adw?version=1';
+import GObject from "gi://GObject?version=2.0";
+import GLib from "gi://GLib?version=2.0";
+import Gtk from "gi://Gtk?version=4.0";
+import Adw from "gi://Adw?version=1";
 
 export class EntryRow extends Adw.ActionRow {
 	static {
 		GObject.registerClass({
-			GTypeName: 'EntryRow',
-			Template: 'resource:///io/github/flattool/Ignition/gtk/entry-row.ui',
+			GTypeName: "EntryRow",
+			Template: "resource:///io/github/flattool/Ignition/gtk/entry-row.ui",
 			InternalChildren: [
 				"prefix_icon",
 				"suffix_label",
@@ -47,7 +47,7 @@ export class EntryRow extends Adw.ActionRow {
 		const icon_key = entry.icon
 
 		// This handles desktop entries that set their icon from a path
-		//   Snap applications do this, so it's quite needed
+		//   Snap applications do this, so it"s quite needed
 		Async.run(() => {
 			IconHelper.set_icon(this._prefix_icon, icon_key);
 			return Async.BREAK;
@@ -80,10 +80,10 @@ export class EntryRow extends Adw.ActionRow {
 
 	make_row_dim(should_dim: boolean): void {
 		if (should_dim) {
-			this._suffix_label.add_css_class('warning');
+			this._suffix_label.add_css_class("warning");
 			this._prefix_icon.opacity = 0.4;
 		} else {
-			this._suffix_label.remove_css_class('warning');
+			this._suffix_label.remove_css_class("warning");
 			this._prefix_icon.opacity = 1;
 		}
 	}

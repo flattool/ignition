@@ -1,25 +1,25 @@
-import { FirstRunPage } from '../first_run_page/first_run_page.js';
-import { MainView } from '../main_view/main_view.js';
-import { Async } from '../utils/async.js';
-import { Config } from '../config.js';
-import { SharedVars } from '../utils/shared_vars.js';
-import { add_error_toast } from '../utils/helper_funcs.js';
+import { FirstRunPage } from "../first_run_page/first_run_page.js";
+import { MainView } from "../main_view/main_view.js";
+import { Async } from "../utils/async.js";
+import { Config } from "../config.js";
+import { SharedVars } from "../utils/shared_vars.js";
+import { add_error_toast } from "../utils/helper_funcs.js";
 
-import GObject from 'gi://GObject?version=2.0';
-import Gio from 'gi://Gio?version=2.0';
-import Gtk from 'gi://Gtk?version=4.0';
-import Adw from 'gi://Adw?version=1';
+import GObject from "gi://GObject?version=2.0";
+import Gio from "gi://Gio?version=2.0";
+import Gtk from "gi://Gtk?version=4.0";
+import Adw from "gi://Adw?version=1";
 
 export class IgnitionWindow extends Adw.ApplicationWindow {
 	static {
 		GObject.registerClass({
-			GTypeName: 'IgnitionWindow',
-			Template: 'resource:///io/github/flattool/Ignition/window/window.ui',
+			GTypeName: "IgnitionWindow",
+			Template: "resource:///io/github/flattool/Ignition/window/window.ui",
 			InternalChildren: [
-				'toast_overlay',
-					'stack',
-						'first_run_page',
-						'main_view',
+				"toast_overlay",
+					"stack",
+						"first_run_page",
+						"main_view",
 			],
 		}, this);
 	}

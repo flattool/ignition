@@ -24,10 +24,10 @@ export const add_error_toast = (title: string, message: string, window = SharedV
 		heading: title,
 		extra_child: label,
 	});
-	error_dialog.add_response('copy', _("Copy"));
-	error_dialog.add_response('ok', _("OK"));
-	error_dialog.connect('response', (__, response) => {
-		if (response !== 'copy') {
+	error_dialog.add_response("copy", _("Copy"));
+	error_dialog.add_response("ok", _("OK"));
+	error_dialog.connect("response", (__, response) => {
+		if (response !== "copy") {
 			return;
 		}
 		Gdk.Display.get_default()?.get_clipboard().set(message);
@@ -37,7 +37,7 @@ export const add_error_toast = (title: string, message: string, window = SharedV
 		button_label: _("Details"),
 	});
 	// TODO: clean this up
-	toast.connect('button-clicked', () => error_dialog.present(window));
+	toast.connect("button-clicked", () => error_dialog.present(window));
 	window?._toast_overlay.add_toast(toast);
 	print("==== Error Toast ====");
 	print(title);
@@ -59,7 +59,7 @@ export const entry_iteration = (
 	}
 	const name = file.get_name();
 	const path = `${dir.get_path()}/${name}`;
-	if (!path.endsWith('.desktop')) {
+	if (!path.endsWith(".desktop")) {
 		// Skip this iteration if a file that isn't a desktop entry is found
 		return Async.CONTINUE;
 	}
@@ -85,7 +85,7 @@ export const host_app_iteration = (
 		// Lazy load the enumerator to avoid high memory usage
 		if (enumerator === null) {
 			enumerator = dir.enumerate_children(
-				'standard::*',
+				"standard::*",
 				Gio.FileQueryInfoFlags.NOFOLLOW_SYMLINKS,
 				null
 			);
@@ -95,7 +95,7 @@ export const host_app_iteration = (
 			return Async.BREAK;
 		}
 		const name = info.get_name();
-		if (!name.endsWith('.desktop')) {
+		if (!name.endsWith(".desktop")) {
 			return Async.CONTINUE;
 		}
 		const path = `${dir_path}/${name}`;

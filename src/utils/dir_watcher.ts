@@ -1,7 +1,7 @@
-import { Async } from './async.js';
-import { Signal } from './signal.js';
+import { Async } from "./async.js";
+import { Signal } from "./signal.js";
 
-import Gio from 'gi://Gio?version=2.0';
+import Gio from "gi://Gio?version=2.0";
 
 // This class exists purely because the regular FileMonitor sends many events when
 //   a file's contents are changed, instead of just one.

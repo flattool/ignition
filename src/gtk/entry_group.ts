@@ -10,11 +10,11 @@ import Adw from "gi://Adw?version=1";
 export class EntryGroup extends Gtk.Box {
 	static {
 		GObject.registerClass({
-			GTypeName: 'EntryGroup',
-			Template: 'resource:///io/github/flattool/Ignition/gtk/entry-group.ui',
+			GTypeName: "EntryGroup",
+			Template: "resource:///io/github/flattool/Ignition/gtk/entry-group.ui",
 			InternalChildren: [
-				'group',
-				'list_box',
+				"group",
+				"list_box",
 			],
 		}, this);
 	}
@@ -76,7 +76,7 @@ export class EntryGroup extends Gtk.Box {
 				return Async.BREAK;
 			}
 			const row = new EntryRow(entry, true);
-			row.connect('activated', () => this.signals.row_clicked.emit(row));
+			row.connect("activated", () => this.signals.row_clicked.emit(row));
 			this._list_box.append(row);
 			return Async.CONTINUE;
 		}

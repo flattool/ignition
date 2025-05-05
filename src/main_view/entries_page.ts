@@ -16,22 +16,22 @@ import Adw from "gi://Adw?version=1";
 export class EntriesPage extends Adw.NavigationPage {
 	static {
 		GObject.registerClass({
-			GTypeName: 'EntriesPage',
-			Template: 'resource:///io/github/flattool/Ignition/main_view/entries-page.ui',
+			GTypeName: "EntriesPage",
+			Template: "resource:///io/github/flattool/Ignition/main_view/entries-page.ui",
 			InternalChildren: [
-				'help_button',
-				'search_button',
-				'search_bar',
-				'search_entry',
-				'stack',
-				'loading_status',
-				'no_results_status',
-				'scrolled_window',
-				'home_group',
-				'root_group',
-				'add_button',
-				'empty_row',
-				'help_dialog',
+				"help_button",
+				"search_button",
+				"search_bar",
+				"search_entry",
+				"stack",
+				"loading_status",
+				"no_results_status",
+				"scrolled_window",
+				"home_group",
+				"root_group",
+				"add_button",
+				"empty_row",
+				"help_dialog",
 			],
 		}, this);
 	}
@@ -69,7 +69,7 @@ export class EntriesPage extends Adw.NavigationPage {
 	constructor() {
 		super(...arguments);
 
-		this._stack.connect('notify::visible-child', () => {
+		this._stack.connect("notify::visible-child", () => {
 			const are_entries_showing = (
 				this._stack.visible_child === this._scrolled_window
 				|| this._stack.visible_child === this._no_results_status
@@ -110,7 +110,7 @@ export class EntriesPage extends Adw.NavigationPage {
 		this._root_group._group.title = _("System Startup Entries");
 		this._root_group._group.description = _("Entries that run for everyone.");
 
-		this._search_entry.connect('search-changed', () => this.on_search_changed());
+		this._search_entry.connect("search-changed", () => this.on_search_changed());
 
 		this.home_watcher = new DirWatcher(SharedVars.home_autostart_dir, 120);
 		this.home_watcher.event.connect(() => Async.run_pipe(this.load_entries()));
@@ -118,7 +118,7 @@ export class EntriesPage extends Adw.NavigationPage {
 		this.root_watcher = new DirWatcher(SharedVars.root_autostart_dir, 120);
 		this.root_watcher.event.connect(() => Async.run_pipe(this.load_entries()));
 
-		this._help_button.connect('clicked', () => this._help_dialog.present(SharedVars.main_window));
+		this._help_button.connect("clicked", () => this._help_dialog.present(SharedVars.main_window));
 	}
 
 	#on_group_finished_loading(group: EntryGroup): void {
@@ -155,7 +155,7 @@ export class EntriesPage extends Adw.NavigationPage {
 		const home_entries: AutostartEntry[] = [];
 		const fails: string[] = [];
 		const home_enumerator = SharedVars.home_autostart_dir.enumerate_children(
-			'standard::*',
+			"standard::*",
 			Gio.FileQueryInfoFlags.NOFOLLOW_SYMLINKS,
 			null,
 		);
@@ -191,7 +191,7 @@ export class EntriesPage extends Adw.NavigationPage {
 			return to_return;
 		}
 		const root_enumerator = SharedVars.root_autostart_dir.enumerate_children(
-			'standard::*',
+			"standard::*",
 			Gio.FileQueryInfoFlags.NOFOLLOW_SYMLINKS,
 			null,
 		);

@@ -17,18 +17,18 @@ export class AppListPage extends Adw.NavigationPage {
 			GTypeName: "AppListPage",
 			Template: "resource:///io/github/flattool/Ignition/main_view/app-list-page.ui",
 			InternalChildren: [
-				'header_bar',
-					'search_button',
-				'search_bar',
-					'search_entry',
-				'stack',
-					'scrolled_window',
-						'script_group',
-							'script_row',
-						'apps_group',
-							'show_hidden_switch',
-						'list_box',
-					'no_results_status',
+				"header_bar",
+					"search_button",
+				"search_bar",
+					"search_entry",
+				"stack",
+					"scrolled_window",
+						"script_group",
+							"script_row",
+						"apps_group",
+							"show_hidden_switch",
+						"list_box",
+					"no_results_status",
 			],
 		}, this);
 	}
@@ -63,9 +63,9 @@ export class AppListPage extends Adw.NavigationPage {
 			);
 		});
 
-		this._search_entry.connect('search-changed', () => this.on_search_changed());
-		this._show_hidden_switch.connect('notify::active', () => this.on_search_changed());
-		this._script_row.connect('activated', () => this.signals.script_chosen.emit());
+		this._search_entry.connect("search-changed", () => this.on_search_changed());
+		this._show_hidden_switch.connect("notify::active", () => this.on_search_changed());
+		this._script_row.connect("activated", () => this.signals.script_chosen.emit());
 	}
 
 	scroll_to_top(): void {
@@ -117,7 +117,7 @@ export class AppListPage extends Adw.NavigationPage {
 				(entry: AutostartEntry) => {
 					const home_path = `${SharedVars.home_autostart_dir.get_path()}/${entry.file_name}`;
 					const row = new EntryRow(entry, false);
-					row.connect('activated', () => this.signals.app_chosen.emit(entry));
+					row.connect("activated", () => this.signals.app_chosen.emit(entry));
 					if (!this._show_hidden_switch.active && this.is_entry_hidden(entry)) {
 						row.visible = false;
 					}

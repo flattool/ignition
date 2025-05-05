@@ -12,13 +12,13 @@ import Adw from "gi://Adw?version=1";
 export class MainView extends Adw.Bin {
 	static {
 		GObject.registerClass({
-			GTypeName: 'MainView',
-			Template: 'resource:///io/github/flattool/Ignition/main_view/main-view.ui',
+			GTypeName: "MainView",
+			Template: "resource:///io/github/flattool/Ignition/main_view/main-view.ui",
 			InternalChildren: [
-				'navigation_view',
-				'entries_page',
-				'app_list_page',
-				'details_page',
+				"navigation_view",
+				"entries_page",
+				"app_list_page",
+				"details_page",
 			],
 		}, this);
 	}
@@ -48,8 +48,8 @@ export class MainView extends Adw.Bin {
 		});
 		this._details_page.signals.pop_request.connect(() => this._navigation_view.pop_to_page(this._entries_page));
 
-		const search_action = SharedVars.application?.lookup_action('search');
-		if (search_action) search_action.connect('activate', () => {
+		const search_action = SharedVars.application?.lookup_action("search");
+		if (search_action) search_action.connect("activate", () => {
 			const current_page = this._navigation_view.get_visible_page() as AppListPage | DetailsPage | EntriesPage;
 			if (
 				(current_page === this._entries_page || current_page === this._app_list_page)
@@ -60,8 +60,8 @@ export class MainView extends Adw.Bin {
 			}
 		});
 
-		const new_action = SharedVars.application?.lookup_action('new-entry');
-		if (new_action) new_action.connect('activate', () => this.on_new_entry());
+		const new_action = SharedVars.application?.lookup_action("new-entry");
+		if (new_action) new_action.connect("activate", () => this.on_new_entry());
 	}
 
 	#push_page(push_page: Adw.NavigationPage): void {

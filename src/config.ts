@@ -12,11 +12,11 @@ export class Config {
 
 	private static load_json(): ConfigJson {
 		const resource = Gio.resources_lookup_data(
-			'/io/github/flattool/Ignition/js/config.json',
+			"/io/github/flattool/Ignition/js/config.json",
 			Gio.ResourceLookupFlags.NONE,
 		);
 		const bytes = resource.toArray();
-		const jsonString = new TextDecoder('utf-8').decode(bytes);
+		const jsonString = new TextDecoder("utf-8").decode(bytes);
 		const parsed = JSON.parse(jsonString);
 		return parsed;
 	}

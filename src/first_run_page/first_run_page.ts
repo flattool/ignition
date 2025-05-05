@@ -7,9 +7,9 @@ import Adw from "gi://Adw?version=1";
 export class FirstRunPage extends Adw.NavigationPage {
 	static {
 		GObject.registerClass({
-			GTypeName: 'FirstRunPage',
-			Template: 'resource:///io/github/flattool/Ignition/first_run_page/first-run-page.ui',
-			InternalChildren: ['get_started_button'],
+			GTypeName: "FirstRunPage",
+			Template: "resource:///io/github/flattool/Ignition/first_run_page/first-run-page.ui",
+			InternalChildren: ["get_started_button"],
 		}, FirstRunPage);
 	}
 
@@ -21,6 +21,6 @@ export class FirstRunPage extends Adw.NavigationPage {
 	constructor(params?: Adw.NavigationPage.ConstructorProps) {
 		super(params);
 
-		this._get_started_button.connect('clicked', () => this.signals.button_clicked.emit());
+		this._get_started_button.connect("clicked", () => this.signals.button_clicked.emit());
 	}
 }
