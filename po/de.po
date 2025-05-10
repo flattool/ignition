@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-04 20:46-0400\n"
-"PO-Revision-Date: 2025-03-24 06:20+0000\n"
-"Last-Translator: Pascal Dietrich <pascal.1.dietrich@hotmail.com>\n"
+"PO-Revision-Date: 2025-05-11 14:46+0000\n"
+"Last-Translator: rewrib <birwer.ali@gmx.de>\n"
 "Language-Team: German <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/de/>\n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.9.2\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:2
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14
@@ -66,7 +66,7 @@ msgstr "Alle Starteinträge im Dark-Mode anzeigen."
 
 #: src/first_run_page/first-run-page.blp:5
 msgid "Welcome"
-msgstr ""
+msgstr "Willkommen"
 
 #: src/first_run_page/first-run-page.blp:13
 #, fuzzy
@@ -99,7 +99,7 @@ msgstr "Deaktiviert"
 
 #: src/gtk/entry_row.ts:71
 msgid "Overridden"
-msgstr ""
+msgstr "Überschrieben"
 
 #: src/gtk/entry_row.ts:75
 msgid "Enabled"
@@ -107,37 +107,37 @@ msgstr "Aktiviert"
 
 #: src/gtk/entry_row.ts:95
 msgid "This entry is overridden by a user entry."
-msgstr ""
+msgstr "Dieser Eintrag wurde durch einen Benutzereintrag überschrieben."
 
 #: src/gtk/entry_row.ts:97
 msgid "This entry overrides a system entry."
-msgstr ""
+msgstr "Dieser Eintrag überschreibt einen Benutzereintrag."
 
 #: src/gtk/help-dialog.blp:5
-#, fuzzy
-#| msgid "More Information"
 msgid "Help and Information"
-msgstr "Mehr Informationen"
+msgstr "Hilfe und Informationen"
 
 #: src/gtk/help-dialog.blp:27
 msgid "Can't find an application?"
-msgstr ""
+msgstr "Eine Anwendung wurde nicht gefunden?"
 
 #: src/gtk/help-dialog.blp:28
 msgid "Ignition might not be able to see some applications on your system"
 msgstr ""
+"Ignition kann unter Umständen manche Anwendungen auf Ihrem System nicht "
+"finden"
 
 #: src/gtk/help-dialog.blp:38
 msgid "What is a 'System Entry'?"
-msgstr ""
+msgstr "Was ist ein 'Systemeintrag'?"
 
 #: src/gtk/help-dialog.blp:39
 msgid "Learn more about system startup entries, and how editing them works"
-msgstr ""
+msgstr "Lerne mehr über Systemstarteinträge, und wie man sie bearbeitet"
 
 #: src/gtk/help-dialog.blp:53
 msgid "Can't Find an App?"
-msgstr ""
+msgstr "Eine App wurde nicht gefunden?"
 
 #: src/gtk/help-dialog.blp:73
 msgid ""
@@ -145,22 +145,30 @@ msgid ""
 "to read. This means that these apps won't show up in the list of apps on "
 "your system, when making a new entry."
 msgstr ""
+"Manche Anwendungen speichern ihre Einträge außerhalb von Plätzen, die "
+"Ignition lesen darf. Das bedeutedt dass diese Anwendungen nicht in der "
+"Appliste Ihres Systems angezeigt werden, wenn Sie einen neuen Eintrag machen."
 
 #: src/gtk/help-dialog.blp:79
 msgid ""
 "To fix this, you can allow Ignition to see more home locations, or more root "
 "locations, in your file system."
 msgstr ""
+"Um das zu beheben, können Sie Ignition erlauben mehr Home- oder Root-"
+"Verzeichnisse in Ihrem Dateisystem zu sehen."
 
 #: src/gtk/help-dialog.blp:85
 msgid ""
 "We recommend the app \"Flatseal\" to manage these permissions. Enable \"All "
 "user files\" or \"All system files\" to be able to find these apps."
 msgstr ""
+"Wir empfehlen die Anwendung \"Flatseal\" zum Verwalten dieser "
+"Berechtigungen. Schalte \"Alle Benutzerdateien\" oder \"alle Systemdateien\" "
+"frei, um diese Anwendungen zu finden."
 
 #: src/gtk/help-dialog.blp:94
 msgid "What is a System Entry?"
-msgstr ""
+msgstr "Was ist ein Systemeintrag?"
 
 #: src/gtk/help-dialog.blp:114
 msgid ""
@@ -168,12 +176,18 @@ msgid ""
 "everybody. These are usually present to allow certain features, programs, or "
 "other important actions run properly."
 msgstr ""
+"Systemeinträge sind für Apps oder Befehle, welche nach dem Anmelden für alle "
+"User ausgeführt werden. Diese können für bestimmte Features, Programme oder "
+"andere wichtige Aktionen notwendig sein."
 
 #: src/gtk/help-dialog.blp:120
 msgid ""
 "You can override these, but please use caution when doing so, as you may "
 "break some existing app or feature of your desktop."
 msgstr ""
+"Sie können diese überschreiben, jedoch ist hier Vorsicht geboten, weil "
+"hiermit die Funktion der existierenden Apps oder Features auf Ihrem System "
+"gebrochen werden kann."
 
 #: src/gtk/help-overlay.blp:11
 #, fuzzy
@@ -194,7 +208,7 @@ msgstr "Einträge suchen"
 #: src/gtk/help-overlay.blp:25
 msgctxt "shortcut window"
 msgid "Apps List"
-msgstr ""
+msgstr "Appliste"
 
 #: src/gtk/help-overlay.blp:28
 msgctxt "shortcut window"
@@ -281,25 +295,25 @@ msgstr "Einen Befehl oder ein Skript hinzufügen"
 
 #: src/main_view/app-list-page.blp:55
 msgid "Enter the command to run or path to your script"
-msgstr ""
+msgstr "Befehl zum Ausführen oder Pfad zum Skript eingeben"
 
 #: src/main_view/app-list-page.blp:78
-#, fuzzy
-#| msgid "No installed apps found"
 msgid "Installed Apps"
-msgstr "Keine installierten Anwendungen gefunden"
+msgstr "Installierte Anwendungen"
 
 #: src/main_view/app-list-page.blp:79
 msgid "Choose any installed app to run when you log in."
 msgstr ""
+"Wähle eine installierte Anwendung aus, die nach der Anmeldung ausgeführt "
+"werden soll."
 
 #: src/main_view/app-list-page.blp:83
 msgid "Show Hidden Apps"
-msgstr ""
+msgstr "Versteckte Anwendung anzeigen"
 
 #: src/main_view/app-list-page.blp:84
 msgid "Show apps that are hidden from the app menu"
-msgstr ""
+msgstr "Anwendungen anzeigen, die im Anwendungsmenü versteckt sind"
 
 #: src/main_view/app-list-page.blp:101 src/main_view/entries-page.blp:57
 msgid "No Results Found"
@@ -319,7 +333,7 @@ msgstr "Editiere Details"
 
 #: src/main_view/details-page.blp:16
 msgid "Save"
-msgstr ""
+msgstr "Speichern"
 
 #: src/main_view/details-page.blp:26
 msgid "Create"
@@ -331,11 +345,11 @@ msgstr "In den Papierkorb verschieben"
 
 #: src/main_view/details-page.blp:41
 msgid "Override entry to edit details"
-msgstr ""
+msgstr "Eintrag überschreiben zum Bearbeiten der Details"
 
 #: src/main_view/details-page.blp:42 src/main_view/details-page.blp:164
 msgid "Override"
-msgstr ""
+msgstr "Überschreiben"
 
 #: src/main_view/details-page.blp:74
 msgid "Edit details about this entry."
@@ -371,7 +385,7 @@ msgstr "Zeige ein Terminal an, in dem dieser Prozess ausgeführt werden soll."
 
 #: src/main_view/details-page.blp:119
 msgid "Seconds of Delay"
-msgstr ""
+msgstr "Sekunden der Verzögerung"
 
 #: src/main_view/details-page.blp:120
 msgid "Amount of seconds to wait after logging in to run the command or script"
