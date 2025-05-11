@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-04 20:46-0400\n"
-"PO-Revision-Date: 2025-05-08 02:59+0000\n"
+"PO-Revision-Date: 2025-05-11 14:46+0000\n"
 "Last-Translator: carpinchitu <maycoemanuelportillo@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/es/>\n"
@@ -53,15 +53,15 @@ msgstr "Ver todos los elementos de inicio."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:39
 msgid "View and edit entry details."
-msgstr "Ve y edita detalles de los artículos."
+msgstr "Ver y editar detalles de los elementos."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:43
 msgid "Create a new startup entry."
-msgstr "Crea un nuevo artículo de startup."
+msgstr "Crea un nuevo elemento de inicio."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
-msgstr "Ve todos tus artículos de startup, en modo oscuro."
+msgstr "Ver todos tus artículos de startup, en modo oscuro."
 
 #: src/first_run_page/first-run-page.blp:5
 msgid "Welcome"
