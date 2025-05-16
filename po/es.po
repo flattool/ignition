@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-04 20:46-0400\n"
-"PO-Revision-Date: 2025-05-11 14:46+0000\n"
+"PO-Revision-Date: 2025-05-16 15:46+0000\n"
 "Last-Translator: carpinchitu <maycoemanuelportillo@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/es/>\n"
@@ -252,7 +252,7 @@ msgstr "Carpeta abierta"
 
 #: src/main.ts:100
 msgid "Could not open folder"
-msgstr "No se puede abrir la carpeta"
+msgstr "No se ha podido abrir la carpeta"
 
 #: src/main_view/app-list-page.blp:5
 msgid "Add or Create an Entry"
@@ -539,7 +539,7 @@ msgstr "Detalles"
 #. These need to be getters for the _() translation function to work
 #: src/utils/shared_vars.ts:17
 msgid "No Name Set"
-msgstr "Sin Nombre"
+msgstr "Sin nombre asignado"
 
 #: src/utils/shared_vars.ts:18
 msgid "No comment set."
