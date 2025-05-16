@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-04 20:46-0400\n"
-"PO-Revision-Date: 2025-05-16 15:46+0000\n"
+"PO-Revision-Date: 2025-05-16 21:18+0000\n"
 "Last-Translator: Mattia Borda <mattiagiovanni.borda@icloud.com>\n"
 "Language-Team: Italian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/it/>\n"
@@ -491,10 +491,8 @@ msgid "No Entries Found"
 msgstr "Nessuna voce trovata"
 
 #: src/main_view/entries-page.blp:117
-#, fuzzy
-#| msgid "Add an app or script to run it at login."
 msgid "Add an app or script to run it when you log in"
-msgstr "Aggiungi un'app o uno script da eseguire all'accesso."
+msgstr "Aggiungi un'applicazione o uno script da eseguire all'accesso."
 
 #: src/main_view/entries-page.blp:128
 msgid "_Open Autostart Folder"
