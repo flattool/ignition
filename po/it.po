@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-16 17:18-0400\n"
-"PO-Revision-Date: 2025-05-16 21:18+0000\n"
+"PO-Revision-Date: 2025-05-17 18:58+0000\n"
 "Last-Translator: Mattia Borda <mattiagiovanni.borda@icloud.com>\n"
 "Language-Team: Italian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/it/>\n"
@@ -420,8 +420,6 @@ msgstr ""
 "Sarà creata una copia della voce sovrascritta che potrai modificare."
 
 #: src/main_view/details-page.blp:169
-#, fuzzy
-#| msgid "Trach Entry?"
 msgid "Trash Entry?"
 msgstr "Spostare la voce nel cestino?"
 
@@ -494,47 +492,39 @@ msgstr "Nessuna voce trovata"
 
 #: src/main_view/entries-page.blp:117
 msgid "Add an app or script to run it when you log in"
-msgstr "Aggiungi un'applicazione o uno script da eseguire all'accesso."
+msgstr "Aggiungi un'applicazione o uno script da eseguire all'accesso"
 
 #: src/main_view/entries-page.blp:128
 msgid "_Open Autostart Folder"
-msgstr ""
+msgstr "_Apri cartella Autostart"
 
 #: src/main_view/entries-page.blp:140
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "_Scorciatoie da tastiera"
 
 #: src/main_view/entries-page.blp:145
-#, fuzzy
-#| msgid "Ignition"
 msgid "_About Ignition"
-msgstr "Ignition"
+msgstr "_Informazioni su Ignition"
 
 #: src/main_view/entries_page.ts:85
-#, fuzzy
-#| msgid "Search entries"
 msgid "User Startup Entries"
-msgstr "Cerca voci"
+msgstr "Voci di avvio dell'utente"
 
 #: src/main_view/entries_page.ts:86
 msgid "Entries that run only for you."
-msgstr ""
+msgstr "Voci eseguite solo al tuo accesso."
 
 #: src/main_view/entries_page.ts:110
-#, fuzzy
-#| msgid "Search entries"
 msgid "System Startup Entries"
-msgstr "Cerca voci"
+msgstr "Voci di avvio di sistema"
 
 #: src/main_view/entries_page.ts:111
 msgid "Entries that run for everyone."
-msgstr ""
+msgstr "Voci eseguite all'accesso di tutti gli utenti."
 
 #: src/main_view/entries_page.ts:180
-#, fuzzy
-#| msgid "Could not load some apps"
 msgid "Could not load some entries"
-msgstr "Impossibile caricare alcune app"
+msgstr "Impossibile caricare alcune voci"
 
 #: src/utils/helper_funcs.ts:27
 msgid "Copy"
@@ -559,7 +549,7 @@ msgstr "Nessun commento impostato."
 
 #: src/window/window.ts:73
 msgid "Failed to start properly"
-msgstr ""
+msgstr "Avvio non riuscito"
 
 #~ msgid "Choose an App"
 #~ msgstr "Scegli un'app"
