@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-16 17:18-0400\n"
-"PO-Revision-Date: 2025-06-11 09:42+0000\n"
+"PO-Revision-Date: 2025-06-11 10:55+0000\n"
 "Last-Translator: Andrii Serbovets <serbovets.translation@gmail.com>\n"
 "Language-Team: Ukrainian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/uk/>\n"
@@ -229,7 +229,7 @@ msgstr "Відкрити теку автозапуску"
 #: src/gtk/help-overlay.blp:51
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr "Показати комбінації клавіш"
+msgstr "Показати клавіатурні скорочення"
 
 #: src/gtk/help-overlay.blp:56
 msgctxt "shortcut window"
@@ -238,11 +238,11 @@ msgstr "Вийти"
 
 #: src/main.ts:70
 msgid "Translate"
-msgstr "Допоможіть із перекладом"
+msgstr "Переклад програми"
 
 #: src/main.ts:71
 msgid "Donate"
-msgstr "Підтримайте грошима"
+msgstr "Підтримка грошима"
 
 #: src/main.ts:97
 msgid "Opened folder"
@@ -498,7 +498,7 @@ msgstr "_Відкрити теку автозапуску"
 
 #: src/main_view/entries-page.blp:140
 msgid "_Keyboard Shortcuts"
-msgstr "_Комбінації клавіш"
+msgstr "_Клавіатурні скорочення"
 
 #: src/main_view/entries-page.blp:145
 msgid "_About Ignition"
