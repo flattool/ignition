@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-16 17:18-0400\n"
-"PO-Revision-Date: 2025-05-16 15:46+0000\n"
+"PO-Revision-Date: 2025-06-13 14:46+0000\n"
 "Last-Translator: carpinchitu <maycoemanuelportillo@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/es/>\n"
@@ -112,7 +112,7 @@ msgstr "Esta entrada anula una entrada del sistema."
 
 #: src/gtk/help-dialog.blp:5
 msgid "Help and Information"
-msgstr "Ayuda e información"
+msgstr "Ayuda e Información"
 
 #: src/gtk/help-dialog.blp:27
 msgid "Can't find an application?"
@@ -418,8 +418,6 @@ msgstr ""
 "creará una copia editable."
 
 #: src/main_view/details-page.blp:169
-#, fuzzy
-#| msgid "Trach Entry?"
 msgid "Trash Entry?"
 msgstr "¿Borrar Entrada?"
 
@@ -472,7 +470,7 @@ msgstr "Menú Principal"
 
 #: src/main_view/entries-page.blp:27
 msgid "Help and information"
-msgstr "Ayuda e información"
+msgstr "Ayuda e Información"
 
 #: src/main_view/entries-page.blp:47
 msgid "Loading Entries"
