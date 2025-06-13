@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-16 17:18-0400\n"
-"PO-Revision-Date: 2025-05-11 14:46+0000\n"
-"Last-Translator: rewrib <birwer.ali@gmx.de>\n"
+"PO-Revision-Date: 2025-06-13 14:46+0000\n"
+"Last-Translator: KaeTuuN <KaeTuuN@mailbox.org>\n"
 "Language-Team: German <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/de/>\n"
 "Language: de\n"
@@ -31,7 +31,7 @@ msgstr "Verwalten von Startanwendungen und Skripten"
 
 #: data/io.github.flattool.Ignition.desktop.in:9
 msgid "GTK;startup;autostart;login;"
-msgstr ""
+msgstr "GTK;startup;autostart;login;"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
 msgid "Heliguy"
@@ -69,8 +69,6 @@ msgid "Welcome"
 msgstr "Willkommen"
 
 #: src/first_run_page/first-run-page.blp:13
-#, fuzzy
-#| msgid "_About Ignition"
 msgid "About Ignition"
 msgstr "Über Ignition"
 
@@ -190,7 +188,6 @@ msgstr ""
 "gebrochen werden kann."
 
 #: src/gtk/help-overlay.blp:11
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Entries List"
 msgstr "Eintragsliste"
@@ -216,11 +213,9 @@ msgid "Search Apps"
 msgstr "Anwendungen suchen"
 
 #: src/gtk/help-overlay.blp:34
-#, fuzzy
-#| msgid "Details"
 msgctxt "shortcut window"
 msgid "Details Page"
-msgstr "Details"
+msgstr "Detailseite"
 
 #: src/gtk/help-overlay.blp:37
 msgctxt "shortcut window"
@@ -264,10 +259,8 @@ msgid "Could not open folder"
 msgstr "Verzeichnis konnte nicht geöffnet werden"
 
 #: src/main_view/app-list-page.blp:5
-#, fuzzy
-#| msgid "Create a New Entry"
 msgid "Add or Create an Entry"
-msgstr "Einen neuen Eintrag erstellen"
+msgstr "Einen neuen Eintrag erstellen oder hinzufügen"
 
 #: src/main_view/app-list-page.blp:12 src/main_view/entries-page.blp:13
 msgid "Search"
@@ -278,16 +271,12 @@ msgid "Search entries"
 msgstr "Einträge suchen"
 
 #: src/main_view/app-list-page.blp:47
-#, fuzzy
-#| msgid "Command or Script"
 msgid "Commands and Scripts"
-msgstr "Befehl oder Skript"
+msgstr "Befehle und Skripte"
 
 #: src/main_view/app-list-page.blp:48
-#, fuzzy
-#| msgid "Enable this entry to be started when you log in."
 msgid "Run a command or script when you log in."
-msgstr "Aktiviere diesen Eintrag, damit er beim Einloggen gestartet wird."
+msgstr "Starte ein Befehl oder Skript beim Einloggen."
 
 #: src/main_view/app-list-page.blp:54
 msgid "Add a Command or Script"
@@ -390,6 +379,8 @@ msgstr "Sekunden der Verzögerung"
 #: src/main_view/details-page.blp:120
 msgid "Amount of seconds to wait after logging in to run the command or script"
 msgstr ""
+"Anzahl der Sekunden, bis der Befehl oder das Skript nach Anmeldung gestartet "
+"werden soll"
 
 #: src/main_view/details-page.blp:139
 msgid ""
@@ -402,12 +393,14 @@ msgstr ""
 
 #: src/main_view/details-page.blp:151
 msgid "Create and Replace?"
-msgstr ""
+msgstr "Erstellen oder Ersetzen?"
 
 #: src/main_view/details-page.blp:152
 msgid ""
 "A file already exists for this entry. Are you sure you want to replace it?"
 msgstr ""
+"Es existiert bereits eine Datei für diesen Eintrag. Sind Sie sicher, das Sie "
+"ersetzt werden soll?"
 
 #: src/main_view/details-page.blp:154 src/main_view/details-page.blp:163
 #: src/main_view/details-page.blp:172
@@ -416,41 +409,41 @@ msgstr "Abbrechen"
 
 #: src/main_view/details-page.blp:155
 msgid "Create and Replace"
-msgstr ""
+msgstr "Erstellen und Ersetzen"
 
 #: src/main_view/details-page.blp:160
 msgid "Override Entry?"
-msgstr ""
+msgstr "Eintrag überschreiben?"
 
 #: src/main_view/details-page.blp:161
 msgid ""
 "Be careful, overriding system entries can lead to system breakage. This will "
 "make a copy of the entry for you to edit."
 msgstr ""
+"Seien Sie vorsichtig. Das Überschreiben von Systemeinträgen kann ihr System "
+"unbrauchbar machen. Dies wird eine Kopie zum Editieren erstellen."
 
 #: src/main_view/details-page.blp:169
-#, fuzzy
-#| msgid "Trashed Entry"
 msgid "Trash Entry?"
-msgstr "Gelöschter Eintrag"
+msgstr "Gelöschter Eintrag?"
 
 #: src/main_view/details-page.blp:170
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
 msgstr ""
+"Dieser Eintrag wird in den Mülleimer verschoben, und wird nicht länger "
+"ausgeführt, wenn Sie sich anmelden."
 
 #: src/main_view/details-page.blp:173
 msgid "Trash"
-msgstr ""
+msgstr "Mülleimer"
 
 #: src/main_view/details_page.ts:264
 msgid "New Entry"
 msgstr "Neuer Eintrag"
 
 #: src/main_view/details_page.ts:344
-#, fuzzy
-#| msgid "Saved Details"
 msgid "Saved details"
 msgstr "Gespeicherte Details"
 
@@ -459,24 +452,18 @@ msgid "Could not save file"
 msgstr "Datei konnte nicht gespeichert werden"
 
 #: src/main_view/details_page.ts:371
-#, fuzzy
-#| msgid "Create a New Entry"
 msgid "Created entry"
-msgstr "Einen neuen Eintrag erstellen"
+msgstr "Erstellter Eintrag"
 
 #: src/main_view/details_page.ts:373 src/main_view/details_page.ts:397
-#, fuzzy
-#| msgid "Could not save file"
 msgid "Could not create file"
-msgstr "Datei konnte nicht gespeichert werden"
+msgstr "Datei konnte nicht erstellt werden"
 
 #: src/main_view/details_page.ts:394
 msgid "Overrode entry"
-msgstr ""
+msgstr "Eintrag überschrieben"
 
 #: src/main_view/details_page.ts:435
-#, fuzzy
-#| msgid "Trashed Entry"
 msgid "Trashed entry"
 msgstr "Gelöschter Eintrag"
 
@@ -489,17 +476,12 @@ msgid "Main Menu"
 msgstr "Hauptmenü"
 
 #: src/main_view/entries-page.blp:27
-#, fuzzy
-#| msgid "More Information"
 msgid "Help and information"
-msgstr "Mehr Informationen"
+msgstr "Hilfe und Informationen"
 
 #: src/main_view/entries-page.blp:47
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Search Entries"
 msgid "Loading Entries"
-msgstr "Einträge suchen"
+msgstr "Einträge laden"
 
 #: src/main_view/entries-page.blp:48
 msgid "This should only take a moment."
@@ -514,10 +496,8 @@ msgid "No Entries Found"
 msgstr "Keine Einträge gefunden"
 
 #: src/main_view/entries-page.blp:117
-#, fuzzy
-#| msgid "Add an app or script to run it at login."
 msgid "Add an app or script to run it when you log in"
-msgstr "Füge eine App oder Skript hinzu um es beim Login auszuführen."
+msgstr "Füge eine App oder ein Skript hinzu um es beim Login auszuführen"
 
 #: src/main_view/entries-page.blp:128
 msgid "_Open Autostart Folder"
@@ -529,35 +509,27 @@ msgstr "_Tastenkürzel"
 
 #: src/main_view/entries-page.blp:145
 msgid "_About Ignition"
-msgstr "Über Ignition"
+msgstr "_Über Ignition"
 
 #: src/main_view/entries_page.ts:85
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Search Entries"
 msgid "User Startup Entries"
-msgstr "Einträge suchen"
+msgstr "Nutzer Starteinträge"
 
 #: src/main_view/entries_page.ts:86
 msgid "Entries that run only for you."
-msgstr ""
+msgstr "Einträge, die nur für den aktuellen Benutzer ausgeführt werden."
 
 #: src/main_view/entries_page.ts:110
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Search Entries"
 msgid "System Startup Entries"
-msgstr "Einträge suchen"
+msgstr "System Starteinträge"
 
 #: src/main_view/entries_page.ts:111
 msgid "Entries that run for everyone."
-msgstr ""
+msgstr "Einträge, die für alle Benutzer ausgeführt werden."
 
 #: src/main_view/entries_page.ts:180
-#, fuzzy
-#| msgid "Could not load some apps"
 msgid "Could not load some entries"
-msgstr "Einige Anwendungen konnten nicht geladen werden"
+msgstr "Einige Einträge konnten nicht geladen werden"
 
 #: src/utils/helper_funcs.ts:27
 msgid "Copy"
@@ -582,7 +554,7 @@ msgstr "Kein Kommentar festgelegt."
 
 #: src/window/window.ts:73
 msgid "Failed to start properly"
-msgstr ""
+msgstr "Fehlerfreier Start fehlgeschlagen"
 
 #~ msgid "Choose an App"
 #~ msgstr "Wähle eine Anwendung"
