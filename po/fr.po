@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-04 20:46-0400\n"
-"PO-Revision-Date: 2025-04-27 14:04+0000\n"
+"POT-Creation-Date: 2025-05-16 17:18-0400\n"
+"PO-Revision-Date: 2025-05-20 07:46+0000\n"
 "Last-Translator: Léane GRASSER <leane.grasser@proton.me>\n"
 "Language-Team: French <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/fr/>\n"
@@ -425,7 +425,7 @@ msgstr ""
 "dernier. Une copie de cette entrée sera créée et vous pourrez la modifier."
 
 #: src/main_view/details-page.blp:169
-msgid "Trach Entry?"
+msgid "Trash Entry?"
 msgstr "Mettre l’entrée à la corbeille ?"
 
 #: src/main_view/details-page.blp:170
@@ -557,7 +557,7 @@ msgstr "Aucun commentaire n’a été formulé."
 
 #: src/window/window.ts:73
 msgid "Failed to start properly"
-msgstr ""
+msgstr "Le démarrage ne s'est pas effectué correctement"
 
 #~ msgid "Choose an App"
 #~ msgstr "Choisissez une application"

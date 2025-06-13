@@ -8,34 +8,31 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-16 17:18-0400\n"
-"PO-Revision-Date: 2025-06-10 20:46+0000\n"
-"Last-Translator: Benedek Dévényi <rdbende@proton.me>\n"
-"Language-Team: Hungarian <https://weblate.fyralabs.com/projects/flattool/"
-"ignition/hu/>\n"
-"Language: hu\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.4\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:2
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14
 msgid "Ignition"
-msgstr "Önindító"
+msgstr ""
 
 #: data/io.github.flattool.Ignition.desktop.in:3
 #: data/io.github.flattool.Ignition.metainfo.xml.in:15
 msgid "Manage startup apps and scripts"
-msgstr "Indítási alkalmazások és szkriptek kezelése"
+msgstr ""
 
 #: data/io.github.flattool.Ignition.desktop.in:9
 msgid "GTK;startup;autostart;login;"
-msgstr "GTK;startup;autostart;login;bejelentkezés;automatikus;indítási;"
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
 msgid "Heliguy"
-msgstr "Heliguy"
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:17
 msgid ""
@@ -43,99 +40,91 @@ msgid ""
 "your computer. Ignition can add apps, scripts, and arbitrary commands to run "
 "at login."
 msgstr ""
-"Az Önindító egy egyszerű grafikus eszköz indítási bejegyzések "
-"létrehozásához, eltávolításához és módosításához. Segítségével "
-"alkalmazásokat, szkripteket és tetszőleges parancsokat lehet hozzáadni az "
-"automatikusan induló programokhoz."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
-msgstr "Indítási alkalmazások listázása."
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:39
 msgid "View and edit entry details."
-msgstr "Bejegyzések részleteinek szerkesztése."
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:43
 msgid "Create a new startup entry."
-msgstr "Új indítási bejegyzés létrehozása."
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
-msgstr "Indítási alkalmazások megjelenítése, sötét módban."
+msgstr ""
 
 #: src/first_run_page/first-run-page.blp:5
 msgid "Welcome"
-msgstr "Üdv!"
+msgstr ""
 
 #: src/first_run_page/first-run-page.blp:13
 msgid "About Ignition"
-msgstr "Az Önindító névjegye"
+msgstr ""
 
 #: src/first_run_page/first-run-page.blp:20
 msgid "Welcome to Ignition!"
-msgstr "Üdv az Önindítóban!"
+msgstr ""
 
 #: src/first_run_page/first-run-page.blp:21
 msgid ""
 "Ignition lets you start any app or script when you log in to your computer."
 msgstr ""
-"Az Önindító segítségével bármilyen alkalmazást vagy szkriptet futtathat "
-"bejelentkezéskor."
 
 #: src/first_run_page/first-run-page.blp:25
 msgid "Get Started"
-msgstr "Kezdjünk hozzá!"
+msgstr ""
 
 #: src/gtk/entry-row.blp:22 src/main_view/details-page.blp:103
 msgid "More Information"
-msgstr "További információ"
+msgstr ""
 
 #: src/gtk/entry_row.ts:67
 msgid "Disabled"
-msgstr "Letiltva"
+msgstr ""
 
 #: src/gtk/entry_row.ts:71
 msgid "Overridden"
-msgstr "Felülírva"
+msgstr ""
 
 #: src/gtk/entry_row.ts:75
 msgid "Enabled"
-msgstr "Engedélyezve"
+msgstr ""
 
 #: src/gtk/entry_row.ts:95
 msgid "This entry is overridden by a user entry."
-msgstr "Ezt a bejegyzést egy felülírja egy felhasználói bejegyzés."
+msgstr ""
 
 #: src/gtk/entry_row.ts:97
 msgid "This entry overrides a system entry."
-msgstr "Ez a bejegyzés felülír egy rendszerbejegyzést."
+msgstr ""
 
 #: src/gtk/help-dialog.blp:5
 msgid "Help and Information"
-msgstr "Segítség és információ"
+msgstr ""
 
 #: src/gtk/help-dialog.blp:27
 msgid "Can't find an application?"
-msgstr "Nem talál egy alkalmazást?"
+msgstr ""
 
 #: src/gtk/help-dialog.blp:28
 msgid "Ignition might not be able to see some applications on your system"
 msgstr ""
-"Előfordulhat, hogy az Önindító nem lát egyes alkalmazásokat a rendszeren"
 
 #: src/gtk/help-dialog.blp:38
 msgid "What is a 'System Entry'?"
-msgstr "Mi az a „rendszerbejegyzés”?"
+msgstr ""
 
 #: src/gtk/help-dialog.blp:39
 msgid "Learn more about system startup entries, and how editing them works"
 msgstr ""
-"Tudjon meg többet a rendszerindítási bejegyzésekről és azok szerkesztéséről"
 
 #: src/gtk/help-dialog.blp:53
 msgid "Can't Find an App?"
-msgstr "Nem talál egy alkalmazást?"
+msgstr ""
 
 #: src/gtk/help-dialog.blp:73
 msgid ""
@@ -143,30 +132,22 @@ msgid ""
 "to read. This means that these apps won't show up in the list of apps on "
 "your system, when making a new entry."
 msgstr ""
-"Egyes alkalmazások az Önindító által olvasható helyeken kívül tárolják "
-"bejegyzéseiket. Ennél fogva ezek az alkalmazások nem jelennek meg a rendszer "
-"alkalmazásainak listájában, amikor új bejegyzést hoz létre."
 
 #: src/gtk/help-dialog.blp:79
 msgid ""
 "To fix this, you can allow Ignition to see more home locations, or more root "
 "locations, in your file system."
 msgstr ""
-"Ezt úgy oldhatja meg, ha engedélyezheti az Önindítónak, hogy több "
-"felhasználói, vagy gyökérkönyvtárbeli helyhez férhessen hozzá."
 
 #: src/gtk/help-dialog.blp:85
 msgid ""
 "We recommend the app \"Flatseal\" to manage these permissions. Enable \"All "
 "user files\" or \"All system files\" to be able to find these apps."
 msgstr ""
-"Ezeknek az engedélyeknek a kezeléséhez a „Flatseal” alkalmazást ajánljuk. "
-"Engedélyezze az „Összes felhasználói fájl” vagy az „Összes rendszerfájl” "
-"opciót, hogy az Önindító lássa ezeket az alkalmazásokat."
 
 #: src/gtk/help-dialog.blp:94
 msgid "What is a System Entry?"
-msgstr "Mi az a „rendszerbejegyzés”?"
+msgstr ""
 
 #: src/gtk/help-dialog.blp:114
 msgid ""
@@ -174,121 +155,115 @@ msgid ""
 "everybody. These are usually present to allow certain features, programs, or "
 "other important actions run properly."
 msgstr ""
-"A rendszerbejegyzések olyan alkalmazásokra vagy parancsokra vonatkoznak, "
-"amelyek bejelentkezéskor mindegyik felhasználó számára elindulnak. Ezek "
-"általában bizonyos programok, szolgáltatások vagy más fontos feladatok "
-"megfelelő működését szolgálják."
 
 #: src/gtk/help-dialog.blp:120
 msgid ""
 "You can override these, but please use caution when doing so, as you may "
 "break some existing app or feature of your desktop."
 msgstr ""
-"Ezeket felülírhatja, de legyen óvatos, mert ezzel tönkreteheti a már meglévő "
-"alkalmazásokat vagy a rendszer szolgáltatásait."
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "Entries List"
-msgstr "Bejegyzések"
+msgstr ""
 
 #: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "New Entry"
-msgstr "Új bejegyzés"
+msgstr ""
 
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Search Entries"
-msgstr "Bejegyzések keresése"
+msgstr ""
 
 #: src/gtk/help-overlay.blp:25
 msgctxt "shortcut window"
 msgid "Apps List"
-msgstr "Alkalmazások listája"
+msgstr ""
 
 #: src/gtk/help-overlay.blp:28
 msgctxt "shortcut window"
 msgid "Search Apps"
-msgstr "Alkalmazások keresése"
+msgstr ""
 
 #: src/gtk/help-overlay.blp:34
 msgctxt "shortcut window"
 msgid "Details Page"
-msgstr "Szerkesztőlap"
+msgstr ""
 
 #: src/gtk/help-overlay.blp:37
 msgctxt "shortcut window"
 msgid "Save Edits"
-msgstr "Mentés"
+msgstr ""
 
 #: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
 msgid "General"
-msgstr "Általános"
+msgstr ""
 
 #: src/gtk/help-overlay.blp:46
 msgctxt "shortcut window"
 msgid "Open Autostart Folder"
-msgstr "Autostart mappa megnyitása"
+msgstr ""
 
 #: src/gtk/help-overlay.blp:51
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr "Gyorsbillentyűk"
+msgstr ""
 
 #: src/gtk/help-overlay.blp:56
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr "Kilépés"
+msgstr ""
 
 #: src/main.ts:70
 msgid "Translate"
-msgstr "Segítség a fordításban"
+msgstr ""
 
 #: src/main.ts:71
 msgid "Donate"
-msgstr "Adományozás"
+msgstr ""
 
 #: src/main.ts:97
 msgid "Opened folder"
-msgstr "Mappa megnyitva"
+msgstr ""
 
 #: src/main.ts:100
 msgid "Could not open folder"
-msgstr "Nem lehet megnyitni a mappát"
+msgstr ""
 
 #: src/main_view/app-list-page.blp:5
 msgid "Add or Create an Entry"
-msgstr "Bejegyzés létrehozása vagy hozzáadása"
+msgstr ""
 
 #: src/main_view/app-list-page.blp:12 src/main_view/entries-page.blp:13
 msgid "Search"
-msgstr "Keresés"
+msgstr ""
 
 #: src/main_view/app-list-page.blp:25 src/main_view/entries-page.blp:40
 msgid "Search entries"
-msgstr "Bejegyzések keresése"
+msgstr ""
 
 #: src/main_view/app-list-page.blp:47
 msgid "Commands and Scripts"
-msgstr "Parancsok és szkriptek"
+msgstr ""
 
 #: src/main_view/app-list-page.blp:48
 msgid "Run a command or script when you log in."
-msgstr "Parancs vagy szkript futtatása bejelentkezéskor."
+msgstr ""
 
 #: src/main_view/app-list-page.blp:54
 msgid "Add a Command or Script"
-msgstr "Parancs vagy szkript hozzáadása"
+msgstr ""
 
 #: src/main_view/app-list-page.blp:55
 msgid "Enter the command to run or path to your script"
-msgstr "Adja meg a futtatni kívánt parancsot vagy a szkript elérési útját"
+msgstr ""
 
 #: src/main_view/app-list-page.blp:78
 msgid "Installed Apps"
-msgstr "Telepített alkalmazások"
+msgstr ""
 
 #: src/main_view/app-list-page.blp:79
 msgid "Choose any installed app to run when you log in."
@@ -304,19 +279,19 @@ msgstr ""
 
 #: src/main_view/app-list-page.blp:101 src/main_view/entries-page.blp:57
 msgid "No Results Found"
-msgstr "Nincs találat"
+msgstr ""
 
 #: src/main_view/app-list-page.blp:102 src/main_view/entries-page.blp:58
 msgid "Try a different search."
-msgstr "Próbálkozzon valami mással."
+msgstr ""
 
 #: src/main_view/app_list_page.ts:135
 msgid "Could not load some apps"
-msgstr "Néhány alkalmazás betöltése sikertelen"
+msgstr ""
 
 #: src/main_view/details-page.blp:5
 msgid "Edit Details"
-msgstr "Részletek szerkesztése"
+msgstr ""
 
 #: src/main_view/details-page.blp:16
 msgid "Save"
@@ -324,11 +299,11 @@ msgstr ""
 
 #: src/main_view/details-page.blp:26
 msgid "Create"
-msgstr "Létrehozás"
+msgstr ""
 
 #: src/main_view/details-page.blp:33
 msgid "Move to Trash"
-msgstr "Áthelyezés a kukába"
+msgstr ""
 
 #: src/main_view/details-page.blp:41
 msgid "Override entry to edit details"
@@ -340,35 +315,35 @@ msgstr ""
 
 #: src/main_view/details-page.blp:74
 msgid "Edit details about this entry."
-msgstr "Bejegyzés részleteinek szerkesztése."
+msgstr ""
 
 #: src/main_view/details-page.blp:80
 msgid "Enable"
-msgstr "Engedélyezés"
+msgstr ""
 
 #: src/main_view/details-page.blp:81
 msgid "Enable this entry to be started when you log in."
-msgstr "Bejegyzés indulásának engedélyezése bejelentkezéskor."
+msgstr ""
 
 #: src/main_view/details-page.blp:87
 msgid "Name"
-msgstr "Név"
+msgstr ""
 
 #: src/main_view/details-page.blp:92
 msgid "Comment"
-msgstr "Leírás"
+msgstr ""
 
 #: src/main_view/details-page.blp:97
 msgid "Command or Script"
-msgstr "Parancs vagy szkript"
+msgstr ""
 
 #: src/main_view/details-page.blp:112
 msgid "Show Terminal"
-msgstr "Futtatás terminálban"
+msgstr ""
 
 #: src/main_view/details-page.blp:113
 msgid "Show a terminal for this process to run in."
-msgstr "Terminálablakot megnyitása a folyamat futtatásához."
+msgstr ""
 
 #: src/main_view/details-page.blp:119
 msgid "Seconds of Delay"
@@ -383,8 +358,6 @@ msgid ""
 "To run a script at login, paste its file path here. You can copy the "
 "script's path from your file manager. Make sure your script is executable."
 msgstr ""
-"Illessze be ide egy szkriptfájl elérési útját. Az elérési utat a "
-"fájlkezelőből is átmásolhatja. Győződjön meg róla, hogy a fájl végrehajtható."
 
 #: src/main_view/details-page.blp:151
 msgid "Create and Replace?"
@@ -398,7 +371,7 @@ msgstr ""
 #: src/main_view/details-page.blp:154 src/main_view/details-page.blp:163
 #: src/main_view/details-page.blp:172
 msgid "Cancel"
-msgstr "Mégse"
+msgstr ""
 
 #: src/main_view/details-page.blp:155
 msgid "Create and Replace"
@@ -415,10 +388,8 @@ msgid ""
 msgstr ""
 
 #: src/main_view/details-page.blp:169
-#, fuzzy
-#| msgid "Trashed Entry"
 msgid "Trash Entry?"
-msgstr "Bejegyzés törölve"
+msgstr ""
 
 #: src/main_view/details-page.blp:170
 msgid ""
@@ -432,181 +403,117 @@ msgstr ""
 
 #: src/main_view/details_page.ts:264
 msgid "New Entry"
-msgstr "Új bejegyzés"
+msgstr ""
 
 #: src/main_view/details_page.ts:344
-#, fuzzy
-#| msgid "Saved Details"
 msgid "Saved details"
-msgstr "Részletek mentve"
+msgstr ""
 
 #: src/main_view/details_page.ts:346
 msgid "Could not save file"
-msgstr "A fájlt nem sikerült menteni"
+msgstr ""
 
 #: src/main_view/details_page.ts:371
-#, fuzzy
-#| msgid "Create a New Entry"
 msgid "Created entry"
-msgstr "Bejegyzés létrehozása"
+msgstr ""
 
 #: src/main_view/details_page.ts:373 src/main_view/details_page.ts:397
-#, fuzzy
-#| msgid "Could not save file"
 msgid "Could not create file"
-msgstr "A fájlt nem sikerült menteni"
+msgstr ""
 
 #: src/main_view/details_page.ts:394
 msgid "Overrode entry"
 msgstr ""
 
 #: src/main_view/details_page.ts:435
-#, fuzzy
-#| msgid "Trashed Entry"
 msgid "Trashed entry"
-msgstr "Bejegyzés törölve"
+msgstr ""
 
 #: src/main_view/details_page.ts:437
 msgid "Could not trash file"
-msgstr "A fájlt nem sikerült törölni"
+msgstr ""
 
 #: src/main_view/entries-page.blp:20
 msgid "Main Menu"
-msgstr "Főmenü"
+msgstr ""
 
 #: src/main_view/entries-page.blp:27
-#, fuzzy
-#| msgid "More Information"
 msgid "Help and information"
-msgstr "További információ"
+msgstr ""
 
 #: src/main_view/entries-page.blp:47
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Search Entries"
 msgid "Loading Entries"
-msgstr "Bejegyzések keresése"
+msgstr ""
 
 #: src/main_view/entries-page.blp:48
 msgid "This should only take a moment."
-msgstr "Egy szempillantás, és kész is van."
+msgstr ""
 
 #: src/main_view/entries-page.blp:88
 msgid "New"
-msgstr "Új"
+msgstr ""
 
 #: src/main_view/entries-page.blp:109
 msgid "No Entries Found"
-msgstr "Nem találhatók bejegyzések"
+msgstr ""
 
 #: src/main_view/entries-page.blp:117
-#, fuzzy
-#| msgid "Add an app or script to run it at login."
 msgid "Add an app or script to run it when you log in"
-msgstr "Adjon hozzá egy automatikusan elindítandó programot."
+msgstr ""
 
 #: src/main_view/entries-page.blp:128
 msgid "_Open Autostart Folder"
-msgstr "Autostart mappa _megnyitása"
+msgstr ""
 
 #: src/main_view/entries-page.blp:140
 msgid "_Keyboard Shortcuts"
-msgstr "_Gyorsbillentyűk"
+msgstr ""
 
 #: src/main_view/entries-page.blp:145
 msgid "_About Ignition"
-msgstr "Az Önindító _névjegye"
+msgstr ""
 
 #: src/main_view/entries_page.ts:85
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Search Entries"
 msgid "User Startup Entries"
-msgstr "Bejegyzések keresése"
+msgstr ""
 
 #: src/main_view/entries_page.ts:86
 msgid "Entries that run only for you."
 msgstr ""
 
 #: src/main_view/entries_page.ts:110
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Search Entries"
 msgid "System Startup Entries"
-msgstr "Bejegyzések keresése"
+msgstr ""
 
 #: src/main_view/entries_page.ts:111
 msgid "Entries that run for everyone."
 msgstr ""
 
 #: src/main_view/entries_page.ts:180
-#, fuzzy
-#| msgid "Could not load some apps"
 msgid "Could not load some entries"
-msgstr "Néhány alkalmazás betöltése sikertelen"
+msgstr ""
 
 #: src/utils/helper_funcs.ts:27
 msgid "Copy"
-msgstr "Másolás"
+msgstr ""
 
 #: src/utils/helper_funcs.ts:28
 msgid "OK"
-msgstr "Rendben"
+msgstr ""
 
 #: src/utils/helper_funcs.ts:37
 msgid "Details"
-msgstr "Részletek"
+msgstr ""
 
 #. These need to be getters for the _() translation function to work
 #: src/utils/shared_vars.ts:17
 msgid "No Name Set"
-msgstr "Nincs név beállítva"
+msgstr ""
 
 #: src/utils/shared_vars.ts:18
 msgid "No comment set."
-msgstr "Nincs leírás."
+msgstr ""
 
 #: src/window/window.ts:73
 msgid "Failed to start properly"
 msgstr ""
-
-#~ msgid "Choose an App"
-#~ msgstr "Alkalmazás választása"
-
-#~ msgid "Search apps"
-#~ msgstr "Alkalmazások keresése"
-
-#~ msgid "Apply"
-#~ msgstr "Alkalmazás"
-
-#~ msgid "Add any installed app or select any script to be ran at startup."
-#~ msgstr ""
-#~ "Válasszon ki egy telepített alkalmazást vagy tetszőleges szkriptet a "
-#~ "hozzáadáshoz."
-
-#~ msgid "Add an App"
-#~ msgstr "Alkalmazás hozzáadása"
-
-#~ msgid "Preparing"
-#~ msgstr "Előkészítés"
-
-#~ msgid "Startup Applications and Scripts"
-#~ msgstr "Indítási alkalmazások és szkriptek"
-
-#~ msgid "Startup apps and scripts are automatically started when you log in."
-#~ msgstr "Az indítási alkalmazások bejelentkezéskor automatikusan elindulnak."
-
-#~ msgid "Error loading details"
-#~ msgstr "A részletek betöltése sikertelen"
-
-#~ msgid "ignition"
-#~ msgstr "ignition"
-
-#~ msgid "GTK;"
-#~ msgstr "GTK;"
-
-#~ msgid "No description"
-#~ msgstr "Nincs leírás"
-
-#~ msgid "Choose a Script"
-#~ msgstr "Válasszon egy szkriptet"
