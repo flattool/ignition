@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-16 17:18-0400\n"
-"PO-Revision-Date: 2025-06-11 10:55+0000\n"
-"Last-Translator: Andrii Serbovets <serbovets.translation@gmail.com>\n"
+"PO-Revision-Date: 2025-06-17 06:46+0000\n"
+"Last-Translator: Herbatka <viktor.beskorovainyi@gmail.com>\n"
 "Language-Team: Ukrainian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/uk/>\n"
 "Language: uk\n"
@@ -534,7 +534,7 @@ msgstr "Гаразд"
 
 #: src/utils/helper_funcs.ts:37
 msgid "Details"
-msgstr "Докладно"
+msgstr "подробиці"
 
 #. These need to be getters for the _() translation function to work
 #: src/utils/shared_vars.ts:17
