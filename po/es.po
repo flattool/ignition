@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-04 20:46-0400\n"
-"PO-Revision-Date: 2025-04-27 23:27+0000\n"
-"Last-Translator: Racsu <me@racsu.com>\n"
+"POT-Creation-Date: 2025-05-16 17:18-0400\n"
+"PO-Revision-Date: 2025-06-13 14:46+0000\n"
+"Last-Translator: carpinchitu <maycoemanuelportillo@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/es/>\n"
 "Language: es\n"
@@ -49,19 +49,19 @@ msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
-msgstr "Ver todos tus artículos de startup."
+msgstr "Ver todos los elementos de inicio."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:39
 msgid "View and edit entry details."
-msgstr "Ve y edita detalles de los artículos."
+msgstr "Ver y editar detalles de los elementos."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:43
 msgid "Create a new startup entry."
-msgstr "Crea un nuevo artículo de startup."
+msgstr "Crea un nuevo elemento de inicio."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
-msgstr "Ve todos tus artículos de startup, en modo oscuro."
+msgstr "Ver todos tus artículos de startup, en modo oscuro."
 
 #: src/first_run_page/first-run-page.blp:5
 msgid "Welcome"
@@ -112,7 +112,7 @@ msgstr "Esta entrada anula una entrada del sistema."
 
 #: src/gtk/help-dialog.blp:5
 msgid "Help and Information"
-msgstr "Ayuda e información"
+msgstr "Ayuda e Información"
 
 #: src/gtk/help-dialog.blp:27
 msgid "Can't find an application?"
@@ -252,7 +252,7 @@ msgstr "Carpeta abierta"
 
 #: src/main.ts:100
 msgid "Could not open folder"
-msgstr "No se puede abrir la carpeta"
+msgstr "No se ha podido abrir la carpeta"
 
 #: src/main_view/app-list-page.blp:5
 msgid "Add or Create an Entry"
@@ -418,7 +418,7 @@ msgstr ""
 "creará una copia editable."
 
 #: src/main_view/details-page.blp:169
-msgid "Trach Entry?"
+msgid "Trash Entry?"
 msgstr "¿Borrar Entrada?"
 
 #: src/main_view/details-page.blp:170
@@ -470,7 +470,7 @@ msgstr "Menú Principal"
 
 #: src/main_view/entries-page.blp:27
 msgid "Help and information"
-msgstr "Ayuda e información"
+msgstr "Ayuda e Información"
 
 #: src/main_view/entries-page.blp:47
 msgid "Loading Entries"
@@ -539,7 +539,7 @@ msgstr "Detalles"
 #. These need to be getters for the _() translation function to work
 #: src/utils/shared_vars.ts:17
 msgid "No Name Set"
-msgstr "Sin Nombre"
+msgstr "Sin nombre asignado"
 
 #: src/utils/shared_vars.ts:18
 msgid "No comment set."
@@ -547,7 +547,7 @@ msgstr "No hay ningún comentario."
 
 #: src/window/window.ts:73
 msgid "Failed to start properly"
-msgstr ""
+msgstr "No se inició correctamente"
 
 #~ msgid "Choose an App"
 #~ msgstr "Elige una aplicación"
