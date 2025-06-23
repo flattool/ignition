@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-05-16 17:18-0400\n"
 "PO-Revision-Date: 2025-06-23 10:46+0000\n"
-"Last-Translator: ales-ro <bianaless6@gmail.com>\n"
+"Last-Translator: magnogna <gabrielecasagrande@ik.me>\n"
 "Language-Team: Italian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/it/>\n"
 "Language: it\n"
@@ -248,7 +248,7 @@ msgstr "Traduzione"
 
 #: src/main.ts:71
 msgid "Donate"
-msgstr "Donazione"
+msgstr "Dona"
 
 #: src/main.ts:97
 msgid "Opened folder"
