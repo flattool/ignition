@@ -304,7 +304,7 @@ export class DetailsPage extends Adw.NavigationPage {
 		const delay = this.gui_details.delay;
 		const raw_exec = this.gui_details.exec;
 
-		const delay_name = this.entry.file_name.replace(".desktop", ".ignition_delay.sh");
+		const delay_name = this.entry.file_name.replace(/\.desktop$/, ".ignition_delay.sh");
 		const delay_path = `${SharedVars.home_autostart_dir.get_path()}/${delay_name}`;
 		const delay_file = Gio.File.new_for_path(delay_path);
 
@@ -413,7 +413,7 @@ export class DetailsPage extends Adw.NavigationPage {
 		}
 
 		// Trash delay file, if any
-		const delay_name = this.entry.file_name.replace(".desktop", ".ignition_delay.sh");
+		const delay_name = this.entry.file_name.replace(/.desktop$/, ".ignition_delay.sh");
 		const delay_path = `${SharedVars.home_autostart_dir.get_path()}/${delay_name || Date.now()}`;
 		const delay_file = Gio.File.new_for_path(delay_path);
 		if (
