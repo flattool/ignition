@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-04 20:46-0400\n"
-"PO-Revision-Date: 2025-05-04 11:46+0000\n"
-"Last-Translator: Perfect299792Portuguese <leomiguelbandeira@gmail.com>\n"
+"POT-Creation-Date: 2025-05-16 17:18-0400\n"
+"PO-Revision-Date: 2025-05-09 21:46+0000\n"
+"Last-Translator: lucasmz <git@lucasmz.dev>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.fyralabs.com/projects/"
 "flattool/ignition/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -22,12 +22,10 @@ msgstr ""
 #: data/io.github.flattool.Ignition.desktop.in:2
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14
 msgid "Ignition"
-msgstr "ignição"
+msgstr "Ignição"
 
 #: data/io.github.flattool.Ignition.desktop.in:3
 #: data/io.github.flattool.Ignition.metainfo.xml.in:15
-#, fuzzy
-#| msgid "Create and edit startup apps and scripts"
 msgid "Manage startup apps and scripts"
 msgstr "Gerenciar aplicativos e scripts de inicialização"
 
@@ -45,8 +43,8 @@ msgid ""
 "your computer. Ignition can add apps, scripts, and arbitrary commands to run "
 "at login."
 msgstr ""
-"O Ignition fornece uma UI simples para adicionar, remover e modificar "
-"entradas de inicialização no seu computador. O Ignition pode adicionar apps, "
+"O Ignição fornece uma UI simples para adicionar, remover e modificar "
+"entradas de inicialização no seu computador. O Ignição pode adicionar apps, "
 "scripts e comandos arbitrários para executar no login."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
@@ -71,11 +69,11 @@ msgstr "Bem-vindo"
 
 #: src/first_run_page/first-run-page.blp:13
 msgid "About Ignition"
-msgstr "Sobre o Ignition"
+msgstr "Sobre o Ignição"
 
 #: src/first_run_page/first-run-page.blp:20
 msgid "Welcome to Ignition!"
-msgstr "Bem-vindo ao Ignição!"
+msgstr "Boas-vindas ao Ignição!"
 
 #: src/first_run_page/first-run-page.blp:21
 msgid ""
@@ -122,7 +120,7 @@ msgstr "Não consegue encontrar um aplicativo?"
 
 #: src/gtk/help-dialog.blp:28
 msgid "Ignition might not be able to see some applications on your system"
-msgstr "O Ignition pode não reconhecer alguns aplicativos no seu sistema"
+msgstr "O Ignição pode não reconhecer alguns aplicativos no seu sistema"
 
 #: src/gtk/help-dialog.blp:38
 msgid "What is a 'System Entry'?"
@@ -192,8 +190,6 @@ msgid "Entries List"
 msgstr "Lista de Entradas"
 
 #: src/gtk/help-overlay.blp:14
-#, fuzzy
-#| msgid "New Entry"
 msgctxt "shortcut window"
 msgid "New Entry"
 msgstr "Nova Entrada"
@@ -424,8 +420,8 @@ msgstr ""
 
 #: src/main_view/details-page.blp:169
 #, fuzzy
-#| msgid "Trashed Entry"
-msgid "Trach Entry?"
+#| msgid "Trach Entry?"
+msgid "Trash Entry?"
 msgstr "Descartar Entrada?"
 
 #: src/main_view/details-page.blp:170
@@ -474,7 +470,7 @@ msgstr "Não foi possível jogar o arquivo na lixeira"
 
 #: src/main_view/entries-page.blp:20
 msgid "Main Menu"
-msgstr "Menu Principal"
+msgstr "Menu principal"
 
 #: src/main_view/entries-page.blp:27
 msgid "Help and information"
@@ -506,7 +502,7 @@ msgstr "_Abrir Pasta de Inicialização Automática"
 
 #: src/main_view/entries-page.blp:140
 msgid "_Keyboard Shortcuts"
-msgstr "_Atalhos de Teclado"
+msgstr "_Atalhos de teclado"
 
 #: src/main_view/entries-page.blp:145
 msgid "_About Ignition"
@@ -555,7 +551,7 @@ msgstr "Nenhum comentário definido."
 
 #: src/window/window.ts:73
 msgid "Failed to start properly"
-msgstr ""
+msgstr "Falha ao inicializar apropriadamente"
 
 #~ msgid "Choose an App"
 #~ msgstr "Escolha um Aplicativo"
