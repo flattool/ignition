@@ -9,6 +9,18 @@ import Gtk from "gi://Gtk?version=4.0";
 import Adw from "gi://Adw?version=1";
 import Pango from "gi://Pango?version=1.0";
 
+const HOST_PATHS_NEEDING_PREFIX = new Set<string>(["etc", "usr", "bin", "sbin", "lib"]);
+
+export const path_with_prefix = (path: string): string => {
+	if (!SharedVars.is_flatpak || !path.startsWith("/")) return path;
+	const split_path = path.split("/")
+	if (HOST_PATHS_NEEDING_PREFIX.has(split_path[1])) {
+		split_path[1] = "run/host/" + split_path[1]
+		return split_path.join("/")
+	}
+	return path
+}
+
 export const add_toast = (title: string, window = SharedVars.main_window): void => {
 	window?._toast_overlay.add_toast(Adw.Toast.new(title));
 };
