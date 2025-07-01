@@ -49,6 +49,16 @@
 	</screenshots>
 
 	<releases>
+		<release version="2.1.2" date="2025-7-1">
+			<description>
+				<p>Bug Fixes and Changes</p>
+				<ul>
+					<li>Removed duplicate entries in the Installed Apps list</li>
+					<li>Fix issue where delays weren't being set correctly in some autostart entries</li>
+					<li>Fix issue where some System autostart entries weren't being found correctly</li>
+				</ul>
+			</description>
+		</release>
 		<release version="2.1.1" date="2025-5-5">
 			<description translate="no">
 				<p>Bug Fixes and Changes</p>
