@@ -46,6 +46,8 @@ export class AppListPage extends Adw.NavigationPage {
 	readonly _list_box!: Gtk.ListBox;
 	readonly _no_results_status!: Adw.StatusPage;
 
+	readonly seen_execs = new Set<string>();
+
 	signals = {
 		script_chosen: new Signal(),
 		app_chosen: new Signal<[AutostartEntry]>(),
@@ -115,7 +117,8 @@ export class AppListPage extends Adw.NavigationPage {
 			.map(dir => host_app_iteration(
 				dir,
 				(entry: AutostartEntry) => {
-					const home_path = `${SharedVars.home_autostart_dir.get_path()}/${entry.file_name}`;
+					if (this.seen_execs.has(entry.exec)) return
+					this.seen_execs.add(entry.exec)
 					const row = new EntryRow(entry, false);
 					row.connect("activated", () => this.signals.app_chosen.emit(entry));
 					if (!this._show_hidden_switch.active && this.is_entry_hidden(entry)) {

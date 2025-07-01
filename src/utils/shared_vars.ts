@@ -28,7 +28,22 @@ export class SharedVars {
 		: Gio.File.new_for_path("/etc/xdg/autostart")
 	);
 
+	// The order of this array is important! Lower Files get less priority when two entries have identical execs
 	static host_app_entry_dirs = [
+		Gio.File.new_for_path(( // user apps
+			GLib.getenv("HOST_XDG_DATA_HOME")
+			|| SharedVars.home_dir.get_path() + "/.local/share"
+		) + "/applications"),
+		Gio.File.new_for_path(( // user flatpaks
+			GLib.getenv("HOST_XDG_DATA_HOME")
+			|| SharedVars.home_dir.get_path() + "/.local/share"
+		) + "/flatpak/exports/share/applications"),
+		Gio.File.new_for_path( // system flatpaks
+			"/var/lib/flatpak/exports/share/applications"
+		),
+		Gio.File.new_for_path( // snaps
+			"/var/lib/snapd/desktop/applications"
+		),
 		Gio.File.new_for_path(( // distro apps 1
 			SharedVars.is_flatpak
 			? "/run/host"
@@ -39,19 +54,5 @@ export class SharedVars {
 			? "/run/host"
 			: ""
 		) + "/usr/share/applications"),
-		Gio.File.new_for_path( // snaps
-			"/var/lib/snapd/desktop/applications"
-		),
-		Gio.File.new_for_path( // system flatpaks
-			"/var/lib/flatpak/exports/share/applications"
-		),
-		Gio.File.new_for_path(( // user flatpaks
-			GLib.getenv("HOST_XDG_DATA_HOME")
-			|| SharedVars.home_dir.get_path() + "/.local/share"
-		) + "/flatpak/exports/share/applications"),
-		Gio.File.new_for_path(( // user apps
-			GLib.getenv("HOST_XDG_DATA_HOME")
-			|| SharedVars.home_dir.get_path() + "/.local/share"
-		) + "/applications"),
 	];
 }
