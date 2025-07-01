@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-16 17:18-0400\n"
+"POT-Creation-Date: 2025-07-01 17:37-0400\n"
 "PO-Revision-Date: 2025-06-13 14:46+0000\n"
 "Last-Translator: carpinchitu <maycoemanuelportillo@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.fyralabs.com/projects/flattool/"
@@ -307,7 +307,7 @@ msgstr "No se han encontrado resultados"
 msgid "Try a different search."
 msgstr "Prueba a buscar algo diferente."
 
-#: src/main_view/app_list_page.ts:135
+#: src/main_view/app_list_page.ts:138
 msgid "Could not load some apps"
 msgstr "No se pueden cargar algunas aplicaciones"
 
@@ -524,15 +524,15 @@ msgstr "Entradas que se ejecutan sólo para todos."
 msgid "Could not load some entries"
 msgstr "No se han podido cargar algunas entradas"
 
-#: src/utils/helper_funcs.ts:27
+#: src/utils/helper_funcs.ts:39
 msgid "Copy"
 msgstr "Copiar"
 
-#: src/utils/helper_funcs.ts:28
+#: src/utils/helper_funcs.ts:40
 msgid "OK"
 msgstr "De acuerdo"
 
-#: src/utils/helper_funcs.ts:37
+#: src/utils/helper_funcs.ts:49
 msgid "Details"
 msgstr "Detalles"
 
