@@ -1,4 +1,5 @@
 import { KeyFileHelper } from "./key_file_helper.js";
+import { path_with_prefix } from "./helper_funcs.js";
 
 import GLib from "gi://GLib?version=2.0";
 import Gio from "gi://Gio?version=2.0";
@@ -86,9 +87,19 @@ export class AutostartEntry {
 
 	constructor(path: string) {
 		this.path = path;
+
+		// Handle Symlinks
+		if (this.file.query_file_type(Gio.FileQueryInfoFlags.NOFOLLOW_SYMLINKS, null) === Gio.FileType.SYMBOLIC_LINK) {
+			const target = this.file.query_info(
+				"standard::type,standard::symlink-target", Gio.FileQueryInfoFlags.NONE, null,
+			).get_symlink_target();
+			if (target && target.startsWith("/")) this.path = path_with_prefix(target);
+		}
+
 		if (!this.file.query_exists(null)) {
 			return;
 		}
+
 		// This will error if the file cannot be interpreted as a keyfile
 		this.keyfile.load_from_file(this.path, GLib.KeyFileFlags.KEEP_TRANSLATIONS);
 
