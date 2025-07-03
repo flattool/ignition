@@ -119,7 +119,7 @@ export class DetailsPage extends Adw.NavigationPage {
 
 	invalid_rows = new Set<Adw.EntryRow>();
 
-	file_name_regex = /^(?! )[^\0\/"'.\\]+(?: [^\0\/"'.\\]+)*(?<! )$/;
+	file_name_regex = /^(?! )[^\0\/"'\\]+(?: [^\0\/"'\\]+)*(?<! )$/;
 	exec_regex = /^\S(?:.*\S)?$/;
 
 	get is_saving_allowed(): boolean {
