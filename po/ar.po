@@ -8,31 +8,35 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-01 17:37-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-07-08 02:46+0000\n"
+"Last-Translator: x9a <iramosu@protonmail.com>\n"
+"Language-Team: Arabic <https://weblate.fyralabs.com/projects/flattool/"
+"ignition/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Weblate 5.10.4\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:2
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14
 msgid "Ignition"
-msgstr ""
+msgstr "اشتعال"
 
 #: data/io.github.flattool.Ignition.desktop.in:3
 #: data/io.github.flattool.Ignition.metainfo.xml.in:15
 msgid "Manage startup apps and scripts"
-msgstr ""
+msgstr "أدِر تطبيقات وأوامر بدء التشغيل"
 
 #: data/io.github.flattool.Ignition.desktop.in:9
 msgid "GTK;startup;autostart;login;"
-msgstr ""
+msgstr "جتك;بدء;تشغيل;ولوج;تسجيل;GTK;startup;autostart;login;ignition;"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
 msgid "Heliguy"
-msgstr ""
+msgstr "Heliguy"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:17
 msgid ""
@@ -40,91 +44,94 @@ msgid ""
 "your computer. Ignition can add apps, scripts, and arbitrary commands to run "
 "at login."
 msgstr ""
+"يوفر «اشتعال» واجهة مستخدم بسيطة لإضافة مُدخلات بدء التشغيل وإزالتها وتعديلها "
+"على حاسوبك. يمكن لـ«اشتعال» إضافة تطبيقات وبادئات وأي أوامر أخرى لتعمل عند "
+"الولوج."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
-msgstr ""
+msgstr "الإطلاع على كل عناصر بدء التشغيل."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:39
 msgid "View and edit entry details."
-msgstr ""
+msgstr "عرض تفاصيل المُدخلات وتعديلها."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:43
 msgid "Create a new startup entry."
-msgstr ""
+msgstr "إنشاء مُدخلة بدء تشغيل جديدة."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
-msgstr ""
+msgstr "الإطلاع على كل عناصر بدء التشغيل في الوضع الداكن."
 
 #: src/first_run_page/first-run-page.blp:5
 msgid "Welcome"
-msgstr ""
+msgstr "مرحبًا"
 
 #: src/first_run_page/first-run-page.blp:13
 msgid "About Ignition"
-msgstr ""
+msgstr "عَنْ «اشتعال»"
 
 #: src/first_run_page/first-run-page.blp:20
 msgid "Welcome to Ignition!"
-msgstr ""
+msgstr "أهلًا بك في «اشتعال»!"
 
 #: src/first_run_page/first-run-page.blp:21
 msgid ""
 "Ignition lets you start any app or script when you log in to your computer."
-msgstr ""
+msgstr "يتيح لك «اشتعال» بدء أي تطبيق أو أمر عند ولوجك إلى حاسوبك."
 
 #: src/first_run_page/first-run-page.blp:25
 msgid "Get Started"
-msgstr ""
+msgstr "ابدأ"
 
 #: src/gtk/entry-row.blp:22 src/main_view/details-page.blp:103
 msgid "More Information"
-msgstr ""
+msgstr "مزيد من المعلومات"
 
 #: src/gtk/entry_row.ts:67
 msgid "Disabled"
-msgstr ""
+msgstr "معطَّل"
 
 #: src/gtk/entry_row.ts:71
 msgid "Overridden"
-msgstr ""
+msgstr "مُتجاوز"
 
 #: src/gtk/entry_row.ts:75
 msgid "Enabled"
-msgstr ""
+msgstr "مفعَّل"
 
 #: src/gtk/entry_row.ts:95
 msgid "This entry is overridden by a user entry."
-msgstr ""
+msgstr "هذه المُدخلة مُتجاوزة بمُدخلة مستخدم."
 
 #: src/gtk/entry_row.ts:97
 msgid "This entry overrides a system entry."
-msgstr ""
+msgstr "هذه المُدخلة تتجاوز مُدخلة نظام."
 
 #: src/gtk/help-dialog.blp:5
 msgid "Help and Information"
-msgstr ""
+msgstr "مساعدة ومعلومات"
 
 #: src/gtk/help-dialog.blp:27
 msgid "Can't find an application?"
-msgstr ""
+msgstr "ألا تستطيع إيجاد تطبيق؟"
 
 #: src/gtk/help-dialog.blp:28
 msgid "Ignition might not be able to see some applications on your system"
-msgstr ""
+msgstr "قد لا يتمكن «اشتعال» من رؤية بعض التطبيقات على نظامك"
 
 #: src/gtk/help-dialog.blp:38
 msgid "What is a 'System Entry'?"
-msgstr ""
+msgstr "ما هي «مُدخلة النظام»؟"
 
 #: src/gtk/help-dialog.blp:39
 msgid "Learn more about system startup entries, and how editing them works"
-msgstr ""
+msgstr "تعرَّف على المزيد عن مُدخلات بدء تشغيل النظام، وكيفية عمل تعديلها"
 
 #: src/gtk/help-dialog.blp:53
 msgid "Can't Find an App?"
-msgstr ""
+msgstr "ألا تستطيع إيجاد تطبيق؟"
 
 #: src/gtk/help-dialog.blp:73
 msgid ""
@@ -132,22 +139,29 @@ msgid ""
 "to read. This means that these apps won't show up in the list of apps on "
 "your system, when making a new entry."
 msgstr ""
+"تُخزِّن بعض التطبيقات مُدخلاتها خارج الأماكن التي يُسمح لـ«اشتعال» بقراءتها. هذا "
+"يعني أن هذه التطبيقات لن تظهر في قائمة التطبيقات على نظامك عند إنشاء مُدخلة "
+"جديد."
 
 #: src/gtk/help-dialog.blp:79
 msgid ""
 "To fix this, you can allow Ignition to see more home locations, or more root "
 "locations, in your file system."
 msgstr ""
+"لإصلاح هذا، يمكنك السماح لـ«اشتعال» برؤية المزيد من مواقع مجلد المنزل، أو "
+"المزيد من مواقع الجذر في نظام ملفاتك."
 
 #: src/gtk/help-dialog.blp:85
 msgid ""
 "We recommend the app \"Flatseal\" to manage these permissions. Enable \"All "
 "user files\" or \"All system files\" to be able to find these apps."
 msgstr ""
+"نوصي بتطبيق «فلاتسيل» لإدارة هذه الأذونات. فعِّل «كل ملفات المستخدم» أو «كل "
+"ملفات النظام» لتتمكن من إيجاد هذه التطبيقات."
 
 #: src/gtk/help-dialog.blp:94
 msgid "What is a System Entry?"
-msgstr ""
+msgstr "ما هي مُدخلة النظام؟"
 
 #: src/gtk/help-dialog.blp:114
 msgid ""
@@ -155,365 +169,374 @@ msgid ""
 "everybody. These are usually present to allow certain features, programs, or "
 "other important actions run properly."
 msgstr ""
+"مُدخلات النظام هي للتطبيقات أو الأوامر التي تعمل عند الولوج للجميع. عادة ما "
+"تكون موجودة للسماح لميزات أو برامج معينة أو إجراءات هامة أخرى بالعمل بشكل "
+"صحيح."
 
 #: src/gtk/help-dialog.blp:120
 msgid ""
 "You can override these, but please use caution when doing so, as you may "
 "break some existing app or feature of your desktop."
 msgstr ""
+"يمكنك تجاوزها، ولكن توخى الحذر عند القيام بذلك، فقد تُعطِّل بعض التطبيقات أو "
+"الميزات الموجودة في سطح مكتبك."
 
 #: src/gtk/help-overlay.blp:11
 msgctxt "shortcut window"
 msgid "Entries List"
-msgstr ""
+msgstr "قائمة المُدخلات"
 
 #: src/gtk/help-overlay.blp:14
 msgctxt "shortcut window"
 msgid "New Entry"
-msgstr ""
+msgstr "مُدخلة جديدة"
 
 #: src/gtk/help-overlay.blp:19
 msgctxt "shortcut window"
 msgid "Search Entries"
-msgstr ""
+msgstr "ابحث في المُدخلات"
 
 #: src/gtk/help-overlay.blp:25
 msgctxt "shortcut window"
 msgid "Apps List"
-msgstr ""
+msgstr "قائمة التطبيقات"
 
 #: src/gtk/help-overlay.blp:28
 msgctxt "shortcut window"
 msgid "Search Apps"
-msgstr ""
+msgstr "ابحث في التطبيقات"
 
 #: src/gtk/help-overlay.blp:34
 msgctxt "shortcut window"
 msgid "Details Page"
-msgstr ""
+msgstr "صفحة التفاصيل"
 
 #: src/gtk/help-overlay.blp:37
 msgctxt "shortcut window"
 msgid "Save Edits"
-msgstr ""
+msgstr "احفظ التعديلات"
 
 #: src/gtk/help-overlay.blp:43
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "عام"
 
 #: src/gtk/help-overlay.blp:46
 msgctxt "shortcut window"
 msgid "Open Autostart Folder"
-msgstr ""
+msgstr "افتح مجلد التشغيل الآلي"
 
 #: src/gtk/help-overlay.blp:51
 msgctxt "shortcut window"
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "أظهِر الاختصارات"
 
 #: src/gtk/help-overlay.blp:56
 msgctxt "shortcut window"
 msgid "Quit"
-msgstr ""
+msgstr "غادر"
 
 #: src/main.ts:70
 msgid "Translate"
-msgstr ""
+msgstr "ترجِم"
 
 #: src/main.ts:71
 msgid "Donate"
-msgstr ""
+msgstr "تبرَّع"
 
 #: src/main.ts:97
 msgid "Opened folder"
-msgstr ""
+msgstr "فُتح المجلد"
 
 #: src/main.ts:100
 msgid "Could not open folder"
-msgstr ""
+msgstr "تعذَّر فتح المجلد"
 
 #: src/main_view/app-list-page.blp:5
 msgid "Add or Create an Entry"
-msgstr ""
+msgstr "أضِف أو أنشئ مُدخلة"
 
 #: src/main_view/app-list-page.blp:12 src/main_view/entries-page.blp:13
 msgid "Search"
-msgstr ""
+msgstr "ابحث"
 
 #: src/main_view/app-list-page.blp:25 src/main_view/entries-page.blp:40
 msgid "Search entries"
-msgstr ""
+msgstr "ابحث المُدخلات"
 
 #: src/main_view/app-list-page.blp:47
 msgid "Commands and Scripts"
-msgstr ""
+msgstr "الأوامر"
 
 #: src/main_view/app-list-page.blp:48
 msgid "Run a command or script when you log in."
-msgstr ""
+msgstr "شغِّل أمرًا عند ولوجك."
 
 #: src/main_view/app-list-page.blp:54
 msgid "Add a Command or Script"
-msgstr ""
+msgstr "أضِف أمرًا"
 
 #: src/main_view/app-list-page.blp:55
 msgid "Enter the command to run or path to your script"
-msgstr ""
+msgstr "أدخل الأمر المراد تشغيله أو مسارًا"
 
 #: src/main_view/app-list-page.blp:78
 msgid "Installed Apps"
-msgstr ""
+msgstr "التطبيقات المنصَّبة"
 
 #: src/main_view/app-list-page.blp:79
 msgid "Choose any installed app to run when you log in."
-msgstr ""
+msgstr "اختر أي تطبيق منصَّب لتشغيله عند الولوج."
 
 #: src/main_view/app-list-page.blp:83
 msgid "Show Hidden Apps"
-msgstr ""
+msgstr "أظهِر التطبيقات المخفية"
 
 #: src/main_view/app-list-page.blp:84
 msgid "Show apps that are hidden from the app menu"
-msgstr ""
+msgstr "يظهر التطبيقات المخفية من قائمة التطبيقات"
 
 #: src/main_view/app-list-page.blp:101 src/main_view/entries-page.blp:57
 msgid "No Results Found"
-msgstr ""
+msgstr "لم يُعثر على نتائج"
 
 #: src/main_view/app-list-page.blp:102 src/main_view/entries-page.blp:58
 msgid "Try a different search."
-msgstr ""
+msgstr "جرِّب بحثًا مختلفًا."
 
 #: src/main_view/app_list_page.ts:138
 msgid "Could not load some apps"
-msgstr ""
+msgstr "تعذَّر تحميل بعض التطبيقات"
 
 #: src/main_view/details-page.blp:5
 msgid "Edit Details"
-msgstr ""
+msgstr "حرِّر التفاصيل"
 
 #: src/main_view/details-page.blp:16
 msgid "Save"
-msgstr ""
+msgstr "احفظ"
 
 #: src/main_view/details-page.blp:26
 msgid "Create"
-msgstr ""
+msgstr "أنشئ"
 
 #: src/main_view/details-page.blp:33
 msgid "Move to Trash"
-msgstr ""
+msgstr "انقل إلى المهملات"
 
 #: src/main_view/details-page.blp:41
 msgid "Override entry to edit details"
-msgstr ""
+msgstr "تجاوز المُدخلة لتحرير التفاصيل"
 
 #: src/main_view/details-page.blp:42 src/main_view/details-page.blp:164
 msgid "Override"
-msgstr ""
+msgstr "تجاوز"
 
 #: src/main_view/details-page.blp:74
 msgid "Edit details about this entry."
-msgstr ""
+msgstr "حرِّر التفاصيل عن هذه المُدخلة."
 
 #: src/main_view/details-page.blp:80
 msgid "Enable"
-msgstr ""
+msgstr "فعِّل"
 
 #: src/main_view/details-page.blp:81
 msgid "Enable this entry to be started when you log in."
-msgstr ""
+msgstr "فعِّل هذه المُدخلة لتبدأ عند ولوجك."
 
 #: src/main_view/details-page.blp:87
 msgid "Name"
-msgstr ""
+msgstr "الاسم"
 
 #: src/main_view/details-page.blp:92
 msgid "Comment"
-msgstr ""
+msgstr "تعليق"
 
 #: src/main_view/details-page.blp:97
 msgid "Command or Script"
-msgstr ""
+msgstr "الأمر"
 
 #: src/main_view/details-page.blp:112
 msgid "Show Terminal"
-msgstr ""
+msgstr "أظهِر الطرفيَّة"
 
 #: src/main_view/details-page.blp:113
 msgid "Show a terminal for this process to run in."
-msgstr ""
+msgstr "يُظهر طرفيَّة لتعمل فيها هذه العملية."
 
 #: src/main_view/details-page.blp:119
 msgid "Seconds of Delay"
-msgstr ""
+msgstr "ثواني التأخير"
 
 #: src/main_view/details-page.blp:120
 msgid "Amount of seconds to wait after logging in to run the command or script"
-msgstr ""
+msgstr "عدد الثواني التي يجب انتظارها بعد الولوج لتشغيل الأمر"
 
 #: src/main_view/details-page.blp:139
 msgid ""
 "To run a script at login, paste its file path here. You can copy the "
 "script's path from your file manager. Make sure your script is executable."
 msgstr ""
+"لتشغيل إخطاطة عند الولوج، ألصق مسار ملفه هنا. يمكنك نسخ مسار الإخطاطة من "
+"مدير ملفاتك. تأكد من أن إخطاطتك قابلة للتنفيذ."
 
 #: src/main_view/details-page.blp:151
 msgid "Create and Replace?"
-msgstr ""
+msgstr "أأنشئ وأستبدل؟"
 
 #: src/main_view/details-page.blp:152
 msgid ""
 "A file already exists for this entry. Are you sure you want to replace it?"
-msgstr ""
+msgstr "هناك ملف لهذا المُدخلة بالفعل. أمتأكد من رغبتك في استبداله؟"
 
 #: src/main_view/details-page.blp:154 src/main_view/details-page.blp:163
 #: src/main_view/details-page.blp:172
 msgid "Cancel"
-msgstr ""
+msgstr "ألغِ"
 
 #: src/main_view/details-page.blp:155
 msgid "Create and Replace"
-msgstr ""
+msgstr "أنشئ واستبدل"
 
 #: src/main_view/details-page.blp:160
 msgid "Override Entry?"
-msgstr ""
+msgstr "أأتجاوز المُدخلة؟"
 
 #: src/main_view/details-page.blp:161
 msgid ""
 "Be careful, overriding system entries can lead to system breakage. This will "
 "make a copy of the entry for you to edit."
 msgstr ""
+"احذر، فتجاوز مُدخلات النظام قد يؤدي إلى تعطُّل النظام. سيُنشئ هذا نسخة من المُ"
+"دخلة لتعدِّلها."
 
 #: src/main_view/details-page.blp:169
 msgid "Trash Entry?"
-msgstr ""
+msgstr "أأنقل المُدخلة إلى المهملات؟"
 
 #: src/main_view/details-page.blp:170
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
-msgstr ""
+msgstr "ستُنقل هذه المُدخلة إلى المهملات، ولن يبدأ تشغيلها عند ولوجك بعد الآن."
 
 #: src/main_view/details-page.blp:173
 msgid "Trash"
-msgstr ""
+msgstr "انقل للمهملات"
 
 #: src/main_view/details_page.ts:264
 msgid "New Entry"
-msgstr ""
+msgstr "مُدخلة جديدة"
 
 #: src/main_view/details_page.ts:344
 msgid "Saved details"
-msgstr ""
+msgstr "حُفظت التفاصيل"
 
 #: src/main_view/details_page.ts:346
 msgid "Could not save file"
-msgstr ""
+msgstr "تعذَّر حفظ الملف"
 
 #: src/main_view/details_page.ts:371
 msgid "Created entry"
-msgstr ""
+msgstr "أُنشئت المُدخلة"
 
 #: src/main_view/details_page.ts:373 src/main_view/details_page.ts:397
 msgid "Could not create file"
-msgstr ""
+msgstr "تعذَّر إنشاء الملف"
 
 #: src/main_view/details_page.ts:394
 msgid "Overrode entry"
-msgstr ""
+msgstr "تجاوزت المُدخلة"
 
 #: src/main_view/details_page.ts:435
 msgid "Trashed entry"
-msgstr ""
+msgstr "نُقلت المُدخلة إلى المهملات"
 
 #: src/main_view/details_page.ts:437
 msgid "Could not trash file"
-msgstr ""
+msgstr "تعذَّر نقل الملف إلى المهملات"
 
 #: src/main_view/entries-page.blp:20
 msgid "Main Menu"
-msgstr ""
+msgstr "القائمة الرئيسة"
 
 #: src/main_view/entries-page.blp:27
 msgid "Help and information"
-msgstr ""
+msgstr "مساعدة ومعلومات"
 
 #: src/main_view/entries-page.blp:47
 msgid "Loading Entries"
-msgstr ""
+msgstr "تُحمَّل المُدخلات"
 
 #: src/main_view/entries-page.blp:48
 msgid "This should only take a moment."
-msgstr ""
+msgstr "لن يستغرق هذا سوى لحظة."
 
 #: src/main_view/entries-page.blp:88
 msgid "New"
-msgstr ""
+msgstr "جديد"
 
 #: src/main_view/entries-page.blp:109
 msgid "No Entries Found"
-msgstr ""
+msgstr "لم يُعثر على مُدخلات"
 
 #: src/main_view/entries-page.blp:117
 msgid "Add an app or script to run it when you log in"
-msgstr ""
+msgstr "أضِف تطبيقًا أو أمرًا لتشغيله عند الولوج"
 
 #: src/main_view/entries-page.blp:128
 msgid "_Open Autostart Folder"
-msgstr ""
+msgstr "ا_فتح مجلد التشغيل الآلي"
 
 #: src/main_view/entries-page.blp:140
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "ا_ختصارات لوحة المفاتيح"
 
 #: src/main_view/entries-page.blp:145
 msgid "_About Ignition"
-msgstr ""
+msgstr "_عَنْ «اشتعال»"
 
 #: src/main_view/entries_page.ts:85
 msgid "User Startup Entries"
-msgstr ""
+msgstr "مُدخلات بدء تشغيل المستخدم"
 
 #: src/main_view/entries_page.ts:86
 msgid "Entries that run only for you."
-msgstr ""
+msgstr "مُدخلات تعمل لك وحدك."
 
 #: src/main_view/entries_page.ts:110
 msgid "System Startup Entries"
-msgstr ""
+msgstr "مُدخلات بدء تشغيل النظام"
 
 #: src/main_view/entries_page.ts:111
 msgid "Entries that run for everyone."
-msgstr ""
+msgstr "مُدخلات تعمل للجميع."
 
 #: src/main_view/entries_page.ts:180
 msgid "Could not load some entries"
-msgstr ""
+msgstr "تعذَّر تحميل بعض المُدخلات"
 
 #: src/utils/helper_funcs.ts:39
 msgid "Copy"
-msgstr ""
+msgstr "انسخ"
 
 #: src/utils/helper_funcs.ts:40
 msgid "OK"
-msgstr ""
+msgstr "حسنًا"
 
 #: src/utils/helper_funcs.ts:49
 msgid "Details"
-msgstr ""
+msgstr "التفاصيل"
 
 #. These need to be getters for the _() translation function to work
 #: src/utils/shared_vars.ts:17
 msgid "No Name Set"
-msgstr ""
+msgstr "لم يُعيَّن اسم"
 
 #: src/utils/shared_vars.ts:18
 msgid "No comment set."
-msgstr ""
+msgstr "لم يُعيَّن تعليق."
 
 #: src/window/window.ts:73
 msgid "Failed to start properly"
-msgstr ""
+msgstr "تعذَّر البدء بشكل صحيح"
