@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-01 17:37-0400\n"
-"PO-Revision-Date: 2025-07-08 02:46+0000\n"
-"Last-Translator: x9a <iramosu@protonmail.com>\n"
+"PO-Revision-Date: 2025-07-23 13:46+0000\n"
+"Last-Translator: ALSULEMAN <3areep@gmail.com>\n"
 "Language-Team: Arabic <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/ar/>\n"
 "Language: ar\n"
@@ -32,7 +32,8 @@ msgstr "أدِر تطبيقات وأوامر بدء التشغيل"
 
 #: data/io.github.flattool.Ignition.desktop.in:9
 msgid "GTK;startup;autostart;login;"
-msgstr "جتك;بدء;تشغيل;ولوج;تسجيل;GTK;startup;autostart;login;ignition;"
+msgstr ""
+"جتك;بدء التشغيل;تشغيل تلقائي;دخول;اشعال;GTK;startup;autostart;login;ignition;"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
 msgid "Heliguy"
