@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-01 17:37-0400\n"
-"PO-Revision-Date: 2025-06-13 14:46+0000\n"
-"Last-Translator: carpinchitu <maycoemanuelportillo@gmail.com>\n"
+"PO-Revision-Date: 2025-07-30 17:46+0000\n"
+"Last-Translator: Jose Daniel Rodriguez <jdrodriguez653@soy.sena.edu.co>\n"
 "Language-Team: Spanish <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/es/>\n"
 "Language: es\n"
@@ -252,7 +252,7 @@ msgstr "Carpeta abierta"
 
 #: src/main.ts:100
 msgid "Could not open folder"
-msgstr "No se ha podido abrir la carpeta"
+msgstr "No se pudo abrir la carpeta"
 
 #: src/main_view/app-list-page.blp:5
 msgid "Add or Create an Entry"
@@ -301,7 +301,7 @@ msgstr "Mostrar aplicaciones que están ocultas en el menú de aplicaciones"
 
 #: src/main_view/app-list-page.blp:101 src/main_view/entries-page.blp:57
 msgid "No Results Found"
-msgstr "No se han encontrado resultados"
+msgstr "No se Han Encontrado Resultados"
 
 #: src/main_view/app-list-page.blp:102 src/main_view/entries-page.blp:58
 msgid "Try a different search."
@@ -498,7 +498,7 @@ msgstr "_Abrir carpeta de autoarranque"
 
 #: src/main_view/entries-page.blp:140
 msgid "_Keyboard Shortcuts"
-msgstr "_Atajos de teclado"
+msgstr "_Atajos de Teclado"
 
 #: src/main_view/entries-page.blp:145
 msgid "_About Ignition"
@@ -539,7 +539,7 @@ msgstr "Detalles"
 #. These need to be getters for the _() translation function to work
 #: src/utils/shared_vars.ts:17
 msgid "No Name Set"
-msgstr "Sin nombre asignado"
+msgstr "Sin Nombre Asignado"
 
 #: src/utils/shared_vars.ts:18
 msgid "No comment set."
