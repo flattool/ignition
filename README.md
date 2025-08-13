@@ -62,10 +62,5 @@ flatpak install org.flatpak.Builder org.gnome.Sdk//48 org.gnome.Platform//48 org
 ```
 
 ### Formatting
-
-Ignition uses [pre-commit](https://pre-commit.com/) for code formatting.
-- Install using `pip install pre-commit`
-- Run `pre-commit install` in the Ignition repository root to set up pre-commit for this repo.
-- Run `pre-commit run --all-files` to format all files in the repository.
-
-If you run into a situation where pre-commit is broken, you can use `git commit --no-verfiy` to skip the pre-commit checks.
+Ignition uses [ESLint](https://eslint.org/) plugins for code formatting. An NPM package file is provided for easy installation.
+- Install using `npm install` in the project root directory
