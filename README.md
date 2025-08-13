@@ -55,7 +55,7 @@ cd ignition
 git submodule update --init
 
 # Install build dependencies
-flatpak install org.flatpak.Builder org.gnome.Sdk//48 org.gnome.Platform//48 org.freedesktop.Sdk.Extension.node20//24.08 -y
+flatpak install org.flatpak.Builder org.gnome.Sdk//48 org.gnome.Platform//48 org.freedesktop.Sdk.Extension.typescript//24.08 org.freedesktop.Sdk.Extension.node20//24.08 -y
 
 # Build, install, and run Ignition
 ./run.sh
