@@ -28,7 +28,6 @@ import "./main_view/entries_page.js"
 import "./main_view/main_view.js"
 
 import { IgnitionWindow } from "./window/window.js"
-import { Config } from "./config.js"
 import { SharedVars } from "./utils/shared_vars.js"
 import { add_error_toast, add_toast } from "./utils/helper_funcs.js"
 
@@ -54,18 +53,18 @@ class IgnitionApplication extends Adw.Application {
 		const lang = GLib.environ_getenv(GLib.get_environ(), "LANG")
 		const troubleshooting = (
 			`OS: ${os_string}\n`
-			+ `Ignition version: ${Config.VERSION}\n`
+			+ `Ignition version: ${pkg.version}\n`
 			+ `GTK: ${gtk_version}\n`
 			+ `libadwaita: ${adw_version}\n`
-			+ `App ID: ${Config.APP_ID}\n`
-			+ `Profile: ${Config.PROFILE}\n`
+			+ `App ID: ${pkg.app_id}\n`
+			+ `Profile: ${pkg.profile}\n`
 			+ `Language: ${lang}`
 		)
 
 		const show_about_action = new Gio.SimpleAction({ name: "about" })
 		show_about_action.connect("activate", (_action) => {
 			const aboutDialog = Adw.AboutDialog.new_from_appdata("/io/github/flattool/Ignition/appdata", null)
-			aboutDialog.version = Config.VERSION
+			aboutDialog.version = pkg.version
 			aboutDialog.debug_info = troubleshooting
 			aboutDialog.add_link(_("Translate"), "https://weblate.fyralabs.com/projects/flattool/ignition/")
 			aboutDialog.add_link(_("Donate"), "https://ko-fi.com/heliguy")
