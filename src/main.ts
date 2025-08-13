@@ -63,7 +63,7 @@ class IgnitionApplication extends Adw.Application {
 		)
 
 		const show_about_action = new Gio.SimpleAction({ name: "about" })
-		show_about_action.connect("activate", (action) => {
+		show_about_action.connect("activate", (_action) => {
 			const aboutDialog = Adw.AboutDialog.new_from_appdata("/io/github/flattool/Ignition/appdata", null)
 			aboutDialog.version = Config.VERSION
 			aboutDialog.debug_info = troubleshooting
@@ -75,7 +75,7 @@ class IgnitionApplication extends Adw.Application {
 		this.add_action(show_about_action)
 
 		const quit_action = new Gio.SimpleAction({ name: "quit" })
-		quit_action.connect("activate", (action) => {
+		quit_action.connect("activate", (_action) => {
 			this.quit()
 		})
 		this.add_action(quit_action)
@@ -86,11 +86,11 @@ class IgnitionApplication extends Adw.Application {
 		this.set_accels_for_action("app.new-entry", ["<primary>n"])
 
 		const open_folder_action = new Gio.SimpleAction({ name: "open-folder" })
-		open_folder_action.connect("activate", (action) => {
+		open_folder_action.connect("activate", (_action) => {
 			const launcher = new Gtk.FileLauncher({ file: SharedVars.home_autostart_dir })
-			launcher.launch(this.active_window, null, (lnch, result) => {
+			launcher.launch(this.active_window, null, (_lnch, result) => {
 				try {
-					const did_open = launcher.launch_finish(result)
+					launcher.launch_finish(result)
 					add_toast(_("Opened folder"))
 				} catch (error) {
 					add_error_toast(
