@@ -3,17 +3,20 @@
 import { exit, programArgs, programInvocationName } from "system";
 
 imports.package.init({
-  name: "@PACKAGE_NAME@",
-  version: "@PACKAGE_VERSION@",
-  prefix: "@prefix@",
-  libdir: "@libdir@",
-  datadir: "@datadir@",
+	name: "@PACKAGE_NAME@",
+	version: "@PACKAGE_VERSION@",
+	prefix: "@prefix@",
+	libdir: "@libdir@",
+	datadir: "@datadir@",
 });
+
+pkg.profile = "@PROFILE@";
+pkg.app_id = "@APP_ID@";
 
 // Initialize translations and formatting
 pkg.initGettext();
 pkg.initFormat();
 
-const { main } = await import("resource://@resource_path@/js/main.js");
+const { main } = await import("./main.js");
 const exit_code = await main([programInvocationName, ...programArgs]);
 exit(exit_code);
