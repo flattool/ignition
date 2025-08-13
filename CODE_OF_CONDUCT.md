@@ -1,14 +1,14 @@
 # Ignition Code of Conduct
 The Ignition project follows the [GNOME Code of Conduct](https://conduct.gnome.org/). A short summary of it goes like this:
 
-The Ignition project is dedicated to provitding a positive experience to everyone, and does not accept inappropriate behaviour such as discrimination and hateful speech. We encourage everyone to keep a friendly tone, and to be constructive and civil.
+The Ignition project is dedicated to providing a positive experience to everyone, and does not accept inappropriate behaviour such as discrimination and hateful speech. We encourage everyone to keep a friendly tone, and to be constructive and civil.
 
 ## Reporting an Incident
 If you believe someone is Violating the Code of Conduct, or have any other concerns, please contact lead developer Heliguy over [email](mailto:heliguy4599@hotmail.com). Alternatively, contact `heliguy` on Discord.
 
 ## Our Standards
 The Ignition project is dedicated to providing a positive experience for everyone, regardless of:
- 
+
 * age
 * body size
 * caste
@@ -74,8 +74,7 @@ Outreach and diversity efforts directed at under-represented groups are permitte
 
 Basic expectations for conduct are not covered by the “reverse-ism clause” and would be enforced irrespective of the demographics of those involved. For example, racial discrimination will not be tolerated, irrespective of the race of those involved. Nor would unwanted sexual attention be tolerated, whatever someone’s gender or sexual orientation. Members of our community have the right to expect that participants in the project will uphold these standards.
 
-If a participant engages in behavior that violates this code of conduct, the Ignition maintainers may take any action they deem appropriate. 
+If a participant engages in behavior that violates this code of conduct, the Ignition maintainers may take any action they deem appropriate.
 
 ## Attribution
 This Code of Conduct is licensed under a [CC BY-SA 3.0 License](creativecommons.org/licenses/by-sa/3.0/), and is forked from the [GNOME CoC](https://wiki.gnome.org/Foundation/CodeOfConduct)
-
