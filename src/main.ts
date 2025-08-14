@@ -18,7 +18,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 //
 
-// import GLib from "gi://GLib?version=2.0"
+import GLib from "gi://GLib?version=2.0"
 import Gio from "gi://Gio?version=2.0"
 import Gtk from "gi://Gtk?version=4.0"
 import Adw from "gi://Adw?version=1"
@@ -32,42 +32,39 @@ Gio._promisify(Gtk.FileLauncher.prototype, "launch", "launch_finish")
 @GObjectify.Class({ manual_gtype_name: "Gjs_Application" })
 export class Application extends Adw.Application {
 	private _main_window?: MainWindow
-	// protected about_dialog: Adw.AboutDialog = new Adw.AboutDialog()
 
 	public constructor() {
 		super({ application_id: "io.github.flattool.Ignition", flags: Gio.ApplicationFlags.DEFAULT_FLAGS })
 
 		SharedVars.application = this
-
-		// const gtk_version = `${Gtk.MAJOR_VERSION}.${Gtk.MINOR_VERSION}.${Gtk.MICRO_VERSION}`
-		// const adw_version = `${Adw.MAJOR_VERSION}.${Adw.MINOR_VERSION}.${Adw.MICRO_VERSION}`
-		// const os_string = `${GLib.get_os_info("NAME")} ${GLib.get_os_info("VERSION")}`
-		// const lang = GLib.environ_getenv(GLib.get_environ(), "LANG")
-		// const troubleshooting = (
-		// 	`OS: ${os_string}\n`
-		// 	+ `Ignition version: ${pkg.version}\n`
-		// 	+ `GTK: ${gtk_version}\n`
-		// 	+ `libadwaita: ${adw_version}\n`
-		// 	+ `App ID: ${pkg.app_id}\n`
-		// 	+ `Profile: ${pkg.profile}\n`
-		// 	+ `Language: ${lang}`
-		// )
-
-		// this.about_dialog = Adw.AboutDialog.new_from_appdata("/io/github/flattool/Ignition/appdata", null)
-		// this.about_dialog.version = pkg.version
-		// this.about_dialog.debug_info = troubleshooting
-		// this.about_dialog.add_link(_("Translate"), "https://weblate.fyralabs.com/projects/flattool/ignition/")
-		// this.about_dialog.add_link(_("Donate"), "https://ko-fi.com/heliguy")
-		// this.about_dialog.add_other_app("io.github.flattool.Warehouse", "Warehouse", "Manage all things Flatpak")
 	}
 
 	@GObjectify.SimpleAction({ accels: ["<primary>q"] })
 	public override quit(): void { super.quit() }
 
-	// @GObjectify.SimpleAction()
-	// protected about(): void {
-	// 	this.about_dialog.present(this.active_window)
-	// }
+	@GObjectify.SimpleAction()
+	protected about(): void {
+		const gtk_version = `${Gtk.MAJOR_VERSION}.${Gtk.MINOR_VERSION}.${Gtk.MICRO_VERSION}`
+		const adw_version = `${Adw.MAJOR_VERSION}.${Adw.MINOR_VERSION}.${Adw.MICRO_VERSION}`
+		const os_string = `${GLib.get_os_info("NAME")} ${GLib.get_os_info("VERSION")}`
+		const lang = GLib.environ_getenv(GLib.get_environ(), "LANG")
+		const troubleshooting = (
+			`OS: ${os_string}\n`
+			+ `Ignition version: ${pkg.version}\n`
+			+ `GTK: ${gtk_version}\n`
+			+ `libadwaita: ${adw_version}\n`
+			+ `App ID: ${pkg.app_id}\n`
+			+ `Profile: ${pkg.profile}\n`
+			+ `Language: ${lang}`
+		)
+		const dialog = Adw.AboutDialog.new_from_appdata("/io/github/flattool/Ignition/appdata", pkg.version)
+		dialog.version = pkg.version
+		dialog.debug_info = troubleshooting
+		dialog.add_link(_("Translate"), "https://weblate.fyralabs.com/projects/flattool/ignition/")
+		dialog.add_link(_("Donate"), "https://ko-fi.com/heliguy")
+		dialog.add_other_app("io.github.flattool.Warehouse", "Warehouse", "Manage all things Flatpak")
+		dialog.present(this.active_window)
+	}
 
 	@GObjectify.SimpleAction({ accels: ["<primary><shift>o"] })
 	protected async open_folder(): Promise<void> {
@@ -78,7 +75,7 @@ export class Application extends Adw.Application {
 			if (launched) {
 				this._main_window?.add_toast(_("Opened folder"))
 			} else {
-				on_error(_("Could not open folder"), "")
+				on_error(_("Could not open folder"), "GtkFileLauncher.launch returned false")
 			}
 		} catch (e) {
 			on_error(_("Could not open folder"), e)

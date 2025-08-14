@@ -39,7 +39,6 @@ export class MainWindow extends Adw.ApplicationWindow {
 
 		const label = new Gtk.Label({ selectable: true, wrap: true, wrap_mode: Pango.WrapMode.WORD_CHAR })
 		label.set_markup(`<tt>${GLib.markup_escape_text(message_text, -1)}</tt>`)
-		label.visible = message_text.length > 0
 
 		const dialog = new Adw.AlertDialog({ heading: title, extra_child: label })
 		dialog.add_response("copy", _("Copy"))
