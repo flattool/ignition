@@ -1,0 +1,63 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $EntriesPage: Adw.NavigationPage {
+	title: "Ignition";
+
+	child: $LoadingGroup {
+		title: _("Loading Entries");
+		description: _("This should only take a moment.");
+
+		content: Adw.ToolbarView {
+			[top]
+			Adw.HeaderBar {
+				[start]
+				ToggleButton search_button {
+					icon-name: "ignition:system-search-symbolic";
+					tooltip-text: _("Search");
+				}
+
+				[end]
+				MenuButton {
+					primary: true;
+					icon-name: "open-menu-symbolic";
+					tooltip-text: _("Main Menu");
+					menu-model: primary_menu;
+				}
+
+				[end]
+				Button {
+					icon-name: "ignition:question-round-outline-symbolic";
+					tooltip-text: _("Help and information");
+				}
+			}
+
+			[top]
+			Adw.Clamp {
+				child: SearchBar {
+					key-capture-widget: template;
+					search-mode-enabled: bind search_button.active bidirectional;
+					// sensitive: bind template.searching_enabled;
+					child: SearchEntry {
+						hexpand: true;
+						placeholder-text: _("Search entries");
+					};
+				};
+			}
+
+			content: Adw.PreferencesPage {
+				Adw.PreferencesGroup {
+					title: _("Test Group");
+				}
+			};
+		};
+	};
+}
+
+menu primary_menu {
+	section {
+		item (_("_Preferences"), "app.preferences")
+		item (_("Keyboard Shortcuts"), "win.show-help-overlay")
+		item (_("_About Ignition"), "app.about")
+	}
+}

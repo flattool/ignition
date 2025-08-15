@@ -1,7 +1,7 @@
 import GObject from "gi://GObject?version=2.0"
 import GLib from "gi://GLib?version=2.0"
 
-type GClass = (new (...args: any[])=> GObject.Object) & { $gtype: GObject.GType }
+type GClass = (abstract new (...args: any[])=> GObject.Object) & { $gtype: GObject.GType }
 type GEnum<T = number> = { $gtype: GObject.GType<T> }
 
 const FLAG_PRESETS = {

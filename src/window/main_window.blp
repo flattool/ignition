@@ -21,18 +21,10 @@ template $MainWindow: Adw.ApplicationWindow {
 			StackPage {
 				name: "main_page";
 
-				child: Adw.StatusPage {
-					title: _("Main Page");
+				child: $MainNavigationStack {
+					$EntriesPage {}
 				};
 			}
 		};
 	};
 }
-
-// menu primary_menu {
-// 	section {
-// 		item (_("_Preferences"), "app.preferences")
-// 		item (_("Keyboard Shortcuts"), "win.show-help-overlay")
-// 		item (_("_About Ignition"), "app.about")
-// 	}
-// }

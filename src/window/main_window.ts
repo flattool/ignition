@@ -7,6 +7,8 @@ import Gdk from "gi://Gdk?version=4.0"
 
 import { GObjectify } from "../utils/gobjectify.js"
 import "./first_run.js"
+import "./main_navigation_stack.js"
+import "../pages/entries_page.js"
 
 @GObjectify.Class({ template: "/io/github/flattool/Ignition/window/main_window" })
 export class MainWindow extends Adw.ApplicationWindow {
