@@ -45,10 +45,12 @@ template $EntriesPage: Adw.NavigationPage {
 				};
 			}
 
-			content: Adw.PreferencesPage {
-				Adw.PreferencesGroup {
-					title: _("Test Group");
-				}
+			content: $SearchGroup {
+				content: Adw.PreferencesPage {
+					Adw.PreferencesGroup {
+						title: _("Test Group");
+					}
+				};
 			};
 		};
 	};
