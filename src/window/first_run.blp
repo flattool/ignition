@@ -1,0 +1,33 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $FirstRun: Adw.Bin {
+	child: Adw.ToolbarView {
+		[top]
+		Adw.HeaderBar {
+			[end]
+			Button {
+				icon-name: "ignition:info-outline-symbolic";
+				tooltip-text: _("About Ignition");
+				action-name: "app.about";
+			}
+		}
+
+		content: Adw.StatusPage {
+			icon-name: "io.github.flattool.Ignition";
+			title: _("Welcome to Ignition!");
+			description: _("Ignition lets you start any app or script when you log in to your computer.");
+
+			Button {
+				halign: center;
+				label: _("Get Started");
+				clicked => $_first_run_next();
+
+				styles [
+					"suggested-action",
+					"pill",
+				]
+			}
+		};
+	};
+}

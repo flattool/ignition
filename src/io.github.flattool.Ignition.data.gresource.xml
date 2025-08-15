@@ -4,6 +4,7 @@
 		<file preprocess="xml-stripblanks" alias="appdata">../data/io.github.flattool.Ignition.metainfo.xml</file>
 		<file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
 		<file preprocess="xml-stripblanks">window/main_window.ui</file>
+		<file preprocess="xml-stripblanks">window/first_run.ui</file>
 	</gresource>
 	<gresource prefix="/io/github/flattool/Ignition/icons/scalable/actions/">
 		<file preprocess="xml-stripblanks" alias="ignition:paper-symbolic.svg">../data/icons/paper-symbolic.svg</file>

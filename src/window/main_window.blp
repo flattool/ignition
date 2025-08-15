@@ -3,33 +3,36 @@ using Adw 1;
 
 template $MainWindow: Adw.ApplicationWindow {
 	title: _("Ignition");
+	close-request => $_save_window_geometry();
 
 	content: Adw.ToastOverlay toast_overlay {
-		child: Adw.ToolbarView toolbar_view {
-			[top]
-			Adw.HeaderBar header_bar {
-				[end]
-				MenuButton {
-					primary: true;
-					icon-name: "open-menu-symbolic";
-					tooltip-text: _("Main Menu");
-					menu-model: primary_menu;
-				}
+		child: Stack view_stack {
+			visible-child-name: bind template.visible_page;
+			transition-type: bind template.transition_type;
+
+			StackPage {
+				name: "first_run_page";
+
+				child: $FirstRun {
+					first-run-next => $_first_run_next();
+				};
 			}
 
-			content: Adw.StatusPage status_page {
-				icon-name: "io.github.flattool.Ignition";
-				title: bind template.title;
-				description: _("Flattool template default description");
-			};
+			StackPage {
+				name: "main_page";
+
+				child: Adw.StatusPage {
+					title: _("Main Page");
+				};
+			}
 		};
 	};
 }
 
-menu primary_menu {
-	section {
-		item (_("_Preferences"), "app.preferences")
-		item (_("Keyboard Shortcuts"), "win.show-help-overlay")
-		item (_("_About Ignition"), "app.about")
-	}
-}
+// menu primary_menu {
+// 	section {
+// 		item (_("_Preferences"), "app.preferences")
+// 		item (_("Keyboard Shortcuts"), "win.show-help-overlay")
+// 		item (_("_About Ignition"), "app.about")
+// 	}
+// }

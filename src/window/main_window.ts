@@ -6,29 +6,52 @@ import GLib from "gi://GLib?version=2.0"
 import Gdk from "gi://Gdk?version=4.0"
 
 import { GObjectify } from "../utils/gobjectify.js"
+import "./first_run.js"
 
 @GObjectify.Class({ template: "/io/github/flattool/Ignition/window/main_window" })
 export class MainWindow extends Adw.ApplicationWindow {
 	@GObjectify.Child
 	public accessor toast_overlay!: Adw.ToastOverlay
 
+	@GObjectify.Property("string", { default: "first_run_page" })
+	protected accessor visible_page!: "first_run_page" | "main_page"
+
+	@GObjectify.Property(Gtk.StackTransitionType, { default: Gtk.StackTransitionType.NONE })
+	protected accessor transition_type!: Gtk.StackTransitionType
+
 	protected readonly settings = new Gio.Settings({ schema_id: pkg.app_id })
 
 	public constructor(params?: Partial<Adw.ApplicationWindow.ConstructorProps>) {
 		super(params)
-
 		if (pkg.profile === "development") this.add_css_class("devel")
-		print(`Welcome to ${pkg.app_id}!`)
+
+		this.load_window_geometry()
+		this.visible_page = this.settings.get_boolean("first-run") ? "first_run_page" : "main_page"
+		this.transition_type = Gtk.StackTransitionType.SLIDE_LEFT
+	}
+
+	protected _save_window_geometry(): void {
+		this.settings.set_int("window-width", this.default_width)
+		this.settings.set_int("window-height", this.default_height)
+		this.settings.set_boolean("maximized", this.maximized)
+		this.settings.set_boolean("fullscreened", this.fullscreened)
+	}
+
+	protected load_window_geometry(): void {
+		this.default_width = this.settings.get_int("window-width")
+		this.default_height = this.settings.get_int("window-height")
+		this.maximized = this.settings.get_boolean("maximized")
+		this.fullscreened = this.settings.get_boolean("fullscreened")
+	}
+
+	protected _first_run_next(): void {
+		this.visible_page = "main_page"
+		this.settings.set_boolean("first-run", false)
 	}
 
 	public add_toast(title: string, action?: { button_label: string, callback: ()=> void }): void {
-		let toast: Adw.Toast
-		if (action) {
-			toast = new Adw.Toast({ title, button_label: action.button_label })
-			toast.connect("button-clicked", action.callback)
-		} else {
-			toast = new Adw.Toast({ title })
-		}
+		const toast = new Adw.Toast({ title, ...(action && { button_label: action.button_label }) })
+		if (action) toast.connect("button-clicked", action.callback)
 		this.toast_overlay.add_toast(toast)
 	}
 
