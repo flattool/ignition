@@ -18,6 +18,6 @@ export class LoadingGroup extends Adw.Bin {
 	public accessor loading!: boolean
 
 	protected _get_visible_page(): "loading_page" | "content_page" {
-		return !this.loading ? "loading_page" : "content_page"
+		return this.loading ? "loading_page" : "content_page"
 	}
 }
