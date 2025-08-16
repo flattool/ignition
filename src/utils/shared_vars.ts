@@ -15,9 +15,19 @@ export class SharedVars {
 	public static get default_name(): string { return _("No Name Set") }
 	public static get default_comment(): string { return _("No comment set.") }
 
-	public static readonly home_autostart_dir = Gio.File.new_for_path((
-		GLib.getenv("HOST_XDG_CONFIG_HOME") || `${this.home_dir.get_path()}/.config`
-	) + "/autostart")
+	public static readonly config_home = (
+		GLib.getenv("HOST_XDG_CONFIG_HOME")
+		|| GLib.getenv("XDG_CONFIG_HOME")
+		|| `${this.home_dir.get_path()}/.config`
+	)
+
+	public static readonly data_home = (
+		GLib.getenv("HOST_XDG_CONFIG_HOME")
+		|| GLib.getenv("XDG_CONFIG_HOME")
+		|| `${this.home_dir.get_path()}/.local/share`
+	)
+
+	public static readonly home_autostart_dir = Gio.File.new_for_path(this.config_home + "/autostart")
 
 	public static readonly root_autostart_dir = (this.is_flatpak
 		? Gio.File.new_for_path("/run/host/etc/xdg/autostart")
@@ -26,25 +36,11 @@ export class SharedVars {
 
 	// The order of this array is important! Lower Files get less priority when two entries have identical execs
 	public static readonly host_app_entry_dirs = [
-		Gio.File.new_for_path(( // user apps
-			GLib.getenv("HOST_XDG_DATA_HOME")
-			|| this.home_dir.get_path() + "/.local/share"
-		) + "/applications"),
-		Gio.File.new_for_path(( // user flatpaks
-			GLib.getenv("HOST_XDG_DATA_HOME")
-			|| this.home_dir.get_path() + "/.local/share"
-		) + "/flatpak/exports/share/applications"),
-		Gio.File.new_for_path( // system flatpaks
-			"/var/lib/flatpak/exports/share/applications",
-		),
-		Gio.File.new_for_path( // snaps
-			"/var/lib/snapd/desktop/applications",
-		),
-		Gio.File.new_for_path(( // distro apps 1
-			this.is_flatpak ? "/run/host" : ""
-		) + "/usr/local/share/applications"),
-		Gio.File.new_for_path(( // distro apps 2
-			this.is_flatpak ? "/run/host" : ""
-		) + "/usr/share/applications"),
-	]
+		Gio.File.new_for_path(`${this.data_home}/applications`), // user apps
+		Gio.File.new_for_path(`${this.data_home}/flatpak/exports/share/applications`), // user flatpaks
+		Gio.File.new_for_path("/var/lib/flatpak/exports/share/applications"), // system flatpaks
+		Gio.File.new_for_path("/var/lib/snapd/desktop/applications"), // snaps
+		Gio.File.new_for_path((this.is_flatpak ? "/run/host" : "") + "/usr/local/share/applications"), // distro apps 1
+		Gio.File.new_for_path((this.is_flatpak ? "/run/host" : "") + "/usr/share/applications"), // distro apps 2
+	] as const
 }
