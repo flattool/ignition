@@ -40,3 +40,9 @@ declare const TextDecoder: {
 		): string
 	}
 }
+
+type Callable<Args extends any[], Rtrn extends any, This extends any = void> = (this: This, ...args: Args)=> Rtrn
+
+type Class<T = any, Args extends any[] = []> = abstract new (...args: Args)=> T
+
+type ConstructableClass<T = any, Args extends any[] = []> = new (...args: Args)=> T

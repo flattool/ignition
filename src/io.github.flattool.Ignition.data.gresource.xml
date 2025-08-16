@@ -5,6 +5,7 @@
 		<file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
 		<file preprocess="xml-stripblanks">gtk/loading_group.ui</file>
 		<file preprocess="xml-stripblanks">gtk/search_group.ui</file>
+		<file preprocess="xml-stripblanks">gtk/entry_list.ui</file>
 		<file preprocess="xml-stripblanks">window/main_window.ui</file>
 		<file preprocess="xml-stripblanks">window/first_run.ui</file>
 		<file preprocess="xml-stripblanks">window/main_navigation_stack.ui</file>

@@ -1,0 +1,29 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $EntryList: Adw.Bin {
+	child: ListBox list_box {
+		selection-mode: none;
+		valign: start;
+
+		styles [
+			"boxed-list",
+		]
+	};
+}
+
+SortListModel top_model {
+	sorter: StringSorter {
+		expression: expr item as <$Entry>.title;
+	};
+
+	model: FilterListModel {
+		filter: CustomFilter custom_filter {};
+
+		model: MapListModel map_list_model {
+			model: DirectoryList {
+				file: bind template.directory;
+			};
+		};
+	};
+}

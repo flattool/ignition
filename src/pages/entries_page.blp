@@ -49,6 +49,10 @@ template $EntriesPage: Adw.NavigationPage {
 				content: Adw.PreferencesPage {
 					Adw.PreferencesGroup {
 						title: _("Test Group");
+
+						$EntryList {
+							directory: bind template.home_autostart_dir;
+						}
 					}
 				};
 			};
