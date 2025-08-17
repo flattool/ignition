@@ -4,6 +4,7 @@ import Gio from "gi://Gio?version=2.0"
 
 import { GObjectify } from "../utils/gobjectify.js"
 import { Entry } from "../utils/entry.js"
+import { EntryRow } from "./entry_row.js"
 import { try_catch } from "../utils/safe.js"
 
 export namespace EntryList {
@@ -52,7 +53,7 @@ function ready(this: EntryList): void {
 		() => item,
 	))
 	this.list_box.bind_model(this.top_model, (entry) => {
-		const row = new Adw.ActionRow({ title: entry.title })
+		const row = new EntryRow({ entry })
 		row.connect("activated", () => this.emit("row-clicked", entry))
 		return row
 	})

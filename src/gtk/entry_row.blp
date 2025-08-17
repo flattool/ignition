@@ -1,0 +1,23 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $EntryRow: Adw.ActionRow {
+	title: bind template.entry as <$Entry>.title;
+	subtitle: bind template.entry as <$Entry>.comment;
+	activatable: true;
+
+	[prefix]
+	Image prefix_icon {
+		icon-size: large;
+	}
+
+	[suffix]
+	Label suffix_label {
+		label: bind template.suffix_text;
+	}
+
+	[suffix]
+	Image {
+		icon-name: "go-next-symbolic";
+	}
+}
