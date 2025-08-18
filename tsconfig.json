@@ -8,9 +8,6 @@
 		"outDir": "_build/tsc-out",
 		"moduleResolution": "node",
 		"baseUrl": ".",
-		"paths": {
-			"*": ["*", "types/*", "gi-types/*"]
-		},
 		"typeRoots": ["gi-types"],
 		"forceConsistentCasingInFileNames": true,
 
@@ -29,5 +26,5 @@
 		"strict": true,
 		"verbatimModuleSyntax": true
 	},
-	"include": ["gi-types/gi.d.ts", "types/ambient.d.ts", "src/"]
+	"include": ["gi-types/", "types/ambient.d.ts", "src/"]
 }
