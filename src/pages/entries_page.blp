@@ -1,6 +1,24 @@
 using Gtk 4.0;
 using Adw 1;
 
+CustomFilter only_entries_filter {}
+
+SortListModel top_model {
+	sorter: StringSorter {
+		expression: expr item as <$Entry>.title;
+	};
+
+	model: FilterListModel {
+		filter: only_entries_filter;
+
+		model: MapListModel map_model {
+			model: DirectoryList {
+				file: bind template.home_autostart_dir;
+			};
+		};
+	};
+}
+
 template $EntriesPage: Adw.NavigationPage {
 	title: "Ignition";
 
@@ -48,10 +66,10 @@ template $EntriesPage: Adw.NavigationPage {
 			content: $SearchGroup {
 				content: Adw.PreferencesPage {
 					Adw.PreferencesGroup {
-						title: _("Test Group");
+						title: _("Home Group");
 
 						$EntryList {
-							directory: bind template.home_autostart_dir;
+							entry_list_model: top_model;
 						}
 					}
 				};

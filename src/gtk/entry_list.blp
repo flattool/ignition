@@ -12,18 +12,16 @@ template $EntryList: Adw.Bin {
 	};
 }
 
-SortListModel top_model {
-	sorter: StringSorter {
-		expression: expr item as <$Entry>.title;
-	};
-
-	model: FilterListModel {
-		filter: CustomFilter custom_filter {};
-
-		model: MapListModel map_list_model {
-			model: DirectoryList {
-				file: bind template.directory;
-			};
-		};
-	};
-}
+// SortListModel top_model {
+// 	sorter: StringSorter {
+// 		expression: expr item as <$Entry>.title;
+// 	};
+// 	model: FilterListModel {
+// 		filter: CustomFilter custom_filter {};
+// 		model: MapListModel map_list_model {
+// 			model: DirectoryList {
+// 				file: bind template.directory;
+// 			};
+// 		};
+// 	};
+// }

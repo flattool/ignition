@@ -62,8 +62,14 @@ export class MainWindow extends Adw.ApplicationWindow {
 
 		const message_text = error instanceof Error ? error.message : `${error}`
 
-		const label = new Gtk.Label({ selectable: true, wrap: true, wrap_mode: Pango.WrapMode.WORD_CHAR })
-		label.set_markup(`<tt>${GLib.markup_escape_text(message_text, -1)}</tt>`)
+		const label = new Gtk.Label({
+			selectable: true,
+			wrap: true,
+			wrap_mode: Pango.WrapMode.WORD_CHAR,
+			label: `<tt>${GLib.markup_escape_text(message_text, -1)}</tt>`,
+			use_markup: true,
+		})
+		// label.set_markup(`<tt>${GLib.markup_escape_text(message_text, -1)}</tt>`)
 
 		const dialog = new Adw.AlertDialog({ heading: title, extra_child: label })
 		dialog.add_response("copy", _("Copy"))
