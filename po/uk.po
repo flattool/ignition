@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-01 17:37-0400\n"
-"PO-Revision-Date: 2025-06-17 06:46+0000\n"
-"Last-Translator: Herbatka <viktor.beskorovainyi@gmail.com>\n"
+"PO-Revision-Date: 2025-07-04 20:46+0000\n"
+"Last-Translator: Andrii Serbovets <serbovets.translation@gmail.com>\n"
 "Language-Team: Ukrainian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/uk/>\n"
 "Language: uk\n"
@@ -518,7 +518,7 @@ msgstr "Системні записи автозапуску"
 
 #: src/main_view/entries_page.ts:111
 msgid "Entries that run for everyone."
-msgstr "Ці записи виконують під час входу будь-якого користувача."
+msgstr "Ці записи виконуються під час входу будь-якого користувача."
 
 #: src/main_view/entries_page.ts:180
 msgid "Could not load some entries"
