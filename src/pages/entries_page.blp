@@ -3,11 +3,7 @@ using Adw 1;
 
 CustomFilter only_entries_filter {}
 
-CustomSorter entry_section_sorter {}
-
-StringSorter entry_sorter {
-	expression: expr item as <$Entry>.title;
-}
+CustomSorter entry_sorter {}
 
 SortListModel top_home_model {
 	sorter: entry_sorter;

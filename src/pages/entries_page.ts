@@ -29,6 +29,9 @@ export class EntriesPage extends Adw.NavigationPage {
 	@GObjectify.Child
 	public accessor top_root_model!: Gio.ListModel<Entry>
 
+	@GObjectify.Child
+	public accessor entry_sorter!: Gtk.CustomSorter
+
 	@GObjectify.Property(Gio.File)
 	public accessor home_autostart_dir: Gio.File
 
@@ -47,10 +50,24 @@ export class EntriesPage extends Adw.NavigationPage {
 		)
 		this.home_map_model.set_map_func((item) => map_func(item as Gio.FileInfo) ?? item)
 		this.root_map_model.set_map_func((item) => map_func(item as Gio.FileInfo) ?? item)
+		this.entry_sorter.set_sort_func((one: Entry, two: Entry): number => {
+			const one_first = -1
+			const one_last = 1
+
+			if (one.enabled !== two.enabled) {
+				return one.enabled ? one_first : one_last
+			}
+			if (one.override_state !== two.override_state) {
+				if (one.override_state === "overridden") return one_last
+				if (two.override_state === "overridden") return one_first
+			}
+			return one.title.localeCompare(two.title, undefined, { sensitivity: "base", numeric: true, usage: "sort" })
+		})
 	}
 
 	@GObjectify.Debounce(200)
 	protected async _mark_overrides(): Promise<void> {
+		let something_changed = false
 		const entry_map = new Map<string, Entry>()
 		const idler = chunked_idler(100)
 
@@ -63,9 +80,17 @@ export class EntriesPage extends Adw.NavigationPage {
 			await idler()
 			const root_entry = entry_map.get(home_item.file.get_basename() ?? "")
 			if (root_entry) {
-				home_item.override_state = "overrides"
-				root_entry.override_state = "overridden"
+				if (home_item.override_state !== "overrides") {
+					home_item.override_state = "overrides"
+					something_changed = true
+				}
+				if (root_entry.override_state !== "overridden") {
+					root_entry.override_state = "overridden"
+					something_changed = true
+				}
 			}
 		}
+
+		if (something_changed) this.entry_sorter.changed(Gtk.SorterChange.DIFFERENT)
 	}
 }
