@@ -6,11 +6,12 @@ import { GObjectify } from "./gobjectify.js"
 import { SharedVars } from "./shared_vars.js"
 import { get_bool_safe, get_string_safe } from "./key_file_helpers.js"
 
+export namespace Entry {
+	export type OveriddenState = "none" | "overrides" | "overridden"
+}
+
 @GObjectify.Class()
 export class Entry extends GObject.Object {
-	@GObjectify.Property(Gio.File, { flags: "CONSTRUCT" })
-	public accessor file!: Gio.File
-
 	@GObjectify.Property("string")
 	public accessor title!: string
 
@@ -32,7 +33,24 @@ export class Entry extends GObject.Object {
 	@GObjectify.Property("bool")
 	public accessor terminal!: boolean
 
+	@GObjectify.Property("string", { default: "none" })
+	public accessor override_state!: Entry.OveriddenState
+
+	@GObjectify.CustomProp("string")
 	public get path(): string { return this.file.get_path() ?? "" }
+
+	@GObjectify.CustomProp("bool")
+	public get is_user_entry(): boolean {
+		return this.path.includes(SharedVars.home_autostart_dir.get_path() ?? "")
+	}
+
+	@GObjectify.Property(Gio.File, {
+		flags: "CONSTRUCT",
+		effect() {
+			this.notify("is-user-entry")
+			this.notify("path")
+		},
+	}) public accessor file!: Gio.File
 
 	private readonly keyfile = new GLib.KeyFile()
 

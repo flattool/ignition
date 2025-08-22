@@ -2,22 +2,54 @@ using Gtk 4.0;
 using Adw 1;
 
 template $EntryRow: Adw.ActionRow {
-	title: bind template.entry as <$Entry>.title;
-	subtitle: bind template.entry as <$Entry>.comment;
+	title: bind $_escape_text(template.entry as <$Entry>.title) as <string>;
+	subtitle: bind $_escape_text(template.entry as <$Entry>.comment) as <string>;
 	activatable: true;
 
 	[prefix]
 	Image prefix_icon {
 		icon-size: large;
+		opacity: bind $_get_prefix_icon_opacity(template.entry as <$Entry>.override_state, template.entry as <$Entry>.enabled) as <float>;
+
+		styles [
+			"icon-dropshadow",
+		]
 	}
 
 	[suffix]
 	Label suffix_label {
-		label: bind template.suffix_text;
+		label: bind $_get_suffix_text(template.entry as <$Entry>.enabled, template.entry as <$Entry>.override_state) as <string>;
+		margin-end: 9;
+	}
+
+	[suffix]
+	MenuButton {
+		icon-name: "ignition:info-outline-symbolic";
+		tooltip-text: _("More Information");
+		popover: info_popover;
+		valign: center;
+		visible: bind $_get_more_menu_visibility(template.entry as <$Entry>.override_state) as <bool>;
+
+		styles [
+			"flat",
+		]
 	}
 
 	[suffix]
 	Image {
 		icon-name: "go-next-symbolic";
+		visible: bind template.activatable;
+	}
+}
+
+Popover info_popover {
+	Label info_label {
+		wrap: true;
+		wrap-mode: word_char;
+		margin-start: 6;
+		margin-end: 6;
+		margin-top: 6;
+		margin-bottom: 6;
+		label: bind $_get_more_menu_text(template.entry as <$Entry>.enabled) as <string>;
 	}
 }

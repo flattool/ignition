@@ -3,17 +3,37 @@ using Adw 1;
 
 CustomFilter only_entries_filter {}
 
-SortListModel top_model {
-	sorter: StringSorter {
-		expression: expr item as <$Entry>.title;
-	};
+CustomSorter entry_section_sorter {}
+
+StringSorter entry_sorter {
+	expression: expr item as <$Entry>.title;
+}
+
+SortListModel top_home_model {
+	sorter: entry_sorter;
+	items-changed => $_mark_overrides();
 
 	model: FilterListModel {
 		filter: only_entries_filter;
 
-		model: MapListModel map_model {
+		model: MapListModel home_map_model {
 			model: DirectoryList {
 				file: bind template.home_autostart_dir;
+			};
+		};
+	};
+}
+
+SortListModel top_root_model {
+	sorter: entry_sorter;
+	items-changed => $_mark_overrides();
+
+	model: FilterListModel {
+		filter: only_entries_filter;
+
+		model: MapListModel root_map_model {
+			model: DirectoryList {
+				file: bind template.root_autostart_dir;
 			};
 		};
 	};
@@ -69,7 +89,15 @@ template $EntriesPage: Adw.NavigationPage {
 						title: _("Home Group");
 
 						$EntryList {
-							entry_list_model: top_model;
+							entry_list_model: top_home_model;
+						}
+					}
+
+					Adw.PreferencesGroup {
+						title: _("Root Group");
+
+						$EntryList {
+							entry_list_model: top_root_model;
 						}
 					}
 				};
