@@ -15,17 +15,15 @@ export class SharedVars {
 	public static get default_name(): string { return _("No Name Set") }
 	public static get default_comment(): string { return _("No comment set.") }
 
-	public static readonly config_home = (
-		GLib.getenv("HOST_XDG_CONFIG_HOME")
-		|| GLib.getenv("XDG_CONFIG_HOME")
-		|| `${this.home_dir.get_path()}/.config`
-	)
+	public static readonly config_home = (this.is_flatpak
+		? GLib.getenv("HOST_XDG_CONFIG_HOME")
+		: GLib.getenv("XDG_CONFIG_HOME")
+	) || `${this.home_dir.get_path()}/.config`
 
-	public static readonly data_home = (
-		GLib.getenv("HOST_XDG_CONFIG_HOME")
-		|| GLib.getenv("XDG_CONFIG_HOME")
-		|| `${this.home_dir.get_path()}/.local/share`
-	)
+	public static readonly data_home = (this.is_flatpak
+		? GLib.getenv("HOST_XDG_CONFIG_HOME")
+		: GLib.getenv("XDG_CONFIG_HOME")
+	) || `${this.home_dir.get_path()}/.local/share`
 
 	public static readonly home_autostart_dir = Gio.File.new_for_path(this.config_home + "/autostart")
 
