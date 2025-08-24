@@ -58,6 +58,28 @@ export class EntriesPage extends Adw.NavigationPage {
 		this.search_text = text
 	}
 
+	protected _show_home_list_empty_widget(__: this, home_total_entries: number): boolean {
+		return home_total_entries === 0
+	}
+
+	protected _show_home_list(__: this, home_total_entries: number): boolean {
+		return home_total_entries > 0
+	}
+
+	protected _get_home_group_visibility(
+		__: this,
+		is_searching: boolean,
+		home_total_entries: number,
+		home_total_visible: number,
+	): boolean {
+		if (is_searching) return home_total_visible > 0
+		return home_total_entries === 0 || home_total_visible > 0
+	}
+
+	protected _get_root_group_visibility(__: this, root_total_visible: number): boolean {
+		return root_total_visible > 0
+	}
+
 	protected _get_no_results(
 		__: this,
 		home_total_entries: number,

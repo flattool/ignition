@@ -75,15 +75,49 @@ template $EntriesPage: Adw.NavigationPage {
 				content: Adw.PreferencesPage {
 					Adw.PreferencesGroup {
 						title: _("Home Group");
+						visible: bind $_get_home_group_visibility(search_button.active, home_list.total_entries, home_list.total_visible) as <bool>;
 
 						$EntryList home_list {
 							search_text: bind template.search_text;
 							entry_list_model: top_home_model;
+							visible: bind $_show_home_list(home_list.total_visible) as <bool>;
+						}
+
+						Box home_list_empty_widget {
+							spacing: 6;
+							orientation: vertical;
+							visible: bind $_show_home_list_empty_widget(home_list.total_visible) as <bool>;
+
+							styles [
+								"card",
+							]
+
+							Image {
+								margin-top: 30;
+								icon-name: "ignition:info-outline-symbolic";
+								pixel-size: 54;
+								margin-bottom: 6;
+							}
+
+							Label {
+								label: _("No Entries Found");
+								wrap: true;
+								halign: center;
+							}
+
+							Label {
+								margin-bottom: 30;
+								label: _("Add an app or script to run it when you log in");
+								justify: center;
+								halign: center;
+								wrap: true;
+							}
 						}
 					}
 
 					Adw.PreferencesGroup {
 						title: _("Root Group");
+						visible: bind $_get_root_group_visibility(root_list.total_visible) as <bool>;
 
 						$EntryList root_list {
 							search_text: bind template.search_text;
