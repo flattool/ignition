@@ -32,5 +32,5 @@ jobs:
 
           - name: XML validation via xmllint
             run: |
-                xmllint --noout data/io.github.flattool.Ignition.gschema.xml data/io.github.flattool.Ignition.metainfo.xml.in src/io.github.flattool.Ignition.data.gresource.xml src/io.github.flattool.Ignition.src.gresource.xml
+                find data src -type f -name "*.xml" -print0 | xargs -0 xmllint --nooutfind data src -type f -name "*.xml" -print0 | xargs -0 xmllint --noout
 
