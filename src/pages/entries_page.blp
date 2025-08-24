@@ -1,37 +1,25 @@
 using Gtk 4.0;
 using Adw 1;
 
-CustomFilter only_entries_filter {}
-
 CustomSorter entry_sorter {}
 
 SortListModel top_home_model {
 	sorter: entry_sorter;
 	items-changed => $_mark_overrides();
+	items-changed => $_start_loading();
 
-	model: FilterListModel {
-		filter: only_entries_filter;
-
-		model: MapListModel home_map_model {
-			model: DirectoryList {
-				file: bind template.home_autostart_dir;
-			};
-		};
+	model: $EntryListModel {
+		file: bind template.home_autostart_dir;
 	};
 }
 
 SortListModel top_root_model {
 	sorter: entry_sorter;
 	items-changed => $_mark_overrides();
+	items-changed => $_start_loading();
 
-	model: FilterListModel {
-		filter: only_entries_filter;
-
-		model: MapListModel root_map_model {
-			model: DirectoryList {
-				file: bind template.root_autostart_dir;
-			};
-		};
+	model: $EntryListModel {
+		file: bind template.root_autostart_dir;
 	};
 }
 
@@ -41,6 +29,7 @@ template $EntriesPage: Adw.NavigationPage {
 	child: $LoadingGroup {
 		title: _("Loading Entries");
 		description: _("This should only take a moment.");
+		loading: bind template.is_loading;
 
 		content: Adw.ToolbarView {
 			[top]

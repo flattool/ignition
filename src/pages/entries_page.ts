@@ -2,27 +2,18 @@ import Adw from "gi://Adw?version=1"
 import Gio from "gi://Gio?version=2.0"
 import Gtk from "gi://Gtk?version=4.0"
 
+import { Entry } from "../utils/entry.js"
 import { GObjectify } from "../utils/gobjectify.js"
 import { SharedVars } from "../utils/shared_vars.js"
-import { Entry } from "../utils/entry.js"
-import { try_catch } from "../utils/safe.js"
-import { chunked_idler } from "../utils/async.js"
 import { make_iterable } from "../utils/list_model_utils.js"
+import { chunked_idler } from "../utils/async.js"
+import "../utils/entry_list_model.js"
 import "../gtk/loading_group.js"
 import "../gtk/search_group.js"
 import "../gtk/entry_list.js"
 
 @GObjectify.Class({ template: "/io/github/flattool/Ignition/pages/entries_page" })
 export class EntriesPage extends Adw.NavigationPage {
-	@GObjectify.Child
-	public accessor only_entries_filter!: Gtk.CustomFilter
-
-	@GObjectify.Child
-	public accessor home_map_model!: Gtk.MapListModel<Entry>
-
-	@GObjectify.Child
-	public accessor root_map_model!: Gtk.MapListModel<Entry>
-
 	@GObjectify.Child
 	public accessor top_home_model!: Gio.ListModel<Entry>
 
@@ -38,25 +29,19 @@ export class EntriesPage extends Adw.NavigationPage {
 	@GObjectify.Property(Gio.File)
 	public accessor root_autostart_dir: Gio.File
 
+	@GObjectify.Property("bool", { default: true })
+	public accessor is_loading!: boolean
+
 	public constructor(params: Partial<Adw.NavigationPage.ConstructorProps>) {
 		super(params)
 		this.home_autostart_dir = SharedVars.home_autostart_dir
 		this.root_autostart_dir = SharedVars.root_autostart_dir
 
-		this.only_entries_filter.set_filter_func((item) => item instanceof Entry)
-		const map_func = (item: Gio.FileInfo): Entry | null => try_catch(
-			() => new Entry({ file: (item as Gio.FileInfo).get_attribute_object("standard::file") }),
-			() => null,
-		)
-		this.home_map_model.set_map_func((item) => map_func(item as Gio.FileInfo) ?? item)
-		this.root_map_model.set_map_func((item) => map_func(item as Gio.FileInfo) ?? item)
 		this.entry_sorter.set_sort_func((one: Entry, two: Entry): number => {
 			const one_first = -1
 			const one_last = 1
 
-			if (one.enabled !== two.enabled) {
-				return one.enabled ? one_first : one_last
-			}
+			if (one.enabled !== two.enabled) return one.enabled ? one_first : one_last
 			if (one.override_state !== two.override_state) {
 				if (one.override_state === "overridden") return one_last
 				if (two.override_state === "overridden") return one_first
@@ -64,6 +49,9 @@ export class EntriesPage extends Adw.NavigationPage {
 			return one.title.localeCompare(two.title, undefined, { sensitivity: "base", numeric: true, usage: "sort" })
 		})
 	}
+
+	@GObjectify.Debounce(200, { trigger: "leading" })
+	protected async _start_loading(): Promise<void> { this.is_loading = true }
 
 	@GObjectify.Debounce(200)
 	protected async _mark_overrides(): Promise<void> {
@@ -92,5 +80,6 @@ export class EntriesPage extends Adw.NavigationPage {
 		}
 
 		if (something_changed) this.entry_sorter.changed(Gtk.SorterChange.DIFFERENT)
+		this.is_loading = false
 	}
 }

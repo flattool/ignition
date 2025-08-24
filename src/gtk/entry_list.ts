@@ -5,6 +5,7 @@ import Gio from "gi://Gio?version=2.0"
 import { GObjectify } from "../utils/gobjectify.js"
 import { Entry } from "../utils/entry.js"
 import { EntryRow } from "./entry_row.js"
+import type { EntryListModel } from "../utils/entry_list_model.js"
 
 export namespace EntryList {
 	export interface ConstructorProps extends Partial<Adw.Bin.ConstructorProps> {
@@ -31,7 +32,7 @@ export class EntryList extends Adw.Bin {
 	public accessor loading!: boolean
 
 	@GObjectify.Property(Gio.ListModel, { flags: "CONSTRUCT_ONLY" })
-	public accessor entry_list_model!: Gio.ListModel<Entry>
+	public accessor entry_list_model!: EntryListModel
 
 	public constructor(params: EntryList.ConstructorProps) {
 		super(params)
