@@ -13,7 +13,6 @@
 		"@stylistic/eslint-plugin": "^5.2.2",
 		"@typescript-eslint/eslint-plugin": "^8.32.1",
 		"@typescript-eslint/parser": "^8.32.1",
-		"eslint": "^9.27.0",
-		"eslint-plugin-jsonc": "^2.20.1"
+		"eslint": "^9.27.0"
 	}
 }
