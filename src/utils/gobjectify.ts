@@ -205,41 +205,69 @@ export class GObjectify {
 		}
 	}
 
-	public static Debounce<T extends GObject.Object, U extends (this: T, ...args: any[])=> void>(
+	public static Debounce<
+		T extends GObject.Object,
+		U extends (this: T, ...args: any[])=> Promise<V>,
+		V,
+	>(
 		milliseconds: number,
 		params: { trigger: "leading" | "trailing" | "leading+trailing" } = { trigger: "trailing" },
 	) {
 		const leading = params.trigger.includes("leading")
 		const trailing = params.trigger.includes("trailing")
-		return (original_method: U, context: ClassMethodDecoratorContext): U => {
+
+		return (original_method: U, context: ClassMethodDecoratorContext<T, U>): U => {
 			const timeout_symbol = Symbol(`DebounceDebouncerFor${context.name.toString()}`)
 			const last_args_symbol = Symbol(`DebounceDebounceArgsFor${context.name.toString()}`)
-			const should_call_trailing_symbol = Symbol(
-				`DebounceShouldCallTrailingFor${context.name.toString()}`,
-			)
-			const debounced = function (this: T, ...args: any[]): void {
-				const has_scheduled = (this as any)[timeout_symbol] != null
-				if (leading && !has_scheduled) {
-					original_method.apply(this, args)
-				} else {
-					(this as any)[last_args_symbol] = args
-					;(this as any)[should_call_trailing_symbol] = true
+			const should_call_trailing_symbol = Symbol(`DebounceShouldCallTrailingFor${context.name.toString()}`)
+			const resolvers_symbol = Symbol(`DebouncedDebouncerResolversFor${context.name.toString()}`)
+
+			const debounced = function (this: T, ...args: any[]): Promise<V> {
+				(this as any)[resolvers_symbol] ??= []
+
+				const flush_resolvers = (result: unknown): void => {
+					for (const { resolve } of (this as any)[resolvers_symbol]) {
+						resolve(result)
+					}
+					(this as any)[resolvers_symbol] = []
 				}
-				if ((this as any)[timeout_symbol]) {
-					GLib.source_remove((this as any)[timeout_symbol])
+				const reject_resolvers = (err: unknown): void => {
+					for (const { reject } of (this as any)[resolvers_symbol]) {
+						reject(err)
+					}
+					(this as any)[resolvers_symbol] = []
 				}
-				(this as any)[timeout_symbol] = GLib.timeout_add(
-					GLib.PRIORITY_DEFAULT,
-					milliseconds,
-					() => {
-						(this as any)[timeout_symbol] = null
-						if (trailing && (this as any)[should_call_trailing_symbol]) {
-							original_method.apply(this, (this as any)[last_args_symbol] ?? [])
-							;(this as any)[should_call_trailing_symbol] = false
-						}
-						return GLib.SOURCE_REMOVE
-					},
-				)
+
+				return new Promise((resolve, reject) => {
+					(this as any)[resolvers_symbol].push({ resolve, reject })
+					const has_scheduled = (this as any)[timeout_symbol] != null
+					if (leading && !has_scheduled) {
+						original_method.apply(this, args)
+						.then(flush_resolvers)
+						.catch(reject_resolvers)
+					} else {
+						(this as any)[last_args_symbol] = args
+						;(this as any)[should_call_trailing_symbol] = true
+					}
+					if ((this as any)[timeout_symbol]) {
+						GLib.source_remove((this as any)[timeout_symbol])
+					}
+					(this as any)[timeout_symbol] = GLib.timeout_add(
+						GLib.PRIORITY_DEFAULT,
+						milliseconds,
+						() => {
+							(this as any)[timeout_symbol] = null
+							if (trailing && (this as any)[should_call_trailing_symbol]) {
+								original_method
+								.apply(this, (this as any)[last_args_symbol] ?? [])
+								.then(flush_resolvers)
+								.catch(reject_resolvers)
+								;(this as any)[should_call_trailing_symbol] = false
+							}
+							return GLib.SOURCE_REMOVE
+						},
+					)
+				})
 			}
 			return debounced as U
 		}
