@@ -25,6 +25,7 @@ SortListModel top_root_model {
 
 template $EntriesPage: Adw.NavigationPage {
 	title: "Ignition";
+	tag: "entries_page";
 
 	child: $LoadingGroup {
 		title: _("Loading Entries");
@@ -76,6 +77,21 @@ template $EntriesPage: Adw.NavigationPage {
 					Adw.PreferencesGroup {
 						title: _("Home Group");
 						visible: bind $_get_home_group_visibility(search_button.active, home_list.total_entries, home_list.total_visible) as <bool>;
+
+						header-suffix: Button {
+							valign: center;
+							action-name: "navigation.push";
+							action-target: "'app_list_page'";
+
+							styles [
+								"flat",
+							]
+
+							child: Adw.ButtonContent {
+								icon-name: "ignition:list-add-symbolic";
+								label: _("New");
+							};
+						};
 
 						$EntryList home_list {
 							search_text: bind template.search_text;

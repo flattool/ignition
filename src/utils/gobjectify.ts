@@ -21,9 +21,10 @@ type DissAllowConstantInFlags<T> = (T extends { flags?: infer F }
 
 type GClass<T extends GObject.Object> = (new (...args: any[])=> T) & { $gtype: GObject.GType }
 
-type Spec = {
+type Spec<C extends GObject.Object, T = any> = {
 	name: string,
 	spec: GObject.ParamSpec,
+	effect?: (this: C, val: T)=> any,
 }
 
 type Signal = {
@@ -112,7 +113,8 @@ export class GObjectify {
 			;(get as any)[PROP_SYMBOL] = {
 				name: field_name,
 				spec,
-			} satisfies Spec
+				...(config?.effect && { effect: config.effect }),
+			} satisfies Spec<T>
 			return { set, get }
 		}
 	}
@@ -136,7 +138,7 @@ export class GObjectify {
 			;(get as any)[PROP_SYMBOL] = {
 				name: field_name,
 				spec,
-			} satisfies Spec
+			} satisfies Spec<T>
 			if (backing_field) {
 				context.addInitializer(function (this: T) {
 					if ((this as any)[backing_field] !== undefined) return
@@ -288,7 +290,8 @@ export class GObjectify {
 		return (target: GClass<T>, _context: ClassDecoratorContext): void => {
 			const prototype = target.prototype
 			const children: string[] = []
-			const specs: Record<string, GObject.ParamSpec> = {}
+			const gobjectify_specs: Spec<any>[] = []
+			const param_spec_pairs: Record<string, GObject.ParamSpec> = {}
 			for (const key of Object.getOwnPropertyNames(prototype)) {
 				const descriptor = Object.getOwnPropertyDescriptor(prototype, key)
 				const getter = descriptor?.get ?? {}
@@ -296,9 +299,10 @@ export class GObjectify {
 				const child_ui_name = (getter as any)[CHILD_SYMBOL]
 				if (child_ui_name && typeof child_ui_name === "string") children.push(child_ui_name)
 
-				const prop_spec: Spec | undefined = (getter as any)[PROP_SYMBOL]
+				const prop_spec: Spec<any> | undefined = (getter as any)[PROP_SYMBOL]
 				if (prop_spec && prop_spec.spec instanceof GObject.ParamSpec) {
-					specs[prop_spec.name] = prop_spec.spec
+					gobjectify_specs.push(prop_spec)
+					param_spec_pairs[prop_spec.name] = prop_spec.spec
 				}
 			}
 			children.push(...params?.manual_internal_children ?? [])
@@ -309,7 +313,7 @@ export class GObjectify {
 				Signals: signals_map.get(target) ?? {},
 				...(params?.css_name && { CssName: params.css_name }),
 				Properties: {
-					...specs,
+					...param_spec_pairs,
 					...(params?.manual_properties && params.manual_properties),
 				},
 				Implements: params?.implements ?? [],
@@ -317,17 +321,23 @@ export class GObjectify {
 			signals_map.delete(target)
 
 			const ready = params?.ready
-			if (typeof ready !== "function") return
 			const original_init = prototype._init
-			prototype._init = function (...args: any): any {
+			prototype._init = function (this: T, ...args: any): any {
 				const original_return_val = original_init?.apply(this, args)
 				GLib.idle_add(GLib.PRIORITY_DEFAULT, () => {
 					const on_error = (e: unknown): void => {
-						print(`Error in $ready function for ${target.name}`)
+						print(`Error in ready function for ${target.name}`)
 						print(e)
 					}
 					try {
-						const return_val = ready.call(this)
+						for (const gobjectify_spec of gobjectify_specs) {
+							const { name, effect } = gobjectify_spec
+							if (effect) {
+								const value = (this as any)[name]
+								effect.call(this, value)
+							}
+						}
+						const return_val = ready?.call(this)
 						if (return_val instanceof Promise) return_val.catch(on_error)
 					} catch (e) {
 						on_error(e)

@@ -6,13 +6,19 @@ import { Entry } from "./entry.js"
 import { chunked_idler } from "./async.js"
 
 @GObjectify.Class({ implements: [Gio.ListModel], manual_gtype_name: "EntryListModel" })
-class EntryListInternal extends GObject.Object {
+// @ts-expect-error
+export class EntryListModel extends GObject.Object implements Gio.ListModel<Entry> {
 	@GObjectify.Property(Gio.File, { effect(file) { this.on_file_set(file) } })
 	public accessor file!: Gio.File | null
 
-	private monitor: Gio.FileMonitor | null = null
+	public monitor: Gio.FileMonitor | null = null
 	private change_connect_id: number | null = null
 	private list = new Array<Entry>()
+
+	public constructor(params?: Partial<Gio.ListModel.ConstructorProps> & { file?: Gio.File }) {
+		// @ts-expect-error: GObject has no construct param, but we need to pass our own properties to super
+		super(params)
+	}
 
 	// Satisfy Gio.ListModel interface
 	public vfunc_get_item(position: number): Entry | null {
@@ -33,8 +39,8 @@ class EntryListInternal extends GObject.Object {
 	}
 
 	private cleanup(): void {
-		if (this.change_connect_id !== null) {
-			this.disconnect(this.change_connect_id)
+		if (this.change_connect_id) {
+			this.monitor?.disconnect(this.change_connect_id)
 			this.change_connect_id = null
 		}
 		this.monitor?.cancel()
@@ -87,12 +93,6 @@ class EntryListInternal extends GObject.Object {
 	}
 }
 
-function $(item: EntryListInternal): Gio.ListModel<Entry> {
+function $(item: EntryListModel): Gio.ListModel<Entry> {
 	return item as unknown as Gio.ListModel<Entry>
 }
-
-export const EntryListModel = EntryListInternal as unknown as new(
-	...args: ConstructorParameters<typeof EntryListInternal>
-)=> EntryListInternal & Gio.ListModel<Entry>
-
-export type EntryListModel = EntryListInternal & Gio.ListModel<Entry>

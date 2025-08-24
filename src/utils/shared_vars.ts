@@ -33,12 +33,12 @@ export class SharedVars {
 	)
 
 	// The order of this array is important! Lower Files get less priority when two entries have identical execs
-	public static readonly host_app_entry_dirs = [
+	public static readonly host_app_entry_dirs: readonly Gio.File[] = [
 		Gio.File.new_for_path(`${this.data_home}/applications`), // user apps
 		Gio.File.new_for_path(`${this.data_home}/flatpak/exports/share/applications`), // user flatpaks
 		Gio.File.new_for_path("/var/lib/flatpak/exports/share/applications"), // system flatpaks
 		Gio.File.new_for_path("/var/lib/snapd/desktop/applications"), // snaps
 		Gio.File.new_for_path((this.is_flatpak ? "/run/host" : "") + "/usr/local/share/applications"), // distro apps 1
 		Gio.File.new_for_path((this.is_flatpak ? "/run/host" : "") + "/usr/share/applications"), // distro apps 2
-	] as const
+	].filter((dir) => dir.query_exists(null) && dir.query_file_type(Gio.FileQueryInfoFlags.NONE, null))
 }

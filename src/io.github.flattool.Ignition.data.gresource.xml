@@ -11,6 +11,7 @@
 		<file preprocess="xml-stripblanks">window/first_run.ui</file>
 		<file preprocess="xml-stripblanks">window/main_navigation_stack.ui</file>
 		<file preprocess="xml-stripblanks">pages/entries_page.ui</file>
+		<file preprocess="xml-stripblanks">pages/app_list_page.ui</file>
 	</gresource>
 	<gresource prefix="/io/github/flattool/Ignition/icons/scalable/actions/">
 		<file preprocess="xml-stripblanks" alias="ignition:paper-symbolic.svg">../data/icons/paper-symbolic.svg</file>
