@@ -29,6 +29,9 @@ export class EntriesPage extends Adw.NavigationPage {
 	@GObjectify.Property(Gio.File)
 	public accessor root_autostart_dir: Gio.File
 
+	@GObjectify.Property("string")
+	public accessor search_text!: string
+
 	@GObjectify.Property("bool", { default: true })
 	public accessor is_loading!: boolean
 
@@ -48,6 +51,24 @@ export class EntriesPage extends Adw.NavigationPage {
 			}
 			return one.title.localeCompare(two.title, undefined, { sensitivity: "base", numeric: true, usage: "sort" })
 		})
+	}
+
+	protected _set_search_text(entry: Gtk.SearchEntry): void {
+		const text = entry.text.toLocaleLowerCase()
+		this.search_text = text
+	}
+
+	protected _get_no_results(
+		__: this,
+		home_total_entries: number,
+		home_total_visible: number,
+		root_total_entries: number,
+		root_total_visible: number,
+	): boolean {
+		const total_entries = home_total_entries + root_total_entries
+		const total_visible = home_total_visible + root_total_visible
+		if (total_entries === 0) return false
+		return total_visible === 0
 	}
 
 	@GObjectify.Debounce(200, { trigger: "leading" })

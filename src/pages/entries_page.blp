@@ -60,8 +60,9 @@ template $EntriesPage: Adw.NavigationPage {
 				child: SearchBar {
 					key-capture-widget: template;
 					search-mode-enabled: bind search_button.active bidirectional;
-					// sensitive: bind template.searching_enabled;
+
 					child: SearchEntry {
+						search-changed => $_set_search_text();
 						hexpand: true;
 						placeholder-text: _("Search entries");
 					};
@@ -69,11 +70,14 @@ template $EntriesPage: Adw.NavigationPage {
 			}
 
 			content: $SearchGroup {
+				no_results: bind $_get_no_results(home_list.total_entries, home_list.total_visible, root_list.total_entries, root_list.total_visible) as <bool>;
+
 				content: Adw.PreferencesPage {
 					Adw.PreferencesGroup {
 						title: _("Home Group");
 
-						$EntryList {
+						$EntryList home_list {
+							search_text: bind template.search_text;
 							entry_list_model: top_home_model;
 						}
 					}
@@ -81,7 +85,8 @@ template $EntriesPage: Adw.NavigationPage {
 					Adw.PreferencesGroup {
 						title: _("Root Group");
 
-						$EntryList {
+						$EntryList root_list {
+							search_text: bind template.search_text;
 							entry_list_model: top_root_model;
 						}
 					}

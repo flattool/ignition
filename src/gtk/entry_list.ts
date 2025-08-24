@@ -5,7 +5,6 @@ import Gio from "gi://Gio?version=2.0"
 import { GObjectify } from "../utils/gobjectify.js"
 import { Entry } from "../utils/entry.js"
 import { EntryRow } from "./entry_row.js"
-import type { EntryListModel } from "../utils/entry_list_model.js"
 
 export namespace EntryList {
 	export interface ConstructorProps extends Partial<Adw.Bin.ConstructorProps> {
@@ -19,6 +18,9 @@ export class EntryList extends Adw.Bin {
 	@GObjectify.Child
 	public accessor list_box!: Gtk.ListBox
 
+	@GObjectify.Child
+	public accessor top_model!: Gio.ListModel<Entry>
+
 	@GObjectify.Property("string")
 	public accessor search_text!: string
 
@@ -31,15 +33,22 @@ export class EntryList extends Adw.Bin {
 	@GObjectify.Property("bool")
 	public accessor loading!: boolean
 
-	@GObjectify.Property(Gio.ListModel, { flags: "CONSTRUCT_ONLY" })
-	public accessor entry_list_model!: EntryListModel
+	@GObjectify.Property(Gio.ListModel, {
+		flags: "CONSTRUCT_ONLY",
+		effect() { this.entry_list_model.connect("items-changed", () => this.set_total_entries()) },
+	}) public accessor entry_list_model!: Gio.ListModel<Entry>
 
 	public constructor(params: EntryList.ConstructorProps) {
 		super(params)
-		this.list_box.bind_model(this.entry_list_model, (entry) => {
+		this.list_box.bind_model(this.top_model, (entry) => {
 			const row = new EntryRow({ entry })
 			row.connect("activated", () => this.emit("row-clicked", entry))
 			return row
 		})
+	}
+
+	@GObjectify.Debounce(200)
+	private async set_total_entries(): Promise<void> {
+		this.total_entries = this.entry_list_model.get_n_items()
 	}
 }
