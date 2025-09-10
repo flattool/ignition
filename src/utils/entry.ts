@@ -70,7 +70,7 @@ export class Entry extends GObject.Object {
 		this.enabled = !get_bool_safe(this.keyfile, { key: "Hidden", fallback: false })
 		this.icon = get_string_safe(this.keyfile, { key: "Icon", fallback: "" })
 		this.exec = get_string_safe(this.keyfile, { key: "Exec", fallback: "" })
-		this.no_display = get_bool_safe(this.keyfile, { key: "No Display", fallback: false })
+		this.no_display = get_bool_safe(this.keyfile, { key: "NoDisplay", fallback: false })
 		this.terminal = get_bool_safe(this.keyfile, { key: "Terminal", fallback: false })
 	}
 
@@ -80,7 +80,7 @@ export class Entry extends GObject.Object {
 		this.keyfile.set_boolean("Desktop Entry", "Hidden", this.enabled)
 		this.keyfile.set_string("Desktop Entry", "Icon", this.icon)
 		this.keyfile.set_string("Desktop Entry", "Exec", this.exec)
-		this.keyfile.set_boolean("Desktop Entry", "No Display", this.no_display)
+		this.keyfile.set_boolean("Desktop Entry", "NoDisplay", this.no_display)
 		this.keyfile.set_boolean("Desktop Entry", "Terminal", this.terminal)
 		this.keyfile.save_to_file(this.path)
 	}

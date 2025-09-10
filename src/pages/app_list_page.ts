@@ -7,7 +7,7 @@ import { EntryListModel } from "../utils/entry_list_model.js"
 import { SharedVars } from "../utils/shared_vars.js"
 import { make_iterable } from "../utils/list_model_utils.js"
 import { chunked_idler } from "../utils/async.js"
-import type { Entry } from "../utils/entry.js"
+import { Entry } from "../utils/entry.js"
 import "../gtk/search_group.js"
 import "../gtk/entry_list.js"
 import { EntryRow } from "../gtk/entry_row.js"
@@ -46,6 +46,7 @@ export class AppListPage extends Adw.NavigationPage {
 		const idler = chunked_idler(100)
 		for (const entry of make_iterable(this.top_model)) {
 			await idler()
+			if (entry.no_display || !entry.enabled) continue
 			this.lb.append(new EntryRow({ entry }))
 		}
 	}
