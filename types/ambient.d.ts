@@ -11,6 +11,7 @@ declare const pkg: {
 	prefix: string
 	profile: "default" | "development"
 	version: string
+	package_version: string
 }
 
 declare interface String {

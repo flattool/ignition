@@ -4,7 +4,7 @@ import { exit, programArgs, programInvocationName } from "system";
 
 imports.package.init({
 	name: "@PACKAGE_NAME@",
-	version: "@PACKAGE_VERSION@",
+	version: "@VERSION@",
 	prefix: "@prefix@",
 	libdir: "@libdir@",
 	datadir: "@datadir@",
@@ -12,6 +12,7 @@ imports.package.init({
 
 pkg.profile = "@PROFILE@";
 pkg.app_id = "@APP_ID@";
+pkg.package_version = "@PACKAGE_VERSION@"
 
 // Initialize translations and formatting
 pkg.initGettext();
