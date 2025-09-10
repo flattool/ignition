@@ -26,6 +26,7 @@ import Adw from "gi://Adw?version=1"
 import { GObjectify } from "./utils/gobjectify.js"
 import { MainWindow } from "./window/main_window.js"
 import { SharedVars } from "./utils/shared_vars.js"
+import { dd } from "./utils/dedent.js"
 
 Gio._promisify(Gtk.FileLauncher.prototype, "launch", "launch_finish")
 
@@ -48,16 +49,16 @@ export class Application extends Adw.Application {
 		const adw_version = `${Adw.MAJOR_VERSION}.${Adw.MINOR_VERSION}.${Adw.MICRO_VERSION}`
 		const os_string = `${GLib.get_os_info("NAME")} ${GLib.get_os_info("VERSION")}`
 		const lang = GLib.environ_getenv(GLib.get_environ(), "LANG")
-		const troubleshooting = (
-			`OS: ${os_string}\n`
-			+ `Ignition version: ${pkg.version}\n`
-			+ `GTK: ${gtk_version}\n`
-			+ `libadwaita: ${adw_version}\n`
-			+ `App ID: ${pkg.app_id}\n`
-			+ `Profile: ${pkg.profile}\n`
-			+ `Language: ${lang}`
-		)
-		const dialog = Adw.AboutDialog.new_from_appdata("/io/github/flattool/Ignition/appdata", pkg.version)
+		const troubleshooting = dd`
+			OS: ${os_string}
+			Ignition version: ${pkg.version}
+			GTK: ${gtk_version}
+			libadwaita: ${adw_version}
+			App ID: ${pkg.app_id}
+			Profile: ${pkg.profile}
+			Language: ${lang}
+		`
+		const dialog = Adw.AboutDialog.new_from_appdata("/io/github/flattool/Ignition/appdata", pkg.package_version)
 		dialog.version = pkg.version
 		dialog.debug_info = troubleshooting
 		dialog.add_link(_("Translate"), "https://weblate.fyralabs.com/projects/flattool/ignition/")
