@@ -50,10 +50,4 @@ export class AppListPage extends Adw.NavigationPage {
 	protected _get_no_results(__: this, total_entries: number, total_visible: number): boolean {
 		return total_entries > 0 && total_visible === 0
 	}
-
-	protected _test(): void {
-		for (const model of this.entry_list_models_model) {
-			print(model.monitor, model.file?.get_path())
-		}
-	}
 }
