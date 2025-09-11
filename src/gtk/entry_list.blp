@@ -2,8 +2,6 @@ using Gtk 4.0;
 using Adw 1;
 
 template $EntryList: Adw.Bin {
-	total-visible: bind top_model.n-items;
-
 	child: ListBox list_box {
 		selection-mode: none;
 		valign: start;
@@ -12,20 +10,4 @@ template $EntryList: Adw.Bin {
 			"boxed-list",
 		]
 	};
-}
-
-FilterListModel top_model {
-	filter: AnyFilter {
-		StringFilter {
-			search: bind template.search_text;
-			expression: expr item as <$Entry>.title;
-		}
-
-		StringFilter {
-			search: bind template.search_text;
-			expression: expr item as <$Entry>.comment;
-		}
-	};
-
-	model: bind template.entry_list_model;
 }
