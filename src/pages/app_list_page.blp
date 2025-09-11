@@ -3,7 +3,10 @@ using Adw 1;
 using Gio 2.0;
 
 FilterListModel top_model {
-	items-changed => $_items_changed();
+	// items-changed => $_items_changed();
+	filter: BoolFilter hidden_filter {
+		expression: expr $_should_entry_be_shown(item as <$Entry>.no_display, item as <$Entry>.enabled) as <bool>;
+	};
 
 	model: SortListModel {
 		sorter: StringSorter {
@@ -49,11 +52,14 @@ template $AppListPage: Adw.NavigationPage {
 					child: SearchEntry {
 						hexpand: true;
 						placeholder-text: _("Search apps");
+						search-changed => $_on_search_changed();
 					};
 				};
 			}
 
 			content: $SearchGroup {
+				no_results: bind $_get_no_results(entry_list.total_entries, entry_list.total_visible) as <bool>;
+
 				content: ScrolledWindow {
 					child: Adw.Clamp {
 						child: Box {
@@ -110,24 +116,16 @@ template $AppListPage: Adw.NavigationPage {
 								Adw.SwitchRow {
 									title: _("Show Hidden Apps");
 									subtitle: _("Show apps that are hidden from the app menu.");
+									active: bind template.show_hidden_entries bidirectional;
 								}
 							}
 
-							ListBox lb {
-								selection-mode: none;
+							$EntryList entry_list {
 								margin-start: 12;
 								margin-end: 12;
-
-								styles [
-									"boxed-list",
-								]
+								entry_list_model: top_model;
+								search_text: bind template.search_text;
 							}
-
-							// $EntryList {
-							// 	margin-start: 12;
-							// 	margin-end: 12;
-							// 	entry_list_model: top_model;
-							// }
 						};
 					};
 				};
