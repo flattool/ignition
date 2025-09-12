@@ -61,7 +61,7 @@ export class EntryListModel extends GObject.Object implements Gio.ListModel<Entr
 		this.changed()
 	}
 
-	@GObjectify.Debounce(200)
+	@GObjectify.Debounce(50)
 	private async changed(): Promise<void> {
 		const old_length = this.list.length
 		const dir = this.file
