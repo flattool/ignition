@@ -19,7 +19,7 @@ export class EntryList extends Adw.Bin {
 	@GObjectify.Child
 	public accessor list_box!: Gtk.ListBox
 
-	@GObjectify.Property("string", { effect(item) { this.do_search(item) } })
+	@GObjectify.Property("string", { effect(item) { this.do_search(item).catch(log) } })
 	public accessor search_text!: string
 
 	@GObjectify.Property("uint32")
