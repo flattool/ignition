@@ -18,6 +18,7 @@ template $EntryRow: Adw.ActionRow {
 
 	[suffix]
 	Label suffix_label {
+		visible: bind template.show_suffix_label;
 		label: bind $_get_suffix_text(template.entry as <$Entry>.enabled, template.entry as <$Entry>.override_state) as <string>;
 		margin-end: 9;
 	}

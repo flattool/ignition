@@ -9,6 +9,7 @@ import { set_icon } from "../utils/icon_helpers.js"
 export namespace EntryRow {
 	export interface ConstructorProps {
 		entry: Entry
+		show_suffix_label?: boolean
 	}
 }
 
@@ -19,6 +20,9 @@ export class EntryRow extends Adw.ActionRow {
 
 	@GObjectify.Property(Entry, { flags: "CONSTRUCT_ONLY" })
 	public accessor entry!: Entry
+
+	@GObjectify.Property("bool", { default: true })
+	public accessor show_suffix_label!: boolean
 
 	public constructor(params: EntryRow.ConstructorProps) {
 		// @ts-expect-error: params has nothing in common with Adw.ActionRow.ConstructorProps,
