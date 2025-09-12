@@ -2,20 +2,21 @@ using Gtk 4.0;
 using Adw 1;
 using Gio 2.0;
 
-FilterListModel top_model {
-	// items-changed => $_items_changed();
-	filter: BoolFilter hidden_filter {
-		expression: expr $_should_entry_be_shown(item as <$Entry>.no_display, item as <$Entry>.enabled) as <bool>;
+SortListModel top_model {
+	items-changed => $_items_changed();
+
+	sorter: MultiSorter {
+		StringSorter {
+			expression: expr item as <$Entry>.title;
+		}
+
+		StringSorter {
+			expression: expr item as <$Entry>.comment;
+		}
 	};
 
-	model: SortListModel {
-		sorter: StringSorter {
-			expression: expr item as <$Entry>.title;
-		};
-
-		model: FlattenListModel {
-			model: Gio.ListStore entry_list_models_model {};
-		};
+	model: FlattenListModel {
+		model: Gio.ListStore entry_list_models_model {};
 	};
 }
 
@@ -34,11 +35,14 @@ template $AppListPage: Adw.NavigationPage {
 				ToggleButton search_button {
 					icon-name: "ignition:system-search-symbolic";
 					tooltip-text: _("Search");
+					visible: bind $_get_any_apps(template.total_apps) as <bool>;
 				}
 			}
 
 			[top]
 			Adw.Clamp {
+				visible: bind $_get_any_apps(template.total_apps) as <bool>;
+
 				child: SearchBar {
 					key-capture-widget: template;
 					search-mode-enabled: bind search_button.active bidirectional;
@@ -52,8 +56,8 @@ template $AppListPage: Adw.NavigationPage {
 			}
 
 			content: $SearchGroup {
-				no_results: bind $_get_no_results(entry_list.total_entries, entry_list.total_visible) as <bool>;
-
+				no_results: bind template.no_search_results;
+				// no_results: bind $_get_no_results(entry_list.total_entries, entry_list.total_visible) as <bool>;
 				content: ScrolledWindow {
 					child: Adw.Clamp {
 						child: Box {
@@ -101,6 +105,7 @@ template $AppListPage: Adw.NavigationPage {
 							}
 
 							Adw.PreferencesGroup {
+								visible: bind $_get_any_apps(template.total_apps) as <bool>;
 								title: _("Installed Apps");
 								description: _("Choose any installed app to run when you log in.");
 								margin-start: 12;
@@ -114,11 +119,15 @@ template $AppListPage: Adw.NavigationPage {
 								}
 							}
 
-							$EntryList entry_list {
+							ListBox list_box {
+								visible: bind $_get_any_apps(template.total_apps) as <bool>;
 								margin-start: 12;
 								margin-end: 12;
-								entry_list_model: top_model;
-								search_text: bind template.search_text;
+								selection-mode: none;
+
+								styles [
+									"boxed-list",
+								]
 							}
 						};
 					};
