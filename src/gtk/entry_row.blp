@@ -21,6 +21,10 @@ template $EntryRow: Adw.ActionRow {
 		visible: bind template.show_suffix_label;
 		label: bind $_get_suffix_text(template.entry as <$Entry>.enabled, template.entry as <$Entry>.override_state) as <string>;
 		margin-end: 9;
+
+		styles [
+			"subtitle",
+		]
 	}
 
 	[suffix]
@@ -51,6 +55,6 @@ Popover info_popover {
 		margin-end: 6;
 		margin-top: 6;
 		margin-bottom: 6;
-		label: bind $_get_more_menu_text(template.entry as <$Entry>.enabled) as <string>;
+		label: bind $_get_more_menu_text(template.entry as <$Entry>.override_state) as <string>;
 	}
 }
