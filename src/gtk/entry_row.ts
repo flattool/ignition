@@ -5,7 +5,7 @@ import GLib from "gi://GLib?version=2.0"
 import { GObjectify } from "../utils/gobjectify.js"
 import { Entry } from "../utils/entry.js"
 import { set_icon } from "../utils/icon_helpers.js"
-import { css_switcher } from "../utils/css_switcher.js"
+import { css_switcher } from "../utils/helper_funcs.js"
 
 export namespace EntryRow {
 	export interface ConstructorProps {

@@ -7,7 +7,7 @@ import { EntryListModel } from "../utils/entry_list_model.js"
 import { SharedVars } from "../utils/shared_vars.js"
 import { EntryRow } from "../gtk/entry_row.js"
 import { Entry } from "../utils/entry.js"
-import { chunked_idler } from "../utils/async.js"
+import { chunked_idler } from "../utils/helper_funcs.js"
 import "../gtk/search_group.js"
 
 @GObjectify.Class({ template: "/io/github/flattool/Ignition/pages/app_list_page" })

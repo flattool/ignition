@@ -5,8 +5,8 @@ import Gtk from "gi://Gtk?version=4.0"
 import { Entry } from "../utils/entry.js"
 import { GObjectify } from "../utils/gobjectify.js"
 import { SharedVars } from "../utils/shared_vars.js"
-import { make_iterable } from "../utils/list_model_utils.js"
-import { chunked_idler } from "../utils/async.js"
+import { make_model_iterable } from "../utils/helper_funcs.js"
+import { chunked_idler } from "../utils/helper_funcs.js"
 import "../utils/entry_list_model.js"
 import "../gtk/loading_group.js"
 import "../gtk/search_group.js"
@@ -102,12 +102,12 @@ export class EntriesPage extends Adw.NavigationPage {
 		const entry_map = new Map<string, Entry>()
 		const idler = chunked_idler(100)
 
-		for (const root_item of make_iterable(this.top_root_model)) {
+		for (const root_item of make_model_iterable(this.top_root_model)) {
 			await idler()
 			entry_map.set(root_item.file.get_basename() ?? "", root_item)
 		}
 
-		for (const home_item of make_iterable(this.top_home_model)) {
+		for (const home_item of make_model_iterable(this.top_home_model)) {
 			await idler()
 			const root_entry = entry_map.get(home_item.file.get_basename() ?? "")
 			if (root_entry) {

@@ -3,7 +3,7 @@ import Gio from "gi://Gio?version=2.0"
 
 import { GObjectify } from "./gobjectify.js"
 import { Entry } from "./entry.js"
-import { chunked_idler } from "./async.js"
+import { chunked_idler } from "./helper_funcs.js"
 
 @GObjectify.Class({ implements: [Gio.ListModel], manual_gtype_name: "EntryListModel" })
 // @ts-expect-error

@@ -26,7 +26,7 @@ import Adw from "gi://Adw?version=1"
 import { GObjectify } from "./utils/gobjectify.js"
 import { MainWindow } from "./window/main_window.js"
 import { SharedVars } from "./utils/shared_vars.js"
-import { dd } from "./utils/dedent.js"
+import { dedent } from "./utils/helper_funcs.js"
 
 Gio._promisify(Gtk.FileLauncher.prototype, "launch", "launch_finish")
 
@@ -49,7 +49,7 @@ export class Application extends Adw.Application {
 		const adw_version = `${Adw.MAJOR_VERSION}.${Adw.MINOR_VERSION}.${Adw.MICRO_VERSION}`
 		const os_string = `${GLib.get_os_info("NAME")} ${GLib.get_os_info("VERSION")}`
 		const lang = GLib.environ_getenv(GLib.get_environ(), "LANG")
-		const troubleshooting = dd`
+		const troubleshooting = dedent`
 			OS: ${os_string}
 			Ignition version: ${pkg.version}
 			GTK: ${gtk_version}

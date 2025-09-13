@@ -5,7 +5,7 @@ import Gio from "gi://Gio?version=2.0"
 import { GObjectify } from "../utils/gobjectify.js"
 import { Entry } from "../utils/entry.js"
 import { EntryRow } from "./entry_row.js"
-import { chunked_idler } from "../utils/async.js"
+import { chunked_idler } from "../utils/helper_funcs.js"
 
 export namespace EntryList {
 	export interface ConstructorProps extends Partial<Adw.Bin.ConstructorProps> {
