@@ -1,7 +1,7 @@
 using Gtk 4.0;
 using Adw 1;
 
-template $EntriesPage : Adw.NavigationPage {
+template $EntriesPage: Adw.NavigationPage {
 	title: "Ignition";
 
 	Adw.ToolbarView {
@@ -63,12 +63,13 @@ template $EntriesPage : Adw.NavigationPage {
 					Box {
 						orientation: vertical;
 						margin-start: 12;
-						margin-end:   12;
-						margin-top:   12;
+						margin-end: 12;
+						margin-top: 12;
 						margin-bottom: 24;
 						spacing: 22;
 
 						$EntryGroup home_group {}
+
 						$EntryGroup root_group {}
 					}
 				}
@@ -81,7 +82,9 @@ Button add_button {
 	valign: center;
 	action-name: "app.new-entry";
 
-	styles ["flat"]
+	styles [
+		"flat",
+	]
 
 	Adw.ButtonContent {
 		icon-name: "ignition:list-add-symbolic";
@@ -94,8 +97,8 @@ Adw.ActionRow empty_row {
 	Box {
 		spacing: 6;
 		margin-start: 16;
-		margin-end:   16;
-		margin-top:    30;
+		margin-end: 16;
+		margin-top: 30;
 		margin-bottom: 30;
 		orientation: vertical;
 
@@ -110,7 +113,9 @@ Adw.ActionRow empty_row {
 			wrap: true;
 			halign: center;
 
-			styles ["heading"]
+			styles [
+				"heading",
+			]
 		}
 
 		Label {
@@ -135,10 +140,9 @@ menu primary_menu {
 		// 	label: _("_Preferences");
 		// 	action: "app.preferences";
 		// }
-
 		item {
 			label: _("_Keyboard Shortcuts");
-			action: "win.show-help-overlay";
+			action: "app.shortcuts";
 		}
 
 		item {
