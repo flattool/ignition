@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-03 02:44-0400\n"
+"POT-Creation-Date: 2025-10-24 23:13-0400\n"
 "PO-Revision-Date: 2025-10-24 09:29+0000\n"
 "Last-Translator: alevtina-karashokova <karashokovaaa@basealt.ru>\n"
 "Language-Team: Russian <https://weblate.fyralabs.com/projects/flattool/"
@@ -187,61 +187,6 @@ msgid ""
 msgstr ""
 "Их можно переопределить, но делайте это с осторожностью, так как вы можете "
 "нарушить работу некоторых существующих приложений или функций рабочего стола."
-
-#: src/gtk/help-overlay.blp:11
-msgctxt "shortcut window"
-msgid "Entries List"
-msgstr "Список записей"
-
-#: src/gtk/help-overlay.blp:14
-msgctxt "shortcut window"
-msgid "New Entry"
-msgstr "Новая запись"
-
-#: src/gtk/help-overlay.blp:19
-msgctxt "shortcut window"
-msgid "Search Entries"
-msgstr "Поиск записей"
-
-#: src/gtk/help-overlay.blp:25
-msgctxt "shortcut window"
-msgid "Apps List"
-msgstr "Список приложений"
-
-#: src/gtk/help-overlay.blp:28
-msgctxt "shortcut window"
-msgid "Search Apps"
-msgstr "Поиск приложений"
-
-#: src/gtk/help-overlay.blp:34
-msgctxt "shortcut window"
-msgid "Details Page"
-msgstr "Страница сведений"
-
-#: src/gtk/help-overlay.blp:37
-msgctxt "shortcut window"
-msgid "Save Edits"
-msgstr "Сохранить изменения"
-
-#: src/gtk/help-overlay.blp:43
-msgctxt "shortcut window"
-msgid "General"
-msgstr "Общие"
-
-#: src/gtk/help-overlay.blp:46
-msgctxt "shortcut window"
-msgid "Open Autostart Folder"
-msgstr "Открыть папку автозапуска"
-
-#: src/gtk/help-overlay.blp:51
-msgctxt "shortcut window"
-msgid "Show Shortcuts"
-msgstr "Показать комбинации клавиш"
-
-#: src/gtk/help-overlay.blp:56
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Выйти"
 
 #: src/main.ts:70
 msgid "Translate"
@@ -438,7 +383,7 @@ msgstr ""
 msgid "Trash"
 msgstr "Отправить в корзину"
 
-#: src/main_view/details_page.ts:264
+#: src/main_view/details_page.ts:264 src/shortcuts-dialog.blp:9
 msgid "New Entry"
 msgstr "Новая запись"
 
@@ -486,27 +431,27 @@ msgstr "Загрузка записей"
 msgid "This should only take a moment."
 msgstr "Это займёт совсем немного времени."
 
-#: src/main_view/entries-page.blp:88
+#: src/main_view/entries-page.blp:91
 msgid "New"
 msgstr "Новая"
 
-#: src/main_view/entries-page.blp:109
+#: src/main_view/entries-page.blp:112
 msgid "No Entries Found"
 msgstr "Записи не найдены"
 
-#: src/main_view/entries-page.blp:117
+#: src/main_view/entries-page.blp:122
 msgid "Add an app or script to run it when you log in"
 msgstr "Добавьте приложение или сценарий для запуска при входе в систему."
 
-#: src/main_view/entries-page.blp:128
+#: src/main_view/entries-page.blp:133
 msgid "_Open Autostart Folder"
 msgstr "_Открыть папку автозапуска"
 
-#: src/main_view/entries-page.blp:140
+#: src/main_view/entries-page.blp:144
 msgid "_Keyboard Shortcuts"
 msgstr "_Комбинации клавиш"
 
-#: src/main_view/entries-page.blp:145
+#: src/main_view/entries-page.blp:149
 msgid "_About Ignition"
 msgstr "_О приложении"
 
@@ -529,6 +474,76 @@ msgstr "Записи, которые существуют для всех пол
 #: src/main_view/entries_page.ts:180
 msgid "Could not load some entries"
 msgstr "Не удалось загрузить некоторые записи"
+
+#: src/shortcuts-dialog.blp:6
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Entries List"
+msgid "Entries List"
+msgstr "Список записей"
+
+#: src/shortcuts-dialog.blp:14
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Search Entries"
+msgid "Search Entries"
+msgstr "Поиск записей"
+
+#: src/shortcuts-dialog.blp:20
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Apps List"
+msgid "Apps List"
+msgstr "Список приложений"
+
+#: src/shortcuts-dialog.blp:23
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Search Apps"
+msgid "Search Apps"
+msgstr "Поиск приложений"
+
+#: src/shortcuts-dialog.blp:29
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Details Page"
+msgid "Details Page"
+msgstr "Страница сведений"
+
+#: src/shortcuts-dialog.blp:32
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Save Edits"
+msgid "Save Edits"
+msgstr "Сохранить изменения"
+
+#: src/shortcuts-dialog.blp:38
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "General"
+msgid "General"
+msgstr "Общие"
+
+#: src/shortcuts-dialog.blp:41
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Open Autostart Folder"
+msgid "Open Autostart Folder"
+msgstr "Открыть папку автозапуска"
+
+#: src/shortcuts-dialog.blp:46
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Show Shortcuts"
+msgid "Show Shortcuts"
+msgstr "Показать комбинации клавиш"
+
+#: src/shortcuts-dialog.blp:51
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Quit"
+msgid "Quit"
+msgstr "Выйти"
 
 #: src/utils/helper_funcs.ts:39
 msgid "Copy"
@@ -554,6 +569,10 @@ msgstr "Нет комментария."
 #: src/window/window.ts:73
 msgid "Failed to start properly"
 msgstr "Не удалось корректно выполнить запуск"
+
+#~ msgctxt "shortcut window"
+#~ msgid "New Entry"
+#~ msgstr "Новая запись"
 
 #~ msgid "Choose an App"
 #~ msgstr "Выберите приложение"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-03 02:44-0400\n"
+"POT-Creation-Date: 2025-10-24 23:13-0400\n"
 "PO-Revision-Date: 2025-07-31 16:52+0000\n"
 "Last-Translator: Jose Daniel Rodriguez <jdrodriguez653@soy.sena.edu.co>\n"
 "Language-Team: Spanish <https://weblate.fyralabs.com/projects/flattool/"
@@ -182,61 +182,6 @@ msgid ""
 msgstr ""
 "Puedes anular estas entradas, pero hazlo con cuidado, ya que podrías dañar "
 "alguna aplicación o función existente en tu escritorio."
-
-#: src/gtk/help-overlay.blp:11
-msgctxt "shortcut window"
-msgid "Entries List"
-msgstr "Lista de entradas"
-
-#: src/gtk/help-overlay.blp:14
-msgctxt "shortcut window"
-msgid "New Entry"
-msgstr "Nueva Entrada"
-
-#: src/gtk/help-overlay.blp:19
-msgctxt "shortcut window"
-msgid "Search Entries"
-msgstr "Buscar Entradas"
-
-#: src/gtk/help-overlay.blp:25
-msgctxt "shortcut window"
-msgid "Apps List"
-msgstr "Lista de aplicaciones"
-
-#: src/gtk/help-overlay.blp:28
-msgctxt "shortcut window"
-msgid "Search Apps"
-msgstr "Buscar Aplicaciones"
-
-#: src/gtk/help-overlay.blp:34
-msgctxt "shortcut window"
-msgid "Details Page"
-msgstr "Detalles"
-
-#: src/gtk/help-overlay.blp:37
-msgctxt "shortcut window"
-msgid "Save Edits"
-msgstr "Guardar Cambios"
-
-#: src/gtk/help-overlay.blp:43
-msgctxt "shortcut window"
-msgid "General"
-msgstr "General"
-
-#: src/gtk/help-overlay.blp:46
-msgctxt "shortcut window"
-msgid "Open Autostart Folder"
-msgstr "Abrir la carpeta de autoarranque"
-
-#: src/gtk/help-overlay.blp:51
-msgctxt "shortcut window"
-msgid "Show Shortcuts"
-msgstr "Mostrar atajos"
-
-#: src/gtk/help-overlay.blp:56
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Salir"
 
 #: src/main.ts:70
 msgid "Translate"
@@ -432,7 +377,7 @@ msgstr ""
 msgid "Trash"
 msgstr "Papelera"
 
-#: src/main_view/details_page.ts:264
+#: src/main_view/details_page.ts:264 src/shortcuts-dialog.blp:9
 msgid "New Entry"
 msgstr "Nueva Entrada"
 
@@ -480,27 +425,27 @@ msgstr "Cargando entradas"
 msgid "This should only take a moment."
 msgstr "Esto solo tomará un momento."
 
-#: src/main_view/entries-page.blp:88
+#: src/main_view/entries-page.blp:91
 msgid "New"
 msgstr "Nuevo"
 
-#: src/main_view/entries-page.blp:109
+#: src/main_view/entries-page.blp:112
 msgid "No Entries Found"
 msgstr "No hay ninguna entrada"
 
-#: src/main_view/entries-page.blp:117
+#: src/main_view/entries-page.blp:122
 msgid "Add an app or script to run it when you log in"
 msgstr "Añade una app o script para ejecutarlo al iniciar sesión"
 
-#: src/main_view/entries-page.blp:128
+#: src/main_view/entries-page.blp:133
 msgid "_Open Autostart Folder"
 msgstr "_Abrir carpeta de autoarranque"
 
-#: src/main_view/entries-page.blp:140
+#: src/main_view/entries-page.blp:144
 msgid "_Keyboard Shortcuts"
 msgstr "_Atajos de Teclado"
 
-#: src/main_view/entries-page.blp:145
+#: src/main_view/entries-page.blp:149
 msgid "_About Ignition"
 msgstr "_Sobre Ignition"
 
@@ -523,6 +468,76 @@ msgstr "Entradas que se ejecutan sólo para todos."
 #: src/main_view/entries_page.ts:180
 msgid "Could not load some entries"
 msgstr "No se han podido cargar algunas entradas"
+
+#: src/shortcuts-dialog.blp:6
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Entries List"
+msgid "Entries List"
+msgstr "Lista de entradas"
+
+#: src/shortcuts-dialog.blp:14
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Search Entries"
+msgid "Search Entries"
+msgstr "Buscar Entradas"
+
+#: src/shortcuts-dialog.blp:20
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Apps List"
+msgid "Apps List"
+msgstr "Lista de aplicaciones"
+
+#: src/shortcuts-dialog.blp:23
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Search Apps"
+msgid "Search Apps"
+msgstr "Buscar Aplicaciones"
+
+#: src/shortcuts-dialog.blp:29
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Details Page"
+msgid "Details Page"
+msgstr "Detalles"
+
+#: src/shortcuts-dialog.blp:32
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Save Edits"
+msgid "Save Edits"
+msgstr "Guardar Cambios"
+
+#: src/shortcuts-dialog.blp:38
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "General"
+msgid "General"
+msgstr "General"
+
+#: src/shortcuts-dialog.blp:41
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Open Autostart Folder"
+msgid "Open Autostart Folder"
+msgstr "Abrir la carpeta de autoarranque"
+
+#: src/shortcuts-dialog.blp:46
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Show Shortcuts"
+msgid "Show Shortcuts"
+msgstr "Mostrar atajos"
+
+#: src/shortcuts-dialog.blp:51
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Quit"
+msgid "Quit"
+msgstr "Salir"
 
 #: src/utils/helper_funcs.ts:39
 msgid "Copy"
@@ -548,6 +563,10 @@ msgstr "No hay ningún comentario."
 #: src/window/window.ts:73
 msgid "Failed to start properly"
 msgstr "No se inició correctamente"
+
+#~ msgctxt "shortcut window"
+#~ msgid "New Entry"
+#~ msgstr "Nueva Entrada"
 
 #~ msgid "Choose an App"
 #~ msgstr "Elige una aplicación"

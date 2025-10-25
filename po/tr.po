@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-03 02:44-0400\n"
+"POT-Creation-Date: 2025-10-24 23:13-0400\n"
 "PO-Revision-Date: 2025-08-21 11:22+0000\n"
 "Last-Translator: Mücahit Şahin <mucahitsahin786@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.fyralabs.com/projects/flattool/"
@@ -185,61 +185,6 @@ msgid ""
 msgstr ""
 "Bunları geçersiz kılabilirsiniz, ancak bunu yaparken dikkatli olun, çünkü "
 "masaüstünüzdeki mevcut bir uygulamayı veya özelliği bozabilirsiniz."
-
-#: src/gtk/help-overlay.blp:11
-msgctxt "shortcut window"
-msgid "Entries List"
-msgstr "Giriş Listesi"
-
-#: src/gtk/help-overlay.blp:14
-msgctxt "shortcut window"
-msgid "New Entry"
-msgstr "Yeni Giriş"
-
-#: src/gtk/help-overlay.blp:19
-msgctxt "shortcut window"
-msgid "Search Entries"
-msgstr "Girişleri Ara"
-
-#: src/gtk/help-overlay.blp:25
-msgctxt "shortcut window"
-msgid "Apps List"
-msgstr "Uygulama Listesi"
-
-#: src/gtk/help-overlay.blp:28
-msgctxt "shortcut window"
-msgid "Search Apps"
-msgstr "Uygulamaları Ara"
-
-#: src/gtk/help-overlay.blp:34
-msgctxt "shortcut window"
-msgid "Details Page"
-msgstr "Ayrıntılar Sayfası"
-
-#: src/gtk/help-overlay.blp:37
-msgctxt "shortcut window"
-msgid "Save Edits"
-msgstr "Değişiklikleri Kaydet"
-
-#: src/gtk/help-overlay.blp:43
-msgctxt "shortcut window"
-msgid "General"
-msgstr "Genel"
-
-#: src/gtk/help-overlay.blp:46
-msgctxt "shortcut window"
-msgid "Open Autostart Folder"
-msgstr "Otomatik Başlat Klasörünü Aç"
-
-#: src/gtk/help-overlay.blp:51
-msgctxt "shortcut window"
-msgid "Show Shortcuts"
-msgstr "Kısayolları Göster"
-
-#: src/gtk/help-overlay.blp:56
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Çıkış"
 
 #: src/main.ts:70
 msgid "Translate"
@@ -437,7 +382,7 @@ msgstr ""
 msgid "Trash"
 msgstr "Sil"
 
-#: src/main_view/details_page.ts:264
+#: src/main_view/details_page.ts:264 src/shortcuts-dialog.blp:9
 msgid "New Entry"
 msgstr "Yeni Giriş"
 
@@ -485,28 +430,28 @@ msgstr "Girişler Yükleniyor"
 msgid "This should only take a moment."
 msgstr "Bu sadece bir dakika sürer."
 
-#: src/main_view/entries-page.blp:88
+#: src/main_view/entries-page.blp:91
 msgid "New"
 msgstr "Yeni"
 
-#: src/main_view/entries-page.blp:109
+#: src/main_view/entries-page.blp:112
 msgid "No Entries Found"
 msgstr "Hiçbir giriş bulunamadı"
 
-#: src/main_view/entries-page.blp:117
+#: src/main_view/entries-page.blp:122
 msgid "Add an app or script to run it when you log in"
 msgstr ""
 "Giriş yaptığınızda çalıştırmak için bir uygulama veya komut dosyası ekleyin"
 
-#: src/main_view/entries-page.blp:128
+#: src/main_view/entries-page.blp:133
 msgid "_Open Autostart Folder"
 msgstr "_Otomatik Başlat Klasörünü Aç"
 
-#: src/main_view/entries-page.blp:140
+#: src/main_view/entries-page.blp:144
 msgid "_Keyboard Shortcuts"
 msgstr "_Klavye Kısayolları"
 
-#: src/main_view/entries-page.blp:145
+#: src/main_view/entries-page.blp:149
 msgid "_About Ignition"
 msgstr "_Ignition Hakkında"
 
@@ -529,6 +474,76 @@ msgstr "Herkes için geçerli olan girişler."
 #: src/main_view/entries_page.ts:180
 msgid "Could not load some entries"
 msgstr "Bazı girişler yüklenemedi"
+
+#: src/shortcuts-dialog.blp:6
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Entries List"
+msgid "Entries List"
+msgstr "Giriş Listesi"
+
+#: src/shortcuts-dialog.blp:14
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Search Entries"
+msgid "Search Entries"
+msgstr "Girişleri Ara"
+
+#: src/shortcuts-dialog.blp:20
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Apps List"
+msgid "Apps List"
+msgstr "Uygulama Listesi"
+
+#: src/shortcuts-dialog.blp:23
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Search Apps"
+msgid "Search Apps"
+msgstr "Uygulamaları Ara"
+
+#: src/shortcuts-dialog.blp:29
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Details Page"
+msgid "Details Page"
+msgstr "Ayrıntılar Sayfası"
+
+#: src/shortcuts-dialog.blp:32
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Save Edits"
+msgid "Save Edits"
+msgstr "Değişiklikleri Kaydet"
+
+#: src/shortcuts-dialog.blp:38
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "General"
+msgid "General"
+msgstr "Genel"
+
+#: src/shortcuts-dialog.blp:41
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Open Autostart Folder"
+msgid "Open Autostart Folder"
+msgstr "Otomatik Başlat Klasörünü Aç"
+
+#: src/shortcuts-dialog.blp:46
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Show Shortcuts"
+msgid "Show Shortcuts"
+msgstr "Kısayolları Göster"
+
+#: src/shortcuts-dialog.blp:51
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Quit"
+msgid "Quit"
+msgstr "Çıkış"
 
 #: src/utils/helper_funcs.ts:39
 msgid "Copy"
@@ -554,3 +569,7 @@ msgstr "Yorum yok."
 #: src/window/window.ts:73
 msgid "Failed to start properly"
 msgstr "Düzgün başlatılamadı"
+
+#~ msgctxt "shortcut window"
+#~ msgid "New Entry"
+#~ msgstr "Yeni Giriş"

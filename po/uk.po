@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-03 02:44-0400\n"
+"POT-Creation-Date: 2025-10-24 23:13-0400\n"
 "PO-Revision-Date: 2025-07-04 20:46+0000\n"
 "Last-Translator: Andrii Serbovets <serbovets.translation@gmail.com>\n"
 "Language-Team: Ukrainian <https://weblate.fyralabs.com/projects/flattool/"
@@ -180,61 +180,6 @@ msgid ""
 msgstr ""
 "Їх можна замістити власними записами, проте це треба обережно, адже "
 "внаслідок цього програма чи системний компонент можуть працювати неправильно."
-
-#: src/gtk/help-overlay.blp:11
-msgctxt "shortcut window"
-msgid "Entries List"
-msgstr "Перелік записів"
-
-#: src/gtk/help-overlay.blp:14
-msgctxt "shortcut window"
-msgid "New Entry"
-msgstr "Створити запис"
-
-#: src/gtk/help-overlay.blp:19
-msgctxt "shortcut window"
-msgid "Search Entries"
-msgstr "Шукати запис"
-
-#: src/gtk/help-overlay.blp:25
-msgctxt "shortcut window"
-msgid "Apps List"
-msgstr "Перелік програм"
-
-#: src/gtk/help-overlay.blp:28
-msgctxt "shortcut window"
-msgid "Search Apps"
-msgstr "Шукати програму"
-
-#: src/gtk/help-overlay.blp:34
-msgctxt "shortcut window"
-msgid "Details Page"
-msgstr "Сторінка подробиць"
-
-#: src/gtk/help-overlay.blp:37
-msgctxt "shortcut window"
-msgid "Save Edits"
-msgstr "Зберегти зміни"
-
-#: src/gtk/help-overlay.blp:43
-msgctxt "shortcut window"
-msgid "General"
-msgstr "Загальні"
-
-#: src/gtk/help-overlay.blp:46
-msgctxt "shortcut window"
-msgid "Open Autostart Folder"
-msgstr "Відкрити теку автозапуску"
-
-#: src/gtk/help-overlay.blp:51
-msgctxt "shortcut window"
-msgid "Show Shortcuts"
-msgstr "Показати клавіатурні скорочення"
-
-#: src/gtk/help-overlay.blp:56
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Вийти"
 
 #: src/main.ts:70
 msgid "Translate"
@@ -431,7 +376,7 @@ msgstr ""
 msgid "Trash"
 msgstr "У смітник"
 
-#: src/main_view/details_page.ts:264
+#: src/main_view/details_page.ts:264 src/shortcuts-dialog.blp:9
 msgid "New Entry"
 msgstr "Новий запис"
 
@@ -479,28 +424,28 @@ msgstr "Завантаження записів"
 msgid "This should only take a moment."
 msgstr "На це знадобиться трохи часу."
 
-#: src/main_view/entries-page.blp:88
+#: src/main_view/entries-page.blp:91
 msgid "New"
 msgstr "Створити"
 
-#: src/main_view/entries-page.blp:109
+#: src/main_view/entries-page.blp:112
 msgid "No Entries Found"
 msgstr "Записів не знайдено"
 
-#: src/main_view/entries-page.blp:117
+#: src/main_view/entries-page.blp:122
 msgid "Add an app or script to run it when you log in"
 msgstr ""
 "Додайте програму чи сценарій, що запустити їх, коли входитимете в систему"
 
-#: src/main_view/entries-page.blp:128
+#: src/main_view/entries-page.blp:133
 msgid "_Open Autostart Folder"
 msgstr "_Відкрити теку автозапуску"
 
-#: src/main_view/entries-page.blp:140
+#: src/main_view/entries-page.blp:144
 msgid "_Keyboard Shortcuts"
 msgstr "_Клавіатурні скорочення"
 
-#: src/main_view/entries-page.blp:145
+#: src/main_view/entries-page.blp:149
 msgid "_About Ignition"
 msgstr "_Про Ignition"
 
@@ -523,6 +468,76 @@ msgstr "Ці записи виконуються під час входу буд
 #: src/main_view/entries_page.ts:180
 msgid "Could not load some entries"
 msgstr "Не вдалося завантажити деякі записи"
+
+#: src/shortcuts-dialog.blp:6
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Entries List"
+msgid "Entries List"
+msgstr "Перелік записів"
+
+#: src/shortcuts-dialog.blp:14
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Search Entries"
+msgid "Search Entries"
+msgstr "Шукати запис"
+
+#: src/shortcuts-dialog.blp:20
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Apps List"
+msgid "Apps List"
+msgstr "Перелік програм"
+
+#: src/shortcuts-dialog.blp:23
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Search Apps"
+msgid "Search Apps"
+msgstr "Шукати програму"
+
+#: src/shortcuts-dialog.blp:29
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Details Page"
+msgid "Details Page"
+msgstr "Сторінка подробиць"
+
+#: src/shortcuts-dialog.blp:32
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Save Edits"
+msgid "Save Edits"
+msgstr "Зберегти зміни"
+
+#: src/shortcuts-dialog.blp:38
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "General"
+msgid "General"
+msgstr "Загальні"
+
+#: src/shortcuts-dialog.blp:41
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Open Autostart Folder"
+msgid "Open Autostart Folder"
+msgstr "Відкрити теку автозапуску"
+
+#: src/shortcuts-dialog.blp:46
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Show Shortcuts"
+msgid "Show Shortcuts"
+msgstr "Показати клавіатурні скорочення"
+
+#: src/shortcuts-dialog.blp:51
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Quit"
+msgid "Quit"
+msgstr "Вийти"
 
 #: src/utils/helper_funcs.ts:39
 msgid "Copy"
@@ -548,6 +563,10 @@ msgstr "Немає коментаря."
 #: src/window/window.ts:73
 msgid "Failed to start properly"
 msgstr "Не вдалося запустити"
+
+#~ msgctxt "shortcut window"
+#~ msgid "New Entry"
+#~ msgstr "Створити запис"
 
 #~ msgid "Choose an App"
 #~ msgstr "Обрати додаток"
