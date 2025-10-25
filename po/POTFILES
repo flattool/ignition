@@ -5,7 +5,6 @@ src/first_run_page/first-run-page.blp
 src/gtk/entry-row.blp
 src/gtk/entry_row.ts
 src/gtk/help-dialog.blp
-src/gtk/help-overlay.blp
 src/main.ts
 src/main_view/app-list-page.blp
 src/main_view/app_list_page.ts
@@ -13,6 +12,7 @@ src/main_view/details-page.blp
 src/main_view/details_page.ts
 src/main_view/entries-page.blp
 src/main_view/entries_page.ts
+src/shortcuts-dialog.blp
 src/utils/helper_funcs.ts
 src/utils/shared_vars.ts
 src/window/window.ts
