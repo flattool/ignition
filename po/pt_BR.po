@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-01 17:37-0400\n"
+"POT-Creation-Date: 2025-10-24 23:13-0400\n"
 "PO-Revision-Date: 2025-05-09 21:46+0000\n"
 "Last-Translator: lucasmz <git@lucasmz.dev>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.fyralabs.com/projects/"
@@ -183,61 +183,6 @@ msgid ""
 msgstr ""
 "Você pode substituí-las, mas tenha cuidado ao fazer isso, pois pode quebrar "
 "algum aplicativo ou funcionalidade existente do seu computador."
-
-#: src/gtk/help-overlay.blp:11
-msgctxt "shortcut window"
-msgid "Entries List"
-msgstr "Lista de Entradas"
-
-#: src/gtk/help-overlay.blp:14
-msgctxt "shortcut window"
-msgid "New Entry"
-msgstr "Nova Entrada"
-
-#: src/gtk/help-overlay.blp:19
-msgctxt "shortcut window"
-msgid "Search Entries"
-msgstr "Pesquisar Entradas"
-
-#: src/gtk/help-overlay.blp:25
-msgctxt "shortcut window"
-msgid "Apps List"
-msgstr "Lista de Aplicativos"
-
-#: src/gtk/help-overlay.blp:28
-msgctxt "shortcut window"
-msgid "Search Apps"
-msgstr "Pesquisar Aplicativos"
-
-#: src/gtk/help-overlay.blp:34
-msgctxt "shortcut window"
-msgid "Details Page"
-msgstr "Página de Detalhes"
-
-#: src/gtk/help-overlay.blp:37
-msgctxt "shortcut window"
-msgid "Save Edits"
-msgstr "Salvar Edições"
-
-#: src/gtk/help-overlay.blp:43
-msgctxt "shortcut window"
-msgid "General"
-msgstr "Geral"
-
-#: src/gtk/help-overlay.blp:46
-msgctxt "shortcut window"
-msgid "Open Autostart Folder"
-msgstr "Abrir Pasta de Inicialização Automática"
-
-#: src/gtk/help-overlay.blp:51
-msgctxt "shortcut window"
-msgid "Show Shortcuts"
-msgstr "Mostrar atalhos do teclado"
-
-#: src/gtk/help-overlay.blp:56
-msgctxt "shortcut window"
-msgid "Quit"
-msgstr "Sair"
 
 #: src/main.ts:70
 msgid "Translate"
@@ -436,7 +381,7 @@ msgstr ""
 msgid "Trash"
 msgstr "Lixeira"
 
-#: src/main_view/details_page.ts:264
+#: src/main_view/details_page.ts:264 src/shortcuts-dialog.blp:9
 msgid "New Entry"
 msgstr "Nova Entrada"
 
@@ -484,27 +429,27 @@ msgstr "Carregando Entradas"
 msgid "This should only take a moment."
 msgstr "Isso deve levar apenas alguns instantes."
 
-#: src/main_view/entries-page.blp:88
+#: src/main_view/entries-page.blp:91
 msgid "New"
 msgstr "Novo"
 
-#: src/main_view/entries-page.blp:109
+#: src/main_view/entries-page.blp:112
 msgid "No Entries Found"
 msgstr "Nenhuma Entrada Encontrada"
 
-#: src/main_view/entries-page.blp:117
+#: src/main_view/entries-page.blp:122
 msgid "Add an app or script to run it when you log in"
 msgstr "Adicione um aplicativo ou script para executá-lo quando fizer login"
 
-#: src/main_view/entries-page.blp:128
+#: src/main_view/entries-page.blp:133
 msgid "_Open Autostart Folder"
 msgstr "_Abrir Pasta de Inicialização Automática"
 
-#: src/main_view/entries-page.blp:140
+#: src/main_view/entries-page.blp:144
 msgid "_Keyboard Shortcuts"
 msgstr "_Atalhos de teclado"
 
-#: src/main_view/entries-page.blp:145
+#: src/main_view/entries-page.blp:149
 msgid "_About Ignition"
 msgstr "_Sobre o Ignition"
 
@@ -527,6 +472,76 @@ msgstr "Entradas que executam para todos."
 #: src/main_view/entries_page.ts:180
 msgid "Could not load some entries"
 msgstr "Não foi possível carregar algumas entradas"
+
+#: src/shortcuts-dialog.blp:6
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Entries List"
+msgid "Entries List"
+msgstr "Lista de Entradas"
+
+#: src/shortcuts-dialog.blp:14
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Search Entries"
+msgid "Search Entries"
+msgstr "Pesquisar Entradas"
+
+#: src/shortcuts-dialog.blp:20
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Apps List"
+msgid "Apps List"
+msgstr "Lista de Aplicativos"
+
+#: src/shortcuts-dialog.blp:23
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Search Apps"
+msgid "Search Apps"
+msgstr "Pesquisar Aplicativos"
+
+#: src/shortcuts-dialog.blp:29
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Details Page"
+msgid "Details Page"
+msgstr "Página de Detalhes"
+
+#: src/shortcuts-dialog.blp:32
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Save Edits"
+msgid "Save Edits"
+msgstr "Salvar Edições"
+
+#: src/shortcuts-dialog.blp:38
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "General"
+msgid "General"
+msgstr "Geral"
+
+#: src/shortcuts-dialog.blp:41
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Open Autostart Folder"
+msgid "Open Autostart Folder"
+msgstr "Abrir Pasta de Inicialização Automática"
+
+#: src/shortcuts-dialog.blp:46
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Show Shortcuts"
+msgid "Show Shortcuts"
+msgstr "Mostrar atalhos do teclado"
+
+#: src/shortcuts-dialog.blp:51
+#, fuzzy
+#| msgctxt "shortcut window"
+#| msgid "Quit"
+msgid "Quit"
+msgstr "Sair"
 
 #: src/utils/helper_funcs.ts:39
 msgid "Copy"
@@ -552,6 +567,10 @@ msgstr "Nenhum comentário definido."
 #: src/window/window.ts:73
 msgid "Failed to start properly"
 msgstr "Falha ao inicializar apropriadamente"
+
+#~ msgctxt "shortcut window"
+#~ msgid "New Entry"
+#~ msgstr "Nova Entrada"
 
 #~ msgid "Choose an App"
 #~ msgstr "Escolha um Aplicativo"

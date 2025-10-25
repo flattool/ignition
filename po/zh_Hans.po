@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-01 17:37-0400\n"
+"POT-Creation-Date: 2025-10-24 23:13-0400\n"
 "PO-Revision-Date: 2025-02-26 07:18+0000\n"
 "Last-Translator: Sense T <tonychee1989@gmail.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://weblate.fyralabs.com/"
@@ -169,71 +169,6 @@ msgstr ""
 msgid ""
 "You can override these, but please use caution when doing so, as you may "
 "break some existing app or feature of your desktop."
-msgstr ""
-
-#: src/gtk/help-overlay.blp:11
-msgctxt "shortcut window"
-msgid "Entries List"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:14
-#, fuzzy
-#| msgid "New Entry"
-msgctxt "shortcut window"
-msgid "New Entry"
-msgstr "新条目"
-
-#: src/gtk/help-overlay.blp:19
-#, fuzzy
-#| msgid "Search entries"
-msgctxt "shortcut window"
-msgid "Search Entries"
-msgstr "搜索条目"
-
-#: src/gtk/help-overlay.blp:25
-msgctxt "shortcut window"
-msgid "Apps List"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:28
-#, fuzzy
-#| msgid "Search apps"
-msgctxt "shortcut window"
-msgid "Search Apps"
-msgstr "搜索应用程序"
-
-#: src/gtk/help-overlay.blp:34
-#, fuzzy
-#| msgid "Details"
-msgctxt "shortcut window"
-msgid "Details Page"
-msgstr "详情"
-
-#: src/gtk/help-overlay.blp:37
-#, fuzzy
-#| msgid "Saved Details"
-msgctxt "shortcut window"
-msgid "Save Edits"
-msgstr "已保存的详细信息"
-
-#: src/gtk/help-overlay.blp:43
-msgctxt "shortcut window"
-msgid "General"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:46
-msgctxt "shortcut window"
-msgid "Open Autostart Folder"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:51
-msgctxt "shortcut window"
-msgid "Show Shortcuts"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:56
-msgctxt "shortcut window"
-msgid "Quit"
 msgstr ""
 
 #: src/main.ts:70
@@ -432,7 +367,7 @@ msgstr ""
 msgid "Trash"
 msgstr ""
 
-#: src/main_view/details_page.ts:264
+#: src/main_view/details_page.ts:264 src/shortcuts-dialog.blp:9
 msgid "New Entry"
 msgstr "新条目"
 
@@ -492,29 +427,29 @@ msgstr "搜索条目"
 msgid "This should only take a moment."
 msgstr "这应该只需要片刻时间。"
 
-#: src/main_view/entries-page.blp:88
+#: src/main_view/entries-page.blp:91
 msgid "New"
 msgstr "新建"
 
-#: src/main_view/entries-page.blp:109
+#: src/main_view/entries-page.blp:112
 msgid "No Entries Found"
 msgstr "未找到条目"
 
-#: src/main_view/entries-page.blp:117
+#: src/main_view/entries-page.blp:122
 #, fuzzy
 #| msgid "Add an app or script to run it at login."
 msgid "Add an app or script to run it when you log in"
 msgstr "添加一个应用程序或脚本，以便在登录时运行。"
 
-#: src/main_view/entries-page.blp:128
+#: src/main_view/entries-page.blp:133
 msgid "_Open Autostart Folder"
 msgstr ""
 
-#: src/main_view/entries-page.blp:140
+#: src/main_view/entries-page.blp:144
 msgid "_Keyboard Shortcuts"
 msgstr ""
 
-#: src/main_view/entries-page.blp:145
+#: src/main_view/entries-page.blp:149
 #, fuzzy
 #| msgid "Ignition"
 msgid "_About Ignition"
@@ -546,6 +481,54 @@ msgstr ""
 msgid "Could not load some entries"
 msgstr "无法加载某些应用程序"
 
+#: src/shortcuts-dialog.blp:6
+msgid "Entries List"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:14
+#, fuzzy
+#| msgid "Search entries"
+msgid "Search Entries"
+msgstr "搜索条目"
+
+#: src/shortcuts-dialog.blp:20
+msgid "Apps List"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:23
+#, fuzzy
+#| msgid "Search apps"
+msgid "Search Apps"
+msgstr "搜索应用程序"
+
+#: src/shortcuts-dialog.blp:29
+#, fuzzy
+#| msgid "Details"
+msgid "Details Page"
+msgstr "详情"
+
+#: src/shortcuts-dialog.blp:32
+#, fuzzy
+#| msgid "Saved Details"
+msgid "Save Edits"
+msgstr "已保存的详细信息"
+
+#: src/shortcuts-dialog.blp:38
+msgid "General"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:41
+msgid "Open Autostart Folder"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:46
+msgid "Show Shortcuts"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:51
+msgid "Quit"
+msgstr ""
+
 #: src/utils/helper_funcs.ts:39
 msgid "Copy"
 msgstr "复制"
@@ -570,6 +553,12 @@ msgstr "未设置注释。"
 #: src/window/window.ts:73
 msgid "Failed to start properly"
 msgstr ""
+
+#, fuzzy
+#~| msgid "New Entry"
+#~ msgctxt "shortcut window"
+#~ msgid "New Entry"
+#~ msgstr "新条目"
 
 #~ msgid "Choose an App"
 #~ msgstr "选择一个应用程序"

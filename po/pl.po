@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-01 17:37-0400\n"
+"POT-Creation-Date: 2025-10-24 23:13-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -160,61 +160,6 @@ msgstr ""
 msgid ""
 "You can override these, but please use caution when doing so, as you may "
 "break some existing app or feature of your desktop."
-msgstr ""
-
-#: src/gtk/help-overlay.blp:11
-msgctxt "shortcut window"
-msgid "Entries List"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:14
-msgctxt "shortcut window"
-msgid "New Entry"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:19
-msgctxt "shortcut window"
-msgid "Search Entries"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:25
-msgctxt "shortcut window"
-msgid "Apps List"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:28
-msgctxt "shortcut window"
-msgid "Search Apps"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:34
-msgctxt "shortcut window"
-msgid "Details Page"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:37
-msgctxt "shortcut window"
-msgid "Save Edits"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:43
-msgctxt "shortcut window"
-msgid "General"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:46
-msgctxt "shortcut window"
-msgid "Open Autostart Folder"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:51
-msgctxt "shortcut window"
-msgid "Show Shortcuts"
-msgstr ""
-
-#: src/gtk/help-overlay.blp:56
-msgctxt "shortcut window"
-msgid "Quit"
 msgstr ""
 
 #: src/main.ts:70
@@ -401,7 +346,7 @@ msgstr ""
 msgid "Trash"
 msgstr ""
 
-#: src/main_view/details_page.ts:264
+#: src/main_view/details_page.ts:264 src/shortcuts-dialog.blp:9
 msgid "New Entry"
 msgstr ""
 
@@ -449,27 +394,27 @@ msgstr ""
 msgid "This should only take a moment."
 msgstr ""
 
-#: src/main_view/entries-page.blp:88
+#: src/main_view/entries-page.blp:91
 msgid "New"
 msgstr ""
 
-#: src/main_view/entries-page.blp:109
+#: src/main_view/entries-page.blp:112
 msgid "No Entries Found"
 msgstr ""
 
-#: src/main_view/entries-page.blp:117
+#: src/main_view/entries-page.blp:122
 msgid "Add an app or script to run it when you log in"
 msgstr ""
 
-#: src/main_view/entries-page.blp:128
+#: src/main_view/entries-page.blp:133
 msgid "_Open Autostart Folder"
 msgstr ""
 
-#: src/main_view/entries-page.blp:140
+#: src/main_view/entries-page.blp:144
 msgid "_Keyboard Shortcuts"
 msgstr ""
 
-#: src/main_view/entries-page.blp:145
+#: src/main_view/entries-page.blp:149
 msgid "_About Ignition"
 msgstr ""
 
@@ -491,6 +436,46 @@ msgstr ""
 
 #: src/main_view/entries_page.ts:180
 msgid "Could not load some entries"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:6
+msgid "Entries List"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:14
+msgid "Search Entries"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:20
+msgid "Apps List"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:23
+msgid "Search Apps"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:29
+msgid "Details Page"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:32
+msgid "Save Edits"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:38
+msgid "General"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:41
+msgid "Open Autostart Folder"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:46
+msgid "Show Shortcuts"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:51
+msgid "Quit"
 msgstr ""
 
 #: src/utils/helper_funcs.ts:39
