@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-24 23:13-0400\n"
-"PO-Revision-Date: 2025-07-04 20:46+0000\n"
+"PO-Revision-Date: 2025-11-06 12:07+0000\n"
 "Last-Translator: Andrii Serbovets <serbovets.translation@gmail.com>\n"
 "Language-Team: Ukrainian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/uk/>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.13\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:2
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14
@@ -426,7 +426,7 @@ msgstr "На це знадобиться трохи часу."
 
 #: src/main_view/entries-page.blp:91
 msgid "New"
-msgstr "Створити"
+msgstr "Новий"
 
 #: src/main_view/entries-page.blp:112
 msgid "No Entries Found"
@@ -470,72 +470,42 @@ msgid "Could not load some entries"
 msgstr "Не вдалося завантажити деякі записи"
 
 #: src/shortcuts-dialog.blp:6
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Entries List"
 msgid "Entries List"
 msgstr "Перелік записів"
 
 #: src/shortcuts-dialog.blp:14
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Search Entries"
 msgid "Search Entries"
 msgstr "Шукати запис"
 
 #: src/shortcuts-dialog.blp:20
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Apps List"
 msgid "Apps List"
 msgstr "Перелік програм"
 
 #: src/shortcuts-dialog.blp:23
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Search Apps"
 msgid "Search Apps"
 msgstr "Шукати програму"
 
 #: src/shortcuts-dialog.blp:29
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Details Page"
 msgid "Details Page"
-msgstr "Сторінка подробиць"
+msgstr "Подробиці запису"
 
 #: src/shortcuts-dialog.blp:32
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Save Edits"
 msgid "Save Edits"
 msgstr "Зберегти зміни"
 
 #: src/shortcuts-dialog.blp:38
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "General"
 msgid "General"
 msgstr "Загальні"
 
 #: src/shortcuts-dialog.blp:41
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Open Autostart Folder"
 msgid "Open Autostart Folder"
 msgstr "Відкрити теку автозапуску"
 
 #: src/shortcuts-dialog.blp:46
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Show Shortcuts"
 msgid "Show Shortcuts"
 msgstr "Показати клавіатурні скорочення"
 
 #: src/shortcuts-dialog.blp:51
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Quit"
 msgid "Quit"
 msgstr "Вийти"
 
