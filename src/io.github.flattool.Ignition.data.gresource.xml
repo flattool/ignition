@@ -2,6 +2,7 @@
 <gresources>
   <gresource prefix="/io/github/flattool/Ignition">
     <file preprocess="xml-stripblanks" alias="appdata">../data/io.github.flattool.Ignition.metainfo.xml</file>
+    <file alias="style.css">../data/style.css</file>
     <file preprocess="xml-stripblanks">first_run_page/first-run-page.ui</file>
     <file preprocess="xml-stripblanks">gtk/entry-group.ui</file>
     <file preprocess="xml-stripblanks">gtk/entry-row.ui</file>

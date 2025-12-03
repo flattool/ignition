@@ -120,8 +120,18 @@ class IgnitionApplication extends Adw.Application {
 	vfunc_activate() {
 		let { active_window } = this;
 
-		if (!active_window)
+		if (!active_window) {
+			// Load the CSS stylesheet
+			const css_provider = new Gtk.CssProvider();
+			css_provider.load_from_resource("/io/github/flattool/Ignition/style.css");
+			Gtk.StyleContext.add_provider_for_display(
+				Gdk.Display.get_default()!,
+				css_provider,
+				Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
+			);
+
 			active_window = new IgnitionWindow({ application: this });
+		}
 
 		active_window.present();
 	}
