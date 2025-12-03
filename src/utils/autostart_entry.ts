@@ -1,3 +1,4 @@
+import { DelayHelper } from "./delay_helper.js";
 import { KeyFileHelper } from "./key_file_helper.js";
 import { path_with_prefix } from "./helper_funcs.js";
 
@@ -49,6 +50,17 @@ export class AutostartEntry {
 
 	get icon(): string {
 		return KeyFileHelper.get_string_safe(this.keyfile, false, "Desktop Entry", "Icon", "");
+	}
+
+	get delay(): number {
+		const raw_exec = this.exec;
+		if (raw_exec.endsWith(".ignition_delay.sh")) {
+			const [delay, , error] = DelayHelper.load_delay(Gio.File.new_for_path(raw_exec));
+			if (!error) {
+				return delay;
+			}
+		}
+		return 0;
 	}
 
 	set path(value: string) {
