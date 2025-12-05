@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-24 23:13-0400\n"
-"PO-Revision-Date: 2025-08-21 11:22+0000\n"
-"Last-Translator: Mücahit Şahin <mucahitsahin786@gmail.com>\n"
+"PO-Revision-Date: 2025-12-05 18:17+0000\n"
+"Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/tr/>\n"
 "Language: tr\n"
@@ -17,17 +17,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:2
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14
 msgid "Ignition"
-msgstr "Ignition: Başlangıç Uygulamaları"
+msgstr "Ignition"
 
 #: data/io.github.flattool.Ignition.desktop.in:3
 #: data/io.github.flattool.Ignition.metainfo.xml.in:15
 msgid "Manage startup apps and scripts"
-msgstr "Başlangıç uygulamalarını ve komut dosyalarını yönetme"
+msgstr "Başlangıç uygulamalarını ve betiklerini yönet"
 
 #: data/io.github.flattool.Ignition.desktop.in:9
 msgid "GTK;startup;autostart;login;"
@@ -476,74 +476,44 @@ msgid "Could not load some entries"
 msgstr "Bazı girişler yüklenemedi"
 
 #: src/shortcuts-dialog.blp:6
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Entries List"
 msgid "Entries List"
-msgstr "Giriş Listesi"
+msgstr "Girişler Listesi"
 
 #: src/shortcuts-dialog.blp:14
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Search Entries"
 msgid "Search Entries"
 msgstr "Girişleri Ara"
 
 #: src/shortcuts-dialog.blp:20
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Apps List"
 msgid "Apps List"
 msgstr "Uygulama Listesi"
 
 #: src/shortcuts-dialog.blp:23
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Search Apps"
 msgid "Search Apps"
 msgstr "Uygulamaları Ara"
 
 #: src/shortcuts-dialog.blp:29
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Details Page"
 msgid "Details Page"
 msgstr "Ayrıntılar Sayfası"
 
 #: src/shortcuts-dialog.blp:32
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Save Edits"
 msgid "Save Edits"
-msgstr "Değişiklikleri Kaydet"
+msgstr "Düzenlemeleri Kaydet"
 
 #: src/shortcuts-dialog.blp:38
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "General"
 msgid "General"
 msgstr "Genel"
 
 #: src/shortcuts-dialog.blp:41
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Open Autostart Folder"
 msgid "Open Autostart Folder"
-msgstr "Otomatik Başlat Klasörünü Aç"
+msgstr "Autostart Klasörünü Aç"
 
 #: src/shortcuts-dialog.blp:46
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Show Shortcuts"
 msgid "Show Shortcuts"
 msgstr "Kısayolları Göster"
 
 #: src/shortcuts-dialog.blp:51
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Quit"
 msgid "Quit"
-msgstr "Çıkış"
+msgstr "Çık"
 
 #: src/utils/helper_funcs.ts:39
 msgid "Copy"
