@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-24 23:13-0400\n"
-"PO-Revision-Date: 2025-12-05 18:17+0000\n"
+"PO-Revision-Date: 2025-12-06 19:03+0000\n"
 "Last-Translator: Sabri Ünal <yakushabb@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/tr/>\n"
@@ -31,7 +31,8 @@ msgstr "Başlangıç uygulamalarını ve betiklerini yönet"
 
 #: data/io.github.flattool.Ignition.desktop.in:9
 msgid "GTK;startup;autostart;login;"
-msgstr "GTK;başlangıç;otomatik başlatma;giriş;"
+msgstr ""
+"GTK;startup;autostart;login;başlangıç;kendiliğinden başlat;oturum aç;giriş;"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
 msgid "Heliguy"
@@ -44,29 +45,28 @@ msgid ""
 "at login."
 msgstr ""
 "Ignition, bilgisayarınızda başlangıç girişlerini eklemek, kaldırmak ve "
-"değiştirmek için basit bir kullanıcı arayüzü sağlar. Ignition, oturum "
-"açıldığında çalıştırılacak uygulamalar, komut dosyaları ve rastgele komutlar "
-"ekleyebilir."
+"değiştirmek için basit arayüz sağlar. Ignition, oturum açıldığında "
+"çalıştırılacak uygulamalar, betikler ve komutlar ekleyebilir."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
-msgstr "Tüm başlangıç öğelerinizi görün."
+msgstr "Tüm başlangıç ögelerini gör."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:39
 msgid "View and edit entry details."
-msgstr "Giriş ayrıntılarını görüntüleyin ve düzenleyin."
+msgstr "Giriş ayrıntılarını görüntüle ve düzenle."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:43
 msgid "Create a new startup entry."
-msgstr "Yeni bir başlangıç girişi oluşturun."
+msgstr "Yeni başlangıç girişi oluştur."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
-msgstr "Tüm başlangıç öğelerinizi karanlık modda görüntüleyin."
+msgstr "Tüm başlangıç ögelerini karanlık kipte görüntüle."
 
 #: src/first_run_page/first-run-page.blp:5
 msgid "Welcome"
-msgstr "Hoş geldiniz"
+msgstr "Hoş Geldiniz"
 
 #: src/first_run_page/first-run-page.blp:13
 msgid "About Ignition"
@@ -74,22 +74,22 @@ msgstr "Ignition Hakkında"
 
 #: src/first_run_page/first-run-page.blp:20
 msgid "Welcome to Ignition!"
-msgstr "Ignition'a hoş geldiniz!"
+msgstr "Ignitionʼa Hoş Geldiniz!"
 
 #: src/first_run_page/first-run-page.blp:21
 msgid ""
 "Ignition lets you start any app or script when you log in to your computer."
 msgstr ""
-"Ignition, bilgisayarınıza giriş yaptığınızda herhangi bir uygulamayı veya "
-"komut dosyasını başlatmanıza olanak tanır."
+"Ignition, bilgisayara giriş yaptığınızda herhangi bir uygulamayı ya da "
+"betiği başlatmanızı sağlar."
 
 #: src/first_run_page/first-run-page.blp:25
 msgid "Get Started"
-msgstr "Başlayın"
+msgstr "Şimdi Başla"
 
 #: src/gtk/entry-row.blp:22 src/main_view/details-page.blp:103
 msgid "More Information"
-msgstr "Daha fazla bilgi"
+msgstr "Daha Çok Bilgi"
 
 #: src/gtk/entry_row.ts:67
 msgid "Disabled"
@@ -101,15 +101,15 @@ msgstr "Geçersiz kılınmış"
 
 #: src/gtk/entry_row.ts:75
 msgid "Enabled"
-msgstr "Aktif"
+msgstr "Etkinleştirildi"
 
 #: src/gtk/entry_row.ts:95
 msgid "This entry is overridden by a user entry."
-msgstr "Bu giriş, bir kullanıcı girişi tarafından geçersiz kılınmıştır."
+msgstr "Bu giriş, kullanıcı girişi tarafından geçersiz kılınmış."
 
 #: src/gtk/entry_row.ts:97
 msgid "This entry overrides a system entry."
-msgstr "Bu giriş, bir sistem girişini geçersiz kılar."
+msgstr "Bu giriş, sistem girişini geçersiz kılar."
 
 #: src/gtk/help-dialog.blp:5
 msgid "Help and Information"
@@ -121,7 +121,7 @@ msgstr "Uygulamayı bulamıyor musunuz?"
 
 #: src/gtk/help-dialog.blp:28
 msgid "Ignition might not be able to see some applications on your system"
-msgstr "Ignition, sisteminizdeki bazı uygulamaları göremeyebilir."
+msgstr "Ignition, sisteminizdeki bazı uygulamaları göremeyebilir"
 
 #: src/gtk/help-dialog.blp:38
 msgid "What is a 'System Entry'?"
@@ -131,11 +131,11 @@ msgstr "“Sistem Girişi” nedir?"
 msgid "Learn more about system startup entries, and how editing them works"
 msgstr ""
 "Sistem başlangıç girdileri ve bunların nasıl düzenlendiği hakkında daha "
-"fazla bilgi edinin."
+"fazla bilgi edinin"
 
 #: src/gtk/help-dialog.blp:53
 msgid "Can't Find an App?"
-msgstr "Uygulamayı bulamıyor musunuz?"
+msgstr "Uygulamayı Bulamıyor musun?"
 
 #: src/gtk/help-dialog.blp:73
 msgid ""
@@ -143,8 +143,8 @@ msgid ""
 "to read. This means that these apps won't show up in the list of apps on "
 "your system, when making a new entry."
 msgstr ""
-"Bazı uygulamalar, Ignition'ın okuyabileceği yerlerin dışında girişlerini "
-"saklar. Bu, yeni bir giriş yaparken bu uygulamaların sisteminizdeki uygulama "
+"Bazı uygulamalar, Ignitionʼın okuyabileceği yerlerin dışında girişlerini "
+"saklar. Bu, yeni giriş oluştururken bu uygulamaların sisteminizdeki uygulama "
 "listesinde görünmeyeceği anlamına gelir."
 
 #: src/gtk/help-dialog.blp:79
@@ -152,8 +152,8 @@ msgid ""
 "To fix this, you can allow Ignition to see more home locations, or more root "
 "locations, in your file system."
 msgstr ""
-"Bu sorunu gidermek için, Ignition'ın dosya sisteminizde daha fazla ana konum "
-"veya kök konum görmesine izin verebilirsiniz."
+"Bu sorunu gidermek için, Ignitionʼın dosya sisteminizde daha çok ev konumu "
+"ya da kök konumu görmesine izin verebilirsiniz."
 
 #: src/gtk/help-dialog.blp:85
 msgid ""
@@ -161,7 +161,7 @@ msgid ""
 "user files\" or \"All system files\" to be able to find these apps."
 msgstr ""
 "Bu izinleri yönetmek için “Flatseal” uygulamasını öneririz. Bu uygulamaları "
-"bulabilmek için “Tüm kullanıcı dosyaları” veya “Tüm sistem dosyaları” "
+"bulabilmek için “Tüm kullanıcı dosyaları” ya da “Tüm sistem dosyaları” "
 "seçeneğini etkinleştirin."
 
 #: src/gtk/help-dialog.blp:94
@@ -174,8 +174,8 @@ msgid ""
 "everybody. These are usually present to allow certain features, programs, or "
 "other important actions run properly."
 msgstr ""
-"Sistem Girişleri, herkesin oturum açtığında çalışan uygulamalar veya "
-"komutlar içindir. Bunlar genellikle belirli özelliklerin, programların veya "
+"Sistem Girişleri, herkesin oturum açtığında çalışan uygulamalar ya da "
+"komutlar içindir. Bunlar genellikle belirli özelliklerin, programların ya da "
 "diğer önemli eylemlerin düzgün çalışmasını sağlamak için bulunur."
 
 #: src/gtk/help-dialog.blp:120
@@ -184,7 +184,7 @@ msgid ""
 "break some existing app or feature of your desktop."
 msgstr ""
 "Bunları geçersiz kılabilirsiniz, ancak bunu yaparken dikkatli olun, çünkü "
-"masaüstünüzdeki mevcut bir uygulamayı veya özelliği bozabilirsiniz."
+"masaüstünüzdeki var olan bir uygulamayı ya da özelliği bozabilirsiniz."
 
 #: src/main.ts:70
 msgid "Translate"
@@ -192,7 +192,7 @@ msgstr "Çevir"
 
 #: src/main.ts:71
 msgid "Donate"
-msgstr "Bağış"
+msgstr "Bağış Yap"
 
 #: src/main.ts:97
 msgid "Opened folder"
@@ -204,7 +204,7 @@ msgstr "Klasör açılamadı"
 
 #: src/main_view/app-list-page.blp:5
 msgid "Add or Create an Entry"
-msgstr "Giriş ekle veya oluştur"
+msgstr "Giriş Ekle ya da Oluştur"
 
 #: src/main_view/app-list-page.blp:12 src/main_view/entries-page.blp:13
 msgid "Search"
@@ -212,33 +212,31 @@ msgstr "Ara"
 
 #: src/main_view/app-list-page.blp:25 src/main_view/entries-page.blp:40
 msgid "Search entries"
-msgstr "Girişleri Ara"
+msgstr "Girişleri ara"
 
 #: src/main_view/app-list-page.blp:47
 msgid "Commands and Scripts"
-msgstr "Komutlar ve Komut Dosyaları"
+msgstr "Komutlar ve Betikler"
 
 #: src/main_view/app-list-page.blp:48
 msgid "Run a command or script when you log in."
-msgstr "Giriş yaptığınızda bir komut veya komut dosyası çalıştırın."
+msgstr "Giriş yaptığınızda bir komut ya da betik çalıştırın."
 
 #: src/main_view/app-list-page.blp:54
 msgid "Add a Command or Script"
-msgstr "Komut veya Komut Dosyası Ekle"
+msgstr "Komut ya da Betik Ekle"
 
 #: src/main_view/app-list-page.blp:55
 msgid "Enter the command to run or path to your script"
-msgstr "Çalıştırmak istediğiniz komutu veya komut dosyasının yolunu girin"
+msgstr "Çalıştırmak istediğiniz komutu ya da betiğin yolunu girin"
 
 #: src/main_view/app-list-page.blp:78
 msgid "Installed Apps"
-msgstr "Yüklü Uygulamalar"
+msgstr "Kurulu Uygulamalar"
 
 #: src/main_view/app-list-page.blp:79
 msgid "Choose any installed app to run when you log in."
-msgstr ""
-"Giriş yaptığınızda çalıştırmak için yüklü uygulamalardan herhangi birini "
-"seçin."
+msgstr "Giriş yaptığınızda çalıştırmak için kurulu uygulamalardan birini seçin."
 
 #: src/main_view/app-list-page.blp:83
 msgid "Show Hidden Apps"
@@ -250,11 +248,11 @@ msgstr "Uygulama menüsünden gizlenmiş uygulamaları göster"
 
 #: src/main_view/app-list-page.blp:101 src/main_view/entries-page.blp:57
 msgid "No Results Found"
-msgstr "Sonuç bulunamadı"
+msgstr "Hiçbir Sonuç Bulunamadı"
 
 #: src/main_view/app-list-page.blp:102 src/main_view/entries-page.blp:58
 msgid "Try a different search."
-msgstr "Farklı bir arama yapmayı deneyin."
+msgstr "Başka arama deneyin."
 
 #: src/main_view/app_list_page.ts:138
 msgid "Could not load some apps"
@@ -286,11 +284,11 @@ msgstr "Geçersiz kıl"
 
 #: src/main_view/details-page.blp:74
 msgid "Edit details about this entry."
-msgstr "Bu girişle ilgili ayrıntıları düzenleyin."
+msgstr "Bu girişle ilgili ayrıntıları düzenle."
 
 #: src/main_view/details-page.blp:80
 msgid "Enable"
-msgstr "Aktif"
+msgstr "Etkin"
 
 #: src/main_view/details-page.blp:81
 msgid "Enable this entry to be started when you log in."
@@ -298,7 +296,7 @@ msgstr "Bu girişi, oturum açtığınızda başlatılmasını etkinleştirin."
 
 #: src/main_view/details-page.blp:87
 msgid "Name"
-msgstr "Adı"
+msgstr "Ad"
 
 #: src/main_view/details-page.blp:92
 msgid "Comment"
@@ -306,34 +304,34 @@ msgstr "Yorum"
 
 #: src/main_view/details-page.blp:97
 msgid "Command or Script"
-msgstr "Komut veya Komut Dosyası"
+msgstr "Komut ya da Betik"
 
 #: src/main_view/details-page.blp:112
 msgid "Show Terminal"
-msgstr "Terminal Göster"
+msgstr "Uçbirimi Göster"
 
 #: src/main_view/details-page.blp:113
 msgid "Show a terminal for this process to run in."
-msgstr "Bu işlemin çalışacağı bir terminal göster."
+msgstr "Bu işlemin çalışacağı uçbirim göster."
 
 #: src/main_view/details-page.blp:119
 msgid "Seconds of Delay"
-msgstr "Gecikme Süresi"
+msgstr "Saniye Türünde Gecikme"
 
 #: src/main_view/details-page.blp:120
 msgid "Amount of seconds to wait after logging in to run the command or script"
 msgstr ""
-"Komut veya komut dosyasını çalıştırmak için oturum açtıktan sonra beklemek "
-"gereken saniye sayısı"
+"Komut ya da betiği çalıştırmak için oturum açtıktan sonra beklemek gereken "
+"saniye"
 
 #: src/main_view/details-page.blp:139
 msgid ""
 "To run a script at login, paste its file path here. You can copy the "
 "script's path from your file manager. Make sure your script is executable."
 msgstr ""
-"Giriş sırasında bir komut dosyasını çalıştırmak için, dosya yolunu buraya "
-"yapıştırın. Komut dosyasının yolunu dosya yöneticinizden "
-"kopyalayabilirsiniz. Komut dosyanızın çalıştırılabilir olduğundan emin olun."
+"Giriş sırasında betik çalıştırmak için, dosya yolunu buraya yapıştırın. "
+"Betiğin yolunu dosya yöneticinizden kopyalayabilirsiniz. Betiğin "
+"çalıştırılabilir olduğundan emin olun."
 
 #: src/main_view/details-page.blp:151
 msgid "Create and Replace?"
@@ -356,7 +354,7 @@ msgstr "Oluştur ve Değiştir"
 
 #: src/main_view/details-page.blp:160
 msgid "Override Entry?"
-msgstr "Girişi geçersiz kılmak ister misiniz?"
+msgstr "Giriş Geçersiz Kılınsın Mı?"
 
 #: src/main_view/details-page.blp:161
 msgid ""
@@ -364,23 +362,22 @@ msgid ""
 "make a copy of the entry for you to edit."
 msgstr ""
 "Dikkatli olun, sistem girişlerini geçersiz kılmak sistemin bozulmasına neden "
-"olabilir. Bu, düzenlemeniz için girişin bir kopyasını oluşturacaktır."
+"olabilir. Bu, düzenlemeniz için girişin bir kopyasını oluşturur."
 
 #: src/main_view/details-page.blp:169
 msgid "Trash Entry?"
-msgstr "Girdiyi silmek ister misiniz?"
+msgstr "Giriş Çöpe Atılsın Mı?"
 
 #: src/main_view/details-page.blp:170
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
 msgstr ""
-"Bu giriş çöp kutusuna taşınacak ve oturum açtığınızda artık "
-"başlatılmayacaktır."
+"Bu giriş çöp kutusuna taşınacak ve oturum açtığınızda artık başlatılmayacak."
 
 #: src/main_view/details-page.blp:173
 msgid "Trash"
-msgstr "Sil"
+msgstr "Çöpe Taşı"
 
 #: src/main_view/details_page.ts:264 src/shortcuts-dialog.blp:9
 msgid "New Entry"
@@ -404,15 +401,15 @@ msgstr "Dosya oluşturulamadı"
 
 #: src/main_view/details_page.ts:394
 msgid "Overrode entry"
-msgstr "Giriş geçersiz kılınmıştır"
+msgstr "Giriş geçersiz kılındı"
 
 #: src/main_view/details_page.ts:435
 msgid "Trashed entry"
-msgstr "Silinen giriş"
+msgstr "Giriş çöpe aşındı"
 
 #: src/main_view/details_page.ts:437
 msgid "Could not trash file"
-msgstr "Dosya silinemedi"
+msgstr "Dosya çöpe taşınamadı"
 
 #: src/main_view/entries-page.blp:20
 msgid "Main Menu"
@@ -436,16 +433,15 @@ msgstr "Yeni"
 
 #: src/main_view/entries-page.blp:112
 msgid "No Entries Found"
-msgstr "Hiçbir giriş bulunamadı"
+msgstr "Hiçbir Giriş Bulunamadı"
 
 #: src/main_view/entries-page.blp:122
 msgid "Add an app or script to run it when you log in"
-msgstr ""
-"Giriş yaptığınızda çalıştırmak için bir uygulama veya komut dosyası ekleyin"
+msgstr "Giriş yaptığınızda çalıştırmak için uygulama ya da betik ekleyin"
 
 #: src/main_view/entries-page.blp:133
 msgid "_Open Autostart Folder"
-msgstr "_Otomatik Başlat Klasörünü Aç"
+msgstr "Autostart Klasörünü _Aç"
 
 #: src/main_view/entries-page.blp:144
 msgid "_Keyboard Shortcuts"
@@ -453,7 +449,7 @@ msgstr "_Klavye Kısayolları"
 
 #: src/main_view/entries-page.blp:149
 msgid "_About Ignition"
-msgstr "_Ignition Hakkında"
+msgstr "Ignition _Hakkında"
 
 #: src/main_view/entries_page.ts:85
 msgid "User Startup Entries"
@@ -469,7 +465,7 @@ msgstr "Sistem Başlangıç Girişleri"
 
 #: src/main_view/entries_page.ts:111
 msgid "Entries that run for everyone."
-msgstr "Herkes için geçerli olan girişler."
+msgstr "Herkes için çalışan girişler."
 
 #: src/main_view/entries_page.ts:180
 msgid "Could not load some entries"
@@ -530,11 +526,11 @@ msgstr "Ayrıntılar"
 #. These need to be getters for the _() translation function to work
 #: src/utils/shared_vars.ts:17
 msgid "No Name Set"
-msgstr "İsim Belirlenmemiş"
+msgstr "Ad Belirlenmemiş"
 
 #: src/utils/shared_vars.ts:18
 msgid "No comment set."
-msgstr "Yorum yok."
+msgstr "Yorum belirlenmemiş."
 
 #: src/window/window.ts:73
 msgid "Failed to start properly"
