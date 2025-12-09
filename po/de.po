@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-24 23:13-0400\n"
-"PO-Revision-Date: 2025-06-13 14:46+0000\n"
-"Last-Translator: KaeTuuN <KaeTuuN@mailbox.org>\n"
+"PO-Revision-Date: 2025-11-22 18:02+0000\n"
+"Last-Translator: Ryke <jonashoell@outlook.de>\n"
 "Language-Team: German <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/de/>\n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.13\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:2
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14
@@ -498,37 +498,22 @@ msgid "Apps List"
 msgstr "Appliste"
 
 #: src/shortcuts-dialog.blp:23
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Search Apps"
 msgid "Search Apps"
 msgstr "Anwendungen suchen"
 
 #: src/shortcuts-dialog.blp:29
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Details Page"
 msgid "Details Page"
 msgstr "Detailseite"
 
 #: src/shortcuts-dialog.blp:32
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Save Edits"
 msgid "Save Edits"
 msgstr "Änderungen speichern"
 
 #: src/shortcuts-dialog.blp:38
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "General"
 msgid "General"
 msgstr "Allgemein"
 
 #: src/shortcuts-dialog.blp:41
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Open Autostart Folder"
 msgid "Open Autostart Folder"
 msgstr "Autostart-Ordner öffnen"
 
@@ -540,11 +525,8 @@ msgid "Show Shortcuts"
 msgstr "Tastenkürzel anzeigen"
 
 #: src/shortcuts-dialog.blp:51
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Quit"
 msgid "Quit"
-msgstr "Beenden"
+msgstr "Schließen"
 
 #: src/utils/helper_funcs.ts:39
 msgid "Copy"
