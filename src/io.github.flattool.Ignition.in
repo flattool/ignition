@@ -4,16 +4,20 @@ import { exit, programArgs, programInvocationName } from "system";
 
 imports.package.init({
   name: "@PACKAGE_NAME@",
-  version: "@PACKAGE_VERSION@",
+  version: "@VERSION@",
   prefix: "@prefix@",
   libdir: "@libdir@",
   datadir: "@datadir@",
 });
 
+pkg.profile = "@PROFILE@";
+pkg.app_id = "@APP_ID@";
+pkg.package_version = "@PACKAGE_VERSION@";
+
 // Initialize translations and formatting
 pkg.initGettext();
 pkg.initFormat();
 
-const { main } = await import("resource://@resource_path@/js/main.js");
+const { main } = await import("./src/main.js");
 const exit_code = await main([programInvocationName, ...programArgs]);
 exit(exit_code);

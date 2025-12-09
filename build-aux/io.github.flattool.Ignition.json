@@ -36,6 +36,18 @@
 	],
 	"modules": [
 		{
+			"name": "jasmine-gjs",
+			"buildsystem": "meson",
+			"sources": [
+				{
+					"type": "git",
+					"url": "https://github.com/ptomato/jasmine-gjs.git",
+					"branch": "master"
+				}
+			],
+			"cleanup": ["*"]
+		},
+		{
 			"name": "ignition",
 			"builddir": true,
 			"buildsystem": "meson",

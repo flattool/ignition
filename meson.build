@@ -1,7 +1,7 @@
 project('ignition',
-          version: '2.2.0',
-    meson_version: '>= 1.0.0',
-  default_options: [ 'warning_level=2', 'werror=false', ],
+	version: '2.2.0',
+	meson_version: '>= 1.0.0',
+	default_options: [ 'warning_level=2', 'werror=false', ],
 )
 
 i18n = import('i18n')
@@ -14,9 +14,12 @@ tsc = find_program('tsc', required: true)
 subdir('data')
 subdir('src')
 subdir('po')
-
+if get_option('tests')
+	jasmine = find_program('jasmine')
+	subdir('tests')
+endif
 gnome.post_install(
-     glib_compile_schemas: true,
-    gtk_update_icon_cache: true,
-  update_desktop_database: true,
+	glib_compile_schemas: true,
+	gtk_update_icon_cache: true,
+	update_desktop_database: true,
 )
