@@ -7,3 +7,8 @@ option(
 	],
 	value: 'default'
 )
+option('tests',
+	type: 'boolean',
+	value: true,
+	description: 'Enable tests'
+)
