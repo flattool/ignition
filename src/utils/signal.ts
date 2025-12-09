@@ -5,11 +5,11 @@ export class Signal<Args extends any[] = []> {
 		this.connections.forEach((func) => func(...args))
 	}
 
-	connect(func: (...args: Args)=> void): void {
+	connect(func: (...args: Args) => void): void {
 		this.connections.push(func)
 	}
 
-	disconnect(func: (...args: Args)=> void): void {
+	disconnect(func: (...args: Args) => void): void {
 		const index = this.connections.indexOf(func)
 		if (index !== -1) {
 			this.connections.splice(index, 1)

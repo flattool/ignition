@@ -60,8 +60,8 @@ export const add_error_toast = (title: string, message: string, window = SharedV
 export const entry_iteration = (
 	dir: Gio.File,
 	enumerator: Gio.FileEnumerator,
-	on_found: (arg0: AutostartEntry)=> void,
-	on_error = (_err: unknown, _path: string) => { },
+	on_found: (arg0: AutostartEntry) => void,
+	on_error = (_err: unknown, _path: string): void => { },
 ): AsyncResult => {
 	const file = enumerator.next_file(null)
 	if (file === null) {
@@ -87,9 +87,9 @@ export const entry_iteration = (
 // Run me as async!
 export const host_app_iteration = (
 	dir: Gio.File,
-	on_found: (arg0: AutostartEntry)=> void,
+	on_found: (arg0: AutostartEntry) => void,
 	on_error = (_err: unknown, _path: string): void => { },
-): (()=> AsyncResult) => {
+): (() => AsyncResult) => {
 	let enumerator: Gio.FileEnumerator | null = null
 	const dir_path = dir.get_path()
 	return () => {

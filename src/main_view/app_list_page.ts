@@ -109,7 +109,7 @@ export class AppListPage extends Adw.NavigationPage {
 		this._stack.visible_child = any_visible ? this._scrolled_window : this._no_results_status
 	}
 
-	load_app_iterations_builder(): (()=> AsyncResult)[] {
+	load_app_iterations_builder(): (() => AsyncResult)[] {
 		const fails: string[] = []
 		const tasks = (SharedVars.host_app_entry_dirs
 		.filter((file) => file.query_exists(null))

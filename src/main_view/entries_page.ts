@@ -148,7 +148,7 @@ export class EntriesPage extends Adw.NavigationPage {
 		this.show_entries_if_any()
 	}
 
-	load_entries(): (()=> AsyncResult)[] {
+	load_entries(): (() => AsyncResult)[] {
 		const root_map = new Map<string, AutostartEntry>() // File name -> entry object
 		const home_entries: AutostartEntry[] = []
 		const fails: string[] = []
@@ -157,7 +157,7 @@ export class EntriesPage extends Adw.NavigationPage {
 			Gio.FileQueryInfoFlags.NOFOLLOW_SYMLINKS,
 			null,
 		)
-		const to_return: (()=> AsyncResult)[] = [
+		const to_return: (() => AsyncResult)[] = [
 			(): AsyncResult => entry_iteration(
 				SharedVars.home_autostart_dir,
 				home_enumerator,

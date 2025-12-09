@@ -88,7 +88,14 @@ const sharedJsTsRules = {
 	"@stylistic/switch-colon-spacing": "error",
 	"@stylistic/template-curly-spacing": ["error", "never"],
 	"@stylistic/template-tag-spacing": "error",
-	"@stylistic/type-annotation-spacing": ["error", { before: false, after: true }],
+	"@stylistic/type-annotation-spacing": [
+		"error",
+		{
+			before: false,
+			after: true,
+			overrides: { arrow: { before: true, after: true } },
+		},
+	],
 	"@stylistic/type-generic-spacing": "error",
 	"@stylistic/type-named-tuple-spacing": "error",
 
@@ -116,13 +123,12 @@ export default defineConfig([
 			"**/.*",
 			"**/*.d.ts",
 			"**/__pycache__",
+			"**/gobjectify",
 			"_build",
-			".flatpak-builder",
 			"node_modules",
 			"package.json",
 			"package-lock.json",
 			"gi-types",
-			"src/gobjectify/**",
 		],
 	},
 	{
@@ -170,6 +176,16 @@ export default defineConfig([
 			"jsonc/no-irregular-whitespace": "error",
 			"jsonc/object-curly-newline": ["error", "always"],
 			"jsonc/object-property-newline": "error",
+		},
+	},
+	{
+		// Allow comments in TSConfig
+		files: ["**tsconfig.json"],
+		languageOptions: {
+			parser: eslintPluginJsonc,
+		},
+		rules: {
+			"jsonc/no-comments": ["off"],
 		},
 	},
 ])

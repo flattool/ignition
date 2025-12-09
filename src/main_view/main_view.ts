@@ -81,11 +81,11 @@ export class MainView extends Adw.Bin {
 		this.#push_page(this._app_list_page)
 	}
 
-	load_host_apps(): (()=> AsyncResult)[] {
+	load_host_apps(): (() => AsyncResult)[] {
 		return this._app_list_page.load_app_iterations_builder()
 	}
 
-	load_entries(): (()=> AsyncResult)[] {
+	load_entries(): (() => AsyncResult)[] {
 		return this._entries_page.load_entries()
 	}
 }
