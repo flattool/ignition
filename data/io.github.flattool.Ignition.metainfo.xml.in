@@ -49,6 +49,16 @@
 	</screenshots>
 
 	<releases>
+		<release version="2.2.0" date="2025-12-8">
+			<description translate="no">
+				<p>Bug Fixes and Changes</p>
+				<ul>
+					<li>Updated to GNOME 49 technologies</li>
+					<li>Fixed issue where entries with periods in their names could not be saved</li>
+					<li>Updated translations</li>
+				</ul>
+			</description>
+		</release>
 		<release version="2.1.2" date="2025-7-1">
 			<description translate="no">
 				<p>Bug Fixes and Changes</p>
