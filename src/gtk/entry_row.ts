@@ -75,7 +75,7 @@ export class EntryRow extends Adw.ActionRow {
 			const delay = this.entry.delay;
 			if (delay > 0) {
 				// Translators: %d is the number of seconds of delay before the app starts
-				this._suffix_label.label = _("Enabled after %d s").replace("%d", delay.toString());
+				this._suffix_label.label = _("Starts after %d seconds").format(delay);
 			} else {
 				this._suffix_label.label = _("Enabled");
 			}
