@@ -53,8 +53,11 @@ Make sure `flatpak` and `git` are installed, then run the following to build fro
 git clone https://github.com/flattool/ignition
 cd ignition
 
+# Initialize submodules
+git submodule update --init --recursive
+
 # Install build dependencies
-flatpak install org.flatpak.Builder org.gnome.Sdk//48 org.gnome.Platform//49 runtime/org.freedesktop.Sdk.Extension.node22//25.08 -y
+flatpak install org.flatpak.Builder org.gnome.Sdk//49 org.gnome.Platform//49 runtime/org.freedesktop.Sdk.Extension.node22//25.08 -y
 
 # Build, install, and run Ignition
 ./run.sh
