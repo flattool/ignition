@@ -72,7 +72,13 @@ export class EntryRow extends Adw.ActionRow {
 			this.make_row_dim(true);
 			this.sort_priority = 0; // sort last
 		} else {
-			this._suffix_label.label = _("Enabled");
+			const delay = this.entry.delay;
+			if (delay > 0) {
+				// Translators: %d is the number of seconds of delay before the app starts
+				this._suffix_label.label = _("Enabled after %d s").replace("%d", delay.toString());
+			} else {
+				this._suffix_label.label = _("Enabled");
+			}
 			this.make_row_dim(false);
 			this.sort_priority = 2; // sort first
 		}
