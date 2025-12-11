@@ -90,23 +90,23 @@ msgstr "Empezar"
 msgid "More Information"
 msgstr "Más información"
 
-#: src/gtk/entry_row.ts:67
+#: src/gtk/entry_row.ts_old:67
 msgid "Disabled"
 msgstr "Desactivado"
 
-#: src/gtk/entry_row.ts:71
+#: src/gtk/entry_row.ts_old:71
 msgid "Overridden"
 msgstr "Anulado"
 
-#: src/gtk/entry_row.ts:75
+#: src/gtk/entry_row.ts_old:75
 msgid "Enabled"
 msgstr "Activado"
 
-#: src/gtk/entry_row.ts:95
+#: src/gtk/entry_row.ts_old:95
 msgid "This entry is overridden by a user entry."
 msgstr "Esta entrada ha sido anulada por una entrada de usuario."
 
-#: src/gtk/entry_row.ts:97
+#: src/gtk/entry_row.ts_old:97
 msgid "This entry overrides a system entry."
 msgstr "Esta entrada anula una entrada del sistema."
 

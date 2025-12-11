@@ -3,7 +3,7 @@ data/io.github.flattool.Ignition.gschema.xml
 data/io.github.flattool.Ignition.metainfo.xml.in
 src/first_run_page/first-run-page.blp
 src/gtk/entry-row.blp
-src/gtk/entry_row.ts
+src/gtk/entry_row.ts_old
 src/gtk/help-dialog.blp
 src/main.ts
 src/main_view/app-list-page.blp

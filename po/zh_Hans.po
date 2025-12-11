@@ -89,23 +89,23 @@ msgstr "开始使用"
 msgid "More Information"
 msgstr "更多信息"
 
-#: src/gtk/entry_row.ts:67
+#: src/gtk/entry_row.ts_old:67
 msgid "Disabled"
 msgstr "已禁用"
 
-#: src/gtk/entry_row.ts:71
+#: src/gtk/entry_row.ts_old:71
 msgid "Overridden"
 msgstr ""
 
-#: src/gtk/entry_row.ts:75
+#: src/gtk/entry_row.ts_old:75
 msgid "Enabled"
 msgstr "已启用"
 
-#: src/gtk/entry_row.ts:95
+#: src/gtk/entry_row.ts_old:95
 msgid "This entry is overridden by a user entry."
 msgstr ""
 
-#: src/gtk/entry_row.ts:97
+#: src/gtk/entry_row.ts_old:97
 msgid "This entry overrides a system entry."
 msgstr ""
 
