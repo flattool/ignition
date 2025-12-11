@@ -91,23 +91,23 @@ msgstr "Zaczynamy"
 msgid "More Information"
 msgstr "Więcej Informacji"
 
-#: src/gtk/entry_row.ts_old:67
+#: src/gtk/entry_row.ts:67
 msgid "Disabled"
 msgstr "Wyłączony"
 
-#: src/gtk/entry_row.ts_old:71
+#: src/gtk/entry_row.ts:71
 msgid "Overridden"
 msgstr "Nadpisany"
 
-#: src/gtk/entry_row.ts_old:75
+#: src/gtk/entry_row.ts:75
 msgid "Enabled"
 msgstr "Włączony"
 
-#: src/gtk/entry_row.ts_old:95
+#: src/gtk/entry_row.ts:95
 msgid "This entry is overridden by a user entry."
 msgstr "Ten wpis zostanie zastąpiony wpisem użytkownika."
 
-#: src/gtk/entry_row.ts_old:97
+#: src/gtk/entry_row.ts:97
 msgid "This entry overrides a system entry."
 msgstr "Ten wpis zastępuje wpis systemowy."
 

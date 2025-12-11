@@ -91,23 +91,23 @@ msgstr "Commencer"
 msgid "More Information"
 msgstr "Plus d’informations"
 
-#: src/gtk/entry_row.ts_old:67
+#: src/gtk/entry_row.ts:67
 msgid "Disabled"
 msgstr "Désactivé"
 
-#: src/gtk/entry_row.ts_old:71
+#: src/gtk/entry_row.ts:71
 msgid "Overridden"
 msgstr "Contournée"
 
-#: src/gtk/entry_row.ts_old:75
+#: src/gtk/entry_row.ts:75
 msgid "Enabled"
 msgstr "Activé"
 
-#: src/gtk/entry_row.ts_old:95
+#: src/gtk/entry_row.ts:95
 msgid "This entry is overridden by a user entry."
 msgstr "Cette entrée est contournée, une entrée utilisateur prend sa place."
 
-#: src/gtk/entry_row.ts_old:97
+#: src/gtk/entry_row.ts:97
 msgid "This entry overrides a system entry."
 msgstr "Cette entrée est utilisée pour contourner une entrée système."
 
