@@ -7,6 +7,7 @@ import { GClass, Property, Child, from } from "../gobjectify/gobjectify.js"
 import { FileList } from "../utils/file_list.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
 import { SharedVars } from "../utils/shared_vars.js"
+import { EntryRow } from "../widgets/entry_row.js"
 
 import "../widgets/loading_group.js"
 import "../widgets/search_group.js"
@@ -32,8 +33,8 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 		this._only_entries_filter.set_filter_func((item: GObject.Object) => item instanceof AutostartEntry)
 		this._home_map_model.set_map_func(this.#entry_map_func.bind(this))
 		this._root_map_model.set_map_func(this.#entry_map_func.bind(this))
-		this._home_group.bind_model(this._home_entries, (item) => this.#row_creation_func(item as AutostartEntry))
-		this._root_group.bind_model(this._root_entries, (item) => this.#row_creation_func(item as AutostartEntry))
+		this._home_group.bind_model(this._home_entries, (item) => new EntryRow({ entry: item as AutostartEntry }))
+		this._root_group.bind_model(this._root_entries, (item) => new EntryRow({ entry: item as AutostartEntry }))
 		this.home_dir = SharedVars.home_autostart_dir
 		this.root_dir = SharedVars.root_autostart_dir
 	}
@@ -43,13 +44,6 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 		const path: string = item.get_path() ?? ""
 		if (AutostartEntry.verify_file(path) === "") return new AutostartEntry({ path })
 		return item
-	}
-
-	#row_creation_func(entry: AutostartEntry): Adw.ActionRow {
-		return new Adw.ActionRow({
-			title: entry.name.markup_escape_text(),
-			subtitle: entry.comment.markup_escape_text(),
-		})
 	}
 
 	protected _on_search_change(entry: Gtk.SearchEntry): void {

@@ -7,6 +7,7 @@
 		<file preprocess="xml-stripblanks">widgets/loading_group.ui</file>
 		<file preprocess="xml-stripblanks">widgets/search_button.ui</file>
 		<file preprocess="xml-stripblanks">widgets/search_group.ui</file>
+		<file preprocess="xml-stripblanks">widgets/entry_row.ui</file>
 		<file preprocess="xml-stripblanks">shortcuts-dialog.ui</file>
 	</gresource>
 	<gresource prefix="/io/github/flattool/Ignition/icons/scalable/actions/">

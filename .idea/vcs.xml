@@ -3,6 +3,5 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/gi-types" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/gobjectify" vcs="Git" />
   </component>
 </project>
