@@ -15,6 +15,7 @@ import "../widgets/search_button.js"
 @GClass({ template: "resource:///io/github/flattool/Ignition/pages/entries_page.ui" })
 export class EntriesPage extends from(Adw.NavigationPage, {
 	is_loading: Property.bool({ default: true }),
+	no_results: Property.bool(),
 	home_dir: Property.gobject(Gio.File),
 	root_dir: Property.gobject(Gio.File),
 	_home_entries: Child(Gio.ListModel),
@@ -51,8 +52,30 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 		})
 	}
 
-	protected _on_search_change(...args: any[]): void {
-		print("Search Changed:", args)
+	protected _on_search_change(entry: Gtk.SearchEntry): void {
+		const search_text: string = entry.text.toLocaleLowerCase()
+		const loop = (group: Adw.PreferencesGroup): number => {
+			let total = 0
+			for (let i = 0; ; i += 1) {
+				const row = group.get_row(i)
+				if (row === null) break
+				if (!(row instanceof Adw.ActionRow)) continue
+				const title = row.title.toLocaleLowerCase()
+				const subtitle = row.subtitle.toLocaleLowerCase()
+				if (title.includes(search_text) || subtitle.includes(search_text)) {
+					total += 1
+					row.visible = true
+				} else {
+					row.visible = false
+				}
+			}
+			return total
+		}
+		const total_home: number = loop(this._home_group)
+		const total_root: number = loop(this._root_group)
+		this._home_group.visible = total_home > 0
+		this._root_group.visible = total_root > 0
+		this.no_results = !(this._home_group.visible || this._root_group.visible)
 	}
 
 	protected _list_started_loading(list: FileList): void {

@@ -71,6 +71,8 @@ template $EntriesPage: Adw.NavigationPage {
 			}
 
 			content: $SearchGroup {
+				no_results: bind template.no_results;
+
 				content: Adw.PreferencesPage {
 					Adw.PreferencesGroup home_group {
 						title: _("User Startup Entries");
