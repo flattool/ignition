@@ -9,6 +9,6 @@ export class EntryRow extends from(Adw.ActionRow, {
 }) {
 	_ready(): void {
 		this.title = this.entry?.name.markup_escape_text() ?? ""
-		this.subtitle = this.entry?.comment.markup_escape_text() ?? "a"
+		this.subtitle = this.entry?.comment.markup_escape_text() ?? ""
 	}
 }
