@@ -15,8 +15,7 @@ export namespace AutostartEntry {
 	export type OverrideState = "NONE" | "OVERRIDES" | "OVERRIDDEN"
 }
 
-@GClass()
-export class AutostartEntry extends from(GObject.Object, {
+const base = from(GObject.Object, {
 	enabled: Property.bool(),
 	name: Property.string(),
 	comment: Property.string(),
@@ -24,8 +23,11 @@ export class AutostartEntry extends from(GObject.Object, {
 	terminal: Property.bool(),
 	icon: Property.string(),
 	delay: Property.double(),
-	path: Property.string({ flags: "CONSTRUCT_ONLY" }),
-}) {
+	path: Property.string(/* { flags: "CONSTRUCT_ONLY" } */),
+})
+
+@GClass()
+export class AutostartEntry extends base {
 	static verify_file(path: string): "is_dir" | "not_exist" | "symlink" | "not_desktop_entry" | "" {
 		if (!path.endsWith(".desktop")) return "not_desktop_entry"
 		const file = Gio.File.new_for_path(path)
@@ -91,10 +93,12 @@ export class AutostartEntry extends from(GObject.Object, {
 
 	readonly #file = Gio.File.new_for_path(this.path)
 	readonly #keyfile = new GLib.KeyFile()
+	readonly #locale: string | null = null
 	#delay_cache: number | null = null
-	#locale: string | null = null
 
-	_ready(): void {
+	constructor(...params: ConstructorParameters<typeof base>) {
+		super(...params)
+		this.#keyfile.load_from_file(this.path, GLib.KeyFileFlags.KEEP_TRANSLATIONS)
 		try {
 			this.#locale = this.#keyfile.get_locale_for_key(GROUP_NAME, "Name", null)
 		} catch {

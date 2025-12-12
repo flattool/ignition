@@ -1,0 +1,106 @@
+using Gtk 4.0;
+using Adw 1;
+
+CustomFilter only_entries_filter {}
+
+SortListModel home_entries {
+	model: FilterListModel {
+		filter: only_entries_filter;
+
+		model: MapListModel home_map_model {
+			model: $FileList {
+				change-started => $_list_started_loading();
+				items-changed => $_list_changed();
+				directory: bind template.home_dir;
+			};
+		};
+	};
+}
+
+SortListModel root_entries {
+	model: FilterListModel {
+		filter: only_entries_filter;
+
+		model: MapListModel root_map_model {
+			model: $FileList {
+				change-started => $_list_started_loading();
+				items-changed => $_list_changed();
+				directory: bind template.root_dir;
+			};
+		};
+	};
+}
+
+template $EntriesPage: Adw.NavigationPage {
+	title: "Ignition";
+
+	child: $LoadingGroup {
+		is_loading: bind template.is_loading;
+		title: _("Loading Entries");
+		description: _("This should only take a moment.");
+
+		content: Adw.ToolbarView {
+			[top]
+			Adw.HeaderBar {
+				[start]
+				$SearchButton search_button {
+					search_bar: search_bar;
+				}
+
+				[end]
+				MenuButton {
+					primary: true;
+					icon-name: "open-menu-symbolic";
+					tooltip-text: _("Main Menu");
+					menu-model: primary_menu;
+				}
+			}
+
+			[top]
+			Adw.Clamp {
+				child: SearchBar search_bar {
+					key-capture-widget: template;
+					search-mode-enabled: bind search_button.active bidirectional;
+
+					child: SearchEntry {
+						search-changed => $_on_search_change();
+						hexpand: true;
+						placeholder-text: _("Search entries");
+					};
+				};
+			}
+
+			content: $SearchGroup {
+				content: Adw.PreferencesPage {
+					Adw.PreferencesGroup home_group {
+						title: _("User Startup Entries");
+						description: _("Entries that run only for you.");
+
+						Adw.ActionRow {
+							title: "Example Row";
+						}
+					}
+
+					Adw.PreferencesGroup root_group {
+						title: _("System Startup Entries");
+						description: _("Entries that run for everyone.");
+
+						Adw.ActionRow {
+							title: "Example Row";
+						}
+					}
+				};
+			};
+		};
+	};
+}
+
+menu primary_menu {
+	section {
+		item (_("_Open Autostart Folder"), "app.open_folder")
+	}
+	section {
+		item (_("_Keyboard Shortcuts"), "app.shortcuts")
+		item (_("_About Descriptive"), "app.about")
+	}
+}

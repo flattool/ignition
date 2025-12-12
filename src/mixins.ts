@@ -1,5 +1,15 @@
 import GLib from "gi://GLib?version=2.0"
 
+declare global {
+	interface String {
+		markup_escape_text(this: string): string
+	}
+}
+
+String.prototype.markup_escape_text = function (): string {
+	return GLib.markup_escape_text(this, -1)
+}
+
 declare module "gi://GLib?version=2.0" {
 	export namespace GLib {
 		export interface KeyFile {
@@ -13,7 +23,7 @@ declare module "gi://GLib?version=2.0" {
 
 GLib.KeyFile.prototype.get_string_safe = function (group_name, key, fallback = ""): string {
 	try {
-		return this.get_string(group_name, key)
+		return this.get_string(group_name, key) || fallback
 	} catch {
 		return fallback
 	}
@@ -26,7 +36,7 @@ GLib.KeyFile.prototype.get_locale_string_safe = function (
 	fallback = "",
 ): string {
 	try {
-		return this.get_locale_string(group_name, key, locale)
+		return this.get_locale_string(group_name, key, locale) || fallback
 	} catch {
 		return fallback
 	}

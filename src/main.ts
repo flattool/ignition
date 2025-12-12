@@ -3,11 +3,13 @@ import Gio from "gi://Gio?version=2.0"
 import Gtk from "gi://Gtk?version=4.0"
 import Adw from "gi://Adw?version=1"
 
-import { MainWindow } from "./main_window/main_window.js"
+import { MainWindow } from "./window/main_window.js"
 import { SharedVars } from "./utils/shared_vars.js"
 import { dedent, from, GClass, OnSimpleAction, SimpleAction } from "./gobjectify/gobjectify.js"
 
 Gio._promisify(Gtk.FileLauncher.prototype, "launch", "launch_finish")
+
+import "./mixins.js"
 
 @GClass()
 export class IgnitionApplication extends from(Adw.Application, {
@@ -16,7 +18,7 @@ export class IgnitionApplication extends from(Adw.Application, {
 	new_entry: SimpleAction({ accels: ["<primary>n"] }),
 	open_folder: SimpleAction({ accels: ["<primary><shift>o"] }),
 	save_edits: SimpleAction({ accels: ["<primary>s"] }),
-	search: SimpleAction({ accels: ["<primary>f"] }),
+	// search: SimpleAction({ accels: ["<primary>f"] }),
 }) {
 	#main_window?: MainWindow
 

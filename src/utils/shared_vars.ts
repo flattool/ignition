@@ -2,7 +2,7 @@ import GLib from "gi://GLib?version=2.0"
 import Gio from "gi://Gio?version=2.0"
 import Adw from "gi://Adw?version=1"
 
-import { type MainWindow } from "../main_window/main_window.js"
+import { type MainWindow } from "../window/main_window.js"
 
 export class SharedVars {
 	static main_window?: MainWindow // Set in main.js
