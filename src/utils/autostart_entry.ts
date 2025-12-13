@@ -24,7 +24,7 @@ const base = from(GObject.Object, {
 	icon: Property.string(),
 	delay: Property.double(),
 	path: Property.string({ flags: "CONSTRUCT_ONLY" }),
-	override_state: Property.string({ default: "OVERRIDDEN" }).as<AutostartEntry.OverrideState>(),
+	override_state: Property.string({ default: "NONE" }).as<AutostartEntry.OverrideState>(),
 })
 
 @GClass()

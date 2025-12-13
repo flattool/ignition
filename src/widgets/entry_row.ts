@@ -9,15 +9,53 @@ import { IconHelper } from "../utils/icon_helper.js"
 export class EntryRow extends from(Adw.ActionRow, {
 	entry: Property.gobject(AutostartEntry, { flags: "CONSTRUCT_ONLY" }),
 	suffix_text: Property.string(),
+	popover_text: Property.string(),
 	_prefix_image: Child(Gtk.Image),
+	_suffix_label: Child(Gtk.Label),
+	_info_button: Child(Gtk.MenuButton),
 }) {
 	async _ready(): Promise<void> {
 		await next_idle()
 		this.title = this.entry?.name.markup_escape_text() ?? ""
 		this.subtitle = this.entry?.comment.markup_escape_text() ?? ""
 		IconHelper.set_icon(this._prefix_image, this.entry?.icon)
-		if (this.entry?.override_state === "OVERRIDDEN") {
+
+		this.entry?.connect("notify", this.#update_status.bind(this))
+		this.#update_status()
+	}
+
+	#update_status(): void {
+		const state: AutostartEntry.OverrideState = this.entry?.override_state ?? "NONE"
+		const enabled: boolean = this.entry?.enabled ?? false
+		const should_warn: boolean = state === "OVERRIDDEN" || !enabled
+		this.activatable = state !== "OVERRIDDEN"
+		this._info_button.visible = state !== "NONE"
+
+		if (should_warn) {
+			this._suffix_label.add_css_class("warning")
+			this._prefix_image.opacity = 0.4
+		} else {
+			this._suffix_label.remove_css_class("warning")
+			this._prefix_image.opacity = 1
+		}
+
+		if (enabled) {
+			const delay: number = this.entry?.delay ?? 0
+			if (delay > 0) {
+				// Translators: %d is the number of seconds of delay before the app starts
+				this.suffix_text = _("Starts after %d seconds").format(delay)
+			} else {
+				this.suffix_text = _("Enabled")
+			}
+		} else {
+			this.suffix_text = _("Disabled")
+		}
+
+		if (state === "OVERRIDDEN") {
+			this.popover_text = _("This entry is overridden by a user entry.")
 			this.suffix_text = _("Overridden")
+		} else if (state === "OVERRIDES") {
+			this.popover_text = _("This entry overrides a system entry.")
 		}
 	}
 }

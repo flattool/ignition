@@ -12,7 +12,7 @@ template $EntryRow: Adw.ActionRow {
 	}
 
 	[suffix]
-	Label {
+	Label suffix_label {
 		label: bind template.suffix_text;
 		margin-end: 9;
 
@@ -22,7 +22,7 @@ template $EntryRow: Adw.ActionRow {
 	}
 
 	[suffix]
-	MenuButton {
+	MenuButton info_button {
 		icon-name: "ignition:info-outline-symbolic";
 		tooltip-text: _("More Information");
 		popover: info_popover;
@@ -42,6 +42,7 @@ template $EntryRow: Adw.ActionRow {
 
 Popover info_popover {
 	Label {
+		label: bind template.popover_text;
 		wrap: true;
 		wrap-mode: word_char;
 		margin-start:  6;
