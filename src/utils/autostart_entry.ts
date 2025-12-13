@@ -23,7 +23,7 @@ const base = from(GObject.Object, {
 	terminal: Property.bool(),
 	icon: Property.string(),
 	delay: Property.double(),
-	path: Property.string(/* { flags: "CONSTRUCT_ONLY" } */),
+	path: Property.string({ flags: "CONSTRUCT_ONLY" }),
 })
 
 @GClass()

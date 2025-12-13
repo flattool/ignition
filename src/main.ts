@@ -74,5 +74,8 @@ export function main(argv: string[]): Promise<number> {
 		application_id: pkg.app_id,
 		flags: Gio.ApplicationFlags.DEFAULT_FLAGS,
 	})
+	if (!SharedVars.home_autostart_dir.query_exists(null)) {
+		SharedVars.home_autostart_dir.create(Gio.FileCreateFlags.NONE, null)
+	}
 	return application.runAsync(argv)
 }
