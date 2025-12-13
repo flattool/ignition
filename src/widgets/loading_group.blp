@@ -4,6 +4,7 @@ using Adw 1;
 template $LoadingGroup: Adw.Bin {
 	child: Stack {
 		visible-child-name: bind $_get_visible_page(template.is_loading) as <string>;
+		transition-type: crossfade;
 
 		StackPage {
 			name: "loading_page";
