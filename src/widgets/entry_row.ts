@@ -8,12 +8,16 @@ import { IconHelper } from "../utils/icon_helper.js"
 @GClass({ template: "resource:///io/github/flattool/Ignition/widgets/entry_row.ui" })
 export class EntryRow extends from(Adw.ActionRow, {
 	entry: Property.gobject(AutostartEntry, { flags: "CONSTRUCT_ONLY" }),
+	suffix_text: Property.string(),
 	_prefix_image: Child(Gtk.Image),
 }) {
 	async _ready(): Promise<void> {
+		await next_idle()
 		this.title = this.entry?.name.markup_escape_text() ?? ""
 		this.subtitle = this.entry?.comment.markup_escape_text() ?? ""
-		await next_idle()
 		IconHelper.set_icon(this._prefix_image, this.entry?.icon)
+		if (this.entry?.override_state === "OVERRIDDEN") {
+			this.suffix_text = _("Overridden")
+		}
 	}
 }

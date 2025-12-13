@@ -10,4 +10,43 @@ template $EntryRow: Adw.ActionRow {
 			"icon-dropshadow",
 		]
 	}
+
+	[suffix]
+	Label {
+		label: bind template.suffix_text;
+		margin-end: 9;
+
+		styles [
+			"subtitle",
+		]
+	}
+
+	[suffix]
+	MenuButton {
+		icon-name: "ignition:info-outline-symbolic";
+		tooltip-text: _("More Information");
+		popover: info_popover;
+		valign: center;
+
+		styles [
+			"flat",
+		]
+	}
+
+	[suffix]
+	Image {
+		visible: bind template.activatable;
+		icon-name: "go-next-symbolic";
+	}
+}
+
+Popover info_popover {
+	Label {
+		wrap: true;
+		wrap-mode: word_char;
+		margin-start:  6;
+		margin-end:    6;
+		margin-top:    6;
+		margin-bottom: 6;
+	}
 }
