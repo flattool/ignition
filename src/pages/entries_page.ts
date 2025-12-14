@@ -20,6 +20,7 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 	no_results: Property.bool(),
 	home_dir: Property.gobject(Gio.File),
 	root_dir: Property.gobject(Gio.File),
+	search_text: Property.string(),
 	_entry_custom_sorter: Child(Gtk.CustomSorter),
 	_home_entries: Child(Gio.ListModel),
 	_root_entries: Child(Gio.ListModel),
@@ -62,29 +63,12 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 	}
 
 	protected _on_search_change(entry: Gtk.SearchEntry): void {
-		const search_text: string = entry.text.toLocaleLowerCase()
-		const loop = (group: Adw.PreferencesGroup): number => {
-			let total = 0
-			for (let i = 0; ; i += 1) {
-				const row = group.get_row(i)
-				if (row === null) break
-				if (!(row instanceof Adw.ActionRow)) continue
-				const title = row.title.toLocaleLowerCase()
-				const subtitle = row.subtitle.toLocaleLowerCase()
-				if (title.includes(search_text) || subtitle.includes(search_text)) {
-					total += 1
-					row.visible = true
-				} else {
-					row.visible = false
-				}
-			}
-			return total
-		}
-		const total_home: number = loop(this._home_group)
-		const total_root: number = loop(this._root_group)
-		this._home_group.visible = total_home > 0
-		this._root_group.visible = total_root > 0
-		this.no_results = !(this._home_group.visible || this._root_group.visible)
+		this.search_text = entry.get_text()
+		const any_home: boolean = this._home_entries.get_n_items() > 0
+		const any_root: boolean = this._root_entries.get_n_items() > 0
+		this._home_group.visible = any_home
+		this._root_group.visible = any_root
+		this.no_results = this.search_text !== "" && !any_root && !any_root
 	}
 
 	protected _list_started_loading(list: FileList): void {

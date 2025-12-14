@@ -8,13 +8,20 @@ SortListModel home_entries {
 	sorter: entry_custom_sorter;
 
 	model: FilterListModel {
-		filter: only_entries_filter;
+		filter: StringFilter {
+			expression: expr item as <$AutostartEntry>.name;
+			search: bind template.search_text;
+		};
 
-		model: MapListModel home_map_model {
-			model: $FileList {
-				change-started => $_list_started_loading();
-				items-changed => $_list_changed();
-				directory: bind template.home_dir;
+		model: FilterListModel {
+			filter: only_entries_filter;
+
+			model: MapListModel home_map_model {
+				model: $FileList {
+					change-started => $_list_started_loading();
+					items-changed => $_list_changed();
+					directory: bind template.home_dir;
+				};
 			};
 		};
 	};
@@ -24,13 +31,20 @@ SortListModel root_entries {
 	sorter: entry_custom_sorter;
 
 	model: FilterListModel {
-		filter: only_entries_filter;
+		filter: StringFilter {
+			expression: expr item as <$AutostartEntry>.name;
+			search: bind template.search_text;
+		};
 
-		model: MapListModel root_map_model {
-			model: $FileList {
-				change-started => $_list_started_loading();
-				items-changed => $_list_changed();
-				directory: bind template.root_dir;
+		model: FilterListModel {
+			filter: only_entries_filter;
+
+			model: MapListModel root_map_model {
+				model: $FileList {
+					change-started => $_list_started_loading();
+					items-changed => $_list_changed();
+					directory: bind template.root_dir;
+				};
 			};
 		};
 	};

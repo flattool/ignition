@@ -15,13 +15,12 @@ export class EntryRow extends from(Adw.ActionRow, {
 	_info_button: Child(Gtk.MenuButton),
 }) {
 	async _ready(): Promise<void> {
-		await next_idle()
 		this.title = this.entry?.name.markup_escape_text() ?? ""
 		this.subtitle = this.entry?.comment.markup_escape_text() ?? ""
-		IconHelper.set_icon(this._prefix_image, this.entry?.icon)
-
 		this.entry?.connect("notify", this.#update_status.bind(this))
 		this.#update_status()
+		await next_idle()
+		IconHelper.set_icon(this._prefix_image, this.entry?.icon)
 	}
 
 	#update_status(): void {
