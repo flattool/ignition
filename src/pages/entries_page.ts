@@ -20,6 +20,7 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 	no_results: Property.bool(),
 	home_dir: Property.gobject(Gio.File),
 	root_dir: Property.gobject(Gio.File),
+	_entry_custom_sorter: Child(Gtk.CustomSorter),
 	_home_entries: Child(Gio.ListModel),
 	_root_entries: Child(Gio.ListModel),
 	_home_group: Child(Adw.PreferencesGroup),
@@ -31,6 +32,13 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 	#lists_loading = new Set<FileList>()
 
 	_ready(): void {
+		this._entry_custom_sorter.set_sort_func((a: AutostartEntry, b: AutostartEntry): -1 | 1 => {
+			if (b.enabled && !a.enabled) return 1
+			if (b.override_state !== "OVERRIDDEN" && a.override_state === "OVERRIDDEN") return 1
+			if (b.name.toLocaleLowerCase() < a.name.toLocaleLowerCase()) return 1
+			return -1
+		})
+
 		this._only_entries_filter.set_filter_func((item: GObject.Object) => item instanceof AutostartEntry)
 		this._home_map_model.set_map_func(this.#entry_map_func.bind(this))
 		this._root_map_model.set_map_func(this.#entry_map_func.bind(this))

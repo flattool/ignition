@@ -2,8 +2,11 @@ using Gtk 4.0;
 using Adw 1;
 
 CustomFilter only_entries_filter {}
+CustomSorter entry_custom_sorter {}
 
 SortListModel home_entries {
+	sorter: entry_custom_sorter;
+
 	model: FilterListModel {
 		filter: only_entries_filter;
 
@@ -18,6 +21,8 @@ SortListModel home_entries {
 }
 
 SortListModel root_entries {
+	sorter: entry_custom_sorter;
+
 	model: FilterListModel {
 		filter: only_entries_filter;
 
