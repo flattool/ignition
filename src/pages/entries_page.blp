@@ -96,24 +96,21 @@ template $EntriesPage: Adw.NavigationPage {
 					Adw.PreferencesGroup home_group {
 						title: _("User Startup Entries");
 						description: _("Entries that run only for you.");
-
-						Adw.ActionRow {
-							title: "Example Row";
-						}
 					}
 
 					Adw.PreferencesGroup root_group {
 						title: _("System Startup Entries");
 						description: _("Entries that run for everyone.");
-
-						Adw.ActionRow {
-							title: "Example Row";
-						}
 					}
 				};
 			};
 		};
 	};
+}
+
+Adw.ActionRow empty_row {
+	title: _("No Entries Found");
+	subtitle: _("You have no user autostart entries");
 }
 
 menu primary_menu {

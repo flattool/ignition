@@ -29,6 +29,7 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 	_home_map_model: Child(Gtk.MapListModel),
 	_root_map_model: Child(Gtk.MapListModel),
 	_only_entries_filter: Child(Gtk.CustomFilter),
+	_empty_row: Child(Adw.ActionRow),
 }) {
 	#lists_loading = 2
 
@@ -41,6 +42,7 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 		this._root_group.bind_model(this._root_entries, (item) => this.#row_creation_func(item as AutostartEntry))
 		this.home_dir = SharedVars.home_autostart_dir
 		this.root_dir = SharedVars.root_autostart_dir
+		this._home_group.add(this._empty_row)
 	}
 
 	#entry_sort_func(a: AutostartEntry, b: AutostartEntry): -1 | 1 {
@@ -107,6 +109,7 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 		if (this.#lists_loading === 0) {
 			this.#mark_overrides()
 		}
+		this._empty_row.visible = this._home_entries.get_n_items() < 1
 		this.is_loading = this.#lists_loading > 0
 	}
 }
