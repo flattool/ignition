@@ -30,7 +30,7 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 	_root_map_model: Child(Gtk.MapListModel),
 	_only_entries_filter: Child(Gtk.CustomFilter),
 }) {
-	#lists_loading = new Set<FileList>()
+	#lists_loading = 2
 
 	_ready(): void {
 		this._entry_custom_sorter.set_sort_func((a: AutostartEntry, b: AutostartEntry): -1 | 1 => {
@@ -62,6 +62,24 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 		return row
 	}
 
+	#mark_overrides(): void {
+		for (let i = 0; i < this._home_entries.get_n_items(); i += 1) {
+			const entry = this._home_entries.get_item(i) as AutostartEntry
+			const file_name: string = Gio.File.new_for_path(entry.path).get_basename() ?? ""
+			if (SharedVars.root_autostart_dir.get_child(file_name).query_exists(null)) {
+				entry.override_state = "OVERRIDES"
+			}
+		}
+		for (let i = 0; i < this._root_entries.get_n_items(); i += 1) {
+			const entry = this._root_entries.get_item(i) as AutostartEntry
+			const file_name: string = Gio.File.new_for_path(entry.path).get_basename() ?? ""
+			if (SharedVars.home_autostart_dir.get_child(file_name).query_exists(null)) {
+				entry.override_state = "OVERRIDDEN"
+			}
+		}
+		this._entry_custom_sorter.changed(Gtk.SorterChange.DIFFERENT)
+	}
+
 	protected _on_search_change(entry: Gtk.SearchEntry): void {
 		this.search_text = entry.get_text()
 		const any_home: boolean = this._home_entries.get_n_items() > 0
@@ -71,13 +89,16 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 		this.no_results = this.search_text !== "" && !any_root && !any_root
 	}
 
-	protected _list_started_loading(list: FileList): void {
-		this.#lists_loading.add(list)
-		this.is_loading = this.#lists_loading.size > 0
+	protected _list_started_loading(_list: FileList): void {
+		this.#lists_loading += 1
+		this.is_loading = true
 	}
 
-	protected _list_changed(list: FileList): void {
-		this.#lists_loading.delete(list)
-		this.is_loading = this.#lists_loading.size > 0
+	protected _list_changed(_list: FileList): void {
+		this.#lists_loading -= 1
+		if (this.#lists_loading === 0) {
+			this.#mark_overrides()
+		}
+		this.is_loading = this.#lists_loading > 0
 	}
 }
