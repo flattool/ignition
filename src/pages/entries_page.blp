@@ -109,8 +109,37 @@ template $EntriesPage: Adw.NavigationPage {
 }
 
 Adw.ActionRow empty_row {
-	title: _("No Entries Found");
-	subtitle: _("You have no user autostart entries");
+	child: Box {
+		spacing: 6;
+		margin-start: 16;
+		margin-end: 16;
+		margin-top: 30;
+		margin-bottom: 30;
+		orientation: vertical;
+
+		Image {
+			icon-name: "ignition:info-outline-symbolic";
+			pixel-size: 54;
+			margin-bottom: 6;
+		}
+
+		Label {
+			label: _("No Entries Found");
+			wrap: true;
+			halign: center;
+
+			styles [
+				"heading",
+			]
+		}
+
+		Label {
+			label: _("Add an app or script to run it when you log in");
+			justify: center;
+			halign: center;
+			wrap: true;
+		}
+	};
 }
 
 menu primary_menu {
