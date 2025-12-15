@@ -110,6 +110,7 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 			this.#mark_overrides()
 		}
 		this._empty_row.visible = this._home_entries.get_n_items() < 1
+		this._root_group.visible = this._root_entries.get_n_items() > 0
 		this.is_loading = this.#lists_loading > 0
 	}
 }
