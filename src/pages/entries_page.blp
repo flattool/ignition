@@ -53,48 +53,48 @@ SortListModel root_entries {
 template $EntriesPage: Adw.NavigationPage {
 	title: "Ignition";
 
-	child: $LoadingGroup {
-		is_loading: bind template.is_loading;
-		title: _("Loading Entries");
-		description: _("This should only take a moment.");
-
-		content: Adw.ToolbarView {
-			[top]
-			Adw.HeaderBar {
-				[start]
-				$SearchButton search_button {
-					search_bar: search_bar;
-				}
-
-				[end]
-				MenuButton {
-					primary: true;
-					icon-name: "open-menu-symbolic";
-					tooltip-text: _("Main Menu");
-					menu-model: primary_menu;
-				}
-
-				[end]
-				Button {
-					icon-name: "ignition:question-round-outline-symbolic";
-					tooltip-text: _("Help and information");
-					clicked => $_show_help();
-				}
+	child: Adw.ToolbarView {
+		[top]
+		Adw.HeaderBar {
+			[start]
+			$SearchButton search_button {
+				search_bar: search_bar;
 			}
 
-			[top]
-			Adw.Clamp {
-				child: SearchBar search_bar {
-					key-capture-widget: template;
-					search-mode-enabled: bind search_button.active bidirectional;
+			[end]
+			MenuButton {
+				primary: true;
+				icon-name: "open-menu-symbolic";
+				tooltip-text: _("Main Menu");
+				menu-model: primary_menu;
+			}
 
-					child: SearchEntry {
-						search-changed => $_on_search_change();
-						hexpand: true;
-						placeholder-text: _("Search entries");
-					};
+			[end]
+			Button {
+				icon-name: "ignition:question-round-outline-symbolic";
+				tooltip-text: _("Help and information");
+				clicked => $_show_help();
+			}
+		}
+
+		[top]
+		Adw.Clamp {
+			child: SearchBar search_bar {
+				key-capture-widget: template;
+				search-mode-enabled: bind search_button.active bidirectional;
+
+				child: SearchEntry {
+					search-changed => $_on_search_change();
+					hexpand: true;
+					placeholder-text: _("Search entries");
 				};
-			}
+			};
+		}
+
+		content: $LoadingGroup {
+			is_loading: bind template.is_loading;
+			title: _("Loading Entries");
+			description: _("This should only take a moment.");
 
 			content: $SearchGroup {
 				no_results: bind template.no_results;
