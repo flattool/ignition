@@ -98,7 +98,7 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 		const any_root: boolean = this._root_entries.get_n_items() > 0
 		this._home_group.visible = any_home
 		this._root_group.visible = any_root
-		this.no_results = this.search_text !== "" && !any_root && !any_root
+		this.no_results = this.search_text !== "" && !any_home && !any_root
 	}
 
 	protected _list_started_loading(_list: FileList): void {
