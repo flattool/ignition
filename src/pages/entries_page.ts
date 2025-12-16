@@ -8,6 +8,7 @@ import { FileList } from "../utils/file_list.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
 import { SharedVars } from "../utils/shared_vars.js"
 import { EntryRow } from "../widgets/entry_row.js"
+import { HelpDialog } from "../widgets/help_dialog.js"
 
 import "../widgets/loading_group.js"
 import "../widgets/search_group.js"
@@ -113,5 +114,9 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 		this._empty_row.visible = this._home_entries.get_n_items() < 1
 		this._root_group.visible = this._root_entries.get_n_items() > 0
 		this.is_loading = this.#lists_loading > 0
+	}
+
+	protected _show_help(): void {
+		new HelpDialog({}).present(this)
 	}
 }

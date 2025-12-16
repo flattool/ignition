@@ -73,6 +73,13 @@ template $EntriesPage: Adw.NavigationPage {
 					tooltip-text: _("Main Menu");
 					menu-model: primary_menu;
 				}
+
+				[end]
+				Button {
+					icon-name: "ignition:question-round-outline-symbolic";
+					tooltip-text: _("Help and information");
+					clicked => $_show_help();
+				}
 			}
 
 			[top]
