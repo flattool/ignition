@@ -43,6 +43,7 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 		this.home_dir = SharedVars.home_autostart_dir
 		this.root_dir = SharedVars.root_autostart_dir
 		this._home_group.add(this._empty_row)
+		SharedVars.application?.new_entry.connect("activate", () => print("new entry!"))
 	}
 
 	#entry_sort_func(a: AutostartEntry, b: AutostartEntry): -1 | 1 {

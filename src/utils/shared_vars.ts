@@ -1,12 +1,12 @@
 import GLib from "gi://GLib?version=2.0"
 import Gio from "gi://Gio?version=2.0"
-import Adw from "gi://Adw?version=1"
 
 import { type MainWindow } from "../window/main_window.js"
+import { type IgnitionApplication } from "../main.js"
 
 export class SharedVars {
 	static main_window?: MainWindow // Set in main.js
-	static application?: Adw.Application // Set in main.js
+	static application?: IgnitionApplication // Set in main.js
 
 	static readonly is_flatpak = GLib.getenv("FLATPAK_ID") === pkg.app_id
 	static readonly home_dir = Gio.File.new_for_path(GLib.get_home_dir())

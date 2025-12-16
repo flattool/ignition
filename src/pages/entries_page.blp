@@ -96,6 +96,20 @@ template $EntriesPage: Adw.NavigationPage {
 					Adw.PreferencesGroup home_group {
 						title: _("User Startup Entries");
 						description: _("Entries that run only for you.");
+
+						header-suffix: Button {
+							valign: center;
+							action-name: "app.new_entry";
+
+							styles [
+								"flat",
+							]
+
+							child: Adw.ButtonContent {
+								icon-name: "ignition:list-add-symbolic";
+								label: _("New");
+							};
+						};
 					}
 
 					Adw.PreferencesGroup root_group {
