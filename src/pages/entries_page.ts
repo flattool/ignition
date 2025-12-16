@@ -51,7 +51,6 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 		this._root_group.bind_model(this._root_entries, (item) => this.#row_creation_func(item as AutostartEntry))
 		this.home_dir = SharedVars.home_autostart_dir
 		this.root_dir = SharedVars.root_autostart_dir
-		SharedVars.application?.new_entry.connect("activate", () => print("new entry!"))
 	}
 
 	#entry_sort_func(a: AutostartEntry, b: AutostartEntry): -1 | 1 {

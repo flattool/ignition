@@ -5,5 +5,14 @@ template $MainWindow: Adw.ApplicationWindow {
 	default-width: 600;
 	default-height: 541;
 
-	content: $EntriesPage {};
+	content: Adw.NavigationView nav_view {
+		$EntriesPage {
+			tag: "entries-page";
+			entry-clicked => $_on_entry_clicked();
+		}
+
+		$AppsListPage {
+			tag: "apps-list-page";
+		}
+	};
 }

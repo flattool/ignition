@@ -4,6 +4,7 @@
 		<file preprocess="xml-stripblanks" alias="appdata">../data/io.github.flattool.Ignition.metainfo.xml</file>
 		<file preprocess="xml-stripblanks">window/main_window.ui</file>
 		<file preprocess="xml-stripblanks">pages/entries_page.ui</file>
+		<file preprocess="xml-stripblanks">pages/apps_list_page.ui</file>
 		<file preprocess="xml-stripblanks">widgets/loading_group.ui</file>
 		<file preprocess="xml-stripblanks">widgets/search_button.ui</file>
 		<file preprocess="xml-stripblanks">widgets/search_group.ui</file>

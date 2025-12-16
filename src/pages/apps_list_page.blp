@@ -1,0 +1,55 @@
+using Gtk 4.0;
+using Adw 1;
+using Gio 2.0;
+
+CustomFilter only_entries_filter {}
+CustomSorter entry_custom_sorter {}
+
+SortListModel entries {
+	sorter: entry_custom_sorter;
+
+	model: FilterListModel {
+		filter: StringFilter {
+			expression: expr item as <$AutostartEntry>.name;
+			search: bind template.search_text;
+		};
+
+		model: FilterListModel {
+			filter: only_entries_filter;
+
+			model: FlattenListModel {
+				model: Gio.ListStore file_models_store {
+					item-type: typeof<$FileList>;
+				};
+			};
+		};
+	};
+}
+
+template $AppsListPage: Adw.NavigationPage {
+	title: _("Add or Create an Entry");
+
+	child: Adw.ToolbarView {
+		[top]
+		Adw.HeaderBar {
+			[start]
+			$SearchButton search_button {
+				search_bar: search_bar;
+			}
+		}
+
+		[top]
+		Adw.Clamp {
+			child: SearchBar search_bar {
+				key-capture-widget: template;
+				search-mode-enabled: bind search_button.active bidirectional;
+
+				child: SearchEntry {
+					search-changed => $_on_search_change();
+					hexpand: true;
+					placeholder-text: _("Search apps");
+				};
+			};
+		}
+	};
+}
