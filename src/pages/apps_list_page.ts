@@ -1,11 +1,13 @@
 import Adw from "gi://Adw?version=1"
 import Gtk from "gi://Gtk?version=4.0"
 import Gio from "gi://Gio?version=2.0"
+import GObject from "gi://GObject?version=2.0"
 
 import { GClass, Property, Child, Signal, from } from "../gobjectify/gobjectify.js"
-
+import { SharedVars } from "../utils/shared_vars.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
-// import { FileList } from "../utils/file_list.js"
+import { EntryRow } from "../widgets/entry_row.js"
+import { FileList } from "../utils/file_list.js"
 
 import "../widgets/search_button.js"
 
@@ -15,9 +17,55 @@ export class AppsListPage extends from(Adw.NavigationPage, {
 	is_loading: Property.bool({ default: true }),
 	no_results: Property.bool(),
 	search_text: Property.string(),
-	_only_entries_filter: Child(Gtk.CustomFilter),
 	_entry_custom_sorter: Child(Gtk.CustomSorter),
 	_entries: Child(Gio.ListModel),
+	_file_models_store: Child(Gio.ListStore),
+	_entries_group: Child(Adw.PreferencesGroup),
 }) {
-	protected _on_search_change(): void {}
+	_ready(): void {
+		this._entry_custom_sorter.set_sort_func(this.#entry_sort_func.bind(this))
+		for (const directory of SharedVars.host_app_entry_dirs) {
+			if (!directory.query_exists(null)) continue
+			const file_list = new FileList({ directory })
+			const map_model = new Gtk.MapListModel({ model: file_list.with_implements })
+			map_model.set_map_func(this.#entry_map_func.bind(this))
+			const filter_model = new Gtk.FilterListModel({
+				model: map_model,
+				filter: Gtk.CustomFilter.new((item) => item instanceof AutostartEntry),
+			})
+			this._file_models_store.append(filter_model)
+		}
+		this._entries_group.bind_model(this._entries, (item) => this.#row_creation_func(item as AutostartEntry))
+	}
+
+	#entry_sort_func(a: AutostartEntry, b: AutostartEntry): -1 | 1 {
+		const rank = (e: AutostartEntry): number => {
+			if (e.override_state === "OVERRIDDEN") return 2
+			return e.enabled ? 0 : 1
+		}
+
+		const rank_a: number = rank(a)
+		const rank_b: number = rank(b)
+
+		if (rank_a !== rank_b) return rank_a < rank_b ? -1 : 1
+		if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) return -1
+		return 1
+	}
+
+	#entry_map_func(item: GObject.Object): AutostartEntry | GObject.Object {
+		if (!(item instanceof Gio.File)) return item
+		const path: string = item.get_path() ?? ""
+		if (AutostartEntry.verify_file(path) === "") return new AutostartEntry({ path })
+		return item
+	}
+
+	#row_creation_func(entry: AutostartEntry): EntryRow {
+		const row = new EntryRow({ entry, activatable: true })
+		row.connect("activated", () => this.emit("entry-clicked", entry))
+		return row
+	}
+
+	protected _on_search_change(entry: Gtk.SearchEntry): void {
+		this.search_text = entry.get_text()
+	}
 }

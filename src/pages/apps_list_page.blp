@@ -2,7 +2,6 @@ using Gtk 4.0;
 using Adw 1;
 using Gio 2.0;
 
-CustomFilter only_entries_filter {}
 CustomSorter entry_custom_sorter {}
 
 SortListModel entries {
@@ -14,13 +13,9 @@ SortListModel entries {
 			search: bind template.search_text;
 		};
 
-		model: FilterListModel {
-			filter: only_entries_filter;
-
-			model: FlattenListModel {
-				model: Gio.ListStore file_models_store {
-					item-type: typeof<$FileList>;
-				};
+		model: FlattenListModel {
+			model: Gio.ListStore file_models_store {
+				item-type: typeof<Gio.ListModel>;
 			};
 		};
 	};
@@ -51,5 +46,19 @@ template $AppsListPage: Adw.NavigationPage {
 				};
 			};
 		}
+
+		content: Adw.PreferencesPage {
+			Adw.PreferencesGroup {
+				title: _("Installed Apps");
+				description: _("Choose any installed apps to run when you log in.");
+
+				Adw.SwitchRow {
+					title: _("Show Hidden Apps");
+					subtitle: _("Show apps that are hidden from the app menu");
+				}
+			}
+
+			Adw.PreferencesGroup entries_group {}
+		};
 	};
 }
