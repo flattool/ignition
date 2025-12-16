@@ -34,6 +34,14 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 }) {
 	#lists_loading = 2
 
+	#_show_empty_row = false
+	get #show_empty_row(): boolean { return this.#_show_empty_row }
+	set #show_empty_row(val: boolean) {
+		if (val === this.#_show_empty_row) return
+		this.#_show_empty_row = val
+		; (val ? this._home_group.add : this._home_group.remove).call(this._home_group, this._empty_row)
+	}
+
 	_ready(): void {
 		this._entry_custom_sorter.set_sort_func(this.#entry_sort_func.bind(this))
 		this._only_entries_filter.set_filter_func((item: GObject.Object) => item instanceof AutostartEntry)
@@ -43,7 +51,6 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 		this._root_group.bind_model(this._root_entries, (item) => this.#row_creation_func(item as AutostartEntry))
 		this.home_dir = SharedVars.home_autostart_dir
 		this.root_dir = SharedVars.root_autostart_dir
-		this._home_group.add(this._empty_row)
 		SharedVars.application?.new_entry.connect("activate", () => print("new entry!"))
 	}
 
@@ -111,7 +118,7 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 		if (this.#lists_loading === 0) {
 			this.#mark_overrides()
 		}
-		this._empty_row.visible = this._home_entries.get_n_items() < 1
+		this.#show_empty_row = this._home_entries.get_n_items() < 1
 		this._root_group.visible = this._root_entries.get_n_items() > 0
 		this.is_loading = this.#lists_loading > 0
 	}
