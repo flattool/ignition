@@ -122,6 +122,13 @@ export class AutostartEntry extends base {
 		}
 	}
 
+	is_hidden(): boolean {
+		return (
+			this.#keyfile.get_boolean_safe(GROUP_NAME, "Hidden", false)
+			|| this.#keyfile.get_boolean_safe(GROUP_NAME, "NoDisplay", false)
+		)
+	}
+
 	save(): void {
 		// Add key values that might be missing, but won't be edited
 		this.#keyfile.set_string(GROUP_NAME, "Type", "Application")

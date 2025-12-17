@@ -2,21 +2,14 @@ using Gtk 4.0;
 using Adw 1;
 using Gio 2.0;
 
-CustomSorter entry_custom_sorter {}
-
 SortListModel entries {
-	sorter: entry_custom_sorter;
+	sorter: CustomSorter entry_sorter {};
+	items-changed => $_on_change_start();
+	items-changed => $_on_change_end();
 
-	model: FilterListModel {
-		filter: StringFilter {
-			expression: expr item as <$AutostartEntry>.name;
-			search: bind template.search_text;
-		};
-
-		model: FlattenListModel {
-			model: Gio.ListStore file_models_store {
-				item-type: typeof<Gio.ListModel>;
-			};
+	model: FlattenListModel {
+		model: Gio.ListStore entry_models {
+			item-type: typeof<Gio.ListModel>;
 		};
 	};
 }
@@ -47,18 +40,23 @@ template $AppsListPage: Adw.NavigationPage {
 			};
 		}
 
-		content: Adw.PreferencesPage {
-			Adw.PreferencesGroup {
-				title: _("Installed Apps");
-				description: _("Choose any installed apps to run when you log in.");
+		content: $SearchGroup {
+			no_results: bind template.no_results;
 
-				Adw.SwitchRow {
-					title: _("Show Hidden Apps");
-					subtitle: _("Show apps that are hidden from the app menu");
+			content: Adw.PreferencesPage {
+				Adw.PreferencesGroup {
+					title: _("Installed Apps");
+					description: _("Choose any installed apps to run when you log in.");
+
+					Adw.SwitchRow {
+						title: _("Show Hidden Apps");
+						subtitle: _("Show apps that are hidden from the app menu");
+						active: bind template.show_hidden bidirectional;
+					}
 				}
-			}
 
-			Adw.PreferencesGroup entries_group {}
+				Adw.PreferencesGroup entries_group {}
+			};
 		};
 	};
 }
