@@ -17,10 +17,10 @@ export class AppsListPage extends from(Adw.NavigationPage, {
 	is_loading: Property.bool({ default: true }),
 	no_results: Property.bool(),
 	search_text: Property.string(),
-	_entry_custom_sorter: Child(Gtk.CustomSorter),
-	_entries: Child(Gio.ListModel),
-	_file_models_store: Child(Gio.ListStore),
-	_entries_group: Child(Adw.PreferencesGroup),
+	_entry_custom_sorter: Child<Gtk.CustomSorter>(),
+	_entries: Child<Gio.ListModel<AutostartEntry>>(),
+	_file_models_store: Child<Gio.ListStore<Gio.ListModel<AutostartEntry>>>(),
+	_entries_group: Child<Adw.PreferencesGroup>(),
 }) {
 	_ready(): void {
 		this._entry_custom_sorter.set_sort_func(this.#entry_sort_func.bind(this))
@@ -29,7 +29,7 @@ export class AppsListPage extends from(Adw.NavigationPage, {
 			const file_list = new FileList({ directory })
 			const map_model = new Gtk.MapListModel({ model: file_list.with_implements })
 			map_model.set_map_func(this.#entry_map_func.bind(this))
-			const filter_model = new Gtk.FilterListModel({
+			const filter_model = new Gtk.FilterListModel<AutostartEntry>({
 				model: map_model,
 				filter: Gtk.CustomFilter.new((item) => item instanceof AutostartEntry),
 			})

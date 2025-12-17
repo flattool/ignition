@@ -14,7 +14,7 @@ enum PageTags {
 
 @GClass({ template: "resource:///io/github/flattool/Ignition/window/main_window.ui" })
 export class MainWindow extends from(Adw.ApplicationWindow, {
-	_nav_view: Child(Adw.NavigationView),
+	_nav_view: Child<Adw.NavigationView>(),
 }) {
 	// readonly #settings = new Gio.Settings({ schema: pkg.app_id })
 	readonly _toast_overlay = new Adw.ToastOverlay()

@@ -10,9 +10,9 @@ export class EntryRow extends from(Adw.ActionRow, {
 	entry: Property.gobject(AutostartEntry, { flags: "CONSTRUCT_ONLY" }),
 	suffix_text: Property.string(),
 	popover_text: Property.string(),
-	_prefix_image: Child(Gtk.Image),
-	_suffix_label: Child(Gtk.Label),
-	_info_button: Child(Gtk.MenuButton),
+	_prefix_image: Child<Gtk.Image>(),
+	_suffix_label: Child<Gtk.Label>(),
+	_info_button: Child<Gtk.MenuButton>(),
 }) {
 	async _ready(): Promise<void> {
 		this.title = this.entry?.name.markup_escape_text() ?? ""

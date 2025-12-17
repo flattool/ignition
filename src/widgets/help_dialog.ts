@@ -8,7 +8,7 @@ import { SharedVars } from "../utils/shared_vars.js"
 export class HelpDialog extends from(Adw.Dialog, {
 	show_find_app: Property.bool({ default: SharedVars.is_flatpak, flags: "CONSTANT" }),
 	show_title: Property.bool(),
-	_status_page: Child(Adw.StatusPage),
+	_status_page: Child<Adw.StatusPage>(),
 }) {
 	_ready(): void {
 		const scroll: Gtk.Widget | null = this._status_page.get_first_child()
