@@ -4,6 +4,7 @@ import Gio from "gi://Gio?version=2.0"
 import GObject from "gi://GObject?version=2.0"
 
 import { GClass, Property, Child, from, Signal } from "../gobjectify/gobjectify.js"
+import { iterate_model } from "../utils/helper_funcs.js"
 import { FileList } from "../utils/file_list.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
 import { SharedVars } from "../utils/shared_vars.js"
@@ -81,15 +82,13 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 	}
 
 	#mark_overrides(): void {
-		for (let i = 0; i < this._home_entries.get_n_items(); i += 1) {
-			const entry = this._home_entries.get_item(i) as AutostartEntry
+		for (const entry of iterate_model(this._home_entries)) {
 			const file_name: string = Gio.File.new_for_path(entry.path).get_basename() ?? ""
 			if (SharedVars.root_autostart_dir.get_child(file_name).query_exists(null)) {
 				entry.override_state = "OVERRIDES"
 			}
 		}
-		for (let i = 0; i < this._root_entries.get_n_items(); i += 1) {
-			const entry = this._root_entries.get_item(i) as AutostartEntry
+		for (const entry of iterate_model(this._root_entries)) {
 			const file_name: string = Gio.File.new_for_path(entry.path).get_basename() ?? ""
 			if (SharedVars.home_autostart_dir.get_child(file_name).query_exists(null)) {
 				entry.override_state = "OVERRIDDEN"

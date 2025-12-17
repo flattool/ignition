@@ -1,4 +1,6 @@
 import GLib from "gi://GLib?version=2.0"
+import Adw from "gi://Adw?version=1"
+import type Gtk from "gi://Gtk?version=4.0"
 
 declare global {
 	interface String {
@@ -57,6 +59,19 @@ GLib.KeyFile.prototype.get_int64_safe = function (group_name: string, key: strin
 		return fallback
 	}
 }
-//
-// const kf = new GLib.KeyFile()
-// kf.get_string_safe("", "")
+
+declare module "gi://Adw?version=1" {
+	export namespace Adw {
+		export interface PreferencesGroup {
+			remove_all(): void
+		}
+	}
+}
+
+Adw.PreferencesGroup.prototype.remove_all = function (): void {
+	for (let i = 0; ; i += 1) {
+		const row: Gtk.Widget | null = this.get_row(i)
+		if (row === null) return
+		this.remove(row)
+	}
+}

@@ -90,7 +90,7 @@ export class FileList extends from(GObject.Object, {
 		return Gio.File.$gtype
 	}
 
-	*[Symbol.iterator](): Iterator<Gio.File> {
+	*[Symbol.iterator](): IterableIterator<Gio.File> {
 		for (const file of this.#items) yield file
 	}
 }
