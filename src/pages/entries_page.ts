@@ -44,7 +44,7 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 	}
 
 	_ready(): void {
-		this._entry_custom_sorter.set_sort_func(this.#entry_sort_func.bind(this))
+		this._entry_custom_sorter.set_sort_func(AutostartEntry.compare.bind(AutostartEntry))
 		this._only_entries_filter.set_filter_func((item: GObject.Object) => item instanceof AutostartEntry)
 		this._home_map_model.set_map_func(this.#entry_map_func.bind(this))
 		this._root_map_model.set_map_func(this.#entry_map_func.bind(this))
@@ -52,20 +52,6 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 		this._root_group.bind_model(this._root_entries, (item) => this.#row_creation_func(item as AutostartEntry))
 		this.home_dir = SharedVars.home_autostart_dir
 		this.root_dir = SharedVars.root_autostart_dir
-	}
-
-	#entry_sort_func(a: AutostartEntry, b: AutostartEntry): -1 | 1 {
-		const rank = (e: AutostartEntry): number => {
-			if (e.override_state === "OVERRIDDEN") return 2
-			return e.enabled ? 0 : 1
-		}
-
-		const rank_a: number = rank(a)
-		const rank_b: number = rank(b)
-
-		if (rank_a !== rank_b) return rank_a < rank_b ? -1 : 1
-		if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) return -1
-		return 1
 	}
 
 	#entry_map_func(item: GObject.Object): AutostartEntry | GObject.Object {

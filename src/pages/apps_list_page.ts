@@ -23,7 +23,7 @@ export class AppsListPage extends from(Adw.NavigationPage, {
 	_entries_group: Child<Adw.PreferencesGroup>(),
 }) {
 	_ready(): void {
-		this._entry_custom_sorter.set_sort_func(this.#entry_sort_func.bind(this))
+		this._entry_custom_sorter.set_sort_func(AutostartEntry.compare.bind(AutostartEntry))
 		for (const directory of SharedVars.host_app_entry_dirs) {
 			if (!directory.query_exists(null)) continue
 			const file_list = new FileList({ directory })
@@ -36,20 +36,6 @@ export class AppsListPage extends from(Adw.NavigationPage, {
 			this._file_models_store.append(filter_model)
 		}
 		this._entries_group.bind_model(this._entries, (item) => this.#row_creation_func(item as AutostartEntry))
-	}
-
-	#entry_sort_func(a: AutostartEntry, b: AutostartEntry): -1 | 1 {
-		const rank = (e: AutostartEntry): number => {
-			if (e.override_state === "OVERRIDDEN") return 2
-			return e.enabled ? 0 : 1
-		}
-
-		const rank_a: number = rank(a)
-		const rank_b: number = rank(b)
-
-		if (rank_a !== rank_b) return rank_a < rank_b ? -1 : 1
-		if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) return -1
-		return 1
 	}
 
 	#entry_map_func(item: GObject.Object): AutostartEntry | GObject.Object {

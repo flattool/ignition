@@ -39,6 +39,20 @@ export class AutostartEntry extends base {
 		return ""
 	}
 
+	static compare(a: AutostartEntry, b: AutostartEntry): -1 | 1 {
+		const rank = (e: AutostartEntry): number => {
+			if (e.override_state === "OVERRIDDEN") return 2
+			return e.enabled ? 0 : 1
+		}
+
+		const rank_a: number = rank(a)
+		const rank_b: number = rank(b)
+
+		if (rank_a !== rank_b) return rank_a < rank_b ? -1 : 1
+		if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) return -1
+		return 1
+	}
+
 	override get enabled(): boolean {
 		return !this.#keyfile.get_boolean_safe(GROUP_NAME, "Hidden", false)
 	}
