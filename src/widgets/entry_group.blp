@@ -1,0 +1,20 @@
+using Gtk 4.0;
+using Adw 1;
+
+EveryFilter search_filter {
+	CustomFilter no_hidden_filter {}
+
+	AnyFilter {
+		StringFilter {
+			expression: expr item as <$AutostartEntry>.name;
+			search: bind template.search_text;
+		}
+
+		StringFilter {
+			expression: expr item as <$AutostartEntry>.comment;
+			search: bind template.search_text;
+		}
+	}
+}
+
+template $EntryGroup: Adw.PreferencesGroup {}

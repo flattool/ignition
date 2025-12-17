@@ -41,7 +41,7 @@ template $AppsListPage: Adw.NavigationPage {
 		}
 
 		content: $SearchGroup {
-			no_results: bind template.no_results;
+			no_results: bind entries_group.no_search_results;
 
 			content: Adw.PreferencesPage {
 				Adw.PreferencesGroup {
@@ -55,7 +55,11 @@ template $AppsListPage: Adw.NavigationPage {
 					}
 				}
 
-				Adw.PreferencesGroup entries_group {}
+				$EntryGroup entries_group {
+					entries: entries;
+					search_text: bind template.search_text;
+					show_hidden: bind template.show_hidden;
+				}
 			};
 		};
 	};
