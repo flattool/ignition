@@ -44,23 +44,76 @@ template $AppsListPage: Adw.NavigationPage {
 			content: $SearchGroup {
 				no_results: bind entries_group.no_search_results;
 
-				content: Adw.PreferencesPage {
-					Adw.PreferencesGroup {
-						title: _("Installed Apps");
-						description: _("Choose any installed apps to run when you log in.");
+				content: ScrolledWindow {
+					child: Adw.Clamp {
+						margin-top: 12;
+						margin-bottom: 24;
 
-						Adw.SwitchRow {
-							title: _("Show Hidden Apps");
-							subtitle: _("Show apps that are hidden from the app menu");
-							active: bind template.show_hidden bidirectional;
-						}
-					}
+						child: Box {
+							orientation: vertical;
 
-					$EntryGroup entries_group {
-						entries: entries;
-						search_text: bind template.search_text;
-						show_hidden: bind template.show_hidden;
-					}
+							Revealer {
+								transition-type: slide_up;
+								reveal-child: bind search_button.active inverted;
+
+								child: Revealer {
+									transition-type: crossfade;
+									reveal-child: bind search_button.active inverted;
+
+									child: Adw.PreferencesGroup {
+										title: _("Commands and Scripts");
+										description: _("Run a command or script when you log in.");
+										margin-start: 12;
+                                        margin-end: 12;
+										margin-bottom: 24;
+
+										Adw.ActionRow {
+											title: _("Add a Command or Script");
+											subtitle: _("Enter the command to run or path to your script");
+											activatable: true;
+
+											[prefix]
+											Image {
+												icon-size: large;
+												icon-name: "ignition:application-x-executable-symbolic";
+
+												styles [
+													'icon-dropshadow',
+												]
+											}
+
+											[suffix]
+											Image {
+												icon-name: "go-next-symbolic";
+											}
+										}
+									};
+								};
+							}
+
+							Adw.PreferencesGroup {
+								title: _("Installed Apps");
+								description: _("Choose any installed apps to run when you log in.");
+								margin-start: 12;
+                                margin-end: 12;
+								margin-bottom: 12;
+
+								Adw.SwitchRow {
+									title: _("Show Hidden Apps");
+									subtitle: _("Show apps that are hidden from the app menu");
+									active: bind template.show_hidden bidirectional;
+								}
+							}
+
+							$EntryGroup entries_group {
+								margin-start: 12;
+                                margin-end: 12;
+								entries: entries;
+								search_text: bind template.search_text;
+								show_hidden: bind template.show_hidden;
+							}
+						};
+					};
 				};
 			};
 		};
