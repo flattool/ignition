@@ -15,7 +15,7 @@ export class EntryGroup extends from(Adw.PreferencesGroup, {
 	show_hidden: Property.bool(),
 	search_text: Property.string(),
 	no_search_results: Property.bool(),
-	is_loading: Property.bool(),
+	is_loading: Property.bool({ default: true }),
 	deduplicate: Property.bool(),
 	show_suffix_label: Property.bool({ default: true }),
 	_search_filter: Child<Gtk.EveryFilter>(),

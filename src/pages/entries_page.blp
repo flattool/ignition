@@ -12,7 +12,6 @@ SortListModel home_entries {
 
 		model: MapListModel home_map_model {
 			model: $FileList {
-				change-started => $_on_change_start();
 				items-changed => $_on_change_end();
 				directory: bind template.home_dir;
 			};
@@ -28,7 +27,6 @@ SortListModel root_entries {
 
 		model: MapListModel root_map_model {
 			model: $FileList {
-				change-started => $_on_change_start();
 				items-changed => $_on_change_end();
 				directory: bind template.root_dir;
 			};

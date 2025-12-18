@@ -3,8 +3,7 @@ import Gtk from "gi://Gtk?version=4.0"
 import Gio from "gi://Gio?version=2.0"
 import GObject from "gi://GObject?version=2.0"
 
-import { GClass, Property, Child, from, Signal, Debounce, next_idle } from "../gobjectify/gobjectify.js"
-import { iterate_model } from "../utils/helper_funcs.js"
+import { GClass, Property, Child, from, Signal, Debounce } from "../gobjectify/gobjectify.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
 import { SharedVars } from "../utils/shared_vars.js"
 import { HelpDialog } from "../widgets/help_dialog.js"
@@ -18,7 +17,7 @@ import "../widgets/search_button.js"
 @GClass({ template: "resource:///io/github/flattool/Ignition/pages/entries_page.ui" })
 @Signal("entry-clicked", { param_types: [AutostartEntry.$gtype] })
 export class EntriesPage extends from(Adw.NavigationPage, {
-	is_loading: Property.bool({ default: true }),
+	is_loading: Property.bool({ default: false }),
 	no_results: Property.bool(),
 	home_dir: Property.gobject(Gio.File),
 	root_dir: Property.gobject(Gio.File),
@@ -32,8 +31,6 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 	_home_group: Child<EntryGroup>(),
 	_empty_row: Child<Adw.ActionRow>(),
 }) {
-	#lists_loading = new Set<FileList>()
-
 	#_show_empty_row = false
 	get #show_empty_row(): boolean { return this.#_show_empty_row }
 	set #show_empty_row(val: boolean) {
@@ -54,41 +51,25 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 	#entry_map_func(item: GObject.Object): AutostartEntry | GObject.Object {
 		if (!(item instanceof Gio.File)) return item
 		const path: string = item.get_path() ?? ""
-		if (AutostartEntry.verify_file(path) === "") return new AutostartEntry({ path })
-		return item
-	}
-
-	async #mark_overrides(): Promise<void> {
-		for (const entry of iterate_model(this._home_entries)) {
-			await next_idle()
-			const file_name: string = Gio.File.new_for_path(entry.path).get_basename() ?? ""
+		if (AutostartEntry.verify_file(path) !== "") return item
+		const entry = new AutostartEntry({ path })
+		const file_name: string = item.get_basename() ?? ""
+		const is_root: boolean = path.includes(SharedVars.root_autostart_dir.get_path() ?? "")
+		if (is_root) {
+			if (SharedVars.home_autostart_dir.get_child(file_name).query_exists(null)) {
+				entry.override_state = "OVERRIDDEN"
+			}
+		} else {
 			if (SharedVars.root_autostart_dir.get_child(file_name).query_exists(null)) {
 				entry.override_state = "OVERRIDES"
 			}
 		}
-		for (const entry of iterate_model(this._root_entries)) {
-			await next_idle()
-			const file_name: string = Gio.File.new_for_path(entry.path).get_basename() ?? ""
-			if (SharedVars.home_autostart_dir.get_child(file_name).query_exists(null)) {
-				entry.override_state = "OVERRIDDEN"
-			}
-		}
-		this._entry_custom_sorter.changed(Gtk.SorterChange.DIFFERENT)
-	}
-
-	protected _on_change_start(list: FileList): void {
-		this.#lists_loading.add(list)
-		this.is_loading = true
+		return entry
 	}
 
 	@Debounce(200)
-	protected async _on_change_end(list: FileList): Promise<void> {
-		this.#lists_loading.delete(list)
+	protected async _on_change_end(_list: FileList): Promise<void> {
 		this.#show_empty_row = this._home_entries.get_n_items() < 1
-		if (this.#lists_loading.size === 0) {
-			await this.#mark_overrides()
-		}
-		this.is_loading = this.#lists_loading.size > 0
 	}
 
 	protected _get_is_loading(__: this, home_loading: boolean, root_loading: boolean, self_loading: boolean): boolean {
