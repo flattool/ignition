@@ -3,14 +3,14 @@ import Gtk from "gi://Gtk?version=4.0"
 import Gio from "gi://Gio?version=2.0"
 import GObject from "gi://GObject?version=2.0"
 
-import { GClass, Property, Child, from, Signal } from "../gobjectify/gobjectify.js"
+import { GClass, Property, Child, from, Signal, Debounce, next_idle } from "../gobjectify/gobjectify.js"
 import { iterate_model } from "../utils/helper_funcs.js"
-import { FileList } from "../utils/file_list.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
 import { SharedVars } from "../utils/shared_vars.js"
-import { EntryRow } from "../widgets/entry_row.js"
 import { HelpDialog } from "../widgets/help_dialog.js"
+import { EntryGroup } from "../widgets/entry_group.js"
 
+import { FileList } from "../utils/file_list.js"
 import "../widgets/loading_group.js"
 import "../widgets/search_group.js"
 import "../widgets/search_button.js"
@@ -29,11 +29,10 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 	_home_map_model: Child<Gtk.MapListModel>(),
 	_root_map_model: Child<Gtk.MapListModel>(),
 	_only_entries_filter: Child<Gtk.CustomFilter>(),
-	_home_group: Child<Adw.PreferencesGroup>(),
-	_root_group: Child<Adw.PreferencesGroup>(),
+	_home_group: Child<EntryGroup>(),
 	_empty_row: Child<Adw.ActionRow>(),
 }) {
-	#lists_loading = 2
+	#lists_loading = new Set<FileList>()
 
 	#_show_empty_row = false
 	get #show_empty_row(): boolean { return this.#_show_empty_row }
@@ -48,8 +47,6 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 		this._only_entries_filter.set_filter_func((item: GObject.Object) => item instanceof AutostartEntry)
 		this._home_map_model.set_map_func(this.#entry_map_func.bind(this))
 		this._root_map_model.set_map_func(this.#entry_map_func.bind(this))
-		this._home_group.bind_model(this._home_entries, (item) => this.#row_creation_func(item as AutostartEntry))
-		this._root_group.bind_model(this._root_entries, (item) => this.#row_creation_func(item as AutostartEntry))
 		this.home_dir = SharedVars.home_autostart_dir
 		this.root_dir = SharedVars.root_autostart_dir
 	}
@@ -61,20 +58,16 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 		return item
 	}
 
-	#row_creation_func(entry: AutostartEntry): EntryRow {
-		const row = new EntryRow({ entry, activatable: true })
-		row.connect("activated", () => this.emit("entry-clicked", entry))
-		return row
-	}
-
-	#mark_overrides(): void {
+	async #mark_overrides(): Promise<void> {
 		for (const entry of iterate_model(this._home_entries)) {
+			await next_idle()
 			const file_name: string = Gio.File.new_for_path(entry.path).get_basename() ?? ""
 			if (SharedVars.root_autostart_dir.get_child(file_name).query_exists(null)) {
 				entry.override_state = "OVERRIDES"
 			}
 		}
 		for (const entry of iterate_model(this._root_entries)) {
+			await next_idle()
 			const file_name: string = Gio.File.new_for_path(entry.path).get_basename() ?? ""
 			if (SharedVars.home_autostart_dir.get_child(file_name).query_exists(null)) {
 				entry.override_state = "OVERRIDDEN"
@@ -83,28 +76,31 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 		this._entry_custom_sorter.changed(Gtk.SorterChange.DIFFERENT)
 	}
 
-	protected _on_search_change(entry: Gtk.SearchEntry): void {
-		this.search_text = entry.get_text()
-		const any_home: boolean = this._home_entries.get_n_items() > 0
-		const any_root: boolean = this._root_entries.get_n_items() > 0
-		this._home_group.visible = any_home
-		this._root_group.visible = any_root
-		this.no_results = this.search_text !== "" && !any_home && !any_root
-	}
-
-	protected _list_started_loading(_list: FileList): void {
-		this.#lists_loading += 1
+	protected _on_change_start(list: FileList): void {
+		this.#lists_loading.add(list)
 		this.is_loading = true
 	}
 
-	protected _list_changed(_list: FileList): void {
-		this.#lists_loading -= 1
-		if (this.#lists_loading === 0) {
-			this.#mark_overrides()
-		}
+	@Debounce(200)
+	protected async _on_change_end(list: FileList): Promise<void> {
+		this.#lists_loading.delete(list)
 		this.#show_empty_row = this._home_entries.get_n_items() < 1
-		this._root_group.visible = this._root_entries.get_n_items() > 0
-		this.is_loading = this.#lists_loading > 0
+		if (this.#lists_loading.size === 0) {
+			await this.#mark_overrides()
+		}
+		this.is_loading = this.#lists_loading.size > 0
+	}
+
+	protected _get_is_loading(__: this, home_loading: boolean, root_loading: boolean, self_loading: boolean): boolean {
+		return home_loading || root_loading || self_loading
+	}
+
+	protected _get_no_search_results(__: this, no_home_results: boolean, no_root_results: boolean): boolean {
+		return no_home_results && no_root_results
+	}
+
+	protected _on_search_change(entry: Gtk.SearchEntry): void {
+		this.search_text = entry.get_text()
 	}
 
 	protected _show_help(): void {

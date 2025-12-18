@@ -8,20 +8,13 @@ SortListModel home_entries {
 	sorter: entry_custom_sorter;
 
 	model: FilterListModel {
-		filter: StringFilter {
-			expression: expr item as <$AutostartEntry>.name;
-			search: bind template.search_text;
-		};
+		filter: only_entries_filter;
 
-		model: FilterListModel {
-			filter: only_entries_filter;
-
-			model: MapListModel home_map_model {
-				model: $FileList {
-					change-started => $_list_started_loading();
-					items-changed => $_list_changed();
-					directory: bind template.home_dir;
-				};
+		model: MapListModel home_map_model {
+			model: $FileList {
+				change-started => $_on_change_start();
+				items-changed => $_on_change_end();
+				directory: bind template.home_dir;
 			};
 		};
 	};
@@ -31,20 +24,13 @@ SortListModel root_entries {
 	sorter: entry_custom_sorter;
 
 	model: FilterListModel {
-		filter: StringFilter {
-			expression: expr item as <$AutostartEntry>.name;
-			search: bind template.search_text;
-		};
+		filter: only_entries_filter;
 
-		model: FilterListModel {
-			filter: only_entries_filter;
-
-			model: MapListModel root_map_model {
-				model: $FileList {
-					change-started => $_list_started_loading();
-					items-changed => $_list_changed();
-					directory: bind template.root_dir;
-				};
+		model: MapListModel root_map_model {
+			model: $FileList {
+				change-started => $_on_change_start();
+				items-changed => $_on_change_end();
+				directory: bind template.root_dir;
 			};
 		};
 	};
@@ -92,17 +78,28 @@ template $EntriesPage: Adw.NavigationPage {
 		}
 
 		content: $LoadingGroup {
-			is_loading: bind template.is_loading;
+			is_loading: bind $_get_is_loading(
+				home_group.is_loading,
+				root_group.is_loading,
+				template.is_loading,
+			) as <bool>;
 			title: _("Loading Entries");
 			description: _("This should only take a moment.");
 
 			content: $SearchGroup {
-				no_results: bind template.no_results;
+				no_results: bind $_get_no_search_results(
+					home_group.no_search_results,
+					root_group.no_search_results,
+				) as <bool>;
 
 				content: Adw.PreferencesPage {
-					Adw.PreferencesGroup home_group {
+					$EntryGroup home_group {
 						title: _("User Startup Entries");
 						description: _("Entries that run only for you.");
+						entries: home_entries;
+						show_hidden: true;
+						search_text: bind template.search_text;
+						visible: bind home_group.no_search_results inverted;
 
 						header-suffix: Button {
 							valign: center;
@@ -119,9 +116,13 @@ template $EntriesPage: Adw.NavigationPage {
 						};
 					}
 
-					Adw.PreferencesGroup root_group {
+					$EntryGroup root_group {
 						title: _("System Startup Entries");
 						description: _("Entries that run for everyone.");
+						entries: root_entries;
+						show_hidden: true;
+						search_text: bind template.search_text;
+						visible: bind root_group.no_search_results inverted;
 					}
 				};
 			};
