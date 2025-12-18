@@ -3,19 +3,19 @@ import Gtk from "gi://Gtk?version=4.0"
 import Gio from "gi://Gio?version=2.0"
 import GObject from "gi://GObject?version=2.0"
 
-import { GClass, Property, Child, Signal, from, Debounce } from "../gobjectify/gobjectify.js"
+import { GClass, Property, Child, Signal, from } from "../gobjectify/gobjectify.js"
 import { SharedVars } from "../utils/shared_vars.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
 import { FileList } from "../utils/file_list.js"
 import { EntryGroup } from "../widgets/entry_group.js"
 
+import "../widgets/loading_group.js"
 import "../widgets/search_button.js"
 import "../widgets/search_group.js"
 
 @GClass({ template: "resource:///io/github/flattool/Ignition/pages/apps_list_page.ui" })
 @Signal("app-clicked", { param_types: [AutostartEntry.$gtype] })
 export class AppsListPage extends from(Adw.NavigationPage, {
-	is_loading: Property.bool({ default: true }),
 	search_text: Property.string(),
 	show_hidden: Property.bool(),
 	_entries: Child<Gio.ListModel<AutostartEntry>>(),
@@ -42,16 +42,6 @@ export class AppsListPage extends from(Adw.NavigationPage, {
 		const path: string = item.get_path() ?? ""
 		if (AutostartEntry.verify_file(path) === "") return new AutostartEntry({ path })
 		return item
-	}
-
-	@Debounce(200, { trigger: "leading" })
-	protected _on_change_start(): void {
-		this.is_loading = true
-	}
-
-	@Debounce(200)
-	protected async _on_change_end(): Promise<void> {
-		this.is_loading = false
 	}
 
 	protected async _on_search_change(entry: Gtk.SearchEntry): Promise<void> {

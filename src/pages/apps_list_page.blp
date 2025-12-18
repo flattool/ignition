@@ -4,8 +4,6 @@ using Gio 2.0;
 
 SortListModel entries {
 	sorter: CustomSorter entry_sorter {};
-	items-changed => $_on_change_start();
-	items-changed => $_on_change_end();
 
 	model: FlattenListModel {
 		model: Gio.ListStore entry_models {
@@ -40,26 +38,30 @@ template $AppsListPage: Adw.NavigationPage {
 			};
 		}
 
-		content: $SearchGroup {
-			no_results: bind entries_group.no_search_results;
+		content: $LoadingGroup {
+			is_loading: bind entries_group.is_loading;
 
-			content: Adw.PreferencesPage {
-				Adw.PreferencesGroup {
-					title: _("Installed Apps");
-					description: _("Choose any installed apps to run when you log in.");
+			content: $SearchGroup {
+				no_results: bind entries_group.no_search_results;
 
-					Adw.SwitchRow {
-						title: _("Show Hidden Apps");
-						subtitle: _("Show apps that are hidden from the app menu");
-						active: bind template.show_hidden bidirectional;
+				content: Adw.PreferencesPage {
+					Adw.PreferencesGroup {
+						title: _("Installed Apps");
+						description: _("Choose any installed apps to run when you log in.");
+
+						Adw.SwitchRow {
+							title: _("Show Hidden Apps");
+							subtitle: _("Show apps that are hidden from the app menu");
+							active: bind template.show_hidden bidirectional;
+						}
 					}
-				}
 
-				$EntryGroup entries_group {
-					entries: entries;
-					search_text: bind template.search_text;
-					show_hidden: bind template.show_hidden;
-				}
+					$EntryGroup entries_group {
+						entries: entries;
+						search_text: bind template.search_text;
+						show_hidden: bind template.show_hidden;
+					}
+				};
 			};
 		};
 	};
