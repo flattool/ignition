@@ -17,6 +17,7 @@ export class EntryGroup extends from(Adw.PreferencesGroup, {
 	no_search_results: Property.bool(),
 	is_loading: Property.bool(),
 	deduplicate: Property.bool(),
+	show_suffix_label: Property.bool({ default: true }),
 	_search_filter: Child<Gtk.EveryFilter>(),
 	_no_hidden_filter: Child<Gtk.CustomFilter>(),
 }) {
@@ -60,7 +61,7 @@ export class EntryGroup extends from(Adw.PreferencesGroup, {
 		if (this.entries === null) return
 		for (const entry of iterate_model(this.entries)) {
 			await next_idle()
-			const row = new EntryRow({ entry })
+			const row = new EntryRow({ entry, show_suffix_label: this.show_suffix_label })
 			row.connect("activated", () => this.emit("entry-clicked", entry))
 			row.visible = this._search_filter.match(entry)
 			this.add(row)

@@ -9,6 +9,7 @@ import { IconHelper } from "../utils/icon_helper.js"
 export class EntryRow extends from(Adw.ActionRow, {
 	entry: Property.gobject(AutostartEntry, { flags: "CONSTRUCT_ONLY" }),
 	suffix_text: Property.string(),
+	show_suffix_label: Property.bool({ default: true }),
 	popover_text: Property.string(),
 	_prefix_image: Child<Gtk.Image>(),
 	_suffix_label: Child<Gtk.Label>(),

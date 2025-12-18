@@ -15,6 +15,7 @@ template $EntryRow: Adw.ActionRow {
 	Label suffix_label {
 		label: bind template.suffix_text;
 		margin-end: 9;
+		visible: bind template.show_suffix_label;
 
 		styles [
 			"subtitle",
