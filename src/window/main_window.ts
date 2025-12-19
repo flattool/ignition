@@ -2,13 +2,15 @@ import Adw from "gi://Adw"
 
 import { GClass, from, Child } from "../gobjectify/gobjectify.js"
 import { SharedVars } from "../utils/shared_vars.js"
-import { EntriesPage } from "../pages/entries_page.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
+import { EntriesPage } from "../pages/entries_page.js"
+import { AppsListPage } from "../pages/apps_list_page.js"
 
-import "../pages/apps_list_page.js"
+import "../pages/details_page.js"
 
 enum PageTags {
 	APPS_LIST = "apps-list-page",
+	DETAILS = "details-page",
 	ENTRIES = "entries-page",
 }
 
@@ -29,7 +31,13 @@ export class MainWindow extends from(Adw.ApplicationWindow, {
 		this._nav_view.push_by_tag(PageTags.APPS_LIST)
 	}
 
-	protected _on_entry_clicked(page: EntriesPage, entry: AutostartEntry): void {
-		print(page, entry)
+	protected _on_entry_clicked(_page: EntriesPage, entry: AutostartEntry): void {
+		print(entry.name)
+		this._nav_view.push_by_tag(PageTags.DETAILS)
+	}
+
+	protected _on_app_clicked(_page: AppsListPage, entry: AutostartEntry | null): void {
+		print(entry?.name ?? "new entry")
+		this._nav_view.push_by_tag(PageTags.DETAILS)
 	}
 }

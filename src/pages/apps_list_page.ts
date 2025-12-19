@@ -47,4 +47,12 @@ export class AppsListPage extends from(Adw.NavigationPage, {
 	protected async _on_search_change(entry: Gtk.SearchEntry): Promise<void> {
 		this.search_text = entry.get_text()
 	}
+
+	protected _on_script_clicked(_row: Adw.ActionRow): void {
+		this.emit("app-clicked", null)
+	}
+
+	protected _on_entry_clicked(_group: EntryGroup, entry: AutostartEntry): void {
+		this.emit("app-clicked", entry)
+	}
 }

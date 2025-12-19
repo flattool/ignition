@@ -98,6 +98,7 @@ template $EntriesPage: Adw.NavigationPage {
 						show_hidden: true;
 						search_text: bind template.search_text;
 						visible: bind home_group.no_search_results inverted;
+						entry-clicked => $_on_entry_clicked();
 
 						header-suffix: Button {
 							valign: center;
@@ -121,6 +122,7 @@ template $EntriesPage: Adw.NavigationPage {
 						show_hidden: true;
 						search_text: bind template.search_text;
 						visible: bind root_group.no_search_results inverted;
+						entry-clicked => $_on_entry_clicked();
 					}
 				};
 			};

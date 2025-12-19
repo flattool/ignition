@@ -1,0 +1,129 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $DetailsPage: Adw.NavigationPage {
+	title: _("Edit Details");
+
+	child: Adw.ToolbarView {
+		[top]
+		Adw.HeaderBar {}
+
+		content: Box {
+			orientation: vertical;
+
+			Adw.Banner root_banner {
+				title: _("Override entry to edit details");
+				button-label: _("Override");
+			}
+
+			ScrolledWindow {
+				vexpand: true;
+
+				child: Adw.Clamp {
+					margin-start: 12;
+					margin-end: 12;
+					margin-top: 6;
+					margin-bottom: 24;
+
+					child: Box {
+						spacing: 12;
+						orientation: vertical;
+						sensitive: bind root_banner.revealed inverted;
+
+						Box {
+							spacing: 12;
+							margin-start: 6;
+
+							Image icon {
+								valign: center;
+								pixel-size: 45;
+
+								styles [
+									"icon-dropshadow",
+								]
+							}
+
+							Adw.PreferencesGroup {
+								margin-top: 10;
+								margin-bottom: 0;
+								valign: center;
+								title: "TITLE";
+								description: _("Edit details about this entry.");
+							}
+						}
+
+						Adw.PreferencesGroup {
+							Adw.SwitchRow {
+								title: _("Enable");
+								subtitle: _("Enable this entry to be started when you log in.");
+							}
+						}
+
+						Adw.PreferencesGroup {
+							Adw.EntryRow {
+								title: _("Name");
+								text: "NAME";
+							}
+
+							Adw.EntryRow {
+								title: _("Comment");
+								text: "COMMENT";
+							}
+
+							Adw.EntryRow {
+								title: _("Command or Script");
+								text: "EXEC";
+
+								[suffix]
+								MenuButton {
+									icon-name: "ignition:info-outline-symbolic";
+									tooltip-text: _("More Information");
+									valign: center;
+									popover: path_info_popover;
+
+									styles [
+										"flat",
+									]
+								}
+
+							}
+
+							Adw.SwitchRow {
+								title: _("Show Terminal");
+								subtitle: _("Show a terminal for this process to run in.");
+							}
+
+						}
+
+						Adw.PreferencesGroup {
+							Adw.SpinRow {
+								title: _("Seconds of Delay");
+								subtitle: _("Amount of seconds to wait after logging in to run the command or script");
+
+								adjustment: Adjustment {
+									lower: 0;
+									upper: 86400;
+									step-increment: 1.0;
+									page-increment: 10.0;
+								};
+							}
+						}
+					};
+				};
+			}
+		};
+	};
+}
+
+Popover path_info_popover {
+	child: Label {
+		label: _("To run a script at login, paste its file path here. You can copy the script's path from your file manager. Make sure your script is executable");
+		wrap: true;
+		wrap-mode: word;
+		max-width-chars: 52;
+		margin-start: 6;
+		margin-end: 6;
+		margin-top: 6;
+		margin-bottom: 6;
+	};
+}

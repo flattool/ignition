@@ -84,6 +84,10 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 		this.search_text = entry.get_text()
 	}
 
+	protected _on_entry_clicked(_group: EntryGroup, entry: AutostartEntry): void {
+		this.emit("entry-clicked", entry)
+	}
+
 	protected _show_help(): void {
 		new HelpDialog({}).present(this)
 	}

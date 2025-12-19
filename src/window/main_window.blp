@@ -13,6 +13,11 @@ template $MainWindow: Adw.ApplicationWindow {
 
 		$AppsListPage {
 			tag: "apps-list-page";
+			app-clicked => $_on_app_clicked();
+		}
+
+		$DetailsPage {
+			tag: "details-page";
 		}
 	};
 }

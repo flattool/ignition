@@ -71,6 +71,7 @@ template $AppsListPage: Adw.NavigationPage {
 											title: _("Add a Command or Script");
 											subtitle: _("Enter the command to run or path to your script");
 											activatable: true;
+											activated => $_on_script_clicked();
 
 											[prefix]
 											Image {
@@ -113,6 +114,7 @@ template $AppsListPage: Adw.NavigationPage {
 								show_hidden: bind template.show_hidden;
 								deduplicate: true;
 								show_suffix_label: false;
+								entry-clicked => $_on_entry_clicked();
 							}
 						};
 					};
