@@ -14,6 +14,7 @@ template $DetailsPage: Adw.NavigationPage {
 			Adw.Banner root_banner {
 				title: _("Override entry to edit details");
 				button-label: _("Override");
+				revealed: bind $_is_root(template.entry) as <bool>;
 			}
 
 			ScrolledWindow {
