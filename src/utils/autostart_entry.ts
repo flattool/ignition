@@ -22,8 +22,8 @@ const base = from(GObject.Object, {
 	exec: Property.string(),
 	terminal: Property.bool(),
 	icon: Property.string(),
-	delay: Property.double(),
-	path: Property.string({ flags: "CONSTRUCT_ONLY" }),
+	// delay: Property.double(),
+	path: Property.string({ flags: "CONSTRUCT" }),
 	override_state: Property.string({ default: "NONE" }).as<AutostartEntry.OverrideState>(),
 })
 
@@ -89,7 +89,7 @@ export class AutostartEntry extends base {
 	override get icon(): string { return this.#keyfile.get_string_safe(GROUP_NAME, "Icon") }
 	override set icon(v: string) { this.#keyfile.set_string(GROUP_NAME, "Icon", v) }
 
-	override get delay(): number {
+	get delay(): number {
 		if (this.#delay_cache !== null) return this.#delay_cache
 		const raw_exec = this.exec
 		if (raw_exec.endsWith(".ignition_delay.sh")) {
@@ -101,25 +101,15 @@ export class AutostartEntry extends base {
 		}
 		return 0
 	}
-	override set delay(v: number) {
-		this.#delay_cache = v
-		print("setting delay not implemented yet")
-	}
 
 	readonly #file = Gio.File.new_for_path(this.path)
 	readonly #keyfile = new GLib.KeyFile()
-	readonly #locale: string | null = null
+	#locale: string | null = null
 	#delay_cache: number | null = null
 
 	constructor(...params: ConstructorParameters<typeof base>) {
 		super(...params)
-		this.#keyfile.load_from_file(this.path, GLib.KeyFileFlags.KEEP_TRANSLATIONS)
-		try {
-			this.#locale = this.#keyfile.get_locale_for_key(GROUP_NAME, "Name", null)
-		} catch {
-			// Not having a name set is fine
-			this.#locale = null
-		}
+		this.#load()
 	}
 
 	is_hidden(): boolean {
@@ -137,5 +127,23 @@ export class AutostartEntry extends base {
 
 	async trash(): Promise<void> {
 		this.#file.trash_async(GLib.PRIORITY_DEFAULT_IDLE, null)
+	}
+
+	reload(): void {
+		this.#load()
+	}
+
+	#load(): void {
+		const origin = Gio.File.new_for_path(this.path)
+		if (!origin.query_exists(null)) {
+			origin.create(Gio.FileCreateFlags.NONE, null)
+		}
+		this.#keyfile.load_from_file(this.path, GLib.KeyFileFlags.KEEP_TRANSLATIONS)
+		try {
+			this.#locale = this.#keyfile.get_locale_for_key(GROUP_NAME, "Name", null)
+		} catch {
+			// Not having a name set is fine
+			this.#locale = null
+		}
 	}
 }

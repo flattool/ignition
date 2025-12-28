@@ -6,7 +6,21 @@ template $DetailsPage: Adw.NavigationPage {
 
 	child: Adw.ToolbarView {
 		[top]
-		Adw.HeaderBar {}
+		Adw.HeaderBar {
+			[end]
+			Button {
+				label: "#Save";
+				clicked => $_on_save();
+			}
+
+			[end]
+			Button {
+				icon-name: "ignition:user-trash-symbolic";
+				tooltip-text: _("Move to Trash");
+				clicked => $_on_trash();
+				visible: bind root_banner.revealed inverted;
+			}
+		}
 
 		content: Box {
 			orientation: vertical;
@@ -14,7 +28,7 @@ template $DetailsPage: Adw.NavigationPage {
 			Adw.Banner root_banner {
 				title: _("Override entry to edit details");
 				button-label: _("Override");
-				revealed: bind $_is_root(template.entry) as <bool>;
+				revealed: bind $_is_root_autostart(template.entry) as <bool>;
 			}
 
 			ScrolledWindow {
@@ -35,7 +49,7 @@ template $DetailsPage: Adw.NavigationPage {
 							spacing: 12;
 							margin-start: 6;
 
-							Image icon {
+							Image app_icon {
 								valign: center;
 								pixel-size: 45;
 
@@ -48,7 +62,7 @@ template $DetailsPage: Adw.NavigationPage {
 								margin-top: 10;
 								margin-bottom: 0;
 								valign: center;
-								title: "TITLE";
+								title: bind template.pending_name;
 								description: _("Edit details about this entry.");
 							}
 						}
@@ -57,23 +71,24 @@ template $DetailsPage: Adw.NavigationPage {
 							Adw.SwitchRow {
 								title: _("Enable");
 								subtitle: _("Enable this entry to be started when you log in.");
+								active: bind template.pending_enabled bidirectional;
 							}
 						}
 
 						Adw.PreferencesGroup {
 							Adw.EntryRow {
 								title: _("Name");
-								text: "NAME";
+								text: bind template.pending_name bidirectional;
 							}
 
 							Adw.EntryRow {
 								title: _("Comment");
-								text: "COMMENT";
+								text: bind template.pending_comment bidirectional;
 							}
 
 							Adw.EntryRow {
 								title: _("Command or Script");
-								text: "EXEC";
+								text: bind template.pending_exec bidirectional;
 
 								[suffix]
 								MenuButton {
@@ -92,6 +107,7 @@ template $DetailsPage: Adw.NavigationPage {
 							Adw.SwitchRow {
 								title: _("Show Terminal");
 								subtitle: _("Show a terminal for this process to run in.");
+								active: bind template.pending_show_terminal bidirectional;
 							}
 
 						}
@@ -106,6 +122,7 @@ template $DetailsPage: Adw.NavigationPage {
 									upper: 86400;
 									step-increment: 1.0;
 									page-increment: 10.0;
+									value: bind template.pending_delay bidirectional;
 								};
 							}
 						}
