@@ -2,17 +2,21 @@ import Adw from "gi://Adw?version=1"
 import Gio from "gi://Gio?version=2.0"
 import type Gtk from "gi://Gtk?version=4.0"
 
-import { GClass, Property, from, Child, connect_async, Notify } from "../gobjectify/gobjectify.js"
+import { GClass, Property, from, Child, connect_async, Notify, Debounce } from "../gobjectify/gobjectify.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
 import { SharedVars } from "../utils/shared_vars.js"
 import { IconHelper } from "../utils/icon_helper.js"
 import { DelayHelper } from "../utils/delay_helper.js"
 
 const DELAY_FILE_SUFFIX = ".ignition_delay.sh"
+const NAME_REGEX = /^(?! )[^\0\/"'\\]+(?: [^\0\/"'\\]+)*(?<! )$/
+const EXEC_REGEX = /^\S(?:.*\S)?$/
 
 @GClass({ template: "resource:///io/github/flattool/Ignition/pages/details_page.ui" })
 export class DetailsPage extends from(Adw.NavigationPage, {
+	is_valid: Property.bool(),
 	entry: Property.gobject(AutostartEntry),
+	header_title: Property.string(),
 	pending_enabled: Property.bool(),
 	pending_name: Property.string(),
 	pending_comment: Property.string(),
@@ -21,6 +25,7 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 	pending_delay: Property.double(),
 	_app_icon: Child<Gtk.Image>(),
 }) {
+	readonly #invalid_items = new Set<unknown>()
 	#delay_exec = ""
 
 	private __entry: AutostartEntry | null = null
@@ -29,6 +34,7 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 	override set entry(val: AutostartEntry | null) {
 		this.__entry = val
 		IconHelper.set_icon(this._app_icon, val?.icon)
+		this.header_title = val === null ? _("New Entry") : (val.name || SharedVars.default_name)
 		this.pending_enabled = val?.enabled ?? true
 		this.pending_name = val?.name ?? ""
 		this.pending_comment = val?.comment ?? ""
@@ -43,6 +49,29 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 		this.#delay_exec = val.exec
 		this.pending_exec = exec
 		this.pending_delay = delay
+	}
+
+	#validate_entry(widget: Gtk.Editable, text: string, regex: RegExp): void {
+		if (!text) {
+			// Empty rows aren't valid, but shouldn't have an error highlight
+			widget.remove_css_class("error")
+			this.#invalid_items.add(widget)
+		} else if (regex.test(text)) {
+			widget.remove_css_class("error")
+			this.#invalid_items.delete(widget)
+		} else {
+			widget.add_css_class("error")
+			this.#invalid_items.add(widget)
+		}
+		this.is_valid = this.#invalid_items.size === 0
+	}
+
+	protected _on_name_changed(row: Adw.EntryRow): void {
+		this.#validate_entry(row, this.pending_name, NAME_REGEX)
+	}
+
+	protected _on_exec_changed(row: Adw.EntryRow): void {
+		this.#validate_entry(row, this.pending_exec, EXEC_REGEX)
 	}
 
 	protected _on_save(): void {
@@ -77,9 +106,22 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 		this.activate_action("navigation.pop", null)
 	}
 
+	protected _on_create(): void {
+		print("create clicked!")
+	}
+
+	protected _is_home_autostart(): boolean {
+		if (!this.entry) return false
+		return this.entry.path.includes(SharedVars.home_autostart_dir.get_path()!)
+	}
+
 	protected _is_root_autostart(): boolean {
 		if (!this.entry) return false
-		return this.entry.path.includes(SharedVars.root_autostart_dir.get_path() ?? "")
+		return this.entry.path.includes(SharedVars.root_autostart_dir.get_path()!)
+	}
+
+	protected _is_app_or_new_entry(): boolean {
+		return !this._is_home_autostart() && !this._is_root_autostart()
 	}
 
 	protected async _on_trash(): Promise<void> {

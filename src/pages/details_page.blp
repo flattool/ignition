@@ -11,6 +11,16 @@ template $DetailsPage: Adw.NavigationPage {
 			Button {
 				label: "#Save";
 				clicked => $_on_save();
+				sensitive: bind template.is_valid;
+				visible: bind $_is_home_autostart(template.entry) as <bool>;
+			}
+
+			[end]
+			Button {
+				label: "#Create";
+				clicked => $_on_create();
+				sensitive: bind template.is_valid;
+				visible: bind $_is_app_or_new_entry(template.entry) as <bool>;
 			}
 
 			[end]
@@ -18,7 +28,7 @@ template $DetailsPage: Adw.NavigationPage {
 				icon-name: "ignition:user-trash-symbolic";
 				tooltip-text: _("Move to Trash");
 				clicked => $_on_trash();
-				visible: bind root_banner.revealed inverted;
+				visible: bind $_is_home_autostart(template.entry) as <bool>;
 			}
 		}
 
@@ -62,7 +72,7 @@ template $DetailsPage: Adw.NavigationPage {
 								margin-top: 10;
 								margin-bottom: 0;
 								valign: center;
-								title: bind template.pending_name;
+								title: bind template.header_title;
 								description: _("Edit details about this entry.");
 							}
 						}
@@ -79,6 +89,7 @@ template $DetailsPage: Adw.NavigationPage {
 							Adw.EntryRow {
 								title: _("Name");
 								text: bind template.pending_name bidirectional;
+								changed => $_on_name_changed();
 							}
 
 							Adw.EntryRow {
@@ -89,6 +100,7 @@ template $DetailsPage: Adw.NavigationPage {
 							Adw.EntryRow {
 								title: _("Command or Script");
 								text: bind template.pending_exec bidirectional;
+								changed => $_on_exec_changed();
 
 								[suffix]
 								MenuButton {
@@ -101,7 +113,6 @@ template $DetailsPage: Adw.NavigationPage {
 										"flat",
 									]
 								}
-
 							}
 
 							Adw.SwitchRow {
@@ -109,7 +120,6 @@ template $DetailsPage: Adw.NavigationPage {
 								subtitle: _("Show a terminal for this process to run in.");
 								active: bind template.pending_show_terminal bidirectional;
 							}
-
 						}
 
 						Adw.PreferencesGroup {
