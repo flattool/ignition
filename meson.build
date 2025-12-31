@@ -1,15 +1,18 @@
-project('ignition',
+project(
+	'ignition',
 	version: '2.2.0',
 	meson_version: '>= 1.0.0',
-	default_options: [ 'warning_level=2', 'werror=false', ],
+	default_options: ['warning_level=2', 'werror=false'],
 )
 
-i18n = import('i18n')
+blueprint_compiler = find_program('blueprint-compiler')
 gnome = import('gnome')
+i18n = import('i18n')
+python = find_program('python3')
+tsc = find_program('tsc')
 
+pkgdatadir = get_option('datadir') / meson.project_name()
 profile = get_option('profile')
-
-tsc = find_program('tsc', required: true)
 
 subdir('data')
 subdir('src')

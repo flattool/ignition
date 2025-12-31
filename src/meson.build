@@ -1,30 +1,17 @@
-pkgdatadir = get_option('datadir') / meson.project_name()
-gnome = import('gnome')
-
-blueprint_compiler = find_program('blueprint-compiler')
-python = find_program('python3')
-python_blp_code = '''
-import sys, subprocess
-from pathlib import Path
-blp_compiler = sys.argv[1]
-src_dir = Path(sys.argv[2])
-out_dir = sys.argv[3]
-blps = [str(file) for file in src_dir.rglob("*.blp")]
-subprocess.run([blp_compiler, "batch-compile", out_dir, src_dir] + blps, check=True)
-'''
-
 blueprints = custom_target(
 	'blueprints',
-	input: [],
-	output: '.',
+	input: files('ui.gresource.xml'),
+	output: 'ui.gresource.xml',
 	build_by_default: true,
 	build_always_stale: true,
 	command: [
 		python,
-		'-c', python_blp_code,
+		files('meson_blueprint_compile.py'),
 		blueprint_compiler,
 		meson.current_source_dir(),
 		meson.current_build_dir(),
+		'@INPUT@',
+		'@OUTPUT@',
 	],
 )
 
@@ -67,9 +54,9 @@ else
 	bin_conf.set('VERSION', meson.project_version())
 endif
 
-data_res = gnome.compile_resources(
-	'io.github.flattool.Ignition.data',
-	'io.github.flattool.Ignition.data.gresource.xml',
+ui_res = gnome.compile_resources(
+	'ui',
+	blueprints,
 	gresource_bundle: true,
 	install: true,
 	install_dir: pkgdatadir,

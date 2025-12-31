@@ -1,12 +1,6 @@
-test_deps=[
-    data_res,
-    blueprints,
-    jasmine
-]
+test_deps = [ui_res, blueprints, jasmine]
 
-unit_tests = {
-    'example_test': {}
-}
+unit_tests = {'example_test': {}}
 
 tests = custom_target(
 	'typescript-compile',
@@ -25,18 +19,19 @@ install_subdir(
 	strip_directory: true,
 	install_tag: 'tsc-js',
 )
-foreach test, extra: unit_tests
-    test(test, jasmine,
-        args: [
-        '--module',
-        '--tap',
-        '--no-config',
-        '@0@.js'.format(tsc_out / 'tests' / 'sources' / test),
-        ],
-        suite: 'unit',
-        depends: [tests],
-        env: environment(),
-        protocol: 'tap',
-        workdir: meson.current_source_dir()
-    )
+foreach test, extra : unit_tests
+	test(
+		test,
+		jasmine,
+		args: [
+			'--module',
+			'--tap',
+			'--no-config', '@0@.js'.format(tsc_out / 'tests' / 'sources' / test),
+		],
+		suite: 'unit',
+		depends: [tests],
+		env: environment(),
+		protocol: 'tap',
+		workdir: meson.current_source_dir(),
+	)
 endforeach
