@@ -1,5 +1,3 @@
-import { SharedVars } from "./shared_vars.js"
-
 import GLib from "gi://GLib?version=2.0"
 import Gdk from "gi://Gdk?version=4.0"
 import Gtk from "gi://Gtk?version=4.0"
@@ -7,6 +5,9 @@ import Adw from "gi://Adw?version=1"
 import Pango from "gi://Pango?version=1.0"
 import Gio from "gi://Gio?version=2.0"
 import type GObject from "gi://GObject?version=2.0"
+
+import { SharedVars } from "./shared_vars.js"
+import { next_idle } from "../gobjectify/gobjectify.js"
 
 const HOST_PATHS_NEEDING_PREFIX = new Set<string>(["etc", "usr", "bin", "sbin", "lib"])
 
@@ -68,4 +69,9 @@ export const iterate_model = <T extends GObject.Object>(model: Gio.ListModel<T>)
 			for (let i = 0; i < length; i += 1) callback(model.get_item(i)!, i)
 		},
 	}
+}
+
+export const idle_run = async <T>(to_run: () => T): Promise<T> => {
+	await next_idle()
+	return to_run()
 }

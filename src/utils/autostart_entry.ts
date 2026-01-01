@@ -90,22 +90,22 @@ export class AutostartEntry extends base {
 	override set icon(v: string) { this.#keyfile.set_string(GROUP_NAME, "Icon", v) }
 
 	get delay(): number {
-		if (this.#delay_cache !== null) return this.#delay_cache
-		const raw_exec = this.exec
-		if (raw_exec.endsWith(".ignition_delay.sh")) {
-			const [delay, , error] = DelayHelper.load_delay(Gio.File.new_for_path(raw_exec))
-			if (!error) {
-				this.#delay_cache = delay
-				return delay
-			}
-		}
-		return 0
+		if (this.#delay_cache != null) return this.#delay_cache
+		this.#load_delay()
+		return this.#delay_cache ?? 0
+	}
+
+	get delayed_exec(): string {
+		if (this.#delayed_exec_cache) return this.#delayed_exec_cache
+		this.#load_delay()
+		return this.#delayed_exec_cache
 	}
 
 	readonly #file = Gio.File.new_for_path(this.path)
 	readonly #keyfile = new GLib.KeyFile()
 	#locale: string | null = null
 	#delay_cache: number | null = null
+	#delayed_exec_cache = ""
 
 	constructor(...params: ConstructorParameters<typeof base>) {
 		super(...params)
@@ -145,5 +145,14 @@ export class AutostartEntry extends base {
 			// Not having a name set is fine
 			this.#locale = null
 		}
+	}
+
+	#load_delay(): void {
+		const raw_exec = this.exec
+		if (!raw_exec.endsWith(".ignition_delay.sh")) return
+		const [delay, delayed_exec, error] = DelayHelper.load_delay(Gio.File.new_for_path(raw_exec))
+		if (error) return
+		this.#delay_cache = delay
+		this.#delayed_exec_cache = delayed_exec
 	}
 }
