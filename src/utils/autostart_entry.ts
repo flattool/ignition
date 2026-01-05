@@ -101,6 +101,10 @@ export class AutostartEntry extends base {
 		return this.#delayed_exec_cache
 	}
 
+	get file_name(): string {
+		return this.#file.get_basename() ?? ""
+	}
+
 	readonly #file = Gio.File.new_for_path(this.path)
 	readonly #keyfile = new GLib.KeyFile()
 	#locale: string | null = null
@@ -110,6 +114,7 @@ export class AutostartEntry extends base {
 	constructor(...params: ConstructorParameters<typeof base>) {
 		super(...params)
 		this.#load()
+		print(this.name)
 	}
 
 	is_hidden(): boolean {
@@ -151,7 +156,10 @@ export class AutostartEntry extends base {
 		const raw_exec = this.exec
 		if (!raw_exec.endsWith(".ignition_delay.sh")) return
 		const [delay, delayed_exec, error] = DelayHelper.load_delay(Gio.File.new_for_path(raw_exec))
-		if (error) return
+		if (error) {
+			print("DELAY ERROR:", error)
+			return
+		}
 		this.#delay_cache = delay
 		this.#delayed_exec_cache = delayed_exec
 	}

@@ -113,6 +113,25 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 		this.is_valid = this.#invalid_items.size === 0
 	}
 
+	#save_delay(): void {
+		if (this.entry == null) return
+		const delay_file = Gio.File.new_for_path(this.#delay_path)
+		if (this.pending_delay) {
+			if (delay_file.query_exists(null)) {
+				DelayHelper.save_delay(delay_file, this.pending_delay, this.pending_exec)
+			} else {
+				const delay_name = this.entry.file_name.replace(/\.desktop$/, ".ignition_delay.sh")
+				const new_delay_path = `${SharedVars.home_autostart_dir.get_path()}/${delay_name}`
+				const new_delay_file = Gio.File.new_for_path(new_delay_path)
+				DelayHelper.save_delay(new_delay_file, this.pending_delay, this.pending_exec)
+				this.entry.exec = new_delay_path
+			}
+		} else if (delay_file.query_exists(null)) {
+			this.entry.exec = this.entry.delayed_exec
+			delay_file.trash_async(GLib.PRIORITY_DEFAULT_IDLE, null).catch(print)
+		}
+	}
+
 	protected async _on_name_changed(row: Adw.EntryRow): Promise<void> {
 		await next_idle()
 		this.#check_valid(row, this.pending_name, NAME_REGEX)
@@ -129,13 +148,7 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 		this.entry.name = this.pending_name
 		this.entry.comment = this.pending_comment
 		this.entry.terminal = this.pending_show_terminal
-
-		if (this.pending_delay) {
-			print("exec has delay!")
-		} else {
-			print("exec has no delay!")
-		}
-
+		this.#save_delay()
 		this.entry.save()
 		this.activate_action("navigation.pop", null)
 		this.entry = this.entry
