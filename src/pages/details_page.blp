@@ -14,7 +14,7 @@ template $DetailsPage: Adw.NavigationPage {
 					icon-name: "ignition:checkmark-symbolic";
 				};
 
-				// sensitive: bind $_can_save(template.entry, template.is_valid, template.is_different) as <bool>;
+				sensitive: bind $_can_save(template.entry, template.is_valid, template.is_different) as <bool>;
 				visible: bind $_is_home_autostart(template.entry) as <bool>;
 				clicked => $_on_save();
 
@@ -30,7 +30,7 @@ template $DetailsPage: Adw.NavigationPage {
 					icon-name: "ignition:list-add-symbolic";
 				};
 
-				// sensitive: bind $_can_create(template.entry, template.is_valid) as <bool>;
+				sensitive: bind $_can_create(template.entry, template.is_valid) as <bool>;
 				visible: bind $_is_app_or_new_entry(template.entry) as <bool>;
 				clicked => $_on_create();
 
@@ -105,6 +105,7 @@ template $DetailsPage: Adw.NavigationPage {
 							Adw.EntryRow {
 								title: _("Name");
 								text: bind template.pending_name bidirectional;
+								changed => $_on_name_changed();
 							}
 
 							Adw.EntryRow {
@@ -115,6 +116,7 @@ template $DetailsPage: Adw.NavigationPage {
 							Adw.EntryRow {
 								title: _("Command or Script");
 								text: bind template.pending_exec bidirectional;
+								changed => $_on_exec_changed();
 
 								[suffix]
 								MenuButton {
