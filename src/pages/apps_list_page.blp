@@ -64,7 +64,7 @@ template $AppsListPage: Adw.NavigationPage {
 										title: _("Commands and Scripts");
 										description: _("Run a command or script when you log in.");
 										margin-start: 12;
-                                        margin-end: 12;
+										margin-end: 12;
 										margin-bottom: 24;
 
 										Adw.ActionRow {
@@ -96,7 +96,7 @@ template $AppsListPage: Adw.NavigationPage {
 								title: _("Installed Apps");
 								description: _("Choose any installed apps to run when you log in.");
 								margin-start: 12;
-                                margin-end: 12;
+								margin-end: 12;
 								margin-bottom: 12;
 
 								Adw.SwitchRow {
@@ -108,12 +108,12 @@ template $AppsListPage: Adw.NavigationPage {
 
 							$EntryGroup entries_group {
 								margin-start: 12;
-                                margin-end: 12;
+								margin-end: 12;
 								entries: entries;
 								search_text: bind template.search_text;
 								show_hidden: bind template.show_hidden;
 								deduplicate: true;
-								show_suffix_label: false;
+								show_suffix_info: false;
 								entry-clicked => $_on_entry_clicked();
 							}
 						};

@@ -9,7 +9,7 @@ import { IconHelper } from "../utils/icon_helper.js"
 export class EntryRow extends from(Adw.ActionRow, {
 	entry: Property.gobject(AutostartEntry, { flags: "CONSTRUCT_ONLY" }),
 	suffix_text: Property.string(),
-	show_suffix_label: Property.bool({ default: true }),
+	show_suffix_info: Property.bool({ default: true }),
 	popover_text: Property.string(),
 	_prefix_image: Child<Gtk.Image>(),
 	_suffix_label: Child<Gtk.Label>(),
@@ -19,6 +19,7 @@ export class EntryRow extends from(Adw.ActionRow, {
 		this.title = this.entry?.name.markup_escape_text() ?? ""
 		this.subtitle = this.entry?.comment.markup_escape_text() ?? ""
 		this.entry?.connect("notify", this.#update_status.bind(this))
+		this.connect("notify::show-suffix-info", this.#update_status.bind(this))
 		this.#update_status()
 		await next_idle()
 		IconHelper.set_icon(this._prefix_image, this.entry?.icon)
@@ -29,7 +30,7 @@ export class EntryRow extends from(Adw.ActionRow, {
 		const enabled: boolean = this.entry?.enabled ?? false
 		const should_warn: boolean = state === "OVERRIDDEN" || !enabled
 		this.activatable = state !== "OVERRIDDEN"
-		this._info_button.visible = state !== "NONE"
+		this._info_button.visible = this.show_suffix_info && state !== "NONE"
 
 		if (should_warn) {
 			this._suffix_label.add_css_class("warning")
@@ -38,6 +39,8 @@ export class EntryRow extends from(Adw.ActionRow, {
 			this._suffix_label.remove_css_class("warning")
 			this._prefix_image.opacity = 1
 		}
+
+		if (!this.show_suffix_info) return
 
 		if (enabled) {
 			const delay: number = this.entry?.delay ?? 0
@@ -53,7 +56,7 @@ export class EntryRow extends from(Adw.ActionRow, {
 
 		if (state === "OVERRIDDEN") {
 			this.popover_text = _("This entry is overridden by a user entry.")
-			this.suffix_text = _("Overridden")
+			if (this.show_suffix_info) this.suffix_text = _("Overridden")
 		} else if (state === "OVERRIDES") {
 			this.popover_text = _("This entry overrides a system entry.")
 		}

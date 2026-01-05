@@ -15,7 +15,7 @@ template $EntryRow: Adw.ActionRow {
 	Label suffix_label {
 		label: bind template.suffix_text;
 		margin-end: 9;
-		visible: bind template.show_suffix_label;
+		visible: bind template.show_suffix_info;
 
 		styles [
 			"subtitle",
@@ -46,9 +46,9 @@ Popover info_popover {
 		label: bind template.popover_text;
 		wrap: true;
 		wrap-mode: word_char;
-		margin-start:  6;
-		margin-end:    6;
-		margin-top:    6;
+		margin-start: 6;
+		margin-end: 6;
+		margin-top: 6;
 		margin-bottom: 6;
 	}
 }
