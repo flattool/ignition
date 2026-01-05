@@ -130,6 +130,12 @@ export class AutostartEntry extends base {
 		this.#keyfile.save_to_file(this.path)
 	}
 
+	save_as(path: string): AutostartEntry {
+		this.#keyfile.set_string(GROUP_NAME, "Type", "Application")
+		this.#keyfile.save_to_file(path)
+		return new AutostartEntry({ path })
+	}
+
 	async trash(): Promise<void> {
 		this.#file.trash_async(GLib.PRIORITY_DEFAULT_IDLE, null)
 	}
