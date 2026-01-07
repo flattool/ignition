@@ -96,9 +96,9 @@ export class AutostartEntry extends base {
 	}
 
 	get delayed_exec(): string {
-		if (this.#delayed_exec_cache) return this.#delayed_exec_cache
+		if (this.#delayed_exec_cache !== null) return this.#delayed_exec_cache
 		this.#load_delay()
-		return this.#delayed_exec_cache
+		return this.#delayed_exec_cache ?? ""
 	}
 
 	get file_name(): string {
@@ -109,7 +109,7 @@ export class AutostartEntry extends base {
 	readonly #keyfile = new GLib.KeyFile()
 	#locale: string | null = null
 	#delay_cache: number | null = null
-	#delayed_exec_cache = ""
+	#delayed_exec_cache: string | null = null
 
 	constructor(...params: ConstructorParameters<typeof base>) {
 		super(...params)

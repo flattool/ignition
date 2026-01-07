@@ -13,6 +13,7 @@ import "../widgets/loading_group.js"
 import "../widgets/search_button.js"
 import "../widgets/search_group.js"
 
+// TODO: Hide entries with execs that are already being autostarted
 @GClass({ template: "resource:///io/github/flattool/Ignition/pages/apps_list_page.ui" })
 @Signal("app-clicked", { param_types: [AutostartEntry.$gtype] })
 export class AppsListPage extends from(Adw.NavigationPage, {

@@ -1,6 +1,5 @@
 import Adw from "gi://Adw?version=1"
 import Gio from "gi://Gio?version=2.0"
-import GLib from "gi://GLib?version=2.0"
 import type Gtk from "gi://Gtk?version=4.0"
 
 import {
@@ -12,7 +11,6 @@ import {
 	Debounce,
 	from,
 	next_idle,
-	connect_async,
 } from "../gobjectify/gobjectify.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
 import { SharedVars } from "../utils/shared_vars.js"
@@ -40,7 +38,6 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 	pending_delay: Property.double(),
 	_app_icon: Child<Gtk.Image>(),
 }) {
-	#delay_path = ""
 	#invalid_items = new Set<unknown>()
 
 	declare __entry: AutostartEntry | null
@@ -56,23 +53,19 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 		this.pending_name = val?.name ?? ""
 		this.pending_comment = val?.comment ?? ""
 		this.pending_show_terminal = val?.terminal ?? false
-		this.#sync_delay_and_exec_to_ui(val)
-	}
 
-	#sync_delay_and_exec_to_ui(entry: AutostartEntry | null): void {
-		if (entry === null) {
-			this.#delay_path = ""
+		// Sync delay and exec to UI
+		if (val === null) {
 			this.pending_exec = ""
 			this.pending_delay = 0
 			return
 		}
-		this.pending_delay = entry.delay
-		if (this.pending_delay) {
-			this.#delay_path = entry.exec
-			this.pending_exec = entry.delayed_exec
+		if (val.delayed_exec) {
+			this.pending_delay = val.delay
+			this.pending_exec = val.delayed_exec
 		} else {
-			this.#delay_path = ""
-			this.pending_exec = entry.exec
+			this.pending_delay = 0
+			this.pending_exec = val.exec
 		}
 	}
 
@@ -93,7 +86,7 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 			|| this.pending_show_terminal !== this.entry.terminal
 			|| this.pending_delay !== this.entry.delay
 		)
-		this.is_different = is_initially_different || (Boolean(this.#delay_path)
+		this.is_different = is_initially_different || (Boolean(this.entry.delayed_exec)
 			? this.pending_exec !== this.entry.delayed_exec
 			: this.pending_exec !== this.entry.exec
 		)
@@ -113,22 +106,29 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 		this.is_valid = this.#invalid_items.size === 0
 	}
 
-	#save_delay(): void {
-		if (this.entry == null) return
-		const delay_file = Gio.File.new_for_path(this.#delay_path)
+	#save_entry(entry: AutostartEntry, path?: string): void {
+		entry.enabled = this.pending_enabled
+		entry.name = this.pending_name
+		entry.comment = this.pending_comment
+		entry.terminal = this.pending_show_terminal
+
+		const delay_path: string = (path || entry.path).replace(/\.desktop$/, ".ignition_delay.sh")
 		if (this.pending_delay) {
+			entry.exec = delay_path
+			DelayHelper.save_delay(delay_path, this.pending_delay, this.pending_exec)
+		} else {
+			entry.exec = this.pending_exec
+			const delay_file = Gio.File.new_for_path(delay_path)
 			if (delay_file.query_exists(null)) {
-				DelayHelper.save_delay(delay_file, this.pending_delay, this.pending_exec)
-			} else {
-				const delay_name = this.entry.file_name.replace(/\.desktop$/, ".ignition_delay.sh")
-				const new_delay_path = `${SharedVars.home_autostart_dir.get_path()}/${delay_name}`
-				const new_delay_file = Gio.File.new_for_path(new_delay_path)
-				DelayHelper.save_delay(new_delay_file, this.pending_delay, this.pending_exec)
-				this.entry.exec = new_delay_path
+				delay_file.trash(null)
 			}
-		} else if (delay_file.query_exists(null)) {
-			this.entry.exec = this.entry.delayed_exec
-			delay_file.trash_async(GLib.PRIORITY_DEFAULT_IDLE, null).catch(print)
+		}
+
+		if (path) {
+			this.entry = entry.save_as(path)
+		} else {
+			entry.save()
+			this.entry = entry
 		}
 	}
 
@@ -143,46 +143,27 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 	}
 
 	protected _on_save(): void {
-		if (!this.is_valid || !this._is_home_autostart() || this.entry == null) return
-		this.entry.enabled = this.pending_enabled
-		this.entry.name = this.pending_name
-		this.entry.comment = this.pending_comment
-		this.entry.terminal = this.pending_show_terminal
-		this.#save_delay()
-		this.entry.save()
+		if (!this._is_home_autostart() || this.entry === null) return
+		this.#save_entry(this.entry)
 		this.activate_action("navigation.pop", null)
-		this.entry = this.entry
 	}
 
 	protected _on_create(): void {
-		print("create clicked!")
+		// TODO: do not allow creating an entry with a name / exec that already exists
+		if (this._is_home_autostart() || this._is_root_autostart()) return
+		if (this.entry === null) {
+			const path: string = `${SharedVars.home_autostart_dir.get_path()}/${this.pending_name}.desktop`
+			this.#save_entry(new AutostartEntry({ path }))
+		} else {
+			const path: string = `${SharedVars.home_autostart_dir.get_path()}/${this.entry.file_name}`
+			this.#save_entry(this.entry, path)
+		}
+		this.activate_action("navigation.pop", null)
 	}
 
-	protected async _on_trash(): Promise<void> {
-		if (!this._is_home_autostart()) return
-
-		const dialog = new Adw.AlertDialog({
-			heading: _("Trash Entry?"),
-			body: _("This entry will be moved to the trash, and will no longer start when you log in."),
-		})
-		dialog.add_response("cancel", _("Cancel"))
-		dialog.add_response("continue", _("Trash"))
-		dialog.set_response_appearance("continue", Adw.ResponseAppearance.DESTRUCTIVE)
-		dialog.present(this)
-
-		const [response] = await connect_async<[string]>(dialog, "response")
-		if (response !== "continue") return
-
-		if (this.#delay_path) {
-			const delay_file = Gio.File.new_for_path(this.#delay_path)
-			if (delay_file.query_exists(null)) {
-				await delay_file.trash_async(GLib.PRIORITY_DEFAULT_IDLE, null)
-			}
-		}
-
-		await this.entry?.trash()
-		this.activate_action("navigation.pop", null)
-		this.entry = this.entry
+	protected _on_trash(): void {
+		// TODO: implement trashing
+		print("trash clicked!")
 	}
 
 	protected _can_save(): boolean {

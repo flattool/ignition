@@ -2,8 +2,7 @@ import GLib from "gi://GLib?version=2.0"
 import Gio from "gi://Gio?version=2.0"
 
 export class DelayHelper {
-	static save_delay(file: Gio.File, delay: number, command: string): unknown {
-		const path = file.get_path() ?? ""
+	static save_delay(path: string, delay: number, command: string): unknown {
 		const contents = `#!/usr/bin/env sh\nsleep ${delay} && ${command}\n`
 
 		try {
