@@ -114,7 +114,6 @@ export class AutostartEntry extends base {
 	constructor(...params: ConstructorParameters<typeof base>) {
 		super(...params)
 		this.#load()
-		print(this.name)
 	}
 
 	is_hidden(): boolean {

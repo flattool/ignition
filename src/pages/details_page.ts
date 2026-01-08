@@ -11,12 +11,14 @@ import {
 	Debounce,
 	from,
 	next_idle,
+	connect_async,
 } from "../gobjectify/gobjectify.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
 import { SharedVars } from "../utils/shared_vars.js"
 import { IconHelper } from "../utils/icon_helper.js"
 import { DelayHelper } from "../utils/delay_helper.js"
 import { idle_run } from "../utils/helper_funcs.js"
+import GLib from "gi://GLib?version=2.0"
 
 Gio._promisify(Gio.File.prototype, "trash_async", "trash_finish")
 
@@ -161,9 +163,27 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 		this.activate_action("navigation.pop", null)
 	}
 
-	protected _on_trash(): void {
-		// TODO: implement trashing
-		print("trash clicked!")
+	protected async _on_trash(): Promise<void> {
+		if (!this._is_home_autostart() || this.entry === null) return
+		const dialog = new Adw.AlertDialog({
+			heading: _("Trash Entry?"),
+			body: _("This entry will be moved to the trash, and will no longer start when you log in."),
+		})
+		dialog.add_response("cancel", _("Cancel"))
+		dialog.add_response("continue", _("Trash"))
+		dialog.set_response_appearance("continue", Adw.ResponseAppearance.DESTRUCTIVE)
+		dialog.present(this)
+
+		const [response] = await connect_async<[string]>(dialog, "response")
+		if (response !== "continue") return
+
+		if (this.entry.exec.endsWith(DELAY_FILE_SUFFIX)) {
+			const delay_file = Gio.File.new_for_path(this.entry.exec)
+			if (delay_file.query_exists(null)) await delay_file.trash_async(GLib.PRIORITY_DEFAULT_IDLE, null)
+		}
+		await this.entry.trash()
+		this.entry = null
+		this.activate_action("navigation.pop", null)
 	}
 
 	protected _can_save(): boolean {
