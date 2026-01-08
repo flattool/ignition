@@ -13,7 +13,6 @@ import "../widgets/loading_group.js"
 import "../widgets/search_button.js"
 import "../widgets/search_group.js"
 
-// TODO: Hide entries with execs that are already being autostarted
 @GClass({ template: "resource:///io/github/flattool/Ignition/pages/apps_list_page.ui" })
 @Signal("app-clicked", { param_types: [AutostartEntry.$gtype] })
 export class AppsListPage extends from(Adw.NavigationPage, {
@@ -33,7 +32,10 @@ export class AppsListPage extends from(Adw.NavigationPage, {
 		if (!directory.query_exists(null)) return
 		const file_list = new FileList({ directory })
 		const file_to_entry_model = Gtk.MapListModel.new(file_list.with_implements, this.#entry_map_func.bind(this))
-		const only_entries_filter = Gtk.CustomFilter.new((item: GObject.Object) => item instanceof AutostartEntry)
+		const only_entries_filter = Gtk.CustomFilter.new((item: GObject.Object) => (
+			item instanceof AutostartEntry
+			&& !SharedVars.home_autostart_dir.get_child(item.file_name).query_exists(null)
+		))
 		const filter_model = Gtk.FilterListModel.new(file_to_entry_model, only_entries_filter)
 		this._entry_models.append(filter_model)
 	}
