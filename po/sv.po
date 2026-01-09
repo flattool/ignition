@@ -8,14 +8,16 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-24 23:13-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-01-09 23:20+0000\n"
+"Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
+"Language-Team: Swedish <https://weblate.fyralabs.com/projects/flattool/"
+"ignition/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:2
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14
@@ -25,7 +27,7 @@ msgstr ""
 #: data/io.github.flattool.Ignition.desktop.in:3
 #: data/io.github.flattool.Ignition.metainfo.xml.in:15
 msgid "Manage startup apps and scripts"
-msgstr ""
+msgstr "Hantera uppstarts-appar och skript"
 
 #: data/io.github.flattool.Ignition.desktop.in:9
 msgid "GTK;startup;autostart;login;"
@@ -44,7 +46,7 @@ msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
-msgstr ""
+msgstr "Se alla dina uppstartsobjekt."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:39
 msgid "View and edit entry details."
@@ -60,15 +62,15 @@ msgstr ""
 
 #: src/first_run_page/first-run-page.blp:5
 msgid "Welcome"
-msgstr ""
+msgstr "Välkommen"
 
 #: src/first_run_page/first-run-page.blp:13
 msgid "About Ignition"
-msgstr ""
+msgstr "Om Ignition"
 
 #: src/first_run_page/first-run-page.blp:20
 msgid "Welcome to Ignition!"
-msgstr ""
+msgstr "Välkommen till Ignition!"
 
 #: src/first_run_page/first-run-page.blp:21
 msgid ""
@@ -77,15 +79,15 @@ msgstr ""
 
 #: src/first_run_page/first-run-page.blp:25
 msgid "Get Started"
-msgstr ""
+msgstr "Kom igång"
 
 #: src/gtk/entry-row.blp:22 src/main_view/details-page.blp:103
 msgid "More Information"
-msgstr ""
+msgstr "Mer information"
 
 #: src/gtk/entry_row.ts:67
 msgid "Disabled"
-msgstr ""
+msgstr "Avstängd"
 
 #: src/gtk/entry_row.ts:71
 msgid "Overridden"
@@ -93,7 +95,7 @@ msgstr ""
 
 #: src/gtk/entry_row.ts:75
 msgid "Enabled"
-msgstr ""
+msgstr "Aktiverad"
 
 #: src/gtk/entry_row.ts:95
 msgid "This entry is overridden by a user entry."
@@ -105,11 +107,11 @@ msgstr ""
 
 #: src/gtk/help-dialog.blp:5
 msgid "Help and Information"
-msgstr ""
+msgstr "Hjälp och Information"
 
 #: src/gtk/help-dialog.blp:27
 msgid "Can't find an application?"
-msgstr ""
+msgstr "Kan du inte hitta en applikation?"
 
 #: src/gtk/help-dialog.blp:28
 msgid "Ignition might not be able to see some applications on your system"
@@ -125,7 +127,7 @@ msgstr ""
 
 #: src/gtk/help-dialog.blp:53
 msgid "Can't Find an App?"
-msgstr ""
+msgstr "Kan du inte hitta en app?"
 
 #: src/gtk/help-dialog.blp:73
 msgid ""
@@ -165,11 +167,11 @@ msgstr ""
 
 #: src/main.ts:70
 msgid "Translate"
-msgstr ""
+msgstr "Översätt"
 
 #: src/main.ts:71
 msgid "Donate"
-msgstr ""
+msgstr "Donera"
 
 #: src/main.ts:97
 msgid "Opened folder"
@@ -177,7 +179,7 @@ msgstr ""
 
 #: src/main.ts:100
 msgid "Could not open folder"
-msgstr ""
+msgstr "Kunde inte öppna mappen"
 
 #: src/main_view/app-list-page.blp:5
 msgid "Add or Create an Entry"
@@ -185,7 +187,7 @@ msgstr ""
 
 #: src/main_view/app-list-page.blp:12 src/main_view/entries-page.blp:13
 msgid "Search"
-msgstr ""
+msgstr "Sök"
 
 #: src/main_view/app-list-page.blp:25 src/main_view/entries-page.blp:40
 msgid "Search entries"
@@ -193,7 +195,7 @@ msgstr ""
 
 #: src/main_view/app-list-page.blp:47
 msgid "Commands and Scripts"
-msgstr ""
+msgstr "Kommandon och Skript"
 
 #: src/main_view/app-list-page.blp:48
 msgid "Run a command or script when you log in."
@@ -201,7 +203,7 @@ msgstr ""
 
 #: src/main_view/app-list-page.blp:54
 msgid "Add a Command or Script"
-msgstr ""
+msgstr "Lägg till ett kommando eller skript"
 
 #: src/main_view/app-list-page.blp:55
 msgid "Enter the command to run or path to your script"
@@ -209,7 +211,7 @@ msgstr ""
 
 #: src/main_view/app-list-page.blp:78
 msgid "Installed Apps"
-msgstr ""
+msgstr "Installerade appar"
 
 #: src/main_view/app-list-page.blp:79
 msgid "Choose any installed app to run when you log in."
@@ -217,7 +219,7 @@ msgstr ""
 
 #: src/main_view/app-list-page.blp:83
 msgid "Show Hidden Apps"
-msgstr ""
+msgstr "Visa dolda appar"
 
 #: src/main_view/app-list-page.blp:84
 msgid "Show apps that are hidden from the app menu"
@@ -225,27 +227,27 @@ msgstr ""
 
 #: src/main_view/app-list-page.blp:101 src/main_view/entries-page.blp:57
 msgid "No Results Found"
-msgstr ""
+msgstr "Inga resultat hittades"
 
 #: src/main_view/app-list-page.blp:102 src/main_view/entries-page.blp:58
 msgid "Try a different search."
-msgstr ""
+msgstr "Prova med en annan sökning."
 
 #: src/main_view/app_list_page.ts:138
 msgid "Could not load some apps"
-msgstr ""
+msgstr "Kunde inte ladda en del appar"
 
 #: src/main_view/details-page.blp:5
 msgid "Edit Details"
-msgstr ""
+msgstr "Redigera detaljer"
 
 #: src/main_view/details-page.blp:16
 msgid "Save"
-msgstr ""
+msgstr "Spara"
 
 #: src/main_view/details-page.blp:26
 msgid "Create"
-msgstr ""
+msgstr "Skapa"
 
 #: src/main_view/details-page.blp:33
 msgid "Move to Trash"
@@ -257,15 +259,15 @@ msgstr ""
 
 #: src/main_view/details-page.blp:42 src/main_view/details-page.blp:164
 msgid "Override"
-msgstr ""
+msgstr "Åsidosätt"
 
 #: src/main_view/details-page.blp:74
 msgid "Edit details about this entry."
-msgstr ""
+msgstr "Redigera detaljerna om det här inlägget."
 
 #: src/main_view/details-page.blp:80
 msgid "Enable"
-msgstr ""
+msgstr "Aktivera"
 
 #: src/main_view/details-page.blp:81
 msgid "Enable this entry to be started when you log in."
@@ -273,19 +275,19 @@ msgstr ""
 
 #: src/main_view/details-page.blp:87
 msgid "Name"
-msgstr ""
+msgstr "Namn"
 
 #: src/main_view/details-page.blp:92
 msgid "Comment"
-msgstr ""
+msgstr "Kommentera"
 
 #: src/main_view/details-page.blp:97
 msgid "Command or Script"
-msgstr ""
+msgstr "Kommando eller Skript"
 
 #: src/main_view/details-page.blp:112
 msgid "Show Terminal"
-msgstr ""
+msgstr "Visa Terminal"
 
 #: src/main_view/details-page.blp:113
 msgid "Show a terminal for this process to run in."
@@ -307,7 +309,7 @@ msgstr ""
 
 #: src/main_view/details-page.blp:151
 msgid "Create and Replace?"
-msgstr ""
+msgstr "Skapa och Ersätt?"
 
 #: src/main_view/details-page.blp:152
 msgid ""
@@ -317,15 +319,15 @@ msgstr ""
 #: src/main_view/details-page.blp:154 src/main_view/details-page.blp:163
 #: src/main_view/details-page.blp:172
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: src/main_view/details-page.blp:155
 msgid "Create and Replace"
-msgstr ""
+msgstr "Skapa och Ersätt"
 
 #: src/main_view/details-page.blp:160
 msgid "Override Entry?"
-msgstr ""
+msgstr "Åsidosätt posten?"
 
 #: src/main_view/details-page.blp:161
 msgid ""
@@ -345,7 +347,7 @@ msgstr ""
 
 #: src/main_view/details-page.blp:173
 msgid "Trash"
-msgstr ""
+msgstr "Ta bort"
 
 #: src/main_view/details_page.ts:264 src/shortcuts-dialog.blp:9
 msgid "New Entry"
@@ -357,7 +359,7 @@ msgstr ""
 
 #: src/main_view/details_page.ts:346
 msgid "Could not save file"
-msgstr ""
+msgstr "Kunde inte spara en fil"
 
 #: src/main_view/details_page.ts:371
 msgid "Created entry"
@@ -365,7 +367,7 @@ msgstr ""
 
 #: src/main_view/details_page.ts:373 src/main_view/details_page.ts:397
 msgid "Could not create file"
-msgstr ""
+msgstr "Kunde inte skapa fil"
 
 #: src/main_view/details_page.ts:394
 msgid "Overrode entry"
@@ -381,11 +383,11 @@ msgstr ""
 
 #: src/main_view/entries-page.blp:20
 msgid "Main Menu"
-msgstr ""
+msgstr "Huvudmeny"
 
 #: src/main_view/entries-page.blp:27
 msgid "Help and information"
-msgstr ""
+msgstr "Hjälp och Information"
 
 #: src/main_view/entries-page.blp:47
 msgid "Loading Entries"
@@ -401,7 +403,7 @@ msgstr ""
 
 #: src/main_view/entries-page.blp:112
 msgid "No Entries Found"
-msgstr ""
+msgstr "Inga poster hittades"
 
 #: src/main_view/entries-page.blp:122
 msgid "Add an app or script to run it when you log in"
@@ -413,11 +415,11 @@ msgstr ""
 
 #: src/main_view/entries-page.blp:144
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "_Tangentbordsgenvägar"
 
 #: src/main_view/entries-page.blp:149
 msgid "_About Ignition"
-msgstr ""
+msgstr "_Om Ignition"
 
 #: src/main_view/entries_page.ts:85
 msgid "User Startup Entries"
@@ -453,7 +455,7 @@ msgstr ""
 
 #: src/shortcuts-dialog.blp:23
 msgid "Search Apps"
-msgstr ""
+msgstr "Sök efter appar"
 
 #: src/shortcuts-dialog.blp:29
 msgid "Details Page"
@@ -461,40 +463,40 @@ msgstr ""
 
 #: src/shortcuts-dialog.blp:32
 msgid "Save Edits"
-msgstr ""
+msgstr "Spara redigeringar"
 
 #: src/shortcuts-dialog.blp:38
 msgid "General"
-msgstr ""
+msgstr "Allmänt"
 
 #: src/shortcuts-dialog.blp:41
 msgid "Open Autostart Folder"
-msgstr ""
+msgstr "Öppna autostart-mappen"
 
 #: src/shortcuts-dialog.blp:46
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "Visa genvägar"
 
 #: src/shortcuts-dialog.blp:51
 msgid "Quit"
-msgstr ""
+msgstr "Avsluta"
 
 #: src/utils/helper_funcs.ts:39
 msgid "Copy"
-msgstr ""
+msgstr "Kopiera"
 
 #: src/utils/helper_funcs.ts:40
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: src/utils/helper_funcs.ts:49
 msgid "Details"
-msgstr ""
+msgstr "Detaljer"
 
 #. These need to be getters for the _() translation function to work
 #: src/utils/shared_vars.ts:17
 msgid "No Name Set"
-msgstr ""
+msgstr "Inget namn är inställt"
 
 #: src/utils/shared_vars.ts:18
 msgid "No comment set."
@@ -502,4 +504,4 @@ msgstr ""
 
 #: src/window/window.ts:73
 msgid "Failed to start properly"
-msgstr ""
+msgstr "Kunde inte startas korrekt"
