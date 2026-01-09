@@ -1,0 +1,505 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the ignition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ignition\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-24 23:13-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: data/io.github.flattool.Ignition.desktop.in:2
+#: data/io.github.flattool.Ignition.metainfo.xml.in:14
+msgid "Ignition"
+msgstr ""
+
+#: data/io.github.flattool.Ignition.desktop.in:3
+#: data/io.github.flattool.Ignition.metainfo.xml.in:15
+msgid "Manage startup apps and scripts"
+msgstr ""
+
+#: data/io.github.flattool.Ignition.desktop.in:9
+msgid "GTK;startup;autostart;login;"
+msgstr ""
+
+#: data/io.github.flattool.Ignition.metainfo.xml.in:11
+msgid "Heliguy"
+msgstr ""
+
+#: data/io.github.flattool.Ignition.metainfo.xml.in:17
+msgid ""
+"Ignition provides a simple UI to add, remove, and modify startup entries on "
+"your computer. Ignition can add apps, scripts, and arbitrary commands to run "
+"at login."
+msgstr ""
+
+#: data/io.github.flattool.Ignition.metainfo.xml.in:35
+msgid "See all your startup items."
+msgstr ""
+
+#: data/io.github.flattool.Ignition.metainfo.xml.in:39
+msgid "View and edit entry details."
+msgstr ""
+
+#: data/io.github.flattool.Ignition.metainfo.xml.in:43
+msgid "Create a new startup entry."
+msgstr ""
+
+#: data/io.github.flattool.Ignition.metainfo.xml.in:47
+msgid "See all your startup items, in dark mode."
+msgstr ""
+
+#: src/first_run_page/first-run-page.blp:5
+msgid "Welcome"
+msgstr ""
+
+#: src/first_run_page/first-run-page.blp:13
+msgid "About Ignition"
+msgstr ""
+
+#: src/first_run_page/first-run-page.blp:20
+msgid "Welcome to Ignition!"
+msgstr ""
+
+#: src/first_run_page/first-run-page.blp:21
+msgid ""
+"Ignition lets you start any app or script when you log in to your computer."
+msgstr ""
+
+#: src/first_run_page/first-run-page.blp:25
+msgid "Get Started"
+msgstr ""
+
+#: src/gtk/entry-row.blp:22 src/main_view/details-page.blp:103
+msgid "More Information"
+msgstr ""
+
+#: src/gtk/entry_row.ts:67
+msgid "Disabled"
+msgstr ""
+
+#: src/gtk/entry_row.ts:71
+msgid "Overridden"
+msgstr ""
+
+#: src/gtk/entry_row.ts:75
+msgid "Enabled"
+msgstr ""
+
+#: src/gtk/entry_row.ts:95
+msgid "This entry is overridden by a user entry."
+msgstr ""
+
+#: src/gtk/entry_row.ts:97
+msgid "This entry overrides a system entry."
+msgstr ""
+
+#: src/gtk/help-dialog.blp:5
+msgid "Help and Information"
+msgstr ""
+
+#: src/gtk/help-dialog.blp:27
+msgid "Can't find an application?"
+msgstr ""
+
+#: src/gtk/help-dialog.blp:28
+msgid "Ignition might not be able to see some applications on your system"
+msgstr ""
+
+#: src/gtk/help-dialog.blp:38
+msgid "What is a 'System Entry'?"
+msgstr ""
+
+#: src/gtk/help-dialog.blp:39
+msgid "Learn more about system startup entries, and how editing them works"
+msgstr ""
+
+#: src/gtk/help-dialog.blp:53
+msgid "Can't Find an App?"
+msgstr ""
+
+#: src/gtk/help-dialog.blp:73
+msgid ""
+"Some apps store their entries outside of the places that Ignition is allowed "
+"to read. This means that these apps won't show up in the list of apps on "
+"your system, when making a new entry."
+msgstr ""
+
+#: src/gtk/help-dialog.blp:79
+msgid ""
+"To fix this, you can allow Ignition to see more home locations, or more root "
+"locations, in your file system."
+msgstr ""
+
+#: src/gtk/help-dialog.blp:85
+msgid ""
+"We recommend the app \"Flatseal\" to manage these permissions. Enable \"All "
+"user files\" or \"All system files\" to be able to find these apps."
+msgstr ""
+
+#: src/gtk/help-dialog.blp:94
+msgid "What is a System Entry?"
+msgstr ""
+
+#: src/gtk/help-dialog.blp:114
+msgid ""
+"System Entries are for apps or commands that are ran on log in for "
+"everybody. These are usually present to allow certain features, programs, or "
+"other important actions run properly."
+msgstr ""
+
+#: src/gtk/help-dialog.blp:120
+msgid ""
+"You can override these, but please use caution when doing so, as you may "
+"break some existing app or feature of your desktop."
+msgstr ""
+
+#: src/main.ts:70
+msgid "Translate"
+msgstr ""
+
+#: src/main.ts:71
+msgid "Donate"
+msgstr ""
+
+#: src/main.ts:97
+msgid "Opened folder"
+msgstr ""
+
+#: src/main.ts:100
+msgid "Could not open folder"
+msgstr ""
+
+#: src/main_view/app-list-page.blp:5
+msgid "Add or Create an Entry"
+msgstr ""
+
+#: src/main_view/app-list-page.blp:12 src/main_view/entries-page.blp:13
+msgid "Search"
+msgstr ""
+
+#: src/main_view/app-list-page.blp:25 src/main_view/entries-page.blp:40
+msgid "Search entries"
+msgstr ""
+
+#: src/main_view/app-list-page.blp:47
+msgid "Commands and Scripts"
+msgstr ""
+
+#: src/main_view/app-list-page.blp:48
+msgid "Run a command or script when you log in."
+msgstr ""
+
+#: src/main_view/app-list-page.blp:54
+msgid "Add a Command or Script"
+msgstr ""
+
+#: src/main_view/app-list-page.blp:55
+msgid "Enter the command to run or path to your script"
+msgstr ""
+
+#: src/main_view/app-list-page.blp:78
+msgid "Installed Apps"
+msgstr ""
+
+#: src/main_view/app-list-page.blp:79
+msgid "Choose any installed app to run when you log in."
+msgstr ""
+
+#: src/main_view/app-list-page.blp:83
+msgid "Show Hidden Apps"
+msgstr ""
+
+#: src/main_view/app-list-page.blp:84
+msgid "Show apps that are hidden from the app menu"
+msgstr ""
+
+#: src/main_view/app-list-page.blp:101 src/main_view/entries-page.blp:57
+msgid "No Results Found"
+msgstr ""
+
+#: src/main_view/app-list-page.blp:102 src/main_view/entries-page.blp:58
+msgid "Try a different search."
+msgstr ""
+
+#: src/main_view/app_list_page.ts:138
+msgid "Could not load some apps"
+msgstr ""
+
+#: src/main_view/details-page.blp:5
+msgid "Edit Details"
+msgstr ""
+
+#: src/main_view/details-page.blp:16
+msgid "Save"
+msgstr ""
+
+#: src/main_view/details-page.blp:26
+msgid "Create"
+msgstr ""
+
+#: src/main_view/details-page.blp:33
+msgid "Move to Trash"
+msgstr ""
+
+#: src/main_view/details-page.blp:41
+msgid "Override entry to edit details"
+msgstr ""
+
+#: src/main_view/details-page.blp:42 src/main_view/details-page.blp:164
+msgid "Override"
+msgstr ""
+
+#: src/main_view/details-page.blp:74
+msgid "Edit details about this entry."
+msgstr ""
+
+#: src/main_view/details-page.blp:80
+msgid "Enable"
+msgstr ""
+
+#: src/main_view/details-page.blp:81
+msgid "Enable this entry to be started when you log in."
+msgstr ""
+
+#: src/main_view/details-page.blp:87
+msgid "Name"
+msgstr ""
+
+#: src/main_view/details-page.blp:92
+msgid "Comment"
+msgstr ""
+
+#: src/main_view/details-page.blp:97
+msgid "Command or Script"
+msgstr ""
+
+#: src/main_view/details-page.blp:112
+msgid "Show Terminal"
+msgstr ""
+
+#: src/main_view/details-page.blp:113
+msgid "Show a terminal for this process to run in."
+msgstr ""
+
+#: src/main_view/details-page.blp:119
+msgid "Seconds of Delay"
+msgstr ""
+
+#: src/main_view/details-page.blp:120
+msgid "Amount of seconds to wait after logging in to run the command or script"
+msgstr ""
+
+#: src/main_view/details-page.blp:139
+msgid ""
+"To run a script at login, paste its file path here. You can copy the "
+"script's path from your file manager. Make sure your script is executable."
+msgstr ""
+
+#: src/main_view/details-page.blp:151
+msgid "Create and Replace?"
+msgstr ""
+
+#: src/main_view/details-page.blp:152
+msgid ""
+"A file already exists for this entry. Are you sure you want to replace it?"
+msgstr ""
+
+#: src/main_view/details-page.blp:154 src/main_view/details-page.blp:163
+#: src/main_view/details-page.blp:172
+msgid "Cancel"
+msgstr ""
+
+#: src/main_view/details-page.blp:155
+msgid "Create and Replace"
+msgstr ""
+
+#: src/main_view/details-page.blp:160
+msgid "Override Entry?"
+msgstr ""
+
+#: src/main_view/details-page.blp:161
+msgid ""
+"Be careful, overriding system entries can lead to system breakage. This will "
+"make a copy of the entry for you to edit."
+msgstr ""
+
+#: src/main_view/details-page.blp:169
+msgid "Trash Entry?"
+msgstr ""
+
+#: src/main_view/details-page.blp:170
+msgid ""
+"This entry will be moved to the trash, and will no longer start when you log "
+"in."
+msgstr ""
+
+#: src/main_view/details-page.blp:173
+msgid "Trash"
+msgstr ""
+
+#: src/main_view/details_page.ts:264 src/shortcuts-dialog.blp:9
+msgid "New Entry"
+msgstr ""
+
+#: src/main_view/details_page.ts:344
+msgid "Saved details"
+msgstr ""
+
+#: src/main_view/details_page.ts:346
+msgid "Could not save file"
+msgstr ""
+
+#: src/main_view/details_page.ts:371
+msgid "Created entry"
+msgstr ""
+
+#: src/main_view/details_page.ts:373 src/main_view/details_page.ts:397
+msgid "Could not create file"
+msgstr ""
+
+#: src/main_view/details_page.ts:394
+msgid "Overrode entry"
+msgstr ""
+
+#: src/main_view/details_page.ts:435
+msgid "Trashed entry"
+msgstr ""
+
+#: src/main_view/details_page.ts:437
+msgid "Could not trash file"
+msgstr ""
+
+#: src/main_view/entries-page.blp:20
+msgid "Main Menu"
+msgstr ""
+
+#: src/main_view/entries-page.blp:27
+msgid "Help and information"
+msgstr ""
+
+#: src/main_view/entries-page.blp:47
+msgid "Loading Entries"
+msgstr ""
+
+#: src/main_view/entries-page.blp:48
+msgid "This should only take a moment."
+msgstr ""
+
+#: src/main_view/entries-page.blp:91
+msgid "New"
+msgstr ""
+
+#: src/main_view/entries-page.blp:112
+msgid "No Entries Found"
+msgstr ""
+
+#: src/main_view/entries-page.blp:122
+msgid "Add an app or script to run it when you log in"
+msgstr ""
+
+#: src/main_view/entries-page.blp:133
+msgid "_Open Autostart Folder"
+msgstr ""
+
+#: src/main_view/entries-page.blp:144
+msgid "_Keyboard Shortcuts"
+msgstr ""
+
+#: src/main_view/entries-page.blp:149
+msgid "_About Ignition"
+msgstr ""
+
+#: src/main_view/entries_page.ts:85
+msgid "User Startup Entries"
+msgstr ""
+
+#: src/main_view/entries_page.ts:86
+msgid "Entries that run only for you."
+msgstr ""
+
+#: src/main_view/entries_page.ts:110
+msgid "System Startup Entries"
+msgstr ""
+
+#: src/main_view/entries_page.ts:111
+msgid "Entries that run for everyone."
+msgstr ""
+
+#: src/main_view/entries_page.ts:180
+msgid "Could not load some entries"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:6
+msgid "Entries List"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:14
+msgid "Search Entries"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:20
+msgid "Apps List"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:23
+msgid "Search Apps"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:29
+msgid "Details Page"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:32
+msgid "Save Edits"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:38
+msgid "General"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:41
+msgid "Open Autostart Folder"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:46
+msgid "Show Shortcuts"
+msgstr ""
+
+#: src/shortcuts-dialog.blp:51
+msgid "Quit"
+msgstr ""
+
+#: src/utils/helper_funcs.ts:39
+msgid "Copy"
+msgstr ""
+
+#: src/utils/helper_funcs.ts:40
+msgid "OK"
+msgstr ""
+
+#: src/utils/helper_funcs.ts:49
+msgid "Details"
+msgstr ""
+
+#. These need to be getters for the _() translation function to work
+#: src/utils/shared_vars.ts:17
+msgid "No Name Set"
+msgstr ""
+
+#: src/utils/shared_vars.ts:18
+msgid "No comment set."
+msgstr ""
+
+#: src/window/window.ts:73
+msgid "Failed to start properly"
+msgstr ""
