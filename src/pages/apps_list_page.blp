@@ -40,6 +40,8 @@ template $AppsListPage: Adw.NavigationPage {
 
 		content: $LoadingGroup {
 			is_loading: bind entries_group.is_loading;
+			title: _("Loading Apps");
+			description: _("This should only take a moment");
 
 			content: $SearchGroup {
 				no_results: bind entries_group.no_search_results;
