@@ -17,7 +17,7 @@ export class SharedVars {
 
 	// main.js will make this dir if it does not exist
 	static readonly home_autostart_dir = Gio.File.new_for_path((
-		GLib.getenv("HOST_XDG_CONFIG_HOME")
+		GLib.getenv(SharedVars.is_flatpak ? "HOST_XDG_CONFIG_HOME" : "XDG_CONFIG_HOME")
 		|| `${SharedVars.home_dir.get_path()}/.config`
 	) + "/autostart")
 
@@ -29,11 +29,11 @@ export class SharedVars {
 	// The order of this array is important! Lower Files get less priority when two entries have identical execs
 	static readonly host_app_entry_dirs = [
 		Gio.File.new_for_path(( // user apps
-			GLib.getenv("HOST_XDG_DATA_HOME")
+			GLib.getenv(SharedVars.is_flatpak ? "HOST_XDG_DATA_HOME" : "XDG_DATA_HOME")
 			|| SharedVars.home_dir.get_path() + "/.local/share"
 		) + "/applications"),
 		Gio.File.new_for_path(( // user flatpaks
-			GLib.getenv("HOST_XDG_DATA_HOME")
+			GLib.getenv(SharedVars.is_flatpak ? "HOST_XDG_DATA_HOME" : "XDG_DATA_HOME")
 			|| SharedVars.home_dir.get_path() + "/.local/share"
 		) + "/flatpak/exports/share/applications"),
 		Gio.File.new_for_path( // system flatpaks
