@@ -5,19 +5,24 @@ template $MainWindow: Adw.ApplicationWindow {
 	default-width: 600;
 	default-height: 541;
 
-	content: Adw.NavigationView nav_view {
-		$EntriesPage {
-			tag: "entries-page";
-			entry-clicked => $_on_entry_clicked();
-		}
+	content: Adw.ToastOverlay toast_overlay {
+		child: Adw.NavigationView nav_view {
+			$EntriesPage {
+				tag: "entries-page";
+				entry-clicked => $_on_entry_clicked();
+			}
 
-		$AppsListPage {
-			tag: "apps-list-page";
-			app-clicked => $_on_app_clicked();
-		}
+			$AppsListPage {
+				tag: "apps-list-page";
+				app-clicked => $_on_app_clicked();
+			}
 
-		$DetailsPage details_page {
-			tag: "details-page";
-		}
+			$DetailsPage details_page {
+				tag: "details-page";
+				updated-entry => $_on_updated_entry();
+				created-entry => $_on_created_entry();
+				trashed-entry => $_on_trashed_entry();
+			}
+		};
 	};
 }
