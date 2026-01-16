@@ -18,7 +18,6 @@ export class IgnitionApplication extends from(Adw.Application, {
 	new_entry: SimpleAction({ accels: ["<primary>n"] }),
 	open_folder: SimpleAction({ accels: ["<primary><shift>o"] }),
 	save_edits: SimpleAction({ accels: ["<primary>s"] }),
-	// search: SimpleAction({ accels: ["<primary>f"] }),
 }) {
 	#main_window?: MainWindow
 
@@ -29,6 +28,7 @@ export class IgnitionApplication extends from(Adw.Application, {
 
 	_ready(): void {
 		this._quit.connect("activate", () => this.quit())
+		this.save_edits.connect("activate", () => this.#main_window?.save_edits())
 	}
 
 	@OnSimpleAction("about")

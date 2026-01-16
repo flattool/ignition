@@ -27,6 +27,10 @@ export class MainWindow extends from(Adw.ApplicationWindow, {
 		SharedVars.application?.new_entry.connect("activate", this.#on_new_entry.bind(this))
 	}
 
+	save_edits(): void {
+		this._details_page.save()
+	}
+
 	#on_new_entry(): void {
 		if (this._nav_view.get_visible_page_tag() === PageTags.APPS_LIST) return
 		this._nav_view.push_by_tag(PageTags.APPS_LIST)

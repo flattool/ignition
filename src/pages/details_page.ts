@@ -75,6 +75,19 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 		}
 	}
 
+	save(): void {
+		if (this._is_root_autostart()) {
+			return
+		}
+		if (!this._is_home_autostart()) {
+			// Foreign entry, from the app list
+			this._on_create()
+		} else if (this.is_different) {
+			// Home entry
+			this._on_save()
+		}
+	}
+
 	@OnSignal("notify::pending-enabled")
 	@OnSignal("notify::pending-name")
 	@OnSignal("notify::pending-comment")
@@ -159,14 +172,14 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 	}
 
 	protected _on_save(): void {
-		if (!this._is_home_autostart() || this.entry === null) return
+		if (!this._is_home_autostart() || !this.is_valid || this.entry === null) return
 		this.#save_entry(this.entry)
 		this.emit("updated-entry")
 	}
 
 	protected _on_create(): void {
 		// TODO: do not allow creating an entry with a name / exec that already exists
-		if (this._is_home_autostart() || this._is_root_autostart()) return
+		if (this._is_home_autostart() || !this.is_valid || this._is_root_autostart()) return
 		let saved_without_error: boolean
 		if (this.entry === null) {
 			const path: string = `${SharedVars.home_autostart_dir.get_path()}/${this.pending_name}.desktop`
