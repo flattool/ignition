@@ -1,0 +1,175 @@
+using Gtk 4.0;
+using Adw 1;
+
+CustomFilter only_entries_filter {}
+CustomSorter entry_custom_sorter {}
+
+SortListModel home_entries {
+	sorter: entry_custom_sorter;
+
+	model: FilterListModel {
+		filter: only_entries_filter;
+
+		model: MapListModel home_map_model {
+			model: $FileList {
+				items-changed => $_on_change_end();
+				directory: bind template.home_dir;
+			};
+		};
+	};
+}
+
+SortListModel root_entries {
+	sorter: entry_custom_sorter;
+
+	model: FilterListModel {
+		filter: only_entries_filter;
+
+		model: MapListModel root_map_model {
+			model: $FileList {
+				items-changed => $_on_change_end();
+				directory: bind template.root_dir;
+			};
+		};
+	};
+}
+
+template $EntriesPage: Adw.NavigationPage {
+	title: "Ignition";
+
+	child: Adw.ToolbarView {
+		[top]
+		Adw.HeaderBar {
+			[start]
+			$SearchButton search_button {
+				search_bar: search_bar;
+			}
+
+			[end]
+			MenuButton {
+				primary: true;
+				icon-name: "open-menu-symbolic";
+				tooltip-text: _("Main Menu");
+				menu-model: primary_menu;
+			}
+
+			[end]
+			Button {
+				icon-name: "ignition:question-round-outline-symbolic";
+				tooltip-text: _("Help and information");
+				clicked => $_show_help();
+			}
+		}
+
+		[top]
+		Adw.Clamp {
+			child: SearchBar search_bar {
+				key-capture-widget: template;
+				search-mode-enabled: bind search_button.active bidirectional;
+
+				child: SearchEntry {
+					search-changed => $_on_search_change();
+					hexpand: true;
+					placeholder-text: _("Search entries");
+				};
+			};
+		}
+
+		content: $LoadingGroup {
+			is_loading: bind $_get_is_loading(
+				home_group.is_loading,
+				root_group.is_loading,
+				template.is_loading,
+			) as <bool>;
+			title: _("Loading Entries");
+			description: _("This should only take a moment.");
+
+			content: $SearchGroup {
+				no_results: bind $_get_no_search_results(
+					home_group.no_search_results,
+					root_group.no_search_results,
+				) as <bool>;
+
+				content: Adw.PreferencesPage {
+					$EntryGroup home_group {
+						title: _("User Startup Entries");
+						description: _("Entries that run only for you.");
+						entries: home_entries;
+						show_hidden: true;
+						search_text: bind template.search_text;
+						visible: bind home_group.no_search_results inverted;
+						entry-clicked => $_on_entry_clicked();
+
+						header-suffix: Button {
+							valign: center;
+							action-name: "app.new_entry";
+
+							styles [
+								"flat",
+							]
+
+							child: Adw.ButtonContent {
+								icon-name: "ignition:list-add-symbolic";
+								label: _("New");
+							};
+						};
+					}
+
+					$EntryGroup root_group {
+						title: _("System Startup Entries");
+						description: _("Entries that run for everyone.");
+						entries: root_entries;
+						show_hidden: true;
+						search_text: bind template.search_text;
+						visible: bind root_group.no_search_results inverted;
+						entry-clicked => $_on_entry_clicked();
+					}
+				};
+			};
+		};
+	};
+}
+
+Adw.ActionRow empty_row {
+	child: Box {
+		spacing: 6;
+		margin-start: 16;
+		margin-end: 16;
+		margin-top: 30;
+		margin-bottom: 30;
+		orientation: vertical;
+
+		Image {
+			icon-name: "ignition:info-outline-symbolic";
+			pixel-size: 54;
+			margin-bottom: 6;
+		}
+
+		Label {
+			label: _("No Entries Found");
+			wrap: true;
+			halign: center;
+
+			styles [
+				"heading",
+			]
+		}
+
+		Label {
+			label: _("Add an app or script to run it when you log in");
+			justify: center;
+			halign: center;
+			wrap: true;
+		}
+	};
+}
+
+menu primary_menu {
+	section {
+		item (_("_Open Autostart Folder"), "app.open_folder")
+	}
+	section {
+		item (_("_Keyboard Shortcuts"), "app.shortcuts")
+		item (_("_About Descriptive"), "app.about")
+	}
+}

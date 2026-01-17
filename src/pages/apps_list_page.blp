@@ -1,0 +1,127 @@
+using Gtk 4.0;
+using Adw 1;
+using Gio 2.0;
+
+SortListModel entries {
+	sorter: CustomSorter entry_sorter {};
+
+	model: FlattenListModel {
+		model: Gio.ListStore entry_models {
+			item-type: typeof<Gio.ListModel>;
+		};
+	};
+}
+
+template $AppsListPage: Adw.NavigationPage {
+	title: _("Add or Create an Entry");
+
+	child: Adw.ToolbarView {
+		[top]
+		Adw.HeaderBar {
+			[start]
+			$SearchButton search_button {
+				search_bar: search_bar;
+			}
+		}
+
+		[top]
+		Adw.Clamp {
+			child: SearchBar search_bar {
+				key-capture-widget: template;
+				search-mode-enabled: bind search_button.active bidirectional;
+
+				child: SearchEntry {
+					search-changed => $_on_search_change();
+					hexpand: true;
+					placeholder-text: _("Search apps");
+				};
+			};
+		}
+
+		content: $LoadingGroup {
+			is_loading: bind entries_group.is_loading;
+			title: _("Loading Apps");
+			description: _("This should only take a moment");
+
+			content: $SearchGroup {
+				no_results: bind entries_group.no_search_results;
+
+				content: ScrolledWindow {
+					child: Adw.Clamp {
+						margin-top: 12;
+						margin-bottom: 24;
+
+						child: Box {
+							orientation: vertical;
+
+							Revealer {
+								transition-type: slide_up;
+								reveal-child: bind search_button.active inverted;
+
+								child: Revealer {
+									transition-type: crossfade;
+									reveal-child: bind search_button.active inverted;
+
+									child: Adw.PreferencesGroup {
+										title: _("Commands and Scripts");
+										description: _("Run a command or script when you log in.");
+										margin-start: 12;
+										margin-end: 12;
+										margin-bottom: 24;
+
+										Adw.ActionRow {
+											title: _("Add a Command or Script");
+											subtitle: _("Enter the command to run or path to your script");
+											activatable: true;
+											activated => $_on_script_clicked();
+
+											[prefix]
+											Image {
+												icon-size: large;
+												icon-name: "ignition:application-x-executable-symbolic";
+
+												styles [
+													'icon-dropshadow',
+												]
+											}
+
+											[suffix]
+											Image {
+												icon-name: "go-next-symbolic";
+											}
+										}
+									};
+								};
+							}
+
+							Adw.PreferencesGroup {
+								title: _("Installed Apps");
+								description: _("Choose any installed apps to run when you log in.");
+								margin-start: 12;
+								margin-end: 12;
+								margin-bottom: 12;
+
+								Adw.SwitchRow {
+									title: _("Show Hidden Apps");
+									subtitle: _("Show apps that are hidden from the app menu");
+									active: bind template.show_hidden bidirectional;
+								}
+							}
+
+							$EntryGroup entries_group {
+								margin-start: 12;
+								margin-end: 12;
+								entries: entries;
+								search_text: bind template.search_text;
+								show_hidden: bind template.show_hidden;
+								deduplicate: true;
+								show_suffix_info: false;
+								entry-clicked => $_on_entry_clicked();
+							}
+						};
+					};
+				};
+			};
+		};
+	};
+}

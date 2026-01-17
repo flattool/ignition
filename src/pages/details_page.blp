@@ -1,0 +1,174 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $DetailsPage: Adw.NavigationPage {
+	title: _("Edit Details");
+
+	child: Adw.ToolbarView {
+		[top]
+		Adw.HeaderBar {
+			[end]
+			Button {
+				child: Adw.ButtonContent {
+					label: _("Save");
+					icon-name: "ignition:checkmark-symbolic";
+				};
+
+				sensitive: bind $_can_save(template.entry, template.is_valid, template.is_different) as <bool>;
+				visible: bind $_is_home_autostart(template.entry) as <bool>;
+				clicked => $_on_save();
+
+				styles [
+					"suggested-action",
+				]
+			}
+
+			[end]
+			Button {
+				child: Adw.ButtonContent {
+					label: _("Create");
+					icon-name: "ignition:list-add-symbolic";
+				};
+
+				sensitive: bind $_can_create(template.entry, template.is_valid) as <bool>;
+				visible: bind $_is_app_or_new_entry(template.entry) as <bool>;
+				clicked => $_on_create();
+
+				styles [
+					"suggested-action",
+				]
+			}
+
+			[end]
+			Button {
+				icon-name: "ignition:user-trash-symbolic";
+				tooltip-text: _("Move to Trash");
+				visible: bind $_is_home_autostart(template.entry) as <bool>;
+				clicked => $_on_trash();
+			}
+		}
+
+		content: Box {
+			orientation: vertical;
+
+			Adw.Banner root_banner {
+				title: _("Override entry to edit details");
+				button-label: _("Override");
+				revealed: bind $_is_root_autostart(template.entry) as <bool>;
+				button-clicked => $_on_override();
+			}
+
+			ScrolledWindow {
+				vexpand: true;
+
+				child: Adw.Clamp {
+					margin-start: 12;
+					margin-end: 12;
+					margin-top: 6;
+					margin-bottom: 24;
+
+					child: Box {
+						spacing: 12;
+						orientation: vertical;
+						sensitive: bind root_banner.revealed inverted;
+
+						Box {
+							spacing: 12;
+							margin-start: 6;
+
+							Image app_icon {
+								valign: center;
+								pixel-size: 45;
+
+								styles [
+									"icon-dropshadow",
+								]
+							}
+
+							Adw.PreferencesGroup {
+								margin-top: 10;
+								margin-bottom: 0;
+								valign: center;
+								title: bind template.header_title;
+								description: _("Edit details about this entry.");
+							}
+						}
+
+						Adw.PreferencesGroup {
+							Adw.SwitchRow {
+								title: _("Enable");
+								subtitle: _("Enable this entry to be started when you log in.");
+								active: bind template.pending_enabled bidirectional;
+							}
+						}
+
+						Adw.PreferencesGroup {
+							Adw.EntryRow {
+								title: _("Name");
+								text: bind template.pending_name bidirectional;
+								changed => $_on_name_changed();
+							}
+
+							Adw.EntryRow {
+								title: _("Comment");
+								text: bind template.pending_comment bidirectional;
+							}
+
+							Adw.EntryRow {
+								title: _("Command or Script");
+								text: bind template.pending_exec bidirectional;
+								changed => $_on_exec_changed();
+
+								[suffix]
+								MenuButton {
+									icon-name: "ignition:info-outline-symbolic";
+									tooltip-text: _("More Information");
+									valign: center;
+									popover: path_info_popover;
+
+									styles [
+										"flat",
+									]
+								}
+							}
+
+							Adw.SwitchRow {
+								title: _("Show Terminal");
+								subtitle: _("Show a terminal for this process to run in.");
+								active: bind template.pending_show_terminal bidirectional;
+							}
+						}
+
+						Adw.PreferencesGroup {
+							Adw.SpinRow {
+								title: _("Seconds of Delay");
+								subtitle: _("Amount of seconds to wait after logging in to run the command or script");
+
+								adjustment: Adjustment {
+									lower: 0;
+									upper: 86400;
+									step-increment: 1.0;
+									page-increment: 10.0;
+									value: bind template.pending_delay bidirectional;
+								};
+							}
+						}
+					};
+				};
+			}
+		};
+	};
+}
+
+Popover path_info_popover {
+	child: Label {
+		label: _("To run a script at login, paste its file path here. You can copy the script's path from your file manager. Make sure your script is executable");
+		wrap: true;
+		wrap-mode: word;
+		max-width-chars: 52;
+		margin-start: 6;
+		margin-end: 6;
+		margin-top: 6;
+		margin-bottom: 6;
+	};
+}

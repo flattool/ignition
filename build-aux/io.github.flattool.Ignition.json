@@ -22,19 +22,21 @@
 		"--filesystem=/snap:ro",
 		"--filesystem=host-os:ro",
 		"--filesystem=host-etc:ro"
-	],
-	"cleanup": [
-		"/include",
-		"/lib/pkgconfig",
-		"/man",
-		"/share/doc",
-		"/share/gtk-doc",
-		"/share/man",
-		"/share/pkgconfig",
-		"*.la",
-		"*.a"
-	],
+    ],
+	"cleanup": ["/include", "/lib/pkgconfig", "/man", "/share/doc", "/share/gtk-doc", "/share/man", "/share/pkgconfig", "*.la", "*.a"],
 	"modules": [
+		{
+			"name": "jasmine-gjs",
+			"buildsystem": "meson",
+			"sources": [
+				{
+					"type": "git",
+					"url": "https://github.com/ptomato/jasmine-gjs.git",
+					"branch": "master"
+				}
+			],
+			"cleanup": ["*"]
+		},
 		{
 			"name": "ignition",
 			"builddir": true,

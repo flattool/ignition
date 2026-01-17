@@ -1,0 +1,135 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $HelpDialog: Adw.Dialog {
+	title: _("Help and Information");
+	follows-content-size: false;
+	content-width: 360;
+
+	child: Adw.NavigationView {
+		Adw.NavigationPage {
+			title: bind template.title;
+
+			child: Adw.ToolbarView {
+				[top]
+				Adw.HeaderBar {
+					show-title: bind template.show_title;
+				}
+
+				content: Adw.StatusPage status_page {
+					icon-name: "ignition:question-round-outline-symbolic";
+					title: bind template.title;
+
+					child: Adw.PreferencesGroup {
+						separate-rows: true;
+
+						Adw.ActionRow {
+							title: _("Can't find an application?");
+							subtitle: _("Ignition might not be able to see applications on your system");
+							activatable: true;
+							action-name: "navigation.push";
+							action-target: "'find-app-page'";
+							visible: bind template.show_find_app;
+
+							[suffix]
+							Image {
+								icon-name: "go-next-symbolic";
+							}
+						}
+
+						Adw.ActionRow {
+							title: _("What is a 'System Entry'?");
+							subtitle: _("Learn more about system startup entries, and how editing them works");
+							activatable: true;
+							action-name: "navigation.push";
+							action-target: "'system-entry-page'";
+
+							[suffix]
+							Image {
+								icon-name: "go-next-symbolic";
+							}
+						}
+					};
+				};
+			};
+		}
+
+		Adw.NavigationPage {
+			title: _("Can't Find an App?");
+			tag: "find-app-page";
+
+			child: Adw.ToolbarView {
+				[top]
+				Adw.HeaderBar {}
+
+				content: ScrolledWindow {
+					child: Adw.Clamp {
+						margin-start: 12;
+						margin-end: 12;
+						margin-top: 12;
+						margin-bottom: 12;
+
+						child: Box {
+							orientation: vertical;
+							spacing: 12;
+
+							Label {
+								wrap: true;
+								halign: start;
+								label: _("Some apps store their entries outside of the places that Ignition is allowed to read. This means that these apps won't show up in the list of apps on your system, when making a new entry.");
+							}
+
+							Label {
+								wrap: true;
+								halign: start;
+								label: _("To fix this, you can allow Ignition to see more home locations, or more root locations, in your file system.");
+							}
+
+							Label {
+								wrap: true;
+								halign: start;
+								label: _("We recommend the app \"Flatseal\" to manage these permissions. Enable \"All user files\" or \"All system files\" to be able to find these apps.");
+							}
+						};
+					};
+				};
+			};
+		}
+
+		Adw.NavigationPage {
+			title: _("What is a System Entry?");
+			tag: "system-entry-page";
+
+			child: Adw.ToolbarView {
+				[top]
+				Adw.HeaderBar {}
+
+				content: ScrolledWindow {
+					child: Adw.Clamp {
+						margin-start: 12;
+                        margin-end: 12;
+                        margin-top: 12;
+                        margin-bottom: 12;
+
+                        child: Box {
+                        	orientation: vertical;
+                        	spacing: 12;
+
+                        	Label {
+                        		wrap: true;
+                        		halign: start;
+                        		label: _("System Entries are for apps or commands that are ran on log in for everybody. These are usually present to allow certain features, programs, or other important actions run properly.");
+                        	}
+
+                        	Label {
+                        		wrap: true;
+                        		halign: start;
+                        		label: _("You can override these, but please use caution when doing so, as you may break some existing app or feature of your desktop.");
+                        	}
+						};
+					};
+				};
+			};
+		}
+	};
+}
