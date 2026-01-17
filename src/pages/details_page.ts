@@ -172,9 +172,11 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 	}
 
 	protected _on_save(): void {
-		// TODO: Error handling
 		if (!this._is_home_autostart() || !this.is_valid || this.entry === null) return
-		this.#save_entry(this.entry)
+		const save_error: null | unknown = this.#save_entry(this.entry)
+		if (save_error !== null) {
+			add_error_toast(_("Issues occurred while saving"), `${save_error}`)
+		}
 		this.emit("updated-entry")
 	}
 
@@ -199,11 +201,15 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 	}
 
 	protected async _on_override(): Promise<void> {
-		// TODO: error handling
 		if (this._is_home_autostart() || !this._is_root_autostart() || this.entry === null) return
 		const path: string = `${SharedVars.home_autostart_dir.get_path()}/${this.entry.file_name}`
-		this.#save_entry(this.entry, path)
-		this.entry = new AutostartEntry({ path })
+		const save_error: null | unknown = this.#save_entry(this.entry, path)
+		if (save_error === null) {
+			this.entry = new AutostartEntry({ path })
+		} else {
+			add_error_toast(_("Issues occurred while overriding"), `${save_error}`)
+			this.emit("created-entry", null) // exit this page with no other toast
+		}
 	}
 
 	protected async _on_trash(): Promise<void> {
