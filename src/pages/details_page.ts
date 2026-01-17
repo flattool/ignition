@@ -178,16 +178,17 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 	}
 
 	protected _on_create(): void {
-		// TODO: do not allow creating an entry with a name / exec that already exists
+		// TODO: Error toast
 		if (this._is_home_autostart() || !this.is_valid || this._is_root_autostart()) return
-		let saved_without_error: boolean
-		if (this.entry === null) {
-			const path: string = `${SharedVars.home_autostart_dir.get_path()}/${this.pending_name}.desktop`
-			saved_without_error = this.#save_entry(new AutostartEntry({ path }))
-		} else {
-			const path: string = `${SharedVars.home_autostart_dir.get_path()}/${this.entry.file_name}`
-			saved_without_error = this.#save_entry(this.entry, path)
+		// Do not allow creating an entry with a name that already exists
+		const path: string = `${SharedVars.home_autostart_dir.get_path()}/` + (this.entry === null
+			? `${this.pending_name}.desktop`
+			: this.entry.file_name
+		)
+		if (Gio.File.new_for_path(path).query_exists(null)) {
+			return
 		}
+		const saved_without_error: boolean = this.#save_entry(this.entry ?? new AutostartEntry({ path }), path)
 		this.emit("created-entry", saved_without_error ? this.entry : null)
 	}
 
