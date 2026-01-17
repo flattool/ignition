@@ -49,6 +49,19 @@
 	</screenshots>
 
 	<releases>
+		<release version="2.3.0" date="2026-1-17">
+			<description translate="no">
+				<p>Bug Fixes and Changes</p>
+				<ul>
+					<li>About Dialog now shows the latest release information under "What's New"</li>
+					<li>Startup delay, if any, is now actually shown in user entries</li>
+					<li>Improved accuracy and responsiveness of application and entry lists</li>
+					<li>Various misleading error messages have been removed</li>
+					<li>When running outside of Flatpak, Ignition now properly respects XDG base directories</li>
+					<li>Added and updated translations</li>
+				</ul>
+			</description>
+		</release>
 		<release version="2.2.0" date="2025-12-8">
 			<description translate="no">
 				<p>Bug Fixes and Changes</p>
