@@ -3,7 +3,7 @@ import Gtk from "gi://Gtk?version=4.0"
 import Gio from "gi://Gio?version=2.0"
 import GObject from "gi://GObject?version=2.0"
 
-import { GClass, Property, Child, Signal, from } from "../gobjectify/gobjectify.js"
+import { GClass, Property, Child, Signal, from, Debounce } from "../gobjectify/gobjectify.js"
 import { SharedVars } from "../utils/shared_vars.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
 import { FileList } from "../utils/file_list.js"
@@ -23,8 +23,12 @@ export class AppsListPage extends from(Adw.NavigationPage, {
 	_entry_sorter: Child<Gtk.CustomSorter>(),
 	_entries_group: Child<EntryGroup>(),
 }) {
+	readonly #filters = new Array<Gtk.CustomFilter>()
+	readonly #home_monitor = SharedVars.home_autostart_dir.monitor_directory(Gio.FileMonitorFlags.NONE, null)
+
 	_ready(): void {
 		this._entry_sorter.set_sort_func(AutostartEntry.compare.bind(AutostartEntry))
+		this.#home_monitor.connect("changed", () => this.#on_home_entries_changed())
 		SharedVars.host_app_entry_dirs.forEach(this.#setup_app_list.bind(this))
 	}
 
@@ -36,6 +40,7 @@ export class AppsListPage extends from(Adw.NavigationPage, {
 			item instanceof AutostartEntry
 			&& !SharedVars.home_autostart_dir.get_child(item.file_name).query_exists(null)
 		))
+		this.#filters.push(only_entries_filter)
 		const filter_model = Gtk.FilterListModel.new(file_to_entry_model, only_entries_filter)
 		this._entry_models.append(filter_model)
 	}
@@ -45,6 +50,11 @@ export class AppsListPage extends from(Adw.NavigationPage, {
 		const path: string = item.get_path() ?? ""
 		if (AutostartEntry.verify_file(path) === "") return new AutostartEntry({ path })
 		return item
+	}
+
+	@Debounce(200)
+	#on_home_entries_changed(): void {
+		this.#filters.forEach((filter) => filter.changed(Gtk.FilterChange.DIFFERENT))
 	}
 
 	protected async _on_search_change(entry: Gtk.SearchEntry): Promise<void> {
