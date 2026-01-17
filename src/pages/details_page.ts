@@ -125,7 +125,7 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 		this.is_valid = this.#invalid_items.size === 0
 	}
 
-	#save_entry(entry: AutostartEntry, path?: string): boolean {
+	#save_entry(entry: AutostartEntry, path?: string): null | unknown {
 		entry.enabled = this.pending_enabled
 		entry.name = this.pending_name
 		entry.comment = this.pending_comment
@@ -154,10 +154,10 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 			if (possible_delay_error !== null) {
 				throw possible_delay_error
 			}
-			return true
+			return null
 		} catch (error) {
 			add_error_toast(_("Issues occurred while saving details"), `${error}`)
-			return false
+			return error
 		}
 	}
 
@@ -172,13 +172,13 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 	}
 
 	protected _on_save(): void {
+		// TODO: Error handling
 		if (!this._is_home_autostart() || !this.is_valid || this.entry === null) return
 		this.#save_entry(this.entry)
 		this.emit("updated-entry")
 	}
 
 	protected _on_create(): void {
-		// TODO: Error toast
 		if (this._is_home_autostart() || !this.is_valid || this._is_root_autostart()) return
 		// Do not allow creating an entry with a name that already exists
 		const path: string = `${SharedVars.home_autostart_dir.get_path()}/` + (this.entry === null
@@ -186,10 +186,16 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 			: this.entry.file_name
 		)
 		if (Gio.File.new_for_path(path).query_exists(null)) {
+			add_error_toast(_("Could not create entry"), `Entry already exists at path: '${path}'`)
 			return
 		}
-		const saved_without_error: boolean = this.#save_entry(this.entry ?? new AutostartEntry({ path }), path)
-		this.emit("created-entry", saved_without_error ? this.entry : null)
+		const save_error: null | unknown = this.#save_entry(this.entry ?? new AutostartEntry({ path }), path)
+		if (save_error === null) {
+			this.emit("created-entry", this.entry)
+		} else {
+			this.emit("created-entry", null)
+			add_error_toast(_("Issues occurred while creating entry"), `${save_error}`)
+		}
 	}
 
 	protected async _on_override(): Promise<void> {
