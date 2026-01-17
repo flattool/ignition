@@ -191,6 +191,14 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 		this.emit("created-entry", saved_without_error ? this.entry : null)
 	}
 
+	protected async _on_override(): Promise<void> {
+		// TODO: error handling
+		if (this._is_home_autostart() || !this._is_root_autostart() || this.entry === null) return
+		const path: string = `${SharedVars.home_autostart_dir.get_path()}/${this.entry.file_name}`
+		this.#save_entry(this.entry, path)
+		this.entry = new AutostartEntry({ path })
+	}
+
 	protected async _on_trash(): Promise<void> {
 		if (!this._is_home_autostart() || this.entry === null) return
 		const dialog = new Adw.AlertDialog({

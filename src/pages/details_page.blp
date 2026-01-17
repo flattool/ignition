@@ -55,6 +55,7 @@ template $DetailsPage: Adw.NavigationPage {
 				title: _("Override entry to edit details");
 				button-label: _("Override");
 				revealed: bind $_is_root_autostart(template.entry) as <bool>;
+				button-clicked => $_on_override();
 			}
 
 			ScrolledWindow {
