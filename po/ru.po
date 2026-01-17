@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-24 23:13-0400\n"
+"POT-Creation-Date: 2026-01-17 17:30-0500\n"
 "PO-Revision-Date: 2025-11-06 17:20+0000\n"
 "Last-Translator: alevtina-karashokova <karashokovaaa@basealt.ru>\n"
 "Language-Team: Russian <https://weblate.fyralabs.com/projects/flattool/"
@@ -65,313 +65,179 @@ msgstr "Создание новой записи запуска."
 msgid "See all your startup items, in dark mode."
 msgstr "Просмотр всех элементов запуска в тёмном режиме."
 
-#: src/first_run_page/first-run-page.blp:5
-msgid "Welcome"
-msgstr "Добро пожаловать"
-
-#: src/first_run_page/first-run-page.blp:13
-msgid "About Ignition"
-msgstr "О приложении"
-
-#: src/first_run_page/first-run-page.blp:20
-msgid "Welcome to Ignition!"
-msgstr "Добро пожаловать в «Зажигание»!"
-
-#: src/first_run_page/first-run-page.blp:21
-msgid ""
-"Ignition lets you start any app or script when you log in to your computer."
-msgstr ""
-"«Зажигание» позволяет запускать любое приложение или сценарий при входе в "
-"систему."
-
-#: src/first_run_page/first-run-page.blp:25
-msgid "Get Started"
-msgstr "Начать"
-
-#: src/gtk/entry-row.blp:22 src/main_view/details-page.blp:103
-msgid "More Information"
-msgstr "Больше информации"
-
-#: src/gtk/entry_row.ts:67
-msgid "Disabled"
-msgstr "Отключено"
-
-#: src/gtk/entry_row.ts:71
-msgid "Overridden"
-msgstr "Переопределено"
-
-#: src/gtk/entry_row.ts:75
-msgid "Enabled"
-msgstr "Включено"
-
-#: src/gtk/entry_row.ts:95
-msgid "This entry is overridden by a user entry."
-msgstr "Эта запись переопределена пользовательской записью."
-
-#: src/gtk/entry_row.ts:97
-msgid "This entry overrides a system entry."
-msgstr "Эта запись переопределяет системную запись."
-
-#: src/gtk/help-dialog.blp:5
-msgid "Help and Information"
-msgstr "Справка и информация"
-
-#: src/gtk/help-dialog.blp:27
-msgid "Can't find an application?"
-msgstr "Не можешь найти приложение?"
-
-#: src/gtk/help-dialog.blp:28
-msgid "Ignition might not be able to see some applications on your system"
-msgstr "«Зажигание» может не видеть некоторые приложения в вашей системе"
-
-#: src/gtk/help-dialog.blp:38
-msgid "What is a 'System Entry'?"
-msgstr "Что такое «Системная запись»?"
-
-#: src/gtk/help-dialog.blp:39
-msgid "Learn more about system startup entries, and how editing them works"
-msgstr ""
-"Узнайте больше о системных записях запуска и о том, как работает их "
-"редактирование"
-
-#: src/gtk/help-dialog.blp:53
-msgid "Can't Find an App?"
-msgstr "Не можешь найти приложение?"
-
-#: src/gtk/help-dialog.blp:73
-msgid ""
-"Some apps store their entries outside of the places that Ignition is allowed "
-"to read. This means that these apps won't show up in the list of apps on "
-"your system, when making a new entry."
-msgstr ""
-"Некоторые приложения хранят свои записи вне тех мест, к которым «Зажигание» "
-"имеет доступ для чтения. Это означает, что эти приложения не будут "
-"отображаться в списке приложений в вашей системе при создании новой записи."
-
-#: src/gtk/help-dialog.blp:79
-msgid ""
-"To fix this, you can allow Ignition to see more home locations, or more root "
-"locations, in your file system."
-msgstr ""
-"Чтобы исправить это, можно разрешить «Зажиганию» видеть больше домашних "
-"каталогов или больше корневых каталогов в вашей файловой системе."
-
-#: src/gtk/help-dialog.blp:85
-msgid ""
-"We recommend the app \"Flatseal\" to manage these permissions. Enable \"All "
-"user files\" or \"All system files\" to be able to find these apps."
-msgstr ""
-"Мы рекомендуем приложение Flatseal для управления этими разрешениями. "
-"Включите «Все файлы пользователя» или «Все системные файлы», чтобы иметь "
-"возможность находить эти приложения."
-
-#: src/gtk/help-dialog.blp:94
-msgid "What is a System Entry?"
-msgstr "Что такое «Системная запись»?"
-
-#: src/gtk/help-dialog.blp:114
-msgid ""
-"System Entries are for apps or commands that are ran on log in for "
-"everybody. These are usually present to allow certain features, programs, or "
-"other important actions run properly."
-msgstr ""
-"Системные записи предназначены для приложений или команд, которые "
-"запускаются при входе в систему для всех пользователей. Обычно они "
-"присутствуют для того, чтобы определённые функции, программы или другие "
-"важные действия выполнялись корректно."
-
-#: src/gtk/help-dialog.blp:120
-msgid ""
-"You can override these, but please use caution when doing so, as you may "
-"break some existing app or feature of your desktop."
-msgstr ""
-"Их можно переопределить, но делайте это с осторожностью, так как вы можете "
-"нарушить работу некоторых существующих приложений или функций рабочего стола."
-
-#: src/main.ts:70
-msgid "Translate"
-msgstr "Перевести"
-
-#: src/main.ts:71
+#: src/main.ts:53
 msgid "Donate"
 msgstr "Пожертвовать"
 
-#: src/main.ts:97
-msgid "Opened folder"
-msgstr "Открытая папка"
-
-#: src/main.ts:100
-msgid "Could not open folder"
-msgstr "Не удалось открыть папку"
-
-#: src/main_view/app-list-page.blp:5
+#: src/pages/apps_list_page.blp:16
 msgid "Add or Create an Entry"
 msgstr "Добавить или создать новую запись"
 
-#: src/main_view/app-list-page.blp:12 src/main_view/entries-page.blp:13
-msgid "Search"
-msgstr "Поиск"
+#: src/pages/apps_list_page.blp:36
+msgid "Search apps"
+msgstr "Поиск приложений"
 
-#: src/main_view/app-list-page.blp:25 src/main_view/entries-page.blp:40
-msgid "Search entries"
-msgstr "Поиск записей"
+#: src/pages/apps_list_page.blp:43
+#, fuzzy
+#| msgid "Loading Entries"
+msgid "Loading Apps"
+msgstr "Загрузка записей"
 
-#: src/main_view/app-list-page.blp:47
+#: src/pages/apps_list_page.blp:44
+#, fuzzy
+#| msgid "This should only take a moment."
+msgid "This should only take a moment"
+msgstr "Это займёт совсем немного времени."
+
+#: src/pages/apps_list_page.blp:66
 msgid "Commands and Scripts"
 msgstr "Команды и сценарии"
 
-#: src/main_view/app-list-page.blp:48
+#: src/pages/apps_list_page.blp:67
 msgid "Run a command or script when you log in."
 msgstr "Запустить команду или скрипт при входе в систему."
 
-#: src/main_view/app-list-page.blp:54
+#: src/pages/apps_list_page.blp:73
 msgid "Add a Command or Script"
 msgstr "Добавить команду или сценарий"
 
-#: src/main_view/app-list-page.blp:55
+#: src/pages/apps_list_page.blp:74
 msgid "Enter the command to run or path to your script"
 msgstr "Введите команду для запуска или путь к сценарию"
 
-#: src/main_view/app-list-page.blp:78
+#: src/pages/apps_list_page.blp:98
 msgid "Installed Apps"
 msgstr "Установленные приложения"
 
-#: src/main_view/app-list-page.blp:79
-msgid "Choose any installed app to run when you log in."
+#: src/pages/apps_list_page.blp:99
+#, fuzzy
+#| msgid "Choose any installed app to run when you log in."
+msgid "Choose any installed apps to run when you log in."
 msgstr ""
 "Выбирите любое установленное приложение для запуска при входе в систему."
 
-#: src/main_view/app-list-page.blp:83
+#: src/pages/apps_list_page.blp:105
 msgid "Show Hidden Apps"
 msgstr "Показать скрытые приложения"
 
-#: src/main_view/app-list-page.blp:84
+#: src/pages/apps_list_page.blp:106
 msgid "Show apps that are hidden from the app menu"
 msgstr "Показать приложения, скрытые из меню приложений"
 
-#: src/main_view/app-list-page.blp:101 src/main_view/entries-page.blp:57
-msgid "No Results Found"
-msgstr "Результаты не найдены"
-
-#: src/main_view/app-list-page.blp:102 src/main_view/entries-page.blp:58
-msgid "Try a different search."
-msgstr "Попробуйте другой поисковый запрос."
-
-#: src/main_view/app_list_page.ts:138
-msgid "Could not load some apps"
-msgstr "Не удалось загрузить некоторые приложения"
-
-#: src/main_view/details-page.blp:5
+#: src/pages/details_page.blp:5
 msgid "Edit Details"
 msgstr "Редактировать сведения"
 
-#: src/main_view/details-page.blp:16
+#: src/pages/details_page.blp:13
 msgid "Save"
 msgstr "Сохранить"
 
-#: src/main_view/details-page.blp:26
+#: src/pages/details_page.blp:29
 msgid "Create"
 msgstr "Создать"
 
-#: src/main_view/details-page.blp:33
+#: src/pages/details_page.blp:45
 msgid "Move to Trash"
 msgstr "Отправить в корзину"
 
-#: src/main_view/details-page.blp:41
+#: src/pages/details_page.blp:55
 msgid "Override entry to edit details"
 msgstr "Переопределить запись для изменения сведений"
 
-#: src/main_view/details-page.blp:42 src/main_view/details-page.blp:164
+#: src/pages/details_page.blp:56
 msgid "Override"
 msgstr "Переопределить"
 
-#: src/main_view/details-page.blp:74
+#: src/pages/details_page.blp:93
 msgid "Edit details about this entry."
 msgstr "Редактировать сведения этой записи."
 
-#: src/main_view/details-page.blp:80
+#: src/pages/details_page.blp:99
 msgid "Enable"
 msgstr "Включить"
 
-#: src/main_view/details-page.blp:81
+#: src/pages/details_page.blp:100
 msgid "Enable this entry to be started when you log in."
 msgstr "Включить запуск этой записи при входе в систему."
 
-#: src/main_view/details-page.blp:87
+#: src/pages/details_page.blp:107
 msgid "Name"
 msgstr "Имя"
 
-#: src/main_view/details-page.blp:92
+#: src/pages/details_page.blp:113
 msgid "Comment"
 msgstr "Комментарий"
 
-#: src/main_view/details-page.blp:97
+#: src/pages/details_page.blp:118
 msgid "Command or Script"
 msgstr "Команда или сценарий"
 
-#: src/main_view/details-page.blp:112
+#: src/pages/details_page.blp:125 src/widgets/entry_row.blp:28
+msgid "More Information"
+msgstr "Больше информации"
+
+#: src/pages/details_page.blp:136
 msgid "Show Terminal"
 msgstr "Показать терминал"
 
-#: src/main_view/details-page.blp:113
+#: src/pages/details_page.blp:137
 msgid "Show a terminal for this process to run in."
 msgstr "Показать терминал, в котором будет запущен этот процесс."
 
-#: src/main_view/details-page.blp:119
+#: src/pages/details_page.blp:144
 msgid "Seconds of Delay"
 msgstr "Секунды задержки"
 
-#: src/main_view/details-page.blp:120
+#: src/pages/details_page.blp:145
 msgid "Amount of seconds to wait after logging in to run the command or script"
 msgstr ""
 "Количество секунд, которое нужно подождать после входа в систему перед "
 "выполнением команды или сценария."
 
-#: src/main_view/details-page.blp:139
+#: src/pages/details_page.blp:165
+#, fuzzy
+#| msgid ""
+#| "To run a script at login, paste its file path here. You can copy the "
+#| "script's path from your file manager. Make sure your script is executable."
 msgid ""
 "To run a script at login, paste its file path here. You can copy the "
-"script's path from your file manager. Make sure your script is executable."
+"script's path from your file manager. Make sure your script is executable"
 msgstr ""
 "Чтобы запустить сценарий при входе в систему, вставьте сюда путь к его "
 "файлу. Вы можете скопировать путь к сценарию из файлового менеджера. "
 "Убедитесь, что ваш сценарий является исполняемым."
 
-#: src/main_view/details-page.blp:151
-msgid "Create and Replace?"
-msgstr "Создать и заменить?"
+#: src/pages/details_page.ts:55 src/shortcuts-dialog.blp:9
+msgid "New Entry"
+msgstr "Новая запись"
 
-#: src/main_view/details-page.blp:152
-msgid ""
-"A file already exists for this entry. Are you sure you want to replace it?"
+#: src/pages/details_page.ts:159
+msgid "Issues occurred while saving details"
 msgstr ""
-"Файл для этой записи уже существует. Вы уверены, что хотите заменить его?"
 
-#: src/main_view/details-page.blp:154 src/main_view/details-page.blp:163
-#: src/main_view/details-page.blp:172
-msgid "Cancel"
-msgstr "Отменить"
-
-#: src/main_view/details-page.blp:155
-msgid "Create and Replace"
-msgstr "Создать и заменить"
-
-#: src/main_view/details-page.blp:160
-msgid "Override Entry?"
-msgstr "Переопределить запись?"
-
-#: src/main_view/details-page.blp:161
-msgid ""
-"Be careful, overriding system entries can lead to system breakage. This will "
-"make a copy of the entry for you to edit."
+#: src/pages/details_page.ts:178
+msgid "Issues occurred while saving"
 msgstr ""
-"Будьте осторожны, переопределение системных записей может привести к сбою "
-"системы. Это создаст копию записи для редактирования."
 
-#: src/main_view/details-page.blp:169
+#: src/pages/details_page.ts:191
+#, fuzzy
+#| msgid "Could not create file"
+msgid "Could not create entry"
+msgstr "Не удалось создать файл"
+
+#: src/pages/details_page.ts:199
+msgid "Issues occurred while creating entry"
+msgstr ""
+
+#: src/pages/details_page.ts:210
+msgid "Issues occurred while overriding"
+msgstr ""
+
+#: src/pages/details_page.ts:218
 msgid "Trash Entry?"
 msgstr "Отправить запись в корзину?"
 
-#: src/main_view/details-page.blp:170
+#: src/pages/details_page.ts:219
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
@@ -379,101 +245,79 @@ msgstr ""
 "Эта запись будет перемещена в корзину и больше не будет запускаться при "
 "входе в систему."
 
-#: src/main_view/details-page.blp:173
+#: src/pages/details_page.ts:221
+msgid "Cancel"
+msgstr "Отменить"
+
+#: src/pages/details_page.ts:222
 msgid "Trash"
 msgstr "Отправить в корзину"
 
-#: src/main_view/details_page.ts:264 src/shortcuts-dialog.blp:9
-msgid "New Entry"
-msgstr "Новая запись"
+#: src/pages/details_page.ts:237
+msgid "Issues occurred while trashing"
+msgstr ""
 
-#: src/main_view/details_page.ts:344
-msgid "Saved details"
-msgstr "Сохранённые сведения"
-
-#: src/main_view/details_page.ts:346
-msgid "Could not save file"
-msgstr "Не удалось сохранить файл"
-
-#: src/main_view/details_page.ts:371
-msgid "Created entry"
-msgstr "Созданная запись"
-
-#: src/main_view/details_page.ts:373 src/main_view/details_page.ts:397
-msgid "Could not create file"
-msgstr "Не удалось создать файл"
-
-#: src/main_view/details_page.ts:394
-msgid "Overrode entry"
-msgstr "Переопределённая запись"
-
-#: src/main_view/details_page.ts:435
-msgid "Trashed entry"
-msgstr "Отправленная в корзину запись"
-
-#: src/main_view/details_page.ts:437
-msgid "Could not trash file"
-msgstr "Не удалось отправить файл в корзину"
-
-#: src/main_view/entries-page.blp:20
+#: src/pages/entries_page.blp:52
 msgid "Main Menu"
 msgstr "Главное меню"
 
-#: src/main_view/entries-page.blp:27
+#: src/pages/entries_page.blp:59
 msgid "Help and information"
 msgstr "Справка и информация"
 
-#: src/main_view/entries-page.blp:47
+#: src/pages/entries_page.blp:73
+msgid "Search entries"
+msgstr "Поиск записей"
+
+#: src/pages/entries_page.blp:84
 msgid "Loading Entries"
 msgstr "Загрузка записей"
 
-#: src/main_view/entries-page.blp:48
+#: src/pages/entries_page.blp:85
 msgid "This should only take a moment."
 msgstr "Это займёт совсем немного времени."
 
-#: src/main_view/entries-page.blp:91
-msgid "New"
-msgstr "Новая"
-
-#: src/main_view/entries-page.blp:112
-msgid "No Entries Found"
-msgstr "Записи не найдены"
-
-#: src/main_view/entries-page.blp:122
-msgid "Add an app or script to run it when you log in"
-msgstr "Добавьте приложение или сценарий для запуска при входе в систему."
-
-#: src/main_view/entries-page.blp:133
-msgid "_Open Autostart Folder"
-msgstr "_Открыть папку автозапуска"
-
-#: src/main_view/entries-page.blp:144
-msgid "_Keyboard Shortcuts"
-msgstr "_Комбинации клавиш"
-
-#: src/main_view/entries-page.blp:149
-msgid "_About Ignition"
-msgstr "_О приложении"
-
-#: src/main_view/entries_page.ts:85
+#: src/pages/entries_page.blp:95
 msgid "User Startup Entries"
 msgstr "Записи запуска пользователя"
 
-#: src/main_view/entries_page.ts:86
+#: src/pages/entries_page.blp:96
 msgid "Entries that run only for you."
 msgstr "Записи, которые существуют только для вас."
 
-#: src/main_view/entries_page.ts:110
+#: src/pages/entries_page.blp:113
+msgid "New"
+msgstr "Новая"
+
+#: src/pages/entries_page.blp:119
 msgid "System Startup Entries"
 msgstr "Системные записи запуска"
 
-#: src/main_view/entries_page.ts:111
+#: src/pages/entries_page.blp:120
 msgid "Entries that run for everyone."
 msgstr "Записи, которые существуют для всех пользователей."
 
-#: src/main_view/entries_page.ts:180
-msgid "Could not load some entries"
-msgstr "Не удалось загрузить некоторые записи"
+#: src/pages/entries_page.blp:149
+msgid "No Entries Found"
+msgstr "Записи не найдены"
+
+#: src/pages/entries_page.blp:159
+msgid "Add an app or script to run it when you log in"
+msgstr "Добавьте приложение или сценарий для запуска при входе в систему."
+
+#: src/pages/entries_page.blp:169
+msgid "_Open Autostart Folder"
+msgstr "_Открыть папку автозапуска"
+
+#: src/pages/entries_page.blp:172
+msgid "_Keyboard Shortcuts"
+msgstr "_Комбинации клавиш"
+
+#: src/pages/entries_page.blp:173
+#, fuzzy
+#| msgid "No description"
+msgid "_About Descriptive"
+msgstr "Нет описания"
 
 #: src/shortcuts-dialog.blp:6
 msgid "Entries List"
@@ -528,17 +372,207 @@ msgid "Details"
 msgstr "Сведения"
 
 #. These need to be getters for the _() translation function to work
-#: src/utils/shared_vars.ts:17
+#: src/utils/shared_vars.ts:15
 msgid "No Name Set"
 msgstr "Нет имени"
 
-#: src/utils/shared_vars.ts:18
+#: src/utils/shared_vars.ts:16
 msgid "No comment set."
 msgstr "Нет комментария."
 
-#: src/window/window.ts:73
-msgid "Failed to start properly"
-msgstr "Не удалось корректно выполнить запуск"
+#. Translators: %d is the number of seconds of delay before the app starts
+#: src/widgets/entry_row.ts:49
+#, javascript-format
+msgid "Starts after %d seconds"
+msgstr ""
+
+#: src/widgets/entry_row.ts:51
+msgid "Enabled"
+msgstr "Включено"
+
+#: src/widgets/entry_row.ts:54
+msgid "Disabled"
+msgstr "Отключено"
+
+#: src/widgets/entry_row.ts:58
+msgid "This entry is overridden by a user entry."
+msgstr "Эта запись переопределена пользовательской записью."
+
+#: src/widgets/entry_row.ts:59
+msgid "Overridden"
+msgstr "Переопределено"
+
+#: src/widgets/entry_row.ts:61
+msgid "This entry overrides a system entry."
+msgstr "Эта запись переопределяет системную запись."
+
+#: src/widgets/help_dialog.blp:5
+msgid "Help and Information"
+msgstr "Справка и информация"
+
+#: src/widgets/help_dialog.blp:27
+msgid "Can't find an application?"
+msgstr "Не можешь найти приложение?"
+
+#: src/widgets/help_dialog.blp:28
+#, fuzzy
+#| msgid "Ignition might not be able to see some applications on your system"
+msgid "Ignition might not be able to see applications on your system"
+msgstr "«Зажигание» может не видеть некоторые приложения в вашей системе"
+
+#: src/widgets/help_dialog.blp:41
+msgid "What is a 'System Entry'?"
+msgstr "Что такое «Системная запись»?"
+
+#: src/widgets/help_dialog.blp:42
+msgid "Learn more about system startup entries, and how editing them works"
+msgstr ""
+"Узнайте больше о системных записях запуска и о том, как работает их "
+"редактирование"
+
+#: src/widgets/help_dialog.blp:58
+msgid "Can't Find an App?"
+msgstr "Не можешь найти приложение?"
+
+#: src/widgets/help_dialog.blp:79
+msgid ""
+"Some apps store their entries outside of the places that Ignition is allowed "
+"to read. This means that these apps won't show up in the list of apps on "
+"your system, when making a new entry."
+msgstr ""
+"Некоторые приложения хранят свои записи вне тех мест, к которым «Зажигание» "
+"имеет доступ для чтения. Это означает, что эти приложения не будут "
+"отображаться в списке приложений в вашей системе при создании новой записи."
+
+#: src/widgets/help_dialog.blp:85
+msgid ""
+"To fix this, you can allow Ignition to see more home locations, or more root "
+"locations, in your file system."
+msgstr ""
+"Чтобы исправить это, можно разрешить «Зажиганию» видеть больше домашних "
+"каталогов или больше корневых каталогов в вашей файловой системе."
+
+#: src/widgets/help_dialog.blp:91
+msgid ""
+"We recommend the app \"Flatseal\" to manage these permissions. Enable \"All "
+"user files\" or \"All system files\" to be able to find these apps."
+msgstr ""
+"Мы рекомендуем приложение Flatseal для управления этими разрешениями. "
+"Включите «Все файлы пользователя» или «Все системные файлы», чтобы иметь "
+"возможность находить эти приложения."
+
+#: src/widgets/help_dialog.blp:100
+msgid "What is a System Entry?"
+msgstr "Что такое «Системная запись»?"
+
+#: src/widgets/help_dialog.blp:121
+msgid ""
+"System Entries are for apps or commands that are ran on log in for "
+"everybody. These are usually present to allow certain features, programs, or "
+"other important actions run properly."
+msgstr ""
+"Системные записи предназначены для приложений или команд, которые "
+"запускаются при входе в систему для всех пользователей. Обычно они "
+"присутствуют для того, чтобы определённые функции, программы или другие "
+"важные действия выполнялись корректно."
+
+#: src/widgets/help_dialog.blp:127
+msgid ""
+"You can override these, but please use caution when doing so, as you may "
+"break some existing app or feature of your desktop."
+msgstr ""
+"Их можно переопределить, но делайте это с осторожностью, так как вы можете "
+"нарушить работу некоторых существующих приложений или функций рабочего стола."
+
+#: src/widgets/search_group.blp:13
+msgid "No Results Found"
+msgstr "Результаты не найдены"
+
+#: src/widgets/search_group.blp:14
+msgid "Try a different search."
+msgstr "Попробуйте другой поисковый запрос."
+
+#~ msgid "Welcome"
+#~ msgstr "Добро пожаловать"
+
+#~ msgid "About Ignition"
+#~ msgstr "О приложении"
+
+#~ msgid "Welcome to Ignition!"
+#~ msgstr "Добро пожаловать в «Зажигание»!"
+
+#~ msgid ""
+#~ "Ignition lets you start any app or script when you log in to your "
+#~ "computer."
+#~ msgstr ""
+#~ "«Зажигание» позволяет запускать любое приложение или сценарий при входе в "
+#~ "систему."
+
+#~ msgid "Get Started"
+#~ msgstr "Начать"
+
+#~ msgid "Translate"
+#~ msgstr "Перевести"
+
+#~ msgid "Opened folder"
+#~ msgstr "Открытая папка"
+
+#~ msgid "Could not open folder"
+#~ msgstr "Не удалось открыть папку"
+
+#~ msgid "Search"
+#~ msgstr "Поиск"
+
+#~ msgid "Could not load some apps"
+#~ msgstr "Не удалось загрузить некоторые приложения"
+
+#~ msgid "Create and Replace?"
+#~ msgstr "Создать и заменить?"
+
+#~ msgid ""
+#~ "A file already exists for this entry. Are you sure you want to replace it?"
+#~ msgstr ""
+#~ "Файл для этой записи уже существует. Вы уверены, что хотите заменить его?"
+
+#~ msgid "Create and Replace"
+#~ msgstr "Создать и заменить"
+
+#~ msgid "Override Entry?"
+#~ msgstr "Переопределить запись?"
+
+#~ msgid ""
+#~ "Be careful, overriding system entries can lead to system breakage. This "
+#~ "will make a copy of the entry for you to edit."
+#~ msgstr ""
+#~ "Будьте осторожны, переопределение системных записей может привести к сбою "
+#~ "системы. Это создаст копию записи для редактирования."
+
+#~ msgid "Saved details"
+#~ msgstr "Сохранённые сведения"
+
+#~ msgid "Could not save file"
+#~ msgstr "Не удалось сохранить файл"
+
+#~ msgid "Created entry"
+#~ msgstr "Созданная запись"
+
+#~ msgid "Overrode entry"
+#~ msgstr "Переопределённая запись"
+
+#~ msgid "Trashed entry"
+#~ msgstr "Отправленная в корзину запись"
+
+#~ msgid "Could not trash file"
+#~ msgstr "Не удалось отправить файл в корзину"
+
+#~ msgid "_About Ignition"
+#~ msgstr "_О приложении"
+
+#~ msgid "Could not load some entries"
+#~ msgstr "Не удалось загрузить некоторые записи"
+
+#~ msgid "Failed to start properly"
+#~ msgstr "Не удалось корректно выполнить запуск"
 
 #~ msgctxt "shortcut window"
 #~ msgid "New Entry"
@@ -546,9 +580,6 @@ msgstr "Не удалось корректно выполнить запуск"
 
 #~ msgid "Choose an App"
 #~ msgstr "Выберите приложение"
-
-#~ msgid "Search apps"
-#~ msgstr "Поиск приложений"
 
 #~ msgid "Apply"
 #~ msgstr "Применить"
@@ -579,9 +610,6 @@ msgstr "Не удалось корректно выполнить запуск"
 
 #~ msgid "GTK;"
 #~ msgstr "GTK;ГТК;"
-
-#~ msgid "No description"
-#~ msgstr "Нет описания"
 
 #~ msgid "Choose a Script"
 #~ msgstr "Выберите сценарий"

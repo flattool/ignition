@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-24 23:13-0400\n"
+"POT-Creation-Date: 2026-01-17 17:30-0500\n"
 "PO-Revision-Date: 2025-07-31 16:52+0000\n"
 "Last-Translator: Jose Daniel Rodriguez <jdrodriguez653@soy.sena.edu.co>\n"
 "Language-Team: Spanish <https://weblate.fyralabs.com/projects/flattool/"
@@ -63,411 +63,258 @@ msgstr "Crea un nuevo elemento de inicio."
 msgid "See all your startup items, in dark mode."
 msgstr "Ver todos tus artículos de startup, en modo oscuro."
 
-#: src/first_run_page/first-run-page.blp:5
-msgid "Welcome"
-msgstr "Bienvenid@"
-
-#: src/first_run_page/first-run-page.blp:13
-msgid "About Ignition"
-msgstr "Sobre Ignition"
-
-#: src/first_run_page/first-run-page.blp:20
-msgid "Welcome to Ignition!"
-msgstr "Bienvenido/a sea a Ignition!"
-
-#: src/first_run_page/first-run-page.blp:21
-msgid ""
-"Ignition lets you start any app or script when you log in to your computer."
-msgstr ""
-"Ignition te permite iniciar cualquier aplicación o script cuando inicias "
-"sesión en tu ordenador o portátil."
-
-#: src/first_run_page/first-run-page.blp:25
-msgid "Get Started"
-msgstr "Empezar"
-
-#: src/gtk/entry-row.blp:22 src/main_view/details-page.blp:103
-msgid "More Information"
-msgstr "Más información"
-
-#: src/gtk/entry_row.ts:67
-msgid "Disabled"
-msgstr "Desactivado"
-
-#: src/gtk/entry_row.ts:71
-msgid "Overridden"
-msgstr "Anulado"
-
-#: src/gtk/entry_row.ts:75
-msgid "Enabled"
-msgstr "Activado"
-
-#: src/gtk/entry_row.ts:95
-msgid "This entry is overridden by a user entry."
-msgstr "Esta entrada ha sido anulada por una entrada de usuario."
-
-#: src/gtk/entry_row.ts:97
-msgid "This entry overrides a system entry."
-msgstr "Esta entrada anula una entrada del sistema."
-
-#: src/gtk/help-dialog.blp:5
-msgid "Help and Information"
-msgstr "Ayuda e Información"
-
-#: src/gtk/help-dialog.blp:27
-msgid "Can't find an application?"
-msgstr "¿No encuentras una aplicación?"
-
-#: src/gtk/help-dialog.blp:28
-msgid "Ignition might not be able to see some applications on your system"
-msgstr "Puede que Ignition no pueda ver algunas aplicaciones en tu sistema"
-
-#: src/gtk/help-dialog.blp:38
-msgid "What is a 'System Entry'?"
-msgstr "¿Qué es una 'Entrada de sistema'?"
-
-#: src/gtk/help-dialog.blp:39
-msgid "Learn more about system startup entries, and how editing them works"
-msgstr "Conoce más sobre las entradas de inicio del sistema y cómo editarlas"
-
-#: src/gtk/help-dialog.blp:53
-msgid "Can't Find an App?"
-msgstr "¿No encuentras una aplicación?"
-
-#: src/gtk/help-dialog.blp:73
-msgid ""
-"Some apps store their entries outside of the places that Ignition is allowed "
-"to read. This means that these apps won't show up in the list of apps on "
-"your system, when making a new entry."
-msgstr ""
-"Algunas aplicaciones guardan sus entradas en lugares que Ignition no puede "
-"leer. Esto significa que esas apps no aparecerán en la lista al crear una "
-"nueva entrada."
-
-#: src/gtk/help-dialog.blp:79
-msgid ""
-"To fix this, you can allow Ignition to see more home locations, or more root "
-"locations, in your file system."
-msgstr ""
-"Para solucionarlo, puedes permitir que Ignition vea más ubicaciones del "
-"hogar o del sistema."
-
-#: src/gtk/help-dialog.blp:85
-msgid ""
-"We recommend the app \"Flatseal\" to manage these permissions. Enable \"All "
-"user files\" or \"All system files\" to be able to find these apps."
-msgstr ""
-"Recomendamos usar la aplicación \"Flatseal\" para gestionar estos permisos. "
-"Activa \"Todos los archivos de usuario\" o \"Todos los archivos del "
-"sistema\" para encontrarlas."
-
-#: src/gtk/help-dialog.blp:94
-msgid "What is a System Entry?"
-msgstr "¿Qué es una Entrada de sistema?"
-
-#: src/gtk/help-dialog.blp:114
-msgid ""
-"System Entries are for apps or commands that are ran on log in for "
-"everybody. These are usually present to allow certain features, programs, or "
-"other important actions run properly."
-msgstr ""
-"Las Entradas de sistema corresponden a aplicaciones o comandos que se "
-"ejecutan al iniciar sesión para todos los usuarios. Suelen ser necesarias "
-"para que ciertos programas o funciones del sistema funcionen correctamente."
-
-#: src/gtk/help-dialog.blp:120
-msgid ""
-"You can override these, but please use caution when doing so, as you may "
-"break some existing app or feature of your desktop."
-msgstr ""
-"Puedes anular estas entradas, pero hazlo con cuidado, ya que podrías dañar "
-"alguna aplicación o función existente en tu escritorio."
-
-#: src/main.ts:70
-msgid "Translate"
-msgstr "Traducir"
-
-#: src/main.ts:71
+#: src/main.ts:53
 msgid "Donate"
 msgstr "Donar"
 
-#: src/main.ts:97
-msgid "Opened folder"
-msgstr "Carpeta abierta"
-
-#: src/main.ts:100
-msgid "Could not open folder"
-msgstr "No se pudo abrir la carpeta"
-
-#: src/main_view/app-list-page.blp:5
+#: src/pages/apps_list_page.blp:16
 msgid "Add or Create an Entry"
 msgstr "Agregar o Crear una Entrada"
 
-#: src/main_view/app-list-page.blp:12 src/main_view/entries-page.blp:13
-msgid "Search"
-msgstr "Buscar"
+#: src/pages/apps_list_page.blp:36
+msgid "Search apps"
+msgstr "Buscar aplicaciones"
 
-#: src/main_view/app-list-page.blp:25 src/main_view/entries-page.blp:40
-msgid "Search entries"
-msgstr "Buscar entradas"
+#: src/pages/apps_list_page.blp:43
+#, fuzzy
+#| msgid "Loading Entries"
+msgid "Loading Apps"
+msgstr "Cargando entradas"
 
-#: src/main_view/app-list-page.blp:47
+#: src/pages/apps_list_page.blp:44
+#, fuzzy
+#| msgid "This should only take a moment."
+msgid "This should only take a moment"
+msgstr "Esto solo tomará un momento."
+
+#: src/pages/apps_list_page.blp:66
 msgid "Commands and Scripts"
 msgstr "Comandos y Scripts"
 
-#: src/main_view/app-list-page.blp:48
+#: src/pages/apps_list_page.blp:67
 msgid "Run a command or script when you log in."
 msgstr "Ejecutar un comando o script al iniciar sesión."
 
-#: src/main_view/app-list-page.blp:54
+#: src/pages/apps_list_page.blp:73
 msgid "Add a Command or Script"
 msgstr "Añadir un Comando o un Script"
 
-#: src/main_view/app-list-page.blp:55
+#: src/pages/apps_list_page.blp:74
 msgid "Enter the command to run or path to your script"
 msgstr "Introduce el comando a ejecutar o la ruta de tu script"
 
-#: src/main_view/app-list-page.blp:78
+#: src/pages/apps_list_page.blp:98
 msgid "Installed Apps"
 msgstr "Aplicaciones Instaladas"
 
-#: src/main_view/app-list-page.blp:79
-msgid "Choose any installed app to run when you log in."
+#: src/pages/apps_list_page.blp:99
+#, fuzzy
+#| msgid "Choose any installed app to run when you log in."
+msgid "Choose any installed apps to run when you log in."
 msgstr ""
 "Elige cualquier aplicación instalada para ejecutarse al iniciar sesión."
 
-#: src/main_view/app-list-page.blp:83
+#: src/pages/apps_list_page.blp:105
 msgid "Show Hidden Apps"
 msgstr "Mostrar aplicaciones ocultas"
 
-#: src/main_view/app-list-page.blp:84
+#: src/pages/apps_list_page.blp:106
 msgid "Show apps that are hidden from the app menu"
 msgstr "Mostrar aplicaciones que están ocultas en el menú de aplicaciones"
 
-#: src/main_view/app-list-page.blp:101 src/main_view/entries-page.blp:57
-msgid "No Results Found"
-msgstr "No se Han Encontrado Resultados"
-
-#: src/main_view/app-list-page.blp:102 src/main_view/entries-page.blp:58
-msgid "Try a different search."
-msgstr "Prueba a buscar algo diferente."
-
-#: src/main_view/app_list_page.ts:138
-msgid "Could not load some apps"
-msgstr "No se pueden cargar algunas aplicaciones"
-
-#: src/main_view/details-page.blp:5
+#: src/pages/details_page.blp:5
 msgid "Edit Details"
 msgstr "Editar Detalles"
 
-#: src/main_view/details-page.blp:16
+#: src/pages/details_page.blp:13
 msgid "Save"
 msgstr "Guardar"
 
-#: src/main_view/details-page.blp:26
+#: src/pages/details_page.blp:29
 msgid "Create"
 msgstr "Crear"
 
-#: src/main_view/details-page.blp:33
+#: src/pages/details_page.blp:45
 msgid "Move to Trash"
 msgstr "Mover a la Papelera"
 
-#: src/main_view/details-page.blp:41
+#: src/pages/details_page.blp:55
 msgid "Override entry to edit details"
 msgstr "Anular entrada para editar detalles"
 
-#: src/main_view/details-page.blp:42 src/main_view/details-page.blp:164
+#: src/pages/details_page.blp:56
 msgid "Override"
 msgstr "Anular"
 
-#: src/main_view/details-page.blp:74
+#: src/pages/details_page.blp:93
 msgid "Edit details about this entry."
 msgstr "Modificar los detalles de este artículo."
 
-#: src/main_view/details-page.blp:80
+#: src/pages/details_page.blp:99
 msgid "Enable"
 msgstr "Activar"
 
-#: src/main_view/details-page.blp:81
+#: src/pages/details_page.blp:100
 msgid "Enable this entry to be started when you log in."
 msgstr "Autoarrancar este artículo al iniciar sesión."
 
-#: src/main_view/details-page.blp:87
+#: src/pages/details_page.blp:107
 msgid "Name"
 msgstr "Nombre"
 
-#: src/main_view/details-page.blp:92
+#: src/pages/details_page.blp:113
 msgid "Comment"
 msgstr "Acerca de"
 
-#: src/main_view/details-page.blp:97
+#: src/pages/details_page.blp:118
 msgid "Command or Script"
 msgstr "Comando o Script"
 
-#: src/main_view/details-page.blp:112
+#: src/pages/details_page.blp:125 src/widgets/entry_row.blp:28
+msgid "More Information"
+msgstr "Más información"
+
+#: src/pages/details_page.blp:136
 msgid "Show Terminal"
 msgstr "Mostrar ventana del Terminal"
 
-#: src/main_view/details-page.blp:113
+#: src/pages/details_page.blp:137
 msgid "Show a terminal for this process to run in."
 msgstr "Mostrar un terminal en el cual correr este proceso."
 
-#: src/main_view/details-page.blp:119
+#: src/pages/details_page.blp:144
 msgid "Seconds of Delay"
 msgstr "Segundos de retraso"
 
-#: src/main_view/details-page.blp:120
+#: src/pages/details_page.blp:145
 msgid "Amount of seconds to wait after logging in to run the command or script"
 msgstr ""
 "Cantidad de segundos a esperar después de iniciar sesión para ejecutar el "
 "comando o script"
 
-#: src/main_view/details-page.blp:139
+#: src/pages/details_page.blp:165
+#, fuzzy
+#| msgid ""
+#| "To run a script at login, paste its file path here. You can copy the "
+#| "script's path from your file manager. Make sure your script is executable."
 msgid ""
 "To run a script at login, paste its file path here. You can copy the "
-"script's path from your file manager. Make sure your script is executable."
+"script's path from your file manager. Make sure your script is executable"
 msgstr ""
 "Para ejecutar un script al iniciar sesión, pega aquí su ruta de archivo. "
 "Puedes copiar la ruta desde tu gestor de archivos. Asegúrate de que tu "
 "script sea ejecutable."
 
-#: src/main_view/details-page.blp:151
-msgid "Create and Replace?"
-msgstr "¿Crear y reemplazar?"
+#: src/pages/details_page.ts:55 src/shortcuts-dialog.blp:9
+msgid "New Entry"
+msgstr "Nueva Entrada"
 
-#: src/main_view/details-page.blp:152
-msgid ""
-"A file already exists for this entry. Are you sure you want to replace it?"
+#: src/pages/details_page.ts:159
+msgid "Issues occurred while saving details"
 msgstr ""
-"Ya existe un archivo para esta entrada. ¿Seguro que quieres reemplazarlo?"
 
-#: src/main_view/details-page.blp:154 src/main_view/details-page.blp:163
-#: src/main_view/details-page.blp:172
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: src/main_view/details-page.blp:155
-msgid "Create and Replace"
-msgstr "Crear y Reemplazar"
-
-#: src/main_view/details-page.blp:160
-msgid "Override Entry?"
-msgstr "¿Anular entrada?"
-
-#: src/main_view/details-page.blp:161
-msgid ""
-"Be careful, overriding system entries can lead to system breakage. This will "
-"make a copy of the entry for you to edit."
+#: src/pages/details_page.ts:178
+msgid "Issues occurred while saving"
 msgstr ""
-"Ten cuidado: anular entradas del sistema puede romper funcionalidades. Se "
-"creará una copia editable."
 
-#: src/main_view/details-page.blp:169
+#: src/pages/details_page.ts:191
+#, fuzzy
+#| msgid "Could not create file"
+msgid "Could not create entry"
+msgstr "No se ha podido crear el archivo"
+
+#: src/pages/details_page.ts:199
+msgid "Issues occurred while creating entry"
+msgstr ""
+
+#: src/pages/details_page.ts:210
+msgid "Issues occurred while overriding"
+msgstr ""
+
+#: src/pages/details_page.ts:218
 msgid "Trash Entry?"
 msgstr "¿Borrar Entrada?"
 
-#: src/main_view/details-page.blp:170
+#: src/pages/details_page.ts:219
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
 msgstr ""
 "Esta entrada se moverá a la papelera y ya no se ejecutará al iniciar sesión."
 
-#: src/main_view/details-page.blp:173
+#: src/pages/details_page.ts:221
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: src/pages/details_page.ts:222
 msgid "Trash"
 msgstr "Papelera"
 
-#: src/main_view/details_page.ts:264 src/shortcuts-dialog.blp:9
-msgid "New Entry"
-msgstr "Nueva Entrada"
+#: src/pages/details_page.ts:237
+msgid "Issues occurred while trashing"
+msgstr ""
 
-#: src/main_view/details_page.ts:344
-msgid "Saved details"
-msgstr "Detalles guardados"
-
-#: src/main_view/details_page.ts:346
-msgid "Could not save file"
-msgstr "No se pudo guardar el archivo"
-
-#: src/main_view/details_page.ts:371
-msgid "Created entry"
-msgstr "Entrada Creada"
-
-#: src/main_view/details_page.ts:373 src/main_view/details_page.ts:397
-msgid "Could not create file"
-msgstr "No se ha podido crear el archivo"
-
-#: src/main_view/details_page.ts:394
-msgid "Overrode entry"
-msgstr "Entrada anulada"
-
-#: src/main_view/details_page.ts:435
-msgid "Trashed entry"
-msgstr "Entrada Borrada"
-
-#: src/main_view/details_page.ts:437
-msgid "Could not trash file"
-msgstr "No se pudo enviar a la papelera"
-
-#: src/main_view/entries-page.blp:20
+#: src/pages/entries_page.blp:52
 msgid "Main Menu"
 msgstr "Menú Principal"
 
-#: src/main_view/entries-page.blp:27
+#: src/pages/entries_page.blp:59
 msgid "Help and information"
 msgstr "Ayuda e Información"
 
-#: src/main_view/entries-page.blp:47
+#: src/pages/entries_page.blp:73
+msgid "Search entries"
+msgstr "Buscar entradas"
+
+#: src/pages/entries_page.blp:84
 msgid "Loading Entries"
 msgstr "Cargando entradas"
 
-#: src/main_view/entries-page.blp:48
+#: src/pages/entries_page.blp:85
 msgid "This should only take a moment."
 msgstr "Esto solo tomará un momento."
 
-#: src/main_view/entries-page.blp:91
-msgid "New"
-msgstr "Nuevo"
-
-#: src/main_view/entries-page.blp:112
-msgid "No Entries Found"
-msgstr "No hay ninguna entrada"
-
-#: src/main_view/entries-page.blp:122
-msgid "Add an app or script to run it when you log in"
-msgstr "Añade una app o script para ejecutarlo al iniciar sesión"
-
-#: src/main_view/entries-page.blp:133
-msgid "_Open Autostart Folder"
-msgstr "_Abrir carpeta de autoarranque"
-
-#: src/main_view/entries-page.blp:144
-msgid "_Keyboard Shortcuts"
-msgstr "_Atajos de Teclado"
-
-#: src/main_view/entries-page.blp:149
-msgid "_About Ignition"
-msgstr "_Sobre Ignition"
-
-#: src/main_view/entries_page.ts:85
+#: src/pages/entries_page.blp:95
 msgid "User Startup Entries"
 msgstr "Entradas de Inicio de Usuario"
 
-#: src/main_view/entries_page.ts:86
+#: src/pages/entries_page.blp:96
 msgid "Entries that run only for you."
 msgstr "Entradas que se ejecutan sólo para ti."
 
-#: src/main_view/entries_page.ts:110
+#: src/pages/entries_page.blp:113
+msgid "New"
+msgstr "Nuevo"
+
+#: src/pages/entries_page.blp:119
 msgid "System Startup Entries"
 msgstr "Entradas de Inicio del Sistema"
 
-#: src/main_view/entries_page.ts:111
+#: src/pages/entries_page.blp:120
 msgid "Entries that run for everyone."
 msgstr "Entradas que se ejecutan sólo para todos."
 
-#: src/main_view/entries_page.ts:180
-msgid "Could not load some entries"
-msgstr "No se han podido cargar algunas entradas"
+#: src/pages/entries_page.blp:149
+msgid "No Entries Found"
+msgstr "No hay ninguna entrada"
+
+#: src/pages/entries_page.blp:159
+msgid "Add an app or script to run it when you log in"
+msgstr "Añade una app o script para ejecutarlo al iniciar sesión"
+
+#: src/pages/entries_page.blp:169
+msgid "_Open Autostart Folder"
+msgstr "_Abrir carpeta de autoarranque"
+
+#: src/pages/entries_page.blp:172
+msgid "_Keyboard Shortcuts"
+msgstr "_Atajos de Teclado"
+
+#: src/pages/entries_page.blp:173
+#, fuzzy
+#| msgid "No description"
+msgid "_About Descriptive"
+msgstr "Sin descripción"
 
 #: src/shortcuts-dialog.blp:6
 #, fuzzy
@@ -552,17 +399,204 @@ msgid "Details"
 msgstr "Detalles"
 
 #. These need to be getters for the _() translation function to work
-#: src/utils/shared_vars.ts:17
+#: src/utils/shared_vars.ts:15
 msgid "No Name Set"
 msgstr "No hay Nombre Asignado"
 
-#: src/utils/shared_vars.ts:18
+#: src/utils/shared_vars.ts:16
 msgid "No comment set."
 msgstr "No hay ningún comentario."
 
-#: src/window/window.ts:73
-msgid "Failed to start properly"
-msgstr "No se inició correctamente"
+#. Translators: %d is the number of seconds of delay before the app starts
+#: src/widgets/entry_row.ts:49
+#, javascript-format
+msgid "Starts after %d seconds"
+msgstr ""
+
+#: src/widgets/entry_row.ts:51
+msgid "Enabled"
+msgstr "Activado"
+
+#: src/widgets/entry_row.ts:54
+msgid "Disabled"
+msgstr "Desactivado"
+
+#: src/widgets/entry_row.ts:58
+msgid "This entry is overridden by a user entry."
+msgstr "Esta entrada ha sido anulada por una entrada de usuario."
+
+#: src/widgets/entry_row.ts:59
+msgid "Overridden"
+msgstr "Anulado"
+
+#: src/widgets/entry_row.ts:61
+msgid "This entry overrides a system entry."
+msgstr "Esta entrada anula una entrada del sistema."
+
+#: src/widgets/help_dialog.blp:5
+msgid "Help and Information"
+msgstr "Ayuda e Información"
+
+#: src/widgets/help_dialog.blp:27
+msgid "Can't find an application?"
+msgstr "¿No encuentras una aplicación?"
+
+#: src/widgets/help_dialog.blp:28
+#, fuzzy
+#| msgid "Ignition might not be able to see some applications on your system"
+msgid "Ignition might not be able to see applications on your system"
+msgstr "Puede que Ignition no pueda ver algunas aplicaciones en tu sistema"
+
+#: src/widgets/help_dialog.blp:41
+msgid "What is a 'System Entry'?"
+msgstr "¿Qué es una 'Entrada de sistema'?"
+
+#: src/widgets/help_dialog.blp:42
+msgid "Learn more about system startup entries, and how editing them works"
+msgstr "Conoce más sobre las entradas de inicio del sistema y cómo editarlas"
+
+#: src/widgets/help_dialog.blp:58
+msgid "Can't Find an App?"
+msgstr "¿No encuentras una aplicación?"
+
+#: src/widgets/help_dialog.blp:79
+msgid ""
+"Some apps store their entries outside of the places that Ignition is allowed "
+"to read. This means that these apps won't show up in the list of apps on "
+"your system, when making a new entry."
+msgstr ""
+"Algunas aplicaciones guardan sus entradas en lugares que Ignition no puede "
+"leer. Esto significa que esas apps no aparecerán en la lista al crear una "
+"nueva entrada."
+
+#: src/widgets/help_dialog.blp:85
+msgid ""
+"To fix this, you can allow Ignition to see more home locations, or more root "
+"locations, in your file system."
+msgstr ""
+"Para solucionarlo, puedes permitir que Ignition vea más ubicaciones del "
+"hogar o del sistema."
+
+#: src/widgets/help_dialog.blp:91
+msgid ""
+"We recommend the app \"Flatseal\" to manage these permissions. Enable \"All "
+"user files\" or \"All system files\" to be able to find these apps."
+msgstr ""
+"Recomendamos usar la aplicación \"Flatseal\" para gestionar estos permisos. "
+"Activa \"Todos los archivos de usuario\" o \"Todos los archivos del "
+"sistema\" para encontrarlas."
+
+#: src/widgets/help_dialog.blp:100
+msgid "What is a System Entry?"
+msgstr "¿Qué es una Entrada de sistema?"
+
+#: src/widgets/help_dialog.blp:121
+msgid ""
+"System Entries are for apps or commands that are ran on log in for "
+"everybody. These are usually present to allow certain features, programs, or "
+"other important actions run properly."
+msgstr ""
+"Las Entradas de sistema corresponden a aplicaciones o comandos que se "
+"ejecutan al iniciar sesión para todos los usuarios. Suelen ser necesarias "
+"para que ciertos programas o funciones del sistema funcionen correctamente."
+
+#: src/widgets/help_dialog.blp:127
+msgid ""
+"You can override these, but please use caution when doing so, as you may "
+"break some existing app or feature of your desktop."
+msgstr ""
+"Puedes anular estas entradas, pero hazlo con cuidado, ya que podrías dañar "
+"alguna aplicación o función existente en tu escritorio."
+
+#: src/widgets/search_group.blp:13
+msgid "No Results Found"
+msgstr "No se Han Encontrado Resultados"
+
+#: src/widgets/search_group.blp:14
+msgid "Try a different search."
+msgstr "Prueba a buscar algo diferente."
+
+#~ msgid "Welcome"
+#~ msgstr "Bienvenid@"
+
+#~ msgid "About Ignition"
+#~ msgstr "Sobre Ignition"
+
+#~ msgid "Welcome to Ignition!"
+#~ msgstr "Bienvenido/a sea a Ignition!"
+
+#~ msgid ""
+#~ "Ignition lets you start any app or script when you log in to your "
+#~ "computer."
+#~ msgstr ""
+#~ "Ignition te permite iniciar cualquier aplicación o script cuando inicias "
+#~ "sesión en tu ordenador o portátil."
+
+#~ msgid "Get Started"
+#~ msgstr "Empezar"
+
+#~ msgid "Translate"
+#~ msgstr "Traducir"
+
+#~ msgid "Opened folder"
+#~ msgstr "Carpeta abierta"
+
+#~ msgid "Could not open folder"
+#~ msgstr "No se pudo abrir la carpeta"
+
+#~ msgid "Search"
+#~ msgstr "Buscar"
+
+#~ msgid "Could not load some apps"
+#~ msgstr "No se pueden cargar algunas aplicaciones"
+
+#~ msgid "Create and Replace?"
+#~ msgstr "¿Crear y reemplazar?"
+
+#~ msgid ""
+#~ "A file already exists for this entry. Are you sure you want to replace it?"
+#~ msgstr ""
+#~ "Ya existe un archivo para esta entrada. ¿Seguro que quieres reemplazarlo?"
+
+#~ msgid "Create and Replace"
+#~ msgstr "Crear y Reemplazar"
+
+#~ msgid "Override Entry?"
+#~ msgstr "¿Anular entrada?"
+
+#~ msgid ""
+#~ "Be careful, overriding system entries can lead to system breakage. This "
+#~ "will make a copy of the entry for you to edit."
+#~ msgstr ""
+#~ "Ten cuidado: anular entradas del sistema puede romper funcionalidades. Se "
+#~ "creará una copia editable."
+
+#~ msgid "Saved details"
+#~ msgstr "Detalles guardados"
+
+#~ msgid "Could not save file"
+#~ msgstr "No se pudo guardar el archivo"
+
+#~ msgid "Created entry"
+#~ msgstr "Entrada Creada"
+
+#~ msgid "Overrode entry"
+#~ msgstr "Entrada anulada"
+
+#~ msgid "Trashed entry"
+#~ msgstr "Entrada Borrada"
+
+#~ msgid "Could not trash file"
+#~ msgstr "No se pudo enviar a la papelera"
+
+#~ msgid "_About Ignition"
+#~ msgstr "_Sobre Ignition"
+
+#~ msgid "Could not load some entries"
+#~ msgstr "No se han podido cargar algunas entradas"
+
+#~ msgid "Failed to start properly"
+#~ msgstr "No se inició correctamente"
 
 #~ msgctxt "shortcut window"
 #~ msgid "New Entry"
@@ -570,9 +604,6 @@ msgstr "No se inició correctamente"
 
 #~ msgid "Choose an App"
 #~ msgstr "Elige una aplicación"
-
-#~ msgid "Search apps"
-#~ msgstr "Buscar aplicaciones"
 
 #~ msgid "Apply"
 #~ msgstr "Aplicar"
@@ -604,9 +635,6 @@ msgstr "No se inició correctamente"
 
 #~ msgid "GTK;"
 #~ msgstr "GTK;"
-
-#~ msgid "No description"
-#~ msgstr "Sin descripción"
 
 #~ msgid "Choose a Script"
 #~ msgstr "Elige un Script"
