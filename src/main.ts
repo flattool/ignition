@@ -47,7 +47,10 @@ export class IgnitionApplication extends from(Adw.Application, {
 			Language: ${lang}
 		`
 
-		const dialog = Adw.AboutDialog.new_from_appdata("/io/github/flattool/Ignition/appdata", null)
+		const dialog = Adw.AboutDialog.new_from_appdata(
+			"/io/github/flattool/Ignition/appdata",
+			pkg.version.split(".dev")[0] ?? null,
+		)
 		dialog.version = pkg.version
 		dialog.debug_info = troubleshooting
 		dialog.add_link(_("Donate"), "https://ko-fi.com/heliguy")
