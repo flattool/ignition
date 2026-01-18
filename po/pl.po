@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-24 23:13-0400\n"
+"POT-Creation-Date: 2026-01-17 18:15-0500\n"
 "PO-Revision-Date: 2025-10-31 19:31+0000\n"
 "Last-Translator: voorjaarman <voorjaarman@gmail.com>\n"
 "Language-Team: Polish <https://weblate.fyralabs.com/projects/flattool/"
@@ -64,315 +64,182 @@ msgstr "Utwórz nowy wpis startowy."
 msgid "See all your startup items, in dark mode."
 msgstr "Zobacz wszystkie elementy startowe w trybie ciemnym."
 
-#: src/first_run_page/first-run-page.blp:5
-msgid "Welcome"
-msgstr "Witamy"
-
-#: src/first_run_page/first-run-page.blp:13
-msgid "About Ignition"
-msgstr "O Ignition"
-
-#: src/first_run_page/first-run-page.blp:20
-msgid "Welcome to Ignition!"
-msgstr "Witamy w Ignition!"
-
-#: src/first_run_page/first-run-page.blp:21
-msgid ""
-"Ignition lets you start any app or script when you log in to your computer."
-msgstr ""
-"Ignition umożliwia uruchomienie dowolnej aplikacji lub skryptu po "
-"zalogowaniu się do komputera."
-
-#: src/first_run_page/first-run-page.blp:25
-msgid "Get Started"
-msgstr "Zaczynamy"
-
-#: src/gtk/entry-row.blp:22 src/main_view/details-page.blp:103
-msgid "More Information"
-msgstr "Więcej Informacji"
-
-#: src/gtk/entry_row.ts:67
-msgid "Disabled"
-msgstr "Wyłączony"
-
-#: src/gtk/entry_row.ts:71
-msgid "Overridden"
-msgstr "Nadpisany"
-
-#: src/gtk/entry_row.ts:75
-msgid "Enabled"
-msgstr "Włączony"
-
-#: src/gtk/entry_row.ts:95
-msgid "This entry is overridden by a user entry."
-msgstr "Ten wpis zostanie zastąpiony wpisem użytkownika."
-
-#: src/gtk/entry_row.ts:97
-msgid "This entry overrides a system entry."
-msgstr "Ten wpis zastępuje wpis systemowy."
-
-#: src/gtk/help-dialog.blp:5
-msgid "Help and Information"
-msgstr "Pomoc i informacje"
-
-#: src/gtk/help-dialog.blp:27
-msgid "Can't find an application?"
-msgstr "Nie możesz znaleźć aplikacji?"
-
-#: src/gtk/help-dialog.blp:28
-msgid "Ignition might not be able to see some applications on your system"
-msgstr ""
-"Ignition może nie być w stanie wykryć niektórych aplikacji w Twoim systemie"
-
-#: src/gtk/help-dialog.blp:38
-msgid "What is a 'System Entry'?"
-msgstr "Czym jest „wpis systemowy”?"
-
-#: src/gtk/help-dialog.blp:39
-msgid "Learn more about system startup entries, and how editing them works"
-msgstr ""
-"Dowiedz się więcej o wpisach startowych systemu i o tym, jak działa ich "
-"edycja"
-
-#: src/gtk/help-dialog.blp:53
-msgid "Can't Find an App?"
-msgstr "Nie możesz znaleźć aplikacji?"
-
-#: src/gtk/help-dialog.blp:73
-msgid ""
-"Some apps store their entries outside of the places that Ignition is allowed "
-"to read. This means that these apps won't show up in the list of apps on "
-"your system, when making a new entry."
-msgstr ""
-"Niektóre aplikacje przechowują swoje wpisy poza lokalizacjami, do których "
-"dostęp ma Ignition. Oznacza to, że te aplikacje nie pojawią się na liście "
-"aplikacji w twoim systemie podczas tworzenia nowego wpisu."
-
-#: src/gtk/help-dialog.blp:79
-msgid ""
-"To fix this, you can allow Ignition to see more home locations, or more root "
-"locations, in your file system."
-msgstr ""
-"Aby rozwiązać ten problem, możesz zezwolić aplikacji Ignition na "
-"wyświetlanie większej liczby lokalizacji domowych lub roota w systemie "
-"plików."
-
-#: src/gtk/help-dialog.blp:85
-msgid ""
-"We recommend the app \"Flatseal\" to manage these permissions. Enable \"All "
-"user files\" or \"All system files\" to be able to find these apps."
-msgstr ""
-"Do zarządzania tymi uprawnieniami zalecamy aplikację „Flatseal”. Aby znaleźć "
-"te aplikacje, włącz opcję „Wszystkie pliki użytkownika” lub „Wszystkie pliki "
-"systemowe”."
-
-#: src/gtk/help-dialog.blp:94
-msgid "What is a System Entry?"
-msgstr "Czym jest wpis systemowy?"
-
-#: src/gtk/help-dialog.blp:114
-msgid ""
-"System Entries are for apps or commands that are ran on log in for "
-"everybody. These are usually present to allow certain features, programs, or "
-"other important actions run properly."
-msgstr ""
-"Wpisy systemowe dotyczą aplikacji lub poleceń uruchamianych po zalogowaniu "
-"przez każdego użytkownika. Zazwyczaj są one dostępne, aby umożliwić "
-"prawidłowe działanie niektórych funkcji, programów lub innych ważnych "
-"działań."
-
-#: src/gtk/help-dialog.blp:120
-msgid ""
-"You can override these, but please use caution when doing so, as you may "
-"break some existing app or feature of your desktop."
-msgstr ""
-"Możesz je zastąpić, ale zachowaj ostrożność, ponieważ możesz uszkodzić jakąś "
-"istniejącą aplikację lub funkcję pulpitu."
-
-#: src/main.ts:70
-msgid "Translate"
-msgstr "Przetłumacz"
-
-#: src/main.ts:71
+#: src/main.ts:56
 msgid "Donate"
 msgstr "Dorzuć się"
 
-#: src/main.ts:97
-msgid "Opened folder"
-msgstr "Otwarty folder"
-
-#: src/main.ts:100
-msgid "Could not open folder"
-msgstr "Nie można otworzyć folderu"
-
-#: src/main_view/app-list-page.blp:5
+#: src/pages/apps_list_page.blp:16
 msgid "Add or Create an Entry"
 msgstr "Dodaj lub utwórz wpis"
 
-#: src/main_view/app-list-page.blp:12 src/main_view/entries-page.blp:13
-msgid "Search"
-msgstr "Szukaj"
+#: src/pages/apps_list_page.blp:36
+#, fuzzy
+#| msgid "Search Apps"
+msgid "Search apps"
+msgstr "Wyszukaj aplikacje"
 
-#: src/main_view/app-list-page.blp:25 src/main_view/entries-page.blp:40
-msgid "Search entries"
-msgstr "Wyszukaj wpisy"
+#: src/pages/apps_list_page.blp:43
+#, fuzzy
+#| msgid "Loading Entries"
+msgid "Loading Apps"
+msgstr "Ładowanie wpisów"
 
-#: src/main_view/app-list-page.blp:47
+#: src/pages/apps_list_page.blp:44
+#, fuzzy
+#| msgid "This should only take a moment."
+msgid "This should only take a moment"
+msgstr "To zajmie tylko chwilę."
+
+#: src/pages/apps_list_page.blp:66
 msgid "Commands and Scripts"
 msgstr "Polecenia i skrypty"
 
-#: src/main_view/app-list-page.blp:48
+#: src/pages/apps_list_page.blp:67
 msgid "Run a command or script when you log in."
 msgstr "Uruchom polecenie lub skrypt po zalogowaniu."
 
-#: src/main_view/app-list-page.blp:54
+#: src/pages/apps_list_page.blp:73
 msgid "Add a Command or Script"
 msgstr "Dodaj polecenie lub skrypt"
 
-#: src/main_view/app-list-page.blp:55
+#: src/pages/apps_list_page.blp:74
 msgid "Enter the command to run or path to your script"
 msgstr "Wprowadź polecenie uruchomienia lub ścieżkę do skryptu"
 
-#: src/main_view/app-list-page.blp:78
+#: src/pages/apps_list_page.blp:98
 msgid "Installed Apps"
 msgstr "Zainstalowane aplikacje"
 
-#: src/main_view/app-list-page.blp:79
-msgid "Choose any installed app to run when you log in."
+#: src/pages/apps_list_page.blp:99
+#, fuzzy
+#| msgid "Choose any installed app to run when you log in."
+msgid "Choose any installed apps to run when you log in."
 msgstr ""
 "Wybierz dowolną zainstalowaną aplikację, która zostanie uruchomiona po "
 "zalogowaniu."
 
-#: src/main_view/app-list-page.blp:83
+#: src/pages/apps_list_page.blp:105
 msgid "Show Hidden Apps"
 msgstr "Pokaż ukryte aplikacje"
 
-#: src/main_view/app-list-page.blp:84
+#: src/pages/apps_list_page.blp:106
 msgid "Show apps that are hidden from the app menu"
 msgstr "Pokaż aplikacje ukryte w menu aplikacji"
 
-#: src/main_view/app-list-page.blp:101 src/main_view/entries-page.blp:57
-msgid "No Results Found"
-msgstr "Nie znaleziono wyników"
-
-#: src/main_view/app-list-page.blp:102 src/main_view/entries-page.blp:58
-msgid "Try a different search."
-msgstr "Spróbuj innego wyszukiwania."
-
-#: src/main_view/app_list_page.ts:138
-msgid "Could not load some apps"
-msgstr "Nie można załadować niektórych aplikacji"
-
-#: src/main_view/details-page.blp:5
+#: src/pages/details_page.blp:5
 msgid "Edit Details"
 msgstr "Edytuj szczegóły"
 
-#: src/main_view/details-page.blp:16
+#: src/pages/details_page.blp:13
 msgid "Save"
 msgstr "Zapisz"
 
-#: src/main_view/details-page.blp:26
+#: src/pages/details_page.blp:29
 msgid "Create"
 msgstr "Stwórz"
 
-#: src/main_view/details-page.blp:33
+#: src/pages/details_page.blp:45
 msgid "Move to Trash"
 msgstr "Przenieś do Kosza"
 
-#: src/main_view/details-page.blp:41
+#: src/pages/details_page.blp:55
 msgid "Override entry to edit details"
 msgstr "Zastąp wpis, aby edytować szczegóły"
 
-#: src/main_view/details-page.blp:42 src/main_view/details-page.blp:164
+#: src/pages/details_page.blp:56
 msgid "Override"
 msgstr "Nadpisz"
 
-#: src/main_view/details-page.blp:74
+#: src/pages/details_page.blp:93
 msgid "Edit details about this entry."
 msgstr "Edytuj szczegóły tego wpisu."
 
-#: src/main_view/details-page.blp:80
+#: src/pages/details_page.blp:99
 msgid "Enable"
 msgstr "Włącz"
 
-#: src/main_view/details-page.blp:81
+#: src/pages/details_page.blp:100
 msgid "Enable this entry to be started when you log in."
 msgstr "Włącz tę opcję, aby wpis był uruchamiany po zalogowaniu."
 
-#: src/main_view/details-page.blp:87
+#: src/pages/details_page.blp:107
 msgid "Name"
 msgstr "Nazwa"
 
-#: src/main_view/details-page.blp:92
+#: src/pages/details_page.blp:113
 msgid "Comment"
 msgstr "Komentarz"
 
-#: src/main_view/details-page.blp:97
+#: src/pages/details_page.blp:118
 msgid "Command or Script"
 msgstr "Polecenie lub skrypt"
 
-#: src/main_view/details-page.blp:112
+#: src/pages/details_page.blp:125 src/widgets/entry_row.blp:28
+msgid "More Information"
+msgstr "Więcej Informacji"
+
+#: src/pages/details_page.blp:136
 msgid "Show Terminal"
 msgstr "Pokaż Terminal"
 
-#: src/main_view/details-page.blp:113
+#: src/pages/details_page.blp:137
 msgid "Show a terminal for this process to run in."
 msgstr "Pokaż terminal, w którym można uruchomić ten proces."
 
-#: src/main_view/details-page.blp:119
+#: src/pages/details_page.blp:144
 msgid "Seconds of Delay"
 msgstr "Sekundy opóźnienia"
 
-#: src/main_view/details-page.blp:120
+#: src/pages/details_page.blp:145
 msgid "Amount of seconds to wait after logging in to run the command or script"
 msgstr ""
 "Liczba sekund, które należy odczekać po zalogowaniu, aby uruchomić polecenie "
 "lub skrypt"
 
-#: src/main_view/details-page.blp:139
+#: src/pages/details_page.blp:165
+#, fuzzy
+#| msgid ""
+#| "To run a script at login, paste its file path here. You can copy the "
+#| "script's path from your file manager. Make sure your script is executable."
 msgid ""
 "To run a script at login, paste its file path here. You can copy the "
-"script's path from your file manager. Make sure your script is executable."
+"script's path from your file manager. Make sure your script is executable"
 msgstr ""
 "Aby uruchomić skrypt podczas logowania, wklej tutaj ścieżkę do jego pliku. "
 "Możesz skopiować ścieżkę do skryptu z menedżera plików. Upewnij się, że "
 "skrypt jest wykonywalny."
 
-#: src/main_view/details-page.blp:151
-msgid "Create and Replace?"
-msgstr "Utworzyć i zastąpić?"
+#: src/pages/details_page.ts:55 src/shortcuts-dialog.blp:9
+msgid "New Entry"
+msgstr "Nowy wpis"
 
-#: src/main_view/details-page.blp:152
-msgid ""
-"A file already exists for this entry. Are you sure you want to replace it?"
-msgstr "Plik dla tego wpisu już istnieje. Czy na pewno chcesz go zastąpić?"
-
-#: src/main_view/details-page.blp:154 src/main_view/details-page.blp:163
-#: src/main_view/details-page.blp:172
-msgid "Cancel"
-msgstr "Anuluj"
-
-#: src/main_view/details-page.blp:155
-msgid "Create and Replace"
-msgstr "Utwórz i zamień"
-
-#: src/main_view/details-page.blp:160
-msgid "Override Entry?"
-msgstr "Nadpisać wpis?"
-
-#: src/main_view/details-page.blp:161
-msgid ""
-"Be careful, overriding system entries can lead to system breakage. This will "
-"make a copy of the entry for you to edit."
+#: src/pages/details_page.ts:159
+msgid "Issues occurred while saving details"
 msgstr ""
-"Uważaj, nadpisywanie wpisów systemowych może spowodować awarię systemu. "
-"Zostanie utworzona kopia wpisu do edycji."
 
-#: src/main_view/details-page.blp:169
+#: src/pages/details_page.ts:178
+msgid "Issues occurred while saving"
+msgstr ""
+
+#: src/pages/details_page.ts:191
+#, fuzzy
+#| msgid "Could not create file"
+msgid "Could not create entry"
+msgstr "Nie można utworzyć pliku"
+
+#: src/pages/details_page.ts:199
+msgid "Issues occurred while creating entry"
+msgstr ""
+
+#: src/pages/details_page.ts:210
+msgid "Issues occurred while overriding"
+msgstr ""
+
+#: src/pages/details_page.ts:218
 msgid "Trash Entry?"
 msgstr "Usunąć wpis?"
 
-#: src/main_view/details-page.blp:170
+#: src/pages/details_page.ts:219
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
@@ -380,101 +247,79 @@ msgstr ""
 "Ten wpis zostanie przeniesiony do kosza i nie będzie już generowany po "
 "zalogowaniu."
 
-#: src/main_view/details-page.blp:173
+#: src/pages/details_page.ts:221
+msgid "Cancel"
+msgstr "Anuluj"
+
+#: src/pages/details_page.ts:222
 msgid "Trash"
 msgstr "Kosz"
 
-#: src/main_view/details_page.ts:264 src/shortcuts-dialog.blp:9
-msgid "New Entry"
-msgstr "Nowy wpis"
+#: src/pages/details_page.ts:237
+msgid "Issues occurred while trashing"
+msgstr ""
 
-#: src/main_view/details_page.ts:344
-msgid "Saved details"
-msgstr "Zapisane szczegóły"
-
-#: src/main_view/details_page.ts:346
-msgid "Could not save file"
-msgstr "Nie można zapisać pliku"
-
-#: src/main_view/details_page.ts:371
-msgid "Created entry"
-msgstr "Utworzono wpis"
-
-#: src/main_view/details_page.ts:373 src/main_view/details_page.ts:397
-msgid "Could not create file"
-msgstr "Nie można utworzyć pliku"
-
-#: src/main_view/details_page.ts:394
-msgid "Overrode entry"
-msgstr "Zastąp wpis"
-
-#: src/main_view/details_page.ts:435
-msgid "Trashed entry"
-msgstr "Usunięty wpis"
-
-#: src/main_view/details_page.ts:437
-msgid "Could not trash file"
-msgstr "Nie udało się usunąć pliku"
-
-#: src/main_view/entries-page.blp:20
+#: src/pages/entries_page.blp:52
 msgid "Main Menu"
 msgstr "Menu główne"
 
-#: src/main_view/entries-page.blp:27
+#: src/pages/entries_page.blp:59
 msgid "Help and information"
 msgstr "Pomoc i informacje"
 
-#: src/main_view/entries-page.blp:47
+#: src/pages/entries_page.blp:73
+msgid "Search entries"
+msgstr "Wyszukaj wpisy"
+
+#: src/pages/entries_page.blp:84
 msgid "Loading Entries"
 msgstr "Ładowanie wpisów"
 
-#: src/main_view/entries-page.blp:48
+#: src/pages/entries_page.blp:85
 msgid "This should only take a moment."
 msgstr "To zajmie tylko chwilę."
 
-#: src/main_view/entries-page.blp:91
-msgid "New"
-msgstr "Nowy"
-
-#: src/main_view/entries-page.blp:112
-msgid "No Entries Found"
-msgstr "Nie znaleziono żadnych wpisów"
-
-#: src/main_view/entries-page.blp:122
-msgid "Add an app or script to run it when you log in"
-msgstr "Dodaj aplikację lub skrypt, który będzie uruchamiany po zalogowaniu"
-
-#: src/main_view/entries-page.blp:133
-msgid "_Open Autostart Folder"
-msgstr "_Otwórz folder autostartu"
-
-#: src/main_view/entries-page.blp:144
-msgid "_Keyboard Shortcuts"
-msgstr "_Skróty klawiaturowe"
-
-#: src/main_view/entries-page.blp:149
-msgid "_About Ignition"
-msgstr "_O Ignition"
-
-#: src/main_view/entries_page.ts:85
+#: src/pages/entries_page.blp:95
 msgid "User Startup Entries"
 msgstr "Wpisy startowe użytkownika"
 
-#: src/main_view/entries_page.ts:86
+#: src/pages/entries_page.blp:96
 msgid "Entries that run only for you."
 msgstr "Wpisy, które są dostępne tylko dla Ciebie."
 
-#: src/main_view/entries_page.ts:110
+#: src/pages/entries_page.blp:113
+msgid "New"
+msgstr "Nowy"
+
+#: src/pages/entries_page.blp:119
 msgid "System Startup Entries"
 msgstr "Wpisy startowe systemu"
 
-#: src/main_view/entries_page.ts:111
+#: src/pages/entries_page.blp:120
 msgid "Entries that run for everyone."
 msgstr "Wpisy dostępne dla każdego."
 
-#: src/main_view/entries_page.ts:180
-msgid "Could not load some entries"
-msgstr "Nie udało się załadować niektórych wpisów"
+#: src/pages/entries_page.blp:149
+msgid "No Entries Found"
+msgstr "Nie znaleziono żadnych wpisów"
+
+#: src/pages/entries_page.blp:159
+msgid "Add an app or script to run it when you log in"
+msgstr "Dodaj aplikację lub skrypt, który będzie uruchamiany po zalogowaniu"
+
+#: src/pages/entries_page.blp:169
+msgid "_Open Autostart Folder"
+msgstr "_Otwórz folder autostartu"
+
+#: src/pages/entries_page.blp:172
+msgid "_Keyboard Shortcuts"
+msgstr "_Skróty klawiaturowe"
+
+#: src/pages/entries_page.blp:173
+#, fuzzy
+#| msgid "_About Ignition"
+msgid "_About Descriptive"
+msgstr "_O Ignition"
 
 #: src/shortcuts-dialog.blp:6
 msgid "Entries List"
@@ -529,14 +374,202 @@ msgid "Details"
 msgstr "Szczegóły"
 
 #. These need to be getters for the _() translation function to work
-#: src/utils/shared_vars.ts:17
+#: src/utils/shared_vars.ts:15
 msgid "No Name Set"
 msgstr "Brak nazwy"
 
-#: src/utils/shared_vars.ts:18
+#: src/utils/shared_vars.ts:16
 msgid "No comment set."
 msgstr "Nie ustawiono komentarza."
 
-#: src/window/window.ts:73
-msgid "Failed to start properly"
-msgstr "Nie udało się uruchomić poprawnie"
+#. Translators: %d is the number of seconds of delay before the app starts
+#: src/widgets/entry_row.ts:49
+#, javascript-format
+msgid "Starts after %d seconds"
+msgstr ""
+
+#: src/widgets/entry_row.ts:51
+msgid "Enabled"
+msgstr "Włączony"
+
+#: src/widgets/entry_row.ts:54
+msgid "Disabled"
+msgstr "Wyłączony"
+
+#: src/widgets/entry_row.ts:58
+msgid "This entry is overridden by a user entry."
+msgstr "Ten wpis zostanie zastąpiony wpisem użytkownika."
+
+#: src/widgets/entry_row.ts:59
+msgid "Overridden"
+msgstr "Nadpisany"
+
+#: src/widgets/entry_row.ts:61
+msgid "This entry overrides a system entry."
+msgstr "Ten wpis zastępuje wpis systemowy."
+
+#: src/widgets/help_dialog.blp:5
+msgid "Help and Information"
+msgstr "Pomoc i informacje"
+
+#: src/widgets/help_dialog.blp:27
+msgid "Can't find an application?"
+msgstr "Nie możesz znaleźć aplikacji?"
+
+#: src/widgets/help_dialog.blp:28
+#, fuzzy
+#| msgid "Ignition might not be able to see some applications on your system"
+msgid "Ignition might not be able to see applications on your system"
+msgstr ""
+"Ignition może nie być w stanie wykryć niektórych aplikacji w Twoim systemie"
+
+#: src/widgets/help_dialog.blp:41
+msgid "What is a 'System Entry'?"
+msgstr "Czym jest „wpis systemowy”?"
+
+#: src/widgets/help_dialog.blp:42
+msgid "Learn more about system startup entries, and how editing them works"
+msgstr ""
+"Dowiedz się więcej o wpisach startowych systemu i o tym, jak działa ich "
+"edycja"
+
+#: src/widgets/help_dialog.blp:58
+msgid "Can't Find an App?"
+msgstr "Nie możesz znaleźć aplikacji?"
+
+#: src/widgets/help_dialog.blp:79
+msgid ""
+"Some apps store their entries outside of the places that Ignition is allowed "
+"to read. This means that these apps won't show up in the list of apps on "
+"your system, when making a new entry."
+msgstr ""
+"Niektóre aplikacje przechowują swoje wpisy poza lokalizacjami, do których "
+"dostęp ma Ignition. Oznacza to, że te aplikacje nie pojawią się na liście "
+"aplikacji w twoim systemie podczas tworzenia nowego wpisu."
+
+#: src/widgets/help_dialog.blp:85
+msgid ""
+"To fix this, you can allow Ignition to see more home locations, or more root "
+"locations, in your file system."
+msgstr ""
+"Aby rozwiązać ten problem, możesz zezwolić aplikacji Ignition na "
+"wyświetlanie większej liczby lokalizacji domowych lub roota w systemie "
+"plików."
+
+#: src/widgets/help_dialog.blp:91
+msgid ""
+"We recommend the app \"Flatseal\" to manage these permissions. Enable \"All "
+"user files\" or \"All system files\" to be able to find these apps."
+msgstr ""
+"Do zarządzania tymi uprawnieniami zalecamy aplikację „Flatseal”. Aby znaleźć "
+"te aplikacje, włącz opcję „Wszystkie pliki użytkownika” lub „Wszystkie pliki "
+"systemowe”."
+
+#: src/widgets/help_dialog.blp:100
+msgid "What is a System Entry?"
+msgstr "Czym jest wpis systemowy?"
+
+#: src/widgets/help_dialog.blp:121
+msgid ""
+"System Entries are for apps or commands that are ran on log in for "
+"everybody. These are usually present to allow certain features, programs, or "
+"other important actions run properly."
+msgstr ""
+"Wpisy systemowe dotyczą aplikacji lub poleceń uruchamianych po zalogowaniu "
+"przez każdego użytkownika. Zazwyczaj są one dostępne, aby umożliwić "
+"prawidłowe działanie niektórych funkcji, programów lub innych ważnych "
+"działań."
+
+#: src/widgets/help_dialog.blp:127
+msgid ""
+"You can override these, but please use caution when doing so, as you may "
+"break some existing app or feature of your desktop."
+msgstr ""
+"Możesz je zastąpić, ale zachowaj ostrożność, ponieważ możesz uszkodzić jakąś "
+"istniejącą aplikację lub funkcję pulpitu."
+
+#: src/widgets/search_group.blp:13
+msgid "No Results Found"
+msgstr "Nie znaleziono wyników"
+
+#: src/widgets/search_group.blp:14
+msgid "Try a different search."
+msgstr "Spróbuj innego wyszukiwania."
+
+#~ msgid "Welcome"
+#~ msgstr "Witamy"
+
+#~ msgid "About Ignition"
+#~ msgstr "O Ignition"
+
+#~ msgid "Welcome to Ignition!"
+#~ msgstr "Witamy w Ignition!"
+
+#~ msgid ""
+#~ "Ignition lets you start any app or script when you log in to your "
+#~ "computer."
+#~ msgstr ""
+#~ "Ignition umożliwia uruchomienie dowolnej aplikacji lub skryptu po "
+#~ "zalogowaniu się do komputera."
+
+#~ msgid "Get Started"
+#~ msgstr "Zaczynamy"
+
+#~ msgid "Translate"
+#~ msgstr "Przetłumacz"
+
+#~ msgid "Opened folder"
+#~ msgstr "Otwarty folder"
+
+#~ msgid "Could not open folder"
+#~ msgstr "Nie można otworzyć folderu"
+
+#~ msgid "Search"
+#~ msgstr "Szukaj"
+
+#~ msgid "Could not load some apps"
+#~ msgstr "Nie można załadować niektórych aplikacji"
+
+#~ msgid "Create and Replace?"
+#~ msgstr "Utworzyć i zastąpić?"
+
+#~ msgid ""
+#~ "A file already exists for this entry. Are you sure you want to replace it?"
+#~ msgstr "Plik dla tego wpisu już istnieje. Czy na pewno chcesz go zastąpić?"
+
+#~ msgid "Create and Replace"
+#~ msgstr "Utwórz i zamień"
+
+#~ msgid "Override Entry?"
+#~ msgstr "Nadpisać wpis?"
+
+#~ msgid ""
+#~ "Be careful, overriding system entries can lead to system breakage. This "
+#~ "will make a copy of the entry for you to edit."
+#~ msgstr ""
+#~ "Uważaj, nadpisywanie wpisów systemowych może spowodować awarię systemu. "
+#~ "Zostanie utworzona kopia wpisu do edycji."
+
+#~ msgid "Saved details"
+#~ msgstr "Zapisane szczegóły"
+
+#~ msgid "Could not save file"
+#~ msgstr "Nie można zapisać pliku"
+
+#~ msgid "Created entry"
+#~ msgstr "Utworzono wpis"
+
+#~ msgid "Overrode entry"
+#~ msgstr "Zastąp wpis"
+
+#~ msgid "Trashed entry"
+#~ msgstr "Usunięty wpis"
+
+#~ msgid "Could not trash file"
+#~ msgstr "Nie udało się usunąć pliku"
+
+#~ msgid "Could not load some entries"
+#~ msgstr "Nie udało się załadować niektórych wpisów"
+
+#~ msgid "Failed to start properly"
+#~ msgstr "Nie udało się uruchomić poprawnie"
