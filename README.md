@@ -36,6 +36,8 @@ Ignition is available on Flathub! Visit your software store and search for Ignit
 
 ### Compiling from Source
 
+> Note: NPM is *NOT* required for compiling, it is only here for formatting and linting while editing the code. It does not affect runtime *at all*.
+
 Make sure `flatpak` and `git` are installed, then run the following to build from the repo:
 ```bash
 # Clone this repo and enter it
@@ -54,9 +56,6 @@ flatpak install org.flatpak.Builder org.gnome.Sdk//49 org.gnome.Platform//49 run
 
 ### Formatting
 
-Ignition uses [pre-commit](https://pre-commit.com/) for code formatting.
-- Install using `pip install pre-commit`
-- Run `pre-commit install` in the Ignition repository root to set up pre-commit for this repo.
-- Run `pre-commit run --all-files` to format all files in the repository.
-
-If you run into a situation where pre-commit is broken, you can use `git commit --no-verfiy` to skip the pre-commit checks.
+Ignition uses [ESLint](https://eslint.org/) for code formatting.
+- Install it and its dependencies using `npm install` inside the project root
+- It should work out of the box, no configuration needed
