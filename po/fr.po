@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-17 17:30-0500\n"
+"POT-Creation-Date: 2026-01-17 18:15-0500\n"
 "PO-Revision-Date: 2025-10-27 09:19+0000\n"
 "Last-Translator: Léane GRASSER <leane.grasser@proton.me>\n"
 "Language-Team: French <https://weblate.fyralabs.com/projects/flattool/"
@@ -64,7 +64,7 @@ msgstr "Créez de nouvelles entrées de démarrage."
 msgid "See all your startup items, in dark mode."
 msgstr "Consultez tous vos éléments exécutés au démarrage, en mode sombre."
 
-#: src/main.ts:53
+#: src/main.ts:56
 msgid "Donate"
 msgstr "Faire un don"
 

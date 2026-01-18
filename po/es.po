@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-17 17:30-0500\n"
+"POT-Creation-Date: 2026-01-17 18:15-0500\n"
 "PO-Revision-Date: 2025-07-31 16:52+0000\n"
 "Last-Translator: Jose Daniel Rodriguez <jdrodriguez653@soy.sena.edu.co>\n"
 "Language-Team: Spanish <https://weblate.fyralabs.com/projects/flattool/"
@@ -63,7 +63,7 @@ msgstr "Crea un nuevo elemento de inicio."
 msgid "See all your startup items, in dark mode."
 msgstr "Ver todos tus artículos de startup, en modo oscuro."
 
-#: src/main.ts:53
+#: src/main.ts:56
 msgid "Donate"
 msgstr "Donar"
 
