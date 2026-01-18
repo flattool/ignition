@@ -73,12 +73,12 @@ export class IgnitionApplication extends from(Adw.Application, {
 }
 
 export function main(argv: string[]): Promise<number> {
+	if (!SharedVars.home_autostart_dir.query_exists(null)) {
+		SharedVars.home_autostart_dir.make_directory(null)
+	}
 	SharedVars.application = new IgnitionApplication({
 		application_id: pkg.app_id,
 		flags: Gio.ApplicationFlags.DEFAULT_FLAGS,
 	})
-	if (!SharedVars.home_autostart_dir.query_exists(null)) {
-		SharedVars.home_autostart_dir.create(Gio.FileCreateFlags.NONE, null)
-	}
 	return SharedVars.application.runAsync(argv)
 }
