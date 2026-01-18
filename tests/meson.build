@@ -15,7 +15,7 @@ tests = custom_target(
 )
 install_subdir(
 	tsc_out,
-	install_dir: get_option('bindir'),
+	install_dir: pkgdatadir,
 	strip_directory: true,
 	install_tag: 'tsc-js',
 )
