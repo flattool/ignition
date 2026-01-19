@@ -2,7 +2,17 @@ import Gtk from "gi://Gtk?version=4.0"
 import Adw from "gi://Adw?version=1"
 import Gio from "gi://Gio?version=2.0"
 
-import { GClass, Child, Property, from, Debounce, Signal, OnSignal, next_idle } from "../gobjectify/gobjectify.js"
+import {
+	GClass,
+	Child,
+	Property,
+	Debounce,
+	Signal,
+	OnSignal,
+	from,
+	next_idle,
+	timeout_ms,
+} from "../gobjectify/gobjectify.js"
 import { SharedVars } from "../utils/shared_vars.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
 import { EntryRow } from "./entry_row.js"
@@ -23,13 +33,17 @@ export class EntryGroup extends from(Adw.PreferencesGroup, {
 }) {
 	readonly #exec_to_row = new Map<string, { readonly row: EntryRow, readonly rank: number }>()
 
-	_ready(): void {
+	async _ready(): Promise<void> {
 		this.entries?.connect("items-changed", () => this.#on_change())
 		this._no_hidden_filter.set_filter_func((item) => {
 			const entry = item as AutostartEntry
 			if (this.show_hidden) return true
 			return !entry.is_hidden()
 		})
+		await timeout_ms(250)
+		if (this.entries?.get_n_items() === 0) {
+			this.is_loading = false
+		}
 	}
 
 	#on_change(): void {
@@ -95,14 +109,11 @@ export class EntryGroup extends from(Adw.PreferencesGroup, {
 	}
 
 	#remove_all(): void {
-		let i = 0
-		while (true) {
+		for (let i = 0; ; i += 1) {
 			const row: Gtk.Widget | null = this.get_row(i)
 			if (row === null) break
 			if (row instanceof EntryRow) {
 				this.remove(row)
-			} else {
-				i += 1
 			}
 		}
 	}
