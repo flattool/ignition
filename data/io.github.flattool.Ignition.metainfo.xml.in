@@ -49,6 +49,14 @@
 	</screenshots>
 
 	<releases>
+		<release version="2.3.1" date="2026-1-19">
+			<description translate="no">
+				<p>Bug Fixes</p>
+				<ul>
+					<li>Fixed endless loading when no user autostart entries are present</li>
+				</ul>
+			</description>
+		</release>
 		<release version="2.3.0" date="2026-1-17">
 			<description translate="no">
 				<p>Bug Fixes and Changes</p>
