@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-17 18:15-0500\n"
-"PO-Revision-Date: 2025-06-23 10:46+0000\n"
-"Last-Translator: magnogna <gabrielecasagrande@ik.me>\n"
+"PO-Revision-Date: 2026-01-21 21:04+0000\n"
+"Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/it/>\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:2
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14
@@ -76,16 +76,12 @@ msgid "Search apps"
 msgstr "Cerca app"
 
 #: src/pages/apps_list_page.blp:43
-#, fuzzy
-#| msgid "Loading Entries"
 msgid "Loading Apps"
-msgstr "Caricamento delle voci"
+msgstr "Caricamento App"
 
 #: src/pages/apps_list_page.blp:44
-#, fuzzy
-#| msgid "This should only take a moment."
 msgid "This should only take a moment"
-msgstr "Ci vorrà solo un momento."
+msgstr "Dovrebbe richiedere solo un momento"
 
 #: src/pages/apps_list_page.blp:66
 msgid "Commands and Scripts"
@@ -108,10 +104,8 @@ msgid "Installed Apps"
 msgstr "Applicazioni installate"
 
 #: src/pages/apps_list_page.blp:99
-#, fuzzy
-#| msgid "Choose any installed app to run when you log in."
 msgid "Choose any installed apps to run when you log in."
-msgstr "Scegli un'app da eseguire quando esegui l'accesso."
+msgstr "Scegli le app installate da eseguire quando effettui l'accesso."
 
 #: src/pages/apps_list_page.blp:105
 msgid "Show Hidden Apps"
@@ -192,15 +186,11 @@ msgstr ""
 "comando o lo script"
 
 #: src/pages/details_page.blp:165
-#, fuzzy
-#| msgid ""
-#| "To run a script at login, paste its file path here. You can copy the "
-#| "script's path from your file manager. Make sure your script is executable."
 msgid ""
 "To run a script at login, paste its file path here. You can copy the "
 "script's path from your file manager. Make sure your script is executable"
 msgstr ""
-"Per eseguire uno script al login, incolla qui il suo percorso file. Puoi "
+"Per eseguire uno script al login, incolla qui il percorso del file. Puoi "
 "copiare il percorso dello script dal tuo file manager. Assicurati che lo "
 "script sia eseguibile."
 
@@ -210,25 +200,23 @@ msgstr "Nuova voce"
 
 #: src/pages/details_page.ts:159
 msgid "Issues occurred while saving details"
-msgstr ""
+msgstr "Si sono verificati problemi durante il salvataggio dei dettagli"
 
 #: src/pages/details_page.ts:178
 msgid "Issues occurred while saving"
-msgstr ""
+msgstr "Si sono verificati problemi durante il salvataggio"
 
 #: src/pages/details_page.ts:191
-#, fuzzy
-#| msgid "Could not create file"
 msgid "Could not create entry"
-msgstr "Impossibile creare il file"
+msgstr "Impossibile creare la voce"
 
 #: src/pages/details_page.ts:199
 msgid "Issues occurred while creating entry"
-msgstr ""
+msgstr "Si sono verificati problemi durante la creazione della voce"
 
 #: src/pages/details_page.ts:210
 msgid "Issues occurred while overriding"
-msgstr ""
+msgstr "Si sono verificati problemi durante l'override"
 
 #: src/pages/details_page.ts:218
 msgid "Trash Entry?"
@@ -251,7 +239,7 @@ msgstr "Cestino"
 
 #: src/pages/details_page.ts:237
 msgid "Issues occurred while trashing"
-msgstr ""
+msgstr "Si sono verificati dei problemi durante lo spostamento nel cestino"
 
 #: src/pages/entries_page.blp:52
 msgid "Main Menu"
@@ -310,80 +298,48 @@ msgid "_Keyboard Shortcuts"
 msgstr "_Scorciatoie da tastiera"
 
 #: src/pages/entries_page.blp:173
-#, fuzzy
-#| msgid "No description"
 msgid "_About Descriptive"
-msgstr "Nessuna descrizione"
+msgstr "_Informazioni descrittive"
 
 #: src/shortcuts-dialog.blp:6
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Entries List"
 msgid "Entries List"
-msgstr "Lista delle voci"
+msgstr "Elenco delle voci"
 
 #: src/shortcuts-dialog.blp:14
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Search Entries"
 msgid "Search Entries"
-msgstr "Cerca voci"
+msgstr "Cerca Voci"
 
 #: src/shortcuts-dialog.blp:20
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Apps List"
 msgid "Apps List"
-msgstr "Lista delle applicazioni"
+msgstr "Elenco App"
 
 #: src/shortcuts-dialog.blp:23
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Search Apps"
 msgid "Search Apps"
-msgstr "Cerca applicazioni"
+msgstr "Cerca App"
 
 #: src/shortcuts-dialog.blp:29
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Details Page"
 msgid "Details Page"
 msgstr "Pagina dei dettagli"
 
 #: src/shortcuts-dialog.blp:32
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Save Edits"
 msgid "Save Edits"
 msgstr "Salva modifiche"
 
 #: src/shortcuts-dialog.blp:38
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "General"
 msgid "General"
-msgstr "Generali"
+msgstr "Generale"
 
 #: src/shortcuts-dialog.blp:41
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Open Autostart Folder"
 msgid "Open Autostart Folder"
-msgstr "Apre la cartella Autostart"
+msgstr "Apri cartella di avvio automatico"
 
 #: src/shortcuts-dialog.blp:46
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Show Shortcuts"
 msgid "Show Shortcuts"
 msgstr "Mostra scorciatoie"
 
 #: src/shortcuts-dialog.blp:51
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Quit"
 msgid "Quit"
-msgstr "Esce"
+msgstr "Esci"
 
 #: src/utils/helper_funcs.ts:39
 msgid "Copy"
@@ -410,7 +366,7 @@ msgstr "Nessun commento impostato."
 #: src/widgets/entry_row.ts:49
 #, javascript-format
 msgid "Starts after %d seconds"
-msgstr ""
+msgstr "Inizia dopo %d secondi"
 
 #: src/widgets/entry_row.ts:51
 msgid "Enabled"
@@ -441,10 +397,10 @@ msgid "Can't find an application?"
 msgstr "Non trovi un'applicazione?"
 
 #: src/widgets/help_dialog.blp:28
-#, fuzzy
-#| msgid "Ignition might not be able to see some applications on your system"
 msgid "Ignition might not be able to see applications on your system"
-msgstr "Ignition potrebbe non riconoscere alcune applicazioni nel tuo sistema"
+msgstr ""
+"Ignition potrebbe non essere in grado di vedere le applicazioni sul tuo "
+"sistema"
 
 #: src/widgets/help_dialog.blp:41
 msgid "What is a 'System Entry'?"
