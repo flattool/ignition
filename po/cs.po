@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-01-17 18:15-0500\n"
-"PO-Revision-Date: 2026-03-05 22:04+0000\n"
+"PO-Revision-Date: 2026-03-07 14:53+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/cs/>\n"
@@ -82,7 +82,7 @@ msgstr "Načítání aplikací"
 
 #: src/pages/apps_list_page.blp:44
 msgid "This should only take a moment"
-msgstr "Tohle by mělo zabrat jen chvíli"
+msgstr "Toto by mělo zabrat jen chvíli"
 
 #: src/pages/apps_list_page.blp:66
 msgid "Commands and Scripts"
