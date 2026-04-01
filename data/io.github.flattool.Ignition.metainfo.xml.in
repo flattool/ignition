@@ -49,6 +49,17 @@
 	</screenshots>
 
 	<releases>
+		<release version="2.4.0" date="2026-4-2">
+			<description translation="no">
+				<p>Bug Fixes and Changes</p>
+				<ul>
+					<li>Updated to GNOME 50 technologies</li>
+					<li>Fixed issue where overridden entries don't update properly</li>
+					<li>Fixed issue where the same entries would appear in the list multiple times</li>
+					<li>Fixed missing search button icons</li>
+				</ul>
+			</description>
+		</release>
 		<release version="2.3.1" date="2026-1-19">
 			<description translate="no">
 				<p>Bug Fixes</p>
