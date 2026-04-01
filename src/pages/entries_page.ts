@@ -39,6 +39,8 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 		; (val ? this._home_group.add : this._home_group.remove).call(this._home_group, this._empty_row)
 	}
 
+	#change_blocker = false
+
 	_ready(): void {
 		this._entry_custom_sorter.set_sort_func(AutostartEntry.compare.bind(AutostartEntry))
 		this._only_entries_filter.set_filter_func((item: GObject.Object) => item instanceof AutostartEntry)
@@ -46,6 +48,18 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 		this._root_map_model.set_map_func(this.#entry_map_func.bind(this))
 		this.home_dir = SharedVars.home_autostart_dir
 		this.root_dir = SharedVars.root_autostart_dir
+
+		this._home_entries.connect("items-changed", () => this.#on_list_change(this._root_map_model))
+		this._root_entries.connect("items-changed", () => this.#on_list_change(this._home_map_model))
+	}
+
+	@Debounce(100)
+	#on_list_change(to_update: Gtk.MapListModel): void {
+		if (this.#change_blocker) return
+		this.#change_blocker = true
+		to_update.set_map_func(null)
+		to_update.set_map_func(this.#entry_map_func.bind(this))
+		this.#change_blocker = false
 	}
 
 	#entry_map_func(item: GObject.Object): AutostartEntry | GObject.Object {
