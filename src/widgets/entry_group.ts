@@ -109,11 +109,13 @@ export class EntryGroup extends from(Adw.PreferencesGroup, {
 	}
 
 	#remove_all(): void {
-		for (let i = 0; ; i += 1) {
-			const row: Gtk.Widget | null = this.get_row(i)
-			if (row === null) break
+		let i = 0
+		let row: Gtk.Widget | null
+		while ((row = this.get_row(i)) !== null) {
 			if (row instanceof EntryRow) {
 				this.remove(row)
+			} else {
+				i += 1
 			}
 		}
 	}
