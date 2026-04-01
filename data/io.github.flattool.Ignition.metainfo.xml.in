@@ -57,6 +57,7 @@
 					<li>Fixed issue where overridden entries don't update properly</li>
 					<li>Fixed issue where the same entries would appear in the list multiple times</li>
 					<li>Fixed missing search button icons</li>
+					<li>Added and updated translations</li>
 				</ul>
 			</description>
 		</release>
