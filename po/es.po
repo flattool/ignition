@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-17 18:15-0500\n"
-"PO-Revision-Date: 2025-07-31 16:52+0000\n"
-"Last-Translator: Jose Daniel Rodriguez <jdrodriguez653@soy.sena.edu.co>\n"
+"POT-Creation-Date: 2026-04-01 19:17-0400\n"
+"PO-Revision-Date: 2026-02-16 02:04+0000\n"
+"Last-Translator: carpinchitu <maycoemanuelportillo@gmail.com>\n"
 "Language-Team: Spanish <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/es/>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:2
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14
@@ -27,7 +27,7 @@ msgstr "Ignition"
 #: data/io.github.flattool.Ignition.desktop.in:3
 #: data/io.github.flattool.Ignition.metainfo.xml.in:15
 msgid "Manage startup apps and scripts"
-msgstr "Gestión de aplicaciones y scripts de arranque"
+msgstr "Gestionar aplicaciones y scripts de inicio"
 
 #: data/io.github.flattool.Ignition.desktop.in:9
 msgid "GTK;startup;autostart;login;"
@@ -43,9 +43,10 @@ msgid ""
 "your computer. Ignition can add apps, scripts, and arbitrary commands to run "
 "at login."
 msgstr ""
-"Ignition proporciona una interfaz sencilla para añadir, eliminar y modificar "
-"entradas de inicio en tu equipo. Puede añadir aplicaciones, scripts y "
-"comandos para ejecutarse al iniciar sesión."
+"Ignition ofrece una interfaz de usuario sencilla para añadir, eliminar y "
+"modificar las entradas de inicio en su ordenador. Ignition puede añadir "
+"aplicaciones, scripts y comandos arbitrarios para ejecutarse al iniciar "
+"sesión."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
@@ -53,15 +54,36 @@ msgstr "Ver todos los elementos de inicio."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:39
 msgid "View and edit entry details."
-msgstr "Ver y editar detalles de los elementos."
+msgstr "Ver y editar detalles de la entrada."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:43
 msgid "Create a new startup entry."
-msgstr "Crea un nuevo elemento de inicio."
+msgstr "Crea un nueva entrada de inicio."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
-msgstr "Ver todos tus artículos de startup, en modo oscuro."
+msgstr "Ver todos tus ítems de inicio, en modo oscuro."
+
+#: data/io.github.flattool.Ignition.metainfo.xml.in:54
+msgid "Bug Fixes and Changes"
+msgstr ""
+
+#: data/io.github.flattool.Ignition.metainfo.xml.in:56
+msgid "Updated to GNOME 50 technologies"
+msgstr ""
+
+#: data/io.github.flattool.Ignition.metainfo.xml.in:57
+msgid "Fixed issue where overridden entries don't update properly"
+msgstr ""
+
+#: data/io.github.flattool.Ignition.metainfo.xml.in:58
+msgid ""
+"Fixed issue where the same entries would appear in the list multiple times"
+msgstr ""
+
+#: data/io.github.flattool.Ignition.metainfo.xml.in:59
+msgid "Fixed missing search button icons"
+msgstr ""
 
 #: src/main.ts:56
 msgid "Donate"
@@ -116,11 +138,11 @@ msgstr ""
 
 #: src/pages/apps_list_page.blp:105
 msgid "Show Hidden Apps"
-msgstr "Mostrar aplicaciones ocultas"
+msgstr "Mostrar Aplicaciones Ocultas"
 
 #: src/pages/apps_list_page.blp:106
 msgid "Show apps that are hidden from the app menu"
-msgstr "Mostrar aplicaciones que están ocultas en el menú de aplicaciones"
+msgstr "Mostrar las aplicaciones que están ocultas del menú de aplicaciones"
 
 #: src/pages/details_page.blp:5
 msgid "Edit Details"
@@ -148,7 +170,7 @@ msgstr "Anular"
 
 #: src/pages/details_page.blp:93
 msgid "Edit details about this entry."
-msgstr "Modificar los detalles de este artículo."
+msgstr "Modificar los detalles de este elemento."
 
 #: src/pages/details_page.blp:99
 msgid "Enable"
@@ -156,7 +178,7 @@ msgstr "Activar"
 
 #: src/pages/details_page.blp:100
 msgid "Enable this entry to be started when you log in."
-msgstr "Autoarrancar este artículo al iniciar sesión."
+msgstr "Activar este elemento al iniciar sesión."
 
 #: src/pages/details_page.blp:107
 msgid "Name"
@@ -164,7 +186,7 @@ msgstr "Nombre"
 
 #: src/pages/details_page.blp:113
 msgid "Comment"
-msgstr "Acerca de"
+msgstr "Comentario"
 
 #: src/pages/details_page.blp:118
 msgid "Command or Script"
@@ -172,11 +194,11 @@ msgstr "Comando o Script"
 
 #: src/pages/details_page.blp:125 src/widgets/entry_row.blp:28
 msgid "More Information"
-msgstr "Más información"
+msgstr "Más Información"
 
 #: src/pages/details_page.blp:136
 msgid "Show Terminal"
-msgstr "Mostrar ventana del Terminal"
+msgstr "Mostrar Terminal"
 
 #: src/pages/details_page.blp:137
 msgid "Show a terminal for this process to run in."
@@ -184,7 +206,7 @@ msgstr "Mostrar un terminal en el cual correr este proceso."
 
 #: src/pages/details_page.blp:144
 msgid "Seconds of Delay"
-msgstr "Segundos de retraso"
+msgstr "Segundos de Retraso"
 
 #: src/pages/details_page.blp:145
 msgid "Amount of seconds to wait after logging in to run the command or script"
@@ -207,7 +229,7 @@ msgstr ""
 
 #: src/pages/details_page.ts:55 src/shortcuts-dialog.blp:9
 msgid "New Entry"
-msgstr "Nueva Entrada"
+msgstr "Nuevo Elemento"
 
 #: src/pages/details_page.ts:159
 msgid "Issues occurred while saving details"
@@ -233,14 +255,14 @@ msgstr ""
 
 #: src/pages/details_page.ts:218
 msgid "Trash Entry?"
-msgstr "¿Borrar Entrada?"
+msgstr "¿Borrar Elemento?"
 
 #: src/pages/details_page.ts:219
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
 msgstr ""
-"Esta entrada se moverá a la papelera y ya no se ejecutará al iniciar sesión."
+"Este elemento se moverá a la papelera y ya no se ejecutará al iniciar sesión."
 
 #: src/pages/details_page.ts:221
 msgid "Cancel"
@@ -260,11 +282,11 @@ msgstr "Menú Principal"
 
 #: src/pages/entries_page.blp:59
 msgid "Help and information"
-msgstr "Ayuda e Información"
+msgstr "Ayuda e información"
 
 #: src/pages/entries_page.blp:73
 msgid "Search entries"
-msgstr "Buscar entradas"
+msgstr "Buscar elementos"
 
 #: src/pages/entries_page.blp:84
 msgid "Loading Entries"

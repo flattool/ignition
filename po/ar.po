@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-17 18:15-0500\n"
-"PO-Revision-Date: 2025-07-23 13:46+0000\n"
-"Last-Translator: ALSULEMAN <3areep@gmail.com>\n"
+"POT-Creation-Date: 2026-04-01 19:17-0400\n"
+"PO-Revision-Date: 2026-02-01 22:04+0000\n"
+"Last-Translator: Mu7ammed Basha <dash-unbeaten-five@duck.com>\n"
 "Language-Team: Arabic <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/ar/>\n"
 "Language: ar\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 5.10.4\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:2
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14
@@ -65,6 +65,27 @@ msgstr "إنشاء مُدخلة بدء تشغيل جديدة."
 msgid "See all your startup items, in dark mode."
 msgstr "الإطلاع على كل عناصر بدء التشغيل في الوضع الداكن."
 
+#: data/io.github.flattool.Ignition.metainfo.xml.in:54
+msgid "Bug Fixes and Changes"
+msgstr ""
+
+#: data/io.github.flattool.Ignition.metainfo.xml.in:56
+msgid "Updated to GNOME 50 technologies"
+msgstr ""
+
+#: data/io.github.flattool.Ignition.metainfo.xml.in:57
+msgid "Fixed issue where overridden entries don't update properly"
+msgstr ""
+
+#: data/io.github.flattool.Ignition.metainfo.xml.in:58
+msgid ""
+"Fixed issue where the same entries would appear in the list multiple times"
+msgstr ""
+
+#: data/io.github.flattool.Ignition.metainfo.xml.in:59
+msgid "Fixed missing search button icons"
+msgstr ""
+
 #: src/main.ts:56
 msgid "Donate"
 msgstr "تبرَّع"
@@ -74,23 +95,16 @@ msgid "Add or Create an Entry"
 msgstr "أضِف أو أنشئ مُدخلة"
 
 #: src/pages/apps_list_page.blp:36
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Search Apps"
 msgid "Search apps"
 msgstr "ابحث في التطبيقات"
 
 #: src/pages/apps_list_page.blp:43
-#, fuzzy
-#| msgid "Loading Entries"
 msgid "Loading Apps"
-msgstr "تُحمَّل المُدخلات"
+msgstr "تُحمَّل التطبيقات"
 
 #: src/pages/apps_list_page.blp:44
-#, fuzzy
-#| msgid "This should only take a moment."
 msgid "This should only take a moment"
-msgstr "لن يستغرق هذا سوى لحظة."
+msgstr "سيأخذ فقط لحظة"
 
 #: src/pages/apps_list_page.blp:66
 msgid "Commands and Scripts"
@@ -113,8 +127,6 @@ msgid "Installed Apps"
 msgstr "التطبيقات المنصَّبة"
 
 #: src/pages/apps_list_page.blp:99
-#, fuzzy
-#| msgid "Choose any installed app to run when you log in."
 msgid "Choose any installed apps to run when you log in."
 msgstr "اختر أي تطبيق منصَّب لتشغيله عند الولوج."
 
@@ -172,7 +184,7 @@ msgstr "تعليق"
 
 #: src/pages/details_page.blp:118
 msgid "Command or Script"
-msgstr "الأمر"
+msgstr "الأمر أو الإخطاطة"
 
 #: src/pages/details_page.blp:125 src/widgets/entry_row.blp:28
 msgid "More Information"
@@ -195,16 +207,12 @@ msgid "Amount of seconds to wait after logging in to run the command or script"
 msgstr "عدد الثواني التي يجب انتظارها بعد الولوج لتشغيل الأمر"
 
 #: src/pages/details_page.blp:165
-#, fuzzy
-#| msgid ""
-#| "To run a script at login, paste its file path here. You can copy the "
-#| "script's path from your file manager. Make sure your script is executable."
 msgid ""
 "To run a script at login, paste its file path here. You can copy the "
 "script's path from your file manager. Make sure your script is executable"
 msgstr ""
 "لتشغيل إخطاطة عند الولوج، ألصق مسار ملفه هنا. يمكنك نسخ مسار الإخطاطة من "
-"مدير ملفاتك. تأكد من أن إخطاطتك قابلة للتنفيذ."
+"مدير ملفاتك. تأكد من أن إخطاطتك قابلة للتنفيذ"
 
 #: src/pages/details_page.ts:55 src/shortcuts-dialog.blp:9
 msgid "New Entry"
@@ -212,25 +220,23 @@ msgstr "مُدخلة جديدة"
 
 #: src/pages/details_page.ts:159
 msgid "Issues occurred while saving details"
-msgstr ""
+msgstr "حدثت أخطاء أثناء حفظ التفاصيل"
 
 #: src/pages/details_page.ts:178
 msgid "Issues occurred while saving"
-msgstr ""
+msgstr "حدثت أخطاء أثناء الحفظ"
 
 #: src/pages/details_page.ts:191
-#, fuzzy
-#| msgid "Could not create file"
 msgid "Could not create entry"
-msgstr "تعذَّر إنشاء الملف"
+msgstr "تعذَّر إنشاء المُدخلة"
 
 #: src/pages/details_page.ts:199
 msgid "Issues occurred while creating entry"
-msgstr ""
+msgstr "حدثت أخطاء أثناء إنشاء المُدخلة"
 
 #: src/pages/details_page.ts:210
 msgid "Issues occurred while overriding"
-msgstr ""
+msgstr "حدثت أخطاء أثناء التجاوز"
 
 #: src/pages/details_page.ts:218
 msgid "Trash Entry?"
@@ -252,11 +258,11 @@ msgstr "انقل للمهملات"
 
 #: src/pages/details_page.ts:237
 msgid "Issues occurred while trashing"
-msgstr ""
+msgstr "حدثت أخطاء أثناء النقل للمهملات"
 
 #: src/pages/entries_page.blp:52
 msgid "Main Menu"
-msgstr "القائمة الرئيسة"
+msgstr "القائمة الرئيسية"
 
 #: src/pages/entries_page.blp:59
 msgid "Help and information"
@@ -311,78 +317,46 @@ msgid "_Keyboard Shortcuts"
 msgstr "ا_ختصارات لوحة المفاتيح"
 
 #: src/pages/entries_page.blp:173
-#, fuzzy
-#| msgid "_About Ignition"
 msgid "_About Descriptive"
-msgstr "_عَنْ «اشتعال»"
+msgstr "_حول موصفة"
 
 #: src/shortcuts-dialog.blp:6
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Entries List"
 msgid "Entries List"
 msgstr "قائمة المُدخلات"
 
 #: src/shortcuts-dialog.blp:14
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Search Entries"
 msgid "Search Entries"
 msgstr "ابحث في المُدخلات"
 
 #: src/shortcuts-dialog.blp:20
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Apps List"
 msgid "Apps List"
 msgstr "قائمة التطبيقات"
 
 #: src/shortcuts-dialog.blp:23
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Search Apps"
 msgid "Search Apps"
 msgstr "ابحث في التطبيقات"
 
 #: src/shortcuts-dialog.blp:29
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Details Page"
 msgid "Details Page"
 msgstr "صفحة التفاصيل"
 
 #: src/shortcuts-dialog.blp:32
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Save Edits"
 msgid "Save Edits"
 msgstr "احفظ التعديلات"
 
 #: src/shortcuts-dialog.blp:38
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "General"
 msgid "General"
 msgstr "عام"
 
 #: src/shortcuts-dialog.blp:41
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Open Autostart Folder"
 msgid "Open Autostart Folder"
 msgstr "افتح مجلد التشغيل الآلي"
 
 #: src/shortcuts-dialog.blp:46
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Show Shortcuts"
 msgid "Show Shortcuts"
 msgstr "أظهِر الاختصارات"
 
 #: src/shortcuts-dialog.blp:51
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Quit"
 msgid "Quit"
 msgstr "غادر"
 
@@ -411,7 +385,7 @@ msgstr "لم يُعيَّن تعليق."
 #: src/widgets/entry_row.ts:49
 #, javascript-format
 msgid "Starts after %d seconds"
-msgstr ""
+msgstr "ابدأ بعد %d ثانية"
 
 #: src/widgets/entry_row.ts:51
 msgid "Enabled"
@@ -442,10 +416,8 @@ msgid "Can't find an application?"
 msgstr "ألا تستطيع إيجاد تطبيق؟"
 
 #: src/widgets/help_dialog.blp:28
-#, fuzzy
-#| msgid "Ignition might not be able to see some applications on your system"
 msgid "Ignition might not be able to see applications on your system"
-msgstr "قد لا يتمكن «اشتعال» من رؤية بعض التطبيقات على نظامك"
+msgstr "قد لا يتمكن «اشتعال» من رؤية التطبيقات على نظامك"
 
 #: src/widgets/help_dialog.blp:41
 msgid "What is a 'System Entry'?"

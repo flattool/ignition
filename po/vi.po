@@ -8,34 +8,34 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-01 19:17-0400\n"
-"PO-Revision-Date: 2025-11-22 18:02+0000\n"
-"Last-Translator: Ryke <jonashoell@outlook.de>\n"
-"Language-Team: German <https://weblate.fyralabs.com/projects/flattool/"
-"ignition/de/>\n"
-"Language: de\n"
+"PO-Revision-Date: 2026-02-13 09:04+0000\n"
+"Last-Translator: Loc Huynh <huynhloc.contact@gmail.com>\n"
+"Language-Team: Vietnamese <https://weblate.fyralabs.com/projects/flattool/"
+"ignition/vi/>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.13\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:2
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14
 msgid "Ignition"
-msgstr "Ignition"
+msgstr ""
 
 #: data/io.github.flattool.Ignition.desktop.in:3
 #: data/io.github.flattool.Ignition.metainfo.xml.in:15
 msgid "Manage startup apps and scripts"
-msgstr "Verwalten von Startanwendungen und Skripten"
+msgstr ""
 
 #: data/io.github.flattool.Ignition.desktop.in:9
 msgid "GTK;startup;autostart;login;"
-msgstr "GTK;startup;autostart;login;"
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
 msgid "Heliguy"
-msgstr "Heliguy"
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:17
 msgid ""
@@ -43,26 +43,22 @@ msgid ""
 "your computer. Ignition can add apps, scripts, and arbitrary commands to run "
 "at login."
 msgstr ""
-"Ignition bietet eine einfache Benutzeroberfläche zum Hinzufügen, Entfernen "
-"und Ändern von Starteinträgen auf Ihrem Computer. Ignition kann Anwendungen, "
-"Skripte und beliebige Befehle hinzufügen, die bei der Anmeldung ausgeführt "
-"werden."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
-msgstr "Alle Start-Einträge anzeigen."
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:39
 msgid "View and edit entry details."
-msgstr "Anzeigen und bearbeiten von Einträgen."
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:43
 msgid "Create a new startup entry."
-msgstr "Neuen Starteintrag erstellen."
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
-msgstr "Alle Starteinträge im Dark-Mode anzeigen."
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:54
 msgid "Bug Fixes and Changes"
@@ -87,150 +83,133 @@ msgstr ""
 
 #: src/main.ts:56
 msgid "Donate"
-msgstr "Spenden"
+msgstr "Quyên tặng"
 
 #: src/pages/apps_list_page.blp:16
 msgid "Add or Create an Entry"
-msgstr "Einen neuen Eintrag erstellen oder hinzufügen"
+msgstr ""
 
 #: src/pages/apps_list_page.blp:36
 msgid "Search apps"
-msgstr "Anwendungen durchsuchen"
+msgstr ""
 
 #: src/pages/apps_list_page.blp:43
-#, fuzzy
-#| msgid "Loading Entries"
 msgid "Loading Apps"
-msgstr "Einträge laden"
+msgstr ""
 
 #: src/pages/apps_list_page.blp:44
-#, fuzzy
-#| msgid "This should only take a moment."
 msgid "This should only take a moment"
-msgstr "Dies sollte nur einen Augenblick dauern."
+msgstr "Quá trình này chỉ mất một chút thời gian"
 
 #: src/pages/apps_list_page.blp:66
 msgid "Commands and Scripts"
-msgstr "Befehle und Skripte"
+msgstr ""
 
 #: src/pages/apps_list_page.blp:67
 msgid "Run a command or script when you log in."
-msgstr "Starte ein Befehl oder Skript beim Einloggen."
+msgstr ""
 
 #: src/pages/apps_list_page.blp:73
 msgid "Add a Command or Script"
-msgstr "Einen Befehl oder ein Skript hinzufügen"
+msgstr ""
 
 #: src/pages/apps_list_page.blp:74
 msgid "Enter the command to run or path to your script"
-msgstr "Befehl zum Ausführen oder Pfad zum Skript eingeben"
+msgstr ""
 
 #: src/pages/apps_list_page.blp:98
 msgid "Installed Apps"
-msgstr "Installierte Anwendungen"
+msgstr ""
 
 #: src/pages/apps_list_page.blp:99
-#, fuzzy
-#| msgid "Choose any installed app to run when you log in."
 msgid "Choose any installed apps to run when you log in."
 msgstr ""
-"Wähle eine installierte Anwendung aus, die nach der Anmeldung ausgeführt "
-"werden soll."
 
 #: src/pages/apps_list_page.blp:105
 msgid "Show Hidden Apps"
-msgstr "Versteckte Anwendung anzeigen"
+msgstr ""
 
 #: src/pages/apps_list_page.blp:106
 msgid "Show apps that are hidden from the app menu"
-msgstr "Anwendungen anzeigen, die im Anwendungsmenü versteckt sind"
+msgstr ""
 
 #: src/pages/details_page.blp:5
 msgid "Edit Details"
-msgstr "Editiere Details"
+msgstr ""
 
 #: src/pages/details_page.blp:13
 msgid "Save"
-msgstr "Speichern"
+msgstr ""
 
 #: src/pages/details_page.blp:29
 msgid "Create"
-msgstr "Erstellen"
+msgstr "Tạo"
 
 #: src/pages/details_page.blp:45
 msgid "Move to Trash"
-msgstr "In den Papierkorb verschieben"
+msgstr ""
 
 #: src/pages/details_page.blp:55
 msgid "Override entry to edit details"
-msgstr "Eintrag überschreiben zum Bearbeiten der Details"
+msgstr ""
 
 #: src/pages/details_page.blp:56
 msgid "Override"
-msgstr "Überschreiben"
+msgstr ""
 
 #: src/pages/details_page.blp:93
 msgid "Edit details about this entry."
-msgstr "Details zu diesem Eintrag bearbeiten."
+msgstr ""
 
 #: src/pages/details_page.blp:99
 msgid "Enable"
-msgstr "Aktivieren"
+msgstr "Bật"
 
 #: src/pages/details_page.blp:100
 msgid "Enable this entry to be started when you log in."
-msgstr "Aktiviere diesen Eintrag, damit er beim Einloggen gestartet wird."
+msgstr ""
 
 #: src/pages/details_page.blp:107
 msgid "Name"
-msgstr "Name"
+msgstr "Tên"
 
 #: src/pages/details_page.blp:113
 msgid "Comment"
-msgstr "Kommentar"
+msgstr ""
 
 #: src/pages/details_page.blp:118
 msgid "Command or Script"
-msgstr "Befehl oder Skript"
+msgstr ""
 
 #: src/pages/details_page.blp:125 src/widgets/entry_row.blp:28
 msgid "More Information"
-msgstr "Mehr Informationen"
+msgstr ""
 
 #: src/pages/details_page.blp:136
 msgid "Show Terminal"
-msgstr "Zeige Terminal"
+msgstr ""
 
 #: src/pages/details_page.blp:137
 msgid "Show a terminal for this process to run in."
-msgstr "Zeige ein Terminal an, in dem dieser Prozess ausgeführt werden soll."
+msgstr ""
 
 #: src/pages/details_page.blp:144
 msgid "Seconds of Delay"
-msgstr "Sekunden der Verzögerung"
+msgstr ""
 
 #: src/pages/details_page.blp:145
 msgid "Amount of seconds to wait after logging in to run the command or script"
 msgstr ""
-"Anzahl der Sekunden, bis der Befehl oder das Skript nach Anmeldung gestartet "
-"werden soll"
 
 #: src/pages/details_page.blp:165
-#, fuzzy
-#| msgid ""
-#| "To run a script at login, paste its file path here. You can copy the "
-#| "script's path from your file manager. Make sure your script is executable."
 msgid ""
 "To run a script at login, paste its file path here. You can copy the "
 "script's path from your file manager. Make sure your script is executable"
 msgstr ""
-"Um ein Skript bei der Anmeldung auszuführen, fügen Sie dessen Dateipfad hier "
-"ein. Sie können den Pfad des Skripts aus Ihrem Dateimanager kopieren. "
-"Stellen Sie sicher, dass Ihr Skript ausführbar ist."
 
 #: src/pages/details_page.ts:55 src/shortcuts-dialog.blp:9
 msgid "New Entry"
-msgstr "Neuer Eintrag"
+msgstr ""
 
 #: src/pages/details_page.ts:159
 msgid "Issues occurred while saving details"
@@ -241,10 +220,8 @@ msgid "Issues occurred while saving"
 msgstr ""
 
 #: src/pages/details_page.ts:191
-#, fuzzy
-#| msgid "Could not create file"
 msgid "Could not create entry"
-msgstr "Datei konnte nicht erstellt werden"
+msgstr ""
 
 #: src/pages/details_page.ts:199
 msgid "Issues occurred while creating entry"
@@ -256,23 +233,21 @@ msgstr ""
 
 #: src/pages/details_page.ts:218
 msgid "Trash Entry?"
-msgstr "Gelöschter Eintrag?"
+msgstr ""
 
 #: src/pages/details_page.ts:219
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
 msgstr ""
-"Dieser Eintrag wird in den Mülleimer verschoben, und wird nicht länger "
-"ausgeführt, wenn Sie sich anmelden."
 
 #: src/pages/details_page.ts:221
 msgid "Cancel"
-msgstr "Abbrechen"
+msgstr "Hủy"
 
 #: src/pages/details_page.ts:222
 msgid "Trash"
-msgstr "Mülleimer"
+msgstr "Thùng rác"
 
 #: src/pages/details_page.ts:237
 msgid "Issues occurred while trashing"
@@ -280,138 +255,124 @@ msgstr ""
 
 #: src/pages/entries_page.blp:52
 msgid "Main Menu"
-msgstr "Hauptmenü"
+msgstr "Menu chính"
 
 #: src/pages/entries_page.blp:59
 msgid "Help and information"
-msgstr "Hilfe und Informationen"
+msgstr ""
 
 #: src/pages/entries_page.blp:73
 msgid "Search entries"
-msgstr "Einträge suchen"
+msgstr ""
 
 #: src/pages/entries_page.blp:84
 msgid "Loading Entries"
-msgstr "Einträge laden"
+msgstr ""
 
 #: src/pages/entries_page.blp:85
 msgid "This should only take a moment."
-msgstr "Dies sollte nur einen Augenblick dauern."
+msgstr ""
 
 #: src/pages/entries_page.blp:95
 msgid "User Startup Entries"
-msgstr "Nutzer Starteinträge"
+msgstr ""
 
 #: src/pages/entries_page.blp:96
 msgid "Entries that run only for you."
-msgstr "Einträge, die nur für den aktuellen Benutzer ausgeführt werden."
+msgstr ""
 
 #: src/pages/entries_page.blp:113
 msgid "New"
-msgstr "Neu"
+msgstr "Mới"
 
 #: src/pages/entries_page.blp:119
 msgid "System Startup Entries"
-msgstr "System Starteinträge"
+msgstr ""
 
 #: src/pages/entries_page.blp:120
 msgid "Entries that run for everyone."
-msgstr "Einträge, die für alle Benutzer ausgeführt werden."
+msgstr ""
 
 #: src/pages/entries_page.blp:149
 msgid "No Entries Found"
-msgstr "Keine Einträge gefunden"
+msgstr ""
 
 #: src/pages/entries_page.blp:159
 msgid "Add an app or script to run it when you log in"
-msgstr "Füge eine App oder ein Skript hinzu um es beim Login auszuführen"
+msgstr ""
 
 #: src/pages/entries_page.blp:169
 msgid "_Open Autostart Folder"
-msgstr "_Autostart-Ordner öffnen"
+msgstr ""
 
 #: src/pages/entries_page.blp:172
 msgid "_Keyboard Shortcuts"
-msgstr "_Tastenkürzel"
+msgstr "_Phím tắt bàn phím"
 
 #: src/pages/entries_page.blp:173
-#, fuzzy
-#| msgid "No description"
 msgid "_About Descriptive"
-msgstr "Keine Beschreibung"
+msgstr ""
 
 #: src/shortcuts-dialog.blp:6
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Entries List"
 msgid "Entries List"
-msgstr "Eintragsliste"
+msgstr ""
 
 #: src/shortcuts-dialog.blp:14
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Search Entries"
 msgid "Search Entries"
-msgstr "Einträge suchen"
+msgstr ""
 
 #: src/shortcuts-dialog.blp:20
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Apps List"
 msgid "Apps List"
-msgstr "Appliste"
+msgstr ""
 
 #: src/shortcuts-dialog.blp:23
 msgid "Search Apps"
-msgstr "Anwendungen suchen"
+msgstr "Ứng dụng tìm kiếm"
 
 #: src/shortcuts-dialog.blp:29
 msgid "Details Page"
-msgstr "Detailseite"
+msgstr ""
 
 #: src/shortcuts-dialog.blp:32
 msgid "Save Edits"
-msgstr "Änderungen speichern"
+msgstr ""
 
 #: src/shortcuts-dialog.blp:38
 msgid "General"
-msgstr "Allgemein"
+msgstr "Chung"
 
 #: src/shortcuts-dialog.blp:41
 msgid "Open Autostart Folder"
-msgstr "Autostart-Ordner öffnen"
+msgstr ""
 
 #: src/shortcuts-dialog.blp:46
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Show Shortcuts"
 msgid "Show Shortcuts"
-msgstr "Tastenkürzel anzeigen"
+msgstr "Hiển thị phím tắt"
 
 #: src/shortcuts-dialog.blp:51
 msgid "Quit"
-msgstr "Schließen"
+msgstr "Thoát"
 
 #: src/utils/helper_funcs.ts:39
 msgid "Copy"
-msgstr "Kopieren"
+msgstr "Sao chép"
 
 #: src/utils/helper_funcs.ts:40
 msgid "OK"
-msgstr "Okay"
+msgstr "OK"
 
 #: src/utils/helper_funcs.ts:49
 msgid "Details"
-msgstr "Details"
+msgstr "Chi tiết"
 
 #. These need to be getters for the _() translation function to work
 #: src/utils/shared_vars.ts:15
 msgid "No Name Set"
-msgstr "Kein Name eingegeben"
+msgstr "Không đặt tên"
 
 #: src/utils/shared_vars.ts:16
 msgid "No comment set."
-msgstr "Kein Kommentar festgelegt."
+msgstr ""
 
 #. Translators: %d is the number of seconds of delay before the app starts
 #: src/widgets/entry_row.ts:49
@@ -421,51 +382,47 @@ msgstr ""
 
 #: src/widgets/entry_row.ts:51
 msgid "Enabled"
-msgstr "Aktiviert"
+msgstr ""
 
 #: src/widgets/entry_row.ts:54
 msgid "Disabled"
-msgstr "Deaktiviert"
+msgstr ""
 
 #: src/widgets/entry_row.ts:58
 msgid "This entry is overridden by a user entry."
-msgstr "Dieser Eintrag wurde durch einen Benutzereintrag überschrieben."
+msgstr ""
 
 #: src/widgets/entry_row.ts:59
 msgid "Overridden"
-msgstr "Überschrieben"
+msgstr ""
 
 #: src/widgets/entry_row.ts:61
 msgid "This entry overrides a system entry."
-msgstr "Dieser Eintrag überschreibt einen Benutzereintrag."
+msgstr ""
 
 #: src/widgets/help_dialog.blp:5
 msgid "Help and Information"
-msgstr "Hilfe und Informationen"
+msgstr ""
 
 #: src/widgets/help_dialog.blp:27
 msgid "Can't find an application?"
-msgstr "Eine Anwendung wurde nicht gefunden?"
+msgstr ""
 
 #: src/widgets/help_dialog.blp:28
-#, fuzzy
-#| msgid "Ignition might not be able to see some applications on your system"
 msgid "Ignition might not be able to see applications on your system"
 msgstr ""
-"Ignition kann unter Umständen manche Anwendungen auf Ihrem System nicht "
-"finden"
 
 #: src/widgets/help_dialog.blp:41
 msgid "What is a 'System Entry'?"
-msgstr "Was ist ein 'Systemeintrag'?"
+msgstr ""
 
 #: src/widgets/help_dialog.blp:42
 msgid "Learn more about system startup entries, and how editing them works"
-msgstr "Lerne mehr über Systemstarteinträge, und wie man sie bearbeitet"
+msgstr ""
 
 #: src/widgets/help_dialog.blp:58
 msgid "Can't Find an App?"
-msgstr "Eine App wurde nicht gefunden?"
+msgstr ""
 
 #: src/widgets/help_dialog.blp:79
 msgid ""
@@ -473,30 +430,22 @@ msgid ""
 "to read. This means that these apps won't show up in the list of apps on "
 "your system, when making a new entry."
 msgstr ""
-"Manche Anwendungen speichern ihre Einträge außerhalb von Plätzen, die "
-"Ignition lesen darf. Das bedeutedt dass diese Anwendungen nicht in der "
-"Appliste Ihres Systems angezeigt werden, wenn Sie einen neuen Eintrag machen."
 
 #: src/widgets/help_dialog.blp:85
 msgid ""
 "To fix this, you can allow Ignition to see more home locations, or more root "
 "locations, in your file system."
 msgstr ""
-"Um das zu beheben, können Sie Ignition erlauben mehr Home- oder Root-"
-"Verzeichnisse in Ihrem Dateisystem zu sehen."
 
 #: src/widgets/help_dialog.blp:91
 msgid ""
 "We recommend the app \"Flatseal\" to manage these permissions. Enable \"All "
 "user files\" or \"All system files\" to be able to find these apps."
 msgstr ""
-"Wir empfehlen die Anwendung \"Flatseal\" zum Verwalten dieser "
-"Berechtigungen. Schalte \"Alle Benutzerdateien\" oder \"alle Systemdateien\" "
-"frei, um diese Anwendungen zu finden."
 
 #: src/widgets/help_dialog.blp:100
 msgid "What is a System Entry?"
-msgstr "Was ist ein Systemeintrag?"
+msgstr ""
 
 #: src/widgets/help_dialog.blp:121
 msgid ""
@@ -504,153 +453,17 @@ msgid ""
 "everybody. These are usually present to allow certain features, programs, or "
 "other important actions run properly."
 msgstr ""
-"Systemeinträge sind für Apps oder Befehle, welche nach dem Anmelden für alle "
-"User ausgeführt werden. Diese können für bestimmte Features, Programme oder "
-"andere wichtige Aktionen notwendig sein."
 
 #: src/widgets/help_dialog.blp:127
 msgid ""
 "You can override these, but please use caution when doing so, as you may "
 "break some existing app or feature of your desktop."
 msgstr ""
-"Sie können diese überschreiben, jedoch ist hier Vorsicht geboten, weil "
-"hiermit die Funktion der existierenden Apps oder Features auf Ihrem System "
-"gebrochen werden kann."
 
 #: src/widgets/search_group.blp:13
 msgid "No Results Found"
-msgstr "Keine Ergebnisse gefunden"
+msgstr "Không tìm thấy kết quả"
 
 #: src/widgets/search_group.blp:14
 msgid "Try a different search."
-msgstr "Versuche eine andere Suche."
-
-#~ msgid "Welcome"
-#~ msgstr "Willkommen"
-
-#~ msgid "About Ignition"
-#~ msgstr "Über Ignition"
-
-#~ msgid "Welcome to Ignition!"
-#~ msgstr "Willkommen bei Ignition!"
-
-#~ msgid ""
-#~ "Ignition lets you start any app or script when you log in to your "
-#~ "computer."
-#~ msgstr ""
-#~ "Mit Ignition können Sie jede beliebige Anwendung oder jedes Skript "
-#~ "starten, wenn Sie sich bei Ihrem Computer einloggen."
-
-#~ msgid "Get Started"
-#~ msgstr "Los geht's"
-
-#~ msgid "Translate"
-#~ msgstr "Übersetzen"
-
-#~ msgid "Opened folder"
-#~ msgstr "Geöffneter Ordner"
-
-#~ msgid "Could not open folder"
-#~ msgstr "Verzeichnis konnte nicht geöffnet werden"
-
-#~ msgid "Search"
-#~ msgstr "Suchen"
-
-#~ msgid "Could not load some apps"
-#~ msgstr "Einige Anwendungen konnten nicht geladen werden"
-
-#~ msgid "Create and Replace?"
-#~ msgstr "Erstellen oder Ersetzen?"
-
-#~ msgid ""
-#~ "A file already exists for this entry. Are you sure you want to replace it?"
-#~ msgstr ""
-#~ "Es existiert bereits eine Datei für diesen Eintrag. Sind Sie sicher, das "
-#~ "Sie ersetzt werden soll?"
-
-#~ msgid "Create and Replace"
-#~ msgstr "Erstellen und Ersetzen"
-
-#~ msgid "Override Entry?"
-#~ msgstr "Eintrag überschreiben?"
-
-#~ msgid ""
-#~ "Be careful, overriding system entries can lead to system breakage. This "
-#~ "will make a copy of the entry for you to edit."
-#~ msgstr ""
-#~ "Seien Sie vorsichtig. Das Überschreiben von Systemeinträgen kann ihr "
-#~ "System unbrauchbar machen. Dies wird eine Kopie zum Editieren erstellen."
-
-#~ msgid "Saved details"
-#~ msgstr "Gespeicherte Details"
-
-#~ msgid "Could not save file"
-#~ msgstr "Datei konnte nicht gespeichert werden"
-
-#~ msgid "Created entry"
-#~ msgstr "Erstellter Eintrag"
-
-#~ msgid "Overrode entry"
-#~ msgstr "Eintrag überschrieben"
-
-#~ msgid "Trashed entry"
-#~ msgstr "Gelöschter Eintrag"
-
-#~ msgid "Could not trash file"
-#~ msgstr "Datei konnte nicht gelöscht werden"
-
-#~ msgid "_About Ignition"
-#~ msgstr "_Über Ignition"
-
-#~ msgid "Could not load some entries"
-#~ msgstr "Einige Einträge konnten nicht geladen werden"
-
-#~ msgid "Failed to start properly"
-#~ msgstr "Fehlerfreier Start fehlgeschlagen"
-
-#~ msgctxt "shortcut window"
-#~ msgid "New Entry"
-#~ msgstr "Neuer Eintrag"
-
-#~ msgid "Choose an App"
-#~ msgstr "Wähle eine Anwendung"
-
-#~ msgid "Apply"
-#~ msgstr "Anwenden"
-
-#~ msgid "Add any installed app or select any script to be ran at startup."
-#~ msgstr ""
-#~ "Füge eine beliebige installierte Anwendung hinzu oder wähle ein Skript "
-#~ "aus, dass beim Start ausgeführt werden soll."
-
-#~ msgid "Add an App"
-#~ msgstr "Eine App hinzufügen"
-
-#~ msgid "Preparing"
-#~ msgstr "Vorbereiten"
-
-#~ msgid "Startup Applications and Scripts"
-#~ msgstr "Startup-Anwendungen und Skripte"
-
-#~ msgid "Startup apps and scripts are automatically started when you log in."
-#~ msgstr ""
-#~ "Anwendungen und Skripte werden automatisch gestartet, wenn Sie sich "
-#~ "anmelden."
-
-#~ msgid "Error loading details"
-#~ msgstr "Fehler beim Laden von Details"
-
-#~ msgid "ignition"
-#~ msgstr "ignition"
-
-#~ msgid "GTK;"
-#~ msgstr "GTK;"
-
-#~ msgid "Choose a Script"
-#~ msgstr "Wähle ein Skript"
-
-#~ msgid "Open"
-#~ msgstr "Öffnen"
-
-#~ msgid "Executable Files"
-#~ msgstr "Ausführbare Dateien"
+msgstr ""
