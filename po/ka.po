@@ -8,14 +8,16 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-01 19:17-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-04-26 06:00+0000\n"
+"Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <https://weblate.fyralabs.com/projects/flattool/"
+"ignition/ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.14.3\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:2
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14
@@ -81,7 +83,7 @@ msgstr ""
 
 #: src/main.ts:56
 msgid "Donate"
-msgstr ""
+msgstr "შემოწირულობა"
 
 #: src/pages/apps_list_page.blp:16
 msgid "Add or Create an Entry"
@@ -141,7 +143,7 @@ msgstr ""
 
 #: src/pages/details_page.blp:29
 msgid "Create"
-msgstr ""
+msgstr "შექმნა"
 
 #: src/pages/details_page.blp:45
 msgid "Move to Trash"
@@ -161,7 +163,7 @@ msgstr ""
 
 #: src/pages/details_page.blp:99
 msgid "Enable"
-msgstr ""
+msgstr "ჩართვა"
 
 #: src/pages/details_page.blp:100
 msgid "Enable this entry to be started when you log in."
@@ -169,7 +171,7 @@ msgstr ""
 
 #: src/pages/details_page.blp:107
 msgid "Name"
-msgstr ""
+msgstr "სახელი"
 
 #: src/pages/details_page.blp:113
 msgid "Comment"
@@ -241,11 +243,11 @@ msgstr ""
 
 #: src/pages/details_page.ts:221
 msgid "Cancel"
-msgstr ""
+msgstr "გაუქმება"
 
 #: src/pages/details_page.ts:222
 msgid "Trash"
-msgstr ""
+msgstr "ნაგვის ყუთი"
 
 #: src/pages/details_page.ts:237
 msgid "Issues occurred while trashing"
@@ -253,7 +255,7 @@ msgstr ""
 
 #: src/pages/entries_page.blp:52
 msgid "Main Menu"
-msgstr ""
+msgstr "მთავარი მენიუ"
 
 #: src/pages/entries_page.blp:59
 msgid "Help and information"
@@ -281,7 +283,7 @@ msgstr ""
 
 #: src/pages/entries_page.blp:113
 msgid "New"
-msgstr ""
+msgstr "ახალი"
 
 #: src/pages/entries_page.blp:119
 msgid "System Startup Entries"
@@ -305,7 +307,7 @@ msgstr ""
 
 #: src/pages/entries_page.blp:172
 msgid "_Keyboard Shortcuts"
-msgstr ""
+msgstr "_კლავიატურის მალსახმობები"
 
 #: src/pages/entries_page.blp:173
 msgid "_About Descriptive"
@@ -325,7 +327,7 @@ msgstr ""
 
 #: src/shortcuts-dialog.blp:23
 msgid "Search Apps"
-msgstr ""
+msgstr "აპების ძებნა"
 
 #: src/shortcuts-dialog.blp:29
 msgid "Details Page"
@@ -337,7 +339,7 @@ msgstr ""
 
 #: src/shortcuts-dialog.blp:38
 msgid "General"
-msgstr ""
+msgstr "ზოგადი"
 
 #: src/shortcuts-dialog.blp:41
 msgid "Open Autostart Folder"
@@ -345,23 +347,23 @@ msgstr ""
 
 #: src/shortcuts-dialog.blp:46
 msgid "Show Shortcuts"
-msgstr ""
+msgstr "მალსახმობების ჩვენება"
 
 #: src/shortcuts-dialog.blp:51
 msgid "Quit"
-msgstr ""
+msgstr "გასვლა"
 
 #: src/utils/helper_funcs.ts:39
 msgid "Copy"
-msgstr ""
+msgstr "კოპირება"
 
 #: src/utils/helper_funcs.ts:40
 msgid "OK"
-msgstr ""
+msgstr "დიახ"
 
 #: src/utils/helper_funcs.ts:49
 msgid "Details"
-msgstr ""
+msgstr "დეტალები"
 
 #. These need to be getters for the _() translation function to work
 #: src/utils/shared_vars.ts:15
@@ -460,7 +462,7 @@ msgstr ""
 
 #: src/widgets/search_group.blp:13
 msgid "No Results Found"
-msgstr ""
+msgstr "შედეგების გარეშე"
 
 #: src/widgets/search_group.blp:14
 msgid "Try a different search."
