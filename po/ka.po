@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-01 19:17-0400\n"
-"PO-Revision-Date: 2026-04-26 06:00+0000\n"
+"PO-Revision-Date: 2026-04-26 08:23+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/ka/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: data/io.github.flattool.Ignition.desktop.in:2
 #: data/io.github.flattool.Ignition.metainfo.xml.in:14
 msgid "Ignition"
-msgstr ""
+msgstr "Ignition"
 
 #: data/io.github.flattool.Ignition.desktop.in:3
 #: data/io.github.flattool.Ignition.metainfo.xml.in:15
@@ -35,7 +35,7 @@ msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
 msgid "Heliguy"
-msgstr ""
+msgstr "Heliguy"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:17
 msgid ""
@@ -91,11 +91,11 @@ msgstr ""
 
 #: src/pages/apps_list_page.blp:36
 msgid "Search apps"
-msgstr ""
+msgstr "აპების ძებნა"
 
 #: src/pages/apps_list_page.blp:43
 msgid "Loading Apps"
-msgstr ""
+msgstr "აპების ჩატვირთვა"
 
 #: src/pages/apps_list_page.blp:44
 msgid "This should only take a moment"
@@ -139,7 +139,7 @@ msgstr ""
 
 #: src/pages/details_page.blp:13
 msgid "Save"
-msgstr ""
+msgstr "შენახვა"
 
 #: src/pages/details_page.blp:29
 msgid "Create"
@@ -147,7 +147,7 @@ msgstr "შექმნა"
 
 #: src/pages/details_page.blp:45
 msgid "Move to Trash"
-msgstr ""
+msgstr "ნაგვის ყუთში გადატანა"
 
 #: src/pages/details_page.blp:55
 msgid "Override entry to edit details"
@@ -155,7 +155,7 @@ msgstr ""
 
 #: src/pages/details_page.blp:56
 msgid "Override"
-msgstr ""
+msgstr "გადაფარვა"
 
 #: src/pages/details_page.blp:93
 msgid "Edit details about this entry."
@@ -175,7 +175,7 @@ msgstr "სახელი"
 
 #: src/pages/details_page.blp:113
 msgid "Comment"
-msgstr ""
+msgstr "კომენტარი"
 
 #: src/pages/details_page.blp:118
 msgid "Command or Script"
@@ -183,11 +183,11 @@ msgstr ""
 
 #: src/pages/details_page.blp:125 src/widgets/entry_row.blp:28
 msgid "More Information"
-msgstr ""
+msgstr "მეტი ინფორმაცია"
 
 #: src/pages/details_page.blp:136
 msgid "Show Terminal"
-msgstr ""
+msgstr "ტერმინალის ჩვენება"
 
 #: src/pages/details_page.blp:137
 msgid "Show a terminal for this process to run in."
@@ -209,7 +209,7 @@ msgstr ""
 
 #: src/pages/details_page.ts:55 src/shortcuts-dialog.blp:9
 msgid "New Entry"
-msgstr ""
+msgstr "ახალი ჩანაწერი"
 
 #: src/pages/details_page.ts:159
 msgid "Issues occurred while saving details"
@@ -382,11 +382,11 @@ msgstr ""
 
 #: src/widgets/entry_row.ts:51
 msgid "Enabled"
-msgstr ""
+msgstr "ჩართულია"
 
 #: src/widgets/entry_row.ts:54
 msgid "Disabled"
-msgstr ""
+msgstr "გამორთულია"
 
 #: src/widgets/entry_row.ts:58
 msgid "This entry is overridden by a user entry."
@@ -394,7 +394,7 @@ msgstr ""
 
 #: src/widgets/entry_row.ts:59
 msgid "Overridden"
-msgstr ""
+msgstr "გადაფარული"
 
 #: src/widgets/entry_row.ts:61
 msgid "This entry overrides a system entry."
@@ -466,4 +466,4 @@ msgstr "შედეგების გარეშე"
 
 #: src/widgets/search_group.blp:14
 msgid "Try a different search."
-msgstr ""
+msgstr "სცადეთ სხვა ძებნა."
