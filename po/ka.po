@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-01 19:17-0400\n"
-"PO-Revision-Date: 2026-04-26 08:23+0000\n"
+"PO-Revision-Date: 2026-04-28 06:03+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/ka/>\n"
@@ -31,7 +31,7 @@ msgstr ""
 
 #: data/io.github.flattool.Ignition.desktop.in:9
 msgid "GTK;startup;autostart;login;"
-msgstr ""
+msgstr "GTK;startup;autostart;login;გაშვებისას;გაშვება;ავტოგაშვება;"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
 msgid "Heliguy"
@@ -119,7 +119,7 @@ msgstr ""
 
 #: src/pages/apps_list_page.blp:98
 msgid "Installed Apps"
-msgstr ""
+msgstr "დაყენებული აპები"
 
 #: src/pages/apps_list_page.blp:99
 msgid "Choose any installed apps to run when you log in."
@@ -135,7 +135,7 @@ msgstr ""
 
 #: src/pages/details_page.blp:5
 msgid "Edit Details"
-msgstr ""
+msgstr "დეტალების ჩასწორება"
 
 #: src/pages/details_page.blp:13
 msgid "Save"
@@ -233,7 +233,7 @@ msgstr ""
 
 #: src/pages/details_page.ts:218
 msgid "Trash Entry?"
-msgstr ""
+msgstr "გადავიტანო ჩანაწერი ნაგვის ყუთში?"
 
 #: src/pages/details_page.ts:219
 msgid ""
@@ -263,11 +263,11 @@ msgstr ""
 
 #: src/pages/entries_page.blp:73
 msgid "Search entries"
-msgstr ""
+msgstr "ძებნა ჩანაწერებში"
 
 #: src/pages/entries_page.blp:84
 msgid "Loading Entries"
-msgstr ""
+msgstr "ჩანაწერების ჩატვირთვა"
 
 #: src/pages/entries_page.blp:85
 msgid "This should only take a moment."
@@ -311,19 +311,19 @@ msgstr "_კლავიატურის მალსახმობები"
 
 #: src/pages/entries_page.blp:173
 msgid "_About Descriptive"
-msgstr ""
+msgstr "პროგრამის შეს_ახებ"
 
 #: src/shortcuts-dialog.blp:6
 msgid "Entries List"
-msgstr ""
+msgstr "ჩანაწერების სია"
 
 #: src/shortcuts-dialog.blp:14
 msgid "Search Entries"
-msgstr ""
+msgstr "ჩანაწერებში ძებნა"
 
 #: src/shortcuts-dialog.blp:20
 msgid "Apps List"
-msgstr ""
+msgstr "აპების სია"
 
 #: src/shortcuts-dialog.blp:23
 msgid "Search Apps"
@@ -331,11 +331,11 @@ msgstr "აპების ძებნა"
 
 #: src/shortcuts-dialog.blp:29
 msgid "Details Page"
-msgstr ""
+msgstr "დეტალების გვერდი"
 
 #: src/shortcuts-dialog.blp:32
 msgid "Save Edits"
-msgstr ""
+msgstr "ჩასწორებების შენახვა"
 
 #: src/shortcuts-dialog.blp:38
 msgid "General"
