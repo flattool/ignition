@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-01 19:17-0400\n"
-"PO-Revision-Date: 2026-05-02 10:01+0000\n"
-"Last-Translator: Loc Huynh <huynhloc.contact@gmail.com>\n"
-"Language-Team: Vietnamese <https://weblate.fyralabs.com/projects/flattool/"
-"ignition/vi/>\n"
-"Language: vi\n"
+"PO-Revision-Date: 2026-04-28 06:03+0000\n"
+"Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <https://weblate.fyralabs.com/projects/flattool/"
+"ignition/ka/>\n"
+"Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.14.3\n"
 
 #: data/io.github.flattool.Ignition.desktop.in:2
@@ -27,11 +27,11 @@ msgstr "Ignition"
 #: data/io.github.flattool.Ignition.desktop.in:3
 #: data/io.github.flattool.Ignition.metainfo.xml.in:15
 msgid "Manage startup apps and scripts"
-msgstr "Quản lý các ứng dụng và tập lệnh khởi động"
+msgstr ""
 
 #: data/io.github.flattool.Ignition.desktop.in:9
 msgid "GTK;startup;autostart;login;"
-msgstr "GTK;startup;autostart;login;"
+msgstr "GTK;startup;autostart;login;გაშვებისას;გაშვება;ავტოგაშვება;"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:11
 msgid "Heliguy"
@@ -43,397 +43,386 @@ msgid ""
 "your computer. Ignition can add apps, scripts, and arbitrary commands to run "
 "at login."
 msgstr ""
-"Ignition cung cấp giao diện người dùng đơn giản để thêm, xóa và sửa đổi các "
-"mục khởi động trên máy tính của bạn. Ignition có thể thêm ứng dụng, tập lệnh "
-"và lệnh tùy ý để chạy khi đăng nhập."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:35
 msgid "See all your startup items."
-msgstr "Xem tất cả các mục khởi động của bạn."
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:39
 msgid "View and edit entry details."
-msgstr "Xem và chỉnh sửa chi tiết mục nhập."
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:43
 msgid "Create a new startup entry."
-msgstr "Tạo một mục khởi động mới."
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
-msgstr "Xem tất cả các mục khởi động của bạn ở chế độ tối."
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:54
 msgid "Bug Fixes and Changes"
-msgstr "Sửa lỗi và thay đổi"
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:56
 msgid "Updated to GNOME 50 technologies"
-msgstr "Đã cập nhật lên công nghệ Gnome 50"
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:57
 msgid "Fixed issue where overridden entries don't update properly"
-msgstr "Đã khắc phục sự cố trong đó các mục bị ghi đè không cập nhật đúng cách"
+msgstr ""
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:58
 msgid ""
 "Fixed issue where the same entries would appear in the list multiple times"
 msgstr ""
-"Đã khắc phục sự cố trong đó các mục giống nhau xuất hiện trong danh sách "
-"nhiều lần"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:59
 msgid "Fixed missing search button icons"
-msgstr "Đã sửa lỗi biểu tượng nút tìm kiếm bị thiếu"
+msgstr ""
 
 #: src/main.ts:56
 msgid "Donate"
-msgstr "Quyên tặng"
+msgstr "შემოწირულობა"
 
 #: src/pages/apps_list_page.blp:16
 msgid "Add or Create an Entry"
-msgstr "Thêm hoặc tạo một mục"
+msgstr ""
 
 #: src/pages/apps_list_page.blp:36
 msgid "Search apps"
-msgstr "Tìm kiếm ứng dụng"
+msgstr "აპების ძებნა"
 
 #: src/pages/apps_list_page.blp:43
 msgid "Loading Apps"
-msgstr "Đang tải ứng dụng"
+msgstr "აპების ჩატვირთვა"
 
 #: src/pages/apps_list_page.blp:44
 msgid "This should only take a moment"
-msgstr "Quá trình này chỉ mất một chút thời gian"
+msgstr ""
 
 #: src/pages/apps_list_page.blp:66
 msgid "Commands and Scripts"
-msgstr "Lệnh và tập lệnh"
+msgstr ""
 
 #: src/pages/apps_list_page.blp:67
 msgid "Run a command or script when you log in."
-msgstr "Chạy lệnh hoặc tập lệnh khi bạn đăng nhập."
+msgstr ""
 
 #: src/pages/apps_list_page.blp:73
 msgid "Add a Command or Script"
-msgstr "Thêm lệnh hoặc tập lệnh"
+msgstr ""
 
 #: src/pages/apps_list_page.blp:74
 msgid "Enter the command to run or path to your script"
-msgstr "Nhập lệnh để chạy hoặc đường dẫn đến tập lệnh của bạn"
+msgstr ""
 
 #: src/pages/apps_list_page.blp:98
 msgid "Installed Apps"
-msgstr "Ứng dụng đã cài đặt"
+msgstr "დაყენებული აპები"
 
 #: src/pages/apps_list_page.blp:99
 msgid "Choose any installed apps to run when you log in."
-msgstr "Chọn bất kỳ ứng dụng đã cài đặt nào để chạy khi bạn đăng nhập."
+msgstr ""
 
 #: src/pages/apps_list_page.blp:105
 msgid "Show Hidden Apps"
-msgstr "Hiển thị ứng dụng ẩn"
+msgstr ""
 
 #: src/pages/apps_list_page.blp:106
 msgid "Show apps that are hidden from the app menu"
-msgstr "Hiển thị các ứng dụng bị ẩn khỏi menu ứng dụng"
+msgstr ""
 
 #: src/pages/details_page.blp:5
 msgid "Edit Details"
-msgstr "Chỉnh sửa chi tiết"
+msgstr "დეტალების ჩასწორება"
 
 #: src/pages/details_page.blp:13
 msgid "Save"
-msgstr "Lưu"
+msgstr "შენახვა"
 
 #: src/pages/details_page.blp:29
 msgid "Create"
-msgstr "Tạo"
+msgstr "შექმნა"
 
 #: src/pages/details_page.blp:45
 msgid "Move to Trash"
-msgstr "Chuyển vào Thùng rác"
+msgstr "ნაგვის ყუთში გადატანა"
 
 #: src/pages/details_page.blp:55
 msgid "Override entry to edit details"
-msgstr "Ghi đè mục nhập để chỉnh sửa chi tiết"
+msgstr ""
 
 #: src/pages/details_page.blp:56
 msgid "Override"
-msgstr "Ghi đè"
+msgstr "გადაფარვა"
 
 #: src/pages/details_page.blp:93
 msgid "Edit details about this entry."
-msgstr "Chỉnh sửa chi tiết về mục này."
+msgstr ""
 
 #: src/pages/details_page.blp:99
 msgid "Enable"
-msgstr "Bật"
+msgstr "ჩართვა"
 
 #: src/pages/details_page.blp:100
 msgid "Enable this entry to be started when you log in."
-msgstr "Cho phép mục này được bắt đầu khi bạn đăng nhập."
+msgstr ""
 
 #: src/pages/details_page.blp:107
 msgid "Name"
-msgstr "Tên"
+msgstr "სახელი"
 
 #: src/pages/details_page.blp:113
 msgid "Comment"
-msgstr "Bình luận"
+msgstr "კომენტარი"
 
 #: src/pages/details_page.blp:118
 msgid "Command or Script"
-msgstr "Lệnh hoặc tập lệnh"
+msgstr ""
 
 #: src/pages/details_page.blp:125 src/widgets/entry_row.blp:28
 msgid "More Information"
-msgstr "Thêm thông tin"
+msgstr "მეტი ინფორმაცია"
 
 #: src/pages/details_page.blp:136
 msgid "Show Terminal"
-msgstr "Hiển thị Terminal"
+msgstr "ტერმინალის ჩვენება"
 
 #: src/pages/details_page.blp:137
 msgid "Show a terminal for this process to run in."
-msgstr "Hiển thị Terminal để quá trình này chạy vào."
+msgstr ""
 
 #: src/pages/details_page.blp:144
 msgid "Seconds of Delay"
-msgstr "Giây trễ"
+msgstr ""
 
 #: src/pages/details_page.blp:145
 msgid "Amount of seconds to wait after logging in to run the command or script"
-msgstr "Số giây chờ sau khi đăng nhập để chạy lệnh hoặc tập lệnh"
+msgstr ""
 
 #: src/pages/details_page.blp:165
 msgid ""
 "To run a script at login, paste its file path here. You can copy the "
 "script's path from your file manager. Make sure your script is executable"
 msgstr ""
-"Để chạy tập lệnh khi đăng nhập, hãy dán đường dẫn tệp của nó vào đây. Bạn có "
-"thể sao chép đường dẫn của tập lệnh từ trình quản lý tệp của mình. Đảm bảo "
-"tập lệnh của bạn có thể thực thi được"
 
 #: src/pages/details_page.ts:55 src/shortcuts-dialog.blp:9
 msgid "New Entry"
-msgstr "Mục mới"
+msgstr "ახალი ჩანაწერი"
 
 #: src/pages/details_page.ts:159
 msgid "Issues occurred while saving details"
-msgstr "Đã xảy ra sự cố khi lưu chi tiết"
+msgstr ""
 
 #: src/pages/details_page.ts:178
 msgid "Issues occurred while saving"
-msgstr "Đã xảy ra sự cố khi lưu"
+msgstr ""
 
 #: src/pages/details_page.ts:191
 msgid "Could not create entry"
-msgstr "Không thể tạo mục nhập"
+msgstr ""
 
 #: src/pages/details_page.ts:199
 msgid "Issues occurred while creating entry"
-msgstr "Đã xảy ra sự cố khi tạo mục nhập"
+msgstr ""
 
 #: src/pages/details_page.ts:210
 msgid "Issues occurred while overriding"
-msgstr "Đã xảy ra sự cố khi ghi đè"
+msgstr ""
 
 #: src/pages/details_page.ts:218
 msgid "Trash Entry?"
-msgstr "Nhập thùng rác?"
+msgstr "გადავიტანო ჩანაწერი ნაგვის ყუთში?"
 
 #: src/pages/details_page.ts:219
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
 msgstr ""
-"Mục nhập này sẽ được chuyển vào thùng rác và sẽ không còn bắt đầu khi bạn "
-"đăng nhập."
 
 #: src/pages/details_page.ts:221
 msgid "Cancel"
-msgstr "Hủy"
+msgstr "გაუქმება"
 
 #: src/pages/details_page.ts:222
 msgid "Trash"
-msgstr "Thùng rác"
+msgstr "ნაგვის ყუთი"
 
 #: src/pages/details_page.ts:237
 msgid "Issues occurred while trashing"
-msgstr "Đã xảy ra sự cố khi dọn rác"
+msgstr ""
 
 #: src/pages/entries_page.blp:52
 msgid "Main Menu"
-msgstr "Menu chính"
+msgstr "მთავარი მენიუ"
 
 #: src/pages/entries_page.blp:59
 msgid "Help and information"
-msgstr "Trợ giúp và thông tin"
+msgstr ""
 
 #: src/pages/entries_page.blp:73
 msgid "Search entries"
-msgstr "Tìm kiếm mục"
+msgstr "ძებნა ჩანაწერებში"
 
 #: src/pages/entries_page.blp:84
 msgid "Loading Entries"
-msgstr "Đang tải mục nhập"
+msgstr "ჩანაწერების ჩატვირთვა"
 
 #: src/pages/entries_page.blp:85
 msgid "This should only take a moment."
-msgstr "Việc này chỉ mất một chút thời gian."
+msgstr ""
 
 #: src/pages/entries_page.blp:95
 msgid "User Startup Entries"
-msgstr "Mục khởi động của người dùng"
+msgstr ""
 
 #: src/pages/entries_page.blp:96
 msgid "Entries that run only for you."
-msgstr "Các mục chỉ chạy cho bạn."
+msgstr ""
 
 #: src/pages/entries_page.blp:113
 msgid "New"
-msgstr "Mới"
+msgstr "ახალი"
 
 #: src/pages/entries_page.blp:119
 msgid "System Startup Entries"
-msgstr "Mục khởi động hệ thống"
+msgstr ""
 
 #: src/pages/entries_page.blp:120
 msgid "Entries that run for everyone."
-msgstr "Các bài viết dành cho tất cả mọi người."
+msgstr ""
 
 #: src/pages/entries_page.blp:149
 msgid "No Entries Found"
-msgstr "Không tìm thấy mục nào"
+msgstr ""
 
 #: src/pages/entries_page.blp:159
 msgid "Add an app or script to run it when you log in"
-msgstr "Thêm ứng dụng hoặc tập lệnh để chạy nó khi bạn đăng nhập"
+msgstr ""
 
 #: src/pages/entries_page.blp:169
 msgid "_Open Autostart Folder"
-msgstr "_Mở thư mục tự khởi động"
+msgstr ""
 
 #: src/pages/entries_page.blp:172
 msgid "_Keyboard Shortcuts"
-msgstr "_Phím tắt bàn phím"
+msgstr "_კლავიატურის მალსახმობები"
 
 #: src/pages/entries_page.blp:173
 msgid "_About Descriptive"
-msgstr "_Giới thiệu Descriptive"
+msgstr "პროგრამის შეს_ახებ"
 
 #: src/shortcuts-dialog.blp:6
 msgid "Entries List"
-msgstr "Danh sách mục"
+msgstr "ჩანაწერების სია"
 
 #: src/shortcuts-dialog.blp:14
 msgid "Search Entries"
-msgstr "Tìm kiếm mục"
+msgstr "ჩანაწერებში ძებნა"
 
 #: src/shortcuts-dialog.blp:20
 msgid "Apps List"
-msgstr "Danh sách ứng dụng"
+msgstr "აპების სია"
 
 #: src/shortcuts-dialog.blp:23
 msgid "Search Apps"
-msgstr "Ứng dụng tìm kiếm"
+msgstr "აპების ძებნა"
 
 #: src/shortcuts-dialog.blp:29
 msgid "Details Page"
-msgstr "Trang chi tiết"
+msgstr "დეტალების გვერდი"
 
 #: src/shortcuts-dialog.blp:32
 msgid "Save Edits"
-msgstr "Lưu chỉnh sửa"
+msgstr "ჩასწორებების შენახვა"
 
 #: src/shortcuts-dialog.blp:38
 msgid "General"
-msgstr "Chung"
+msgstr "ზოგადი"
 
 #: src/shortcuts-dialog.blp:41
 msgid "Open Autostart Folder"
-msgstr "Mở thư mục tự khởi động"
+msgstr ""
 
 #: src/shortcuts-dialog.blp:46
 msgid "Show Shortcuts"
-msgstr "Hiển thị phím tắt"
+msgstr "მალსახმობების ჩვენება"
 
 #: src/shortcuts-dialog.blp:51
 msgid "Quit"
-msgstr "Thoát"
+msgstr "გასვლა"
 
 #: src/utils/helper_funcs.ts:39
 msgid "Copy"
-msgstr "Sao chép"
+msgstr "კოპირება"
 
 #: src/utils/helper_funcs.ts:40
 msgid "OK"
-msgstr "OK"
+msgstr "დიახ"
 
 #: src/utils/helper_funcs.ts:49
 msgid "Details"
-msgstr "Chi tiết"
+msgstr "დეტალები"
 
 #. These need to be getters for the _() translation function to work
 #: src/utils/shared_vars.ts:15
 msgid "No Name Set"
-msgstr "Không đặt tên"
+msgstr ""
 
 #: src/utils/shared_vars.ts:16
 msgid "No comment set."
-msgstr "Không có bình luận nào được đặt."
+msgstr ""
 
 #. Translators: %d is the number of seconds of delay before the app starts
 #: src/widgets/entry_row.ts:49
 #, javascript-format
 msgid "Starts after %d seconds"
-msgstr "Bắt đầu sau %d giây"
+msgstr ""
 
 #: src/widgets/entry_row.ts:51
 msgid "Enabled"
-msgstr "Đã bật"
+msgstr "ჩართულია"
 
 #: src/widgets/entry_row.ts:54
 msgid "Disabled"
-msgstr "Tàn tật"
+msgstr "გამორთულია"
 
 #: src/widgets/entry_row.ts:58
 msgid "This entry is overridden by a user entry."
-msgstr "Mục nhập này bị ghi đè bởi mục nhập của người dùng."
+msgstr ""
 
 #: src/widgets/entry_row.ts:59
 msgid "Overridden"
-msgstr "Đã ghi đè"
+msgstr "გადაფარული"
 
 #: src/widgets/entry_row.ts:61
 msgid "This entry overrides a system entry."
-msgstr "Mục này ghi đè mục nhập hệ thống."
+msgstr ""
 
 #: src/widgets/help_dialog.blp:5
 msgid "Help and Information"
-msgstr "Trợ giúp và thông tin"
+msgstr ""
 
 #: src/widgets/help_dialog.blp:27
 msgid "Can't find an application?"
-msgstr "Không thể tìm thấy một ứng dụng?"
+msgstr ""
 
 #: src/widgets/help_dialog.blp:28
 msgid "Ignition might not be able to see applications on your system"
-msgstr "Ignition có thể không thấy được ứng dụng trên hệ thống của bạn"
+msgstr ""
 
 #: src/widgets/help_dialog.blp:41
 msgid "What is a 'System Entry'?"
-msgstr "'Mục nhập hệ thống' là gì?"
+msgstr ""
 
 #: src/widgets/help_dialog.blp:42
 msgid "Learn more about system startup entries, and how editing them works"
 msgstr ""
-"Tìm hiểu thêm về các mục khởi động hệ thống và cách chỉnh sửa chúng hoạt động"
 
 #: src/widgets/help_dialog.blp:58
 msgid "Can't Find an App?"
-msgstr "Không thể tìm thấy ứng dụng?"
+msgstr ""
 
 #: src/widgets/help_dialog.blp:79
 msgid ""
@@ -441,30 +430,22 @@ msgid ""
 "to read. This means that these apps won't show up in the list of apps on "
 "your system, when making a new entry."
 msgstr ""
-"Một số ứng dụng lưu trữ các mục nhập của chúng bên ngoài những nơi mà "
-"Ignition được phép đọc. Điều này có nghĩa là những ứng dụng này sẽ không "
-"hiển thị trong danh sách ứng dụng trên hệ thống của bạn khi tạo mục nhập mới."
 
 #: src/widgets/help_dialog.blp:85
 msgid ""
 "To fix this, you can allow Ignition to see more home locations, or more root "
 "locations, in your file system."
 msgstr ""
-"Để khắc phục điều này, bạn có thể cho phép Ignition xem thêm vị trí gốc hoặc "
-"nhiều vị trí gốc hơn trong hệ thống tệp của mình."
 
 #: src/widgets/help_dialog.blp:91
 msgid ""
 "We recommend the app \"Flatseal\" to manage these permissions. Enable \"All "
 "user files\" or \"All system files\" to be able to find these apps."
 msgstr ""
-"Chúng tôi khuyên dùng ứng dụng \"Flatseal\" để quản lý các quyền này. Bật "
-"\"Tất cả tệp người dùng\" hoặc \"Tất cả tệp hệ thống\" để có thể tìm thấy "
-"các ứng dụng này."
 
 #: src/widgets/help_dialog.blp:100
 msgid "What is a System Entry?"
-msgstr "Mục nhập hệ thống là gì?"
+msgstr ""
 
 #: src/widgets/help_dialog.blp:121
 msgid ""
@@ -472,23 +453,17 @@ msgid ""
 "everybody. These are usually present to allow certain features, programs, or "
 "other important actions run properly."
 msgstr ""
-"Mục nhập hệ thống dành cho các ứng dụng hoặc lệnh được chạy khi đăng nhập "
-"cho mọi người. Chúng thường hiện diện để cho phép một số tính năng, chương "
-"trình hoặc hành động quan trọng khác chạy bình thường."
 
 #: src/widgets/help_dialog.blp:127
 msgid ""
 "You can override these, but please use caution when doing so, as you may "
 "break some existing app or feature of your desktop."
 msgstr ""
-"Bạn có thể ghi đè những tùy chọn này nhưng vui lòng thận trọng khi làm như "
-"vậy vì bạn có thể làm hỏng một số ứng dụng hoặc tính năng hiện có trên máy "
-"tính để bàn của mình."
 
 #: src/widgets/search_group.blp:13
 msgid "No Results Found"
-msgstr "Không tìm thấy kết quả"
+msgstr "შედეგების გარეშე"
 
 #: src/widgets/search_group.blp:14
 msgid "Try a different search."
-msgstr "Hãy thử tìm kiếm khác."
+msgstr "სცადეთ სხვა ძებნა."
