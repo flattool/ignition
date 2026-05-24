@@ -12,7 +12,7 @@ import {
 	from,
 	next_idle,
 	timeout_ms,
-} from "../2gobjectify/gobjectify.js"
+} from "../gobjectify/gobjectify.js"
 import { SharedVars } from "../utils/shared_vars.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
 import { EntryRow } from "./entry_row.js"

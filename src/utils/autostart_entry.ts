@@ -2,7 +2,7 @@ import GLib from "gi://GLib?version=2.0"
 import Gio from "gi://Gio?version=2.0"
 import GObject from "gi://GObject?version=2.0"
 
-import { from, GClass, Property } from "../2gobjectify/gobjectify.js"
+import { from, GClass, Property } from "../gobjectify/gobjectify.js"
 import { SharedVars } from "./shared_vars.js"
 import { DelayHelper } from "./delay_helper.js"
 

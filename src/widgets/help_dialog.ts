@@ -1,7 +1,7 @@
 import Adw from "gi://Adw?version=1"
 import Gtk from "gi://Gtk?version=4.0"
 
-import { GClass, Property, Child, from } from "../2gobjectify/gobjectify.js"
+import { GClass, Property, Child, from } from "../gobjectify/gobjectify.js"
 import { SharedVars } from "../utils/shared_vars.js"
 
 @GClass({ template: "resource:///io/github/flattool/Ignition/widgets/help_dialog.ui" })

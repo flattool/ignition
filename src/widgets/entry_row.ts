@@ -1,7 +1,7 @@
 import Adw from "gi://Adw?version=1"
 import Gtk from "gi://Gtk?version=4.0"
 
-import { GClass, from, Child, Property, next_idle, OnSignal, PostInit } from "../2gobjectify/gobjectify.js"
+import { GClass, from, Child, Property, next_idle, OnSignal, PostInit } from "../gobjectify/gobjectify.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
 import { IconHelper } from "../utils/icon_helper.js"
 import { idle_run } from "../utils/helper_funcs.js"

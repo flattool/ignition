@@ -5,7 +5,7 @@ import Adw from "gi://Adw?version=1"
 
 import { MainWindow } from "./window/main_window.js"
 import { SharedVars } from "./utils/shared_vars.js"
-import { dedent, from, GClass, OnSimpleAction, SimpleAction } from "./2gobjectify/gobjectify.js"
+import { dedent, from, GClass, OnSimpleAction, SimpleAction } from "./gobjectify/gobjectify.js"
 
 Gio._promisify(Gtk.FileLauncher.prototype, "launch", "launch_finish")
 

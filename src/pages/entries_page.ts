@@ -3,7 +3,7 @@ import Gtk from "gi://Gtk?version=4.0"
 import Gio from "gi://Gio?version=2.0"
 import GObject from "gi://GObject?version=2.0"
 
-import { GClass, Property, Child, from, Signal, Debounce } from "../2gobjectify/gobjectify.js"
+import { GClass, Property, Child, from, Signal, Debounce } from "../gobjectify/gobjectify.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
 import { SharedVars } from "../utils/shared_vars.js"
 import { HelpDialog } from "../widgets/help_dialog.js"

@@ -2,7 +2,7 @@ import GObject from "gi://GObject?version=2.0"
 import Gio from "gi://Gio?version=2.0"
 import GLib from "gi://GLib?version=2.0"
 
-import { GClass, from, OnSignal, Signal, Property, Debounce, next_idle, PostInit } from "../2gobjectify/gobjectify.js"
+import { GClass, from, OnSignal, Signal, Property, Debounce, next_idle, PostInit } from "../gobjectify/gobjectify.js"
 
 Gio._promisify(Gio.File.prototype, "enumerate_children_async")
 

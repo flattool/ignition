@@ -1,7 +1,7 @@
 import Gtk from "gi://Gtk?version=4.0"
 import Adw from "gi://Adw?version=1"
 
-import { GClass, Property, from } from "../2gobjectify/gobjectify.js"
+import { GClass, Property, from } from "../gobjectify/gobjectify.js"
 
 @GClass({ template: "resource:///io/github/flattool/Ignition/widgets/search_group.ui" })
 export class SearchGroup extends from(Adw.Bin, {

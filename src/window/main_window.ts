@@ -1,6 +1,6 @@
 import Adw from "gi://Adw"
 
-import { GClass, from, Child } from "../2gobjectify/gobjectify.js"
+import { GClass, from, Child } from "../gobjectify/gobjectify.js"
 import { SharedVars } from "../utils/shared_vars.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
 import { EntriesPage } from "../pages/entries_page.js"
