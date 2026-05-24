@@ -7,7 +7,7 @@ import Gio from "gi://Gio?version=2.0"
 import type GObject from "gi://GObject?version=2.0"
 
 import { SharedVars } from "./shared_vars.js"
-import { next_idle } from "../gobjectify/gobjectify.js"
+import { next_idle } from "../2gobjectify/gobjectify.js"
 
 const HOST_PATHS_NEEDING_PREFIX = new Set<string>(["etc", "usr", "bin", "sbin", "lib"])
 

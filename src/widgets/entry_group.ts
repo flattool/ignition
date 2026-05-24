@@ -12,38 +12,40 @@ import {
 	from,
 	next_idle,
 	timeout_ms,
-} from "../gobjectify/gobjectify.js"
+} from "../2gobjectify/gobjectify.js"
 import { SharedVars } from "../utils/shared_vars.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
 import { EntryRow } from "./entry_row.js"
 import { iterate_model } from "../utils/helper_funcs.js"
 
 @GClass({ template: "resource:///io/github/flattool/Ignition/widgets/entry_group.ui" })
-@Signal("entry-clicked", { param_types: [AutostartEntry.$gtype] })
 export class EntryGroup extends from(Adw.PreferencesGroup, {
-	entries: Property.gobject(Gio.ListModel, { flags: "CONSTRUCT_ONLY" }).as<Gio.ListModel<AutostartEntry>>(),
-	show_hidden: Property.bool(),
-	search_text: Property.string(),
-	no_search_results: Property.bool(),
-	is_loading: Property.bool({ default: true }),
-	deduplicate: Property.bool(),
-	show_suffix_info: Property.bool({ default: true }),
+	entries: Property.readonly.gobject(Gio.ListModel).as<Gio.ListModel<AutostartEntry>>(),
+	show_hidden: Property.readwrite.bool(),
+	search_text: Property.readwrite.string(),
+	no_search_results: Property.readwrite.bool(),
+	is_loading: Property.readwrite.bool(true),
+	deduplicate: Property.readwrite.bool(),
+	show_suffix_info: Property.readwrite.bool(true),
+	entry_clicked: Signal([AutostartEntry]),
 	_search_filter: Child<Gtk.EveryFilter>(),
 	_no_hidden_filter: Child<Gtk.CustomFilter>(),
 }) {
 	readonly #exec_to_row = new Map<string, { readonly row: EntryRow, readonly rank: number }>()
 
-	async _ready(): Promise<void> {
+	constructor(params?: typeof EntryGroup.$params) {
+		super(params)
 		this.entries?.connect("items-changed", () => this.#on_change())
 		this._no_hidden_filter.set_filter_func((item) => {
 			const entry = item as AutostartEntry
 			if (this.show_hidden) return true
 			return !entry.is_hidden()
 		})
-		await timeout_ms(250)
-		if (this.entries?.get_n_items() === 0) {
-			this.is_loading = false
-		}
+		timeout_ms(250).then(() => {
+			if (this.entries?.get_n_items() === 0) {
+				this.is_loading = false
+			}
+		})
 	}
 
 	#on_change(): void {

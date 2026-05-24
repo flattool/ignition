@@ -2,14 +2,14 @@ import GObject from "gi://GObject?version=2.0"
 import Gio from "gi://Gio?version=2.0"
 import GLib from "gi://GLib?version=2.0"
 
-import { GClass, from, OnSignal, Signal, Property, Debounce, next_idle } from "../gobjectify/gobjectify.js"
+import { GClass, from, OnSignal, Signal, Property, Debounce, next_idle, PostInit } from "../2gobjectify/gobjectify.js"
 
 Gio._promisify(Gio.File.prototype, "enumerate_children_async")
 
 @GClass()
-@Signal("change-started")
 export class FileList extends from(GObject.Object, {
-	directory: Property.gobject(Gio.File),
+	directory: Property.readwrite.gobject(Gio.File),
+	change_started: Signal(),
 }, Gio.ListModel) implements Gio.ListModel.Interface {
 	get n_items(): number { return this.vfunc_get_n_items() }
 
@@ -17,10 +17,7 @@ export class FileList extends from(GObject.Object, {
 	#monitor: Gio.FileMonitor | undefined
 	#connection: number | undefined
 
-	_ready(): void {
-		this.#set_up_monitor()
-	}
-
+	@PostInit
 	@OnSignal("notify::directory")
 	#set_up_monitor(): void {
 		if (this.#connection !== undefined) {
@@ -28,7 +25,7 @@ export class FileList extends from(GObject.Object, {
 		}
 		this.#monitor?.cancel()
 		this.#monitor = this.directory?.monitor_directory(Gio.FileMonitorFlags.NONE, null)
-		this.#connection = this.#monitor?.connect("changed", () => this.#on_monitor_notice())
+		this.#connection = this.#monitor?.$connect("changed", () => this.#on_monitor_notice())
 		this.#on_monitor_notice()
 	}
 
@@ -39,7 +36,7 @@ export class FileList extends from(GObject.Object, {
 
 	@Debounce(200, { trigger: "leading" })
 	#emit_start_changing(): void {
-		this.emit("change-started")
+		this.$emit("change-started")
 	}
 
 	@Debounce(200)

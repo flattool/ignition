@@ -1,13 +1,13 @@
 import Gtk from "gi://Gtk?version=4.0"
 import GObject from "gi://GObject?version=2.0"
 
-import { from, GClass, OnSignal, Property, Signal } from "../gobjectify/gobjectify.js"
+import { from, GClass, OnSignal, Property, Signal } from "../2gobjectify/gobjectify.js"
 
 @GClass({ template: "resource:///io/github/flattool/Ignition/widgets/search_button.ui" })
-@Signal("start-searching", { flags: GObject.SignalFlags.ACTION })
 export class SearchButton extends from(Gtk.ToggleButton, {
-	search_bar: Property.gobject(Gtk.SearchBar),
-	keyboard_shortcut: Property.string({ default: "<primary>f" }),
+	search_bar: Property.readwrite.gobject(Gtk.SearchBar),
+	keyboard_shortcut: Property.readwrite.string("<primary>f"),
+	start_searching: Signal([], { flags: GObject.SignalFlags.ACTION }),
 }) {
 	@OnSignal("start-searching")
 	#on_start_search(): void {

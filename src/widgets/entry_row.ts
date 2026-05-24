@@ -1,30 +1,31 @@
 import Adw from "gi://Adw?version=1"
 import Gtk from "gi://Gtk?version=4.0"
 
-import { GClass, from, Child, Property, next_idle } from "../gobjectify/gobjectify.js"
+import { GClass, from, Child, Property, next_idle, OnSignal, PostInit } from "../2gobjectify/gobjectify.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
 import { IconHelper } from "../utils/icon_helper.js"
+import { idle_run } from "../utils/helper_funcs.js"
 
 @GClass({ template: "resource:///io/github/flattool/Ignition/widgets/entry_row.ui" })
 export class EntryRow extends from(Adw.ActionRow, {
-	entry: Property.gobject(AutostartEntry, { flags: "CONSTRUCT_ONLY" }),
-	suffix_text: Property.string(),
-	show_suffix_info: Property.bool({ default: true }),
-	popover_text: Property.string(),
+	entry: Property.readonly.gobject(AutostartEntry),
+	suffix_text: Property.readwrite.string(),
+	show_suffix_info: Property.readwrite.bool(true),
+	popover_text: Property.readwrite.string(),
 	_prefix_image: Child<Gtk.Image>(),
 	_suffix_label: Child<Gtk.Label>(),
 	_info_button: Child<Gtk.MenuButton>(),
 }) {
-	async _ready(): Promise<void> {
+	constructor(params?: typeof EntryRow.$params) {
+		super(params)
 		this.title = this.entry?.name.markup_escape_text() ?? ""
 		this.subtitle = this.entry?.comment.markup_escape_text() ?? ""
-		this.entry?.connect("notify", this.#update_status.bind(this))
-		this.connect("notify::show-suffix-info", this.#update_status.bind(this))
-		this.#update_status()
-		await next_idle()
-		IconHelper.set_icon(this._prefix_image, this.entry?.icon)
+		this.entry?.$connect("notify", this.#update_status.bind(this))
+		idle_run(() => IconHelper.set_icon(this._prefix_image, this.entry?.icon))
 	}
 
+	@PostInit
+	@OnSignal("notify::show-suffix-info")
 	#update_status(): void {
 		const state: AutostartEntry.OverrideState = this.entry?.override_state ?? "NONE"
 		const enabled: boolean = this.entry?.enabled ?? false

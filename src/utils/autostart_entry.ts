@@ -2,10 +2,9 @@ import GLib from "gi://GLib?version=2.0"
 import Gio from "gi://Gio?version=2.0"
 import GObject from "gi://GObject?version=2.0"
 
-import { from, GClass, Property } from "../gobjectify/gobjectify.js"
+import { from, GClass, Property } from "../2gobjectify/gobjectify.js"
 import { SharedVars } from "./shared_vars.js"
 import { DelayHelper } from "./delay_helper.js"
-// import { path_with_prefix } from "./helper_funcs.js"
 
 export const GROUP_NAME: string = "Desktop Entry"
 
@@ -15,20 +14,17 @@ export namespace AutostartEntry {
 	export type OverrideState = "NONE" | "OVERRIDES" | "OVERRIDDEN"
 }
 
-const base = from(GObject.Object, {
-	enabled: Property.bool(),
-	name: Property.string(),
-	comment: Property.string(),
-	exec: Property.string(),
-	terminal: Property.bool(),
-	icon: Property.string(),
-	// delay: Property.double(),
-	path: Property.string({ flags: "CONSTRUCT" }),
-	override_state: Property.string({ default: "NONE" }).as<AutostartEntry.OverrideState>(),
-})
-
 @GClass()
-export class AutostartEntry extends base {
+export class AutostartEntry extends from(GObject.Object, {
+	enabled: Property.computed.bool(),
+	name: Property.computed.string(),
+	comment: Property.computed.string(),
+	exec: Property.computed.string(),
+	terminal: Property.computed.bool(),
+	icon: Property.computed.string(),
+	path: Property.readwrite.string(),
+	override_state: Property.readwrite.string("NONE").as<AutostartEntry.OverrideState>(),
+}) {
 	static verify_file(path: string): "is_dir" | "not_exist" | "symlink" | "not_desktop_entry" | "" {
 		if (!path.endsWith(".desktop")) return "not_desktop_entry"
 		const file = Gio.File.new_for_path(path)
@@ -111,8 +107,8 @@ export class AutostartEntry extends base {
 	#delay_cache: number | null = null
 	#delayed_exec_cache: string | null = null
 
-	constructor(...params: ConstructorParameters<typeof base>) {
-		super(...params)
+	constructor(params?: typeof AutostartEntry.$params) {
+		super(params)
 		this.#load()
 	}
 
@@ -136,7 +132,7 @@ export class AutostartEntry extends base {
 	}
 
 	async trash(): Promise<void> {
-		this.#file.trash_async(GLib.PRIORITY_DEFAULT_IDLE, null)
+		await this.#file.trash_async(GLib.PRIORITY_DEFAULT_IDLE, null)
 	}
 
 	reload(): void {

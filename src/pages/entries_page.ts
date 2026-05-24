@@ -3,7 +3,7 @@ import Gtk from "gi://Gtk?version=4.0"
 import Gio from "gi://Gio?version=2.0"
 import GObject from "gi://GObject?version=2.0"
 
-import { GClass, Property, Child, from, Signal, Debounce } from "../gobjectify/gobjectify.js"
+import { GClass, Property, Child, from, Signal, Debounce } from "../2gobjectify/gobjectify.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
 import { SharedVars } from "../utils/shared_vars.js"
 import { HelpDialog } from "../widgets/help_dialog.js"
@@ -15,13 +15,13 @@ import "../widgets/search_group.js"
 import "../widgets/search_button.js"
 
 @GClass({ template: "resource:///io/github/flattool/Ignition/pages/entries_page.ui" })
-@Signal("entry-clicked", { param_types: [AutostartEntry.$gtype] })
 export class EntriesPage extends from(Adw.NavigationPage, {
-	is_loading: Property.bool({ default: false }),
-	no_results: Property.bool(),
-	home_dir: Property.gobject(Gio.File),
-	root_dir: Property.gobject(Gio.File),
-	search_text: Property.string(),
+	is_loading: Property.readwrite.bool(false),
+	no_results: Property.readwrite.bool(),
+	home_dir: Property.readwrite.gobject(Gio.File),
+	root_dir: Property.readwrite.gobject(Gio.File),
+	search_text: Property.readwrite.string(),
+	entry_clicked: Signal([AutostartEntry]),
 	_entry_custom_sorter: Child<Gtk.CustomSorter>(),
 	_home_entries: Child<Gio.ListModel<AutostartEntry>>(),
 	_root_entries: Child<Gio.ListModel<AutostartEntry>>(),
@@ -41,14 +41,14 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 
 	#change_blocker = false
 
-	_ready(): void {
+	constructor(params?: typeof EntriesPage.$params) {
+		super(params)
 		this._entry_custom_sorter.set_sort_func(AutostartEntry.compare.bind(AutostartEntry))
 		this._only_entries_filter.set_filter_func((item: GObject.Object) => item instanceof AutostartEntry)
 		this._home_map_model.set_map_func(this.#entry_map_func.bind(this))
 		this._root_map_model.set_map_func(this.#entry_map_func.bind(this))
 		this.home_dir = SharedVars.home_autostart_dir
 		this.root_dir = SharedVars.root_autostart_dir
-
 		this._home_entries.connect("items-changed", () => this.#on_list_change(this._root_map_model))
 		this._root_entries.connect("items-changed", () => this.#on_list_change(this._home_map_model))
 	}
@@ -99,10 +99,10 @@ export class EntriesPage extends from(Adw.NavigationPage, {
 	}
 
 	protected _on_entry_clicked(_group: EntryGroup, entry: AutostartEntry): void {
-		this.emit("entry-clicked", entry)
+		this.$emit("entry-clicked", entry)
 	}
 
 	protected _show_help(): void {
-		new HelpDialog({}).present(this)
+		new HelpDialog().present(this)
 	}
 }

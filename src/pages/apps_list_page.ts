@@ -3,7 +3,7 @@ import Gtk from "gi://Gtk?version=4.0"
 import Gio from "gi://Gio?version=2.0"
 import GObject from "gi://GObject?version=2.0"
 
-import { GClass, Property, Child, Signal, from, Debounce } from "../gobjectify/gobjectify.js"
+import { GClass, Property, Child, Signal, from, Debounce } from "../2gobjectify/gobjectify.js"
 import { SharedVars } from "../utils/shared_vars.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
 import { FileList } from "../utils/file_list.js"
@@ -14,10 +14,10 @@ import "../widgets/search_button.js"
 import "../widgets/search_group.js"
 
 @GClass({ template: "resource:///io/github/flattool/Ignition/pages/apps_list_page.ui" })
-@Signal("app-clicked", { param_types: [AutostartEntry.$gtype] })
 export class AppsListPage extends from(Adw.NavigationPage, {
-	search_text: Property.string(),
-	show_hidden: Property.bool(),
+	search_text: Property.readwrite.string(),
+	show_hidden: Property.readwrite.bool(),
+	app_clicked: Signal([AutostartEntry]),
 	_entries: Child<Gio.ListModel<AutostartEntry>>(),
 	_entry_models: Child<Gio.ListStore>(),
 	_entry_sorter: Child<Gtk.CustomSorter>(),
@@ -26,10 +26,12 @@ export class AppsListPage extends from(Adw.NavigationPage, {
 	readonly #filters = new Array<Gtk.CustomFilter>()
 	readonly #home_monitor = SharedVars.home_autostart_dir.monitor_directory(Gio.FileMonitorFlags.NONE, null)
 
-	_ready(): void {
+	constructor(params?: typeof AppsListPage.$params) {
+		super(params)
 		this._entry_sorter.set_sort_func(AutostartEntry.compare.bind(AutostartEntry))
-		this.#home_monitor.connect("changed", () => this.#on_home_entries_changed())
-		SharedVars.host_app_entry_dirs.forEach(this.#setup_app_list.bind(this))
+		this.#home_monitor.$connect("changed", () => this.#on_home_entries_changed())
+		// TODO: FIX THIS SPAMMING ERRORS
+		// SharedVars.host_app_entry_dirs.forEach(this.#setup_app_list.bind(this))
 	}
 
 	#setup_app_list(directory: Gio.File): void {
@@ -62,10 +64,10 @@ export class AppsListPage extends from(Adw.NavigationPage, {
 	}
 
 	protected _on_script_clicked(_row: Adw.ActionRow): void {
-		this.emit("app-clicked", null)
+		this.$emit("app-clicked", null)
 	}
 
 	protected _on_entry_clicked(_group: EntryGroup, entry: AutostartEntry): void {
-		this.emit("app-clicked", entry)
+		this.$emit("app-clicked", entry)
 	}
 }

@@ -5,7 +5,7 @@ import Adw from "gi://Adw?version=1"
 
 import { MainWindow } from "./window/main_window.js"
 import { SharedVars } from "./utils/shared_vars.js"
-import { dedent, from, GClass, OnSimpleAction, SimpleAction } from "./gobjectify/gobjectify.js"
+import { dedent, from, GClass, OnSimpleAction, SimpleAction } from "./2gobjectify/gobjectify.js"
 
 Gio._promisify(Gtk.FileLauncher.prototype, "launch", "launch_finish")
 
@@ -26,8 +26,9 @@ export class IgnitionApplication extends from(Adw.Application, {
 		; (this.#main_window ??= SharedVars.main_window).present()
 	}
 
-	_ready(): void {
-		this._quit.connect("activate", () => this.quit())
+	constructor(params?: typeof IgnitionApplication.$params) {
+		super(params)
+		this._quit.$connect("activate", () => this.quit())
 		this.save_edits.connect("activate", () => this.#main_window?.save_edits())
 	}
 

@@ -1,6 +1,6 @@
 import Adw from "gi://Adw"
 
-import { GClass, from, Child } from "../gobjectify/gobjectify.js"
+import { GClass, from, Child } from "../2gobjectify/gobjectify.js"
 import { SharedVars } from "../utils/shared_vars.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
 import { EntriesPage } from "../pages/entries_page.js"
@@ -22,9 +22,10 @@ export class MainWindow extends from(Adw.ApplicationWindow, {
 }) {
 	// readonly #settings = new Gio.Settings({ schema: pkg.app_id })
 
-	_ready(): void {
+	constructor(params?: typeof MainWindow.$params) {
+		super(params)
 		if (pkg.profile === "development") this.add_css_class("devel")
-		SharedVars.application?.new_entry.connect("activate", this.#on_new_entry.bind(this))
+		SharedVars.application?.new_entry.$connect("activate", this.#on_new_entry.bind(this))
 	}
 
 	save_edits(): void {

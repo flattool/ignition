@@ -11,9 +11,8 @@ import {
 	Debounce,
 	from,
 	next_idle,
-	connect_async,
 	Signal,
-} from "../gobjectify/gobjectify.js"
+} from "../2gobjectify/gobjectify.js"
 import { AutostartEntry } from "../utils/autostart_entry.js"
 import { SharedVars } from "../utils/shared_vars.js"
 import { IconHelper } from "../utils/icon_helper.js"
@@ -28,20 +27,20 @@ const NAME_REGEX = /^(?! )[^\0\/"'\\]+(?: [^\0\/"'\\]+)*(?<! )$/
 const EXEC_REGEX = /^\S(?:.*\S)?$/
 
 @GClass({ template: "resource:///io/github/flattool/Ignition/pages/details_page.ui" })
-@Signal("updated-entry")
-@Signal("created-entry", { param_types: [AutostartEntry.$gtype] })
-@Signal("trashed-entry", { param_types: [AutostartEntry.$gtype] })
 export class DetailsPage extends from(Adw.NavigationPage, {
-	is_valid: Property.bool({ default: true }),
-	is_different: Property.bool(),
-	entry: Property.gobject(AutostartEntry),
-	header_title: Property.string(),
-	pending_enabled: Property.bool(),
-	pending_name: Property.string({ default: "-" }),
-	pending_comment: Property.string(),
-	pending_exec: Property.string({ default: "-" }),
-	pending_show_terminal: Property.bool(),
-	pending_delay: Property.double(),
+	is_valid: Property.readwrite.bool(true),
+	is_different: Property.readwrite.bool(),
+	entry: Property.computed.gobject(AutostartEntry),
+	header_title: Property.readwrite.string(),
+	pending_enabled: Property.readwrite.bool(),
+	pending_name: Property.readwrite.string("-"),
+	pending_comment: Property.readwrite.string(),
+	pending_exec: Property.readwrite.string("-"),
+	pending_show_terminal: Property.readwrite.bool(),
+	pending_delay: Property.readwrite.double(),
+	updated_entry: Signal(),
+	created_entry: Signal([AutostartEntry]),
+	trashed_entry: Signal([AutostartEntry]),
 	_app_icon: Child<Gtk.Image>(),
 }) {
 	#invalid_items = new Set<unknown>()
@@ -223,7 +222,7 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 		dialog.set_response_appearance("continue", Adw.ResponseAppearance.DESTRUCTIVE)
 		dialog.present(this)
 
-		const [response] = await connect_async<[string]>(dialog, "response")
+		const [response] = await dialog.$connect_async("response")
 		if (response !== "continue") return
 
 		try {
