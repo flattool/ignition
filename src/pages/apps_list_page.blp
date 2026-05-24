@@ -4,11 +4,8 @@ using Gio 2.0;
 
 SortListModel entries {
 	sorter: CustomSorter entry_sorter {};
-
-	model: FlattenListModel {
-		model: Gio.ListStore entry_models {
-			item-type: typeof<Gio.ListModel>;
-		};
+	model: Gio.ListStore entry_store {
+		item-type: typeof<$AutostartEntry>;
 	};
 }
 
