@@ -6,12 +6,7 @@
 		"lib": ["ES2022"],
 		"allowJs": true,
 		"outDir": "_build/tsc-out",
-		"moduleResolution": "node",
-		"baseUrl": ".",
-		"paths": {
-			"*": ["*", "types/*", "gi-types/*", "tests/sources/*"]
-		},
-		"typeRoots": ["gi-types"],
+		"moduleResolution": "bundler",
 		"forceConsistentCasingInFileNames": true,
 
 		// Optional Flags
@@ -28,5 +23,5 @@
 		"strict": true,
 		"verbatimModuleSyntax": true
 	},
-	"include": ["gi-types/gi.d.ts", "types/ambient.d.ts", "src/","tests/sources/*"]
+	"include": ["gi-types/", "types/", "src/","tests/sources/"]
 }
