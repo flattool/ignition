@@ -21,6 +21,25 @@ export const path_with_prefix = (path: string): string => {
 	return path
 }
 
+export const ask_to_continue = async (params: {
+	heading: string,
+	body: string,
+	continue_label: string,
+	extra_child?: Gtk.Widget,
+	appearance?: Adw.ResponseAppearance,
+}): Promise<boolean> => {
+	const { appearance, continue_label, ...rest } = params
+	const dialog = new Adw.AlertDialog(rest)
+	dialog.add_response("cancel", _("Cancel"))
+	dialog.add_response("continue", continue_label)
+	if (appearance) {
+		dialog.set_response_appearance("continue", appearance)
+	}
+	dialog.present(SharedVars.main_window)
+	const [response] = await dialog.$connect_async("response")
+	return response === "continue"
+}
+
 export const add_toast = (title: string, window = SharedVars.main_window): void => {
 	window?._toast_overlay.add_toast(Adw.Toast.new(title))
 }

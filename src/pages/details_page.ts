@@ -17,7 +17,7 @@ import { AutostartEntry } from "../utils/autostart_entry.js"
 import { SharedVars } from "../utils/shared_vars.js"
 import { IconHelper } from "../utils/icon_helper.js"
 import { DelayHelper } from "../utils/delay_helper.js"
-import { add_error_toast, idle_run } from "../utils/helper_funcs.js"
+import { add_error_toast, ask_to_continue, idle_run } from "../utils/helper_funcs.js"
 import GLib from "gi://GLib?version=2.0"
 
 Gio._promisify(Gio.File.prototype, "trash_async", "trash_finish")
@@ -160,6 +160,70 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 		}
 	}
 
+	async #fallback_delete(failed_trashes: (Gio.File | AutostartEntry)[]): Promise<void> {
+		const should_delete = await ask_to_continue({
+			heading: _("Trash Failed. Delete Entry Instead?"),
+			body: _("Instead of moving to the trash, the entry will be permanently deleted. This is not recoverable."),
+			continue_label: _("Delete"),
+			appearance: Adw.ResponseAppearance.DESTRUCTIVE,
+		})
+		if (!should_delete) return
+
+		const failed_deletes: unknown[] = []
+		for (const item of failed_trashes) {
+			try {
+				(item instanceof AutostartEntry ? Gio.File.new_for_path(item.path) : item).delete(null)
+			} catch (e) {
+				failed_deletes.push(e)
+			}
+		}
+
+		if (failed_deletes.length > 0) {
+			const message = failed_deletes.map((e) => (e instanceof Error ? e.message : `${e}`)).join("\n")
+			add_error_toast(_("Could not delete entry"), message)
+			this.$emit("trashed-entry", null)
+		} else {
+			this.$emit("trashed-entry", this.entry)
+			this.entry = null
+		}
+	}
+
+	protected async _on_trash(): Promise<void> {
+		if (!this._is_home_autostart() || !this.entry) return
+		const should_trash = await ask_to_continue({
+			heading: _("Trash Entry?"),
+			body: _("This entry will be moved to the trash, and will no longer start when you log in."),
+			continue_label: _("Trash"),
+			appearance: Adw.ResponseAppearance.DESTRUCTIVE,
+		})
+		if (!should_trash) return
+
+		const failed_trashes: (Gio.File | AutostartEntry)[] = []
+		if (this.entry.exec.endsWith(DELAY_FILE_SUFFIX)) {
+			const delay_file = Gio.File.new_for_path(this.entry.exec)
+			if (delay_file.query_exists(null)) {
+				try {
+					await delay_file.trash_async(GLib.PRIORITY_DEFAULT_IDLE, null)
+				} catch (e) {
+					failed_trashes.push(delay_file)
+				}
+			}
+		}
+		try {
+			await this.entry.trash()
+		} catch (e) {
+			failed_trashes.push(this.entry)
+		}
+
+		if (failed_trashes.length > 0) {
+			await this.#fallback_delete(failed_trashes)
+			return
+		}
+
+		this.$emit("trashed-entry", this.entry)
+		this.entry = null
+	}
+
 	protected async _on_name_changed(row: Adw.EntryRow): Promise<void> {
 		await next_idle()
 		this.#check_valid(row, this.pending_name, NAME_REGEX)
@@ -209,34 +273,6 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 			add_error_toast(_("Issues occurred while overriding"), `${save_error}`)
 			this.emit("created-entry", null) // exit this page with no other toast
 		}
-	}
-
-	protected async _on_trash(): Promise<void> {
-		if (!this._is_home_autostart() || this.entry === null) return
-		const dialog = new Adw.AlertDialog({
-			heading: _("Trash Entry?"),
-			body: _("This entry will be moved to the trash, and will no longer start when you log in."),
-		})
-		dialog.add_response("cancel", _("Cancel"))
-		dialog.add_response("continue", _("Trash"))
-		dialog.set_response_appearance("continue", Adw.ResponseAppearance.DESTRUCTIVE)
-		dialog.present(this)
-
-		const [response] = await dialog.$connect_async("response")
-		if (response !== "continue") return
-
-		try {
-			if (this.entry.exec.endsWith(DELAY_FILE_SUFFIX)) {
-				const delay_file = Gio.File.new_for_path(this.entry.exec)
-				if (delay_file.query_exists(null)) await delay_file.trash_async(GLib.PRIORITY_DEFAULT_IDLE, null)
-			}
-			await this.entry.trash()
-			this.emit("trashed-entry", this.entry)
-		} catch (error) {
-			add_error_toast(_("Issues occurred while trashing"), `${error}`)
-			this.emit("trashed-entry", null)
-		}
-		this.entry = null
 	}
 
 	protected _can_save(): boolean {
