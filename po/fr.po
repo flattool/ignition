@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-04-01 19:17-0400\n"
-"PO-Revision-Date: 2026-01-20 09:04+0000\n"
+"PO-Revision-Date: 2026-04-02 10:23+0000\n"
 "Last-Translator: Léane GRASSER <leane.grasser@proton.me>\n"
 "Language-Team: French <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/fr/>\n"
@@ -66,24 +66,28 @@ msgstr "Consultez tous vos éléments exécutés au démarrage, en mode sombre."
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:54
 msgid "Bug Fixes and Changes"
-msgstr ""
+msgstr "Changements et corrections de bugs"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:56
 msgid "Updated to GNOME 50 technologies"
-msgstr ""
+msgstr "Mise à jour vers les technologies GNOME 50"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:57
 msgid "Fixed issue where overridden entries don't update properly"
 msgstr ""
+"Correction d'un problème empêchant la bonne mise à jour des entrées "
+"contournées"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:58
 msgid ""
 "Fixed issue where the same entries would appear in the list multiple times"
 msgstr ""
+"Correction d'un problème d'affichage faisant apparaître en double certaines "
+"entrées"
 
 #: data/io.github.flattool.Ignition.metainfo.xml.in:59
 msgid "Fixed missing search button icons"
-msgstr ""
+msgstr "Correction des icônes de recherche manquantes"
 
 #: src/main.ts:56
 msgid "Donate"
