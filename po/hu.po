@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-01 19:17-0400\n"
+"POT-Creation-Date: 2026-05-25 02:11-0400\n"
 "PO-Revision-Date: 2025-06-10 20:46+0000\n"
 "Last-Translator: Benedek Dévényi <rdbende@proton.me>\n"
 "Language-Team: Hungarian <https://weblate.fyralabs.com/projects/flattool/"
@@ -85,62 +85,66 @@ msgstr ""
 msgid "Fixed missing search button icons"
 msgstr ""
 
-#: src/main.ts:56
+#: data/io.github.flattool.Ignition.metainfo.xml.in:60
+msgid "Added and updated translations"
+msgstr ""
+
+#: src/main.ts:57
 msgid "Donate"
 msgstr "Adományozás"
 
-#: src/pages/apps_list_page.blp:16
+#: src/pages/apps_list_page.blp:13
 msgid "Add or Create an Entry"
 msgstr "Bejegyzés létrehozása vagy hozzáadása"
 
-#: src/pages/apps_list_page.blp:36
+#: src/pages/apps_list_page.blp:33
 msgid "Search apps"
 msgstr "Alkalmazások keresése"
 
-#: src/pages/apps_list_page.blp:43
+#: src/pages/apps_list_page.blp:40
 #, fuzzy
 #| msgctxt "shortcut window"
 #| msgid "Search Entries"
 msgid "Loading Apps"
 msgstr "Bejegyzések keresése"
 
-#: src/pages/apps_list_page.blp:44
+#: src/pages/apps_list_page.blp:41
 #, fuzzy
 #| msgid "This should only take a moment."
 msgid "This should only take a moment"
 msgstr "Egy szempillantás, és kész is van."
 
-#: src/pages/apps_list_page.blp:66
+#: src/pages/apps_list_page.blp:63
 msgid "Commands and Scripts"
 msgstr "Parancsok és szkriptek"
 
-#: src/pages/apps_list_page.blp:67
+#: src/pages/apps_list_page.blp:64
 msgid "Run a command or script when you log in."
 msgstr "Parancs vagy szkript futtatása bejelentkezéskor."
 
-#: src/pages/apps_list_page.blp:73
+#: src/pages/apps_list_page.blp:70
 msgid "Add a Command or Script"
 msgstr "Parancs vagy szkript hozzáadása"
 
-#: src/pages/apps_list_page.blp:74
+#: src/pages/apps_list_page.blp:71
 msgid "Enter the command to run or path to your script"
 msgstr "Adja meg a futtatni kívánt parancsot vagy a szkript elérési útját"
 
-#: src/pages/apps_list_page.blp:98
+#: src/pages/apps_list_page.blp:95
 msgid "Installed Apps"
 msgstr "Telepített alkalmazások"
 
-#: src/pages/apps_list_page.blp:99
+#: src/pages/apps_list_page.blp:96
 #, fuzzy
 #| msgid "Add an app or script to run it at login."
 msgid "Choose any installed apps to run when you log in."
 msgstr "Adjon hozzá egy automatikusan elindítandó programot."
 
-#: src/pages/apps_list_page.blp:105
+#: src/pages/apps_list_page.blp:102
 msgid "Show Hidden Apps"
 msgstr ""
 
-#: src/pages/apps_list_page.blp:106
+#: src/pages/apps_list_page.blp:103
 msgid "Show apps that are hidden from the app menu"
 msgstr ""
 
@@ -224,53 +228,53 @@ msgstr ""
 "Illessze be ide egy szkriptfájl elérési útját. Az elérési utat a "
 "fájlkezelőből is átmásolhatja. Győződjön meg róla, hogy a fájl végrehajtható."
 
-#: src/pages/details_page.ts:55 src/shortcuts-dialog.blp:9
+#: src/pages/details_page.ts:54 src/shortcuts-dialog.blp:9
 msgid "New Entry"
 msgstr "Új bejegyzés"
 
-#: src/pages/details_page.ts:159
+#: src/pages/details_page.ts:158
 msgid "Issues occurred while saving details"
 msgstr ""
 
-#: src/pages/details_page.ts:178
+#: src/pages/details_page.ts:177
 msgid "Issues occurred while saving"
 msgstr ""
 
-#: src/pages/details_page.ts:191
+#: src/pages/details_page.ts:190
 #, fuzzy
 #| msgid "Could not save file"
 msgid "Could not create entry"
 msgstr "A fájlt nem sikerült menteni"
 
-#: src/pages/details_page.ts:199
+#: src/pages/details_page.ts:198
 msgid "Issues occurred while creating entry"
 msgstr ""
 
-#: src/pages/details_page.ts:210
+#: src/pages/details_page.ts:209
 msgid "Issues occurred while overriding"
 msgstr ""
 
-#: src/pages/details_page.ts:218
+#: src/pages/details_page.ts:217
 #, fuzzy
 #| msgid "Trashed Entry"
 msgid "Trash Entry?"
 msgstr "Bejegyzés törölve"
 
-#: src/pages/details_page.ts:219
+#: src/pages/details_page.ts:218
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
 msgstr ""
 
-#: src/pages/details_page.ts:221
+#: src/pages/details_page.ts:220
 msgid "Cancel"
 msgstr "Mégse"
 
-#: src/pages/details_page.ts:222
+#: src/pages/details_page.ts:221
 msgid "Trash"
 msgstr ""
 
-#: src/pages/details_page.ts:237
+#: src/pages/details_page.ts:236
 msgid "Issues occurred while trashing"
 msgstr ""
 
@@ -344,10 +348,8 @@ msgid "_Keyboard Shortcuts"
 msgstr "_Gyorsbillentyűk"
 
 #: src/pages/entries_page.blp:173
-#, fuzzy
-#| msgid "No description"
-msgid "_About Descriptive"
-msgstr "Nincs leírás"
+msgid "_About Ignition"
+msgstr "Az Önindító _névjegye"
 
 #: src/shortcuts-dialog.blp:6
 #, fuzzy
@@ -441,28 +443,28 @@ msgid "No comment set."
 msgstr "Nincs leírás."
 
 #. Translators: %d is the number of seconds of delay before the app starts
-#: src/widgets/entry_row.ts:49
+#: src/widgets/entry_row.ts:50
 #, javascript-format
 msgid "Starts after %d seconds"
 msgstr ""
 
-#: src/widgets/entry_row.ts:51
+#: src/widgets/entry_row.ts:52
 msgid "Enabled"
 msgstr "Engedélyezve"
 
-#: src/widgets/entry_row.ts:54
+#: src/widgets/entry_row.ts:55
 msgid "Disabled"
 msgstr "Letiltva"
 
-#: src/widgets/entry_row.ts:58
+#: src/widgets/entry_row.ts:59
 msgid "This entry is overridden by a user entry."
 msgstr "Ezt a bejegyzést egy felülírja egy felhasználói bejegyzés."
 
-#: src/widgets/entry_row.ts:59
+#: src/widgets/entry_row.ts:60
 msgid "Overridden"
 msgstr "Felülírva"
 
-#: src/widgets/entry_row.ts:61
+#: src/widgets/entry_row.ts:62
 msgid "This entry overrides a system entry."
 msgstr "Ez a bejegyzés felülír egy rendszerbejegyzést."
 
@@ -552,6 +554,11 @@ msgstr "Nincs találat"
 msgid "Try a different search."
 msgstr "Próbálkozzon valami mással."
 
+#, fuzzy
+#~| msgid "No description"
+#~ msgid "_About Descriptive"
+#~ msgstr "Nincs leírás"
+
 #~ msgid "Welcome"
 #~ msgstr "Üdv!"
 
@@ -606,9 +613,6 @@ msgstr "Próbálkozzon valami mással."
 
 #~ msgid "Could not trash file"
 #~ msgstr "A fájlt nem sikerült törölni"
-
-#~ msgid "_About Ignition"
-#~ msgstr "Az Önindító _névjegye"
 
 #, fuzzy
 #~| msgid "Could not load some apps"

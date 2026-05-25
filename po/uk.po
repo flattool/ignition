@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-01 19:17-0400\n"
+"POT-Creation-Date: 2026-05-25 02:11-0400\n"
 "PO-Revision-Date: 2026-04-07 04:58+0000\n"
 "Last-Translator: Andrii Serbovets <serbovets.translation@gmail.com>\n"
 "Language-Team: Ukrainian <https://weblate.fyralabs.com/projects/flattool/"
@@ -86,57 +86,61 @@ msgstr ""
 msgid "Fixed missing search button icons"
 msgstr "Додано значки, яких бракувало на кнопці пошуку"
 
-#: src/main.ts:56
+#: data/io.github.flattool.Ignition.metainfo.xml.in:60
+msgid "Added and updated translations"
+msgstr ""
+
+#: src/main.ts:57
 msgid "Donate"
 msgstr "Підтримка грошима"
 
-#: src/pages/apps_list_page.blp:16
+#: src/pages/apps_list_page.blp:13
 msgid "Add or Create an Entry"
 msgstr "Створення запису"
 
-#: src/pages/apps_list_page.blp:36
+#: src/pages/apps_list_page.blp:33
 msgid "Search apps"
 msgstr "Шукати додатки"
 
-#: src/pages/apps_list_page.blp:43
+#: src/pages/apps_list_page.blp:40
 msgid "Loading Apps"
 msgstr "Завантаження переліку програм"
 
-#: src/pages/apps_list_page.blp:44
+#: src/pages/apps_list_page.blp:41
 msgid "This should only take a moment"
 msgstr "Це не займе багато часу"
 
-#: src/pages/apps_list_page.blp:66
+#: src/pages/apps_list_page.blp:63
 msgid "Commands and Scripts"
 msgstr "Команда чи сценарій"
 
-#: src/pages/apps_list_page.blp:67
+#: src/pages/apps_list_page.blp:64
 msgid "Run a command or script when you log in."
 msgstr "Вкажіть команду чи сценарій для запуску під час входу в систему."
 
-#: src/pages/apps_list_page.blp:73
+#: src/pages/apps_list_page.blp:70
 msgid "Add a Command or Script"
 msgstr "Додати команду чи сценарій"
 
-#: src/pages/apps_list_page.blp:74
+#: src/pages/apps_list_page.blp:71
 msgid "Enter the command to run or path to your script"
 msgstr "Введіть команду чи шлях до сценарію"
 
-#: src/pages/apps_list_page.blp:98
+#: src/pages/apps_list_page.blp:95
 msgid "Installed Apps"
 msgstr "Установлені програми"
 
-#: src/pages/apps_list_page.blp:99
+#: src/pages/apps_list_page.blp:96
 msgid "Choose any installed apps to run when you log in."
 msgstr ""
 "Виберіть, яку зі встановлених програм треба запустити, коли входитимете в "
 "систему."
 
-#: src/pages/apps_list_page.blp:105
+#: src/pages/apps_list_page.blp:102
 msgid "Show Hidden Apps"
 msgstr "Показати приховані"
 
-#: src/pages/apps_list_page.blp:106
+#: src/pages/apps_list_page.blp:103
 msgid "Show apps that are hidden from the app menu"
 msgstr "Ви бачитемете програми, яких не видно в меню програм"
 
@@ -219,35 +223,35 @@ msgstr ""
 "(його можна швидко скопіювати у файловому менеджері). Переконайтеся, що "
 "позначили скрипт як виконуваний"
 
-#: src/pages/details_page.ts:55 src/shortcuts-dialog.blp:9
+#: src/pages/details_page.ts:54 src/shortcuts-dialog.blp:9
 msgid "New Entry"
 msgstr "Новий запис"
 
-#: src/pages/details_page.ts:159
+#: src/pages/details_page.ts:158
 msgid "Issues occurred while saving details"
 msgstr "Виявлено помилки під час збереження подробиць"
 
-#: src/pages/details_page.ts:178
+#: src/pages/details_page.ts:177
 msgid "Issues occurred while saving"
 msgstr "Виявлено помилки під час збереження"
 
-#: src/pages/details_page.ts:191
+#: src/pages/details_page.ts:190
 msgid "Could not create entry"
 msgstr "Не вдалося створити запис"
 
-#: src/pages/details_page.ts:199
+#: src/pages/details_page.ts:198
 msgid "Issues occurred while creating entry"
 msgstr "Виявлено помилки під час створення запису"
 
-#: src/pages/details_page.ts:210
+#: src/pages/details_page.ts:209
 msgid "Issues occurred while overriding"
 msgstr "Виявлено помилки під час заміщення"
 
-#: src/pages/details_page.ts:218
+#: src/pages/details_page.ts:217
 msgid "Trash Entry?"
 msgstr "Перемістити запис у смітник?"
 
-#: src/pages/details_page.ts:219
+#: src/pages/details_page.ts:218
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
@@ -255,15 +259,15 @@ msgstr ""
 "Ви відправите цей запис у смітник, і він не виконуватиметься під час входу в "
 "систему."
 
-#: src/pages/details_page.ts:221
+#: src/pages/details_page.ts:220
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: src/pages/details_page.ts:222
+#: src/pages/details_page.ts:221
 msgid "Trash"
 msgstr "У смітник"
 
-#: src/pages/details_page.ts:237
+#: src/pages/details_page.ts:236
 msgid "Issues occurred while trashing"
 msgstr "Виявлено помилки під час переміщення у смітник"
 
@@ -325,8 +329,8 @@ msgid "_Keyboard Shortcuts"
 msgstr "_Клавіатурні скорочення"
 
 #: src/pages/entries_page.blp:173
-msgid "_About Descriptive"
-msgstr "_Про програму"
+msgid "_About Ignition"
+msgstr "_Про Ignition"
 
 #: src/shortcuts-dialog.blp:6
 msgid "Entries List"
@@ -390,28 +394,28 @@ msgid "No comment set."
 msgstr "Немає коментаря."
 
 #. Translators: %d is the number of seconds of delay before the app starts
-#: src/widgets/entry_row.ts:49
+#: src/widgets/entry_row.ts:50
 #, javascript-format
 msgid "Starts after %d seconds"
 msgstr "Запускається із затримкою %d с"
 
-#: src/widgets/entry_row.ts:51
+#: src/widgets/entry_row.ts:52
 msgid "Enabled"
 msgstr "Увімкнено"
 
-#: src/widgets/entry_row.ts:54
+#: src/widgets/entry_row.ts:55
 msgid "Disabled"
 msgstr "Вимкнено"
 
-#: src/widgets/entry_row.ts:58
+#: src/widgets/entry_row.ts:59
 msgid "This entry is overridden by a user entry."
 msgstr "Цей запис заміщено користувацьким."
 
-#: src/widgets/entry_row.ts:59
+#: src/widgets/entry_row.ts:60
 msgid "Overridden"
 msgstr "Заміщено"
 
-#: src/widgets/entry_row.ts:61
+#: src/widgets/entry_row.ts:62
 msgid "This entry overrides a system entry."
 msgstr "Цей запис заміщує системний."
 
@@ -495,6 +499,9 @@ msgstr "Не вдалося нічого знайти"
 msgid "Try a different search."
 msgstr "Пошукайте щось інше."
 
+#~ msgid "_About Descriptive"
+#~ msgstr "_Про програму"
+
 #~ msgid "Welcome"
 #~ msgstr "Ласкаво просимо"
 
@@ -565,9 +572,6 @@ msgstr "Пошукайте щось інше."
 
 #~ msgid "Could not trash file"
 #~ msgstr "Не вдалося перемістити запис у смітник"
-
-#~ msgid "_About Ignition"
-#~ msgstr "_Про Ignition"
 
 #~ msgid "Could not load some entries"
 #~ msgstr "Не вдалося завантажити деякі записи"
