@@ -52,12 +52,12 @@ export class MainWindow extends from(Adw.ApplicationWindow, {
 	}
 
 	protected _on_created_entry(__: DetailsPage, entry: AutostartEntry | null): void {
-		if (entry) add_toast(_(`Created ${entry.name}`))
+		if (entry) add_toast(_("Created").format(entry.name))
 		this._nav_view.pop_to_tag(PageTags.ENTRIES)
 	}
 
 	protected _on_trashed_entry(__: DetailsPage, entry: AutostartEntry | null): void {
-		if (entry) add_toast(_(`Trashed ${entry.name}`))
+		if (entry) add_toast(_("Removed").format(entry.name))
 		this._nav_view.pop_to_tag(PageTags.ENTRIES)
 	}
 }
