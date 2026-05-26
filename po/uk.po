@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-25 02:11-0400\n"
+"POT-Creation-Date: 2026-05-25 17:49-0400\n"
 "PO-Revision-Date: 2026-04-07 04:58+0000\n"
 "Last-Translator: Andrii Serbovets <serbovets.translation@gmail.com>\n"
 "Language-Team: Ukrainian <https://weblate.fyralabs.com/projects/flattool/"
@@ -231,27 +231,31 @@ msgstr "Новий запис"
 msgid "Issues occurred while saving details"
 msgstr "Виявлено помилки під час збереження подробиць"
 
-#: src/pages/details_page.ts:177
-msgid "Issues occurred while saving"
-msgstr "Виявлено помилки під час збереження"
+#: src/pages/details_page.ts:165
+msgid "Trash Failed. Delete Entry Instead?"
+msgstr ""
 
-#: src/pages/details_page.ts:190
-msgid "Could not create entry"
+#: src/pages/details_page.ts:166
+msgid ""
+"Instead of moving to the trash, the entry will be permanently deleted. This "
+"is not recoverable."
+msgstr ""
+
+#: src/pages/details_page.ts:167
+msgid "Delete"
+msgstr ""
+
+#: src/pages/details_page.ts:183
+#, fuzzy
+#| msgid "Could not create entry"
+msgid "Could not delete entry"
 msgstr "Не вдалося створити запис"
 
-#: src/pages/details_page.ts:198
-msgid "Issues occurred while creating entry"
-msgstr "Виявлено помилки під час створення запису"
-
-#: src/pages/details_page.ts:209
-msgid "Issues occurred while overriding"
-msgstr "Виявлено помилки під час заміщення"
-
-#: src/pages/details_page.ts:217
+#: src/pages/details_page.ts:194
 msgid "Trash Entry?"
 msgstr "Перемістити запис у смітник?"
 
-#: src/pages/details_page.ts:218
+#: src/pages/details_page.ts:195
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
@@ -259,17 +263,25 @@ msgstr ""
 "Ви відправите цей запис у смітник, і він не виконуватиметься під час входу в "
 "систему."
 
-#: src/pages/details_page.ts:220
-msgid "Cancel"
-msgstr "Скасувати"
-
-#: src/pages/details_page.ts:221
+#: src/pages/details_page.ts:196
 msgid "Trash"
 msgstr "У смітник"
 
-#: src/pages/details_page.ts:236
-msgid "Issues occurred while trashing"
-msgstr "Виявлено помилки під час переміщення у смітник"
+#: src/pages/details_page.ts:241
+msgid "Issues occurred while saving"
+msgstr "Виявлено помилки під час збереження"
+
+#: src/pages/details_page.ts:254
+msgid "Could not create entry"
+msgstr "Не вдалося створити запис"
+
+#: src/pages/details_page.ts:262
+msgid "Issues occurred while creating entry"
+msgstr "Виявлено помилки під час створення запису"
+
+#: src/pages/details_page.ts:273
+msgid "Issues occurred while overriding"
+msgstr "Виявлено помилки під час заміщення"
 
 #: src/pages/entries_page.blp:52
 msgid "Main Menu"
@@ -372,15 +384,19 @@ msgstr "Показати клавіатурні скорочення"
 msgid "Quit"
 msgstr "Вийти"
 
-#: src/utils/helper_funcs.ts:39
+#: src/utils/helper_funcs.ts:33
+msgid "Cancel"
+msgstr "Скасувати"
+
+#: src/utils/helper_funcs.ts:58
 msgid "Copy"
 msgstr "Копіювати"
 
-#: src/utils/helper_funcs.ts:40
+#: src/utils/helper_funcs.ts:59
 msgid "OK"
 msgstr "Гаразд"
 
-#: src/utils/helper_funcs.ts:49
+#: src/utils/helper_funcs.ts:68
 msgid "Details"
 msgstr "подробиці"
 
@@ -498,6 +514,19 @@ msgstr "Не вдалося нічого знайти"
 #: src/widgets/search_group.blp:14
 msgid "Try a different search."
 msgstr "Пошукайте щось інше."
+
+#: src/window/main_window.ts:55
+#, fuzzy
+#| msgid "Create"
+msgid "Created"
+msgstr "Створити"
+
+#: src/window/main_window.ts:60
+msgid "Removed"
+msgstr ""
+
+#~ msgid "Issues occurred while trashing"
+#~ msgstr "Виявлено помилки під час переміщення у смітник"
 
 #~ msgid "_About Descriptive"
 #~ msgstr "_Про програму"

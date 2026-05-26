@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-25 02:11-0400\n"
+"POT-Creation-Date: 2026-05-25 17:49-0400\n"
 "PO-Revision-Date: 2026-01-27 03:42+0000\n"
 "Last-Translator: 提及 <q962_@outlook.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://weblate.fyralabs.com/"
@@ -223,43 +223,55 @@ msgstr "新条目"
 msgid "Issues occurred while saving details"
 msgstr "保存详情时出现问题"
 
-#: src/pages/details_page.ts:177
-msgid "Issues occurred while saving"
-msgstr "保存时出现问题"
+#: src/pages/details_page.ts:165
+msgid "Trash Failed. Delete Entry Instead?"
+msgstr ""
 
-#: src/pages/details_page.ts:190
-msgid "Could not create entry"
+#: src/pages/details_page.ts:166
+msgid ""
+"Instead of moving to the trash, the entry will be permanently deleted. This "
+"is not recoverable."
+msgstr ""
+
+#: src/pages/details_page.ts:167
+msgid "Delete"
+msgstr ""
+
+#: src/pages/details_page.ts:183
+#, fuzzy
+#| msgid "Could not create entry"
+msgid "Could not delete entry"
 msgstr "无法创建条目"
 
-#: src/pages/details_page.ts:198
-msgid "Issues occurred while creating entry"
-msgstr "创建条目时出现问题"
-
-#: src/pages/details_page.ts:209
-msgid "Issues occurred while overriding"
-msgstr "覆盖时发生问题"
-
-#: src/pages/details_page.ts:217
+#: src/pages/details_page.ts:194
 msgid "Trash Entry?"
 msgstr "垃圾条目?"
 
-#: src/pages/details_page.ts:218
+#: src/pages/details_page.ts:195
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
 msgstr "此条目将被移至回收站，且登录时将不再启动。"
 
-#: src/pages/details_page.ts:220
-msgid "Cancel"
-msgstr "关闭"
-
-#: src/pages/details_page.ts:221
+#: src/pages/details_page.ts:196
 msgid "Trash"
 msgstr "删除"
 
-#: src/pages/details_page.ts:236
-msgid "Issues occurred while trashing"
-msgstr "清理时出现问题"
+#: src/pages/details_page.ts:241
+msgid "Issues occurred while saving"
+msgstr "保存时出现问题"
+
+#: src/pages/details_page.ts:254
+msgid "Could not create entry"
+msgstr "无法创建条目"
+
+#: src/pages/details_page.ts:262
+msgid "Issues occurred while creating entry"
+msgstr "创建条目时出现问题"
+
+#: src/pages/details_page.ts:273
+msgid "Issues occurred while overriding"
+msgstr "覆盖时发生问题"
 
 #: src/pages/entries_page.blp:52
 msgid "Main Menu"
@@ -363,15 +375,19 @@ msgstr "显示快捷键"
 msgid "Quit"
 msgstr "退出"
 
-#: src/utils/helper_funcs.ts:39
+#: src/utils/helper_funcs.ts:33
+msgid "Cancel"
+msgstr "关闭"
+
+#: src/utils/helper_funcs.ts:58
 msgid "Copy"
 msgstr "复制"
 
-#: src/utils/helper_funcs.ts:40
+#: src/utils/helper_funcs.ts:59
 msgid "OK"
 msgstr "好的"
 
-#: src/utils/helper_funcs.ts:49
+#: src/utils/helper_funcs.ts:68
 msgid "Details"
 msgstr "详情"
 
@@ -485,6 +501,19 @@ msgstr "没有找到结果"
 #: src/widgets/search_group.blp:14
 msgid "Try a different search."
 msgstr "尝试不同的搜索。"
+
+#: src/window/main_window.ts:55
+#, fuzzy
+#| msgid "Create"
+msgid "Created"
+msgstr "创建"
+
+#: src/window/main_window.ts:60
+msgid "Removed"
+msgstr ""
+
+#~ msgid "Issues occurred while trashing"
+#~ msgstr "清理时出现问题"
 
 #~ msgid "_About Descriptive"
 #~ msgstr "关于(_A)"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-25 02:11-0400\n"
+"POT-Creation-Date: 2026-05-25 17:49-0400\n"
 "PO-Revision-Date: 2026-02-01 22:04+0000\n"
 "Last-Translator: Mu7ammed Basha <dash-unbeaten-five@duck.com>\n"
 "Language-Team: Arabic <https://weblate.fyralabs.com/projects/flattool/"
@@ -226,43 +226,55 @@ msgstr "مُدخلة جديدة"
 msgid "Issues occurred while saving details"
 msgstr "حدثت أخطاء أثناء حفظ التفاصيل"
 
-#: src/pages/details_page.ts:177
-msgid "Issues occurred while saving"
-msgstr "حدثت أخطاء أثناء الحفظ"
+#: src/pages/details_page.ts:165
+msgid "Trash Failed. Delete Entry Instead?"
+msgstr ""
 
-#: src/pages/details_page.ts:190
-msgid "Could not create entry"
+#: src/pages/details_page.ts:166
+msgid ""
+"Instead of moving to the trash, the entry will be permanently deleted. This "
+"is not recoverable."
+msgstr ""
+
+#: src/pages/details_page.ts:167
+msgid "Delete"
+msgstr ""
+
+#: src/pages/details_page.ts:183
+#, fuzzy
+#| msgid "Could not create entry"
+msgid "Could not delete entry"
 msgstr "تعذَّر إنشاء المُدخلة"
 
-#: src/pages/details_page.ts:198
-msgid "Issues occurred while creating entry"
-msgstr "حدثت أخطاء أثناء إنشاء المُدخلة"
-
-#: src/pages/details_page.ts:209
-msgid "Issues occurred while overriding"
-msgstr "حدثت أخطاء أثناء التجاوز"
-
-#: src/pages/details_page.ts:217
+#: src/pages/details_page.ts:194
 msgid "Trash Entry?"
 msgstr "أأنقل المُدخلة إلى المهملات؟"
 
-#: src/pages/details_page.ts:218
+#: src/pages/details_page.ts:195
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
 msgstr "ستُنقل هذه المُدخلة إلى المهملات، ولن يبدأ تشغيلها عند ولوجك بعد الآن."
 
-#: src/pages/details_page.ts:220
-msgid "Cancel"
-msgstr "ألغِ"
-
-#: src/pages/details_page.ts:221
+#: src/pages/details_page.ts:196
 msgid "Trash"
 msgstr "انقل للمهملات"
 
-#: src/pages/details_page.ts:236
-msgid "Issues occurred while trashing"
-msgstr "حدثت أخطاء أثناء النقل للمهملات"
+#: src/pages/details_page.ts:241
+msgid "Issues occurred while saving"
+msgstr "حدثت أخطاء أثناء الحفظ"
+
+#: src/pages/details_page.ts:254
+msgid "Could not create entry"
+msgstr "تعذَّر إنشاء المُدخلة"
+
+#: src/pages/details_page.ts:262
+msgid "Issues occurred while creating entry"
+msgstr "حدثت أخطاء أثناء إنشاء المُدخلة"
+
+#: src/pages/details_page.ts:273
+msgid "Issues occurred while overriding"
+msgstr "حدثت أخطاء أثناء التجاوز"
 
 #: src/pages/entries_page.blp:52
 msgid "Main Menu"
@@ -366,15 +378,19 @@ msgstr "أظهِر الاختصارات"
 msgid "Quit"
 msgstr "غادر"
 
-#: src/utils/helper_funcs.ts:39
+#: src/utils/helper_funcs.ts:33
+msgid "Cancel"
+msgstr "ألغِ"
+
+#: src/utils/helper_funcs.ts:58
 msgid "Copy"
 msgstr "انسخ"
 
-#: src/utils/helper_funcs.ts:40
+#: src/utils/helper_funcs.ts:59
 msgid "OK"
 msgstr "حسنًا"
 
-#: src/utils/helper_funcs.ts:49
+#: src/utils/helper_funcs.ts:68
 msgid "Details"
 msgstr "التفاصيل"
 
@@ -492,6 +508,19 @@ msgstr "لم يُعثر على نتائج"
 #: src/widgets/search_group.blp:14
 msgid "Try a different search."
 msgstr "جرِّب بحثًا مختلفًا."
+
+#: src/window/main_window.ts:55
+#, fuzzy
+#| msgid "Create"
+msgid "Created"
+msgstr "أنشئ"
+
+#: src/window/main_window.ts:60
+msgid "Removed"
+msgstr ""
+
+#~ msgid "Issues occurred while trashing"
+#~ msgstr "حدثت أخطاء أثناء النقل للمهملات"
 
 #~ msgid "_About Descriptive"
 #~ msgstr "_حول موصفة"
