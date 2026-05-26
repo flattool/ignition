@@ -13,3 +13,4 @@ src/widgets/entry_row.blp
 src/widgets/entry_row.ts
 src/widgets/help_dialog.blp
 src/widgets/search_group.blp
+src/window/main_window.ts
