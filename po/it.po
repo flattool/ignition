@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-25 02:11-0400\n"
+"POT-Creation-Date: 2026-05-25 17:49-0400\n"
 "PO-Revision-Date: 2026-01-21 21:04+0000\n"
 "Last-Translator: albanobattistella <albano_battistella@hotmail.com>\n"
 "Language-Team: Italian <https://weblate.fyralabs.com/projects/flattool/"
@@ -227,44 +227,56 @@ msgstr "Nuova voce"
 msgid "Issues occurred while saving details"
 msgstr "Si sono verificati problemi durante il salvataggio dei dettagli"
 
-#: src/pages/details_page.ts:177
-msgid "Issues occurred while saving"
-msgstr "Si sono verificati problemi durante il salvataggio"
+#: src/pages/details_page.ts:165
+msgid "Trash Failed. Delete Entry Instead?"
+msgstr ""
 
-#: src/pages/details_page.ts:190
-msgid "Could not create entry"
+#: src/pages/details_page.ts:166
+msgid ""
+"Instead of moving to the trash, the entry will be permanently deleted. This "
+"is not recoverable."
+msgstr ""
+
+#: src/pages/details_page.ts:167
+msgid "Delete"
+msgstr ""
+
+#: src/pages/details_page.ts:183
+#, fuzzy
+#| msgid "Could not create entry"
+msgid "Could not delete entry"
 msgstr "Impossibile creare la voce"
 
-#: src/pages/details_page.ts:198
-msgid "Issues occurred while creating entry"
-msgstr "Si sono verificati problemi durante la creazione della voce"
-
-#: src/pages/details_page.ts:209
-msgid "Issues occurred while overriding"
-msgstr "Si sono verificati problemi durante l'override"
-
-#: src/pages/details_page.ts:217
+#: src/pages/details_page.ts:194
 msgid "Trash Entry?"
 msgstr "Spostare la voce nel cestino?"
 
-#: src/pages/details_page.ts:218
+#: src/pages/details_page.ts:195
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
 msgstr ""
 "Questa voce verrà spostata nel cestino, e non sarà più eseguita all'accesso."
 
-#: src/pages/details_page.ts:220
-msgid "Cancel"
-msgstr "Annulla"
-
-#: src/pages/details_page.ts:221
+#: src/pages/details_page.ts:196
 msgid "Trash"
 msgstr "Cestino"
 
-#: src/pages/details_page.ts:236
-msgid "Issues occurred while trashing"
-msgstr "Si sono verificati dei problemi durante lo spostamento nel cestino"
+#: src/pages/details_page.ts:241
+msgid "Issues occurred while saving"
+msgstr "Si sono verificati problemi durante il salvataggio"
+
+#: src/pages/details_page.ts:254
+msgid "Could not create entry"
+msgstr "Impossibile creare la voce"
+
+#: src/pages/details_page.ts:262
+msgid "Issues occurred while creating entry"
+msgstr "Si sono verificati problemi durante la creazione della voce"
+
+#: src/pages/details_page.ts:273
+msgid "Issues occurred while overriding"
+msgstr "Si sono verificati problemi durante l'override"
 
 #: src/pages/entries_page.blp:52
 msgid "Main Menu"
@@ -366,15 +378,19 @@ msgstr "Mostra scorciatoie"
 msgid "Quit"
 msgstr "Esci"
 
-#: src/utils/helper_funcs.ts:39
+#: src/utils/helper_funcs.ts:33
+msgid "Cancel"
+msgstr "Annulla"
+
+#: src/utils/helper_funcs.ts:58
 msgid "Copy"
 msgstr "Copia"
 
-#: src/utils/helper_funcs.ts:40
+#: src/utils/helper_funcs.ts:59
 msgid "OK"
 msgstr "OK"
 
-#: src/utils/helper_funcs.ts:49
+#: src/utils/helper_funcs.ts:68
 msgid "Details"
 msgstr "Dettagli"
 
@@ -499,6 +515,19 @@ msgstr "Nessun risultato trovato"
 #: src/widgets/search_group.blp:14
 msgid "Try a different search."
 msgstr "Prova una ricerca diversa."
+
+#: src/window/main_window.ts:55
+#, fuzzy
+#| msgid "Create"
+msgid "Created"
+msgstr "Crea"
+
+#: src/window/main_window.ts:60
+msgid "Removed"
+msgstr ""
+
+#~ msgid "Issues occurred while trashing"
+#~ msgstr "Si sono verificati dei problemi durante lo spostamento nel cestino"
 
 #~ msgid "_About Descriptive"
 #~ msgstr "_Informazioni descrittive"

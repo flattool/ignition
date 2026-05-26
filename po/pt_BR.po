@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-25 02:11-0400\n"
+"POT-Creation-Date: 2026-05-25 17:49-0400\n"
 "PO-Revision-Date: 2025-05-09 21:46+0000\n"
 "Last-Translator: lucasmz <git@lucasmz.dev>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.fyralabs.com/projects/"
@@ -238,31 +238,33 @@ msgstr "Nova Entrada"
 msgid "Issues occurred while saving details"
 msgstr ""
 
-#: src/pages/details_page.ts:177
-msgid "Issues occurred while saving"
+#: src/pages/details_page.ts:165
+msgid "Trash Failed. Delete Entry Instead?"
 msgstr ""
 
-#: src/pages/details_page.ts:190
+#: src/pages/details_page.ts:166
+msgid ""
+"Instead of moving to the trash, the entry will be permanently deleted. This "
+"is not recoverable."
+msgstr ""
+
+#: src/pages/details_page.ts:167
+msgid "Delete"
+msgstr ""
+
+#: src/pages/details_page.ts:183
 #, fuzzy
 #| msgid "Could not create file"
-msgid "Could not create entry"
+msgid "Could not delete entry"
 msgstr "Não foi possível criar o arquivo"
 
-#: src/pages/details_page.ts:198
-msgid "Issues occurred while creating entry"
-msgstr ""
-
-#: src/pages/details_page.ts:209
-msgid "Issues occurred while overriding"
-msgstr ""
-
-#: src/pages/details_page.ts:217
+#: src/pages/details_page.ts:194
 #, fuzzy
 #| msgid "Trach Entry?"
 msgid "Trash Entry?"
 msgstr "Descartar Entrada?"
 
-#: src/pages/details_page.ts:218
+#: src/pages/details_page.ts:195
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
@@ -270,16 +272,26 @@ msgstr ""
 "Esta entrada será movida à lixeira e não se inicializará mais quando fizer "
 "login."
 
-#: src/pages/details_page.ts:220
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: src/pages/details_page.ts:221
+#: src/pages/details_page.ts:196
 msgid "Trash"
 msgstr "Lixeira"
 
-#: src/pages/details_page.ts:236
-msgid "Issues occurred while trashing"
+#: src/pages/details_page.ts:241
+msgid "Issues occurred while saving"
+msgstr ""
+
+#: src/pages/details_page.ts:254
+#, fuzzy
+#| msgid "Could not create file"
+msgid "Could not create entry"
+msgstr "Não foi possível criar o arquivo"
+
+#: src/pages/details_page.ts:262
+msgid "Issues occurred while creating entry"
+msgstr ""
+
+#: src/pages/details_page.ts:273
+msgid "Issues occurred while overriding"
 msgstr ""
 
 #: src/pages/entries_page.blp:52
@@ -412,15 +424,19 @@ msgstr "Mostrar atalhos do teclado"
 msgid "Quit"
 msgstr "Sair"
 
-#: src/utils/helper_funcs.ts:39
+#: src/utils/helper_funcs.ts:33
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: src/utils/helper_funcs.ts:58
 msgid "Copy"
 msgstr "Copiar"
 
-#: src/utils/helper_funcs.ts:40
+#: src/utils/helper_funcs.ts:59
 msgid "OK"
 msgstr "OK"
 
-#: src/utils/helper_funcs.ts:49
+#: src/utils/helper_funcs.ts:68
 msgid "Details"
 msgstr "Detalhes"
 
@@ -542,6 +558,16 @@ msgstr "Nenhum resultado encontrado"
 #: src/widgets/search_group.blp:14
 msgid "Try a different search."
 msgstr "Tente uma pesquisa diferente."
+
+#: src/window/main_window.ts:55
+#, fuzzy
+#| msgid "Create"
+msgid "Created"
+msgstr "Criar"
+
+#: src/window/main_window.ts:60
+msgid "Removed"
+msgstr ""
 
 #, fuzzy
 #~| msgid "No description"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-25 02:11-0400\n"
+"POT-Creation-Date: 2026-05-25 17:49-0400\n"
 "PO-Revision-Date: 2026-03-07 14:53+0000\n"
 "Last-Translator: p-bo <pavel.borecki@gmail.com>\n"
 "Language-Team: Czech <https://weblate.fyralabs.com/projects/flattool/"
@@ -229,44 +229,56 @@ msgstr "Nová položka"
 msgid "Issues occurred while saving details"
 msgstr "Při ukládání podrobností došlo k problémům"
 
-#: src/pages/details_page.ts:177
-msgid "Issues occurred while saving"
-msgstr "Při ukládání došlo k problémům"
+#: src/pages/details_page.ts:165
+msgid "Trash Failed. Delete Entry Instead?"
+msgstr ""
 
-#: src/pages/details_page.ts:190
-msgid "Could not create entry"
+#: src/pages/details_page.ts:166
+msgid ""
+"Instead of moving to the trash, the entry will be permanently deleted. This "
+"is not recoverable."
+msgstr ""
+
+#: src/pages/details_page.ts:167
+msgid "Delete"
+msgstr ""
+
+#: src/pages/details_page.ts:183
+#, fuzzy
+#| msgid "Could not create entry"
+msgid "Could not delete entry"
 msgstr "Položku nebylo možné vytvořit"
 
-#: src/pages/details_page.ts:198
-msgid "Issues occurred while creating entry"
-msgstr "Při vytváření položky došlo k problémům"
-
-#: src/pages/details_page.ts:209
-msgid "Issues occurred while overriding"
-msgstr "Při přebíjení došlo k problémům"
-
-#: src/pages/details_page.ts:217
+#: src/pages/details_page.ts:194
 msgid "Trash Entry?"
 msgstr "Přesunout položku do Koše?"
 
-#: src/pages/details_page.ts:218
+#: src/pages/details_page.ts:195
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
 msgstr ""
 "Tato položka bude přesunuta do Koše a tím už nebude spouštěna po přihlášení."
 
-#: src/pages/details_page.ts:220
-msgid "Cancel"
-msgstr "Zrušit"
-
-#: src/pages/details_page.ts:221
+#: src/pages/details_page.ts:196
 msgid "Trash"
 msgstr "Koš"
 
-#: src/pages/details_page.ts:236
-msgid "Issues occurred while trashing"
-msgstr "Při přesouvání do koše nastály problémy"
+#: src/pages/details_page.ts:241
+msgid "Issues occurred while saving"
+msgstr "Při ukládání došlo k problémům"
+
+#: src/pages/details_page.ts:254
+msgid "Could not create entry"
+msgstr "Položku nebylo možné vytvořit"
+
+#: src/pages/details_page.ts:262
+msgid "Issues occurred while creating entry"
+msgstr "Při vytváření položky došlo k problémům"
+
+#: src/pages/details_page.ts:273
+msgid "Issues occurred while overriding"
+msgstr "Při přebíjení došlo k problémům"
 
 #: src/pages/entries_page.blp:52
 msgid "Main Menu"
@@ -370,15 +382,19 @@ msgstr "Zobrazit zkratky"
 msgid "Quit"
 msgstr "Ukončit"
 
-#: src/utils/helper_funcs.ts:39
+#: src/utils/helper_funcs.ts:33
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: src/utils/helper_funcs.ts:58
 msgid "Copy"
 msgstr "Zkopírovat"
 
-#: src/utils/helper_funcs.ts:40
+#: src/utils/helper_funcs.ts:59
 msgid "OK"
 msgstr "OK"
 
-#: src/utils/helper_funcs.ts:49
+#: src/utils/helper_funcs.ts:68
 msgid "Details"
 msgstr "Podrobnosti"
 
@@ -500,6 +516,19 @@ msgstr "Nic nenalezeno"
 #: src/widgets/search_group.blp:14
 msgid "Try a different search."
 msgstr "Zkuste hledat jinak."
+
+#: src/window/main_window.ts:55
+#, fuzzy
+#| msgid "Create"
+msgid "Created"
+msgstr "Vytvořit"
+
+#: src/window/main_window.ts:60
+msgid "Removed"
+msgstr ""
+
+#~ msgid "Issues occurred while trashing"
+#~ msgstr "Při přesouvání do koše nastály problémy"
 
 #~ msgid "_About Descriptive"
 #~ msgstr "_O položce (popisné)"

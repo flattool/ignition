@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-25 02:11-0400\n"
+"POT-Creation-Date: 2026-05-25 17:49-0400\n"
 "PO-Revision-Date: 2026-04-09 06:05+0000\n"
 "Last-Translator: sasu <biungutv@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.fyralabs.com/projects/flattool/"
@@ -230,44 +230,56 @@ msgstr "Yeni Giriş"
 msgid "Issues occurred while saving details"
 msgstr "Bilgileri kaydederken bir sorun oluştu"
 
-#: src/pages/details_page.ts:177
-msgid "Issues occurred while saving"
-msgstr "Kaydetme sırasında sorunlar yaşandı"
+#: src/pages/details_page.ts:165
+msgid "Trash Failed. Delete Entry Instead?"
+msgstr ""
 
-#: src/pages/details_page.ts:190
-msgid "Could not create entry"
+#: src/pages/details_page.ts:166
+msgid ""
+"Instead of moving to the trash, the entry will be permanently deleted. This "
+"is not recoverable."
+msgstr ""
+
+#: src/pages/details_page.ts:167
+msgid "Delete"
+msgstr ""
+
+#: src/pages/details_page.ts:183
+#, fuzzy
+#| msgid "Could not create entry"
+msgid "Could not delete entry"
 msgstr "Giriş oluşturulamadı"
 
-#: src/pages/details_page.ts:198
-msgid "Issues occurred while creating entry"
-msgstr "Giriş oluşturulurken sorunlar yaşandı"
-
-#: src/pages/details_page.ts:209
-msgid "Issues occurred while overriding"
-msgstr "Geçersiz kılma işlemi sırasında sorunlar yaşandı"
-
-#: src/pages/details_page.ts:217
+#: src/pages/details_page.ts:194
 msgid "Trash Entry?"
 msgstr "Giriş Çöpe Atılsın Mı?"
 
-#: src/pages/details_page.ts:218
+#: src/pages/details_page.ts:195
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
 msgstr ""
 "Bu giriş çöp kutusuna taşınacak ve oturum açtığınızda artık başlatılmayacak."
 
-#: src/pages/details_page.ts:220
-msgid "Cancel"
-msgstr "İptal"
-
-#: src/pages/details_page.ts:221
+#: src/pages/details_page.ts:196
 msgid "Trash"
 msgstr "Çöpe Taşı"
 
-#: src/pages/details_page.ts:236
-msgid "Issues occurred while trashing"
-msgstr "Silme işlemi sırasında sorunlar yaşandı"
+#: src/pages/details_page.ts:241
+msgid "Issues occurred while saving"
+msgstr "Kaydetme sırasında sorunlar yaşandı"
+
+#: src/pages/details_page.ts:254
+msgid "Could not create entry"
+msgstr "Giriş oluşturulamadı"
+
+#: src/pages/details_page.ts:262
+msgid "Issues occurred while creating entry"
+msgstr "Giriş oluşturulurken sorunlar yaşandı"
+
+#: src/pages/details_page.ts:273
+msgid "Issues occurred while overriding"
+msgstr "Geçersiz kılma işlemi sırasında sorunlar yaşandı"
 
 #: src/pages/entries_page.blp:52
 msgid "Main Menu"
@@ -371,15 +383,19 @@ msgstr "Kısayolları Göster"
 msgid "Quit"
 msgstr "Çık"
 
-#: src/utils/helper_funcs.ts:39
+#: src/utils/helper_funcs.ts:33
+msgid "Cancel"
+msgstr "İptal"
+
+#: src/utils/helper_funcs.ts:58
 msgid "Copy"
 msgstr "Kopyala"
 
-#: src/utils/helper_funcs.ts:40
+#: src/utils/helper_funcs.ts:59
 msgid "OK"
 msgstr "Tamam"
 
-#: src/utils/helper_funcs.ts:49
+#: src/utils/helper_funcs.ts:68
 msgid "Details"
 msgstr "Ayrıntılar"
 
@@ -500,6 +516,19 @@ msgstr "Hiçbir Sonuç Bulunamadı"
 #: src/widgets/search_group.blp:14
 msgid "Try a different search."
 msgstr "Başka arama deneyin."
+
+#: src/window/main_window.ts:55
+#, fuzzy
+#| msgid "Create"
+msgid "Created"
+msgstr "Oluştur"
+
+#: src/window/main_window.ts:60
+msgid "Removed"
+msgstr ""
+
+#~ msgid "Issues occurred while trashing"
+#~ msgstr "Silme işlemi sırasında sorunlar yaşandı"
 
 #~ msgid "_About Descriptive"
 #~ msgstr "Descriptive _Hakkında"
