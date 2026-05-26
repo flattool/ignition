@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-01 19:17-0400\n"
+"POT-Creation-Date: 2026-05-25 02:11-0400\n"
 "PO-Revision-Date: 2026-01-27 03:42+0000\n"
 "Last-Translator: 提及 <q962_@outlook.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://weblate.fyralabs.com/"
@@ -83,55 +83,59 @@ msgstr ""
 msgid "Fixed missing search button icons"
 msgstr ""
 
-#: src/main.ts:56
+#: data/io.github.flattool.Ignition.metainfo.xml.in:60
+msgid "Added and updated translations"
+msgstr ""
+
+#: src/main.ts:57
 msgid "Donate"
 msgstr "捐助"
 
-#: src/pages/apps_list_page.blp:16
+#: src/pages/apps_list_page.blp:13
 msgid "Add or Create an Entry"
 msgstr "添加或创建一个新的启动项"
 
-#: src/pages/apps_list_page.blp:36
+#: src/pages/apps_list_page.blp:33
 msgid "Search apps"
 msgstr "搜索应用程序"
 
-#: src/pages/apps_list_page.blp:43
+#: src/pages/apps_list_page.blp:40
 msgid "Loading Apps"
 msgstr "正在加载应用程序"
 
-#: src/pages/apps_list_page.blp:44
+#: src/pages/apps_list_page.blp:41
 msgid "This should only take a moment"
 msgstr "这应该用不了多久"
 
-#: src/pages/apps_list_page.blp:66
+#: src/pages/apps_list_page.blp:63
 msgid "Commands and Scripts"
 msgstr "命令与脚本"
 
-#: src/pages/apps_list_page.blp:67
+#: src/pages/apps_list_page.blp:64
 msgid "Run a command or script when you log in."
 msgstr "登录时运行的命令或脚本。"
 
-#: src/pages/apps_list_page.blp:73
+#: src/pages/apps_list_page.blp:70
 msgid "Add a Command or Script"
 msgstr "添加一个命令或者脚本"
 
-#: src/pages/apps_list_page.blp:74
+#: src/pages/apps_list_page.blp:71
 msgid "Enter the command to run or path to your script"
 msgstr "输入要运行的命令或脚本路径"
 
-#: src/pages/apps_list_page.blp:98
+#: src/pages/apps_list_page.blp:95
 msgid "Installed Apps"
 msgstr "已安装的应用程序"
 
-#: src/pages/apps_list_page.blp:99
+#: src/pages/apps_list_page.blp:96
 msgid "Choose any installed apps to run when you log in."
 msgstr "选择需要在登录时运行的程序。"
 
-#: src/pages/apps_list_page.blp:105
+#: src/pages/apps_list_page.blp:102
 msgid "Show Hidden Apps"
 msgstr "显示隐藏的应用程序"
 
-#: src/pages/apps_list_page.blp:106
+#: src/pages/apps_list_page.blp:103
 msgid "Show apps that are hidden from the app menu"
 msgstr "显示在应用菜单中隐藏的应用"
 
@@ -211,49 +215,49 @@ msgstr ""
 "在这里粘贴要在登录时运行的脚本路径。 可以从文件管理器复制脚本路径。请确保提供"
 "的脚本具有可执行权限"
 
-#: src/pages/details_page.ts:55 src/shortcuts-dialog.blp:9
+#: src/pages/details_page.ts:54 src/shortcuts-dialog.blp:9
 msgid "New Entry"
 msgstr "新条目"
 
-#: src/pages/details_page.ts:159
+#: src/pages/details_page.ts:158
 msgid "Issues occurred while saving details"
 msgstr "保存详情时出现问题"
 
-#: src/pages/details_page.ts:178
+#: src/pages/details_page.ts:177
 msgid "Issues occurred while saving"
 msgstr "保存时出现问题"
 
-#: src/pages/details_page.ts:191
+#: src/pages/details_page.ts:190
 msgid "Could not create entry"
 msgstr "无法创建条目"
 
-#: src/pages/details_page.ts:199
+#: src/pages/details_page.ts:198
 msgid "Issues occurred while creating entry"
 msgstr "创建条目时出现问题"
 
-#: src/pages/details_page.ts:210
+#: src/pages/details_page.ts:209
 msgid "Issues occurred while overriding"
 msgstr "覆盖时发生问题"
 
-#: src/pages/details_page.ts:218
+#: src/pages/details_page.ts:217
 msgid "Trash Entry?"
 msgstr "垃圾条目?"
 
-#: src/pages/details_page.ts:219
+#: src/pages/details_page.ts:218
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
 msgstr "此条目将被移至回收站，且登录时将不再启动。"
 
-#: src/pages/details_page.ts:221
+#: src/pages/details_page.ts:220
 msgid "Cancel"
 msgstr "关闭"
 
-#: src/pages/details_page.ts:222
+#: src/pages/details_page.ts:221
 msgid "Trash"
 msgstr "删除"
 
-#: src/pages/details_page.ts:237
+#: src/pages/details_page.ts:236
 msgid "Issues occurred while trashing"
 msgstr "清理时出现问题"
 
@@ -314,8 +318,10 @@ msgid "_Keyboard Shortcuts"
 msgstr "键盘快捷键(_K)"
 
 #: src/pages/entries_page.blp:173
-msgid "_About Descriptive"
-msgstr "关于(_A)"
+#, fuzzy
+#| msgid "Ignition"
+msgid "_About Ignition"
+msgstr "Ignition"
 
 #: src/shortcuts-dialog.blp:6
 msgid "Entries List"
@@ -379,28 +385,28 @@ msgid "No comment set."
 msgstr "未设置注释。"
 
 #. Translators: %d is the number of seconds of delay before the app starts
-#: src/widgets/entry_row.ts:49
+#: src/widgets/entry_row.ts:50
 #, javascript-format
 msgid "Starts after %d seconds"
 msgstr "将在 %d 秒后执行"
 
-#: src/widgets/entry_row.ts:51
+#: src/widgets/entry_row.ts:52
 msgid "Enabled"
 msgstr "已启用"
 
-#: src/widgets/entry_row.ts:54
+#: src/widgets/entry_row.ts:55
 msgid "Disabled"
 msgstr "已禁用"
 
-#: src/widgets/entry_row.ts:58
+#: src/widgets/entry_row.ts:59
 msgid "This entry is overridden by a user entry."
 msgstr "此条目已被用户条目覆盖。"
 
-#: src/widgets/entry_row.ts:59
+#: src/widgets/entry_row.ts:60
 msgid "Overridden"
 msgstr "被覆盖"
 
-#: src/widgets/entry_row.ts:61
+#: src/widgets/entry_row.ts:62
 msgid "This entry overrides a system entry."
 msgstr "此条目覆盖了系统条目。"
 
@@ -480,10 +486,8 @@ msgstr "没有找到结果"
 msgid "Try a different search."
 msgstr "尝试不同的搜索。"
 
-#, fuzzy
-#~| msgid "Ignition"
-#~ msgid "About Ignition"
-#~ msgstr "Ignition"
+#~ msgid "_About Descriptive"
+#~ msgstr "关于(_A)"
 
 #~ msgid "Welcome to Ignition!"
 #~ msgstr "欢迎使用 Ignition！"

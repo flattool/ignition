@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-01 19:17-0400\n"
+"POT-Creation-Date: 2026-05-25 02:11-0400\n"
 "PO-Revision-Date: 2025-05-09 21:46+0000\n"
 "Last-Translator: lucasmz <git@lucasmz.dev>\n"
 "Language-Team: Portuguese (Brazil) <https://weblate.fyralabs.com/projects/"
@@ -84,62 +84,66 @@ msgstr ""
 msgid "Fixed missing search button icons"
 msgstr ""
 
-#: src/main.ts:56
+#: data/io.github.flattool.Ignition.metainfo.xml.in:60
+msgid "Added and updated translations"
+msgstr ""
+
+#: src/main.ts:57
 msgid "Donate"
 msgstr "Doar"
 
-#: src/pages/apps_list_page.blp:16
+#: src/pages/apps_list_page.blp:13
 msgid "Add or Create an Entry"
 msgstr "Adicionar ou Criar uma Entrada"
 
-#: src/pages/apps_list_page.blp:36
+#: src/pages/apps_list_page.blp:33
 msgid "Search apps"
 msgstr "Pesquisar aplicativos"
 
-#: src/pages/apps_list_page.blp:43
+#: src/pages/apps_list_page.blp:40
 #, fuzzy
 #| msgid "Loading Entries"
 msgid "Loading Apps"
 msgstr "Carregando Entradas"
 
-#: src/pages/apps_list_page.blp:44
+#: src/pages/apps_list_page.blp:41
 #, fuzzy
 #| msgid "This should only take a moment."
 msgid "This should only take a moment"
 msgstr "Isso deve levar apenas alguns instantes."
 
-#: src/pages/apps_list_page.blp:66
+#: src/pages/apps_list_page.blp:63
 msgid "Commands and Scripts"
 msgstr "Comandos e Scripts"
 
-#: src/pages/apps_list_page.blp:67
+#: src/pages/apps_list_page.blp:64
 msgid "Run a command or script when you log in."
 msgstr "Executar um comando ou script quando fizer login."
 
-#: src/pages/apps_list_page.blp:73
+#: src/pages/apps_list_page.blp:70
 msgid "Add a Command or Script"
 msgstr "Adicionar um Comando ou Script"
 
-#: src/pages/apps_list_page.blp:74
+#: src/pages/apps_list_page.blp:71
 msgid "Enter the command to run or path to your script"
 msgstr "Digite o comando para executar ou o caminho do seu script"
 
-#: src/pages/apps_list_page.blp:98
+#: src/pages/apps_list_page.blp:95
 msgid "Installed Apps"
 msgstr "Aplicativos Instalados"
 
-#: src/pages/apps_list_page.blp:99
+#: src/pages/apps_list_page.blp:96
 #, fuzzy
 #| msgid "Choose any installed app to run when you log in."
 msgid "Choose any installed apps to run when you log in."
 msgstr ""
 "Escolha qualquer aplicativo instalado para executar quando fizer login."
 
-#: src/pages/apps_list_page.blp:105
+#: src/pages/apps_list_page.blp:102
 msgid "Show Hidden Apps"
 msgstr "Mostrar Aplicativos Escondidos"
 
-#: src/pages/apps_list_page.blp:106
+#: src/pages/apps_list_page.blp:103
 msgid "Show apps that are hidden from the app menu"
 msgstr "Mostrar aplicativos que estão ocultos do menu de aplicativos"
 
@@ -226,39 +230,39 @@ msgstr ""
 "copiar o caminho do script do seu gerenciador de arquivos. Certifique-se de "
 "que seu script seja executável."
 
-#: src/pages/details_page.ts:55 src/shortcuts-dialog.blp:9
+#: src/pages/details_page.ts:54 src/shortcuts-dialog.blp:9
 msgid "New Entry"
 msgstr "Nova Entrada"
 
-#: src/pages/details_page.ts:159
+#: src/pages/details_page.ts:158
 msgid "Issues occurred while saving details"
 msgstr ""
 
-#: src/pages/details_page.ts:178
+#: src/pages/details_page.ts:177
 msgid "Issues occurred while saving"
 msgstr ""
 
-#: src/pages/details_page.ts:191
+#: src/pages/details_page.ts:190
 #, fuzzy
 #| msgid "Could not create file"
 msgid "Could not create entry"
 msgstr "Não foi possível criar o arquivo"
 
-#: src/pages/details_page.ts:199
+#: src/pages/details_page.ts:198
 msgid "Issues occurred while creating entry"
 msgstr ""
 
-#: src/pages/details_page.ts:210
+#: src/pages/details_page.ts:209
 msgid "Issues occurred while overriding"
 msgstr ""
 
-#: src/pages/details_page.ts:218
+#: src/pages/details_page.ts:217
 #, fuzzy
 #| msgid "Trach Entry?"
 msgid "Trash Entry?"
 msgstr "Descartar Entrada?"
 
-#: src/pages/details_page.ts:219
+#: src/pages/details_page.ts:218
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
@@ -266,15 +270,15 @@ msgstr ""
 "Esta entrada será movida à lixeira e não se inicializará mais quando fizer "
 "login."
 
-#: src/pages/details_page.ts:221
+#: src/pages/details_page.ts:220
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: src/pages/details_page.ts:222
+#: src/pages/details_page.ts:221
 msgid "Trash"
 msgstr "Lixeira"
 
-#: src/pages/details_page.ts:237
+#: src/pages/details_page.ts:236
 msgid "Issues occurred while trashing"
 msgstr ""
 
@@ -335,10 +339,8 @@ msgid "_Keyboard Shortcuts"
 msgstr "_Atalhos de teclado"
 
 #: src/pages/entries_page.blp:173
-#, fuzzy
-#| msgid "No description"
-msgid "_About Descriptive"
-msgstr "Sem descrição"
+msgid "_About Ignition"
+msgstr "_Sobre o Ignition"
 
 #: src/shortcuts-dialog.blp:6
 #, fuzzy
@@ -432,28 +434,28 @@ msgid "No comment set."
 msgstr "Nenhum comentário definido."
 
 #. Translators: %d is the number of seconds of delay before the app starts
-#: src/widgets/entry_row.ts:49
+#: src/widgets/entry_row.ts:50
 #, javascript-format
 msgid "Starts after %d seconds"
 msgstr ""
 
-#: src/widgets/entry_row.ts:51
+#: src/widgets/entry_row.ts:52
 msgid "Enabled"
 msgstr "Ativado"
 
-#: src/widgets/entry_row.ts:54
+#: src/widgets/entry_row.ts:55
 msgid "Disabled"
 msgstr "Desabilitado"
 
-#: src/widgets/entry_row.ts:58
+#: src/widgets/entry_row.ts:59
 msgid "This entry is overridden by a user entry."
 msgstr "Esta entrada foi substituída por uma entrada de usuário."
 
-#: src/widgets/entry_row.ts:59
+#: src/widgets/entry_row.ts:60
 msgid "Overridden"
 msgstr "Substituído"
 
-#: src/widgets/entry_row.ts:61
+#: src/widgets/entry_row.ts:62
 msgid "This entry overrides a system entry."
 msgstr "Esta entrada substitui uma entrada do sistema."
 
@@ -541,6 +543,11 @@ msgstr "Nenhum resultado encontrado"
 msgid "Try a different search."
 msgstr "Tente uma pesquisa diferente."
 
+#, fuzzy
+#~| msgid "No description"
+#~ msgid "_About Descriptive"
+#~ msgstr "Sem descrição"
+
 #~ msgid "Welcome"
 #~ msgstr "Bem-vindo"
 
@@ -614,9 +621,6 @@ msgstr "Tente uma pesquisa diferente."
 
 #~ msgid "Could not trash file"
 #~ msgstr "Não foi possível jogar o arquivo na lixeira"
-
-#~ msgid "_About Ignition"
-#~ msgstr "_Sobre o Ignition"
 
 #~ msgid "Could not load some entries"
 #~ msgstr "Não foi possível carregar algumas entradas"

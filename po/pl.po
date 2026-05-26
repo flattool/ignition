@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-04-01 19:17-0400\n"
+"POT-Creation-Date: 2026-05-25 02:11-0400\n"
 "PO-Revision-Date: 2025-10-31 19:31+0000\n"
 "Last-Translator: voorjaarman <voorjaarman@gmail.com>\n"
 "Language-Team: Polish <https://weblate.fyralabs.com/projects/flattool/"
@@ -85,53 +85,57 @@ msgstr ""
 msgid "Fixed missing search button icons"
 msgstr ""
 
-#: src/main.ts:56
+#: data/io.github.flattool.Ignition.metainfo.xml.in:60
+msgid "Added and updated translations"
+msgstr ""
+
+#: src/main.ts:57
 msgid "Donate"
 msgstr "Dorzuć się"
 
-#: src/pages/apps_list_page.blp:16
+#: src/pages/apps_list_page.blp:13
 msgid "Add or Create an Entry"
 msgstr "Dodaj lub utwórz wpis"
 
-#: src/pages/apps_list_page.blp:36
+#: src/pages/apps_list_page.blp:33
 #, fuzzy
 #| msgid "Search Apps"
 msgid "Search apps"
 msgstr "Wyszukaj aplikacje"
 
-#: src/pages/apps_list_page.blp:43
+#: src/pages/apps_list_page.blp:40
 #, fuzzy
 #| msgid "Loading Entries"
 msgid "Loading Apps"
 msgstr "Ładowanie wpisów"
 
-#: src/pages/apps_list_page.blp:44
+#: src/pages/apps_list_page.blp:41
 #, fuzzy
 #| msgid "This should only take a moment."
 msgid "This should only take a moment"
 msgstr "To zajmie tylko chwilę."
 
-#: src/pages/apps_list_page.blp:66
+#: src/pages/apps_list_page.blp:63
 msgid "Commands and Scripts"
 msgstr "Polecenia i skrypty"
 
-#: src/pages/apps_list_page.blp:67
+#: src/pages/apps_list_page.blp:64
 msgid "Run a command or script when you log in."
 msgstr "Uruchom polecenie lub skrypt po zalogowaniu."
 
-#: src/pages/apps_list_page.blp:73
+#: src/pages/apps_list_page.blp:70
 msgid "Add a Command or Script"
 msgstr "Dodaj polecenie lub skrypt"
 
-#: src/pages/apps_list_page.blp:74
+#: src/pages/apps_list_page.blp:71
 msgid "Enter the command to run or path to your script"
 msgstr "Wprowadź polecenie uruchomienia lub ścieżkę do skryptu"
 
-#: src/pages/apps_list_page.blp:98
+#: src/pages/apps_list_page.blp:95
 msgid "Installed Apps"
 msgstr "Zainstalowane aplikacje"
 
-#: src/pages/apps_list_page.blp:99
+#: src/pages/apps_list_page.blp:96
 #, fuzzy
 #| msgid "Choose any installed app to run when you log in."
 msgid "Choose any installed apps to run when you log in."
@@ -139,11 +143,11 @@ msgstr ""
 "Wybierz dowolną zainstalowaną aplikację, która zostanie uruchomiona po "
 "zalogowaniu."
 
-#: src/pages/apps_list_page.blp:105
+#: src/pages/apps_list_page.blp:102
 msgid "Show Hidden Apps"
 msgstr "Pokaż ukryte aplikacje"
 
-#: src/pages/apps_list_page.blp:106
+#: src/pages/apps_list_page.blp:103
 msgid "Show apps that are hidden from the app menu"
 msgstr "Pokaż aplikacje ukryte w menu aplikacji"
 
@@ -230,37 +234,37 @@ msgstr ""
 "Możesz skopiować ścieżkę do skryptu z menedżera plików. Upewnij się, że "
 "skrypt jest wykonywalny."
 
-#: src/pages/details_page.ts:55 src/shortcuts-dialog.blp:9
+#: src/pages/details_page.ts:54 src/shortcuts-dialog.blp:9
 msgid "New Entry"
 msgstr "Nowy wpis"
 
-#: src/pages/details_page.ts:159
+#: src/pages/details_page.ts:158
 msgid "Issues occurred while saving details"
 msgstr ""
 
-#: src/pages/details_page.ts:178
+#: src/pages/details_page.ts:177
 msgid "Issues occurred while saving"
 msgstr ""
 
-#: src/pages/details_page.ts:191
+#: src/pages/details_page.ts:190
 #, fuzzy
 #| msgid "Could not create file"
 msgid "Could not create entry"
 msgstr "Nie można utworzyć pliku"
 
-#: src/pages/details_page.ts:199
+#: src/pages/details_page.ts:198
 msgid "Issues occurred while creating entry"
 msgstr ""
 
-#: src/pages/details_page.ts:210
+#: src/pages/details_page.ts:209
 msgid "Issues occurred while overriding"
 msgstr ""
 
-#: src/pages/details_page.ts:218
+#: src/pages/details_page.ts:217
 msgid "Trash Entry?"
 msgstr "Usunąć wpis?"
 
-#: src/pages/details_page.ts:219
+#: src/pages/details_page.ts:218
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
@@ -268,15 +272,15 @@ msgstr ""
 "Ten wpis zostanie przeniesiony do kosza i nie będzie już generowany po "
 "zalogowaniu."
 
-#: src/pages/details_page.ts:221
+#: src/pages/details_page.ts:220
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: src/pages/details_page.ts:222
+#: src/pages/details_page.ts:221
 msgid "Trash"
 msgstr "Kosz"
 
-#: src/pages/details_page.ts:237
+#: src/pages/details_page.ts:236
 msgid "Issues occurred while trashing"
 msgstr ""
 
@@ -338,9 +342,9 @@ msgstr "_Skróty klawiaturowe"
 
 #: src/pages/entries_page.blp:173
 #, fuzzy
-#| msgid "_About Ignition"
-msgid "_About Descriptive"
-msgstr "_O Ignition"
+#| msgid "About Ignition"
+msgid "_About Ignition"
+msgstr "O Ignition"
 
 #: src/shortcuts-dialog.blp:6
 msgid "Entries List"
@@ -404,28 +408,28 @@ msgid "No comment set."
 msgstr "Nie ustawiono komentarza."
 
 #. Translators: %d is the number of seconds of delay before the app starts
-#: src/widgets/entry_row.ts:49
+#: src/widgets/entry_row.ts:50
 #, javascript-format
 msgid "Starts after %d seconds"
 msgstr ""
 
-#: src/widgets/entry_row.ts:51
+#: src/widgets/entry_row.ts:52
 msgid "Enabled"
 msgstr "Włączony"
 
-#: src/widgets/entry_row.ts:54
+#: src/widgets/entry_row.ts:55
 msgid "Disabled"
 msgstr "Wyłączony"
 
-#: src/widgets/entry_row.ts:58
+#: src/widgets/entry_row.ts:59
 msgid "This entry is overridden by a user entry."
 msgstr "Ten wpis zostanie zastąpiony wpisem użytkownika."
 
-#: src/widgets/entry_row.ts:59
+#: src/widgets/entry_row.ts:60
 msgid "Overridden"
 msgstr "Nadpisany"
 
-#: src/widgets/entry_row.ts:61
+#: src/widgets/entry_row.ts:62
 msgid "This entry overrides a system entry."
 msgstr "Ten wpis zastępuje wpis systemowy."
 
@@ -517,11 +521,13 @@ msgstr "Nie znaleziono wyników"
 msgid "Try a different search."
 msgstr "Spróbuj innego wyszukiwania."
 
+#, fuzzy
+#~| msgid "_About Ignition"
+#~ msgid "_About Descriptive"
+#~ msgstr "_O Ignition"
+
 #~ msgid "Welcome"
 #~ msgstr "Witamy"
-
-#~ msgid "About Ignition"
-#~ msgstr "O Ignition"
 
 #~ msgid "Welcome to Ignition!"
 #~ msgstr "Witamy w Ignition!"
