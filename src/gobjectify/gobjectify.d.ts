@@ -1,10 +1,10 @@
 /*!
- * GObjectify 1.0.0 - A type-safe, declarative TypeScript library for writing & interacting with GObject classes in GNOME JavaScript (GJS)
+ * GObjectify 1.0.1 - A type-safe, declarative TypeScript library for writing & interacting with GObject classes in GNOME JavaScript (GJS)
  * https://github.com/flattool/gobjectify
  *
  * MIT License
  *
- * Copyright (c) 2025 flattool
+ * Copyright (c) 2026 flattool
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -400,9 +400,7 @@ type UnderscoreToHyphen<S> = S extends `${infer Head}_${infer Tail}` ? `${Head}-
 type ExtractSignals<D> = {
     [Key in keyof D as D[Key] extends SignalDescriptor<any, any> ? UnderscoreToHyphen<Key> : never]: D[Key] extends SignalDescriptor<any, any> ? D[Key] : never;
 };
-type UnwrapSignalArg<T> = (T extends ObjectConstructor ? object : T extends GObject.GType<infer G> ? G : T extends {
-    $gtype: GObject.GType<infer G>;
-} ? G : T extends abstract new (...args: any[]) => infer O ? O : T);
+type UnwrapSignalArg<T> = (T extends GObject.GType<infer G> ? UnwrapSignalArg<G> : T extends ObjectConstructor ? object | null : T extends NumberConstructor ? number : T extends StringConstructor ? string : T extends BooleanConstructor ? boolean : T extends abstract new (...args: any[]) => infer O ? O | null : T);
 type UnwrapSignalArgs<T extends readonly unknown[]> = {
     [K in keyof T]: UnwrapSignalArg<T[K]>;
 };
@@ -573,7 +571,9 @@ type ValidConstructorProps<D> = {
 };
 type ResultingConstructorParamsObj<T extends AbstractGClassFor<GObject.Object>, D extends Descriptor<D, InstanceType<T>>> = ConstructorParameters<T> extends [] ? [ValidConstructorProps<D>] : ConstructorParameters<T> extends [(infer First)?, ...infer Rest] ? undefined extends ConstructorParameters<T>[0] ? [(ValidConstructorProps<D> & First)?, ...Rest] : [(ValidConstructorProps<D> & First), ...Rest] : never;
 type ResultingClass<T extends AbstractGClassFor<GObject.Object>, D extends Descriptor<D, InstanceType<T>>, I extends AbstractGClassFor<GObject.Object>[]> = {
-    $gtype: GObject.GType;
+    $gtype: GObject.GType<InstanceType<T> & {
+        readonly $unique: unique symbol;
+    }>;
     $params: ResultingConstructorParamsObj<T, D>[0];
 } & (abstract new (...args: ResultingConstructorParamsObj<T, D>) => (SignalOverrides<InstanceType<T>, D> & InstanceType<T> & ExtractWriteableProps<D> & ExtractReadonlyProps<D> & Finalize<ExtractChildren<D>> & Finalize<ExtractActions<D>> & Finalize<{
     with_implements: I extends [] ? never : Instances<I>;
