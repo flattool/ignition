@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-25 17:49-0400\n"
-"PO-Revision-Date: 2026-04-28 06:03+0000\n"
+"PO-Revision-Date: 2026-05-28 14:05+0000\n"
 "Last-Translator: NorwayFun <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/ka/>\n"
@@ -324,10 +324,8 @@ msgid "_Keyboard Shortcuts"
 msgstr "_კლავიატურის მალსახმობები"
 
 #: src/pages/entries_page.blp:173
-#, fuzzy
-#| msgid "Ignition"
 msgid "_About Ignition"
-msgstr "Ignition"
+msgstr "Ignition-ის შეს_ახებ"
 
 #: src/shortcuts-dialog.blp:6
 msgid "Entries List"
@@ -489,10 +487,8 @@ msgid "Try a different search."
 msgstr "სცადეთ სხვა ძებნა."
 
 #: src/window/main_window.ts:55
-#, fuzzy
-#| msgid "Create"
 msgid "Created"
-msgstr "შექმნა"
+msgstr "შექმნილია"
 
 #: src/window/main_window.ts:60
 msgid "Removed"
