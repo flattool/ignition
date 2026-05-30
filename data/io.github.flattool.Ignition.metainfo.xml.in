@@ -49,8 +49,19 @@
 	</screenshots>
 
 	<releases>
+		<release version="2.4.1" date="2026-5-30">
+			<description translate="no">
+				<p>Bug Fixes and Changes</p>
+				<ul>
+					<li>Added fallback option to delete a file if trashing the file does not work</li>
+					<li>Fixed incorrectly titled "About Descriptive" menu item</li>
+					<li>Improved reliability of the Installed Apps list and its automatic refreshing</li>
+					<li>Added and updated translations</li>
+				</ul>
+			</description>
+		</release>
 		<release version="2.4.0" date="2026-4-2">
-			<description translation="no">
+			<description translate="no">
 				<p>Bug Fixes and Changes</p>
 				<ul>
 					<li>Updated to GNOME 50 technologies</li>
