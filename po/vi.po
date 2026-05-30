@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-25 17:49-0400\n"
+"POT-Creation-Date: 2026-05-25 21:05-0400\n"
 "PO-Revision-Date: 2026-05-02 10:01+0000\n"
 "Last-Translator: Loc Huynh <huynhloc.contact@gmail.com>\n"
 "Language-Team: Vietnamese <https://weblate.fyralabs.com/projects/flattool/"
@@ -62,33 +62,6 @@ msgstr "Tạo một mục khởi động mới."
 #: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
 msgstr "Xem tất cả các mục khởi động của bạn ở chế độ tối."
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:54
-msgid "Bug Fixes and Changes"
-msgstr "Sửa lỗi và thay đổi"
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:56
-msgid "Updated to GNOME 50 technologies"
-msgstr "Đã cập nhật lên công nghệ Gnome 50"
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:57
-msgid "Fixed issue where overridden entries don't update properly"
-msgstr "Đã khắc phục sự cố trong đó các mục bị ghi đè không cập nhật đúng cách"
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:58
-msgid ""
-"Fixed issue where the same entries would appear in the list multiple times"
-msgstr ""
-"Đã khắc phục sự cố trong đó các mục giống nhau xuất hiện trong danh sách "
-"nhiều lần"
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:59
-msgid "Fixed missing search button icons"
-msgstr "Đã sửa lỗi biểu tượng nút tìm kiếm bị thiếu"
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:60
-msgid "Added and updated translations"
-msgstr ""
 
 #: src/main.ts:57
 msgid "Donate"
@@ -524,6 +497,25 @@ msgstr "Tạo"
 #: src/window/main_window.ts:60
 msgid "Removed"
 msgstr ""
+
+#~ msgid "Bug Fixes and Changes"
+#~ msgstr "Sửa lỗi và thay đổi"
+
+#~ msgid "Updated to GNOME 50 technologies"
+#~ msgstr "Đã cập nhật lên công nghệ Gnome 50"
+
+#~ msgid "Fixed issue where overridden entries don't update properly"
+#~ msgstr ""
+#~ "Đã khắc phục sự cố trong đó các mục bị ghi đè không cập nhật đúng cách"
+
+#~ msgid ""
+#~ "Fixed issue where the same entries would appear in the list multiple times"
+#~ msgstr ""
+#~ "Đã khắc phục sự cố trong đó các mục giống nhau xuất hiện trong danh sách "
+#~ "nhiều lần"
+
+#~ msgid "Fixed missing search button icons"
+#~ msgstr "Đã sửa lỗi biểu tượng nút tìm kiếm bị thiếu"
 
 #~ msgid "Issues occurred while trashing"
 #~ msgstr "Đã xảy ra sự cố khi dọn rác"

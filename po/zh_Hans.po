@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-25 17:49-0400\n"
+"POT-Creation-Date: 2026-05-25 21:05-0400\n"
 "PO-Revision-Date: 2026-01-27 03:42+0000\n"
 "Last-Translator: 提及 <q962_@outlook.com>\n"
 "Language-Team: Chinese (Simplified Han script) <https://weblate.fyralabs.com/"
@@ -61,31 +61,6 @@ msgstr "创建一个新的启动项。"
 #: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
 msgstr "在深色模式下查看所有启动项。"
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:54
-msgid "Bug Fixes and Changes"
-msgstr ""
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:56
-msgid "Updated to GNOME 50 technologies"
-msgstr ""
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:57
-msgid "Fixed issue where overridden entries don't update properly"
-msgstr ""
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:58
-msgid ""
-"Fixed issue where the same entries would appear in the list multiple times"
-msgstr ""
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:59
-msgid "Fixed missing search button icons"
-msgstr ""
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:60
-msgid "Added and updated translations"
-msgstr ""
 
 #: src/main.ts:57
 msgid "Donate"
