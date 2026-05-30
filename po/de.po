@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-25 17:49-0400\n"
+"POT-Creation-Date: 2026-05-25 21:05-0400\n"
 "PO-Revision-Date: 2026-04-09 06:05+0000\n"
 "Last-Translator: KaeTuuN <KaeTuuN@mailbox.org>\n"
 "Language-Team: German <https://weblate.fyralabs.com/projects/flattool/"
@@ -63,32 +63,6 @@ msgstr "Neuen Starteintrag erstellen."
 #: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
 msgstr "Alle Starteinträge im Dark-Mode anzeigen."
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:54
-msgid "Bug Fixes and Changes"
-msgstr "Fehlerbehebungen und Änderungen"
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:56
-#, fuzzy
-msgid "Updated to GNOME 50 technologies"
-msgstr "Auf GNOME 50 funktionen aktualisiert"
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:57
-msgid "Fixed issue where overridden entries don't update properly"
-msgstr ""
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:58
-msgid ""
-"Fixed issue where the same entries would appear in the list multiple times"
-msgstr ""
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:59
-msgid "Fixed missing search button icons"
-msgstr "Fehlende Symbole für die Suchschaltfläche wurden behoben"
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:60
-msgid "Added and updated translations"
-msgstr ""
 
 #: src/main.ts:57
 msgid "Donate"
@@ -553,6 +527,16 @@ msgstr "Erstellen"
 #: src/window/main_window.ts:60
 msgid "Removed"
 msgstr ""
+
+#~ msgid "Bug Fixes and Changes"
+#~ msgstr "Fehlerbehebungen und Änderungen"
+
+#, fuzzy
+#~ msgid "Updated to GNOME 50 technologies"
+#~ msgstr "Auf GNOME 50 funktionen aktualisiert"
+
+#~ msgid "Fixed missing search button icons"
+#~ msgstr "Fehlende Symbole für die Suchschaltfläche wurden behoben"
 
 #, fuzzy
 #~| msgid "No description"

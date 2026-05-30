@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-25 17:49-0400\n"
+"POT-Creation-Date: 2026-05-25 21:05-0400\n"
 "PO-Revision-Date: 2026-04-09 06:05+0000\n"
 "Last-Translator: sasu <biungutv@gmail.com>\n"
 "Language-Team: Turkish <https://weblate.fyralabs.com/projects/flattool/"
@@ -63,33 +63,6 @@ msgstr "Yeni başlangıç girişi oluştur."
 #: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
 msgstr "Tüm başlangıç ögelerini karanlık kipte görüntüle."
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:54
-msgid "Bug Fixes and Changes"
-msgstr "Hata Düzeltmeleri ve Değişiklikler"
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:56
-msgid "Updated to GNOME 50 technologies"
-msgstr "GNOME 50 teknolojilerine güncellendi"
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:57
-msgid "Fixed issue where overridden entries don't update properly"
-msgstr ""
-"Geçersiz kılınan girişlerin düzgün bir şekilde güncellenmemesi sorunu "
-"giderildi"
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:58
-msgid ""
-"Fixed issue where the same entries would appear in the list multiple times"
-msgstr "Aynı girişlerin listede birden fazla kez görünmesi sorunu giderildi"
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:59
-msgid "Fixed missing search button icons"
-msgstr "Eksik arama düğmesi simgeleri düzeltildi"
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:60
-msgid "Added and updated translations"
-msgstr ""
 
 #: src/main.ts:57
 msgid "Donate"
@@ -526,6 +499,24 @@ msgstr "Oluştur"
 #: src/window/main_window.ts:60
 msgid "Removed"
 msgstr ""
+
+#~ msgid "Bug Fixes and Changes"
+#~ msgstr "Hata Düzeltmeleri ve Değişiklikler"
+
+#~ msgid "Updated to GNOME 50 technologies"
+#~ msgstr "GNOME 50 teknolojilerine güncellendi"
+
+#~ msgid "Fixed issue where overridden entries don't update properly"
+#~ msgstr ""
+#~ "Geçersiz kılınan girişlerin düzgün bir şekilde güncellenmemesi sorunu "
+#~ "giderildi"
+
+#~ msgid ""
+#~ "Fixed issue where the same entries would appear in the list multiple times"
+#~ msgstr "Aynı girişlerin listede birden fazla kez görünmesi sorunu giderildi"
+
+#~ msgid "Fixed missing search button icons"
+#~ msgstr "Eksik arama düğmesi simgeleri düzeltildi"
 
 #~ msgid "Issues occurred while trashing"
 #~ msgstr "Silme işlemi sırasında sorunlar yaşandı"

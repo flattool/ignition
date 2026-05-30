@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-25 17:49-0400\n"
+"POT-Creation-Date: 2026-05-25 21:05-0400\n"
 "PO-Revision-Date: 2026-04-07 04:58+0000\n"
 "Last-Translator: Andrii Serbovets <serbovets.translation@gmail.com>\n"
 "Language-Team: Ukrainian <https://weblate.fyralabs.com/projects/flattool/"
@@ -62,33 +62,6 @@ msgstr "Створення записів автозапуску."
 #: data/io.github.flattool.Ignition.metainfo.xml.in:47
 msgid "See all your startup items, in dark mode."
 msgstr "Перегляд усіх записів автозапуску в темному стилі."
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:54
-msgid "Bug Fixes and Changes"
-msgstr "Що нового"
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:56
-msgid "Updated to GNOME 50 technologies"
-msgstr "Перехід на технології GNOME 50"
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:57
-msgid "Fixed issue where overridden entries don't update properly"
-msgstr "Виправлено помилку, через яку не оновлювалися заміщені записи"
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:58
-msgid ""
-"Fixed issue where the same entries would appear in the list multiple times"
-msgstr ""
-"Виправлено помилку, через яку деякі записи включалися до переліку по кілька "
-"разів"
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:59
-msgid "Fixed missing search button icons"
-msgstr "Додано значки, яких бракувало на кнопці пошуку"
-
-#: data/io.github.flattool.Ignition.metainfo.xml.in:60
-msgid "Added and updated translations"
-msgstr ""
 
 #: src/main.ts:57
 msgid "Donate"
@@ -524,6 +497,24 @@ msgstr "Створити"
 #: src/window/main_window.ts:60
 msgid "Removed"
 msgstr ""
+
+#~ msgid "Bug Fixes and Changes"
+#~ msgstr "Що нового"
+
+#~ msgid "Updated to GNOME 50 technologies"
+#~ msgstr "Перехід на технології GNOME 50"
+
+#~ msgid "Fixed issue where overridden entries don't update properly"
+#~ msgstr "Виправлено помилку, через яку не оновлювалися заміщені записи"
+
+#~ msgid ""
+#~ "Fixed issue where the same entries would appear in the list multiple times"
+#~ msgstr ""
+#~ "Виправлено помилку, через яку деякі записи включалися до переліку по "
+#~ "кілька разів"
+
+#~ msgid "Fixed missing search button icons"
+#~ msgstr "Додано значки, яких бракувало на кнопці пошуку"
 
 #~ msgid "Issues occurred while trashing"
 #~ msgstr "Виявлено помилки під час переміщення у смітник"
