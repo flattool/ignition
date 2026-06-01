@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-05-25 21:05-0400\n"
-"PO-Revision-Date: 2026-04-07 04:58+0000\n"
-"Last-Translator: Andrii Serbovets <serbovets.translation@gmail.com>\n"
+"PO-Revision-Date: 2026-06-01 16:57+0000\n"
+"Last-Translator: Herbatka <viktor.beskorovainyi@gmail.com>\n"
 "Language-Team: Ukrainian <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/uk/>\n"
 "Language: uk\n"
@@ -219,10 +219,8 @@ msgid "Delete"
 msgstr ""
 
 #: src/pages/details_page.ts:183
-#, fuzzy
-#| msgid "Could not create entry"
 msgid "Could not delete entry"
-msgstr "Не вдалося створити запис"
+msgstr "Не вдалося видалити запис"
 
 #: src/pages/details_page.ts:194
 msgid "Trash Entry?"
@@ -233,7 +231,7 @@ msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
 msgstr ""
-"Ви відправите цей запис у смітник, і він не виконуватиметься під час входу в "
+"Ви відправите цей запис у смітник і він не виконуватиметься під час входу в "
 "систему."
 
 #: src/pages/details_page.ts:196
@@ -489,14 +487,12 @@ msgid "Try a different search."
 msgstr "Пошукайте щось інше."
 
 #: src/window/main_window.ts:55
-#, fuzzy
-#| msgid "Create"
 msgid "Created"
-msgstr "Створити"
+msgstr "Створено"
 
 #: src/window/main_window.ts:60
 msgid "Removed"
-msgstr ""
+msgstr "Видалено"
 
 #~ msgid "Bug Fixes and Changes"
 #~ msgstr "Що нового"
