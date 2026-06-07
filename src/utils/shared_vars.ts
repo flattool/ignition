@@ -52,5 +52,16 @@ export class SharedVars {
 				? "/run/host"
 				: ""
 		) + "/usr/share/applications"),
+		Gio.File.new_for_path( // nix-profile (Home Manager and stuff like that)
+			SharedVars.home_dir.get_path() + "/.nix-profile/share/applications",
+		),
+		Gio.File.new_for_path( // NixOS system apps
+			"/run/current-system/sw/share/applications",
+		),
+		Gio.File.new_for_path(( // NixOS home-manager / user packages
+			SharedVars.is_flatpak
+				? "/run/host"
+				: ""
+		) + "/etc/static/profiles/per-user/" + GLib.get_user_name() + "/share/applications"),
 	]
 }

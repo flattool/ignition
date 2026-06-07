@@ -25,6 +25,16 @@ export const IconHelper = {
 			GLib.getenv("HOST_XDG_DATA_HOME")
 			|| (SharedVars.home_dir.get_path() + "/.local/share")
 		) + "/flatpak/exports/share/icons")
+
+		// NixOS and Home Manager specific icons
+		theme.add_search_path(SharedVars.home_dir.get_path() + "/.nix-profile/share/icons")
+		theme.add_search_path("/run/current-system/sw/share/icons")
+		theme.add_search_path((
+			SharedVars.is_flatpak
+				? "/run/host"
+				: ""
+		) + "/etc/static/profiles/per-user/" + GLib.get_user_name() + "/share/icons")
+
 		_icon_theme = theme
 		return theme
 	},
