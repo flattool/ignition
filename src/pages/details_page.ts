@@ -112,7 +112,7 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 	}
 
 	#check_valid(widget: Gtk.Widget, text: string, regex: RegExp): void {
-		if (!this.pending_name) {
+		if (!text) {
 			widget.remove_css_class("error")
 			this.#invalid_items.add(widget)
 		} else if (regex.test(text)) {
