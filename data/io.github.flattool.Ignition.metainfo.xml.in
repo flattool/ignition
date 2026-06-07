@@ -49,11 +49,18 @@
 	</screenshots>
 
 	<releases>
-		<release version="2.4.1" date="2026-5-30">
+		<release version="2.4.1" date="2026-6-7">
 			<description translate="no">
+				<p>New Features</p>
+				<ul>
+					<li>Added ability to open a script to fill in the Command or Script</li>
+					<li>Added better support for NixOS and other Nix setups</li>
+				</ul>
 				<p>Bug Fixes and Changes</p>
 				<ul>
 					<li>Added fallback option to delete a file if trashing the file does not work</li>
+					<li>Fixed minor issue causing some new entries to not be allowed to be created</li>
+					<li>Better handle cases where the system autostart folder is missing</li>
 					<li>Fixed incorrectly titled "About Descriptive" menu item</li>
 					<li>Improved reliability of the Installed Apps list and its automatic refreshing</li>
 					<li>Added and updated translations</li>
