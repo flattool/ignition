@@ -9,6 +9,6 @@ option(
 )
 option('tests',
 	type: 'boolean',
-	value: true,
+	value: false,
 	description: 'Enable tests'
 )

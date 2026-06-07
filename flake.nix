@@ -17,6 +17,10 @@
 				libadwaita
 				nodejs_22
 				blueprint-compiler
+				python3
+				typescript
+				desktop-file-utils
+				appstream
 			];
 		};
 	};
