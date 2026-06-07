@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-25 21:05-0400\n"
+"POT-Creation-Date: 2026-06-07 18:34+0000\n"
 "PO-Revision-Date: 2026-01-09 23:20+0000\n"
 "Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
 "Language-Team: Swedish <https://weblate.fyralabs.com/projects/flattool/"
@@ -162,9 +162,9 @@ msgstr "Kommentera"
 msgid "Command or Script"
 msgstr "Kommando eller Skript"
 
-#: src/pages/details_page.blp:125 src/widgets/entry_row.blp:28
-msgid "More Information"
-msgstr "Mer information"
+#: src/pages/details_page.blp:124
+msgid "Open Script"
+msgstr ""
 
 #: src/pages/details_page.blp:136
 msgid "Show Terminal"
@@ -182,69 +182,94 @@ msgstr ""
 msgid "Amount of seconds to wait after logging in to run the command or script"
 msgstr ""
 
-#: src/pages/details_page.blp:165
-msgid ""
-"To run a script at login, paste its file path here. You can copy the "
-"script's path from your file manager. Make sure your script is executable"
-msgstr ""
-
-#: src/pages/details_page.ts:54 src/shortcuts-dialog.blp:9
+#: src/pages/details_page.ts:55 src/shortcuts-dialog.blp:9
 msgid "New Entry"
 msgstr ""
 
-#: src/pages/details_page.ts:158
+#: src/pages/details_page.ts:159
 msgid "Issues occurred while saving details"
 msgstr ""
 
-#: src/pages/details_page.ts:165
+#: src/pages/details_page.ts:166
 msgid "Trash Failed. Delete Entry Instead?"
 msgstr ""
 
-#: src/pages/details_page.ts:166
+#: src/pages/details_page.ts:167
 msgid ""
 "Instead of moving to the trash, the entry will be permanently deleted. This "
 "is not recoverable."
 msgstr ""
 
-#: src/pages/details_page.ts:167
+#: src/pages/details_page.ts:168
 msgid "Delete"
 msgstr ""
 
-#: src/pages/details_page.ts:183
+#: src/pages/details_page.ts:184
 #, fuzzy
 #| msgid "Could not create file"
 msgid "Could not delete entry"
 msgstr "Kunde inte skapa fil"
 
-#: src/pages/details_page.ts:194
+#: src/pages/details_page.ts:193
+msgid "Select Script"
+msgstr ""
+
+#: src/pages/details_page.ts:199
+#, fuzzy
+#| msgid "Could not open folder"
+msgid "Could not open script"
+msgstr "Kunde inte öppna mappen"
+
+#: src/pages/details_page.ts:212
+#, fuzzy
+#| msgid "Could not create file"
+msgid "Could not get script path"
+msgstr "Kunde inte skapa fil"
+
+#: src/pages/details_page.ts:212
+msgid "The selected file does not have a valid path."
+msgstr ""
+
+#: src/pages/details_page.ts:222
+msgid "Selected file is not executable"
+msgstr ""
+
+#. eslint-disable-next-line
+#: src/pages/details_page.ts:224
+msgid ""
+"The selected file is not marked as executable. Select a different file or "
+"make this script executable."
+msgstr ""
+
+#: src/pages/details_page.ts:234
 msgid "Trash Entry?"
 msgstr ""
 
-#: src/pages/details_page.ts:195
+#: src/pages/details_page.ts:235
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
 msgstr ""
 
-#: src/pages/details_page.ts:196
+#: src/pages/details_page.ts:236
 msgid "Trash"
 msgstr "Ta bort"
 
-#: src/pages/details_page.ts:241
+#: src/pages/details_page.ts:281
 msgid "Issues occurred while saving"
 msgstr ""
 
-#: src/pages/details_page.ts:254
+#: src/pages/details_page.ts:294
 #, fuzzy
 #| msgid "Could not create file"
 msgid "Could not create entry"
 msgstr "Kunde inte skapa fil"
 
-#: src/pages/details_page.ts:262
+#: src/pages/details_page.ts:302
 msgid "Issues occurred while creating entry"
 msgstr ""
 
-#: src/pages/details_page.ts:273
+#: src/pages/details_page.ts:313
 msgid "Issues occurred while overriding"
 msgstr ""
 
@@ -367,13 +392,17 @@ msgid "Details"
 msgstr "Detaljer"
 
 #. These need to be getters for the _() translation function to work
-#: src/utils/shared_vars.ts:15
+#: src/utils/shared_vars.ts:26
 msgid "No Name Set"
 msgstr "Inget namn är inställt"
 
-#: src/utils/shared_vars.ts:16
+#: src/utils/shared_vars.ts:27
 msgid "No comment set."
 msgstr ""
+
+#: src/widgets/entry_row.blp:28
+msgid "More Information"
+msgstr "Mer information"
 
 #. Translators: %d is the number of seconds of delay before the app starts
 #: src/widgets/entry_row.ts:50
@@ -495,9 +524,6 @@ msgstr ""
 
 #~ msgid "Translate"
 #~ msgstr "Översätt"
-
-#~ msgid "Could not open folder"
-#~ msgstr "Kunde inte öppna mappen"
 
 #~ msgid "Search"
 #~ msgstr "Sök"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-05-25 21:05-0400\n"
+"POT-Creation-Date: 2026-06-07 18:34+0000\n"
 "PO-Revision-Date: 2026-05-02 10:01+0000\n"
 "Last-Translator: Loc Huynh <huynhloc.contact@gmail.com>\n"
 "Language-Team: Vietnamese <https://weblate.fyralabs.com/projects/flattool/"
@@ -163,9 +163,9 @@ msgstr "Bình luận"
 msgid "Command or Script"
 msgstr "Lệnh hoặc tập lệnh"
 
-#: src/pages/details_page.blp:125 src/widgets/entry_row.blp:28
-msgid "More Information"
-msgstr "Thêm thông tin"
+#: src/pages/details_page.blp:124
+msgid "Open Script"
+msgstr ""
 
 #: src/pages/details_page.blp:136
 msgid "Show Terminal"
@@ -183,48 +183,70 @@ msgstr "Giây trễ"
 msgid "Amount of seconds to wait after logging in to run the command or script"
 msgstr "Số giây chờ sau khi đăng nhập để chạy lệnh hoặc tập lệnh"
 
-#: src/pages/details_page.blp:165
-msgid ""
-"To run a script at login, paste its file path here. You can copy the "
-"script's path from your file manager. Make sure your script is executable"
-msgstr ""
-"Để chạy tập lệnh khi đăng nhập, hãy dán đường dẫn tệp của nó vào đây. Bạn có "
-"thể sao chép đường dẫn của tập lệnh từ trình quản lý tệp của mình. Đảm bảo "
-"tập lệnh của bạn có thể thực thi được"
-
-#: src/pages/details_page.ts:54 src/shortcuts-dialog.blp:9
+#: src/pages/details_page.ts:55 src/shortcuts-dialog.blp:9
 msgid "New Entry"
 msgstr "Mục mới"
 
-#: src/pages/details_page.ts:158
+#: src/pages/details_page.ts:159
 msgid "Issues occurred while saving details"
 msgstr "Đã xảy ra sự cố khi lưu chi tiết"
 
-#: src/pages/details_page.ts:165
+#: src/pages/details_page.ts:166
 msgid "Trash Failed. Delete Entry Instead?"
 msgstr ""
 
-#: src/pages/details_page.ts:166
+#: src/pages/details_page.ts:167
 msgid ""
 "Instead of moving to the trash, the entry will be permanently deleted. This "
 "is not recoverable."
 msgstr ""
 
-#: src/pages/details_page.ts:167
+#: src/pages/details_page.ts:168
 msgid "Delete"
 msgstr ""
 
-#: src/pages/details_page.ts:183
+#: src/pages/details_page.ts:184
 #, fuzzy
 #| msgid "Could not create entry"
 msgid "Could not delete entry"
 msgstr "Không thể tạo mục nhập"
 
-#: src/pages/details_page.ts:194
+#: src/pages/details_page.ts:193
+msgid "Select Script"
+msgstr ""
+
+#: src/pages/details_page.ts:199
+#, fuzzy
+#| msgid "Could not create entry"
+msgid "Could not open script"
+msgstr "Không thể tạo mục nhập"
+
+#: src/pages/details_page.ts:212
+#, fuzzy
+#| msgid "Could not create entry"
+msgid "Could not get script path"
+msgstr "Không thể tạo mục nhập"
+
+#: src/pages/details_page.ts:212
+msgid "The selected file does not have a valid path."
+msgstr ""
+
+#: src/pages/details_page.ts:222
+msgid "Selected file is not executable"
+msgstr ""
+
+#. eslint-disable-next-line
+#: src/pages/details_page.ts:224
+msgid ""
+"The selected file is not marked as executable. Select a different file or "
+"make this script executable."
+msgstr ""
+
+#: src/pages/details_page.ts:234
 msgid "Trash Entry?"
 msgstr "Nhập thùng rác?"
 
-#: src/pages/details_page.ts:195
+#: src/pages/details_page.ts:235
 msgid ""
 "This entry will be moved to the trash, and will no longer start when you log "
 "in."
@@ -232,23 +254,23 @@ msgstr ""
 "Mục nhập này sẽ được chuyển vào thùng rác và sẽ không còn bắt đầu khi bạn "
 "đăng nhập."
 
-#: src/pages/details_page.ts:196
+#: src/pages/details_page.ts:236
 msgid "Trash"
 msgstr "Thùng rác"
 
-#: src/pages/details_page.ts:241
+#: src/pages/details_page.ts:281
 msgid "Issues occurred while saving"
 msgstr "Đã xảy ra sự cố khi lưu"
 
-#: src/pages/details_page.ts:254
+#: src/pages/details_page.ts:294
 msgid "Could not create entry"
 msgstr "Không thể tạo mục nhập"
 
-#: src/pages/details_page.ts:262
+#: src/pages/details_page.ts:302
 msgid "Issues occurred while creating entry"
 msgstr "Đã xảy ra sự cố khi tạo mục nhập"
 
-#: src/pages/details_page.ts:273
+#: src/pages/details_page.ts:313
 msgid "Issues occurred while overriding"
 msgstr "Đã xảy ra sự cố khi ghi đè"
 
@@ -371,13 +393,17 @@ msgid "Details"
 msgstr "Chi tiết"
 
 #. These need to be getters for the _() translation function to work
-#: src/utils/shared_vars.ts:15
+#: src/utils/shared_vars.ts:26
 msgid "No Name Set"
 msgstr "Không đặt tên"
 
-#: src/utils/shared_vars.ts:16
+#: src/utils/shared_vars.ts:27
 msgid "No comment set."
 msgstr "Không có bình luận nào được đặt."
+
+#: src/widgets/entry_row.blp:28
+msgid "More Information"
+msgstr "Thêm thông tin"
 
 #. Translators: %d is the number of seconds of delay before the app starts
 #: src/widgets/entry_row.ts:50
@@ -497,6 +523,14 @@ msgstr "Tạo"
 #: src/window/main_window.ts:60
 msgid "Removed"
 msgstr ""
+
+#~ msgid ""
+#~ "To run a script at login, paste its file path here. You can copy the "
+#~ "script's path from your file manager. Make sure your script is executable"
+#~ msgstr ""
+#~ "Để chạy tập lệnh khi đăng nhập, hãy dán đường dẫn tệp của nó vào đây. Bạn "
+#~ "có thể sao chép đường dẫn của tập lệnh từ trình quản lý tệp của mình. Đảm "
+#~ "bảo tập lệnh của bạn có thể thực thi được"
 
 #~ msgid "Bug Fixes and Changes"
 #~ msgstr "Sửa lỗi và thay đổi"
