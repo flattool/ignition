@@ -48,7 +48,7 @@ export class FileList extends from(GObject.Object, {
 		const old_length: number = this.#items.length
 		const do_change = (): void => this.with_implements.items_changed(0, old_length, this.#items.length)
 
-		if (!this.directory) {
+		if (!this.directory || !this.directory.query_exists(null)) {
 			this.#items = []
 			do_change()
 			return
