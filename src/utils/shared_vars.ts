@@ -4,6 +4,17 @@ import Gio from "gi://Gio?version=2.0"
 import { type MainWindow } from "../window/main_window.js"
 import { type IgnitionApplication } from "../main.js"
 
+const get_root_autostart_dir = (is_flatpak: boolean): Gio.File => {
+	const prefix = is_flatpak ? "/run/host" : ""
+	let file = Gio.File.new_for_path(prefix + "/etc/xdg/autostart")
+	if (file.query_exists(null)) {
+		return file
+	}
+	// On NixOS
+	file = Gio.File.new_for_path("/run/current-system/sw/etc/xdg/autostart")
+	return file
+}
+
 export class SharedVars {
 	static main_window?: MainWindow // Set in main.js
 	static application?: IgnitionApplication // Set in main.js
@@ -21,10 +32,7 @@ export class SharedVars {
 		|| `${SharedVars.home_dir.get_path()}/.config`
 	) + "/autostart")
 
-	static readonly root_autostart_dir = (SharedVars.is_flatpak
-		? Gio.File.new_for_path("/run/host/etc/xdg/autostart")
-		: Gio.File.new_for_path("/etc/xdg/autostart")
-	)
+	static readonly root_autostart_dir = get_root_autostart_dir(SharedVars.is_flatpak)
 
 	// The order of this array is important! Lower Files get less priority when two entries have identical execs
 	static readonly host_app_entry_dirs = [

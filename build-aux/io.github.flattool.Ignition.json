@@ -23,7 +23,7 @@
 		"--filesystem=host-os:ro",
 		"--filesystem=host-etc:ro",
 		"--filesystem=/nix/store:ro",
-		"--filesystem=/run/current-system/sw/share:ro",
+		"--filesystem=/run/current-system/sw:ro",
 		"--filesystem=home/.nix-profile/share:ro"
     ],
 	"cleanup": ["/include", "/lib/pkgconfig", "/man", "/share/doc", "/share/gtk-doc", "/share/man", "/share/pkgconfig", "*.la", "*.a"],
