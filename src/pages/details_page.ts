@@ -1,6 +1,6 @@
 import Adw from "gi://Adw?version=1"
 import Gio from "gi://Gio?version=2.0"
-import type Gtk from "gi://Gtk?version=4.0"
+import Gtk from "gi://Gtk?version=4.0"
 
 import {
 	GClass,
@@ -21,6 +21,7 @@ import { add_error_toast, ask_to_continue, idle_run } from "../utils/helper_func
 import GLib from "gi://GLib?version=2.0"
 
 Gio._promisify(Gio.File.prototype, "trash_async", "trash_finish")
+Gio._promisify(Gtk.FileDialog.prototype, "open", "open_finish")
 
 const DELAY_FILE_SUFFIX = ".ignition_delay.sh"
 const NAME_REGEX = /^(?! )[^\0\/"'\\]+(?: [^\0\/"'\\]+)*(?<! )$/
@@ -186,6 +187,45 @@ export class DetailsPage extends from(Adw.NavigationPage, {
 			this.$emit("trashed-entry", this.entry)
 			this.entry = null
 		}
+	}
+
+	protected async _open_script(): Promise<void> {
+		const dialog = new Gtk.FileDialog({ title: _("Select Script"), initial_folder: SharedVars.home_dir })
+		let file: Gio.File
+		try {
+			file = await dialog.open(SharedVars.main_window, null)
+		} catch (e) {
+			if (!(e instanceof Gtk.DialogError) || e.code !== Gtk.DialogError.DISMISSED) {
+				add_error_toast(_("Could not open script"), e instanceof Error ? e.message : `${e}`)
+			}
+			return
+		}
+		const path: string | null = (SharedVars.is_flatpak
+			? file.query_info(
+				"xattr::document-portal.host-path",
+				Gio.FileQueryInfoFlags.NONE,
+				null,
+			).get_attribute_as_string("xattr::document-portal.host-path")
+			: file.get_path()
+		)
+		if (!path) {
+			add_error_toast(_("Could not get script path"), _("The selected file does not have a valid path."))
+			return
+		}
+		const executable = file.query_info(
+			Gio.FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE,
+			Gio.FileQueryInfoFlags.NONE,
+			null,
+		).get_attribute_boolean(Gio.FILE_ATTRIBUTE_ACCESS_CAN_EXECUTE)
+		if (!executable) {
+			add_error_toast(
+				_("Selected file is not executable"),
+				// eslint-disable-next-line
+				_("The selected file is not marked as executable. Select a different file or make this script executable."),
+			)
+			return
+		}
+		this.pending_exec = path
 	}
 
 	protected async _on_trash(): Promise<void> {

@@ -120,11 +120,11 @@ template $DetailsPage: Adw.NavigationPage {
 								changed => $_on_exec_changed();
 
 								[suffix]
-								MenuButton {
-									icon-name: "ignition:info-outline-symbolic";
-									tooltip-text: _("More Information");
+								Button {
+									tooltip-text: _("Open Script");
+									icon-name: "ignition:folder-open-symbolic";
 									valign: center;
-									popover: path_info_popover;
+									clicked => $_open_script();
 
 									styles [
 										"flat",
@@ -157,18 +157,5 @@ template $DetailsPage: Adw.NavigationPage {
 				};
 			}
 		};
-	};
-}
-
-Popover path_info_popover {
-	child: Label {
-		label: _("To run a script at login, paste its file path here. You can copy the script's path from your file manager. Make sure your script is executable");
-		wrap: true;
-		wrap-mode: word;
-		max-width-chars: 52;
-		margin-start: 6;
-		margin-end: 6;
-		margin-top: 6;
-		margin-bottom: 6;
 	};
 }
