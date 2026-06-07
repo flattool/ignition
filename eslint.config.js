@@ -2,7 +2,6 @@ import { defineConfig } from "eslint/config"
 import tsParser from "@typescript-eslint/parser"
 import tsPlugin from "@typescript-eslint/eslint-plugin"
 import stylistic from "@stylistic/eslint-plugin"
-import eslintPluginJsonc from "eslint-plugin-jsonc"
 import importPlugin from "eslint-plugin-import"
 
 // Rules that apply to both JS and TS
@@ -156,36 +155,6 @@ export default defineConfig([
 			...sharedJsTsRules,
 			"@typescript-eslint/explicit-function-return-type": "error",
 			"@typescript-eslint/explicit-member-accessibility": ["error", { accessibility: "no-public" }],
-		},
-	},
-	// JSON (default from JSONC)
-	...eslintPluginJsonc.configs["flat/recommended-with-json"],
-	{
-		// JSON (adding on to JSONC)
-		files: ["**/*.json", "**/*.json.in"],
-		languageOptions: {
-			parser: eslintPluginJsonc,
-		},
-		rules: {
-			"jsonc/array-bracket-newline": "error",
-			"jsonc/array-bracket-spacing": ["error", "never"],
-			"jsonc/array-element-newline": ["error", { multiline: true }],
-			"jsonc/comma-style": "error",
-			"jsonc/indent": ["error", "tab"],
-			"jsonc/key-spacing": "error",
-			"jsonc/no-irregular-whitespace": "error",
-			"jsonc/object-curly-newline": ["error", "always"],
-			"jsonc/object-property-newline": "error",
-		},
-	},
-	{
-		// Allow comments in TSConfig
-		files: ["**tsconfig.json"],
-		languageOptions: {
-			parser: eslintPluginJsonc,
-		},
-		rules: {
-			"jsonc/no-comments": ["off"],
 		},
 	},
 ])
