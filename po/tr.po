@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: ignition\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-06-07 18:34+0000\n"
-"PO-Revision-Date: 2026-04-09 06:05+0000\n"
-"Last-Translator: sasu <biungutv@gmail.com>\n"
+"PO-Revision-Date: 2026-06-10 15:32+0000\n"
+"Last-Translator: epiusu <usuyum@yandex.com>\n"
 "Language-Team: Turkish <https://weblate.fyralabs.com/projects/flattool/"
 "ignition/tr/>\n"
 "Language: tr\n"
@@ -166,7 +166,7 @@ msgstr "Komut ya da Betik"
 
 #: src/pages/details_page.blp:124
 msgid "Open Script"
-msgstr ""
+msgstr "Komut Dosyasını Aç"
 
 #: src/pages/details_page.blp:136
 msgid "Show Terminal"
@@ -196,47 +196,43 @@ msgstr "Bilgileri kaydederken bir sorun oluştu"
 
 #: src/pages/details_page.ts:166
 msgid "Trash Failed. Delete Entry Instead?"
-msgstr ""
+msgstr "Çöp Kutusu İşlemi Başarısız. Bunun Yerine Kaydı Silmek İster Misiniz?"
 
 #: src/pages/details_page.ts:167
 msgid ""
 "Instead of moving to the trash, the entry will be permanently deleted. This "
 "is not recoverable."
 msgstr ""
+"Giriş, çöp kutusuna taşınmak yerine kalıcı olarak silinecektir. Bu işlem "
+"geri alınamaz."
 
 #: src/pages/details_page.ts:168
 msgid "Delete"
-msgstr ""
+msgstr "Sil"
 
 #: src/pages/details_page.ts:184
-#, fuzzy
-#| msgid "Could not create entry"
 msgid "Could not delete entry"
-msgstr "Giriş oluşturulamadı"
+msgstr "Giriş silinemedi"
 
 #: src/pages/details_page.ts:193
 msgid "Select Script"
-msgstr ""
+msgstr "Komut Dosyası Seç"
 
 #: src/pages/details_page.ts:199
-#, fuzzy
-#| msgid "Could not open folder"
 msgid "Could not open script"
-msgstr "Klasör açılamadı"
+msgstr "Komut dosyası açılamadı"
 
 #: src/pages/details_page.ts:212
-#, fuzzy
-#| msgid "Could not create entry"
 msgid "Could not get script path"
-msgstr "Giriş oluşturulamadı"
+msgstr "Komut dosyası yolunu bulamadı"
 
 #: src/pages/details_page.ts:212
 msgid "The selected file does not have a valid path."
-msgstr ""
+msgstr "Seçilen dosyanın geçerli bir yolu yok."
 
 #: src/pages/details_page.ts:222
 msgid "Selected file is not executable"
-msgstr ""
+msgstr "Seçilen dosya çalıştırılamaz"
 
 #. eslint-disable-next-line
 #: src/pages/details_page.ts:224
@@ -244,6 +240,8 @@ msgid ""
 "The selected file is not marked as executable. Select a different file or "
 "make this script executable."
 msgstr ""
+"Seçilen dosya çalıştırılabilir olarak işaretlenmemiş. Farklı bir dosya seçin "
+"veya bu komut dosyasını çalıştırılabilir hale getirin."
 
 #: src/pages/details_page.ts:234
 msgid "Trash Entry?"
@@ -333,10 +331,8 @@ msgid "_Keyboard Shortcuts"
 msgstr "_Klavye Kısayolları"
 
 #: src/pages/entries_page.blp:173
-#, fuzzy
-#| msgid "About Ignition"
 msgid "_About Ignition"
-msgstr "Ignition Hakkında"
+msgstr "_Ignition Hakkında"
 
 #: src/shortcuts-dialog.blp:6
 msgid "Entries List"
@@ -517,14 +513,12 @@ msgid "Try a different search."
 msgstr "Başka arama deneyin."
 
 #: src/window/main_window.ts:55
-#, fuzzy
-#| msgid "Create"
 msgid "Created"
-msgstr "Oluştur"
+msgstr "Oluşturuldu"
 
 #: src/window/main_window.ts:60
 msgid "Removed"
-msgstr ""
+msgstr "Kaldırıldı"
 
 #~ msgid ""
 #~ "To run a script at login, paste its file path here. You can copy the "
